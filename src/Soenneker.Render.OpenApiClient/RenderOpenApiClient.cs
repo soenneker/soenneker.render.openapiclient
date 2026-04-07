@@ -24,6 +24,7 @@ using Soenneker.Render.OpenApiClient.Postgres;
 using Soenneker.Render.OpenApiClient.Projects;
 using Soenneker.Render.OpenApiClient.Redis;
 using Soenneker.Render.OpenApiClient.Registrycredentials;
+using Soenneker.Render.OpenApiClient.Sandboxes;
 using Soenneker.Render.OpenApiClient.Services;
 using Soenneker.Render.OpenApiClient.TaskRuns;
 using Soenneker.Render.OpenApiClient.Tasks;
@@ -132,6 +133,11 @@ namespace Soenneker.Render.OpenApiClient
         public global::Soenneker.Render.OpenApiClient.Registrycredentials.RegistrycredentialsRequestBuilder Registrycredentials
         {
             get => new global::Soenneker.Render.OpenApiClient.Registrycredentials.RegistrycredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sandboxes property</summary>
+        public global::Soenneker.Render.OpenApiClient.Sandboxes.SandboxesRequestBuilder Sandboxes
+        {
+            get => new global::Soenneker.Render.OpenApiClient.Sandboxes.SandboxesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The services property</summary>
         public global::Soenneker.Render.OpenApiClient.Services.ServicesRequestBuilder Services
