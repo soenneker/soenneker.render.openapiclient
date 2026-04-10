@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.Render.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -14,6 +15,8 @@ namespace Soenneker.Render.OpenApiClient.Workflows.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Controls autodeploy behavior. commit deploys when a commit is pushed to a branch. checksPass waits for the branch to be green.</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.AutoDeployTrigger? AutoDeployTrigger { get; set; }
         /// <summary>The buildConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +66,7 @@ namespace Soenneker.Render.OpenApiClient.Workflows.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeployTrigger>(); } },
                 { "buildConfig", n => { BuildConfig = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "runCommand", n => { RunCommand = n.GetStringValue(); } },
@@ -75,6 +79,7 @@ namespace Soenneker.Render.OpenApiClient.Workflows.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeployTrigger>("autoDeployTrigger", AutoDeployTrigger);
             writer.WriteObjectValue<UntypedNode>("buildConfig", BuildConfig);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("runCommand", RunCommand);

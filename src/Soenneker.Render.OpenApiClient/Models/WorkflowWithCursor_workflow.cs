@@ -14,6 +14,8 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Controls autodeploy behavior. &quot;commit&quot; deploys when a commit is pushed to the branch. &quot;checksPass&quot; waits for CI checks to pass before deploying. &quot;off&quot; disables autodeploy.</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow_autoDeployTrigger? AutoDeployTrigger { get; set; }
         /// <summary>The buildConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +84,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public WorkflowWithCursor_workflow()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutoDeployTrigger = global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow_autoDeployTrigger.Commit;
             Region = global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow_region.Oregon;
         }
         /// <summary>
@@ -102,6 +105,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow_autoDeployTrigger>(); } },
                 { "buildConfig", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow_buildConfig>(global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow_buildConfig.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
@@ -121,6 +125,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow_autoDeployTrigger>("autoDeployTrigger", AutoDeployTrigger);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow_buildConfig>("buildConfig", BuildConfig);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("environmentId", EnvironmentId);
