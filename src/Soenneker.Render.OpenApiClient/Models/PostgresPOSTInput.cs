@@ -103,14 +103,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public List<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput> ReadReplicas { get; set; }
 #endif
-        /// <summary>The region property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Region { get; set; }
-#nullable restore
-#else
-        public string Region { get; set; }
-#endif
+        /// <summary>Defaults to &quot;oregon&quot;</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.Region? Region { get; set; }
         /// <summary>The PostgreSQL version</summary>
         public global::Soenneker.Render.OpenApiClient.Models.PostgresVersion? Version { get; set; }
         /// <summary>
@@ -121,6 +115,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             AdditionalData = new Dictionary<string, object>();
             DatabaseName = "randomly generated";
             DatabaseUser = "randomly generated";
+            Region = global::Soenneker.Render.OpenApiClient.Models.Region.Oregon;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -154,7 +149,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "parameterOverrides", n => { ParameterOverrides = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresParameterOverrides>(global::Soenneker.Render.OpenApiClient.Models.PostgresParameterOverrides.CreateFromDiscriminatorValue); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); } },
                 { "readReplicas", n => { ReadReplicas = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput>(global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
                 { "version", n => { Version = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresVersion>(); } },
             };
         }
@@ -179,7 +174,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresParameterOverrides>("parameterOverrides", ParameterOverrides);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>("plan", Plan);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput>("readReplicas", ReadReplicas);
-            writer.WriteStringValue("region", Region);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresVersion>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -51,20 +51,15 @@ namespace Soenneker.Render.OpenApiClient.Models
 #endif
         /// <summary>The plan property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.RedisPlan? Plan { get; set; }
-        /// <summary>The region where the Redis instance is located</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Region { get; set; }
-#nullable restore
-#else
-        public string Region { get; set; }
-#endif
+        /// <summary>Defaults to &quot;oregon&quot;</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.Region? Region { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.RedisPOSTInput"/> and sets the default values.
         /// </summary>
         public RedisPOSTInput()
         {
             AdditionalData = new Dictionary<string, object>();
+            Region = global::Soenneker.Render.OpenApiClient.Models.Region.Oregon;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -90,7 +85,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RedisPlan>(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
             };
         }
         /// <summary>
@@ -106,7 +101,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.RedisPlan>("plan", Plan);
-            writer.WriteStringValue("region", Region);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
