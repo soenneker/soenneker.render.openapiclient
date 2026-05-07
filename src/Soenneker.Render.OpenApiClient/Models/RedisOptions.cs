@@ -23,6 +23,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string MaxmemoryPolicy { get; set; }
 #endif
+        /// <summary>The persistence mode for the Key Value instance. The default for paid instances is journal_snapshot (both journaling and snapshots). Only turn off persistence if you&apos;re using this Key Value instance as a cache and are okay with losing data. Free instances do not have persistence.</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.PersistenceMode? PersistenceMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.RedisOptions"/> and sets the default values.
         /// </summary>
@@ -49,6 +51,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "maxmemoryPolicy", n => { MaxmemoryPolicy = n.GetStringValue(); } },
+                { "persistenceMode", n => { PersistenceMode = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PersistenceMode>(); } },
             };
         }
         /// <summary>
@@ -59,6 +62,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("maxmemoryPolicy", MaxmemoryPolicy);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PersistenceMode>("persistenceMode", PersistenceMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

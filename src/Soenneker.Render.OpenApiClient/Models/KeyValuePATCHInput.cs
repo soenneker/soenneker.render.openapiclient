@@ -33,6 +33,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The persistence mode for the Key Value instance. The default for paid instances is journal_snapshot (both journaling and snapshots). Only turn off persistence if you&apos;re using this Key Value instance as a cache and are okay with losing data. Free instances do not have persistence.</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.PersistenceMode? PersistenceMode { get; set; }
         /// <summary>The plan property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.KeyValuePlan? Plan { get; set; }
         /// <summary>
@@ -63,6 +65,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "maxmemoryPolicy", n => { MaxmemoryPolicy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.MaxmemoryPolicy>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "persistenceMode", n => { PersistenceMode = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PersistenceMode>(); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.KeyValuePlan>(); } },
             };
         }
@@ -76,6 +79,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>("ipAllowList", IpAllowList);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.MaxmemoryPolicy>("maxmemoryPolicy", MaxmemoryPolicy);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PersistenceMode>("persistenceMode", PersistenceMode);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.KeyValuePlan>("plan", Plan);
             writer.WriteAdditionalData(AdditionalData);
         }

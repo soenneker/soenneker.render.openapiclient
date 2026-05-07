@@ -49,6 +49,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string OwnerId { get; set; }
 #endif
+        /// <summary>The persistence mode for the Key Value instance. The default for paid instances is journal_snapshot (both journaling and snapshots). Only turn off persistence if you&apos;re using this Key Value instance as a cache and are okay with losing data. Free instances do not have persistence.</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.PersistenceMode? PersistenceMode { get; set; }
         /// <summary>The plan property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.KeyValuePlan? Plan { get; set; }
         /// <summary>Defaults to &quot;oregon&quot;</summary>
@@ -84,6 +86,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "maxmemoryPolicy", n => { MaxmemoryPolicy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.MaxmemoryPolicy>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "persistenceMode", n => { PersistenceMode = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PersistenceMode>(); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.KeyValuePlan>(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
             };
@@ -100,6 +103,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.MaxmemoryPolicy>("maxmemoryPolicy", MaxmemoryPolicy);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PersistenceMode>("persistenceMode", PersistenceMode);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.KeyValuePlan>("plan", Plan);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);
             writer.WriteAdditionalData(AdditionalData);
