@@ -35,6 +35,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         ChangeOrgAllowedLoginMethodsEvent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ChangeOrgNameEvent")]
+        #pragma warning disable CS1591
+        ChangeOrgNameEvent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ChangeOrgRoleEvent")]
         #pragma warning disable CS1591
         ChangeOrgRoleEvent,
