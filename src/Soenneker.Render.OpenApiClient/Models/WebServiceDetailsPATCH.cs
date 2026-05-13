@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #endif
         /// <summary>The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.</summary>
         public int? MaxShutdownDelaySeconds { get; set; }
-        /// <summary>The instance type to use. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
+        /// <summary>The instance type to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get; set; }
         /// <summary>The preDeployCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -30,7 +30,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The instance type to use. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
+        /// <summary>The instance type to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.PreviewInput"/> and sets the default values.

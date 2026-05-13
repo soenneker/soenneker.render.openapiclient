@@ -117,7 +117,7 @@ namespace Soenneker.Render.OpenApiClient.KeyValue.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.KeyValueDetail>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.KeyValueDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a Key Value instance by ID.
+        /// Update a Key Value instance by ID. Note that changing your plan, max memory policy, or persistence mode will restart your Key Value instance.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.KeyValueDetail"/></returns>
         /// <param name="body">Input type for updating a Key Value instance</param>
@@ -192,7 +192,7 @@ namespace Soenneker.Render.OpenApiClient.KeyValue.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a Key Value instance by ID.
+        /// Update a Key Value instance by ID. Note that changing your plan, max memory policy, or persistence mode will restart your Key Value instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Input type for updating a Key Value instance</param>

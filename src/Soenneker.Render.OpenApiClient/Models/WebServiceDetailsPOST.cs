@@ -69,7 +69,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public int? MaxShutdownDelaySeconds { get; set; }
         /// <summary>Defaults to 1</summary>
         public int? NumInstances { get; set; }
-        /// <summary>The instance type to use. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
+        /// <summary>The instance type to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get; set; }
         /// <summary>The preDeployCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

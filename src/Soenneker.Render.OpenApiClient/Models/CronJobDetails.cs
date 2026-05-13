@@ -29,7 +29,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #endif
         /// <summary>The lastSuccessfulRunAt property</summary>
         public DateTimeOffset? LastSuccessfulRunAt { get; set; }
-        /// <summary>The instance type to use. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
+        /// <summary>The instance type to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get; set; }
         /// <summary>Defaults to &quot;oregon&quot;</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Region? Region { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
-    /// <summary>The instance type to use. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
+    /// <summary>The instance type to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Plan
     {
@@ -46,6 +46,26 @@ namespace Soenneker.Render.OpenApiClient.Models
         [EnumMember(Value = "custom")]
         #pragma warning disable CS1591
         Custom,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "starter_legacy")]
+        #pragma warning disable CS1591
+        Starter_legacy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "standard_legacy")]
+        #pragma warning disable CS1591
+        Standard_legacy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "standard_plus_legacy")]
+        #pragma warning disable CS1591
+        Standard_plus_legacy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pro_legacy")]
+        #pragma warning disable CS1591
+        Pro_legacy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pro_plus_legacy")]
+        #pragma warning disable CS1591
+        Pro_plus_legacy,
         #pragma warning restore CS1591
     }
 }
