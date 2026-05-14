@@ -25,10 +25,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The envVars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.EnvVarInput>? EnvVars { get; set; }
+        public UntypedNode? EnvVars { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.EnvVarInput> EnvVars { get; set; }
+        public UntypedNode EnvVars { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "envVars", n => { EnvVars = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.EnvVarInput>(global::Soenneker.Render.OpenApiClient.Models.EnvVarInput.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "envVars", n => { EnvVars = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
@@ -103,7 +103,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("environmentId", EnvironmentId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.EnvVarInput>("envVars", EnvVars);
+            writer.WriteObjectValue<UntypedNode>("envVars", EnvVars);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.SecretFileInput>("secretFiles", SecretFiles);

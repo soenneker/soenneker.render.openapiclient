@@ -28,10 +28,10 @@ namespace Soenneker.Render.OpenApiClient.Workflows
         /// <summary>The envVars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody.WorkflowsPostRequestBody_envVars>? EnvVars { get; set; }
+        public UntypedNode? EnvVars { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody.WorkflowsPostRequestBody_envVars> EnvVars { get; set; }
+        public UntypedNode EnvVars { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Render.OpenApiClient.Workflows
             {
                 { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeployTrigger>(); } },
                 { "buildConfig", n => { BuildConfig = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "envVars", n => { EnvVars = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody.WorkflowsPostRequestBody_envVars>(global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody.WorkflowsPostRequestBody_envVars.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "envVars", n => { EnvVars = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
@@ -103,87 +103,12 @@ namespace Soenneker.Render.OpenApiClient.Workflows
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeployTrigger>("autoDeployTrigger", AutoDeployTrigger);
             writer.WriteObjectValue<UntypedNode>("buildConfig", BuildConfig);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody.WorkflowsPostRequestBody_envVars>("envVars", EnvVars);
+            writer.WriteObjectValue<UntypedNode>("envVars", EnvVars);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);
             writer.WriteStringValue("runCommand", RunCommand);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember1"/>, <see cref="global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowsPostRequestBody_envVars : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember1? WorkflowsPostRequestBodyEnvVarsMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember1 WorkflowsPostRequestBodyEnvVarsMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember2? WorkflowsPostRequestBodyEnvVarsMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember2 WorkflowsPostRequestBodyEnvVarsMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody.WorkflowsPostRequestBody_envVars"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody.WorkflowsPostRequestBody_envVars CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody.WorkflowsPostRequestBody_envVars();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WorkflowsPostRequestBodyEnvVarsMember1 = new global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WorkflowsPostRequestBodyEnvVarsMember2 = new global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WorkflowsPostRequestBodyEnvVarsMember1 != null)
-                {
-                    return WorkflowsPostRequestBodyEnvVarsMember1.GetFieldDeserializers();
-                }
-                else if(WorkflowsPostRequestBodyEnvVarsMember2 != null)
-                {
-                    return WorkflowsPostRequestBodyEnvVarsMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(WorkflowsPostRequestBodyEnvVarsMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember1>(null, WorkflowsPostRequestBodyEnvVarsMember1);
-                }
-                else if(WorkflowsPostRequestBodyEnvVarsMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Workflows.WorkflowsPostRequestBody_envVarsMember2>(null, WorkflowsPostRequestBodyEnvVarsMember2);
-                }
-            }
         }
     }
 }

@@ -43,10 +43,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The envVars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.EnvVarInput>? EnvVars { get; set; }
+        public List<global::Soenneker.Render.OpenApiClient.Models.ServicePOST.ServicePOST_envVars>? EnvVars { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.EnvVarInput> EnvVars { get; set; }
+        public List<global::Soenneker.Render.OpenApiClient.Models.ServicePOST.ServicePOST_envVars> EnvVars { get; set; }
 #endif
         /// <summary>The image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +135,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "autoDeploy", n => { AutoDeploy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeploy>(); } },
                 { "branch", n => { Branch = n.GetStringValue(); } },
                 { "buildFilter", n => { BuildFilter = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.BuildFilter>(global::Soenneker.Render.OpenApiClient.Models.BuildFilter.CreateFromDiscriminatorValue); } },
-                { "envVars", n => { EnvVars = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.EnvVarInput>(global::Soenneker.Render.OpenApiClient.Models.EnvVarInput.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "envVars", n => { EnvVars = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ServicePOST.ServicePOST_envVars>(global::Soenneker.Render.OpenApiClient.Models.ServicePOST.ServicePOST_envVars.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "image", n => { Image = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Image>(global::Soenneker.Render.OpenApiClient.Models.Image.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -158,7 +158,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("branch", Branch);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.BuildFilter>("buildFilter", BuildFilter);
             writer.WriteStringValue("environmentId", EnvironmentId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.EnvVarInput>("envVars", EnvVars);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ServicePOST.ServicePOST_envVars>("envVars", EnvVars);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Image>("image", Image);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
@@ -168,6 +168,81 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServicePOST.ServicePOST_serviceDetails>("serviceDetails", ServiceDetails);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember1"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember2"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ServicePOST_envVars : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember1? ServicePOSTEnvVarsMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember1 ServicePOSTEnvVarsMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember2? ServicePOSTEnvVarsMember2 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember2 ServicePOSTEnvVarsMember2 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ServicePOST.ServicePOST_envVars"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Render.OpenApiClient.Models.ServicePOST.ServicePOST_envVars CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Render.OpenApiClient.Models.ServicePOST.ServicePOST_envVars();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ServicePOSTEnvVarsMember1 = new global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember1();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ServicePOSTEnvVarsMember2 = new global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember2();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(ServicePOSTEnvVarsMember1 != null)
+                {
+                    return ServicePOSTEnvVarsMember1.GetFieldDeserializers();
+                }
+                else if(ServicePOSTEnvVarsMember2 != null)
+                {
+                    return ServicePOSTEnvVarsMember2.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(ServicePOSTEnvVarsMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember1>(null, ServicePOSTEnvVarsMember1);
+                }
+                else if(ServicePOSTEnvVarsMember2 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServicePOST_envVarsMember2>(null, ServicePOSTEnvVarsMember2);
+                }
+            }
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetailsPOST"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.CronJobDetailsPOST"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetailsPOST"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetailsPOST"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsPOST"/>
