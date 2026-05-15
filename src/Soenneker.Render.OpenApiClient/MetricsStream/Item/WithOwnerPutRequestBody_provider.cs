@@ -35,6 +35,10 @@ namespace Soenneker.Render.OpenApiClient.MetricsStream.Item
         #pragma warning disable CS1591
         GROUNDCOVER,
         #pragma warning restore CS1591
+        [EnumMember(Value = "LOGFIRE")]
+        #pragma warning disable CS1591
+        LOGFIRE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CUSTOM")]
         #pragma warning disable CS1591
         CUSTOM,
