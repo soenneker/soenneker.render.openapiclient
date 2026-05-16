@@ -43,5 +43,9 @@ namespace Soenneker.Render.OpenApiClient.Blueprints.Item
         #pragma warning disable CS1591
         Environment_group,
         #pragma warning restore CS1591
+        [EnumMember(Value = "artifact_source")]
+        #pragma warning disable CS1591
+        Artifact_source,
+        #pragma warning restore CS1591
     }
 }
