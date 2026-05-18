@@ -8,6 +8,7 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Render.OpenApiClient.Blueprints;
 using Soenneker.Render.OpenApiClient.CronJobs;
+using Soenneker.Render.OpenApiClient.DedicatedIps;
 using Soenneker.Render.OpenApiClient.Disks;
 using Soenneker.Render.OpenApiClient.EnvGroups;
 using Soenneker.Render.OpenApiClient.Environments;
@@ -52,6 +53,11 @@ namespace Soenneker.Render.OpenApiClient
         public global::Soenneker.Render.OpenApiClient.CronJobs.CronJobsRequestBuilder CronJobs
         {
             get => new global::Soenneker.Render.OpenApiClient.CronJobs.CronJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The dedicatedIps property</summary>
+        public global::Soenneker.Render.OpenApiClient.DedicatedIps.DedicatedIpsRequestBuilder DedicatedIps
+        {
+            get => new global::Soenneker.Render.OpenApiClient.DedicatedIps.DedicatedIpsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The disks property</summary>
         public global::Soenneker.Render.OpenApiClient.Disks.DisksRequestBuilder Disks
