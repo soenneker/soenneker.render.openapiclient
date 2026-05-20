@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// Input for creating a dedicated IP.
+    /// Input for creating a dedicated IP set.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DedicatedIPPOST : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Free-form description for the dedicated IP.</summary>
+        /// <summary>Free-form description for the dedicated IP set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Environments to scope the dedicated IP to. If omitted or empty, the IP applies to all services in the workspace within its region.</summary>
+        /// <summary>Environments to scope the dedicated IP set to. If omitted or empty, it applies to all services in the workspace within its region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EnvironmentIds { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public List<string> EnvironmentIds { get; set; }
 #endif
-        /// <summary>Descriptive name for the dedicated IP.</summary>
+        /// <summary>Name for the dedicated IP set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The ID of the workspace that will own the dedicated IP.</summary>
+        /// <summary>The ID of the workspace that will own this dedicated IP set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerId { get; set; }

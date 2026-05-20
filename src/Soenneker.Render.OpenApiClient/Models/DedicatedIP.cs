@@ -14,9 +14,9 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Time the dedicated IP was created.</summary>
+        /// <summary>Time the dedicated IP set was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Free-form description for this dedicated IP.</summary>
+        /// <summary>Free-form description for this dedicated IP set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Environments this dedicated IP applies to. If empty, the IP applies to all services in the workspace within its region.</summary>
+        /// <summary>Environments this dedicated IP set applies to. If empty, it applies to all services in the workspace within its region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EnvironmentIds { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public List<string> EnvironmentIds { get; set; }
 #endif
-        /// <summary>Unique identifier for this dedicated IP.</summary>
+        /// <summary>Unique identifier for this dedicated IP set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The IPv4 addresses assigned to this dedicated IP.</summary>
+        /// <summary>The IPv4 addresses assigned to this dedicated IP set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ips { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public List<string> Ips { get; set; }
 #endif
-        /// <summary>Descriptive name for this dedicated IP.</summary>
+        /// <summary>Descriptive name for this dedicated IP set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The ID of the workspace that owns this dedicated IP.</summary>
+        /// <summary>The ID of the workspace that owns this dedicated IP set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerId { get; set; }
@@ -66,9 +66,9 @@ namespace Soenneker.Render.OpenApiClient.Models
 #endif
         /// <summary>Defaults to &quot;oregon&quot;</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Region? Region { get; set; }
-        /// <summary>Status of a dedicated IP.</summary>
+        /// <summary>Current status of a dedicated IP set.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.DedicatedIPStatus? Status { get; set; }
-        /// <summary>Time the dedicated IP was last updated.</summary>
+        /// <summary>Time the dedicated IP set was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.DedicatedIP"/> and sets the default values.

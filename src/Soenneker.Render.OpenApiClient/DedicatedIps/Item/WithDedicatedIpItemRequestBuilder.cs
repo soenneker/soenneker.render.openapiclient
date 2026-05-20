@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps.Item
         {
         }
         /// <summary>
-        /// Delete the dedicated IP with the provided ID.
+        /// Delete the dedicated IP set with the provided ID.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the dedicated IP with the provided ID.
+        /// Retrieve the dedicated IP set with the provided ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.DedicatedIP"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,10 +107,10 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.DedicatedIP>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.DedicatedIP.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the dedicated IP with the provided ID. All fields are optional; omitted fields are left unchanged. To change the IP from environment-scoped to workspace-scoped, provide `environmentIds: []`.
+        /// Update the dedicated IP set with the provided ID. All fields are optional. Omitted fields are left unchanged. To switch from environment-scoped to workspace-scoped, provide `environmentIds: []`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.DedicatedIP"/></returns>
-        /// <param name="body">Input for updating a dedicated IP. All fields are optional. Omitted fields are left unchanged. Provide `environmentIds: []` to switch a dedicated IP from environment-scoped to workspace-scoped.</param>
+        /// <param name="body">Input for updating a dedicated IP set. All fields are optional. Omitted fields are left unchanged. Provide `environmentIds: []` to switch from environment-scoped to workspace-scoped.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -150,7 +150,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.DedicatedIP>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.DedicatedIP.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the dedicated IP with the provided ID.
+        /// Delete the dedicated IP set with the provided ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the dedicated IP with the provided ID.
+        /// Retrieve the dedicated IP set with the provided ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,10 +188,10 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the dedicated IP with the provided ID. All fields are optional; omitted fields are left unchanged. To change the IP from environment-scoped to workspace-scoped, provide `environmentIds: []`.
+        /// Update the dedicated IP set with the provided ID. All fields are optional. Omitted fields are left unchanged. To switch from environment-scoped to workspace-scoped, provide `environmentIds: []`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Input for updating a dedicated IP. All fields are optional. Omitted fields are left unchanged. Provide `environmentIds: []` to switch a dedicated IP from environment-scoped to workspace-scoped.</param>
+        /// <param name="body">Input for updating a dedicated IP set. All fields are optional. Omitted fields are left unchanged. Provide `environmentIds: []` to switch from environment-scoped to workspace-scoped.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

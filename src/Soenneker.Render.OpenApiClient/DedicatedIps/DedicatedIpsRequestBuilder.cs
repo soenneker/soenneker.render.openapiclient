@@ -19,7 +19,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
     public partial class DedicatedIpsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.dedicatedIps.item collection</summary>
-        /// <param name="position">The ID of the dedicated IP</param>
+        /// <param name="position">The ID of the dedicated IP set</param>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.DedicatedIps.Item.WithDedicatedIpItemRequestBuilder"/></returns>
         public global::Soenneker.Render.OpenApiClient.DedicatedIps.Item.WithDedicatedIpItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         {
         }
         /// <summary>
-        /// List dedicated IPs for a workspace.
+        /// List dedicated IP sets for a workspace.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.DedicatedIP&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,10 +83,10 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a new dedicated IP. The IP is provisioned asynchronously: the response returns immediately with `status: CREATING` and `ips: []`; once provisioning completes the status transitions to `RUNNING` and `ips` is populated.If `environmentIds` is omitted or empty the IP applies to all services in the workspace within its region. Otherwise it applies only to services in the listed environments (and region).
+        /// Create a dedicated IP set. Provisioning an IP set is asynchronous. The response returns immediately with `status: CREATING` and `ips: []`. When provisioning completes, status changes to `RUNNING` and `ips` contains your assigned addresses.If `environmentIds` is omitted or empty, this IP set applies to all services in the workspace in the selected region. Otherwise, it applies only to services in the listed environments in that region.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.DedicatedIP"/></returns>
-        /// <param name="body">Input for creating a dedicated IP.</param>
+        /// <param name="body">Input for creating a dedicated IP set.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -124,7 +124,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.DedicatedIP>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.DedicatedIP.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List dedicated IPs for a workspace.
+        /// List dedicated IP sets for a workspace.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,10 +143,10 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
             return requestInfo;
         }
         /// <summary>
-        /// Create a new dedicated IP. The IP is provisioned asynchronously: the response returns immediately with `status: CREATING` and `ips: []`; once provisioning completes the status transitions to `RUNNING` and `ips` is populated.If `environmentIds` is omitted or empty the IP applies to all services in the workspace within its region. Otherwise it applies only to services in the listed environments (and region).
+        /// Create a dedicated IP set. Provisioning an IP set is asynchronous. The response returns immediately with `status: CREATING` and `ips: []`. When provisioning completes, status changes to `RUNNING` and `ips` contains your assigned addresses.If `environmentIds` is omitted or empty, this IP set applies to all services in the workspace in the selected region. Otherwise, it applies only to services in the listed environments in that region.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Input for creating a dedicated IP.</param>
+        /// <param name="body">Input for creating a dedicated IP set.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,12 +174,12 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
             return new global::Soenneker.Render.OpenApiClient.DedicatedIps.DedicatedIpsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List dedicated IPs for a workspace.
+        /// List dedicated IP sets for a workspace.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DedicatedIpsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The ID of the workspace to list dedicated IPs for</summary>
+            /// <summary>The ID of the workspace to list dedicated IP sets for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ownerId")]
