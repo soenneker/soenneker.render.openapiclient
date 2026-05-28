@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// Input for updating a dedicated IP set. All fields are optional. Omitted fields are left unchanged. Provide `environmentIds: []` to switch from environment-scoped to workspace-scoped.
+    /// &quot;Input for updating a dedicated IP set. All fields are optional. Omitted fields are left unchanged. Provide `environmentIds: []` to switch from environment-scoped to workspace-scoped.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DedicatedIPPATCH : IAdditionalDataHolder, IParsable

@@ -25,10 +25,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The job property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.JobWithCursor_job? Job { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.JobWithCursorJob? Job { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.JobWithCursor_job Job { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.JobWithCursorJob Job { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.JobWithCursor"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "job", n => { Job = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.JobWithCursor_job>(global::Soenneker.Render.OpenApiClient.Models.JobWithCursor_job.CreateFromDiscriminatorValue); } },
+                { "job", n => { Job = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.JobWithCursorJob>(global::Soenneker.Render.OpenApiClient.Models.JobWithCursorJob.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cursor", Cursor);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.JobWithCursor_job>("job", Job);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.JobWithCursorJob>("job", Job);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

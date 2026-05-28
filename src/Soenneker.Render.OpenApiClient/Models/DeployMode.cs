@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
-    /// <summary>Controls deployment behavior when triggering a deploy.- `deploy_only`: Deploy the last successful build without rebuilding (minimizes downtime)- `build_and_deploy`: Build new code and deploy it (default behavior when not specified)**Note:** `deploy_only` cannot be combined with `commitId`, `imageUrl` or `clearCache` parameters,as those are build related fields.</summary>
+    /// <summary>&quot;Controls deployment behavior when triggering a deploy.- `deploy_only`: Deploy the last successful build without rebuilding (minimizes downtime)- `build_and_deploy`: Build new code and deploy it (default behavior when not specified)**Note:** `deploy_only` cannot be combined with `commitId`, `imageUrl` or `clearCache` parameters,as those are build related fields.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DeployMode
     {

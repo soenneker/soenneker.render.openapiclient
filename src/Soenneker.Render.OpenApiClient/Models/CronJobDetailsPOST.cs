@@ -14,9 +14,14 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>This field has been deprecated, runtime should be used in its place.</summary>
-        [Obsolete("")]
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEnv? Env { get; set; }
+        /// <summary>The env property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Env { get; set; }
+#nullable restore
+#else
+        public string Env { get; set; }
+#endif
         /// <summary>The envSpecificDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +71,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "env", n => { Env = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>(); } },
+                { "env", n => { Env = n.GetStringValue(); } },
                 { "envSpecificDetails", n => { EnvSpecificDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails>(global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails.CreateFromDiscriminatorValue); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PaidPlan>(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
@@ -81,7 +86,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>("env", Env);
+            writer.WriteStringValue("env", Env);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails>("envSpecificDetails", EnvSpecificDetails);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PaidPlan>("plan", Plan);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);

@@ -25,10 +25,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The override property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursor_override? Override { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride? Override { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursor_override Override { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride Override { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursor"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "override", n => { Override = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursor_override>(global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursor_override.CreateFromDiscriminatorValue); } },
+                { "override", n => { Override = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride>(global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cursor", Cursor);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursor_override>("override", Override);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride>("override", Override);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

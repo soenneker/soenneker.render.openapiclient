@@ -49,7 +49,7 @@ namespace Soenneker.Render.OpenApiClient.Maintenance
         /// <summary>
         /// List scheduled and/or recent maintenance runs for specified resources.
         /// </summary>
-        /// <returns>A List&lt;UntypedNode&gt;</returns>
+        /// <returns>A List&lt;string&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -60,11 +60,11 @@ namespace Soenneker.Render.OpenApiClient.Maintenance
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<UntypedNode>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Maintenance.MaintenanceRequestBuilder.MaintenanceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<string>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Maintenance.MaintenanceRequestBuilder.MaintenanceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<UntypedNode>> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Maintenance.MaintenanceRequestBuilder.MaintenanceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<string>> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Maintenance.MaintenanceRequestBuilder.MaintenanceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -77,7 +77,7 @@ namespace Soenneker.Render.OpenApiClient.Maintenance
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

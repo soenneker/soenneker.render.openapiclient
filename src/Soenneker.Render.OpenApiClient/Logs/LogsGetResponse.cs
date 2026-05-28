@@ -20,10 +20,10 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// <summary>The logs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Logs { get; set; }
+        public List<string>? Logs { get; set; }
 #nullable restore
 #else
-        public List<UntypedNode> Logs { get; set; }
+        public List<string> Logs { get; set; }
 #endif
         /// <summary>The end time to use in the next query to fetch the next set of logs</summary>
         public DateTimeOffset? NextEndTime { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "hasMore", n => { HasMore = n.GetBoolValue(); } },
-                { "logs", n => { Logs = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "logs", n => { Logs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "nextEndTime", n => { NextEndTime = n.GetDateTimeOffsetValue(); } },
                 { "nextStartTime", n => { NextStartTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -68,7 +68,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("hasMore", HasMore);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("logs", Logs);
+            writer.WriteCollectionOfPrimitiveValues<string>("logs", Logs);
             writer.WriteDateTimeOffsetValue("nextEndTime", NextEndTime);
             writer.WriteDateTimeOffsetValue("nextStartTime", NextStartTime);
             writer.WriteAdditionalData(AdditionalData);

@@ -36,6 +36,7 @@ namespace Soenneker.Render.OpenApiClient.EnvGroups.Item.Services.Item
         /// <summary>
         /// Unlink a particular service from a particular environment group.The service will lose access to the environment variables and secret files in the group.
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -46,11 +47,11 @@ namespace Soenneker.Render.OpenApiClient.EnvGroups.Item.Services.Item
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -63,7 +64,7 @@ namespace Soenneker.Render.OpenApiClient.EnvGroups.Item.Services.Item
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Link a particular service to a particular environment group.The linked service will have access to the environment variables and secret files in the group.

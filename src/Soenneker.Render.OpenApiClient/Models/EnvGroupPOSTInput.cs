@@ -25,10 +25,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The envVars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? EnvVars { get; set; }
+        public string? EnvVars { get; set; }
 #nullable restore
 #else
-        public UntypedNode EnvVars { get; set; }
+        public string EnvVars { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "envVars", n => { EnvVars = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "envVars", n => { EnvVars = n.GetStringValue(); } },
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
@@ -103,7 +103,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("environmentId", EnvironmentId);
-            writer.WriteObjectValue<UntypedNode>("envVars", EnvVars);
+            writer.WriteStringValue("envVars", EnvVars);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.SecretFileInput>("secretFiles", SecretFiles);

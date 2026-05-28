@@ -34,10 +34,10 @@ namespace Soenneker.Render.OpenApiClient.Logs.Streams.Owner.Item
         /// <summary>The preview property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Preview { get; set; }
+        public string? Preview { get; set; }
 #nullable restore
 #else
-        public UntypedNode Preview { get; set; }
+        public string Preview { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Logs.Streams.Owner.Item.WithOwnerGetResponse"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Render.OpenApiClient.Logs.Streams.Owner.Item
             {
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "preview", n => { Preview = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "preview", n => { Preview = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Render.OpenApiClient.Logs.Streams.Owner.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteObjectValue<UntypedNode>("preview", Preview);
+            writer.WriteStringValue("preview", Preview);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

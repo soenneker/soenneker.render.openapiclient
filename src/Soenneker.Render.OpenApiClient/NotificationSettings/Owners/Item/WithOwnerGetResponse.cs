@@ -19,10 +19,10 @@ namespace Soenneker.Render.OpenApiClient.NotificationSettings.Owners.Item
         /// <summary>The notificationsToSend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? NotificationsToSend { get; set; }
+        public string? NotificationsToSend { get; set; }
 #nullable restore
 #else
-        public UntypedNode NotificationsToSend { get; set; }
+        public string NotificationsToSend { get; set; }
 #endif
         /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace Soenneker.Render.OpenApiClient.NotificationSettings.Owners.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "emailEnabled", n => { EmailEnabled = n.GetBoolValue(); } },
-                { "notificationsToSend", n => { NotificationsToSend = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "notificationsToSend", n => { NotificationsToSend = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "previewNotificationsEnabled", n => { PreviewNotificationsEnabled = n.GetBoolValue(); } },
                 { "slackEnabled", n => { SlackEnabled = n.GetBoolValue(); } },
@@ -76,7 +76,7 @@ namespace Soenneker.Render.OpenApiClient.NotificationSettings.Owners.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("emailEnabled", EmailEnabled);
-            writer.WriteObjectValue<UntypedNode>("notificationsToSend", NotificationsToSend);
+            writer.WriteStringValue("notificationsToSend", NotificationsToSend);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteBoolValue("previewNotificationsEnabled", PreviewNotificationsEnabled);
             writer.WriteBoolValue("slackEnabled", SlackEnabled);

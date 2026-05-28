@@ -53,10 +53,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The server property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.CustomDomain_server? Server { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.CustomDomainServer? Server { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.CustomDomain_server Server { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.CustomDomainServer Server { get; set; }
 #endif
         /// <summary>The verificationStatus property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.CustomDomain_verificationStatus? VerificationStatus { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "publicSuffix", n => { PublicSuffix = n.GetStringValue(); } },
                 { "redirectForName", n => { RedirectForName = n.GetStringValue(); } },
-                { "server", n => { Server = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomain_server>(global::Soenneker.Render.OpenApiClient.Models.CustomDomain_server.CreateFromDiscriminatorValue); } },
+                { "server", n => { Server = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomainServer>(global::Soenneker.Render.OpenApiClient.Models.CustomDomainServer.CreateFromDiscriminatorValue); } },
                 { "verificationStatus", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomain_verificationStatus>(); } },
             };
         }
@@ -108,7 +108,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("publicSuffix", PublicSuffix);
             writer.WriteStringValue("redirectForName", RedirectForName);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomain_server>("server", Server);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomainServer>("server", Server);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomain_verificationStatus>("verificationStatus", VerificationStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

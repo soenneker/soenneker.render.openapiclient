@@ -23,7 +23,6 @@ using Soenneker.Render.OpenApiClient.Organizations;
 using Soenneker.Render.OpenApiClient.Owners;
 using Soenneker.Render.OpenApiClient.Postgres;
 using Soenneker.Render.OpenApiClient.Projects;
-using Soenneker.Render.OpenApiClient.Redis;
 using Soenneker.Render.OpenApiClient.Registrycredentials;
 using Soenneker.Render.OpenApiClient.Services;
 using Soenneker.Render.OpenApiClient.TaskRuns;
@@ -128,11 +127,6 @@ namespace Soenneker.Render.OpenApiClient
         public global::Soenneker.Render.OpenApiClient.Projects.ProjectsRequestBuilder Projects
         {
             get => new global::Soenneker.Render.OpenApiClient.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The redis property</summary>
-        public global::Soenneker.Render.OpenApiClient.Redis.RedisRequestBuilder Redis
-        {
-            get => new global::Soenneker.Render.OpenApiClient.Redis.RedisRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The registrycredentials property</summary>
         public global::Soenneker.Render.OpenApiClient.Registrycredentials.RegistrycredentialsRequestBuilder Registrycredentials

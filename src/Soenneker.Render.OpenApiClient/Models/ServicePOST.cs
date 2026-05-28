@@ -300,23 +300,23 @@ namespace Soenneker.Render.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Render.OpenApiClient.Models.ServicePOST.ServicePOST_serviceDetails();
-                if("backgroundWorkerDetailsPOST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("BackgroundWorkerDetailsPOST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.BackgroundWorkerDetailsPOST = new global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetailsPOST();
                 }
-                else if("cronJobDetailsPOST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("CronJobDetailsPOST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.CronJobDetailsPOST = new global::Soenneker.Render.OpenApiClient.Models.CronJobDetailsPOST();
                 }
-                else if("privateServiceDetailsPOST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("PrivateServiceDetailsPOST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PrivateServiceDetailsPOST = new global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetailsPOST();
                 }
-                else if("staticSiteDetailsPOST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("StaticSiteDetailsPOST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.StaticSiteDetailsPOST = new global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetailsPOST();
                 }
-                else if("webServiceDetailsPOST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("WebServiceDetailsPOST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.WebServiceDetailsPOST = new global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsPOST();
                 }

@@ -25,10 +25,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The webhook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursor_webhook? Webhook { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursorWebhook? Webhook { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursor_webhook Webhook { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursorWebhook Webhook { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursor"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursor_webhook>(global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursor_webhook.CreateFromDiscriminatorValue); } },
+                { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursorWebhook>(global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursorWebhook.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cursor", Cursor);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursor_webhook>("webhook", Webhook);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebhookWithCursorWebhook>("webhook", Webhook);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,10 +25,10 @@ namespace Soenneker.Render.OpenApiClient.MetricsStream.Item
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Provider { get; set; }
+        public string? Provider { get; set; }
 #nullable restore
 #else
-        public UntypedNode Provider { get; set; }
+        public string Provider { get; set; }
 #endif
         /// <summary>The endpoint URL to stream metrics to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Render.OpenApiClient.MetricsStream.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.Render.OpenApiClient.MetricsStream.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteObjectValue<UntypedNode>("provider", Provider);
+            writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

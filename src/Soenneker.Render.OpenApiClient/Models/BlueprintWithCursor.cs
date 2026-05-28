@@ -18,10 +18,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The blueprint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor_blueprint? Blueprint { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprint? Blueprint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor_blueprint Blueprint { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprint Blueprint { get; set; }
 #endif
         /// <summary>The cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "blueprint", n => { Blueprint = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor_blueprint>(global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor_blueprint.CreateFromDiscriminatorValue); } },
+                { "blueprint", n => { Blueprint = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprint>(global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprint.CreateFromDiscriminatorValue); } },
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor_blueprint>("blueprint", Blueprint);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprint>("blueprint", Blueprint);
             writer.WriteStringValue("cursor", Cursor);
             writer.WriteAdditionalData(AdditionalData);
         }

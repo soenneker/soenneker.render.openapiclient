@@ -34,10 +34,10 @@ namespace Soenneker.Render.OpenApiClient.Logs.Streams.Resource.Item
         /// <summary>The setting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Setting { get; set; }
+        public string? Setting { get; set; }
 #nullable restore
 #else
-        public UntypedNode Setting { get; set; }
+        public string Setting { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Logs.Streams.Resource.Item.WithResourceGetResponse"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Render.OpenApiClient.Logs.Streams.Resource.Item
             {
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "setting", n => { Setting = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "setting", n => { Setting = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Render.OpenApiClient.Logs.Streams.Resource.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteObjectValue<UntypedNode>("setting", Setting);
+            writer.WriteStringValue("setting", Setting);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

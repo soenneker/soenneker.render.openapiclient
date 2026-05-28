@@ -17,10 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The autoscaling property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Autoscaling { get; set; }
+        public string? Autoscaling { get; set; }
 #nullable restore
 #else
-        public UntypedNode Autoscaling { get; set; }
+        public string Autoscaling { get; set; }
 #endif
         /// <summary>The disk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,9 +30,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.ServiceDisk Disk { get; set; }
 #endif
-        /// <summary>This field has been deprecated, runtime should be used in its place.</summary>
-        [Obsolete("")]
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEnv? Env { get; set; }
+        /// <summary>The env property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Env { get; set; }
+#nullable restore
+#else
+        public string Env { get; set; }
+#endif
         /// <summary>The envSpecificDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,9 +92,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.Previews Previews { get; set; }
 #endif
-        /// <summary>This field has been deprecated. previews.generation should be used in its place.</summary>
-        [Obsolete("")]
-        public global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled? PullRequestPreviewsEnabled { get; set; }
+        /// <summary>The pullRequestPreviewsEnabled property</summary>
+        public bool? PullRequestPreviewsEnabled { get; set; }
         /// <summary>Defaults to &quot;oregon&quot;</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Region? Region { get; set; }
         /// <summary>Controls whether render.com subdomains are available for the service</summary>
@@ -102,7 +106,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public WebServiceDetailsPOST()
         {
             AdditionalData = new Dictionary<string, object>();
-            PullRequestPreviewsEnabled = global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled.No;
             Region = global::Soenneker.Render.OpenApiClient.Models.Region.Oregon;
         }
         /// <summary>
@@ -123,9 +126,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "autoscaling", n => { Autoscaling = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "autoscaling", n => { Autoscaling = n.GetStringValue(); } },
                 { "disk", n => { Disk = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceDisk>(global::Soenneker.Render.OpenApiClient.Models.ServiceDisk.CreateFromDiscriminatorValue); } },
-                { "env", n => { Env = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>(); } },
+                { "env", n => { Env = n.GetStringValue(); } },
                 { "envSpecificDetails", n => { EnvSpecificDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPOST>(global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPOST.CreateFromDiscriminatorValue); } },
                 { "healthCheckPath", n => { HealthCheckPath = n.GetStringValue(); } },
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -135,7 +138,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); } },
                 { "preDeployCommand", n => { PreDeployCommand = n.GetStringValue(); } },
                 { "previews", n => { Previews = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Previews>(global::Soenneker.Render.OpenApiClient.Models.Previews.CreateFromDiscriminatorValue); } },
-                { "pullRequestPreviewsEnabled", n => { PullRequestPreviewsEnabled = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled>(); } },
+                { "pullRequestPreviewsEnabled", n => { PullRequestPreviewsEnabled = n.GetBoolValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
                 { "renderSubdomainPolicy", n => { RenderSubdomainPolicy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy>(); } },
                 { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime>(); } },
@@ -148,9 +151,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("autoscaling", Autoscaling);
+            writer.WriteStringValue("autoscaling", Autoscaling);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceDisk>("disk", Disk);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>("env", Env);
+            writer.WriteStringValue("env", Env);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPOST>("envSpecificDetails", EnvSpecificDetails);
             writer.WriteStringValue("healthCheckPath", HealthCheckPath);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>("ipAllowList", IpAllowList);
@@ -160,7 +163,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>("plan", Plan);
             writer.WriteStringValue("preDeployCommand", PreDeployCommand);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Previews>("previews", Previews);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled>("pullRequestPreviewsEnabled", PullRequestPreviewsEnabled);
+            writer.WriteBoolValue("pullRequestPreviewsEnabled", PullRequestPreviewsEnabled);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy>("renderSubdomainPolicy", RenderSubdomainPolicy);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime>("runtime", Runtime);

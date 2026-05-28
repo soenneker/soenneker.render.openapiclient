@@ -25,10 +25,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The workflowVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursor_workflowVersion? WorkflowVersion { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersion? WorkflowVersion { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursor_workflowVersion WorkflowVersion { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersion WorkflowVersion { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursor"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "workflowVersion", n => { WorkflowVersion = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursor_workflowVersion>(global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursor_workflowVersion.CreateFromDiscriminatorValue); } },
+                { "workflowVersion", n => { WorkflowVersion = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersion>(global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersion.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cursor", Cursor);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursor_workflowVersion>("workflowVersion", WorkflowVersion);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersion>("workflowVersion", WorkflowVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

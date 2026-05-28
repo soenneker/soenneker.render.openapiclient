@@ -37,13 +37,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         public static global::Soenneker.Render.OpenApiClient.Models.AddUpdateEnvVarInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Render.OpenApiClient.Models.AddUpdateEnvVarInput();
-            if("envVarGenerateValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("EnvVarGenerateValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.EnvVarGenerateValue = new global::Soenneker.Render.OpenApiClient.Models.EnvVarGenerateValue();
             }
-            else if("envVarValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("EnvVarValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.EnvVarValue = new global::Soenneker.Render.OpenApiClient.Models.EnvVarValue();
             }

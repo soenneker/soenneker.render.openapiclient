@@ -14,7 +14,7 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Must be either a full URL or the relative path to an image. If a relative path, Render uses the base service&apos;s image URL as its root. For example, if the base service&apos;s image URL is `docker.io/library/nginx:latest`, then valid values are: `docker.io/library/nginx:&lt;any tag or SHA&gt;`, `library/nginx:&lt;any tag or SHA&gt;`, or `nginx:&lt;any tag or SHA&gt;`. Note that the path must match (only the tag or SHA can vary).</summary>
+        /// <summary>&quot;Must be either a full URL or the relative path to an image. If a relative path, Render uses the base service&apos;s image URL as its root. For example, if the base service&apos;s image URL is `docker.io/library/nginx:latest`, then valid values are: `docker.io/library/nginx:&lt;any tag or SHA&gt;`, `library/nginx:&lt;any tag or SHA&gt;`, or `nginx:&lt;any tag or SHA&gt;`. Note that the path must match (only the tag or SHA can vary).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImagePath { get; set; }

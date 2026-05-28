@@ -25,10 +25,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The workflow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow? Workflow { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow? Workflow { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow Workflow { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow Workflow { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow>(global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow.CreateFromDiscriminatorValue); } },
+                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow>(global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cursor", Cursor);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursor_workflow>("workflow", Workflow);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow>("workflow", Workflow);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

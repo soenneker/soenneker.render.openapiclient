@@ -37,13 +37,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         public static global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails();
-            if("dockerDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("DockerDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DockerDetails = new global::Soenneker.Render.OpenApiClient.Models.DockerDetails();
             }
-            else if("nativeEnvironmentDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("NativeEnvironmentDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.NativeEnvironmentDetails = new global::Soenneker.Render.OpenApiClient.Models.NativeEnvironmentDetails();
             }

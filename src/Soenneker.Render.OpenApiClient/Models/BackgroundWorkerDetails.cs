@@ -17,24 +17,29 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The autoscaling property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Autoscaling { get; set; }
+        public string? Autoscaling { get; set; }
 #nullable restore
 #else
-        public UntypedNode Autoscaling { get; set; }
+        public string Autoscaling { get; set; }
 #endif
         /// <summary>The buildPlan property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.BuildPlan? BuildPlan { get; set; }
         /// <summary>The disk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Disk { get; set; }
+        public string? Disk { get; set; }
 #nullable restore
 #else
-        public UntypedNode Disk { get; set; }
+        public string Disk { get; set; }
 #endif
-        /// <summary>This field has been deprecated, runtime should be used in its place.</summary>
-        [Obsolete("")]
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEnv? Env { get; set; }
+        /// <summary>The env property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Env { get; set; }
+#nullable restore
+#else
+        public string Env { get; set; }
+#endif
         /// <summary>The envSpecificDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,9 +70,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.Previews Previews { get; set; }
 #endif
-        /// <summary>This field has been deprecated. previews.generation should be used in its place.</summary>
-        [Obsolete("")]
-        public global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled? PullRequestPreviewsEnabled { get; set; }
+        /// <summary>The pullRequestPreviewsEnabled property</summary>
+        public bool? PullRequestPreviewsEnabled { get; set; }
         /// <summary>Defaults to &quot;oregon&quot;</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Region? Region { get; set; }
         /// <summary>Runtime</summary>
@@ -87,7 +91,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             BuildPlan = global::Soenneker.Render.OpenApiClient.Models.BuildPlan.Starter;
-            PullRequestPreviewsEnabled = global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled.No;
             Region = global::Soenneker.Render.OpenApiClient.Models.Region.Oregon;
         }
         /// <summary>
@@ -108,17 +111,17 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "autoscaling", n => { Autoscaling = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "autoscaling", n => { Autoscaling = n.GetStringValue(); } },
                 { "buildPlan", n => { BuildPlan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.BuildPlan>(); } },
-                { "disk", n => { Disk = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "env", n => { Env = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>(); } },
+                { "disk", n => { Disk = n.GetStringValue(); } },
+                { "env", n => { Env = n.GetStringValue(); } },
                 { "envSpecificDetails", n => { EnvSpecificDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails>(global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails.CreateFromDiscriminatorValue); } },
                 { "maxShutdownDelaySeconds", n => { MaxShutdownDelaySeconds = n.GetIntValue(); } },
                 { "numInstances", n => { NumInstances = n.GetIntValue(); } },
                 { "parentServer", n => { ParentServer = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Resource>(global::Soenneker.Render.OpenApiClient.Models.Resource.CreateFromDiscriminatorValue); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); } },
                 { "previews", n => { Previews = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Previews>(global::Soenneker.Render.OpenApiClient.Models.Previews.CreateFromDiscriminatorValue); } },
-                { "pullRequestPreviewsEnabled", n => { PullRequestPreviewsEnabled = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled>(); } },
+                { "pullRequestPreviewsEnabled", n => { PullRequestPreviewsEnabled = n.GetBoolValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
                 { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime>(); } },
                 { "sshAddress", n => { SshAddress = n.GetStringValue(); } },
@@ -131,17 +134,17 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("autoscaling", Autoscaling);
+            writer.WriteStringValue("autoscaling", Autoscaling);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.BuildPlan>("buildPlan", BuildPlan);
-            writer.WriteObjectValue<UntypedNode>("disk", Disk);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>("env", Env);
+            writer.WriteStringValue("disk", Disk);
+            writer.WriteStringValue("env", Env);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails>("envSpecificDetails", EnvSpecificDetails);
             writer.WriteIntValue("maxShutdownDelaySeconds", MaxShutdownDelaySeconds);
             writer.WriteIntValue("numInstances", NumInstances);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Resource>("parentServer", ParentServer);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>("plan", Plan);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Previews>("previews", Previews);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled>("pullRequestPreviewsEnabled", PullRequestPreviewsEnabled);
+            writer.WriteBoolValue("pullRequestPreviewsEnabled", PullRequestPreviewsEnabled);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime>("runtime", Runtime);
             writer.WriteStringValue("sshAddress", SshAddress);

@@ -18,10 +18,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The event property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursor_event? Event { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent? Event { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursor_event Event { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent Event { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursor"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "event", n => { Event = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursor_event>(global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursor_event.CreateFromDiscriminatorValue); } },
+                { "event", n => { Event = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent>(global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursor_event>("event", Event);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent>("event", Event);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

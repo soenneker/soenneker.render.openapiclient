@@ -26,10 +26,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The sync property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.SyncWithCursor_sync? Sync { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSync? Sync { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.SyncWithCursor_sync Sync { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSync Sync { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.SyncWithCursor"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "sync", n => { Sync = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.SyncWithCursor_sync>(global::Soenneker.Render.OpenApiClient.Models.SyncWithCursor_sync.CreateFromDiscriminatorValue); } },
+                { "sync", n => { Sync = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSync>(global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSync.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cursor", Cursor);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.SyncWithCursor_sync>("sync", Sync);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSync>("sync", Sync);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

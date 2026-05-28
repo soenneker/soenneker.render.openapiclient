@@ -25,10 +25,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The webhookEvent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursor_webhookEvent? WebhookEvent { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursorWebhookEvent? WebhookEvent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursor_webhookEvent WebhookEvent { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursorWebhookEvent WebhookEvent { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursor"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "webhookEvent", n => { WebhookEvent = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursor_webhookEvent>(global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursor_webhookEvent.CreateFromDiscriminatorValue); } },
+                { "webhookEvent", n => { WebhookEvent = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursorWebhookEvent>(global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursorWebhookEvent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cursor", Cursor);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursor_webhookEvent>("webhookEvent", WebhookEvent);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursorWebhookEvent>("webhookEvent", WebhookEvent);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

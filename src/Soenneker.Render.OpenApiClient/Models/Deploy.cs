@@ -17,10 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The commit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.Deploy_commit? Commit { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.DeployCommit? Commit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.Deploy_commit Commit { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.DeployCommit Commit { get; set; }
 #endif
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -37,10 +37,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Image information used when creating the deploy. Not present for Git-backed deploys</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.Deploy_image? Image { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.DeployImage? Image { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.Deploy_image Image { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.DeployImage Image { get; set; }
 #endif
         /// <summary>The startedAt property</summary>
         public DateTimeOffset? StartedAt { get; set; }
@@ -75,11 +75,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "commit", n => { Commit = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Deploy_commit>(global::Soenneker.Render.OpenApiClient.Models.Deploy_commit.CreateFromDiscriminatorValue); } },
+                { "commit", n => { Commit = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.DeployCommit>(global::Soenneker.Render.OpenApiClient.Models.DeployCommit.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "finishedAt", n => { FinishedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "image", n => { Image = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Deploy_image>(global::Soenneker.Render.OpenApiClient.Models.Deploy_image.CreateFromDiscriminatorValue); } },
+                { "image", n => { Image = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.DeployImage>(global::Soenneker.Render.OpenApiClient.Models.DeployImage.CreateFromDiscriminatorValue); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.DeployStatus>(); } },
                 { "trigger", n => { Trigger = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Deploy_trigger>(); } },
@@ -93,11 +93,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Deploy_commit>("commit", Commit);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.DeployCommit>("commit", Commit);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteDateTimeOffsetValue("finishedAt", FinishedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Deploy_image>("image", Image);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.DeployImage>("image", Image);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.DeployStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Deploy_trigger>("trigger", Trigger);

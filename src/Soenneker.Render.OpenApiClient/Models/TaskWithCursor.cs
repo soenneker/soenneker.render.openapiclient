@@ -25,10 +25,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.TaskWithCursor_task? Task { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.TaskWithCursorTask? Task { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.TaskWithCursor_task Task { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.TaskWithCursorTask Task { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.TaskWithCursor"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "task", n => { Task = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.TaskWithCursor_task>(global::Soenneker.Render.OpenApiClient.Models.TaskWithCursor_task.CreateFromDiscriminatorValue); } },
+                { "task", n => { Task = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.TaskWithCursorTask>(global::Soenneker.Render.OpenApiClient.Models.TaskWithCursorTask.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cursor", Cursor);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.TaskWithCursor_task>("task", Task);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.TaskWithCursorTask>("task", Task);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

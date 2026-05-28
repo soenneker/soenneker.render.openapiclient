@@ -181,23 +181,23 @@ namespace Soenneker.Render.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Render.OpenApiClient.Models.ServicePATCH.ServicePATCH_serviceDetails();
-                if("backgroundWorkerDetailsPATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("BackgroundWorkerDetailsPATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.BackgroundWorkerDetailsPATCH = new global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetailsPATCH();
                 }
-                else if("cronJobDetailsPATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("CronJobDetailsPATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.CronJobDetailsPATCH = new global::Soenneker.Render.OpenApiClient.Models.CronJobDetailsPATCH();
                 }
-                else if("privateServiceDetailsPATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("PrivateServiceDetailsPATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PrivateServiceDetailsPATCH = new global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetailsPATCH();
                 }
-                else if("staticSiteDetailsPATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("StaticSiteDetailsPATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.StaticSiteDetailsPATCH = new global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetailsPATCH();
                 }
-                else if("webServiceDetailsPATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("WebServiceDetailsPATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.WebServiceDetailsPATCH = new global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsPATCH();
                 }

@@ -95,11 +95,11 @@ namespace Soenneker.Render.OpenApiClient.Registrycredentials
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.RegistryCredential?> PostAsync(global::Soenneker.Render.OpenApiClient.Registrycredentials.RegistrycredentialsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.RegistryCredential?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.CreateRegistryCredential body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.RegistryCredential> PostAsync(global::Soenneker.Render.OpenApiClient.Registrycredentials.RegistrycredentialsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.RegistryCredential> PostAsync(global::Soenneker.Render.OpenApiClient.Models.CreateRegistryCredential body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Soenneker.Render.OpenApiClient.Registrycredentials
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Registrycredentials.RegistrycredentialsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.CreateRegistryCredential body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Registrycredentials.RegistrycredentialsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.CreateRegistryCredential body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

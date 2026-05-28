@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.TaskRuns.Events
         {
         }
         /// <summary>
-        /// Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients SHOULD set `Accept: text/event-stream`and keep the connection open.
+        /// &quot;Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients SHOULD set `Accept: text/event-stream`and keep the connection open.&quot;
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Render.OpenApiClient.TaskRuns.Events
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients SHOULD set `Accept: text/event-stream`and keep the connection open.
+        /// &quot;Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients SHOULD set `Accept: text/event-stream`and keep the connection open.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,7 +97,7 @@ namespace Soenneker.Render.OpenApiClient.TaskRuns.Events
             return new global::Soenneker.Render.OpenApiClient.TaskRuns.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients SHOULD set `Accept: text/event-stream`and keep the connection open.
+        /// &quot;Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients SHOULD set `Accept: text/event-stream`and keep the connection open.&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 

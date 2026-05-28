@@ -44,10 +44,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The maintenance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Maintenance { get; set; }
+        public string? Maintenance { get; set; }
 #nullable restore
 #else
-        public UntypedNode Maintenance { get; set; }
+        public string Maintenance { get; set; }
 #endif
         /// <summary>The name of the Key Value instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +119,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "maintenance", n => { Maintenance = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "maintenance", n => { Maintenance = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.KeyValueOptions>(global::Soenneker.Render.OpenApiClient.Models.KeyValueOptions.CreateFromDiscriminatorValue); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Owner>(global::Soenneker.Render.OpenApiClient.Models.Owner.CreateFromDiscriminatorValue); } },
@@ -141,7 +141,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("environmentId", EnvironmentId);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>("ipAllowList", IpAllowList);
-            writer.WriteObjectValue<UntypedNode>("maintenance", Maintenance);
+            writer.WriteStringValue("maintenance", Maintenance);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.KeyValueOptions>("options", Options);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Owner>("owner", Owner);

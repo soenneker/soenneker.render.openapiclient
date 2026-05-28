@@ -271,23 +271,23 @@ namespace Soenneker.Render.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Render.OpenApiClient.Models.Service.Service_serviceDetails();
-                if("backgroundWorkerDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("BackgroundWorkerDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.BackgroundWorkerDetails = new global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetails();
                 }
-                else if("cronJobDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("CronJobDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.CronJobDetails = new global::Soenneker.Render.OpenApiClient.Models.CronJobDetails();
                 }
-                else if("privateServiceDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("PrivateServiceDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PrivateServiceDetails = new global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetails();
                 }
-                else if("staticSiteDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("StaticSiteDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.StaticSiteDetails = new global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetails();
                 }
-                else if("webServiceDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("WebServiceDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.WebServiceDetails = new global::Soenneker.Render.OpenApiClient.Models.WebServiceDetails();
                 }
