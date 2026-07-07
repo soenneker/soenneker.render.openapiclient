@@ -14,18 +14,6 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The currentCPU property</summary>
-        public int? CurrentCPU { get; set; }
-        /// <summary>The currentMemory property</summary>
-        public int? CurrentMemory { get; set; }
-        /// <summary>The fromInstances property</summary>
-        public int? FromInstances { get; set; }
-        /// <summary>The targetCPU property</summary>
-        public int? TargetCPU { get; set; }
-        /// <summary>The targetMemory property</summary>
-        public int? TargetMemory { get; set; }
-        /// <summary>The toInstances property</summary>
-        public int? ToInstances { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember3"/> and sets the default values.
         /// </summary>
@@ -51,12 +39,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currentCPU", n => { CurrentCPU = n.GetIntValue(); } },
-                { "currentMemory", n => { CurrentMemory = n.GetIntValue(); } },
-                { "fromInstances", n => { FromInstances = n.GetIntValue(); } },
-                { "targetCPU", n => { TargetCPU = n.GetIntValue(); } },
-                { "targetMemory", n => { TargetMemory = n.GetIntValue(); } },
-                { "toInstances", n => { ToInstances = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -66,12 +48,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("currentCPU", CurrentCPU);
-            writer.WriteIntValue("currentMemory", CurrentMemory);
-            writer.WriteIntValue("fromInstances", FromInstances);
-            writer.WriteIntValue("targetCPU", TargetCPU);
-            writer.WriteIntValue("targetMemory", TargetMemory);
-            writer.WriteIntValue("toInstances", ToInstances);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

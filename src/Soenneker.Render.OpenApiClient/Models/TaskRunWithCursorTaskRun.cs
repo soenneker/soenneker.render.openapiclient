@@ -17,10 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The attempts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRun_attempts>? Attempts { get; set; }
+        public List<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRunAttemptsItem>? Attempts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRun_attempts> Attempts { get; set; }
+        public List<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRunAttemptsItem> Attempts { get; set; }
 #endif
         /// <summary>The completedAt property</summary>
         public DateTimeOffset? CompletedAt { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The startedAt property</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRun_status? Status { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRunStatus? Status { get; set; }
         /// <summary>The taskId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,14 +87,14 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attempts", n => { Attempts = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRun_attempts>(global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRun_attempts.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "attempts", n => { Attempts = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRunAttemptsItem>(global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRunAttemptsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "parentTaskRunId", n => { ParentTaskRunId = n.GetStringValue(); } },
                 { "retries", n => { Retries = n.GetIntValue(); } },
                 { "rootTaskRunId", n => { RootTaskRunId = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRun_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRunStatus>(); } },
                 { "taskId", n => { TaskId = n.GetStringValue(); } },
             };
         }
@@ -105,14 +105,14 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRun_attempts>("attempts", Attempts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRunAttemptsItem>("attempts", Attempts);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("parentTaskRunId", ParentTaskRunId);
             writer.WriteIntValue("retries", Retries);
             writer.WriteStringValue("rootTaskRunId", RootTaskRunId);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRun_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.TaskRunWithCursorTaskRunStatus>("status", Status);
             writer.WriteStringValue("taskId", TaskId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -36,7 +36,7 @@ namespace Soenneker.Render.OpenApiClient.NotificationSettings.Overrides.Services
         /// <summary>
         /// Retrieve the notification override for the service with the provided ID.Note that you provide a service ID to this endpoint, not the ID for a particular override.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.RetrieveServiceNotificationOverrides200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.RetrieveServiceNotificationOverrides200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 401 status code</exception>
@@ -46,11 +46,11 @@ namespace Soenneker.Render.OpenApiClient.NotificationSettings.Overrides.Services
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.RetrieveServiceNotificationOverrides200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.RetrieveServiceNotificationOverrides200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.RetrieveServiceNotificationOverrides200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.RetrieveServiceNotificationOverrides200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -62,7 +62,7 @@ namespace Soenneker.Render.OpenApiClient.NotificationSettings.Overrides.Services
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.RetrieveServiceNotificationOverrides200>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.RetrieveServiceNotificationOverrides200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.RetrieveServiceNotificationOverrides200Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.RetrieveServiceNotificationOverrides200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the notification override for the service with the provided ID.
@@ -78,11 +78,11 @@ namespace Soenneker.Render.OpenApiClient.NotificationSettings.Overrides.Services
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> PatchAsync(global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverrides body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string?> PatchAsync(global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> PatchAsync(global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverrides body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string> PatchAsync(global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -124,11 +124,11 @@ namespace Soenneker.Render.OpenApiClient.NotificationSettings.Overrides.Services
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverrides body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverrides body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

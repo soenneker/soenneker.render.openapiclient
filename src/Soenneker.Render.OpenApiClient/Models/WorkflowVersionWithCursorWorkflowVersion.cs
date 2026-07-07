@@ -33,7 +33,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersion_status? Status { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersionStatus? Status { get; set; }
         /// <summary>The workflowId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +70,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersion_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersionStatus>(); } },
                 { "workflowId", n => { WorkflowId = n.GetStringValue(); } },
             };
         }
@@ -84,7 +84,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersion_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowVersionWithCursorWorkflowVersionStatus>("status", Status);
             writer.WriteStringValue("workflowId", WorkflowId);
             writer.WriteAdditionalData(AdditionalData);
         }

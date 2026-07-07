@@ -14,6 +14,14 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The externalConnectionPoolString property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalConnectionPoolString { get; set; }
+#nullable restore
+#else
+        public string ExternalConnectionPoolString { get; set; }
+#endif
         /// <summary>The externalConnectionString property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +29,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 #nullable restore
 #else
         public string ExternalConnectionString { get; set; }
+#endif
+        /// <summary>The internalConnectionPoolString property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InternalConnectionPoolString { get; set; }
+#nullable restore
+#else
+        public string InternalConnectionPoolString { get; set; }
 #endif
         /// <summary>The internalConnectionString property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +87,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "externalConnectionPoolString", n => { ExternalConnectionPoolString = n.GetStringValue(); } },
                 { "externalConnectionString", n => { ExternalConnectionString = n.GetStringValue(); } },
+                { "internalConnectionPoolString", n => { InternalConnectionPoolString = n.GetStringValue(); } },
                 { "internalConnectionString", n => { InternalConnectionString = n.GetStringValue(); } },
                 { "password", n => { Password = n.GetStringValue(); } },
                 { "psqlCommand", n => { PsqlCommand = n.GetStringValue(); } },
@@ -84,7 +102,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("externalConnectionPoolString", ExternalConnectionPoolString);
             writer.WriteStringValue("externalConnectionString", ExternalConnectionString);
+            writer.WriteStringValue("internalConnectionPoolString", InternalConnectionPoolString);
             writer.WriteStringValue("internalConnectionString", InternalConnectionString);
             writer.WriteStringValue("password", Password);
             writer.WriteStringValue("psqlCommand", PsqlCommand);

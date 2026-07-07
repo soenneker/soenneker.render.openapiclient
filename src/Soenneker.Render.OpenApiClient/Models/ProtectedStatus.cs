@@ -13,7 +13,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "protected")]
         #pragma warning disable CS1591
-        Protected,
+        ProtectedValue,
         #pragma warning restore CS1591
     }
 }

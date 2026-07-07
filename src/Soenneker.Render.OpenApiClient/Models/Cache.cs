@@ -15,14 +15,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The profile property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.Cache_profile? Profile { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.CacheProfile? Profile { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.Cache"/> and sets the default values.
         /// </summary>
         public Cache()
         {
             AdditionalData = new Dictionary<string, object>();
-            Profile = global::Soenneker.Render.OpenApiClient.Models.Cache_profile.NoCache;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +41,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "profile", n => { Profile = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Cache_profile>(); } },
+                { "profile", n => { Profile = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CacheProfile>(); } },
             };
         }
         /// <summary>
@@ -52,7 +51,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Cache_profile>("profile", Profile);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CacheProfile>("profile", Profile);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

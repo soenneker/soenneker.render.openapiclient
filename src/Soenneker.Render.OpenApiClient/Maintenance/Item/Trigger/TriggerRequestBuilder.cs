@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Maintenance.Item.Trigger
 {
     /// <summary>
-    /// Builds and executes requests for operations under \maintenance\{maintenanceRunParam}\trigger
+    /// Builds and executes requests for operations under \maintenance\{maintenanceRunId}\trigger
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TriggerRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Render.OpenApiClient.Maintenance.Item.Trigger
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TriggerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/maintenance/{maintenanceRunParam}/trigger", pathParameters)
+        public TriggerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/maintenance/{maintenanceRunId}/trigger", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Render.OpenApiClient.Maintenance.Item.Trigger
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TriggerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/maintenance/{maintenanceRunParam}/trigger", rawUrl)
+        public TriggerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/maintenance/{maintenanceRunId}/trigger", rawUrl)
         {
         }
         /// <summary>

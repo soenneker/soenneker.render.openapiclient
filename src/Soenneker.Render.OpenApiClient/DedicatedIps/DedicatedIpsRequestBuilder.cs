@@ -35,7 +35,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DedicatedIpsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dedicated-ips?ownerId={ownerId}", pathParameters)
+        public DedicatedIpsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dedicated-ips", pathParameters)
         {
         }
         /// <summary>
@@ -43,13 +43,13 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DedicatedIpsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dedicated-ips?ownerId={ownerId}", rawUrl)
+        public DedicatedIpsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dedicated-ips", rawUrl)
         {
         }
         /// <summary>
         /// List dedicated IP sets for a workspace.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.DedicatedIP&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.DedicatedIp&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -61,11 +61,11 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.DedicatedIP>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.DedicatedIps.DedicatedIpsRequestBuilder.DedicatedIpsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.DedicatedIp>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.DedicatedIps.DedicatedIpsRequestBuilder.DedicatedIpsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.DedicatedIP>> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.DedicatedIps.DedicatedIpsRequestBuilder.DedicatedIpsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.DedicatedIp>> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.DedicatedIps.DedicatedIpsRequestBuilder.DedicatedIpsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -79,13 +79,13 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Render.OpenApiClient.Models.DedicatedIP>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.DedicatedIP.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Render.OpenApiClient.Models.DedicatedIp>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.DedicatedIp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// &quot;Create a dedicated IP set. Provisioning an IP set is asynchronous. The response returns immediately with `status: CREATING` and `ips: []`. When provisioning completes, status changes to `RUNNING` and `ips` contains your assigned addresses.If `environmentIds` is omitted or empty, this IP set applies to all services in the workspace in the selected region. Otherwise, it applies only to services in the listed environments in that region.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.DedicatedIP"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.DedicatedIp"/></returns>
         /// <param name="body">Input for creating a dedicated IP set.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -100,11 +100,11 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.DedicatedIP?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.DedicatedIPPOST body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.DedicatedIp?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.DedicatedIppost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.DedicatedIP> PostAsync(global::Soenneker.Render.OpenApiClient.Models.DedicatedIPPOST body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.DedicatedIp> PostAsync(global::Soenneker.Render.OpenApiClient.Models.DedicatedIppost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -121,7 +121,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.DedicatedIP>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.DedicatedIP.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.DedicatedIp>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.DedicatedIp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List dedicated IP sets for a workspace.
@@ -137,7 +137,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.DedicatedIps.DedicatedIpsRequestBuilder.DedicatedIpsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/dedicated-ips?ownerId={ownerId}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -150,15 +150,15 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.DedicatedIPPOST body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.DedicatedIppost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.DedicatedIPPOST body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.DedicatedIppost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/dedicated-ips", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

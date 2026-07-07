@@ -167,11 +167,11 @@ namespace Soenneker.Render.OpenApiClient.Logs.Streams.Resource
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("setting")]
-            public global::Soenneker.Render.OpenApiClient.Logs.Streams.Resource.GetSettingQueryParameterType[]? Setting { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.ListResourceLogStreamsSettingParameterItem[]? Setting { get; set; }
 #nullable restore
 #else
             [QueryParameter("setting")]
-            public global::Soenneker.Render.OpenApiClient.Logs.Streams.Resource.GetSettingQueryParameterType[] Setting { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.ListResourceLogStreamsSettingParameterItem[] Setting { get; set; }
 #endif
         }
     }

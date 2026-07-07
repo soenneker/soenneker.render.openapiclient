@@ -9,7 +9,7 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         [EnumMember(Value = "journal_snapshot")]
         #pragma warning disable CS1591
-        Journal_snapshot,
+        JournalSnapshot,
         #pragma warning restore CS1591
         [EnumMember(Value = "snapshot")]
         #pragma warning disable CS1591

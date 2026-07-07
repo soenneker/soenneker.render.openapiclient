@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.KeyValue.Item.ConnectionInfo
 {
     /// <summary>
-    /// Builds and executes requests for operations under \key-value\{keyValueId}\connection-info
+    /// Builds and executes requests for operations under \key-value\{redisId}\connection-info
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectionInfoRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Render.OpenApiClient.KeyValue.Item.ConnectionInfo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectionInfoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/key-value/{keyValueId}/connection-info", pathParameters)
+        public ConnectionInfoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/key-value/{redisId}/connection-info", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Render.OpenApiClient.KeyValue.Item.ConnectionInfo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectionInfoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/key-value/{keyValueId}/connection-info", rawUrl)
+        public ConnectionInfoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/key-value/{redisId}/connection-info", rawUrl)
         {
         }
         /// <summary>

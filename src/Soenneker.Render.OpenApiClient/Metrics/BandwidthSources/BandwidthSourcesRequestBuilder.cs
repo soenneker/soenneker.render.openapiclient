@@ -36,27 +36,27 @@ namespace Soenneker.Render.OpenApiClient.Metrics.BandwidthSources
         /// <summary>
         /// Get bandwidth usage for one or more resources broken down by traffic source (HTTP, WebSocket, NAT, PrivateLink).Returns hourly data points with traffic source breakdown. Traffic source data is available from March 9, 2025 onwards.Queries for earlier dates will return a 400 Bad Request error.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Metrics.BandwidthSources.BandwidthSourcesRequestBuilder.BandwidthSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Metrics.BandwidthSources.BandwidthSourcesRequestBuilder.BandwidthSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Metrics.BandwidthSources.BandwidthSourcesRequestBuilder.BandwidthSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Metrics.BandwidthSources.BandwidthSourcesRequestBuilder.BandwidthSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources400Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get bandwidth usage for one or more resources broken down by traffic source (HTTP, WebSocket, NAT, PrivateLink).Returns hourly data points with traffic source breakdown. Traffic source data is available from March 9, 2025 onwards.Queries for earlier dates will return a 400 Bad Request error.

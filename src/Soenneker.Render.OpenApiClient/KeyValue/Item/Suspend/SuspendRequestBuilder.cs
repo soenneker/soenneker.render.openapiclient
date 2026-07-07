@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.KeyValue.Item.Suspend
 {
     /// <summary>
-    /// Builds and executes requests for operations under \key-value\{keyValueId}\suspend
+    /// Builds and executes requests for operations under \key-value\{redisId}\suspend
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuspendRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Render.OpenApiClient.KeyValue.Item.Suspend
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SuspendRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/key-value/{keyValueId}/suspend", pathParameters)
+        public SuspendRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/key-value/{redisId}/suspend", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Render.OpenApiClient.KeyValue.Item.Suspend
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SuspendRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/key-value/{keyValueId}/suspend", rawUrl)
+        public SuspendRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/key-value/{redisId}/suspend", rawUrl)
         {
         }
         /// <summary>

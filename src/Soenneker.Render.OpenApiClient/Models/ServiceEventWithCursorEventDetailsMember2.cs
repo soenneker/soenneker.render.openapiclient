@@ -14,10 +14,6 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fromInstances property</summary>
-        public int? FromInstances { get; set; }
-        /// <summary>The toInstances property</summary>
-        public int? ToInstances { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember2"/> and sets the default values.
         /// </summary>
@@ -43,8 +39,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fromInstances", n => { FromInstances = n.GetIntValue(); } },
-                { "toInstances", n => { ToInstances = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +48,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("fromInstances", FromInstances);
-            writer.WriteIntValue("toInstances", ToInstances);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

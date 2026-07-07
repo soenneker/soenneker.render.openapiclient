@@ -9,35 +9,35 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         [EnumMember(Value = "11")]
         #pragma warning disable CS1591
-        OneOne,
+        Value11,
         #pragma warning restore CS1591
         [EnumMember(Value = "12")]
         #pragma warning disable CS1591
-        OneTwo,
+        Value12,
         #pragma warning restore CS1591
         [EnumMember(Value = "13")]
         #pragma warning disable CS1591
-        OneThree,
+        Value13,
         #pragma warning restore CS1591
         [EnumMember(Value = "14")]
         #pragma warning disable CS1591
-        OneFour,
+        Value14,
         #pragma warning restore CS1591
         [EnumMember(Value = "15")]
         #pragma warning disable CS1591
-        OneFive,
+        Value15,
         #pragma warning restore CS1591
         [EnumMember(Value = "16")]
         #pragma warning disable CS1591
-        OneSix,
+        Value16,
         #pragma warning restore CS1591
         [EnumMember(Value = "17")]
         #pragma warning disable CS1591
-        OneSeven,
+        Value17,
         #pragma warning restore CS1591
         [EnumMember(Value = "18")]
         #pragma warning disable CS1591
-        OneEight,
+        Value18,
         #pragma warning restore CS1591
     }
 }

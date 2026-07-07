@@ -18,11 +18,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "build_in_progress")]
         #pragma warning disable CS1591
-        Build_in_progress,
+        BuildInProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "update_in_progress")]
         #pragma warning disable CS1591
-        Update_in_progress,
+        UpdateInProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "live")]
         #pragma warning disable CS1591
@@ -34,11 +34,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "build_failed")]
         #pragma warning disable CS1591
-        Build_failed,
+        BuildFailed,
         #pragma warning restore CS1591
         [EnumMember(Value = "update_failed")]
         #pragma warning disable CS1591
-        Update_failed,
+        UpdateFailed,
         #pragma warning restore CS1591
         [EnumMember(Value = "canceled")]
         #pragma warning disable CS1591
@@ -46,11 +46,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "pre_deploy_in_progress")]
         #pragma warning disable CS1591
-        Pre_deploy_in_progress,
+        PreDeployInProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "pre_deploy_failed")]
         #pragma warning disable CS1591
-        Pre_deploy_failed,
+        PreDeployFailed,
         #pragma warning restore CS1591
     }
 }

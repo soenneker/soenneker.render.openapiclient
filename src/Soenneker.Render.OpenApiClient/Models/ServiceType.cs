@@ -10,23 +10,23 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         [EnumMember(Value = "static_site")]
         #pragma warning disable CS1591
-        Static_site,
+        StaticSite,
         #pragma warning restore CS1591
         [EnumMember(Value = "web_service")]
         #pragma warning disable CS1591
-        Web_service,
+        WebService,
         #pragma warning restore CS1591
         [EnumMember(Value = "private_service")]
         #pragma warning disable CS1591
-        Private_service,
+        PrivateService,
         #pragma warning restore CS1591
         [EnumMember(Value = "background_worker")]
         #pragma warning disable CS1591
-        Background_worker,
+        BackgroundWorker,
         #pragma warning restore CS1591
         [EnumMember(Value = "cron_job")]
         #pragma warning disable CS1591
-        Cron_job,
+        CronJob,
         #pragma warning restore CS1591
     }
 }

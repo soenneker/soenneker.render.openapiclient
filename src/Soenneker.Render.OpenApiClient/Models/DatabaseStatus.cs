@@ -22,7 +22,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "config_restart")]
         #pragma warning disable CS1591
-        Config_restart,
+        ConfigRestart,
         #pragma warning restore CS1591
         [EnumMember(Value = "suspended")]
         #pragma warning disable CS1591
@@ -30,19 +30,19 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "maintenance_scheduled")]
         #pragma warning disable CS1591
-        Maintenance_scheduled,
+        MaintenanceScheduled,
         #pragma warning restore CS1591
         [EnumMember(Value = "maintenance_in_progress")]
         #pragma warning disable CS1591
-        Maintenance_in_progress,
+        MaintenanceInProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "recovery_failed")]
         #pragma warning disable CS1591
-        Recovery_failed,
+        RecoveryFailed,
         #pragma warning restore CS1591
         [EnumMember(Value = "recovery_in_progress")]
         #pragma warning disable CS1591
-        Recovery_in_progress,
+        RecoveryInProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknown")]
         #pragma warning disable CS1591
@@ -50,7 +50,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "updating_instance")]
         #pragma warning disable CS1591
-        Updating_instance,
+        UpdatingInstance,
         #pragma warning restore CS1591
     }
 }

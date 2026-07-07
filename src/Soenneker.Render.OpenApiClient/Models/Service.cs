@@ -111,10 +111,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The serviceDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.Service.Service_serviceDetails? ServiceDetails { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceServiceDetails? ServiceDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.Service.Service_serviceDetails ServiceDetails { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceServiceDetails ServiceDetails { get; set; }
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Slug { get; set; }
 #endif
         /// <summary>The suspended property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.Service_suspended? Suspended { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceSuspended? Suspended { get; set; }
         /// <summary>The suspenders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -144,7 +144,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public Service()
         {
             AdditionalData = new Dictionary<string, object>();
-            AutoDeploy = global::Soenneker.Render.OpenApiClient.Models.AutoDeploy.Yes;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -178,9 +177,9 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "registryCredential", n => { RegistryCredential = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.RegistryCredentialSummary>(global::Soenneker.Render.OpenApiClient.Models.RegistryCredentialSummary.CreateFromDiscriminatorValue); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
                 { "rootDir", n => { RootDir = n.GetStringValue(); } },
-                { "serviceDetails", n => { ServiceDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Service.Service_serviceDetails>(global::Soenneker.Render.OpenApiClient.Models.Service.Service_serviceDetails.CreateFromDiscriminatorValue); } },
+                { "serviceDetails", n => { ServiceDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceServiceDetails>(global::Soenneker.Render.OpenApiClient.Models.ServiceServiceDetails.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "suspended", n => { Suspended = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Service_suspended>(); } },
+                { "suspended", n => { Suspended = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceSuspended>(); } },
                 { "suspenders", n => { Suspenders = n.GetCollectionOfEnumValues<global::Soenneker.Render.OpenApiClient.Models.SuspenderType>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceType>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -207,148 +206,13 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.RegistryCredentialSummary>("registryCredential", RegistryCredential);
             writer.WriteStringValue("repo", Repo);
             writer.WriteStringValue("rootDir", RootDir);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Service.Service_serviceDetails>("serviceDetails", ServiceDetails);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceServiceDetails>("serviceDetails", ServiceDetails);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Service_suspended>("suspended", Suspended);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceSuspended>("suspended", Suspended);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Render.OpenApiClient.Models.SuspenderType>("suspenders", Suspenders);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceType>("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetails"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.CronJobDetails"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetails"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetails"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.WebServiceDetails"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Service_serviceDetails : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetails? BackgroundWorkerDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetails BackgroundWorkerDetails { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.CronJobDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Render.OpenApiClient.Models.CronJobDetails? CronJobDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Render.OpenApiClient.Models.CronJobDetails CronJobDetails { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetails? PrivateServiceDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetails PrivateServiceDetails { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetails? StaticSiteDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetails StaticSiteDetails { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.WebServiceDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Render.OpenApiClient.Models.WebServiceDetails? WebServiceDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Render.OpenApiClient.Models.WebServiceDetails WebServiceDetails { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.Service.Service_serviceDetails"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Render.OpenApiClient.Models.Service.Service_serviceDetails CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Render.OpenApiClient.Models.Service.Service_serviceDetails();
-                if("BackgroundWorkerDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.BackgroundWorkerDetails = new global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetails();
-                }
-                else if("CronJobDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CronJobDetails = new global::Soenneker.Render.OpenApiClient.Models.CronJobDetails();
-                }
-                else if("PrivateServiceDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PrivateServiceDetails = new global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetails();
-                }
-                else if("StaticSiteDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.StaticSiteDetails = new global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetails();
-                }
-                else if("WebServiceDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WebServiceDetails = new global::Soenneker.Render.OpenApiClient.Models.WebServiceDetails();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BackgroundWorkerDetails != null)
-                {
-                    return BackgroundWorkerDetails.GetFieldDeserializers();
-                }
-                else if(CronJobDetails != null)
-                {
-                    return CronJobDetails.GetFieldDeserializers();
-                }
-                else if(PrivateServiceDetails != null)
-                {
-                    return PrivateServiceDetails.GetFieldDeserializers();
-                }
-                else if(StaticSiteDetails != null)
-                {
-                    return StaticSiteDetails.GetFieldDeserializers();
-                }
-                else if(WebServiceDetails != null)
-                {
-                    return WebServiceDetails.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(BackgroundWorkerDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetails>(null, BackgroundWorkerDetails);
-                }
-                else if(CronJobDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CronJobDetails>(null, CronJobDetails);
-                }
-                else if(PrivateServiceDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetails>(null, PrivateServiceDetails);
-                }
-                else if(StaticSiteDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetails>(null, StaticSiteDetails);
-                }
-                else if(WebServiceDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebServiceDetails>(null, WebServiceDetails);
-                }
-            }
         }
     }
 }

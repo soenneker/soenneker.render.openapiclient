@@ -9,23 +9,23 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         [EnumMember(Value = "GITHUB")]
         #pragma warning disable CS1591
-        GITHUB,
+        Github,
         #pragma warning restore CS1591
         [EnumMember(Value = "GITLAB")]
         #pragma warning disable CS1591
-        GITLAB,
+        Gitlab,
         #pragma warning restore CS1591
         [EnumMember(Value = "DOCKER")]
         #pragma warning disable CS1591
-        DOCKER,
+        Docker,
         #pragma warning restore CS1591
         [EnumMember(Value = "GOOGLE_ARTIFACT")]
         #pragma warning disable CS1591
-        GOOGLE_ARTIFACT,
+        GoogleArtifact,
         #pragma warning restore CS1591
         [EnumMember(Value = "AWS_ECR")]
         #pragma warning disable CS1591
-        AWS_ECR,
+        AwsEcr,
         #pragma warning restore CS1591
     }
 }

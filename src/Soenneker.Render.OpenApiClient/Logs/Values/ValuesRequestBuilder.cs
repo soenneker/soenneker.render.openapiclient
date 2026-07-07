@@ -112,7 +112,7 @@ namespace Soenneker.Render.OpenApiClient.Logs.Values
             public DateTimeOffset? EndTime { get; set; }
             /// <summary>The label to query logs for</summary>
             [QueryParameter("label")]
-            public global::Soenneker.Render.OpenApiClient.Logs.Values.GetLabelQueryParameterType? Label { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.ListLogsValuesLabelParameter? Label { get; set; }
             /// <summary>The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }

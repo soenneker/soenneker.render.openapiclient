@@ -17,14 +17,14 @@ namespace Soenneker.Render.OpenApiClient.EnvGroups.Item.SecretFiles
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.envGroups.item.secretFiles.item collection</summary>
         /// <param name="position">The name of the secret file</param>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.EnvGroups.Item.SecretFiles.Item.WithSecretFileNameItemRequestBuilder"/></returns>
-        public global::Soenneker.Render.OpenApiClient.EnvGroups.Item.SecretFiles.Item.WithSecretFileNameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.EnvGroups.Item.SecretFiles.Item.WithEnvVarKeyItemRequestBuilder"/></returns>
+        public global::Soenneker.Render.OpenApiClient.EnvGroups.Item.SecretFiles.Item.WithEnvVarKeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("secretFileName", position);
-                return new global::Soenneker.Render.OpenApiClient.EnvGroups.Item.SecretFiles.Item.WithSecretFileNameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("envVarKey", position);
+                return new global::Soenneker.Render.OpenApiClient.EnvGroups.Item.SecretFiles.Item.WithEnvVarKeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

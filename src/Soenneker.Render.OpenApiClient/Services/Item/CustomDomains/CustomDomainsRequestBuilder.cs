@@ -20,14 +20,14 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.CustomDomains
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.services.item.customDomains.item collection</summary>
         /// <param name="position">The ID or name of the custom domain</param>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.WithCustomDomainIdOrNameItemRequestBuilder"/></returns>
-        public global::Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.WithCustomDomainIdOrNameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.WithCustomDomainNameOrItemRequestBuilder"/></returns>
+        public global::Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.WithCustomDomainNameOrItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("customDomainIdOrName", position);
-                return new global::Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.WithCustomDomainIdOrNameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("customDomainNameOrId", position);
+                return new global::Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.WithCustomDomainNameOrItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -106,11 +106,11 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.CustomDomains
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.CustomDomain>?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.CreateCustomDomain body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.CustomDomain>?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.CreateCustomDomainRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.CustomDomain>> PostAsync(global::Soenneker.Render.OpenApiClient.Models.CreateCustomDomain body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.CustomDomain>> PostAsync(global::Soenneker.Render.OpenApiClient.Models.CreateCustomDomainRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -159,11 +159,11 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.CustomDomains
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.CreateCustomDomain body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.CreateCustomDomainRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.CreateCustomDomain body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.CreateCustomDomainRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -206,7 +206,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.CustomDomains
 #endif
             /// <summary>Filter for domain type</summary>
             [QueryParameter("domainType")]
-            public global::Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.GetDomainTypeQueryParameterType? DomainType { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.ListCustomDomainsDomainTypeParameter? DomainType { get; set; }
             /// <summary>The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -222,7 +222,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.CustomDomains
 #endif
             /// <summary>Filter for domain verification status (`verified` or `unverified`)</summary>
             [QueryParameter("verificationStatus")]
-            public global::Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.GetVerificationStatusQueryParameterType? VerificationStatus { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.ListCustomDomainsVerificationStatusParameter? VerificationStatus { get; set; }
         }
     }
 }

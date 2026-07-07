@@ -20,14 +20,14 @@ namespace Soenneker.Render.OpenApiClient.Maintenance
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.maintenance.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Maintenance.Item.WithMaintenanceRunParamItemRequestBuilder"/></returns>
-        public global::Soenneker.Render.OpenApiClient.Maintenance.Item.WithMaintenanceRunParamItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Maintenance.Item.WithMaintenanceRunItemRequestBuilder"/></returns>
+        public global::Soenneker.Render.OpenApiClient.Maintenance.Item.WithMaintenanceRunItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("maintenanceRunParam", position);
-                return new global::Soenneker.Render.OpenApiClient.Maintenance.Item.WithMaintenanceRunParamItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("maintenanceRunId", position);
+                return new global::Soenneker.Render.OpenApiClient.Maintenance.Item.WithMaintenanceRunItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -136,11 +136,11 @@ namespace Soenneker.Render.OpenApiClient.Maintenance
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("state")]
-            public global::Soenneker.Render.OpenApiClient.Maintenance.GetStateQueryParameterType[]? State { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.ListMaintenanceStateParameterItem[]? State { get; set; }
 #nullable restore
 #else
             [QueryParameter("state")]
-            public global::Soenneker.Render.OpenApiClient.Maintenance.GetStateQueryParameterType[] State { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.ListMaintenanceStateParameterItem[] State { get; set; }
 #endif
         }
     }

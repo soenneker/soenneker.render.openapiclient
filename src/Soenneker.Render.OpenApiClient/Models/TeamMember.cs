@@ -35,7 +35,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The member&apos;s workspace role. Values are always returned in uppercase.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.TeamMemberRole? Role { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.TeamMember_status? Status { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.TeamMemberStatus? Status { get; set; }
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +73,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "mfaEnabled", n => { MfaEnabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.TeamMemberRole>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.TeamMember_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.TeamMemberStatus>(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteBoolValue("mfaEnabled", MfaEnabled);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.TeamMemberRole>("role", Role);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.TeamMember_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.TeamMemberStatus>("status", Status);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,7 +15,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Controls autodeploy behavior. &quot;commit&quot; deploys when a commit is pushed to the branch. &quot;checksPass&quot; waits for CI checks to pass before deploying. &quot;off&quot; disables autodeploy.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow_autoDeployTrigger? AutoDeployTrigger { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowAutoDeployTrigger? AutoDeployTrigger { get; set; }
         /// <summary>The buildConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string OwnerId { get; set; }
 #endif
         /// <summary>Defaults to &quot;oregon&quot;</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow_region? Region { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowRegion? Region { get; set; }
         /// <summary>Command to run the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,8 +84,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public WorkflowWithCursorWorkflow()
         {
             AdditionalData = new Dictionary<string, object>();
-            AutoDeployTrigger = global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow_autoDeployTrigger.Commit;
-            Region = global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow_region.Oregon;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -105,14 +103,14 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow_autoDeployTrigger>(); } },
+                { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowAutoDeployTrigger>(); } },
                 { "buildConfig", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowBuildConfig>(global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowBuildConfig.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow_region>(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowRegion>(); } },
                 { "runCommand", n => { RunCommand = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -125,14 +123,14 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow_autoDeployTrigger>("autoDeployTrigger", AutoDeployTrigger);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowAutoDeployTrigger>("autoDeployTrigger", AutoDeployTrigger);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowBuildConfig>("buildConfig", BuildConfig);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("environmentId", EnvironmentId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflow_region>("region", Region);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowRegion>("region", Region);
             writer.WriteStringValue("runCommand", RunCommand);
             writer.WriteStringValue("slug", Slug);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);

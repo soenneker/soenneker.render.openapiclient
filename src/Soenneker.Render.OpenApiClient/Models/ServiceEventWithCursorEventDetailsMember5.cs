@@ -14,27 +14,6 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The buildId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BuildId { get; set; }
-#nullable restore
-#else
-        public string BuildId { get; set; }
-#endif
-        /// <summary>The buildStatus property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5_buildStatus? BuildStatus { get; set; }
-        /// <summary>The reason property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5_reason? Reason { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5_reason Reason { get; set; }
-#endif
-        /// <summary>The status property</summary>
-        [Obsolete("")]
-        public int? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5"/> and sets the default values.
         /// </summary>
@@ -60,10 +39,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "buildId", n => { BuildId = n.GetStringValue(); } },
-                { "buildStatus", n => { BuildStatus = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5_buildStatus>(); } },
-                { "reason", n => { Reason = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5_reason>(global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5_reason.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -73,10 +48,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("buildId", BuildId);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5_buildStatus>("buildStatus", BuildStatus);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5_reason>("reason", Reason);
-            writer.WriteIntValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

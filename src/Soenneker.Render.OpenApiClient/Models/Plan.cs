@@ -13,7 +13,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "starter_plus")]
         #pragma warning disable CS1591
-        Starter_plus,
+        StarterPlus,
         #pragma warning restore CS1591
         [EnumMember(Value = "standard")]
         #pragma warning disable CS1591
@@ -21,7 +21,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "standard_plus")]
         #pragma warning disable CS1591
-        Standard_plus,
+        StandardPlus,
         #pragma warning restore CS1591
         [EnumMember(Value = "pro")]
         #pragma warning disable CS1591
@@ -29,15 +29,15 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "pro_plus")]
         #pragma warning disable CS1591
-        Pro_plus,
+        ProPlus,
         #pragma warning restore CS1591
         [EnumMember(Value = "pro_max")]
         #pragma warning disable CS1591
-        Pro_max,
+        ProMax,
         #pragma warning restore CS1591
         [EnumMember(Value = "pro_ultra")]
         #pragma warning disable CS1591
-        Pro_ultra,
+        ProUltra,
         #pragma warning restore CS1591
         [EnumMember(Value = "free")]
         #pragma warning disable CS1591
@@ -49,23 +49,23 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "starter_legacy")]
         #pragma warning disable CS1591
-        Starter_legacy,
+        StarterLegacy,
         #pragma warning restore CS1591
         [EnumMember(Value = "standard_legacy")]
         #pragma warning disable CS1591
-        Standard_legacy,
+        StandardLegacy,
         #pragma warning restore CS1591
         [EnumMember(Value = "standard_plus_legacy")]
         #pragma warning disable CS1591
-        Standard_plus_legacy,
+        StandardPlusLegacy,
         #pragma warning restore CS1591
         [EnumMember(Value = "pro_legacy")]
         #pragma warning disable CS1591
-        Pro_legacy,
+        ProLegacy,
         #pragma warning restore CS1591
         [EnumMember(Value = "pro_plus_legacy")]
         #pragma warning disable CS1591
-        Pro_plus_legacy,
+        ProPlusLegacy,
         #pragma warning restore CS1591
     }
 }

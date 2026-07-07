@@ -36,18 +36,18 @@ namespace Soenneker.Render.OpenApiClient.Metrics.Filters.Application
         /// <summary>
         /// List instance values to filter by for one or more resources.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Metrics.Filters.Application.Application&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Render.OpenApiClient.Metrics.Filters.Application.Application>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Metrics.Filters.Application.ApplicationRequestBuilder.ApplicationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Metrics.Filters.Application.ApplicationRequestBuilder.ApplicationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Render.OpenApiClient.Metrics.Filters.Application.Application>> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Metrics.Filters.Application.ApplicationRequestBuilder.ApplicationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Metrics.Filters.Application.ApplicationRequestBuilder.ApplicationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Metrics.Filters.Application
                 { "400", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Render.OpenApiClient.Metrics.Filters.Application.Application>(requestInfo, global::Soenneker.Render.OpenApiClient.Metrics.Filters.Application.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseResponseJsonItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

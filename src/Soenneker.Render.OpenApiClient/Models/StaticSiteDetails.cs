@@ -56,8 +56,9 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string PublishPath { get; set; }
 #endif
-        /// <summary>The pullRequestPreviewsEnabled property</summary>
-        public bool? PullRequestPreviewsEnabled { get; set; }
+        /// <summary>This field has been deprecated. previews.generation should be used in its place.</summary>
+        [Obsolete("")]
+        public global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled? PullRequestPreviewsEnabled { get; set; }
         /// <summary>Controls whether render.com subdomains are available for the service</summary>
         public global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy? RenderSubdomainPolicy { get; set; }
         /// <summary>The url property</summary>
@@ -74,7 +75,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public StaticSiteDetails()
         {
             AdditionalData = new Dictionary<string, object>();
-            BuildPlan = global::Soenneker.Render.OpenApiClient.Models.BuildPlan.Starter;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -100,7 +100,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "parentServer", n => { ParentServer = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Resource>(global::Soenneker.Render.OpenApiClient.Models.Resource.CreateFromDiscriminatorValue); } },
                 { "previews", n => { Previews = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Previews>(global::Soenneker.Render.OpenApiClient.Models.Previews.CreateFromDiscriminatorValue); } },
                 { "publishPath", n => { PublishPath = n.GetStringValue(); } },
-                { "pullRequestPreviewsEnabled", n => { PullRequestPreviewsEnabled = n.GetBoolValue(); } },
+                { "pullRequestPreviewsEnabled", n => { PullRequestPreviewsEnabled = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled>(); } },
                 { "renderSubdomainPolicy", n => { RenderSubdomainPolicy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -118,7 +118,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Resource>("parentServer", ParentServer);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Previews>("previews", Previews);
             writer.WriteStringValue("publishPath", PublishPath);
-            writer.WriteBoolValue("pullRequestPreviewsEnabled", PullRequestPreviewsEnabled);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled>("pullRequestPreviewsEnabled", PullRequestPreviewsEnabled);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy>("renderSubdomainPolicy", RenderSubdomainPolicy);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

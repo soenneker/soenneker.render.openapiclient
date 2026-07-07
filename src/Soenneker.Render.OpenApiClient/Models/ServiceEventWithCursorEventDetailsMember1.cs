@@ -14,22 +14,6 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fromConfig property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FromConfig { get; set; }
-#nullable restore
-#else
-        public string FromConfig { get; set; }
-#endif
-        /// <summary>The toConfig property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ToConfig { get; set; }
-#nullable restore
-#else
-        public string ToConfig { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember1"/> and sets the default values.
         /// </summary>
@@ -55,8 +39,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fromConfig", n => { FromConfig = n.GetStringValue(); } },
-                { "toConfig", n => { ToConfig = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +48,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("fromConfig", FromConfig);
-            writer.WriteStringValue("toConfig", ToConfig);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,22 +14,6 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The buildId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BuildId { get; set; }
-#nullable restore
-#else
-        public string BuildId { get; set; }
-#endif
-        /// <summary>The trigger property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6_trigger? Trigger { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6_trigger Trigger { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6"/> and sets the default values.
         /// </summary>
@@ -55,8 +39,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "buildId", n => { BuildId = n.GetStringValue(); } },
-                { "trigger", n => { Trigger = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6_trigger>(global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6_trigger.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +48,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("buildId", BuildId);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6_trigger>("trigger", Trigger);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

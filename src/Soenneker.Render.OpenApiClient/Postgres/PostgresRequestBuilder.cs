@@ -97,11 +97,11 @@ namespace Soenneker.Render.OpenApiClient.Postgres
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.PostgresDetail?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.PostgresPOSTInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.PostgresDetail?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.PostgresPostInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.PostgresDetail> PostAsync(global::Soenneker.Render.OpenApiClient.Models.PostgresPOSTInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.PostgresDetail> PostAsync(global::Soenneker.Render.OpenApiClient.Models.PostgresPostInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Soenneker.Render.OpenApiClient.Postgres
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.PostgresPOSTInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.PostgresPostInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.PostgresPOSTInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.PostgresPostInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -239,11 +239,11 @@ namespace Soenneker.Render.OpenApiClient.Postgres
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("suspended")]
-            public global::Soenneker.Render.OpenApiClient.Postgres.GetSuspendedQueryParameterType[]? Suspended { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.SuspendedParamItem[]? Suspended { get; set; }
 #nullable restore
 #else
             [QueryParameter("suspended")]
-            public global::Soenneker.Render.OpenApiClient.Postgres.GetSuspendedQueryParameterType[] Suspended { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.SuspendedParamItem[] Suspended { get; set; }
 #endif
             /// <summary>Filter for resources updated after a certain time (specified as an ISO 8601 timestamp)</summary>
             [QueryParameter("updatedAfter")]

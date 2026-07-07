@@ -49,7 +49,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Whether two-factor authentication is enabled for the owner. Only present if `type` is `user`.</summary>
         public bool? TwoFactorAuthEnabled { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.Owner_type? Type { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.OwnerType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.Owner"/> and sets the default values.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "twoFactorAuthEnabled", n => { TwoFactorAuthEnabled = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Owner_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.OwnerType>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>("ipAllowList", IpAllowList);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("twoFactorAuthEnabled", TwoFactorAuthEnabled);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Owner_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.OwnerType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

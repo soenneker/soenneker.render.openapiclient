@@ -94,7 +94,7 @@ namespace Soenneker.Render.OpenApiClient.Metrics.HttpRequests
         {
             /// <summary>The field to aggregate by</summary>
             [QueryParameter("aggregateBy")]
-            public global::Soenneker.Render.OpenApiClient.Metrics.HttpRequests.GetAggregateByQueryParameterType? AggregateBy { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.MetricsHttpRequestsAggregateBy? AggregateBy { get; set; }
             /// <summary>Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.</summary>
             [QueryParameter("endTime")]
             public DateTimeOffset? EndTime { get; set; }

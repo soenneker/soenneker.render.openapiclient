@@ -35,7 +35,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The startedAt property</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>The state property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSync_state? State { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSyncState? State { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSync"/> and sets the default values.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSync_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSyncState>(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSync_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.SyncWithCursorSyncState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,7 +17,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The domainType property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.CustomDomain_domainType? DomainType { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.CustomDomainDomainType? DomainType { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public global::Soenneker.Render.OpenApiClient.Models.CustomDomainServer Server { get; set; }
 #endif
         /// <summary>The verificationStatus property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.CustomDomain_verificationStatus? VerificationStatus { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.CustomDomainVerificationStatus? VerificationStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.CustomDomain"/> and sets the default values.
         /// </summary>
@@ -86,13 +86,13 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "domainType", n => { DomainType = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomain_domainType>(); } },
+                { "domainType", n => { DomainType = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomainDomainType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "publicSuffix", n => { PublicSuffix = n.GetStringValue(); } },
                 { "redirectForName", n => { RedirectForName = n.GetStringValue(); } },
                 { "server", n => { Server = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomainServer>(global::Soenneker.Render.OpenApiClient.Models.CustomDomainServer.CreateFromDiscriminatorValue); } },
-                { "verificationStatus", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomain_verificationStatus>(); } },
+                { "verificationStatus", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomainVerificationStatus>(); } },
             };
         }
         /// <summary>
@@ -103,13 +103,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomain_domainType>("domainType", DomainType);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomainDomainType>("domainType", DomainType);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("publicSuffix", PublicSuffix);
             writer.WriteStringValue("redirectForName", RedirectForName);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomainServer>("server", Server);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomain_verificationStatus>("verificationStatus", VerificationStatus);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomainVerificationStatus>("verificationStatus", VerificationStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

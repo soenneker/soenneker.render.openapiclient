@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.Verify
 {
     /// <summary>
-    /// Builds and executes requests for operations under \services\{serviceId}\custom-domains\{customDomainIdOrName}\verify
+    /// Builds and executes requests for operations under \services\{serviceId}\custom-domains\{customDomainNameOrId}\verify
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VerifyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.Verify
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VerifyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/services/{serviceId}/custom-domains/{customDomainIdOrName}/verify", pathParameters)
+        public VerifyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/services/{serviceId}/custom-domains/{customDomainNameOrId}/verify", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.Verify
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VerifyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/services/{serviceId}/custom-domains/{customDomainIdOrName}/verify", rawUrl)
+        public VerifyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/services/{serviceId}/custom-domains/{customDomainNameOrId}/verify", rawUrl)
         {
         }
         /// <summary>

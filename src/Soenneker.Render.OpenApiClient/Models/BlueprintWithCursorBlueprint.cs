@@ -59,7 +59,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Repo { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprint_status? Status { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprintStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprint"/> and sets the default values.
         /// </summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprint_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprintStatus>(); } },
             };
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("repo", Repo);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprint_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursorBlueprintStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

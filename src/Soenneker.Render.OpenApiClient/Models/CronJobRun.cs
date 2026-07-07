@@ -36,7 +36,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The startedAt property</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.CronJobRun_status? Status { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.CronJobRunStatus? Status { get; set; }
         /// <summary>user who triggered the cron job run</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +74,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "finishedAt", n => { FinishedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CronJobRun_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CronJobRunStatus>(); } },
                 { "triggeredBy", n => { TriggeredBy = n.GetStringValue(); } },
             };
         }
@@ -89,7 +89,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("finishedAt", FinishedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CronJobRun_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CronJobRunStatus>("status", Status);
             writer.WriteStringValue("triggeredBy", TriggeredBy);
             writer.WriteAdditionalData(AdditionalData);
         }

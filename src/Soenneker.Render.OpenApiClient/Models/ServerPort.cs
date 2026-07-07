@@ -17,7 +17,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The port property</summary>
         public int? Port { get; set; }
         /// <summary>The protocol property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.ServerPort_protocol? Protocol { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServerPortProtocol? Protocol { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServerPort"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "port", n => { Port = n.GetIntValue(); } },
-                { "protocol", n => { Protocol = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServerPort_protocol>(); } },
+                { "protocol", n => { Protocol = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServerPortProtocol>(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("port", Port);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServerPort_protocol>("protocol", Protocol);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServerPortProtocol>("protocol", Protocol);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

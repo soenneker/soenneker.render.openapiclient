@@ -86,7 +86,7 @@ namespace Soenneker.Render.OpenApiClient.MetricsStream.Item
         /// <summary>
         /// Creates or updates the metrics stream for the specified workspace.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.MetricsStream.Item.WithOwnerPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStream200Response"/></returns>
         /// <param name="body">Input for creating or updating a metrics stream</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,11 +94,11 @@ namespace Soenneker.Render.OpenApiClient.MetricsStream.Item
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Render.OpenApiClient.MetricsStream.Item.WithOwnerPutResponse?> PutAsync(global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStream200Response?> PutAsync(global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStreamRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Render.OpenApiClient.MetricsStream.Item.WithOwnerPutResponse> PutAsync(global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStream200Response> PutAsync(global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStreamRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -108,7 +108,7 @@ namespace Soenneker.Render.OpenApiClient.MetricsStream.Item
                 { "400", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.MetricsStream.Item.WithOwnerPutResponse>(requestInfo, global::Soenneker.Render.OpenApiClient.MetricsStream.Item.WithOwnerPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStream200Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStream200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes the metrics stream for the specified workspace.
@@ -156,11 +156,11 @@ namespace Soenneker.Render.OpenApiClient.MetricsStream.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStreamRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Render.OpenApiClient.Models.UpsertOwnerMetricsStreamRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

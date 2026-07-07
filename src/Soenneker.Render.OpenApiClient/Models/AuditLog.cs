@@ -23,7 +23,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of event that occurred</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.AuditLog_event? Event { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.AuditLogEvent? Event { get; set; }
         /// <summary>Unique identifier for the audit log entry</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,13 +35,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Additional context information about the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.AuditLog_metadata? Metadata { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.AuditLogMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.AuditLog_metadata Metadata { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.AuditLogMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The status of the event</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.AuditLog_status? Status { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.AuditLogStatus? Status { get; set; }
         /// <summary>When the event occurred (ISO 8601 format)</summary>
         public DateTimeOffset? Timestamp { get; set; }
         /// <summary>
@@ -70,10 +70,10 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogActor>(global::Soenneker.Render.OpenApiClient.Models.AuditLogActor.CreateFromDiscriminatorValue); } },
-                { "event", n => { Event = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLog_event>(); } },
+                { "event", n => { Event = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogEvent>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.AuditLog_metadata>(global::Soenneker.Render.OpenApiClient.Models.AuditLog_metadata.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLog_status>(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogMetadataProperty>(global::Soenneker.Render.OpenApiClient.Models.AuditLogMetadataProperty.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogStatus>(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -85,10 +85,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogActor>("actor", Actor);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLog_event>("event", Event);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogEvent>("event", Event);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.AuditLog_metadata>("metadata", Metadata);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLog_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogMetadataProperty>("metadata", Metadata);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }

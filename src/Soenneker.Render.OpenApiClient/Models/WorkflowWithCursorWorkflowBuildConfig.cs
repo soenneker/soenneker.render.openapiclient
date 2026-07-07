@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string RootDir { get; set; }
 #endif
         /// <summary>The runtime environment for the workflow (e.g., node, python, etc.).</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowBuildConfig_runtime? Runtime { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowBuildConfigRuntime? Runtime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowBuildConfig"/> and sets the default values.
         /// </summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "buildCommand", n => { BuildCommand = n.GetStringValue(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
                 { "rootDir", n => { RootDir = n.GetStringValue(); } },
-                { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowBuildConfig_runtime>(); } },
+                { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowBuildConfigRuntime>(); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("buildCommand", BuildCommand);
             writer.WriteStringValue("repo", Repo);
             writer.WriteStringValue("rootDir", RootDir);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowBuildConfig_runtime>("runtime", Runtime);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.WorkflowWithCursorWorkflowBuildConfigRuntime>("runtime", Runtime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

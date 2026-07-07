@@ -87,7 +87,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.Headers
         /// <summary>
         /// Add a response header rule to the service with the provided ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Services.Item.Headers.HeadersPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.AddHeaders201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,11 +101,11 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.Headers
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Render.OpenApiClient.Services.Item.Headers.HeadersPostResponse?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.HeaderInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.AddHeaders201Response?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.HeaderInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Render.OpenApiClient.Services.Item.Headers.HeadersPostResponse> PostAsync(global::Soenneker.Render.OpenApiClient.Models.HeaderInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.AddHeaders201Response> PostAsync(global::Soenneker.Render.OpenApiClient.Models.HeaderInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -121,7 +121,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.Headers
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Services.Item.Headers.HeadersPostResponse>(requestInfo, global::Soenneker.Render.OpenApiClient.Services.Item.Headers.HeadersPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.AddHeaders201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.AddHeaders201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Replace all header rules for a particular service with the provided list.**This deletes all existing header rules for the service that aren&apos;t included in the request.**

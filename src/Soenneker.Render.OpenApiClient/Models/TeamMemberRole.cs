@@ -9,23 +9,23 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         [EnumMember(Value = "ADMIN")]
         #pragma warning disable CS1591
-        ADMIN,
+        Admin,
         #pragma warning restore CS1591
         [EnumMember(Value = "DEVELOPER")]
         #pragma warning disable CS1591
-        DEVELOPER,
+        Developer,
         #pragma warning restore CS1591
         [EnumMember(Value = "WORKSPACE_CONTRIBUTOR")]
         #pragma warning disable CS1591
-        WORKSPACE_CONTRIBUTOR,
+        WorkspaceContributor,
         #pragma warning restore CS1591
         [EnumMember(Value = "WORKSPACE_BILLING")]
         #pragma warning disable CS1591
-        WORKSPACE_BILLING,
+        WorkspaceBilling,
         #pragma warning restore CS1591
         [EnumMember(Value = "WORKSPACE_VIEWER")]
         #pragma warning disable CS1591
-        WORKSPACE_VIEWER,
+        WorkspaceViewer,
         #pragma warning restore CS1591
     }
 }

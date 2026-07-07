@@ -9,11 +9,11 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         [EnumMember(Value = "deploy_only")]
         #pragma warning disable CS1591
-        Deploy_only,
+        DeployOnly,
         #pragma warning restore CS1591
         [EnumMember(Value = "build_and_deploy")]
         #pragma warning disable CS1591
-        Build_and_deploy,
+        BuildAndDeploy,
         #pragma warning restore CS1591
     }
 }

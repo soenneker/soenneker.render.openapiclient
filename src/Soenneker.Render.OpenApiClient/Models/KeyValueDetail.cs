@@ -95,7 +95,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public KeyValueDetail()
         {
             AdditionalData = new Dictionary<string, object>();
-            Region = global::Soenneker.Render.OpenApiClient.Models.Region.Oregon;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

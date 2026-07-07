@@ -8,11 +8,235 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember1"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember10"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember11"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember12"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember13"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember14"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember15"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember16"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember17"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember18"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember19"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember2"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember20"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember21"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember22"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember23"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember24"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember25"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember26"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember27"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember28"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember29"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember3"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember30"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember31"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember32"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember33"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember34"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember35"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember36"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember37"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember38"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember39"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember4"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember40"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember7"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember8"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember9"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployEnabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingConfigChanged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBranchDeleted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCommitIgnored"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskCreated"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskDeleted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskUpdated"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheDisabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheEnabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCachePurged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsImagePullFailed"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceCountChanged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceTypeChanged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsJobRunEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeEnabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember1"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember2"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember3"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember4"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPipelineMinutesExhausted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerFailed"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerRestarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderAdded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderRemoved"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServiceEventWithCursorEventDetails : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled? ServiceEventWithCursorEventDetailsAutoDeployDisabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled ServiceEventWithCursorEventDetailsAutoDeployDisabled { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployEnabled"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployEnabled? ServiceEventWithCursorEventDetailsAutoDeployEnabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployEnabled ServiceEventWithCursorEventDetailsAutoDeployEnabled { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingConfigChanged"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingConfigChanged? ServiceEventWithCursorEventDetailsAutoscalingConfigChanged { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingConfigChanged ServiceEventWithCursorEventDetailsAutoscalingConfigChanged { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingEnded"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingEnded? ServiceEventWithCursorEventDetailsAutoscalingEnded { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingEnded ServiceEventWithCursorEventDetailsAutoscalingEnded { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingStarted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingStarted? ServiceEventWithCursorEventDetailsAutoscalingStarted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingStarted ServiceEventWithCursorEventDetailsAutoscalingStarted { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBranchDeleted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBranchDeleted? ServiceEventWithCursorEventDetailsBranchDeleted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBranchDeleted ServiceEventWithCursorEventDetailsBranchDeleted { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildEnded"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildEnded? ServiceEventWithCursorEventDetailsBuildEnded { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildEnded ServiceEventWithCursorEventDetailsBuildEnded { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildStarted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildStarted? ServiceEventWithCursorEventDetailsBuildStarted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildStarted ServiceEventWithCursorEventDetailsBuildStarted { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCommitIgnored"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCommitIgnored? ServiceEventWithCursorEventDetailsCommitIgnored { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCommitIgnored ServiceEventWithCursorEventDetailsCommitIgnored { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunEnded"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunEnded? ServiceEventWithCursorEventDetailsCronJobRunEnded { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunEnded ServiceEventWithCursorEventDetailsCronJobRunEnded { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunStarted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunStarted? ServiceEventWithCursorEventDetailsCronJobRunStarted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunStarted ServiceEventWithCursorEventDetailsCronJobRunStarted { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployEnded"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployEnded? ServiceEventWithCursorEventDetailsDeployEnded { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployEnded ServiceEventWithCursorEventDetailsDeployEnded { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted? ServiceEventWithCursorEventDetailsDeployStarted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted ServiceEventWithCursorEventDetailsDeployStarted { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskCreated"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskCreated? ServiceEventWithCursorEventDetailsDiskCreated { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskCreated ServiceEventWithCursorEventDetailsDiskCreated { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskDeleted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskDeleted? ServiceEventWithCursorEventDetailsDiskDeleted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskDeleted ServiceEventWithCursorEventDetailsDiskDeleted { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskUpdated"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskUpdated? ServiceEventWithCursorEventDetailsDiskUpdated { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskUpdated ServiceEventWithCursorEventDetailsDiskUpdated { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheDisabled"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheDisabled? ServiceEventWithCursorEventDetailsEdgeCacheDisabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheDisabled ServiceEventWithCursorEventDetailsEdgeCacheDisabled { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheEnabled"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheEnabled? ServiceEventWithCursorEventDetailsEdgeCacheEnabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheEnabled ServiceEventWithCursorEventDetailsEdgeCacheEnabled { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCachePurged"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCachePurged? ServiceEventWithCursorEventDetailsEdgeCachePurged { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCachePurged ServiceEventWithCursorEventDetailsEdgeCachePurged { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsImagePullFailed"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsImagePullFailed? ServiceEventWithCursorEventDetailsImagePullFailed { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsImagePullFailed ServiceEventWithCursorEventDetailsImagePullFailed { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookEnded"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookEnded? ServiceEventWithCursorEventDetailsInitialDeployHookEnded { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookEnded ServiceEventWithCursorEventDetailsInitialDeployHookEnded { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookStarted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookStarted? ServiceEventWithCursorEventDetailsInitialDeployHookStarted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookStarted ServiceEventWithCursorEventDetailsInitialDeployHookStarted { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceCountChanged"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceCountChanged? ServiceEventWithCursorEventDetailsInstanceCountChanged { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceCountChanged ServiceEventWithCursorEventDetailsInstanceCountChanged { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceTypeChanged"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceTypeChanged? ServiceEventWithCursorEventDetailsInstanceTypeChanged { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceTypeChanged ServiceEventWithCursorEventDetailsInstanceTypeChanged { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsJobRunEnded"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsJobRunEnded? ServiceEventWithCursorEventDetailsJobRunEnded { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsJobRunEnded ServiceEventWithCursorEventDetailsJobRunEnded { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeEnabled"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeEnabled? ServiceEventWithCursorEventDetailsMaintenanceModeEnabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeEnabled ServiceEventWithCursorEventDetailsMaintenanceModeEnabled { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated? ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceStarted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceStarted? ServiceEventWithCursorEventDetailsMaintenanceStarted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceStarted ServiceEventWithCursorEventDetailsMaintenanceStarted { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,86 +244,6 @@ namespace Soenneker.Render.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember1 ServiceEventWithCursorEventDetailsMember1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember10"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember10? ServiceEventWithCursorEventDetailsMember10 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember10 ServiceEventWithCursorEventDetailsMember10 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember11"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember11? ServiceEventWithCursorEventDetailsMember11 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember11 ServiceEventWithCursorEventDetailsMember11 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember12"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember12? ServiceEventWithCursorEventDetailsMember12 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember12 ServiceEventWithCursorEventDetailsMember12 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember13"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember13? ServiceEventWithCursorEventDetailsMember13 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember13 ServiceEventWithCursorEventDetailsMember13 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember14"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember14? ServiceEventWithCursorEventDetailsMember14 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember14 ServiceEventWithCursorEventDetailsMember14 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember15"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember15? ServiceEventWithCursorEventDetailsMember15 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember15 ServiceEventWithCursorEventDetailsMember15 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember16"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember16? ServiceEventWithCursorEventDetailsMember16 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember16 ServiceEventWithCursorEventDetailsMember16 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember17"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember17? ServiceEventWithCursorEventDetailsMember17 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember17 ServiceEventWithCursorEventDetailsMember17 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember18"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember18? ServiceEventWithCursorEventDetailsMember18 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember18 ServiceEventWithCursorEventDetailsMember18 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember19"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember19? ServiceEventWithCursorEventDetailsMember19 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember19 ServiceEventWithCursorEventDetailsMember19 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,86 +253,6 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember2 ServiceEventWithCursorEventDetailsMember2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember20"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember20? ServiceEventWithCursorEventDetailsMember20 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember20 ServiceEventWithCursorEventDetailsMember20 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember21"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember21? ServiceEventWithCursorEventDetailsMember21 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember21 ServiceEventWithCursorEventDetailsMember21 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember22"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember22? ServiceEventWithCursorEventDetailsMember22 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember22 ServiceEventWithCursorEventDetailsMember22 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember23"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember23? ServiceEventWithCursorEventDetailsMember23 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember23 ServiceEventWithCursorEventDetailsMember23 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember24"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember24? ServiceEventWithCursorEventDetailsMember24 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember24 ServiceEventWithCursorEventDetailsMember24 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember25"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember25? ServiceEventWithCursorEventDetailsMember25 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember25 ServiceEventWithCursorEventDetailsMember25 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember26"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember26? ServiceEventWithCursorEventDetailsMember26 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember26 ServiceEventWithCursorEventDetailsMember26 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember27"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember27? ServiceEventWithCursorEventDetailsMember27 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember27 ServiceEventWithCursorEventDetailsMember27 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember28"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember28? ServiceEventWithCursorEventDetailsMember28 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember28 ServiceEventWithCursorEventDetailsMember28 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember29"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember29? ServiceEventWithCursorEventDetailsMember29 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember29 ServiceEventWithCursorEventDetailsMember29 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -197,86 +261,6 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember3 ServiceEventWithCursorEventDetailsMember3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember30"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember30? ServiceEventWithCursorEventDetailsMember30 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember30 ServiceEventWithCursorEventDetailsMember30 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember31"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember31? ServiceEventWithCursorEventDetailsMember31 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember31 ServiceEventWithCursorEventDetailsMember31 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember32"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember32? ServiceEventWithCursorEventDetailsMember32 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember32 ServiceEventWithCursorEventDetailsMember32 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember33"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember33? ServiceEventWithCursorEventDetailsMember33 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember33 ServiceEventWithCursorEventDetailsMember33 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember34"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember34? ServiceEventWithCursorEventDetailsMember34 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember34 ServiceEventWithCursorEventDetailsMember34 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember35"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember35? ServiceEventWithCursorEventDetailsMember35 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember35 ServiceEventWithCursorEventDetailsMember35 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember36"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember36? ServiceEventWithCursorEventDetailsMember36 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember36 ServiceEventWithCursorEventDetailsMember36 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember37"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember37? ServiceEventWithCursorEventDetailsMember37 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember37 ServiceEventWithCursorEventDetailsMember37 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember38"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember38? ServiceEventWithCursorEventDetailsMember38 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember38 ServiceEventWithCursorEventDetailsMember38 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember39"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember39? ServiceEventWithCursorEventDetailsMember39 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember39 ServiceEventWithCursorEventDetailsMember39 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -284,14 +268,6 @@ namespace Soenneker.Render.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember4 ServiceEventWithCursorEventDetailsMember4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember40"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember40? ServiceEventWithCursorEventDetailsMember40 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember40 ServiceEventWithCursorEventDetailsMember40 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -309,29 +285,69 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6 ServiceEventWithCursorEventDetailsMember6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember7"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPipelineMinutesExhausted"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember7? ServiceEventWithCursorEventDetailsMember7 { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPipelineMinutesExhausted? ServiceEventWithCursorEventDetailsPipelineMinutesExhausted { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember7 ServiceEventWithCursorEventDetailsMember7 { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPipelineMinutesExhausted ServiceEventWithCursorEventDetailsPipelineMinutesExhausted { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember8"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployEnded"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember8? ServiceEventWithCursorEventDetailsMember8 { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployEnded? ServiceEventWithCursorEventDetailsPreDeployEnded { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember8 ServiceEventWithCursorEventDetailsMember8 { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployEnded ServiceEventWithCursorEventDetailsPreDeployEnded { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember9"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployStarted"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember9? ServiceEventWithCursorEventDetailsMember9 { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployStarted? ServiceEventWithCursorEventDetailsPreDeployStarted { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember9 ServiceEventWithCursorEventDetailsMember9 { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployStarted ServiceEventWithCursorEventDetailsPreDeployStarted { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerFailed"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerFailed? ServiceEventWithCursorEventDetailsServerFailed { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerFailed ServiceEventWithCursorEventDetailsServerFailed { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerRestarted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerRestarted? ServiceEventWithCursorEventDetailsServerRestarted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerRestarted ServiceEventWithCursorEventDetailsServerRestarted { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderAdded"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderAdded? ServiceEventWithCursorEventDetailsSuspenderAdded { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderAdded ServiceEventWithCursorEventDetailsSuspenderAdded { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderRemoved"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderRemoved? ServiceEventWithCursorEventDetailsSuspenderRemoved { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderRemoved ServiceEventWithCursorEventDetailsSuspenderRemoved { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted? ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -343,165 +359,149 @@ namespace Soenneker.Render.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetails();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ServiceEventWithCursorEventDetailsAutoDeployDisabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember1 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember1();
+                result.ServiceEventWithCursorEventDetailsAutoDeployDisabled = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsAutoDeployEnabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember10 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember10();
+                result.ServiceEventWithCursorEventDetailsAutoDeployEnabled = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployEnabled();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsAutoscalingConfigChanged".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember11 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember11();
+                result.ServiceEventWithCursorEventDetailsAutoscalingConfigChanged = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingConfigChanged();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsAutoscalingEnded".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember12 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember12();
+                result.ServiceEventWithCursorEventDetailsAutoscalingEnded = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingEnded();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsAutoscalingStarted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember13 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember13();
+                result.ServiceEventWithCursorEventDetailsAutoscalingStarted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingStarted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsBranchDeleted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember14 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember14();
+                result.ServiceEventWithCursorEventDetailsBranchDeleted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBranchDeleted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsBuildEnded".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember15 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember15();
+                result.ServiceEventWithCursorEventDetailsBuildEnded = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildEnded();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsBuildStarted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember16 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember16();
+                result.ServiceEventWithCursorEventDetailsBuildStarted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildStarted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsCommitIgnored".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember17 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember17();
+                result.ServiceEventWithCursorEventDetailsCommitIgnored = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCommitIgnored();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsCronJobRunEnded".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember18 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember18();
+                result.ServiceEventWithCursorEventDetailsCronJobRunEnded = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunEnded();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsCronJobRunStarted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember19 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember19();
+                result.ServiceEventWithCursorEventDetailsCronJobRunStarted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunStarted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsDeployEnded".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember2 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember2();
+                result.ServiceEventWithCursorEventDetailsDeployEnded = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployEnded();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsDeployStarted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember20 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember20();
+                result.ServiceEventWithCursorEventDetailsDeployStarted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsDiskCreated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember21 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember21();
+                result.ServiceEventWithCursorEventDetailsDiskCreated = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskCreated();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsDiskDeleted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember22 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember22();
+                result.ServiceEventWithCursorEventDetailsDiskDeleted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskDeleted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsDiskUpdated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember23 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember23();
+                result.ServiceEventWithCursorEventDetailsDiskUpdated = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskUpdated();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsEdgeCacheDisabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember24 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember24();
+                result.ServiceEventWithCursorEventDetailsEdgeCacheDisabled = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheDisabled();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsEdgeCacheEnabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember25 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember25();
+                result.ServiceEventWithCursorEventDetailsEdgeCacheEnabled = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheEnabled();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsEdgeCachePurged".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember26 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember26();
+                result.ServiceEventWithCursorEventDetailsEdgeCachePurged = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCachePurged();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsImagePullFailed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember27 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember27();
+                result.ServiceEventWithCursorEventDetailsImagePullFailed = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsImagePullFailed();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsInitialDeployHookEnded".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember28 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember28();
+                result.ServiceEventWithCursorEventDetailsInitialDeployHookEnded = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookEnded();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsInitialDeployHookStarted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember29 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember29();
+                result.ServiceEventWithCursorEventDetailsInitialDeployHookStarted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookStarted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsInstanceCountChanged".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember3 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember3();
+                result.ServiceEventWithCursorEventDetailsInstanceCountChanged = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceCountChanged();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsInstanceTypeChanged".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember30 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember30();
+                result.ServiceEventWithCursorEventDetailsInstanceTypeChanged = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceTypeChanged();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsJobRunEnded".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember31 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember31();
+                result.ServiceEventWithCursorEventDetailsJobRunEnded = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsJobRunEnded();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsMaintenanceModeEnabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember32 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember32();
+                result.ServiceEventWithCursorEventDetailsMaintenanceModeEnabled = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeEnabled();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember33 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember33();
+                result.ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsMaintenanceStarted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember34 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember34();
+                result.ServiceEventWithCursorEventDetailsMaintenanceStarted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceStarted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsPipelineMinutesExhausted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember35 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember35();
+                result.ServiceEventWithCursorEventDetailsPipelineMinutesExhausted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPipelineMinutesExhausted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsPreDeployEnded".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember36 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember36();
+                result.ServiceEventWithCursorEventDetailsPreDeployEnded = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployEnded();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsPreDeployStarted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember37 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember37();
+                result.ServiceEventWithCursorEventDetailsPreDeployStarted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployStarted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsServerFailed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember38 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember38();
+                result.ServiceEventWithCursorEventDetailsServerFailed = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerFailed();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsServerRestarted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember39 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember39();
+                result.ServiceEventWithCursorEventDetailsServerRestarted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerRestarted();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsSuspenderAdded".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember4 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember4();
+                result.ServiceEventWithCursorEventDetailsSuspenderAdded = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderAdded();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsSuspenderRemoved".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember40 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember40();
+                result.ServiceEventWithCursorEventDetailsSuspenderRemoved = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderRemoved();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ServiceEventWithCursorEventDetailsMember5 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ServiceEventWithCursorEventDetailsMember6 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ServiceEventWithCursorEventDetailsMember7 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember7();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ServiceEventWithCursorEventDetailsMember8 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember8();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ServiceEventWithCursorEventDetailsMember9 = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember9();
+                result.ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted();
             }
             return result;
         }
@@ -511,145 +511,133 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ServiceEventWithCursorEventDetailsMember1 != null)
+            if(ServiceEventWithCursorEventDetailsAutoDeployDisabled != null)
+            {
+                return ServiceEventWithCursorEventDetailsAutoDeployDisabled.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsAutoDeployEnabled != null)
+            {
+                return ServiceEventWithCursorEventDetailsAutoDeployEnabled.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsAutoscalingConfigChanged != null)
+            {
+                return ServiceEventWithCursorEventDetailsAutoscalingConfigChanged.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsAutoscalingEnded != null)
+            {
+                return ServiceEventWithCursorEventDetailsAutoscalingEnded.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsAutoscalingStarted != null)
+            {
+                return ServiceEventWithCursorEventDetailsAutoscalingStarted.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsBranchDeleted != null)
+            {
+                return ServiceEventWithCursorEventDetailsBranchDeleted.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsBuildEnded != null)
+            {
+                return ServiceEventWithCursorEventDetailsBuildEnded.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsBuildStarted != null)
+            {
+                return ServiceEventWithCursorEventDetailsBuildStarted.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsCommitIgnored != null)
+            {
+                return ServiceEventWithCursorEventDetailsCommitIgnored.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsCronJobRunEnded != null)
+            {
+                return ServiceEventWithCursorEventDetailsCronJobRunEnded.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsCronJobRunStarted != null)
+            {
+                return ServiceEventWithCursorEventDetailsCronJobRunStarted.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsDeployEnded != null)
+            {
+                return ServiceEventWithCursorEventDetailsDeployEnded.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsDeployStarted != null)
+            {
+                return ServiceEventWithCursorEventDetailsDeployStarted.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsDiskCreated != null)
+            {
+                return ServiceEventWithCursorEventDetailsDiskCreated.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsDiskDeleted != null)
+            {
+                return ServiceEventWithCursorEventDetailsDiskDeleted.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsDiskUpdated != null)
+            {
+                return ServiceEventWithCursorEventDetailsDiskUpdated.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsEdgeCacheDisabled != null)
+            {
+                return ServiceEventWithCursorEventDetailsEdgeCacheDisabled.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsEdgeCacheEnabled != null)
+            {
+                return ServiceEventWithCursorEventDetailsEdgeCacheEnabled.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsEdgeCachePurged != null)
+            {
+                return ServiceEventWithCursorEventDetailsEdgeCachePurged.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsImagePullFailed != null)
+            {
+                return ServiceEventWithCursorEventDetailsImagePullFailed.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsInitialDeployHookEnded != null)
+            {
+                return ServiceEventWithCursorEventDetailsInitialDeployHookEnded.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsInitialDeployHookStarted != null)
+            {
+                return ServiceEventWithCursorEventDetailsInitialDeployHookStarted.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsInstanceCountChanged != null)
+            {
+                return ServiceEventWithCursorEventDetailsInstanceCountChanged.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsInstanceTypeChanged != null)
+            {
+                return ServiceEventWithCursorEventDetailsInstanceTypeChanged.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsJobRunEnded != null)
+            {
+                return ServiceEventWithCursorEventDetailsJobRunEnded.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsMaintenanceModeEnabled != null)
+            {
+                return ServiceEventWithCursorEventDetailsMaintenanceModeEnabled.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated != null)
+            {
+                return ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsMaintenanceStarted != null)
+            {
+                return ServiceEventWithCursorEventDetailsMaintenanceStarted.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsMember1 != null)
             {
                 return ServiceEventWithCursorEventDetailsMember1.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember10 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember10.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember11 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember11.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember12 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember12.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember13 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember13.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember14 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember14.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember15 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember15.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember16 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember16.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember17 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember17.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember18 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember18.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember19 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember19.GetFieldDeserializers();
             }
             else if(ServiceEventWithCursorEventDetailsMember2 != null)
             {
                 return ServiceEventWithCursorEventDetailsMember2.GetFieldDeserializers();
             }
-            else if(ServiceEventWithCursorEventDetailsMember20 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember20.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember21 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember21.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember22 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember22.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember23 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember23.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember24 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember24.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember25 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember25.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember26 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember26.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember27 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember27.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember28 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember28.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember29 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember29.GetFieldDeserializers();
-            }
             else if(ServiceEventWithCursorEventDetailsMember3 != null)
             {
                 return ServiceEventWithCursorEventDetailsMember3.GetFieldDeserializers();
             }
-            else if(ServiceEventWithCursorEventDetailsMember30 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember30.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember31 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember31.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember32 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember32.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember33 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember33.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember34 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember34.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember35 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember35.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember36 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember36.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember37 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember37.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember38 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember38.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember39 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember39.GetFieldDeserializers();
-            }
             else if(ServiceEventWithCursorEventDetailsMember4 != null)
             {
                 return ServiceEventWithCursorEventDetailsMember4.GetFieldDeserializers();
-            }
-            else if(ServiceEventWithCursorEventDetailsMember40 != null)
-            {
-                return ServiceEventWithCursorEventDetailsMember40.GetFieldDeserializers();
             }
             else if(ServiceEventWithCursorEventDetailsMember5 != null)
             {
@@ -659,17 +647,37 @@ namespace Soenneker.Render.OpenApiClient.Models
             {
                 return ServiceEventWithCursorEventDetailsMember6.GetFieldDeserializers();
             }
-            else if(ServiceEventWithCursorEventDetailsMember7 != null)
+            else if(ServiceEventWithCursorEventDetailsPipelineMinutesExhausted != null)
             {
-                return ServiceEventWithCursorEventDetailsMember7.GetFieldDeserializers();
+                return ServiceEventWithCursorEventDetailsPipelineMinutesExhausted.GetFieldDeserializers();
             }
-            else if(ServiceEventWithCursorEventDetailsMember8 != null)
+            else if(ServiceEventWithCursorEventDetailsPreDeployEnded != null)
             {
-                return ServiceEventWithCursorEventDetailsMember8.GetFieldDeserializers();
+                return ServiceEventWithCursorEventDetailsPreDeployEnded.GetFieldDeserializers();
             }
-            else if(ServiceEventWithCursorEventDetailsMember9 != null)
+            else if(ServiceEventWithCursorEventDetailsPreDeployStarted != null)
             {
-                return ServiceEventWithCursorEventDetailsMember9.GetFieldDeserializers();
+                return ServiceEventWithCursorEventDetailsPreDeployStarted.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsServerFailed != null)
+            {
+                return ServiceEventWithCursorEventDetailsServerFailed.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsServerRestarted != null)
+            {
+                return ServiceEventWithCursorEventDetailsServerRestarted.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsSuspenderAdded != null)
+            {
+                return ServiceEventWithCursorEventDetailsSuspenderAdded.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsSuspenderRemoved != null)
+            {
+                return ServiceEventWithCursorEventDetailsSuspenderRemoved.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted != null)
+            {
+                return ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -680,145 +688,133 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ServiceEventWithCursorEventDetailsMember1 != null)
+            if(ServiceEventWithCursorEventDetailsAutoDeployDisabled != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled>(null, ServiceEventWithCursorEventDetailsAutoDeployDisabled);
+            }
+            else if(ServiceEventWithCursorEventDetailsAutoDeployEnabled != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployEnabled>(null, ServiceEventWithCursorEventDetailsAutoDeployEnabled);
+            }
+            else if(ServiceEventWithCursorEventDetailsAutoscalingConfigChanged != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingConfigChanged>(null, ServiceEventWithCursorEventDetailsAutoscalingConfigChanged);
+            }
+            else if(ServiceEventWithCursorEventDetailsAutoscalingEnded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingEnded>(null, ServiceEventWithCursorEventDetailsAutoscalingEnded);
+            }
+            else if(ServiceEventWithCursorEventDetailsAutoscalingStarted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingStarted>(null, ServiceEventWithCursorEventDetailsAutoscalingStarted);
+            }
+            else if(ServiceEventWithCursorEventDetailsBranchDeleted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBranchDeleted>(null, ServiceEventWithCursorEventDetailsBranchDeleted);
+            }
+            else if(ServiceEventWithCursorEventDetailsBuildEnded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildEnded>(null, ServiceEventWithCursorEventDetailsBuildEnded);
+            }
+            else if(ServiceEventWithCursorEventDetailsBuildStarted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildStarted>(null, ServiceEventWithCursorEventDetailsBuildStarted);
+            }
+            else if(ServiceEventWithCursorEventDetailsCommitIgnored != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCommitIgnored>(null, ServiceEventWithCursorEventDetailsCommitIgnored);
+            }
+            else if(ServiceEventWithCursorEventDetailsCronJobRunEnded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunEnded>(null, ServiceEventWithCursorEventDetailsCronJobRunEnded);
+            }
+            else if(ServiceEventWithCursorEventDetailsCronJobRunStarted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunStarted>(null, ServiceEventWithCursorEventDetailsCronJobRunStarted);
+            }
+            else if(ServiceEventWithCursorEventDetailsDeployEnded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployEnded>(null, ServiceEventWithCursorEventDetailsDeployEnded);
+            }
+            else if(ServiceEventWithCursorEventDetailsDeployStarted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted>(null, ServiceEventWithCursorEventDetailsDeployStarted);
+            }
+            else if(ServiceEventWithCursorEventDetailsDiskCreated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskCreated>(null, ServiceEventWithCursorEventDetailsDiskCreated);
+            }
+            else if(ServiceEventWithCursorEventDetailsDiskDeleted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskDeleted>(null, ServiceEventWithCursorEventDetailsDiskDeleted);
+            }
+            else if(ServiceEventWithCursorEventDetailsDiskUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskUpdated>(null, ServiceEventWithCursorEventDetailsDiskUpdated);
+            }
+            else if(ServiceEventWithCursorEventDetailsEdgeCacheDisabled != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheDisabled>(null, ServiceEventWithCursorEventDetailsEdgeCacheDisabled);
+            }
+            else if(ServiceEventWithCursorEventDetailsEdgeCacheEnabled != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheEnabled>(null, ServiceEventWithCursorEventDetailsEdgeCacheEnabled);
+            }
+            else if(ServiceEventWithCursorEventDetailsEdgeCachePurged != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCachePurged>(null, ServiceEventWithCursorEventDetailsEdgeCachePurged);
+            }
+            else if(ServiceEventWithCursorEventDetailsImagePullFailed != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsImagePullFailed>(null, ServiceEventWithCursorEventDetailsImagePullFailed);
+            }
+            else if(ServiceEventWithCursorEventDetailsInitialDeployHookEnded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookEnded>(null, ServiceEventWithCursorEventDetailsInitialDeployHookEnded);
+            }
+            else if(ServiceEventWithCursorEventDetailsInitialDeployHookStarted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookStarted>(null, ServiceEventWithCursorEventDetailsInitialDeployHookStarted);
+            }
+            else if(ServiceEventWithCursorEventDetailsInstanceCountChanged != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceCountChanged>(null, ServiceEventWithCursorEventDetailsInstanceCountChanged);
+            }
+            else if(ServiceEventWithCursorEventDetailsInstanceTypeChanged != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceTypeChanged>(null, ServiceEventWithCursorEventDetailsInstanceTypeChanged);
+            }
+            else if(ServiceEventWithCursorEventDetailsJobRunEnded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsJobRunEnded>(null, ServiceEventWithCursorEventDetailsJobRunEnded);
+            }
+            else if(ServiceEventWithCursorEventDetailsMaintenanceModeEnabled != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeEnabled>(null, ServiceEventWithCursorEventDetailsMaintenanceModeEnabled);
+            }
+            else if(ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated>(null, ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated);
+            }
+            else if(ServiceEventWithCursorEventDetailsMaintenanceStarted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceStarted>(null, ServiceEventWithCursorEventDetailsMaintenanceStarted);
+            }
+            else if(ServiceEventWithCursorEventDetailsMember1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember1>(null, ServiceEventWithCursorEventDetailsMember1);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember10 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember10>(null, ServiceEventWithCursorEventDetailsMember10);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember11 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember11>(null, ServiceEventWithCursorEventDetailsMember11);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember12 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember12>(null, ServiceEventWithCursorEventDetailsMember12);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember13 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember13>(null, ServiceEventWithCursorEventDetailsMember13);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember14 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember14>(null, ServiceEventWithCursorEventDetailsMember14);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember15 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember15>(null, ServiceEventWithCursorEventDetailsMember15);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember16 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember16>(null, ServiceEventWithCursorEventDetailsMember16);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember17 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember17>(null, ServiceEventWithCursorEventDetailsMember17);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember18 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember18>(null, ServiceEventWithCursorEventDetailsMember18);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember19 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember19>(null, ServiceEventWithCursorEventDetailsMember19);
             }
             else if(ServiceEventWithCursorEventDetailsMember2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember2>(null, ServiceEventWithCursorEventDetailsMember2);
             }
-            else if(ServiceEventWithCursorEventDetailsMember20 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember20>(null, ServiceEventWithCursorEventDetailsMember20);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember21 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember21>(null, ServiceEventWithCursorEventDetailsMember21);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember22 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember22>(null, ServiceEventWithCursorEventDetailsMember22);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember23 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember23>(null, ServiceEventWithCursorEventDetailsMember23);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember24 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember24>(null, ServiceEventWithCursorEventDetailsMember24);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember25 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember25>(null, ServiceEventWithCursorEventDetailsMember25);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember26 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember26>(null, ServiceEventWithCursorEventDetailsMember26);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember27 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember27>(null, ServiceEventWithCursorEventDetailsMember27);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember28 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember28>(null, ServiceEventWithCursorEventDetailsMember28);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember29 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember29>(null, ServiceEventWithCursorEventDetailsMember29);
-            }
             else if(ServiceEventWithCursorEventDetailsMember3 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember3>(null, ServiceEventWithCursorEventDetailsMember3);
             }
-            else if(ServiceEventWithCursorEventDetailsMember30 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember30>(null, ServiceEventWithCursorEventDetailsMember30);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember31 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember31>(null, ServiceEventWithCursorEventDetailsMember31);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember32 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember32>(null, ServiceEventWithCursorEventDetailsMember32);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember33 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember33>(null, ServiceEventWithCursorEventDetailsMember33);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember34 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember34>(null, ServiceEventWithCursorEventDetailsMember34);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember35 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember35>(null, ServiceEventWithCursorEventDetailsMember35);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember36 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember36>(null, ServiceEventWithCursorEventDetailsMember36);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember37 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember37>(null, ServiceEventWithCursorEventDetailsMember37);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember38 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember38>(null, ServiceEventWithCursorEventDetailsMember38);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember39 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember39>(null, ServiceEventWithCursorEventDetailsMember39);
-            }
             else if(ServiceEventWithCursorEventDetailsMember4 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember4>(null, ServiceEventWithCursorEventDetailsMember4);
-            }
-            else if(ServiceEventWithCursorEventDetailsMember40 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember40>(null, ServiceEventWithCursorEventDetailsMember40);
             }
             else if(ServiceEventWithCursorEventDetailsMember5 != null)
             {
@@ -828,17 +824,37 @@ namespace Soenneker.Render.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6>(null, ServiceEventWithCursorEventDetailsMember6);
             }
-            else if(ServiceEventWithCursorEventDetailsMember7 != null)
+            else if(ServiceEventWithCursorEventDetailsPipelineMinutesExhausted != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember7>(null, ServiceEventWithCursorEventDetailsMember7);
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPipelineMinutesExhausted>(null, ServiceEventWithCursorEventDetailsPipelineMinutesExhausted);
             }
-            else if(ServiceEventWithCursorEventDetailsMember8 != null)
+            else if(ServiceEventWithCursorEventDetailsPreDeployEnded != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember8>(null, ServiceEventWithCursorEventDetailsMember8);
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployEnded>(null, ServiceEventWithCursorEventDetailsPreDeployEnded);
             }
-            else if(ServiceEventWithCursorEventDetailsMember9 != null)
+            else if(ServiceEventWithCursorEventDetailsPreDeployStarted != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember9>(null, ServiceEventWithCursorEventDetailsMember9);
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployStarted>(null, ServiceEventWithCursorEventDetailsPreDeployStarted);
+            }
+            else if(ServiceEventWithCursorEventDetailsServerFailed != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerFailed>(null, ServiceEventWithCursorEventDetailsServerFailed);
+            }
+            else if(ServiceEventWithCursorEventDetailsServerRestarted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerRestarted>(null, ServiceEventWithCursorEventDetailsServerRestarted);
+            }
+            else if(ServiceEventWithCursorEventDetailsSuspenderAdded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderAdded>(null, ServiceEventWithCursorEventDetailsSuspenderAdded);
+            }
+            else if(ServiceEventWithCursorEventDetailsSuspenderRemoved != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderRemoved>(null, ServiceEventWithCursorEventDetailsSuspenderRemoved);
+            }
+            else if(ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted>(null, ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted);
             }
         }
     }

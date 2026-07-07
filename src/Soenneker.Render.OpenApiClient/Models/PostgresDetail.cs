@@ -14,6 +14,14 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>What connection pool to use (if any) out of &apos;pgbouncer&apos; and &apos;none&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConnectionPool { get; set; }
+#nullable restore
+#else
+        public string ConnectionPool { get; set; }
+#endif
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The URL to view the Postgres instance in the Render Dashboard</summary>
@@ -99,10 +107,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The parameterOverrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.PostgresDetail_parameterOverrides? ParameterOverrides { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.PostgresDetailParameterOverrides? ParameterOverrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.PostgresDetail_parameterOverrides ParameterOverrides { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.PostgresDetailParameterOverrides ParameterOverrides { get; set; }
 #endif
         /// <summary>The instance type to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get; set; }
@@ -129,7 +137,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The status property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.DatabaseStatus? Status { get; set; }
         /// <summary>The suspended property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.PostgresDetail_suspended? Suspended { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.PostgresDetailSuspended? Suspended { get; set; }
         /// <summary>The suspenders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,7 +156,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public PostgresDetail()
         {
             AdditionalData = new Dictionary<string, object>();
-            Region = global::Soenneker.Render.OpenApiClient.Models.Region.Oregon;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -168,6 +175,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "connectionPool", n => { ConnectionPool = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dashboardUrl", n => { DashboardUrl = n.GetStringValue(); } },
                 { "databaseName", n => { DatabaseName = n.GetStringValue(); } },
@@ -182,14 +190,14 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "maintenance", n => { Maintenance = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Owner>(global::Soenneker.Render.OpenApiClient.Models.Owner.CreateFromDiscriminatorValue); } },
-                { "parameterOverrides", n => { ParameterOverrides = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresDetail_parameterOverrides>(global::Soenneker.Render.OpenApiClient.Models.PostgresDetail_parameterOverrides.CreateFromDiscriminatorValue); } },
+                { "parameterOverrides", n => { ParameterOverrides = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresDetailParameterOverrides>(global::Soenneker.Render.OpenApiClient.Models.PostgresDetailParameterOverrides.CreateFromDiscriminatorValue); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); } },
                 { "primaryPostgresID", n => { PrimaryPostgresID = n.GetStringValue(); } },
                 { "readReplicas", n => { ReadReplicas = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplica>(global::Soenneker.Render.OpenApiClient.Models.ReadReplica.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.DatabaseRole>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.DatabaseStatus>(); } },
-                { "suspended", n => { Suspended = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresDetail_suspended>(); } },
+                { "suspended", n => { Suspended = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresDetailSuspended>(); } },
                 { "suspenders", n => { Suspenders = n.GetCollectionOfEnumValues<global::Soenneker.Render.OpenApiClient.Models.SuspenderType>()?.AsList(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "version", n => { Version = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresVersion>(); } },
@@ -202,6 +210,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("connectionPool", ConnectionPool);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("dashboardUrl", DashboardUrl);
             writer.WriteStringValue("databaseName", DatabaseName);
@@ -216,14 +225,14 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("maintenance", Maintenance);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Owner>("owner", Owner);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresDetail_parameterOverrides>("parameterOverrides", ParameterOverrides);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresDetailParameterOverrides>("parameterOverrides", ParameterOverrides);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>("plan", Plan);
             writer.WriteStringValue("primaryPostgresID", PrimaryPostgresID);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplica>("readReplicas", ReadReplicas);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.DatabaseRole>("role", Role);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.DatabaseStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresDetail_suspended>("suspended", Suspended);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresDetailSuspended>("suspended", Suspended);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Render.OpenApiClient.Models.SuspenderType>("suspenders", Suspenders);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresVersion>("version", Version);

@@ -13,31 +13,31 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "allkeys_lfu")]
         #pragma warning disable CS1591
-        Allkeys_lfu,
+        AllkeysLfu,
         #pragma warning restore CS1591
         [EnumMember(Value = "allkeys_lru")]
         #pragma warning disable CS1591
-        Allkeys_lru,
+        AllkeysLru,
         #pragma warning restore CS1591
         [EnumMember(Value = "allkeys_random")]
         #pragma warning disable CS1591
-        Allkeys_random,
+        AllkeysRandom,
         #pragma warning restore CS1591
         [EnumMember(Value = "volatile_lfu")]
         #pragma warning disable CS1591
-        Volatile_lfu,
+        VolatileLfu,
         #pragma warning restore CS1591
         [EnumMember(Value = "volatile_lru")]
         #pragma warning disable CS1591
-        Volatile_lru,
+        VolatileLru,
         #pragma warning restore CS1591
         [EnumMember(Value = "volatile_random")]
         #pragma warning disable CS1591
-        Volatile_random,
+        VolatileRandom,
         #pragma warning restore CS1591
         [EnumMember(Value = "volatile_ttl")]
         #pragma warning disable CS1591
-        Volatile_ttl,
+        VolatileTtl,
         #pragma warning restore CS1591
     }
 }

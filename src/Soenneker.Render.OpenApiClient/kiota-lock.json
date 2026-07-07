@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "DA60B3385C5E44B32346182AB85189DA68BD7A11C0245E9F5956A1A2111CD2C78373539623849CFEB954AFDEF7592F6676331476C9B7B3F20C0FD71FD08FCC2C",
+  "descriptionHash": "6116F426931460326ABD1191FDD38770F26B8764902340858449A04D28E546947F806E2AD07B76D4C147473FB1B0A79E7A650375E619E39889EC4AA5082531A6",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.1",
+  "kiotaVersion": "1.33.0",
   "clientClassName": "RenderOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Render.OpenApiClient",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

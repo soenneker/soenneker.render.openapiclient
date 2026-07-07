@@ -22,15 +22,15 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "parent_service")]
         #pragma warning disable CS1591
-        Parent_service,
+        ParentService,
         #pragma warning restore CS1591
         [EnumMember(Value = "stuck_crashlooping")]
         #pragma warning disable CS1591
-        Stuck_crashlooping,
+        StuckCrashlooping,
         #pragma warning restore CS1591
         [EnumMember(Value = "hipaa_enablement")]
         #pragma warning disable CS1591
-        Hipaa_enablement,
+        HipaaEnablement,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknown")]
         #pragma warning disable CS1591

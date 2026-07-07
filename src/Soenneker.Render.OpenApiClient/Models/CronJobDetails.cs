@@ -16,14 +16,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The buildPlan property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.BuildPlan? BuildPlan { get; set; }
-        /// <summary>The env property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Env { get; set; }
-#nullable restore
-#else
-        public string Env { get; set; }
-#endif
+        /// <summary>This field has been deprecated, runtime should be used in its place.</summary>
+        [Obsolete("")]
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEnv? Env { get; set; }
         /// <summary>The envSpecificDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,8 +49,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public CronJobDetails()
         {
             AdditionalData = new Dictionary<string, object>();
-            BuildPlan = global::Soenneker.Render.OpenApiClient.Models.BuildPlan.Starter;
-            Region = global::Soenneker.Render.OpenApiClient.Models.Region.Oregon;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -76,7 +69,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "buildPlan", n => { BuildPlan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.BuildPlan>(); } },
-                { "env", n => { Env = n.GetStringValue(); } },
+                { "env", n => { Env = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>(); } },
                 { "envSpecificDetails", n => { EnvSpecificDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails>(global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails.CreateFromDiscriminatorValue); } },
                 { "lastSuccessfulRunAt", n => { LastSuccessfulRunAt = n.GetDateTimeOffsetValue(); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); } },
@@ -93,7 +86,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.BuildPlan>("buildPlan", BuildPlan);
-            writer.WriteStringValue("env", Env);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>("env", Env);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails>("envSpecificDetails", EnvSpecificDetails);
             writer.WriteDateTimeOffsetValue("lastSuccessfulRunAt", LastSuccessfulRunAt);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>("plan", Plan);

@@ -20,14 +20,14 @@ namespace Soenneker.Render.OpenApiClient.KeyValue
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.keyValue.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.KeyValue.Item.WithKeyValueItemRequestBuilder"/></returns>
-        public global::Soenneker.Render.OpenApiClient.KeyValue.Item.WithKeyValueItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.KeyValue.Item.WithRedisItemRequestBuilder"/></returns>
+        public global::Soenneker.Render.OpenApiClient.KeyValue.Item.WithRedisItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("keyValueId", position);
-                return new global::Soenneker.Render.OpenApiClient.KeyValue.Item.WithKeyValueItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("redisId", position);
+                return new global::Soenneker.Render.OpenApiClient.KeyValue.Item.WithRedisItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -97,11 +97,11 @@ namespace Soenneker.Render.OpenApiClient.KeyValue
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.KeyValueDetail?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.KeyValuePOSTInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.KeyValueDetail?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.KeyValuePostInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.KeyValueDetail> PostAsync(global::Soenneker.Render.OpenApiClient.Models.KeyValuePOSTInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.KeyValueDetail> PostAsync(global::Soenneker.Render.OpenApiClient.Models.KeyValuePostInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Soenneker.Render.OpenApiClient.KeyValue
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.KeyValuePOSTInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.KeyValuePostInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.KeyValuePOSTInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.KeyValuePostInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

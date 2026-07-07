@@ -31,7 +31,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The type of actor that performed the action</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.AuditLogActor_type? Type { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.AuditLogActorType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.AuditLogActor"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogActor_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogActorType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogActor_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogActorType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

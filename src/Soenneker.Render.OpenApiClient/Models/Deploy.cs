@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The status property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.DeployStatus? Status { get; set; }
         /// <summary>The trigger property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.Deploy_trigger? Trigger { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.DeployTrigger? Trigger { get; set; }
         /// <summary>The updatedAt property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "image", n => { Image = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.DeployImage>(global::Soenneker.Render.OpenApiClient.Models.DeployImage.CreateFromDiscriminatorValue); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.DeployStatus>(); } },
-                { "trigger", n => { Trigger = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Deploy_trigger>(); } },
+                { "trigger", n => { Trigger = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.DeployTrigger>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -100,7 +100,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.DeployImage>("image", Image);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.DeployStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Deploy_trigger>("trigger", Trigger);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.DeployTrigger>("trigger", Trigger);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

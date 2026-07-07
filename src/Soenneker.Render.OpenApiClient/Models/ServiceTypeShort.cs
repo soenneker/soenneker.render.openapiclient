@@ -10,7 +10,7 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         [EnumMember(Value = "static")]
         #pragma warning disable CS1591
-        Static,
+        StaticValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "web")]
         #pragma warning disable CS1591

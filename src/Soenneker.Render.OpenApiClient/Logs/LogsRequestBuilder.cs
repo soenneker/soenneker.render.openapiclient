@@ -54,7 +54,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// <summary>
         /// List logs matching the provided filters. Logs are paginated by start and end timestamps.There are more logs to fetch if `hasMore` is true in the response. Provide the `nextStartTime`and `nextEndTime` timestamps as the `startTime` and `endTime` query parameters to fetch the next page of logs.You can query for logs across multiple resources, but all resources must be in the same region and belong to the same owner.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Logs.LogsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.Logs200ResponseResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -68,11 +68,11 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Render.OpenApiClient.Logs.LogsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.Logs200ResponseResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Render.OpenApiClient.Logs.LogsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.Logs200ResponseResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -88,7 +88,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Logs.LogsGetResponse>(requestInfo, global::Soenneker.Render.OpenApiClient.Logs.LogsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.Logs200ResponseResponse>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.Logs200ResponseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List logs matching the provided filters. Logs are paginated by start and end timestamps.There are more logs to fetch if `hasMore` is true in the response. Provide the `nextStartTime`and `nextEndTime` timestamps as the `startTime` and `endTime` query parameters to fetch the next page of logs.You can query for logs across multiple resources, but all resources must be in the same region and belong to the same owner.
@@ -126,7 +126,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         {
             /// <summary>The direction to query logs for. Backward will return most recent logs first.Forward will start with the oldest logs in the time range.</summary>
             [QueryParameter("direction")]
-            public global::Soenneker.Render.OpenApiClient.Logs.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.ListLogsDirectionParameter? Direction { get; set; }
             /// <summary>Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.</summary>
             [QueryParameter("endTime")]
             public DateTimeOffset? EndTime { get; set; }

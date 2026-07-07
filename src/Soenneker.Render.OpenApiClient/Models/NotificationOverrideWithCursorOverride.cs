@@ -15,9 +15,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The notificationsToSend property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride_notificationsToSend? NotificationsToSend { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverrideNotificationsToSend? NotificationsToSend { get; set; }
         /// <summary>The previewNotificationsEnabled property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride_previewNotificationsEnabled? PreviewNotificationsEnabled { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverridePreviewNotificationsEnabled? PreviewNotificationsEnabled { get; set; }
         /// <summary>The serviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,8 +51,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "notificationsToSend", n => { NotificationsToSend = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride_notificationsToSend>(); } },
-                { "previewNotificationsEnabled", n => { PreviewNotificationsEnabled = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride_previewNotificationsEnabled>(); } },
+                { "notificationsToSend", n => { NotificationsToSend = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverrideNotificationsToSend>(); } },
+                { "previewNotificationsEnabled", n => { PreviewNotificationsEnabled = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverridePreviewNotificationsEnabled>(); } },
                 { "serviceId", n => { ServiceId = n.GetStringValue(); } },
             };
         }
@@ -63,8 +63,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride_notificationsToSend>("notificationsToSend", NotificationsToSend);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride_previewNotificationsEnabled>("previewNotificationsEnabled", PreviewNotificationsEnabled);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverrideNotificationsToSend>("notificationsToSend", NotificationsToSend);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverridePreviewNotificationsEnabled>("previewNotificationsEnabled", PreviewNotificationsEnabled);
             writer.WriteStringValue("serviceId", ServiceId);
             writer.WriteAdditionalData(AdditionalData);
         }

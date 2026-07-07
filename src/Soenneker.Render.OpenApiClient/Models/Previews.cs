@@ -15,14 +15,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defaults to &quot;off&quot;</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.Previews_generation? Generation { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.PreviewsGeneration? Generation { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.Previews"/> and sets the default values.
         /// </summary>
         public Previews()
         {
             AdditionalData = new Dictionary<string, object>();
-            Generation = global::Soenneker.Render.OpenApiClient.Models.Previews_generation.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +41,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "generation", n => { Generation = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Previews_generation>(); } },
+                { "generation", n => { Generation = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PreviewsGeneration>(); } },
             };
         }
         /// <summary>
@@ -52,7 +51,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Previews_generation>("generation", Generation);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PreviewsGeneration>("generation", Generation);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

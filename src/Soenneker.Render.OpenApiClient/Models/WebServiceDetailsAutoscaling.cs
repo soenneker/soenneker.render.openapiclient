@@ -34,6 +34,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public WebServiceDetailsAutoscaling()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

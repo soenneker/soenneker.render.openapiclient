@@ -94,7 +94,7 @@ namespace Soenneker.Render.OpenApiClient.Metrics.TaskRunsCompleted
         {
             /// <summary>The field to aggregate by</summary>
             [QueryParameter("aggregateBy")]
-            public global::Soenneker.Render.OpenApiClient.Metrics.TaskRunsCompleted.GetAggregateByQueryParameterType? AggregateBy { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.MetricsTaskRunsCompletedAggregateBy? AggregateBy { get; set; }
             /// <summary>Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.</summary>
             [QueryParameter("endTime")]
             public DateTimeOffset? EndTime { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.Render.OpenApiClient.Metrics.TaskRunsCompleted
             public DateTimeOffset? StartTime { get; set; }
             /// <summary>The state of task runs to filter to. When multiple state query params are provided, they are ORed together</summary>
             [QueryParameter("state")]
-            public global::Soenneker.Render.OpenApiClient.Metrics.TaskRunsCompleted.GetStateQueryParameterType? State { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.MetricsTaskRunsCompletedState? State { get; set; }
         }
     }
 }

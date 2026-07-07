@@ -14,6 +14,14 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>What connection pool to use (if any) out of &apos;pgbouncer&apos; and &apos;none&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConnectionPool { get; set; }
+#nullable restore
+#else
+        public string ConnectionPool { get; set; }
+#endif
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The URL to view the Postgres instance in the Render Dashboard</summary>
@@ -89,7 +97,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public global::Soenneker.Render.OpenApiClient.Models.Owner Owner { get; set; }
 #endif
         /// <summary>The plan property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.Postgres_plan? Plan { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.PostgresPlan? Plan { get; set; }
         /// <summary>The primaryPostgresID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,7 +121,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The status property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.DatabaseStatus? Status { get; set; }
         /// <summary>The suspended property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.Postgres_suspended? Suspended { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.PostgresSuspended? Suspended { get; set; }
         /// <summary>The suspenders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,7 +140,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public Postgres()
         {
             AdditionalData = new Dictionary<string, object>();
-            Region = global::Soenneker.Render.OpenApiClient.Models.Region.Oregon;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -152,6 +159,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "connectionPool", n => { ConnectionPool = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dashboardUrl", n => { DashboardUrl = n.GetStringValue(); } },
                 { "databaseName", n => { DatabaseName = n.GetStringValue(); } },
@@ -165,13 +173,13 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Owner>(global::Soenneker.Render.OpenApiClient.Models.Owner.CreateFromDiscriminatorValue); } },
-                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Postgres_plan>(); } },
+                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPlan>(); } },
                 { "primaryPostgresID", n => { PrimaryPostgresID = n.GetStringValue(); } },
                 { "readReplicas", n => { ReadReplicas = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplica>(global::Soenneker.Render.OpenApiClient.Models.ReadReplica.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.DatabaseRole>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.DatabaseStatus>(); } },
-                { "suspended", n => { Suspended = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Postgres_suspended>(); } },
+                { "suspended", n => { Suspended = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresSuspended>(); } },
                 { "suspenders", n => { Suspenders = n.GetCollectionOfEnumValues<global::Soenneker.Render.OpenApiClient.Models.SuspenderType>()?.AsList(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "version", n => { Version = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresVersion>(); } },
@@ -184,6 +192,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("connectionPool", ConnectionPool);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("dashboardUrl", DashboardUrl);
             writer.WriteStringValue("databaseName", DatabaseName);
@@ -197,13 +206,13 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>("ipAllowList", IpAllowList);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Owner>("owner", Owner);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Postgres_plan>("plan", Plan);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPlan>("plan", Plan);
             writer.WriteStringValue("primaryPostgresID", PrimaryPostgresID);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplica>("readReplicas", ReadReplicas);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.DatabaseRole>("role", Role);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.DatabaseStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Postgres_suspended>("suspended", Suspended);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresSuspended>("suspended", Suspended);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Render.OpenApiClient.Models.SuspenderType>("suspenders", Suspenders);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresVersion>("version", Version);

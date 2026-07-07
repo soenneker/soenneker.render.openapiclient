@@ -26,7 +26,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "pro_plus")]
         #pragma warning disable CS1591
-        Pro_plus,
+        ProPlus,
         #pragma warning restore CS1591
         [EnumMember(Value = "custom")]
         #pragma warning disable CS1591
