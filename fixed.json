@@ -8157,6 +8157,473 @@
         }
       ]
     },
+    "/postgres/{postgresId}/promote": {
+      "post": {
+        "tags": [
+          "Postgres"
+        ],
+        "summary": "Promote Postgres read replica",
+        "description": "Promote a Postgres read replica to a standalone primary instance by ID.\n",
+        "operationId": "PromotePostgres",
+        "responses": {
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "406": {
+            "$ref": "#/components/responses/406NotAcceptable"
+          },
+          "410": {
+            "$ref": "#/components/responses/410Gone"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "postgresId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/postgres/{postgresId}/replication": {
+      "post": {
+        "tags": [
+          "Postgres"
+        ],
+        "summary": "Set up logical replication",
+        "description": "Set up logical replication (a publication and, optionally, a replication slot) for a schema and database on a Postgres instance by ID.\n",
+        "operationId": "SetupPostgresReplication",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetupPostgresReplicationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Replication set up successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetupPostgresReplication201ResponseResponseJson"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "406": {
+            "$ref": "#/components/responses/406NotAcceptable"
+          },
+          "410": {
+            "$ref": "#/components/responses/410Gone"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "postgresId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/postgres/{postgresId}/parameter-overrides": {
+      "get": {
+        "tags": [
+          "Postgres"
+        ],
+        "summary": "List Postgres parameter overrides",
+        "description": "List the configuration parameter overrides currently applied to a Postgres instance by ID.\n",
+        "operationId": "ListPostgresParameterOverrides",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresParameterOverridesWrapper"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Postgres"
+        ],
+        "summary": "Update Postgres parameter overrides",
+        "description": "Update the configuration parameter overrides applied to a Postgres instance by ID.\n",
+        "operationId": "UpdatePostgresParameterOverrides",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostgresParameterOverridesWrapper"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresPutParameterOverridesResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/409Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "postgresId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/postgres/{postgresId}/parameter-overrides/available": {
+      "get": {
+        "tags": [
+          "Postgres"
+        ],
+        "summary": "List available Postgres parameter overrides",
+        "description": "List the configuration parameter overrides that could be applied to a Postgres instance by ID.\n",
+        "operationId": "ListAvailablePostgresParameterOverrides",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListAvailablePostgresParameterOverrides200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "postgresId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/postgres/{postgresId}/query/processes": {
+      "get": {
+        "tags": [
+          "Postgres"
+        ],
+        "summary": "List live queries",
+        "description": "List currently running queries (from \u0060pg_stat_activity\u0060) on a Postgres instance by ID.\n",
+        "operationId": "ListPostgresProcesses",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPostgresProcesses200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "postgresId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/postgres/{postgresId}/query/top-queries": {
+      "get": {
+        "tags": [
+          "Postgres"
+        ],
+        "summary": "List top queries",
+        "description": "List the top 50 queries by total execution time (from \u0060pg_stat_statements\u0060) on a Postgres instance by ID.\n",
+        "operationId": "ListPostgresTopQueries",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPostgresTopQueries200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "postgresId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/postgres/{postgresId}/query/sizes": {
+      "get": {
+        "tags": [
+          "Postgres"
+        ],
+        "summary": "List database, table, and index sizes",
+        "description": "List the sizes of databases, tables, and indexes on a Postgres instance by ID.\n",
+        "operationId": "ListPostgresSizes",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPostgresSizes200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "postgresId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/postgres/{postgresId}/query/table-scans": {
+      "get": {
+        "tags": [
+          "Postgres"
+        ],
+        "summary": "List table scans",
+        "description": "List the number of sequential scans performed against each table on a Postgres instance by ID.\n",
+        "operationId": "ListPostgresTableScans",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPostgresTableScans200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "postgresId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "/projects": {
       "get": {
         "tags": [
@@ -15024,6 +15491,41 @@
           "type": "string"
         }
       },
+      "PostgresParameterOverridesWrapper": {
+        "required": [
+          "parameterOverrides"
+        ],
+        "type": "object",
+        "properties": {
+          "parameterOverrides": {
+            "$ref": "#/components/schemas/PostgresParameterOverridesWrapperParameterOverrides"
+          }
+        }
+      },
+      "PostgresPutParameterOverridesResult": {
+        "required": [
+          "affectedDatabases",
+          "appliedOverrides",
+          "requiresRestart"
+        ],
+        "type": "object",
+        "properties": {
+          "affectedDatabases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "IDs of databases affected by this update (the primary and any read replicas)."
+          },
+          "appliedOverrides": {
+            "$ref": "#/components/schemas/PostgresPutParameterOverridesResultAppliedOverrides"
+          },
+          "requiresRestart": {
+            "type": "boolean",
+            "description": "Whether the affected databases must be restarted for the applied overrides to take effect."
+          }
+        }
+      },
       "PostgresConnectionInfo": {
         "required": [
           "password",
@@ -18034,6 +18536,108 @@
           }
         }
       },
+      "SetupPostgresReplicationRequest": {
+        "required": [
+          "schemaName",
+          "databaseName"
+        ],
+        "type": "object",
+        "properties": {
+          "schemaName": {
+            "type": "string",
+            "description": "Schema to replicate."
+          },
+          "databaseName": {
+            "type": "string",
+            "description": "Database to replicate."
+          },
+          "allTablesPublicationName": {
+            "type": "string",
+            "description": "Publication name to create."
+          },
+          "replicationSlotName": {
+            "type": "string",
+            "description": "Replication slot name to create."
+          },
+          "restartNow": {
+            "type": "boolean",
+            "description": "Immediately enqueue a restart to apply."
+          }
+        }
+      },
+      "SetupPostgresReplication201Response": {
+        "type": "object"
+      },
+      "ListAvailablePostgresParameterOverrides200Response": {
+        "required": [
+          "availableParameterOverrides"
+        ],
+        "type": "object",
+        "properties": {
+          "availableParameterOverrides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListAvailablePostgresParameterOverrides200ResponseAvailableParameterOverridesItem"
+            }
+          }
+        }
+      },
+      "ListPostgresProcesses200Response": {
+        "required": [
+          "processes"
+        ],
+        "type": "object",
+        "properties": {
+          "processes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListPostgresProcesses200ResponseProcessesItem"
+            }
+          }
+        }
+      },
+      "ListPostgresTopQueries200Response": {
+        "required": [
+          "topQueries"
+        ],
+        "type": "object",
+        "properties": {
+          "topQueries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListPostgresTopQueries200ResponseTopQueriesItem"
+            }
+          }
+        }
+      },
+      "ListPostgresSizes200Response": {
+        "required": [
+          "sizes"
+        ],
+        "type": "object",
+        "properties": {
+          "sizes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListPostgresSizes200ResponseSizesItem"
+            }
+          }
+        }
+      },
+      "ListPostgresTableScans200Response": {
+        "required": [
+          "tableScans"
+        ],
+        "type": "object",
+        "properties": {
+          "tableScans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListPostgresTableScans200ResponseTableScansItem"
+            }
+          }
+        }
+      },
       "ListProjects200Response": {
         "type": "array",
         "items": {
@@ -18744,6 +19348,9 @@
           "$ref": "#/components/schemas/ListPostgresUsers200ResponseResponseJsonItem"
         }
       },
+      "SetupPostgresReplication201ResponseResponseJson": {
+        "type": "object"
+      },
       "ListProjects200ResponseResponseJson": {
         "type": "array",
         "items": {
@@ -19167,6 +19774,18 @@
           "type": "string"
         }
       },
+      "PostgresParameterOverridesWrapperParameterOverrides": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "PostgresPutParameterOverridesResultAppliedOverrides": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
       "PostgresDetailParameterOverrides": {
         "type": "object",
         "additionalProperties": {
@@ -19380,6 +19999,191 @@
             "type": "integer"
           }
         }
+      },
+      "ListAvailablePostgresParameterOverrides200ResponseAvailableParameterOverridesItem": {
+        "required": [
+          "name",
+          "description",
+          "requiresRestart"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "requiresRestart": {
+            "type": "boolean",
+            "description": "Whether setting this parameter requires a restart to take effect."
+          },
+          "examples": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "minValue": {
+            "type": "number",
+            "description": "The minimum value allowed for numeric parameters."
+          },
+          "maxValue": {
+            "type": "number",
+            "description": "The maximum value allowed for numeric parameters."
+          }
+        }
+      },
+      "ListPostgresProcesses200ResponseProcessesItem": {
+        "type": "object",
+        "properties": {
+          "pid": {
+            "type": "integer"
+          },
+          "databaseName": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "applicationName": {
+            "type": "string"
+          },
+          "clientAddr": {
+            "type": "string"
+          },
+          "backendStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "queryStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "state": {
+            "type": "string"
+          },
+          "waitEvent": {
+            "type": "string"
+          },
+          "waitEventType": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "number",
+            "description": "Duration of the query, in seconds."
+          },
+          "isLeader": {
+            "type": "boolean",
+            "description": "Whether this process is running against the primary instance of a highly available database."
+          }
+        },
+        "description": "A single live process from pg_stat_activity."
+      },
+      "ListPostgresTopQueries200ResponseTopQueriesItem": {
+        "type": "object",
+        "properties": {
+          "queryId": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "calls": {
+            "type": "integer"
+          },
+          "totalTimeMs": {
+            "type": "number"
+          },
+          "minTimeMs": {
+            "type": "number"
+          },
+          "maxTimeMs": {
+            "type": "number"
+          },
+          "meanTimeMs": {
+            "type": "number"
+          },
+          "stddevTimeMs": {
+            "type": "number"
+          },
+          "rows": {
+            "type": "integer"
+          },
+          "sharedBlocksHit": {
+            "type": "integer"
+          },
+          "sharedBlocksRead": {
+            "type": "integer"
+          },
+          "sharedBlocksDirtied": {
+            "type": "integer"
+          },
+          "sharedBlocksWritten": {
+            "type": "integer"
+          },
+          "localBlocksHit": {
+            "type": "integer"
+          },
+          "localBlocksRead": {
+            "type": "integer"
+          },
+          "localBlocksDirtied": {
+            "type": "integer"
+          },
+          "localBlocksWritten": {
+            "type": "integer"
+          },
+          "tempBlocksRead": {
+            "type": "integer"
+          },
+          "tempBlocksWritten": {
+            "type": "integer"
+          }
+        },
+        "description": "A single query from pg_stat_statements."
+      },
+      "ListPostgresSizes200ResponseSizesItem": {
+        "type": "object",
+        "properties": {
+          "Database": {
+            "type": "string"
+          },
+          "Schema": {
+            "type": "string"
+          },
+          "Table": {
+            "type": "string"
+          },
+          "Index": {
+            "type": "string"
+          },
+          "Bytes": {
+            "type": "integer"
+          }
+        },
+        "description": "The size of an index, table, or database."
+      },
+      "ListPostgresTableScans200ResponseTableScansItem": {
+        "type": "object",
+        "properties": {
+          "Database": {
+            "type": "string"
+          },
+          "Schema": {
+            "type": "string"
+          },
+          "Table": {
+            "type": "string"
+          },
+          "Scans": {
+            "type": "integer"
+          }
+        },
+        "description": "The number of sequential scans performed against a table."
       },
       "GetTaskRun200ResponseResultsItem": {
         "type": "object"
