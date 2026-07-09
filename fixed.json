@@ -20397,6 +20397,7 @@
           "ChangeTeamMemberRoleEvent",
           "ChangeWorkspaceDeployHandlingEvent",
           "ChangeWorkspacePrivacyEvent",
+          "CreateArtifactSourceEvent",
           "CreateCronJobEvent",
           "CreateEnvVarsEvent",
           "CreateEnvironmentEvent",
