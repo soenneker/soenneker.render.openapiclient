@@ -8,11 +8,8 @@ using Soenneker.Render.OpenApiClient.Postgres.Item.ConnectionInfo;
 using Soenneker.Render.OpenApiClient.Postgres.Item.Credentials;
 using Soenneker.Render.OpenApiClient.Postgres.Item.Export;
 using Soenneker.Render.OpenApiClient.Postgres.Item.Failover;
-using Soenneker.Render.OpenApiClient.Postgres.Item.ParameterOverrides;
-using Soenneker.Render.OpenApiClient.Postgres.Item.Promote;
 using Soenneker.Render.OpenApiClient.Postgres.Item.Query;
 using Soenneker.Render.OpenApiClient.Postgres.Item.Recovery;
-using Soenneker.Render.OpenApiClient.Postgres.Item.Replication;
 using Soenneker.Render.OpenApiClient.Postgres.Item.Restart;
 using Soenneker.Render.OpenApiClient.Postgres.Item.Resume;
 using Soenneker.Render.OpenApiClient.Postgres.Item.Suspend;
@@ -49,16 +46,6 @@ namespace Soenneker.Render.OpenApiClient.Postgres.Item
         {
             get => new global::Soenneker.Render.OpenApiClient.Postgres.Item.Failover.FailoverRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The parameterOverrides property</summary>
-        public global::Soenneker.Render.OpenApiClient.Postgres.Item.ParameterOverrides.ParameterOverridesRequestBuilder ParameterOverrides
-        {
-            get => new global::Soenneker.Render.OpenApiClient.Postgres.Item.ParameterOverrides.ParameterOverridesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The promote property</summary>
-        public global::Soenneker.Render.OpenApiClient.Postgres.Item.Promote.PromoteRequestBuilder Promote
-        {
-            get => new global::Soenneker.Render.OpenApiClient.Postgres.Item.Promote.PromoteRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The query property</summary>
         public global::Soenneker.Render.OpenApiClient.Postgres.Item.Query.QueryRequestBuilder Query
         {
@@ -68,11 +55,6 @@ namespace Soenneker.Render.OpenApiClient.Postgres.Item
         public global::Soenneker.Render.OpenApiClient.Postgres.Item.Recovery.RecoveryRequestBuilder Recovery
         {
             get => new global::Soenneker.Render.OpenApiClient.Postgres.Item.Recovery.RecoveryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The replication property</summary>
-        public global::Soenneker.Render.OpenApiClient.Postgres.Item.Replication.ReplicationRequestBuilder Replication
-        {
-            get => new global::Soenneker.Render.OpenApiClient.Postgres.Item.Replication.ReplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The restart property</summary>
         public global::Soenneker.Render.OpenApiClient.Postgres.Item.Restart.RestartRequestBuilder Restart
