@@ -8,6 +8,14 @@ namespace Soenneker.Render.OpenApiClient.Models
     public enum WebhookEventWithCursorWebhookEventEventType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "artifact_fetch_failed")]
+        #pragma warning disable CS1591
+        ArtifactFetchFailed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "artifact_source_changed")]
+        #pragma warning disable CS1591
+        ArtifactSourceChanged,
+        #pragma warning restore CS1591
         [EnumMember(Value = "autoscaling_config_changed")]
         #pragma warning disable CS1591
         AutoscalingConfigChanged,

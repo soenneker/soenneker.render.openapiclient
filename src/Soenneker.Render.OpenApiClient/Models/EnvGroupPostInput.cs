@@ -49,10 +49,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The secretFiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.SecretFileInput>? SecretFiles { get; set; }
+        public List<string>? SecretFiles { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.SecretFileInput> SecretFiles { get; set; }
+        public List<string> SecretFiles { get; set; }
 #endif
         /// <summary>The serviceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "secretFiles", n => { SecretFiles = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.SecretFileInput>(global::Soenneker.Render.OpenApiClient.Models.SecretFileInput.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "secretFiles", n => { SecretFiles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "serviceIds", n => { ServiceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -106,7 +106,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("envVars", EnvVars);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.SecretFileInput>("secretFiles", SecretFiles);
+            writer.WriteCollectionOfPrimitiveValues<string>("secretFiles", SecretFiles);
             writer.WriteCollectionOfPrimitiveValues<string>("serviceIds", ServiceIds);
             writer.WriteAdditionalData(AdditionalData);
         }

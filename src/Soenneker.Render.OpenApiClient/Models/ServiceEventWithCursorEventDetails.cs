@@ -8,11 +8,27 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployEnabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingConfigChanged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBranchDeleted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCommitIgnored"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskCreated"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskDeleted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskUpdated"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheDisabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheEnabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCachePurged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsImagePullFailed"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceCountChanged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceTypeChanged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsJobRunEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeEnabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember1"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember2"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember3"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember4"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPipelineMinutesExhausted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerFailed"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerRestarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderAdded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderRemoved"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactFetchFailed"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactSourceChanged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployEnabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingConfigChanged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoscalingStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBranchDeleted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsBuildStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCommitIgnored"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsCronJobRunStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskCreated"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskDeleted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDiskUpdated"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheDisabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCacheEnabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsEdgeCachePurged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsImagePullFailed"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInitialDeployHookStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceCountChanged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsInstanceTypeChanged"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsJobRunEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeEnabled"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMaintenanceStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember1"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember2"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember3"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember4"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember5"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsMember6"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPipelineMinutesExhausted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployEnded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsPreDeployStarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerFailed"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsServerRestarted"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderAdded"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsSuspenderRemoved"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServiceEventWithCursorEventDetails : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactFetchFailed"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactFetchFailed? ServiceEventWithCursorEventDetailsArtifactFetchFailed { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactFetchFailed ServiceEventWithCursorEventDetailsArtifactFetchFailed { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactSourceChanged"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactSourceChanged? ServiceEventWithCursorEventDetailsArtifactSourceChanged { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactSourceChanged ServiceEventWithCursorEventDetailsArtifactSourceChanged { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -359,7 +375,15 @@ namespace Soenneker.Render.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetails();
-            if("ServiceEventWithCursorEventDetailsAutoDeployDisabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ServiceEventWithCursorEventDetailsArtifactFetchFailed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ServiceEventWithCursorEventDetailsArtifactFetchFailed = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactFetchFailed();
+            }
+            else if("ServiceEventWithCursorEventDetailsArtifactSourceChanged".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ServiceEventWithCursorEventDetailsArtifactSourceChanged = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactSourceChanged();
+            }
+            else if("ServiceEventWithCursorEventDetailsAutoDeployDisabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ServiceEventWithCursorEventDetailsAutoDeployDisabled = new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled();
             }
@@ -511,7 +535,15 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ServiceEventWithCursorEventDetailsAutoDeployDisabled != null)
+            if(ServiceEventWithCursorEventDetailsArtifactFetchFailed != null)
+            {
+                return ServiceEventWithCursorEventDetailsArtifactFetchFailed.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsArtifactSourceChanged != null)
+            {
+                return ServiceEventWithCursorEventDetailsArtifactSourceChanged.GetFieldDeserializers();
+            }
+            else if(ServiceEventWithCursorEventDetailsAutoDeployDisabled != null)
             {
                 return ServiceEventWithCursorEventDetailsAutoDeployDisabled.GetFieldDeserializers();
             }
@@ -688,7 +720,15 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ServiceEventWithCursorEventDetailsAutoDeployDisabled != null)
+            if(ServiceEventWithCursorEventDetailsArtifactFetchFailed != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactFetchFailed>(null, ServiceEventWithCursorEventDetailsArtifactFetchFailed);
+            }
+            else if(ServiceEventWithCursorEventDetailsArtifactSourceChanged != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactSourceChanged>(null, ServiceEventWithCursorEventDetailsArtifactSourceChanged);
+            }
+            else if(ServiceEventWithCursorEventDetailsAutoDeployDisabled != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsAutoDeployDisabled>(null, ServiceEventWithCursorEventDetailsAutoDeployDisabled);
             }

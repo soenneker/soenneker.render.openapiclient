@@ -9,51 +9,43 @@ namespace Soenneker.Render.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ServiceEventWithCursorEventDetailsDeployStarted : IAdditionalDataHolder, IParsable
+    public partial class ServiceEventWithCursorEventDetailsArtifactSourceChanged : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set when the deploy ships an artifact published by the service&apos;s linked artifact source.</summary>
+        /// <summary>The previously linked artifact source. Absent when the service was newly attached.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ArtifactId { get; set; }
+        public string? FromArtifactSourceId { get; set; }
 #nullable restore
 #else
-        public string ArtifactId { get; set; }
+        public string FromArtifactSourceId { get; set; }
 #endif
-        /// <summary>The deployId property</summary>
+        /// <summary>The newly linked artifact source. Absent when the service was detached.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployId { get; set; }
+        public string? ToArtifactSourceId { get; set; }
 #nullable restore
 #else
-        public string DeployId { get; set; }
-#endif
-        /// <summary>The trigger property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Trigger { get; set; }
-#nullable restore
-#else
-        public string Trigger { get; set; }
+        public string ToArtifactSourceId { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactSourceChanged"/> and sets the default values.
         /// </summary>
-        public ServiceEventWithCursorEventDetailsDeployStarted()
+        public ServiceEventWithCursorEventDetailsArtifactSourceChanged()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactSourceChanged"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactSourceChanged CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsDeployStarted();
+            return new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEventDetailsArtifactSourceChanged();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +55,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "artifactId", n => { ArtifactId = n.GetStringValue(); } },
-                { "deployId", n => { DeployId = n.GetStringValue(); } },
-                { "trigger", n => { Trigger = n.GetStringValue(); } },
+                { "fromArtifactSourceId", n => { FromArtifactSourceId = n.GetStringValue(); } },
+                { "toArtifactSourceId", n => { ToArtifactSourceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +66,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("artifactId", ArtifactId);
-            writer.WriteStringValue("deployId", DeployId);
-            writer.WriteStringValue("trigger", Trigger);
+            writer.WriteStringValue("fromArtifactSourceId", FromArtifactSourceId);
+            writer.WriteStringValue("toArtifactSourceId", ToArtifactSourceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

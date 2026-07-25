@@ -12171,7 +12171,7 @@
           "secretFiles": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SecretFileInput"
+              "$ref": "#/components/schemas/ServicePostSecretFilesItem"
             }
           },
           "environmentId": {
@@ -14856,7 +14856,7 @@
           "secretFiles": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SecretFileInput"
+              "type": "string"
             }
           },
           "serviceIds": {
@@ -14878,21 +14878,6 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
-          }
-        }
-      },
-      "SecretFileInput": {
-        "required": [
-          "name",
-          "content"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "content": {
             "type": "string"
           }
         }
@@ -15866,6 +15851,12 @@
         "type": "object",
         "oneOf": [
           {
+            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsArtifactFetchFailed"
+          },
+          {
+            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsArtifactSourceChanged"
+          },
+          {
             "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoscalingConfigChanged"
           },
           {
@@ -16007,6 +15998,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
+            "ServiceEventWithCursorEventDetailsArtifactFetchFailed": "#/components/schemas/ServiceEventWithCursorEventDetailsArtifactFetchFailed",
+            "ServiceEventWithCursorEventDetailsArtifactSourceChanged": "#/components/schemas/ServiceEventWithCursorEventDetailsArtifactSourceChanged",
             "ServiceEventWithCursorEventDetailsAutoscalingConfigChanged": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoscalingConfigChanged",
             "ServiceEventWithCursorEventDetailsAutoscalingEnded": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoscalingEnded",
             "ServiceEventWithCursorEventDetailsAutoscalingStarted": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoscalingStarted",
@@ -16074,6 +16067,36 @@
           "generateValue": {
             "type": "boolean",
             "description": "If true, Render generates a strong random value for this environment variable on creation. Cannot be combined with \u0060value\u0060."
+          }
+        }
+      },
+      "ServiceEventWithCursorEventDetailsArtifactFetchFailed": {
+        "title": "Artifact Fetch Failed",
+        "required": [
+          "artifactId",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "artifactId": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceEventWithCursorEventDetailsArtifactSourceChanged": {
+        "title": "Artifact Source Changed",
+        "type": "object",
+        "properties": {
+          "fromArtifactSourceId": {
+            "type": "string",
+            "description": "The previously linked artifact source. Absent when the service was newly attached."
+          },
+          "toArtifactSourceId": {
+            "type": "string",
+            "description": "The newly linked artifact source. Absent when the service was detached."
           }
         }
       },
@@ -16271,6 +16294,10 @@
           "status": {
             "type": "integer",
             "deprecated": true
+          },
+          "artifactId": {
+            "type": "string",
+            "description": "Set when the deploy shipped an artifact published by the service\u0027s linked artifact source."
           }
         }
       },
@@ -16287,6 +16314,10 @@
           },
           "trigger": {
             "type": "string"
+          },
+          "artifactId": {
+            "type": "string",
+            "description": "Set when the deploy ships an artifact published by the service\u0027s linked artifact source."
           }
         }
       },
@@ -16860,6 +16891,21 @@
           "updatedAt": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "ServicePostSecretFilesItem": {
+        "required": [
+          "name",
+          "content"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
           }
         }
       },
@@ -17851,7 +17897,7 @@
       "UpdateSecretFilesForServiceRequest": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/SecretFileInput"
+          "type": "string"
         }
       },
       "UpdateSecretFilesForService200Response": {
@@ -18777,7 +18823,7 @@
       "UpdateSecretFilesForServiceRequestRequestBody": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/SecretFileInput"
+          "type": "string"
         }
       },
       "UpdateSecretFilesForService200ResponseResponseJson": {
@@ -20976,6 +21022,8 @@
       },
       "WebhookEventWithCursorWebhookEventEventType": {
         "enum": [
+          "artifact_fetch_failed",
+          "artifact_source_changed",
           "autoscaling_config_changed",
           "autoscaling_ended",
           "autoscaling_started",
@@ -21048,6 +21096,14 @@
           "name": "WebhookEventWithCursorWebhookEventEventType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "artifact_fetch_failed",
+              "name": "ArtifactFetchFailed"
+            },
+            {
+              "value": "artifact_source_changed",
+              "name": "ArtifactSourceChanged"
+            },
             {
               "value": "autoscaling_config_changed",
               "name": "AutoscalingConfigChanged"
@@ -21802,6 +21858,8 @@
       },
       "EventTypeParamAnyOf1": {
         "enum": [
+          "artifact_fetch_failed",
+          "artifact_source_changed",
           "autoscaling_config_changed",
           "autoscaling_ended",
           "autoscaling_started",
@@ -21848,6 +21906,14 @@
           "name": "EventTypeParamAnyOf1",
           "modelAsString": false,
           "values": [
+            {
+              "value": "artifact_fetch_failed",
+              "name": "ArtifactFetchFailed"
+            },
+            {
+              "value": "artifact_source_changed",
+              "name": "ArtifactSourceChanged"
+            },
             {
               "value": "autoscaling_config_changed",
               "name": "AutoscalingConfigChanged"

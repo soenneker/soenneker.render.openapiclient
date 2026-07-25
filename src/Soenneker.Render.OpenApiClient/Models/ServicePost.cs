@@ -91,10 +91,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The secretFiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.SecretFileInput>? SecretFiles { get; set; }
+        public List<global::Soenneker.Render.OpenApiClient.Models.ServicePostSecretFilesItem>? SecretFiles { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.SecretFileInput> SecretFiles { get; set; }
+        public List<global::Soenneker.Render.OpenApiClient.Models.ServicePostSecretFilesItem> SecretFiles { get; set; }
 #endif
         /// <summary>The serviceDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
                 { "rootDir", n => { RootDir = n.GetStringValue(); } },
-                { "secretFiles", n => { SecretFiles = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.SecretFileInput>(global::Soenneker.Render.OpenApiClient.Models.SecretFileInput.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "secretFiles", n => { SecretFiles = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ServicePostSecretFilesItem>(global::Soenneker.Render.OpenApiClient.Models.ServicePostSecretFilesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "serviceDetails", n => { ServiceDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServicePostServiceDetails>(global::Soenneker.Render.OpenApiClient.Models.ServicePostServiceDetails.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceType>(); } },
             };
@@ -163,7 +163,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("repo", Repo);
             writer.WriteStringValue("rootDir", RootDir);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.SecretFileInput>("secretFiles", SecretFiles);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ServicePostSecretFilesItem>("secretFiles", SecretFiles);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServicePostServiceDetails>("serviceDetails", ServiceDetails);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

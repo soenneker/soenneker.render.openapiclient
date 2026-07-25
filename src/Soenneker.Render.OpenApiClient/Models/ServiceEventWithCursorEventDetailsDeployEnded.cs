@@ -14,6 +14,14 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Set when the deploy shipped an artifact published by the service&apos;s linked artifact source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ArtifactId { get; set; }
+#nullable restore
+#else
+        public string ArtifactId { get; set; }
+#endif
         /// <summary>The deployId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "artifactId", n => { ArtifactId = n.GetStringValue(); } },
                 { "deployId", n => { DeployId = n.GetStringValue(); } },
                 { "deployStatus", n => { DeployStatus = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("artifactId", ArtifactId);
             writer.WriteStringValue("deployId", DeployId);
             writer.WriteStringValue("deployStatus", DeployStatus);
             writer.WriteStringValue("reason", Reason);
