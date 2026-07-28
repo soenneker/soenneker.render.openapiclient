@@ -40,7 +40,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}&resource={resource}{&direction*,endTime*,host*,instance*,level*,limit*,method*,path*,startTime*,statusCode*,task*,taskRun*,text*,type*}", pathParameters)
+        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}&resource={resource}{&direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}&resource={resource}{&direction*,endTime*,host*,instance*,level*,limit*,method*,path*,startTime*,statusCode*,task*,taskRun*,text*,type*}", rawUrl)
+        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}&resource={resource}{&direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -193,7 +193,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
             [QueryParameter("path")]
             public string[] Path { get; set; }
 #endif
-            /// <summary>Filter logs by their resource. A resource is the id of a server, cronjob, job, postgres, redis, or workflow.</summary>
+            /// <summary>Filter logs by their resource. A resource is the id of a server, cronjob, job, postgres, redis, workflow, or sandbox group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource")]
@@ -202,6 +202,16 @@ namespace Soenneker.Render.OpenApiClient.Logs
 #else
             [QueryParameter("resource")]
             public string[] Resource { get; set; }
+#endif
+            /// <summary>Filter logs by sandbox ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sandbox")]
+            public string[]? Sandbox { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sandbox")]
+            public string[] Sandbox { get; set; }
 #endif
             /// <summary>Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.</summary>
             [QueryParameter("startTime")]

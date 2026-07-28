@@ -5016,7 +5016,7 @@
           {
             "name": "resource",
             "in": "query",
-            "description": "Filter logs by their resource. A resource is the id of a server, cronjob, job, postgres, redis, or workflow.",
+            "description": "Filter logs by their resource. A resource is the id of a server, cronjob, job, postgres, redis, workflow, or sandbox group.",
             "required": true,
             "schema": {
               "type": "array",
@@ -5084,6 +5084,17 @@
             "name": "taskRun",
             "in": "query",
             "description": "Filter logs by their task run id(s)",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "sandbox",
+            "in": "query",
+            "description": "Filter logs by sandbox ID.",
             "schema": {
               "type": "array",
               "items": {
@@ -5234,6 +5245,9 @@
             "$ref": "#/components/parameters/14"
           },
           {
+            "$ref": "#/components/parameters/15"
+          },
+          {
             "$ref": "#/components/parameters/limitParam"
           }
         ],
@@ -5346,6 +5360,9 @@
           },
           {
             "$ref": "#/components/parameters/14"
+          },
+          {
+            "$ref": "#/components/parameters/15"
           },
           {
             "$ref": "#/components/parameters/limitParam"
@@ -21686,6 +21703,7 @@
           "workflowVeresion",
           "task",
           "taskRun",
+          "sandbox",
           "type",
           "text",
           "path",
@@ -21737,6 +21755,10 @@
             {
               "value": "taskRun",
               "name": "TaskRun"
+            },
+            {
+              "value": "sandbox",
+              "name": "Sandbox"
             },
             {
               "value": "type",
