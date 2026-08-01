@@ -41,7 +41,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListBlueprints200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListBlueprints200ResponseSchema"
                 }
               }
             }
@@ -384,7 +384,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListBlueprintSyncs200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListBlueprintSyncs200ResponseSchema"
                 }
               }
             }
@@ -452,7 +452,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListDedicatedIps200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListDedicatedIps200ResponseSchema"
                 }
               }
             }
@@ -741,7 +741,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListDisks200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListDisks200ResponseSchema"
                 }
               }
             }
@@ -992,7 +992,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSnapshots201ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSnapshots201ResponseSchema"
                 }
               }
             }
@@ -1188,7 +1188,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOwners200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOwners200ResponseSchema"
                 }
               }
             }
@@ -1364,7 +1364,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOwnerAuditLogs200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOwnerAuditLogs200ResponseSchema"
                 }
               }
             }
@@ -1449,7 +1449,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationAuditLogs200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationAuditLogs200ResponseSchema"
                 }
               }
             }
@@ -1609,7 +1609,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListNotificationOverrides200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListNotificationOverrides200ResponseSchema"
                 }
               }
             }
@@ -1819,7 +1819,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListRegistryCredentials200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListRegistryCredentials200ResponseSchema"
                 }
               }
             }
@@ -2756,7 +2756,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetEnvVarsForService200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetEnvVarsForService200ResponseSchema"
                 }
               }
             }
@@ -2809,7 +2809,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateEnvVarsForService200ResponseResponseJson"
+                  "$ref": "#/components/schemas/UpdateEnvVarsForService200ResponseSchema"
                 }
               }
             }
@@ -3015,7 +3015,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSecretFilesForService200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSecretFilesForService200ResponseSchema"
                 }
               }
             }
@@ -3068,7 +3068,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateSecretFilesForService200ResponseResponseJson"
+                  "$ref": "#/components/schemas/UpdateSecretFilesForService200ResponseSchema"
                 }
               }
             }
@@ -3292,7 +3292,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListEvents200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListEvents200ResponseSchema"
                 }
               }
             }
@@ -3376,7 +3376,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListHeaders200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListHeaders200ResponseSchema"
                 }
               }
             }
@@ -3482,7 +3482,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateHeaders200ResponseResponseJson"
+                  "$ref": "#/components/schemas/UpdateHeaders200ResponseSchema"
                 }
               }
             }
@@ -3630,7 +3630,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListRoutes200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListRoutes200ResponseSchema"
                 }
               }
             }
@@ -3739,7 +3739,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PutRoutes200ResponseResponseJson"
+                  "$ref": "#/components/schemas/PutRoutes200ResponseSchema"
                 }
               }
             }
@@ -3952,7 +3952,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListCustomDomains200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListCustomDomains200ResponseSchema"
                 }
               }
             }
@@ -4008,7 +4008,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateCustomDomain201ResponseResponseJson"
+                  "$ref": "#/components/schemas/CreateCustomDomain201ResponseSchema"
                 }
               }
             }
@@ -4628,7 +4628,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListJob200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListJob200ResponseSchema"
                 }
               }
             }
@@ -4824,7 +4824,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListInstances200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListInstances200ResponseSchema"
                 }
               }
             }
@@ -5611,7 +5611,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListResourceLogStreams200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListResourceLogStreams200ResponseSchema"
                 }
               }
             }
@@ -5909,7 +5909,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetCpu200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetCpu200ResponseSchema"
                 }
               }
             }
@@ -6653,7 +6653,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListApplicationFilterValues200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListApplicationFilterValues200ResponseSchema"
                 }
               }
             }
@@ -6698,7 +6698,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListHttpFilterValues200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListHttpFilterValues200ResponseSchema"
                 }
               }
             }
@@ -6755,7 +6755,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListPathFilterValues200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListPathFilterValues200ResponseSchema"
                 }
               }
             }
@@ -6933,7 +6933,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListKeyValue200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListKeyValue200ResponseSchema"
                 }
               }
             }
@@ -7357,7 +7357,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListPostgres200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListPostgres200ResponseSchema"
                 }
               }
             }
@@ -7957,7 +7957,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListPostgresExport200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListPostgresExport200ResponseSchema"
                 }
               }
             }
@@ -8044,7 +8044,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListPostgresUsers200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListPostgresUsers200ResponseSchema"
                 }
               }
             }
@@ -8414,7 +8414,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjects200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjects200ResponseSchema"
                 }
               }
             }
@@ -8725,7 +8725,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListEnvironments200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListEnvironments200ResponseSchema"
                 }
               }
             }
@@ -9048,7 +9048,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListEnvGroups200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListEnvGroups200ResponseSchema"
                 }
               }
             }
@@ -9689,7 +9689,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListMaintenance200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListMaintenance200ResponseSchema"
                 }
               }
             }
@@ -9916,7 +9916,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListWebhooks200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListWebhooks200ResponseSchema"
                 }
               }
             }
@@ -10106,7 +10106,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListWebhookEvents200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListWebhookEvents200ResponseSchema"
                 }
               }
             }
@@ -10171,7 +10171,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListWorkflows200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListWorkflows200ResponseSchema"
                 }
               }
             }
@@ -10401,7 +10401,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListWorkflowVersions200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListWorkflowVersions200ResponseSchema"
                 }
               }
             }
@@ -10537,7 +10537,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListTasks200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListTasks200ResponseSchema"
                 }
               }
             }
@@ -10701,7 +10701,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListTaskRuns200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListTaskRuns200ResponseSchema"
                 }
               }
             }
@@ -10817,7 +10817,7 @@
             "content": {
               "text/event-stream": {
                 "schema": {
-                  "$ref": "#/components/schemas/StreamTaskRunsEvents200ResponseResponseEventStream"
+                  "$ref": "#/components/schemas/StreamTaskRunsEvents200EventStreamResponseSchema"
                 },
                 "examples": {
                   "taskCompleted": {
@@ -18592,7 +18592,7 @@
           }
         }
       },
-      "StreamTaskRunsEvents200Response": {
+      "StreamTaskRunsEvents200EventStreamResponse": {
         "type": "string",
         "description": "Stream of SSE frames. Each event may include \u0060id\u0060, \u0060event\u0060, \u0060data\u0060,\nand optional \u0060retry\u0060. Frames are separated by a blank line.\n"
       },
@@ -18687,7 +18687,7 @@
           }
         }
       },
-      "ListBlueprints200ResponseResponseJson": {
+      "ListBlueprints200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BlueprintWithCursor"
@@ -18696,19 +18696,19 @@
       "UpdateBlueprint200Response": {
         "type": "string"
       },
-      "ListBlueprintSyncs200ResponseResponseJson": {
+      "ListBlueprintSyncs200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SyncWithCursor"
         }
       },
-      "ListDedicatedIps200ResponseResponseJson": {
+      "ListDedicatedIps200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DedicatedIp"
         }
       },
-      "ListDisks200ResponseResponseJson": {
+      "ListDisks200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DiskWithCursor"
@@ -18723,7 +18723,7 @@
       "UpdateDisk200Response": {
         "type": "string"
       },
-      "ListSnapshots201ResponseResponseJson": {
+      "ListSnapshots201ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DiskSnapshot"
@@ -18732,7 +18732,7 @@
       "RestoreSnapshot200Response": {
         "type": "string"
       },
-      "ListOwners200ResponseResponseJson": {
+      "ListOwners200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/OwnerWithCursor"
@@ -18744,13 +18744,13 @@
           "$ref": "#/components/schemas/TeamMember"
         }
       },
-      "ListOwnerAuditLogs200ResponseResponseJson": {
+      "ListOwnerAuditLogs200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AuditLogWithCursor"
         }
       },
-      "ListOrganizationAuditLogs200ResponseResponseJson": {
+      "ListOrganizationAuditLogs200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AuditLogWithCursor"
@@ -18786,7 +18786,7 @@
       "PatchOwnerNotificationSettings200Response": {
         "type": "string"
       },
-      "ListNotificationOverrides200ResponseResponseJson": {
+      "ListNotificationOverrides200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/NotificationOverrideWithCursor"
@@ -18795,7 +18795,7 @@
       "PatchServiceNotificationOverrides200Response": {
         "type": "string"
       },
-      "ListRegistryCredentials200ResponseResponseJson": {
+      "ListRegistryCredentials200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/RegistryCredential"
@@ -18816,7 +18816,7 @@
           "$ref": "#/components/schemas/DeployWithCursor"
         }
       },
-      "GetEnvVarsForService200ResponseResponseJson": {
+      "GetEnvVarsForService200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EnvVarWithCursor"
@@ -18825,13 +18825,13 @@
       "UpdateEnvVarsForServiceRequest": {
         "type": "string"
       },
-      "UpdateEnvVarsForService200ResponseResponseJson": {
+      "UpdateEnvVarsForService200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EnvVarWithCursor"
         }
       },
-      "ListSecretFilesForService200ResponseResponseJson": {
+      "ListSecretFilesForService200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SecretFileWithCursor"
@@ -18843,19 +18843,19 @@
           "type": "string"
         }
       },
-      "UpdateSecretFilesForService200ResponseResponseJson": {
+      "UpdateSecretFilesForService200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SecretFileWithCursor"
         }
       },
-      "ListEvents200ResponseResponseJson": {
+      "ListEvents200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ServiceEventWithCursor"
         }
       },
-      "ListHeaders200ResponseResponseJson": {
+      "ListHeaders200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/HeaderWithCursor"
@@ -18875,13 +18875,13 @@
           "$ref": "#/components/schemas/HeaderInput"
         }
       },
-      "UpdateHeaders200ResponseResponseJson": {
+      "UpdateHeaders200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Header"
         }
       },
-      "ListRoutes200ResponseResponseJson": {
+      "ListRoutes200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/RouteWithCursor"
@@ -18893,7 +18893,7 @@
           "$ref": "#/components/schemas/RoutePut"
         }
       },
-      "PutRoutes200ResponseResponseJson": {
+      "PutRoutes200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Route"
@@ -18907,13 +18907,13 @@
           }
         }
       },
-      "ListCustomDomains200ResponseResponseJson": {
+      "ListCustomDomains200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/CustomDomainWithCursor"
         }
       },
-      "CreateCustomDomain201ResponseResponseJson": {
+      "CreateCustomDomain201ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/CustomDomain"
@@ -18925,7 +18925,7 @@
       "AutoscaleService200Response": {
         "type": "string"
       },
-      "ListJob200ResponseResponseJson": {
+      "ListJob200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/JobWithCursor"
@@ -18940,7 +18940,7 @@
       "CancelJob200Response": {
         "type": "string"
       },
-      "ListInstances200ResponseResponseJson": {
+      "ListInstances200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ServiceInstance"
@@ -18963,7 +18963,7 @@
         },
         "description": "Owner log stream settings"
       },
-      "ListResourceLogStreams200ResponseResponseJson": {
+      "ListResourceLogStreams200ResponseSchema": {
         "type": "array",
         "items": {
           "type": "string"
@@ -19010,28 +19010,28 @@
           }
         }
       },
-      "GetCpu200ResponseResponseJson": {
+      "GetCpu200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/GetCpu200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/GetCpu200ResponseSchemaItem"
         },
         "description": "A collection of time series"
       },
-      "ListApplicationFilterValues200ResponseResponseJson": {
+      "ListApplicationFilterValues200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListApplicationFilterValues200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListApplicationFilterValues200ResponseSchemaItem"
         },
         "description": "A collection of filter values for application metrics"
       },
-      "ListHttpFilterValues200ResponseResponseJson": {
+      "ListHttpFilterValues200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListHttpFilterValues200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListHttpFilterValues200ResponseSchemaItem"
         },
         "description": "A collection of filter values for HTTP metrics"
       },
-      "ListPathFilterValues200ResponseResponseJson": {
+      "ListPathFilterValues200ResponseSchema": {
         "type": "array",
         "items": {
           "type": "string",
@@ -19039,49 +19039,49 @@
         },
         "description": "A collection of suggested paths to filter by"
       },
-      "ListKeyValue200ResponseResponseJson": {
+      "ListKeyValue200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/KeyValueWithCursor"
         }
       },
-      "ListPostgres200ResponseResponseJson": {
+      "ListPostgres200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PostgresWithCursor"
         }
       },
-      "ListPostgresExport200ResponseResponseJson": {
+      "ListPostgresExport200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListPostgresExport200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListPostgresExport200ResponseSchemaItem"
         }
       },
-      "ListPostgresUsers200ResponseResponseJson": {
+      "ListPostgresUsers200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListPostgresUsers200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListPostgresUsers200ResponseSchemaItem"
         }
       },
-      "ListProjects200ResponseResponseJson": {
+      "ListProjects200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ProjectWithCursor"
         }
       },
-      "ListEnvironments200ResponseResponseJson": {
+      "ListEnvironments200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EnvironmentWithCursor"
         }
       },
-      "ListEnvGroups200ResponseResponseJson": {
+      "ListEnvGroups200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EnvGroupMeta"
         }
       },
-      "ListMaintenance200ResponseResponseJson": {
+      "ListMaintenance200ResponseSchema": {
         "type": "array",
         "items": {
           "type": "string"
@@ -19090,7 +19090,7 @@
       "CreateWebhook201Response": {
         "type": "string"
       },
-      "ListWebhooks200ResponseResponseJson": {
+      "ListWebhooks200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/WebhookWithCursor"
@@ -19102,13 +19102,13 @@
       "UpdateWebhook200Response": {
         "type": "string"
       },
-      "ListWebhookEvents200ResponseResponseJson": {
+      "ListWebhookEvents200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/WebhookEventWithCursor"
         }
       },
-      "ListWorkflows200ResponseResponseJson": {
+      "ListWorkflows200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/WorkflowWithCursor"
@@ -19123,7 +19123,7 @@
       "UpdateWorkflow200Response": {
         "type": "string"
       },
-      "ListWorkflowVersions200ResponseResponseJson": {
+      "ListWorkflowVersions200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/WorkflowVersionWithCursor"
@@ -19132,7 +19132,7 @@
       "GetWorkflowVersion200Response": {
         "type": "string"
       },
-      "ListTasks200ResponseResponseJson": {
+      "ListTasks200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/TaskWithCursor"
@@ -19141,7 +19141,7 @@
       "GetTask200Response": {
         "type": "string"
       },
-      "ListTaskRuns200ResponseResponseJson": {
+      "ListTaskRuns200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/TaskRunWithCursor"
@@ -19150,7 +19150,7 @@
       "CreateTask202Response": {
         "type": "string"
       },
-      "StreamTaskRunsEvents200ResponseResponseEventStream": {
+      "StreamTaskRunsEvents200EventStreamResponseSchema": {
         "type": "string",
         "description": "Stream of SSE frames. Each event may include \u0060id\u0060, \u0060event\u0060, \u0060data\u0060,\nand optional \u0060retry\u0060. Frames are separated by a blank line.\n"
       },
@@ -19888,7 +19888,7 @@
       "CreateTaskRequestInputBranch1ValueItem": {
         "type": "object"
       },
-      "GetCpu200ResponseResponseJsonItem": {
+      "GetCpu200ResponseSchemaItem": {
         "required": [
           "labels",
           "values",
@@ -19917,7 +19917,7 @@
         },
         "description": "A time series data point"
       },
-      "ListApplicationFilterValues200ResponseResponseJsonItem": {
+      "ListApplicationFilterValues200ResponseSchemaItem": {
         "type": "object",
         "properties": {
           "filter": {
@@ -19932,7 +19932,7 @@
           }
         }
       },
-      "ListHttpFilterValues200ResponseResponseJsonItem": {
+      "ListHttpFilterValues200ResponseSchemaItem": {
         "type": "object",
         "properties": {
           "filter": {
@@ -19947,7 +19947,7 @@
           }
         }
       },
-      "ListPostgresExport200ResponseResponseJsonItem": {
+      "ListPostgresExport200ResponseSchemaItem": {
         "required": [
           "id",
           "createdAt"
@@ -19967,7 +19967,7 @@
           }
         }
       },
-      "ListPostgresUsers200ResponseResponseJsonItem": {
+      "ListPostgresUsers200ResponseSchemaItem": {
         "type": "object",
         "properties": {
           "username": {

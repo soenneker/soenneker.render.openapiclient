@@ -9,47 +9,37 @@ namespace Soenneker.Render.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ListPostgresUsers200ResponseResponseJsonItem : IAdditionalDataHolder, IParsable
+    public partial class ListApplicationFilterValues200ResponseSchemaItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The filter property</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseItemFilter? Filter { get; set; }
+        /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public List<string>? Values { get; set; }
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
-#endif
-        /// <summary>The default property</summary>
-        public bool? Default { get; set; }
-        /// <summary>The openConnections property</summary>
-        public int? OpenConnections { get; set; }
-        /// <summary>The username property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get; set; }
-#nullable restore
-#else
-        public string Username { get; set; }
+        public List<string> Values { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ListPostgresUsers200ResponseResponseJsonItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseSchemaItem"/> and sets the default values.
         /// </summary>
-        public ListPostgresUsers200ResponseResponseJsonItem()
+        public ListApplicationFilterValues200ResponseSchemaItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ListPostgresUsers200ResponseResponseJsonItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseSchemaItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.ListPostgresUsers200ResponseResponseJsonItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.ListPostgresUsers200ResponseResponseJsonItem();
+            return new global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseSchemaItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,10 +49,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "default", n => { Default = n.GetBoolValue(); } },
-                { "openConnections", n => { OpenConnections = n.GetIntValue(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
+                { "filter", n => { Filter = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseItemFilter>(); } },
+                { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,10 +60,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteBoolValue("default", Default);
-            writer.WriteIntValue("openConnections", OpenConnections);
-            writer.WriteStringValue("username", Username);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseItemFilter>("filter", Filter);
+            writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

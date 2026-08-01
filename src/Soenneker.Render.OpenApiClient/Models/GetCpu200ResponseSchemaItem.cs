@@ -11,7 +11,7 @@ namespace Soenneker.Render.OpenApiClient.Models
     /// A time series data point
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetCpu200ResponseResponseJsonItem : IAdditionalDataHolder, IParsable
+    public partial class GetCpu200ResponseSchemaItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -40,21 +40,21 @@ namespace Soenneker.Render.OpenApiClient.Models
         public List<global::Soenneker.Render.OpenApiClient.Models.GetCpu200ResponseItemValuesItem> Values { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.GetCpu200ResponseResponseJsonItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.GetCpu200ResponseSchemaItem"/> and sets the default values.
         /// </summary>
-        public GetCpu200ResponseResponseJsonItem()
+        public GetCpu200ResponseSchemaItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.GetCpu200ResponseResponseJsonItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.GetCpu200ResponseSchemaItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.GetCpu200ResponseResponseJsonItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.GetCpu200ResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.GetCpu200ResponseResponseJsonItem();
+            return new global::Soenneker.Render.OpenApiClient.Models.GetCpu200ResponseSchemaItem();
         }
         /// <summary>
         /// The deserialization information for the current model
