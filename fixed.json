@@ -2798,7 +2798,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequest"
+                "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestRequestBody"
               }
             }
           }
@@ -10934,26 +10934,26 @@
   },
   "components": {
     "schemas": {
-      "ServicePostServiceDetails": {
+      "ServicePatchServiceDetails": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/StaticSiteDetailsPost"
+            "$ref": "#/components/schemas/StaticSiteDetailsPatch"
           },
           {
-            "$ref": "#/components/schemas/WebServiceDetailsPost"
+            "$ref": "#/components/schemas/WebServiceDetailsPatch"
           },
           {
-            "$ref": "#/components/schemas/PrivateServiceDetailsPost"
+            "$ref": "#/components/schemas/PrivateServiceDetailsPatch"
           },
           {
-            "$ref": "#/components/schemas/BackgroundWorkerDetailsPost"
+            "$ref": "#/components/schemas/BackgroundWorkerDetailsPatch"
           },
           {
-            "$ref": "#/components/schemas/CronJobDetailsPost"
+            "$ref": "#/components/schemas/CronJobDetailsPatch"
           }
         ],
         "properties": {
@@ -10965,11 +10965,11 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "StaticSiteDetailsPost": "#/components/schemas/StaticSiteDetailsPost",
-            "WebServiceDetailsPost": "#/components/schemas/WebServiceDetailsPost",
-            "PrivateServiceDetailsPost": "#/components/schemas/PrivateServiceDetailsPost",
-            "BackgroundWorkerDetailsPost": "#/components/schemas/BackgroundWorkerDetailsPost",
-            "CronJobDetailsPost": "#/components/schemas/CronJobDetailsPost"
+            "StaticSiteDetailsPatch": "#/components/schemas/StaticSiteDetailsPatch",
+            "WebServiceDetailsPatch": "#/components/schemas/WebServiceDetailsPatch",
+            "PrivateServiceDetailsPatch": "#/components/schemas/PrivateServiceDetailsPatch",
+            "BackgroundWorkerDetailsPatch": "#/components/schemas/BackgroundWorkerDetailsPatch",
+            "CronJobDetailsPatch": "#/components/schemas/CronJobDetailsPatch"
           }
         }
       },
@@ -11147,7 +11147,7 @@
         "type": "object",
         "properties": {
           "workflowVersion": {
-            "$ref": "#/components/schemas/WorkflowVersionWithCursorWorkflowVersion"
+            "type": "string"
           },
           "cursor": {
             "type": "string"
@@ -11162,7 +11162,7 @@
         "type": "object",
         "properties": {
           "workflow": {
-            "$ref": "#/components/schemas/WorkflowWithCursorWorkflow"
+            "type": "string"
           },
           "cursor": {
             "type": "string"
@@ -11177,7 +11177,7 @@
         "type": "object",
         "properties": {
           "task": {
-            "$ref": "#/components/schemas/TaskWithCursorTask"
+            "type": "string"
           },
           "cursor": {
             "type": "string"
@@ -11616,17 +11616,26 @@
           }
         }
       },
-      "ServicePostEnvVarsItem": {
+      "ServicePostServiceDetails": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/ServicePostEnvVarsItemOneOf1"
+            "$ref": "#/components/schemas/StaticSiteDetailsPost"
           },
           {
-            "$ref": "#/components/schemas/ServicePostEnvVarsItemOneOf2"
+            "$ref": "#/components/schemas/WebServiceDetailsPost"
+          },
+          {
+            "$ref": "#/components/schemas/PrivateServiceDetailsPost"
+          },
+          {
+            "$ref": "#/components/schemas/BackgroundWorkerDetailsPost"
+          },
+          {
+            "$ref": "#/components/schemas/CronJobDetailsPost"
           }
         ],
         "properties": {
@@ -11638,8 +11647,11 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "ServicePostEnvVarsItemOneOf1": "#/components/schemas/ServicePostEnvVarsItemOneOf1",
-            "ServicePostEnvVarsItemOneOf2": "#/components/schemas/ServicePostEnvVarsItemOneOf2"
+            "StaticSiteDetailsPost": "#/components/schemas/StaticSiteDetailsPost",
+            "WebServiceDetailsPost": "#/components/schemas/WebServiceDetailsPost",
+            "PrivateServiceDetailsPost": "#/components/schemas/PrivateServiceDetailsPost",
+            "BackgroundWorkerDetailsPost": "#/components/schemas/BackgroundWorkerDetailsPost",
+            "CronJobDetailsPost": "#/components/schemas/CronJobDetailsPost"
           }
         }
       },
@@ -11659,7 +11671,7 @@
         "type": "object",
         "properties": {
           "autoscaling": {
-            "$ref": "#/components/schemas/WebServiceDetailsAutoscaling"
+            "type": "string"
           },
           "cache": {
             "$ref": "#/components/schemas/Cache"
@@ -11941,7 +11953,7 @@
         "type": "object",
         "properties": {
           "disk": {
-            "$ref": "#/components/schemas/DiskWithCursorDisk"
+            "type": "string"
           },
           "cursor": {
             "type": "string"
@@ -12180,15 +12192,12 @@
             "type": "string"
           },
           "envVars": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServicePostEnvVarsItem"
-            }
+            "type": "string"
           },
           "secretFiles": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ServicePostSecretFilesItem"
+              "type": "string"
             }
           },
           "environmentId": {
@@ -15084,7 +15093,7 @@
             "description": "The ID of the workspace to create the database for"
           },
           "plan": {
-            "$ref": "#/components/schemas/Plan"
+            "$ref": "#/components/schemas/PostgresPostInputPlan"
           },
           "diskSizeGB": {
             "type": "integer",
@@ -15342,7 +15351,7 @@
             "$ref": "#/components/schemas/Owner"
           },
           "plan": {
-            "$ref": "#/components/schemas/PostgresPlan"
+            "$ref": "#/components/schemas/Plan"
           },
           "diskSizeGB": {
             "type": "integer"
@@ -15672,7 +15681,7 @@
         "type": "object",
         "properties": {
           "blueprint": {
-            "$ref": "#/components/schemas/BlueprintWithCursorBlueprint"
+            "type": "string"
           },
           "cursor": {
             "type": "string"
@@ -15717,7 +15726,7 @@
         "type": "object",
         "properties": {
           "job": {
-            "$ref": "#/components/schemas/JobWithCursorJob"
+            "type": "string"
           },
           "cursor": {
             "type": "string"
@@ -15747,7 +15756,7 @@
         "type": "object",
         "properties": {
           "webhook": {
-            "$ref": "#/components/schemas/WebhookWithCursorWebhook"
+            "type": "string"
           },
           "cursor": {
             "type": "string"
@@ -15793,49 +15802,10 @@
         "type": "object",
         "properties": {
           "taskRun": {
-            "$ref": "#/components/schemas/TaskRunWithCursorTaskRun"
+            "type": "string"
           },
           "cursor": {
             "type": "string"
-          }
-        }
-      },
-      "ServicePatchServiceDetails": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/StaticSiteDetailsPatch"
-          },
-          {
-            "$ref": "#/components/schemas/WebServiceDetailsPatch"
-          },
-          {
-            "$ref": "#/components/schemas/PrivateServiceDetailsPatch"
-          },
-          {
-            "$ref": "#/components/schemas/BackgroundWorkerDetailsPatch"
-          },
-          {
-            "$ref": "#/components/schemas/CronJobDetailsPatch"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "StaticSiteDetailsPatch": "#/components/schemas/StaticSiteDetailsPatch",
-            "WebServiceDetailsPatch": "#/components/schemas/WebServiceDetailsPatch",
-            "PrivateServiceDetailsPatch": "#/components/schemas/PrivateServiceDetailsPatch",
-            "BackgroundWorkerDetailsPatch": "#/components/schemas/BackgroundWorkerDetailsPatch",
-            "CronJobDetailsPatch": "#/components/schemas/CronJobDetailsPatch"
           }
         }
       },
@@ -15860,854 +15830,6 @@
           }
         }
       },
-      "ServiceEventWithCursorEventDetails": {
-        "title": "Service Event Details",
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsArtifactFetchFailed"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsArtifactSourceChanged"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoscalingConfigChanged"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoscalingEnded"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoscalingStarted"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsBranchDeleted"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsBuildEnded"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsBuildStarted"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsCommitIgnored"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsCronJobRunEnded"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsCronJobRunStarted"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsDeployEnded"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsDeployStarted"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsDiskCreated"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsDiskUpdated"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsDiskDeleted"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsImagePullFailed"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsInitialDeployHookStarted"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsInitialDeployHookEnded"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsInstanceCountChanged"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsJobRunEnded"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsMaintenanceModeEnabled"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated"
-          },
-          {
-            "title": "Maintenance Ended",
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsMaintenanceStarted"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsPipelineMinutesExhausted"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsInstanceTypeChanged"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsPreDeployEnded"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsPreDeployStarted"
-          },
-          {
-            "title": "Server Available",
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsServerFailed"
-          },
-          {
-            "title": "Server Hardware Failure",
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsServerRestarted"
-          },
-          {
-            "title": "Service Resumed",
-            "type": "object"
-          },
-          {
-            "title": "Service Suspended",
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsSuspenderAdded"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsSuspenderRemoved"
-          },
-          {
-            "title": "Zero Downtime Redeploy Ended",
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsEdgeCacheDisabled"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsEdgeCacheEnabled"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsEdgeCachePurged"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoDeployDisabled"
-          },
-          {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoDeployEnabled"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "ServiceEventWithCursorEventDetailsArtifactFetchFailed": "#/components/schemas/ServiceEventWithCursorEventDetailsArtifactFetchFailed",
-            "ServiceEventWithCursorEventDetailsArtifactSourceChanged": "#/components/schemas/ServiceEventWithCursorEventDetailsArtifactSourceChanged",
-            "ServiceEventWithCursorEventDetailsAutoscalingConfigChanged": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoscalingConfigChanged",
-            "ServiceEventWithCursorEventDetailsAutoscalingEnded": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoscalingEnded",
-            "ServiceEventWithCursorEventDetailsAutoscalingStarted": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoscalingStarted",
-            "ServiceEventWithCursorEventDetailsBranchDeleted": "#/components/schemas/ServiceEventWithCursorEventDetailsBranchDeleted",
-            "ServiceEventWithCursorEventDetailsBuildEnded": "#/components/schemas/ServiceEventWithCursorEventDetailsBuildEnded",
-            "ServiceEventWithCursorEventDetailsBuildStarted": "#/components/schemas/ServiceEventWithCursorEventDetailsBuildStarted",
-            "ServiceEventWithCursorEventDetailsCommitIgnored": "#/components/schemas/ServiceEventWithCursorEventDetailsCommitIgnored",
-            "ServiceEventWithCursorEventDetailsCronJobRunEnded": "#/components/schemas/ServiceEventWithCursorEventDetailsCronJobRunEnded",
-            "ServiceEventWithCursorEventDetailsCronJobRunStarted": "#/components/schemas/ServiceEventWithCursorEventDetailsCronJobRunStarted",
-            "ServiceEventWithCursorEventDetailsDeployEnded": "#/components/schemas/ServiceEventWithCursorEventDetailsDeployEnded",
-            "ServiceEventWithCursorEventDetailsDeployStarted": "#/components/schemas/ServiceEventWithCursorEventDetailsDeployStarted",
-            "ServiceEventWithCursorEventDetailsDiskCreated": "#/components/schemas/ServiceEventWithCursorEventDetailsDiskCreated",
-            "ServiceEventWithCursorEventDetailsDiskUpdated": "#/components/schemas/ServiceEventWithCursorEventDetailsDiskUpdated",
-            "ServiceEventWithCursorEventDetailsDiskDeleted": "#/components/schemas/ServiceEventWithCursorEventDetailsDiskDeleted",
-            "ServiceEventWithCursorEventDetailsImagePullFailed": "#/components/schemas/ServiceEventWithCursorEventDetailsImagePullFailed",
-            "ServiceEventWithCursorEventDetailsInitialDeployHookStarted": "#/components/schemas/ServiceEventWithCursorEventDetailsInitialDeployHookStarted",
-            "ServiceEventWithCursorEventDetailsInitialDeployHookEnded": "#/components/schemas/ServiceEventWithCursorEventDetailsInitialDeployHookEnded",
-            "ServiceEventWithCursorEventDetailsInstanceCountChanged": "#/components/schemas/ServiceEventWithCursorEventDetailsInstanceCountChanged",
-            "ServiceEventWithCursorEventDetailsJobRunEnded": "#/components/schemas/ServiceEventWithCursorEventDetailsJobRunEnded",
-            "ServiceEventWithCursorEventDetailsMaintenanceModeEnabled": "#/components/schemas/ServiceEventWithCursorEventDetailsMaintenanceModeEnabled",
-            "ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated": "#/components/schemas/ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated",
-            "ServiceEventWithCursorEventDetailsMaintenanceStarted": "#/components/schemas/ServiceEventWithCursorEventDetailsMaintenanceStarted",
-            "ServiceEventWithCursorEventDetailsPipelineMinutesExhausted": "#/components/schemas/ServiceEventWithCursorEventDetailsPipelineMinutesExhausted",
-            "ServiceEventWithCursorEventDetailsInstanceTypeChanged": "#/components/schemas/ServiceEventWithCursorEventDetailsInstanceTypeChanged",
-            "ServiceEventWithCursorEventDetailsPreDeployEnded": "#/components/schemas/ServiceEventWithCursorEventDetailsPreDeployEnded",
-            "ServiceEventWithCursorEventDetailsPreDeployStarted": "#/components/schemas/ServiceEventWithCursorEventDetailsPreDeployStarted",
-            "ServiceEventWithCursorEventDetailsServerFailed": "#/components/schemas/ServiceEventWithCursorEventDetailsServerFailed",
-            "ServiceEventWithCursorEventDetailsServerRestarted": "#/components/schemas/ServiceEventWithCursorEventDetailsServerRestarted",
-            "ServiceEventWithCursorEventDetailsSuspenderAdded": "#/components/schemas/ServiceEventWithCursorEventDetailsSuspenderAdded",
-            "ServiceEventWithCursorEventDetailsSuspenderRemoved": "#/components/schemas/ServiceEventWithCursorEventDetailsSuspenderRemoved",
-            "ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted": "#/components/schemas/ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted",
-            "ServiceEventWithCursorEventDetailsEdgeCacheDisabled": "#/components/schemas/ServiceEventWithCursorEventDetailsEdgeCacheDisabled",
-            "ServiceEventWithCursorEventDetailsEdgeCacheEnabled": "#/components/schemas/ServiceEventWithCursorEventDetailsEdgeCacheEnabled",
-            "ServiceEventWithCursorEventDetailsEdgeCachePurged": "#/components/schemas/ServiceEventWithCursorEventDetailsEdgeCachePurged",
-            "ServiceEventWithCursorEventDetailsAutoDeployDisabled": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoDeployDisabled",
-            "ServiceEventWithCursorEventDetailsAutoDeployEnabled": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoDeployEnabled"
-          }
-        }
-      },
-      "ServicePostEnvVarsItemOneOf1": {
-        "required": [
-          "key",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string"
-          },
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "ServicePostEnvVarsItemOneOf2": {
-        "required": [
-          "key",
-          "generateValue"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string"
-          },
-          "generateValue": {
-            "type": "boolean",
-            "description": "If true, Render generates a strong random value for this environment variable on creation. Cannot be combined with \u0060value\u0060."
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsArtifactFetchFailed": {
-        "title": "Artifact Fetch Failed",
-        "required": [
-          "artifactId",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "artifactId": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsArtifactSourceChanged": {
-        "title": "Artifact Source Changed",
-        "type": "object",
-        "properties": {
-          "fromArtifactSourceId": {
-            "type": "string",
-            "description": "The previously linked artifact source. Absent when the service was newly attached."
-          },
-          "toArtifactSourceId": {
-            "type": "string",
-            "description": "The newly linked artifact source. Absent when the service was detached."
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsAutoscalingConfigChanged": {
-        "title": "Autoscaling Config Changed",
-        "required": [
-          "toConfig"
-        ],
-        "type": "object",
-        "properties": {
-          "fromConfig": {
-            "type": "string"
-          },
-          "toConfig": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsAutoscalingEnded": {
-        "title": "Autoscaling Ended",
-        "required": [
-          "fromInstances",
-          "toInstances"
-        ],
-        "type": "object",
-        "properties": {
-          "fromInstances": {
-            "type": "integer"
-          },
-          "toInstances": {
-            "type": "integer"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsAutoscalingStarted": {
-        "title": "Autoscaling Started",
-        "required": [
-          "fromInstances",
-          "toInstances"
-        ],
-        "type": "object",
-        "properties": {
-          "fromInstances": {
-            "type": "integer"
-          },
-          "toInstances": {
-            "type": "integer"
-          },
-          "currentCPU": {
-            "type": "integer",
-            "x-go-type": "int64"
-          },
-          "targetCPU": {
-            "type": "integer",
-            "x-go-type": "int64"
-          },
-          "currentMemory": {
-            "type": "integer",
-            "x-go-type": "int64"
-          },
-          "targetMemory": {
-            "type": "integer",
-            "x-go-type": "int64"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsBranchDeleted": {
-        "title": "Branch Deleted",
-        "required": [
-          "deletedBranch",
-          "newBranch"
-        ],
-        "type": "object",
-        "properties": {
-          "deletedBranch": {
-            "type": "string"
-          },
-          "newBranch": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsBuildEnded": {
-        "title": "Build Ended",
-        "required": [
-          "buildId",
-          "status",
-          "reason",
-          "buildStatus"
-        ],
-        "type": "object",
-        "properties": {
-          "buildId": {
-            "type": "string"
-          },
-          "buildStatus": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsBuildEndedBuildStatus"
-          },
-          "reason": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsBuildEndedReason"
-          },
-          "status": {
-            "type": "integer",
-            "deprecated": true
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsBuildStarted": {
-        "title": "Build Started",
-        "required": [
-          "buildId",
-          "trigger"
-        ],
-        "type": "object",
-        "properties": {
-          "buildId": {
-            "type": "string"
-          },
-          "trigger": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsBuildStartedTrigger"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsCommitIgnored": {
-        "title": "Commit Ignored",
-        "required": [
-          "id",
-          "url"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "the commit id"
-          },
-          "url": {
-            "type": "string",
-            "description": "the commit url"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsCronJobRunEnded": {
-        "title": "Cron Job Run Ended",
-        "required": [
-          "cronJobRunId",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "cronJobRunId": {
-            "type": "string"
-          },
-          "status": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsCronJobRunEndedStatus"
-          },
-          "reason": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsCronJobRunEndedReason"
-          },
-          "user": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsCronJobRunEndedUser"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsCronJobRunStarted": {
-        "title": "Cron Job Run Started",
-        "required": [
-          "cronJobRunId"
-        ],
-        "type": "object",
-        "properties": {
-          "cronJobRunId": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsDeployEnded": {
-        "title": "Deploy Ended",
-        "required": [
-          "deployId",
-          "reason",
-          "status",
-          "deployStatus"
-        ],
-        "type": "object",
-        "properties": {
-          "deployId": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "deployStatus": {
-            "type": "string"
-          },
-          "status": {
-            "type": "integer",
-            "deprecated": true
-          },
-          "artifactId": {
-            "type": "string",
-            "description": "Set when the deploy shipped an artifact published by the service\u0027s linked artifact source."
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsDeployStarted": {
-        "title": "Deploy Started",
-        "required": [
-          "deployId",
-          "trigger"
-        ],
-        "type": "object",
-        "properties": {
-          "deployId": {
-            "type": "string"
-          },
-          "trigger": {
-            "type": "string"
-          },
-          "artifactId": {
-            "type": "string",
-            "description": "Set when the deploy ships an artifact published by the service\u0027s linked artifact source."
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsDiskCreated": {
-        "title": "Disk Created",
-        "required": [
-          "diskId",
-          "sizeGB"
-        ],
-        "type": "object",
-        "properties": {
-          "diskId": {
-            "type": "string"
-          },
-          "sizeGB": {
-            "type": "integer"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsDiskUpdated": {
-        "title": "Disk Updated",
-        "required": [
-          "diskId",
-          "fromSizeGB",
-          "toSizeGB"
-        ],
-        "type": "object",
-        "properties": {
-          "diskId": {
-            "type": "string"
-          },
-          "fromSizeGB": {
-            "type": "integer"
-          },
-          "toSizeGB": {
-            "type": "integer"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsDiskDeleted": {
-        "title": "Disk Deleted",
-        "required": [
-          "diskId"
-        ],
-        "type": "object",
-        "properties": {
-          "diskId": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsImagePullFailed": {
-        "title": "Image Pull Failed",
-        "required": [
-          "message",
-          "imageURL"
-        ],
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string"
-          },
-          "imageURL": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsInitialDeployHookStarted": {
-        "title": "Initial Deploy Hook Started",
-        "required": [
-          "deployId"
-        ],
-        "type": "object",
-        "properties": {
-          "deployId": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsInitialDeployHookEnded": {
-        "title": "Initial Deploy Hook Ended",
-        "required": [
-          "deployId"
-        ],
-        "type": "object",
-        "properties": {
-          "deployId": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsInstanceCountChanged": {
-        "title": "Instance Count Changed",
-        "required": [
-          "fromInstances",
-          "toInstances"
-        ],
-        "type": "object",
-        "properties": {
-          "fromInstances": {
-            "type": "integer"
-          },
-          "toInstances": {
-            "type": "integer"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsJobRunEnded": {
-        "title": "Job Run Ended",
-        "required": [
-          "jobId",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "jobId": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsMaintenanceModeEnabled": {
-        "title": "Maintenance Mode Enabled",
-        "required": [
-          "enabled"
-        ],
-        "type": "object",
-        "properties": {
-          "enabled": {
-            "type": "boolean"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsMaintenanceModeUriUpdated": {
-        "title": "Maintenance Mode URI Updated",
-        "required": [
-          "fromURI",
-          "toURI"
-        ],
-        "type": "object",
-        "properties": {
-          "fromURI": {
-            "type": "string"
-          },
-          "toURI": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsMaintenanceStarted": {
-        "title": "Maintenance Started",
-        "required": [
-          "trigger"
-        ],
-        "type": "object",
-        "properties": {
-          "trigger": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsMaintenanceStartedTrigger"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsPipelineMinutesExhausted": {
-        "title": "Pipeline Minutes Exhausted",
-        "required": [
-          "buildId",
-          "trigger"
-        ],
-        "type": "object",
-        "properties": {
-          "buildId": {
-            "type": "string"
-          },
-          "trigger": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsInstanceTypeChanged": {
-        "title": "Instance Type Changed",
-        "required": [
-          "from",
-          "to"
-        ],
-        "type": "object",
-        "properties": {
-          "from": {
-            "type": "string"
-          },
-          "to": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsPreDeployEnded": {
-        "title": "Pre Deploy Ended",
-        "required": [
-          "deployCommandExecutionId",
-          "deployId",
-          "status",
-          "preDeployStatus",
-          "reason"
-        ],
-        "type": "object",
-        "properties": {
-          "deployCommandExecutionId": {
-            "type": "string"
-          },
-          "deployId": {
-            "type": "string"
-          },
-          "preDeployStatus": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "status": {
-            "type": "integer",
-            "deprecated": true
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsPreDeployStarted": {
-        "title": "Pre Deploy Started",
-        "required": [
-          "deployCommandExecutionId",
-          "deployId"
-        ],
-        "type": "object",
-        "properties": {
-          "deployCommandExecutionId": {
-            "type": "string"
-          },
-          "deployId": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsServerFailed": {
-        "title": "Server Failed",
-        "type": "object",
-        "properties": {
-          "instanceID": {
-            "pattern": "^srv-[0-9a-z]{20}-[0-9a-z]{5}$",
-            "type": "string",
-            "example": "srv-d0cjkelq67qs70c2pugg-sbpkm"
-          },
-          "reason": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsServerRestarted": {
-        "title": "Server Restarted",
-        "required": [
-          "triggeredByUser"
-        ],
-        "type": "object",
-        "properties": {
-          "triggeredByUser": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsSuspenderAdded": {
-        "title": "Suspender Added",
-        "required": [
-          "actor"
-        ],
-        "type": "object",
-        "properties": {
-          "actor": {
-            "type": "string"
-          },
-          "suspendedByUser": {
-            "$ref": "#/components/schemas/User"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsSuspenderRemoved": {
-        "title": "Suspender Removed",
-        "required": [
-          "actor"
-        ],
-        "type": "object",
-        "properties": {
-          "actor": {
-            "type": "string"
-          },
-          "resumedByUser": {
-            "$ref": "#/components/schemas/User"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsZeroDowntimeRedeployStarted": {
-        "title": "Zero Downtime Redeploy Started",
-        "required": [
-          "trigger"
-        ],
-        "type": "object",
-        "properties": {
-          "trigger": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsEdgeCacheDisabled": {
-        "title": "Edge Cache Disabled",
-        "required": [
-          "trigger"
-        ],
-        "type": "object",
-        "properties": {
-          "trigger": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsEdgeCacheDisabledTrigger"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsEdgeCacheEnabled": {
-        "title": "Edge Cache Enabled",
-        "required": [
-          "trigger"
-        ],
-        "type": "object",
-        "properties": {
-          "trigger": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsEdgeCachePurged": {
-        "title": "Edge Cache Purged",
-        "required": [
-          "trigger"
-        ],
-        "type": "object",
-        "properties": {
-          "trigger": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsAutoDeployDisabled": {
-        "title": "Auto Deploy Disabled",
-        "required": [
-          "reason"
-        ],
-        "type": "object",
-        "properties": {
-          "reason": {
-            "type": "string",
-            "description": "Why auto-deploy was disabled (manual_deploy, rollback, or setting_change)"
-          },
-          "fromTrigger": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsAutoDeployEnabled": {
-        "title": "Auto Deploy Enabled",
-        "type": "object",
-        "properties": {
-          "newTrigger": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsAutoDeployEnabledNewTrigger"
-          }
-        }
-      },
       "AuditLogMetadata": {
         "type": "object",
         "additionalProperties": {
@@ -16717,139 +15839,6 @@
         "example": {
           "service": "srv-123456789",
           "field": "env_vars"
-        }
-      },
-      "WorkflowVersionWithCursorWorkflowVersion": {
-        "required": [
-          "id",
-          "workflowId",
-          "name",
-          "image",
-          "createdAt",
-          "updatedAt",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "workflowId": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "status": {
-            "$ref": "#/components/schemas/WorkflowVersionWithCursorWorkflowVersionStatus"
-          }
-        }
-      },
-      "WorkflowWithCursorWorkflow": {
-        "required": [
-          "id",
-          "name",
-          "createdAt",
-          "updatedAt",
-          "ownerId",
-          "region",
-          "runCommand",
-          "buildConfig"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "ownerId": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "buildConfig": {
-            "$ref": "#/components/schemas/WorkflowWithCursorWorkflowBuildConfig"
-          },
-          "runCommand": {
-            "type": "string",
-            "description": "Command to run the workflow."
-          },
-          "region": {
-            "$ref": "#/components/schemas/WorkflowWithCursorWorkflowRegion"
-          },
-          "environmentId": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "string"
-          },
-          "autoDeployTrigger": {
-            "$ref": "#/components/schemas/WorkflowWithCursorWorkflowAutoDeployTrigger"
-          }
-        }
-      },
-      "TaskWithCursorTask": {
-        "required": [
-          "id",
-          "name",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "workflowId": {
-            "type": "string"
-          },
-          "workflowVersionId": {
-            "type": "string"
-          }
-        }
-      },
-      "WebServiceDetailsAutoscaling": {
-        "required": [
-          "enabled",
-          "min",
-          "max",
-          "criteria"
-        ],
-        "type": "object",
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "default": false
-          },
-          "min": {
-            "type": "integer",
-            "description": "The minimum number of instances for the service"
-          },
-          "max": {
-            "type": "integer",
-            "description": "The maximum number of instances for the service"
-          },
-          "criteria": {
-            "$ref": "#/components/schemas/WebServiceDetailsAutoscalingCriteria"
-          }
         }
       },
       "WebServiceDetailsDisk": {
@@ -16875,57 +15864,6 @@
           }
         }
       },
-      "DiskWithCursorDisk": {
-        "required": [
-          "id",
-          "name",
-          "sizeGB",
-          "mountPath",
-          "createdAt",
-          "updatedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "sizeGB": {
-            "type": "integer"
-          },
-          "mountPath": {
-            "type": "string"
-          },
-          "serviceId": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "ServicePostSecretFilesItem": {
-        "required": [
-          "name",
-          "content"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "content": {
-            "type": "string"
-          }
-        }
-      },
       "NotificationOverrideWithCursorOverride": {
         "required": [
           "type",
@@ -16939,10 +15877,10 @@
             "type": "string"
           },
           "previewNotificationsEnabled": {
-            "$ref": "#/components/schemas/NotificationOverrideWithCursorOverridePreviewNotificationsEnabled"
+            "type": "boolean"
           },
           "notificationsToSend": {
-            "$ref": "#/components/schemas/NotificationOverrideWithCursorOverrideNotificationsToSend"
+            "type": "string"
           }
         }
       },
@@ -17019,48 +15957,6 @@
           }
         }
       },
-      "BlueprintWithCursorBlueprint": {
-        "required": [
-          "id",
-          "name",
-          "status",
-          "autoSync",
-          "repo",
-          "branch",
-          "path"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "status": {
-            "$ref": "#/components/schemas/BlueprintWithCursorBlueprintStatus"
-          },
-          "autoSync": {
-            "type": "boolean",
-            "description": "Automatically sync changes to render.yaml"
-          },
-          "repo": {
-            "type": "string"
-          },
-          "branch": {
-            "type": "string"
-          },
-          "path": {
-            "type": "string",
-            "description": "Path to the Blueprint file in the repository",
-            "example": "render.yaml"
-          },
-          "lastSync": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
       "SyncWithCursorSync": {
         "required": [
           "id",
@@ -17114,87 +16010,7 @@
             "type": "string"
           },
           "details": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetails"
-          }
-        }
-      },
-      "JobWithCursorJob": {
-        "required": [
-          "id",
-          "serviceId",
-          "startCommand",
-          "planId",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
             "type": "string"
-          },
-          "serviceId": {
-            "type": "string",
-            "example": "srv-xxxxx"
-          },
-          "startCommand": {
-            "type": "string",
-            "example": "echo \u0027hello world\u0027"
-          },
-          "planId": {
-            "type": "string",
-            "example": "plan-srv-004"
-          },
-          "status": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2021-07-15T07:20:05.777035-07:00"
-          },
-          "startedAt": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2021-07-15T07:20:05.777035-07:00"
-          },
-          "finishedAt": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2021-07-15T07:20:05.777035-07:00"
-          }
-        }
-      },
-      "WebhookWithCursorWebhook": {
-        "required": [
-          "id",
-          "name",
-          "url",
-          "secret",
-          "enabled",
-          "eventFilter"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "secret": {
-            "type": "string"
-          },
-          "enabled": {
-            "type": "boolean"
-          },
-          "eventFilter": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The event types that will trigger the webhook. An empty list means all event types will trigger the webhook."
           }
         }
       },
@@ -17216,7 +16032,7 @@
             "description": "the id of the event that triggered the webhook"
           },
           "eventType": {
-            "$ref": "#/components/schemas/WebhookEventWithCursorWebhookEventEventType"
+            "type": "string"
           },
           "sentAt": {
             "type": "string",
@@ -17234,257 +16050,6 @@
           }
         }
       },
-      "TaskRunWithCursorTaskRun": {
-        "required": [
-          "id",
-          "taskId",
-          "status",
-          "parentTaskRunId",
-          "rootTaskRunId",
-          "retries",
-          "attempts"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "taskId": {
-            "type": "string"
-          },
-          "status": {
-            "$ref": "#/components/schemas/TaskRunWithCursorTaskRunStatus"
-          },
-          "startedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "completedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "parentTaskRunId": {
-            "type": "string"
-          },
-          "rootTaskRunId": {
-            "type": "string"
-          },
-          "retries": {
-            "type": "integer"
-          },
-          "attempts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TaskRunWithCursorTaskRunAttemptsItem"
-            }
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsBuildEndedReason": {
-        "type": "object",
-        "properties": {
-          "buildFailed": {
-            "type": "string"
-          },
-          "newBuild": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsBuildEndedReasonNewBuild"
-          },
-          "newDeploy": {
-            "type": "string"
-          },
-          "failure": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsBuildStartedTrigger": {
-        "required": [
-          "firstBuild",
-          "envUpdated",
-          "manual",
-          "deployedByRender",
-          "clearCache",
-          "rollback"
-        ],
-        "type": "object",
-        "properties": {
-          "firstBuild": {
-            "type": "boolean",
-            "description": "Deploy was triggered by service creation"
-          },
-          "envUpdated": {
-            "type": "boolean",
-            "description": "Deploy was triggered by an environment update"
-          },
-          "manual": {
-            "type": "boolean",
-            "description": "Deploy was triggered manually from the dashboard"
-          },
-          "user": {
-            "$ref": "#/components/schemas/User"
-          },
-          "updatedProperty": {
-            "type": "string",
-            "description": "Updated property that triggered the deploy"
-          },
-          "newCommit": {
-            "type": "string",
-            "description": "Commit that triggered the deploy"
-          },
-          "deployedByRender": {
-            "type": "boolean",
-            "description": "Deploy was triggered by Render"
-          },
-          "clearCache": {
-            "type": "boolean",
-            "description": "Whether the cache was cleared for the deploy"
-          },
-          "rollback": {
-            "type": "boolean",
-            "description": "Whether the deploy was triggered by a rollback"
-          },
-          "rollbackTargetDeployId": {
-            "type": "string",
-            "description": "Deploy ID that was rolled back to"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsCronJobRunEndedReason": {
-        "required": [
-          "evicted"
-        ],
-        "type": "object",
-        "properties": {
-          "evicted": {
-            "type": "boolean"
-          },
-          "evictionReason": {
-            "type": "string",
-            "description": "Details about why the application was evicted."
-          },
-          "nonZeroExit": {
-            "type": "integer",
-            "description": "If present, the application exited with the specified non-zero status."
-          },
-          "earlyExit": {
-            "type": "boolean",
-            "description": "If true, the application exited early. Services besides cron jobs should not exit unless receiving a \u0060SIGTERM\u0060 signal from Render."
-          },
-          "oomKilled": {
-            "$ref": "#/components/schemas/ServiceEventWithCursorEventDetailsCronJobRunEndedReasonOomKilled"
-          },
-          "timedOutSeconds": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "unhealthy": {
-            "type": "string"
-          },
-          "timedOutReason": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsCronJobRunEndedUser": {
-        "required": [
-          "id",
-          "email"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          }
-        },
-        "description": "User who triggered the action"
-      },
-      "ServiceEventWithCursorEventDetailsMaintenanceStartedTrigger": {
-        "required": [
-          "manual",
-          "startedByRender"
-        ],
-        "type": "object",
-        "properties": {
-          "user": {
-            "$ref": "#/components/schemas/User"
-          },
-          "manual": {
-            "type": "boolean",
-            "description": "Maintenance was triggered manually"
-          },
-          "startedByRender": {
-            "type": "boolean",
-            "description": "Maintenance was triggered by Render"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsEdgeCacheDisabledTrigger": {
-        "required": [
-          "manual",
-          "system"
-        ],
-        "type": "object",
-        "properties": {
-          "manual": {
-            "type": "boolean",
-            "description": "Edge Cache change was triggered manually from the dashboard"
-          },
-          "user": {
-            "$ref": "#/components/schemas/User"
-          },
-          "system": {
-            "type": "boolean",
-            "description": "Edge Cache Change was triggered by Render"
-          }
-        }
-      },
-      "WorkflowWithCursorWorkflowBuildConfig": {
-        "required": [
-          "buildCommand",
-          "repo",
-          "runtime"
-        ],
-        "type": "object",
-        "properties": {
-          "branch": {
-            "type": "string",
-            "description": "The branch to use for the build, if applicable."
-          },
-          "buildCommand": {
-            "type": "string",
-            "description": "The command to run to build the workflow."
-          },
-          "repo": {
-            "type": "string",
-            "description": "The repository URL to use for the build."
-          },
-          "rootDir": {
-            "type": "string",
-            "description": "The root directory of the repository to use for the build, if applicable."
-          },
-          "runtime": {
-            "$ref": "#/components/schemas/WorkflowWithCursorWorkflowBuildConfigRuntime"
-          }
-        }
-      },
-      "WebServiceDetailsAutoscalingCriteria": {
-        "required": [
-          "cpu",
-          "memory"
-        ],
-        "type": "object",
-        "properties": {
-          "cpu": {
-            "$ref": "#/components/schemas/WebServiceDetailsAutoscalingCriteriaCpu"
-          },
-          "memory": {
-            "type": "string"
-          }
-        }
-      },
       "SyncWithCursorSyncCommit": {
         "required": [
           "id"
@@ -17493,69 +16058,6 @@
         "properties": {
           "id": {
             "type": "string"
-          }
-        }
-      },
-      "TaskRunWithCursorTaskRunAttemptsItem": {
-        "required": [
-          "status",
-          "startedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string"
-          },
-          "enqueuedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "startedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "completedAt": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsBuildEndedReasonNewBuild": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "ServiceEventWithCursorEventDetailsCronJobRunEndedReasonOomKilled": {
-        "required": [
-          "memoryLimit"
-        ],
-        "type": "object",
-        "properties": {
-          "memoryLimit": {
-            "type": "string"
-          }
-        }
-      },
-      "WebServiceDetailsAutoscalingCriteriaCpu": {
-        "required": [
-          "enabled",
-          "percentage"
-        ],
-        "type": "object",
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "default": false
-          },
-          "percentage": {
-            "type": "integer",
-            "description": "Determines when your service will be scaled. If the average resource utilization is significantly above/below the target, we will increase/decrease the number of instances.\n"
           }
         }
       },
@@ -17637,7 +16139,7 @@
             "type": "string"
           },
           "status": {
-            "type": "string"
+            "$ref": "#/components/schemas/RetrieveBlueprint200ResponseStatus"
           },
           "autoSync": {
             "type": "string"
@@ -17670,10 +16172,52 @@
             "type": "string"
           },
           "autoSync": {
+            "type": "boolean",
+            "description": "Automatically sync changes to render.yaml"
+          },
+          "path": {
+            "type": "string",
+            "description": "Path to the Blueprint file in the repository",
+            "example": "render.yaml"
+          }
+        }
+      },
+      "UpdateBlueprint200Response": {
+        "required": [
+          "id",
+          "name",
+          "status",
+          "autoSync",
+          "repo",
+          "branch",
+          "path"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "autoSync": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "branch": {
             "type": "string"
           },
           "path": {
             "type": "string"
+          },
+          "lastSync": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -17799,10 +16343,10 @@
         "type": "object",
         "properties": {
           "previewNotificationsEnabled": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/PatchServiceNotificationOverridesRequestPreviewNotificationsEnabled"
           },
           "notificationsToSend": {
-            "type": "string"
+            "$ref": "#/components/schemas/PatchServiceNotificationOverridesRequestNotificationsToSend"
           }
         }
       },
@@ -17899,6 +16443,12 @@
           "$ref": "#/components/schemas/EnvVarWithCursor"
         }
       },
+      "UpdateEnvVarsForServiceRequest": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItem"
+        }
+      },
       "UpdateEnvVarsForService200Response": {
         "type": "array",
         "items": {
@@ -17914,7 +16464,7 @@
       "UpdateSecretFilesForServiceRequest": {
         "type": "array",
         "items": {
-          "type": "string"
+          "$ref": "#/components/schemas/UpdateSecretFilesForServiceRequestItem"
         }
       },
       "UpdateSecretFilesForService200Response": {
@@ -18008,6 +16558,32 @@
           }
         }
       },
+      "AutoscaleServiceRequest": {
+        "required": [
+          "enabled",
+          "min",
+          "max",
+          "criteria"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "min": {
+            "type": "integer",
+            "description": "The minimum number of instances for the service"
+          },
+          "max": {
+            "type": "integer",
+            "description": "The maximum number of instances for the service"
+          },
+          "criteria": {
+            "$ref": "#/components/schemas/AutoscaleServiceRequestCriteria"
+          }
+        }
+      },
       "ListJob200Response": {
         "type": "array",
         "items": {
@@ -18025,6 +16601,51 @@
           },
           "planId": {
             "type": "string"
+          }
+        }
+      },
+      "PostJob201Response": {
+        "required": [
+          "id",
+          "serviceId",
+          "startCommand",
+          "planId",
+          "createdAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "serviceId": {
+            "type": "string",
+            "example": "srv-xxxxx"
+          },
+          "startCommand": {
+            "type": "string",
+            "example": "echo \u0027hello world\u0027"
+          },
+          "planId": {
+            "type": "string",
+            "example": "plan-srv-004"
+          },
+          "status": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2021-07-15T07:20:05.777035-07:00"
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2021-07-15T07:20:05.777035-07:00"
+          },
+          "finishedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2021-07-15T07:20:05.777035-07:00"
           }
         }
       },
@@ -18055,7 +16676,7 @@
             "type": "string"
           },
           "type": {
-            "type": "string"
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseType"
           },
           "details": {
             "$ref": "#/components/schemas/RetrieveEvent200ResponseDetails"
@@ -18452,6 +17073,41 @@
             "type": "boolean"
           },
           "eventFilter": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The event types that will trigger the webhook. An empty list means all event types will trigger the webhook."
+          }
+        }
+      },
+      "CreateWebhook201Response": {
+        "required": [
+          "id",
+          "name",
+          "url",
+          "secret",
+          "enabled",
+          "eventFilter"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "secret": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "eventFilter": {
             "type": "string"
           }
         }
@@ -18508,19 +17164,70 @@
             "type": "string"
           },
           "buildConfig": {
-            "type": "string"
+            "$ref": "#/components/schemas/CreateWorkflowRequestBuildConfig"
           },
           "runCommand": {
             "type": "string",
             "description": "The command to run the workflow"
           },
           "region": {
-            "$ref": "#/components/schemas/Region"
+            "$ref": "#/components/schemas/CreateWorkflowRequestRegion"
           },
           "autoDeployTrigger": {
-            "type": "string"
+            "$ref": "#/components/schemas/CreateWorkflowRequestAutoDeployTrigger"
           },
           "envVars": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateWorkflow201Response": {
+        "required": [
+          "id",
+          "name",
+          "createdAt",
+          "updatedAt",
+          "ownerId",
+          "region",
+          "runCommand",
+          "buildConfig"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "ownerId": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "buildConfig": {
+            "type": "string"
+          },
+          "runCommand": {
+            "type": "string",
+            "description": "Command to run the workflow."
+          },
+          "region": {
+            "$ref": "#/components/schemas/Region"
+          },
+          "environmentId": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "autoDeployTrigger": {
             "type": "string"
           }
         }
@@ -18563,10 +17270,66 @@
           }
         }
       },
+      "GetWorkflowVersion200Response": {
+        "required": [
+          "id",
+          "workflowId",
+          "name",
+          "image",
+          "createdAt",
+          "updatedAt",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "workflowId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "$ref": "#/components/schemas/GetWorkflowVersion200ResponseStatus"
+          }
+        }
+      },
       "ListTasks200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/TaskWithCursor"
+        }
+      },
+      "GetTask200Response": {
+        "required": [
+          "id",
+          "name",
+          "createdAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "workflowId": {
+            "type": "string"
+          },
+          "workflowVersionId": {
+            "type": "string"
+          }
         }
       },
       "ListTaskRuns200Response": {
@@ -18596,67 +17359,6 @@
         "type": "string",
         "description": "Stream of SSE frames. Each event may include \u0060id\u0060, \u0060event\u0060, \u0060data\u0060,\nand optional \u0060retry\u0060. Frames are separated by a blank line.\n"
       },
-      "GetTaskRun200Response": {
-        "required": [
-          "id",
-          "taskId",
-          "status",
-          "results",
-          "input",
-          "parentTaskRunId",
-          "rootTaskRunId",
-          "retries",
-          "attempts"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "taskId": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetTaskRun200ResponseResultsItem"
-            }
-          },
-          "error": {
-            "type": "string",
-            "description": "Error message if the task run failed."
-          },
-          "startedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "completedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "input": {
-            "type": "string"
-          },
-          "parentTaskRunId": {
-            "type": "string"
-          },
-          "rootTaskRunId": {
-            "type": "string"
-          },
-          "retries": {
-            "type": "integer"
-          },
-          "attempts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetTaskRun200ResponseAttemptsItem"
-            }
-          }
-        }
-      },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
@@ -18676,25 +17378,11 @@
           }
         }
       },
-      "RetrieveEvent200ResponseDetailsBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "ListBlueprints200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BlueprintWithCursor"
         }
-      },
-      "UpdateBlueprint200Response": {
-        "type": "string"
       },
       "ListBlueprintSyncs200ResponseSchema": {
         "type": "array",
@@ -18715,7 +17403,40 @@
         }
       },
       "AddDisk201Response": {
-        "type": "string"
+        "required": [
+          "id",
+          "name",
+          "sizeGB",
+          "mountPath",
+          "createdAt",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "sizeGB": {
+            "type": "integer"
+          },
+          "mountPath": {
+            "type": "string"
+          },
+          "serviceId": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
       },
       "RetrieveDisk200Response": {
         "type": "string"
@@ -18822,8 +17543,11 @@
           "$ref": "#/components/schemas/EnvVarWithCursor"
         }
       },
-      "UpdateEnvVarsForServiceRequest": {
-        "type": "string"
+      "UpdateEnvVarsForServiceRequestRequestBody": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestRequestBodyItem"
+        }
       },
       "UpdateEnvVarsForService200ResponseSchema": {
         "type": "array",
@@ -18840,7 +17564,7 @@
       "UpdateSecretFilesForServiceRequestRequestBody": {
         "type": "array",
         "items": {
-          "type": "string"
+          "$ref": "#/components/schemas/UpdateSecretFilesForServiceRequestRequestBodyItem"
         }
       },
       "UpdateSecretFilesForService200ResponseSchema": {
@@ -18919,9 +17643,6 @@
           "$ref": "#/components/schemas/CustomDomain"
         }
       },
-      "AutoscaleServiceRequest": {
-        "type": "string"
-      },
       "AutoscaleService200Response": {
         "type": "string"
       },
@@ -18930,9 +17651,6 @@
         "items": {
           "$ref": "#/components/schemas/JobWithCursor"
         }
-      },
-      "PostJob201Response": {
-        "type": "string"
       },
       "RetrieveJob200Response": {
         "type": "string"
@@ -19087,9 +17805,6 @@
           "type": "string"
         }
       },
-      "CreateWebhook201Response": {
-        "type": "string"
-      },
       "ListWebhooks200ResponseSchema": {
         "type": "array",
         "items": {
@@ -19114,9 +17829,6 @@
           "$ref": "#/components/schemas/WorkflowWithCursor"
         }
       },
-      "CreateWorkflow201Response": {
-        "type": "string"
-      },
       "GetWorkflow200Response": {
         "type": "string"
       },
@@ -19129,17 +17841,11 @@
           "$ref": "#/components/schemas/WorkflowVersionWithCursor"
         }
       },
-      "GetWorkflowVersion200Response": {
-        "type": "string"
-      },
       "ListTasks200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/TaskWithCursor"
         }
-      },
-      "GetTask200Response": {
-        "type": "string"
       },
       "ListTaskRuns200ResponseSchema": {
         "type": "array",
@@ -19148,11 +17854,115 @@
         }
       },
       "CreateTask202Response": {
-        "type": "string"
+        "required": [
+          "id",
+          "taskId",
+          "status",
+          "parentTaskRunId",
+          "rootTaskRunId",
+          "retries",
+          "attempts"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "taskId": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "parentTaskRunId": {
+            "type": "string"
+          },
+          "rootTaskRunId": {
+            "type": "string"
+          },
+          "retries": {
+            "type": "integer"
+          },
+          "attempts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateTask202ResponseAttemptsItem"
+            }
+          }
+        }
       },
       "StreamTaskRunsEvents200EventStreamResponseSchema": {
         "type": "string",
         "description": "Stream of SSE frames. Each event may include \u0060id\u0060, \u0060event\u0060, \u0060data\u0060,\nand optional \u0060retry\u0060. Frames are separated by a blank line.\n"
+      },
+      "GetTaskRun200Response": {
+        "required": [
+          "id",
+          "taskId",
+          "status",
+          "results",
+          "input",
+          "parentTaskRunId",
+          "rootTaskRunId",
+          "retries",
+          "attempts"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "taskId": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/GetTaskRun200ResponseStatus"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetTaskRun200ResponseResultsItem"
+            }
+          },
+          "error": {
+            "type": "string",
+            "description": "Error message if the task run failed."
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "input": {
+            "type": "string"
+          },
+          "parentTaskRunId": {
+            "type": "string"
+          },
+          "rootTaskRunId": {
+            "type": "string"
+          },
+          "retries": {
+            "type": "integer"
+          },
+          "attempts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetTaskRun200ResponseAttemptsItem"
+            }
+          }
+        }
       },
       "LogsValues200ResponseResponseContent": {
         "type": "array",
@@ -19164,7 +17974,148 @@
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsBranch1"
+            "title": "Service Event Details",
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsArtifactFetchFailed"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsArtifactSourceChanged"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsAutoscalingConfigChanged"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsAutoscalingEnded"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsAutoscalingStarted"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsBranchDeleted"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEnded"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsBuildStarted"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsCommitIgnored"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEnded"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunStarted"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsDeployEnded"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsDeployStarted"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsDiskCreated"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsDiskUpdated"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsDiskDeleted"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsImagePullFailed"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsInitialDeployHookStarted"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsInitialDeployHookEnded"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsInstanceCountChanged"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsJobRunEnded"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsMaintenanceModeEnabled"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsMaintenanceModeUriUpdated"
+              },
+              {
+                "title": "Maintenance Ended",
+                "type": "object"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsMaintenanceStarted"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsPipelineMinutesExhausted"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsInstanceTypeChanged"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsPreDeployEnded"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsPreDeployStarted"
+              },
+              {
+                "title": "Server Available",
+                "type": "object"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsServerFailed"
+              },
+              {
+                "title": "Server Hardware Failure",
+                "type": "object"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsServerRestarted"
+              },
+              {
+                "title": "Service Resumed",
+                "type": "object"
+              },
+              {
+                "title": "Service Suspended",
+                "type": "object"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsSuspenderAdded"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsSuspenderRemoved"
+              },
+              {
+                "title": "Zero Downtime Redeploy Ended",
+                "type": "object"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsZeroDowntimeRedeployStarted"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsEdgeCacheDisabled"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsEdgeCacheEnabled"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsEdgeCachePurged"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsAutoDeployDisabled"
+              },
+              {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsAutoDeployEnabled"
+              }
+            ]
           },
           {
             "title": "Postgres Event Details",
@@ -19275,6 +18226,627 @@
           }
         ],
         "description": "Input data for a task. Can be either an array (for positional arguments) or an object (for named parameters)."
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsArtifactFetchFailed": {
+        "title": "Artifact Fetch Failed",
+        "required": [
+          "artifactId",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "artifactId": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsArtifactSourceChanged": {
+        "title": "Artifact Source Changed",
+        "type": "object",
+        "properties": {
+          "fromArtifactSourceId": {
+            "type": "string",
+            "description": "The previously linked artifact source. Absent when the service was newly attached."
+          },
+          "toArtifactSourceId": {
+            "type": "string",
+            "description": "The newly linked artifact source. Absent when the service was detached."
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsAutoscalingConfigChanged": {
+        "title": "Autoscaling Config Changed",
+        "required": [
+          "toConfig"
+        ],
+        "type": "object",
+        "properties": {
+          "fromConfig": {
+            "type": "string"
+          },
+          "toConfig": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsAutoscalingEnded": {
+        "title": "Autoscaling Ended",
+        "required": [
+          "fromInstances",
+          "toInstances"
+        ],
+        "type": "object",
+        "properties": {
+          "fromInstances": {
+            "type": "integer"
+          },
+          "toInstances": {
+            "type": "integer"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsAutoscalingStarted": {
+        "title": "Autoscaling Started",
+        "required": [
+          "fromInstances",
+          "toInstances"
+        ],
+        "type": "object",
+        "properties": {
+          "fromInstances": {
+            "type": "integer"
+          },
+          "toInstances": {
+            "type": "integer"
+          },
+          "currentCPU": {
+            "type": "integer",
+            "x-go-type": "int64"
+          },
+          "targetCPU": {
+            "type": "integer",
+            "x-go-type": "int64"
+          },
+          "currentMemory": {
+            "type": "integer",
+            "x-go-type": "int64"
+          },
+          "targetMemory": {
+            "type": "integer",
+            "x-go-type": "int64"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsBranchDeleted": {
+        "title": "Branch Deleted",
+        "required": [
+          "deletedBranch",
+          "newBranch"
+        ],
+        "type": "object",
+        "properties": {
+          "deletedBranch": {
+            "type": "string"
+          },
+          "newBranch": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEnded": {
+        "title": "Build Ended",
+        "required": [
+          "buildId",
+          "status",
+          "reason",
+          "buildStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "buildId": {
+            "type": "string"
+          },
+          "buildStatus": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEndedBuildStatus"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEndedReason"
+          },
+          "status": {
+            "type": "integer",
+            "deprecated": true
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsBuildStarted": {
+        "title": "Build Started",
+        "required": [
+          "buildId",
+          "trigger"
+        ],
+        "type": "object",
+        "properties": {
+          "buildId": {
+            "type": "string"
+          },
+          "trigger": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsBuildStartedTrigger"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsCommitIgnored": {
+        "title": "Commit Ignored",
+        "required": [
+          "id",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "the commit id"
+          },
+          "url": {
+            "type": "string",
+            "description": "the commit url"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEnded": {
+        "title": "Cron Job Run Ended",
+        "required": [
+          "cronJobRunId",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "cronJobRunId": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEndedStatus"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEndedReason"
+          },
+          "user": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEndedUser"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunStarted": {
+        "title": "Cron Job Run Started",
+        "required": [
+          "cronJobRunId"
+        ],
+        "type": "object",
+        "properties": {
+          "cronJobRunId": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsDeployEnded": {
+        "title": "Deploy Ended",
+        "required": [
+          "deployId",
+          "reason",
+          "status",
+          "deployStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "deployId": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "deployStatus": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "deprecated": true
+          },
+          "artifactId": {
+            "type": "string",
+            "description": "Set when the deploy shipped an artifact published by the service\u0027s linked artifact source."
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsDeployStarted": {
+        "title": "Deploy Started",
+        "required": [
+          "deployId",
+          "trigger"
+        ],
+        "type": "object",
+        "properties": {
+          "deployId": {
+            "type": "string"
+          },
+          "trigger": {
+            "type": "string"
+          },
+          "artifactId": {
+            "type": "string",
+            "description": "Set when the deploy ships an artifact published by the service\u0027s linked artifact source."
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsDiskCreated": {
+        "title": "Disk Created",
+        "required": [
+          "diskId",
+          "sizeGB"
+        ],
+        "type": "object",
+        "properties": {
+          "diskId": {
+            "type": "string"
+          },
+          "sizeGB": {
+            "type": "integer"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsDiskUpdated": {
+        "title": "Disk Updated",
+        "required": [
+          "diskId",
+          "fromSizeGB",
+          "toSizeGB"
+        ],
+        "type": "object",
+        "properties": {
+          "diskId": {
+            "type": "string"
+          },
+          "fromSizeGB": {
+            "type": "integer"
+          },
+          "toSizeGB": {
+            "type": "integer"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsDiskDeleted": {
+        "title": "Disk Deleted",
+        "required": [
+          "diskId"
+        ],
+        "type": "object",
+        "properties": {
+          "diskId": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsImagePullFailed": {
+        "title": "Image Pull Failed",
+        "required": [
+          "message",
+          "imageURL"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "imageURL": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsInitialDeployHookStarted": {
+        "title": "Initial Deploy Hook Started",
+        "required": [
+          "deployId"
+        ],
+        "type": "object",
+        "properties": {
+          "deployId": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsInitialDeployHookEnded": {
+        "title": "Initial Deploy Hook Ended",
+        "required": [
+          "deployId"
+        ],
+        "type": "object",
+        "properties": {
+          "deployId": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsInstanceCountChanged": {
+        "title": "Instance Count Changed",
+        "required": [
+          "fromInstances",
+          "toInstances"
+        ],
+        "type": "object",
+        "properties": {
+          "fromInstances": {
+            "type": "integer"
+          },
+          "toInstances": {
+            "type": "integer"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsJobRunEnded": {
+        "title": "Job Run Ended",
+        "required": [
+          "jobId",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "jobId": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsMaintenanceModeEnabled": {
+        "title": "Maintenance Mode Enabled",
+        "required": [
+          "enabled"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsMaintenanceModeUriUpdated": {
+        "title": "Maintenance Mode URI Updated",
+        "required": [
+          "fromURI",
+          "toURI"
+        ],
+        "type": "object",
+        "properties": {
+          "fromURI": {
+            "type": "string"
+          },
+          "toURI": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsMaintenanceStarted": {
+        "title": "Maintenance Started",
+        "required": [
+          "trigger"
+        ],
+        "type": "object",
+        "properties": {
+          "trigger": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsMaintenanceStartedTrigger"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsPipelineMinutesExhausted": {
+        "title": "Pipeline Minutes Exhausted",
+        "required": [
+          "buildId",
+          "trigger"
+        ],
+        "type": "object",
+        "properties": {
+          "buildId": {
+            "type": "string"
+          },
+          "trigger": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsInstanceTypeChanged": {
+        "title": "Instance Type Changed",
+        "required": [
+          "from",
+          "to"
+        ],
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsPreDeployEnded": {
+        "title": "Pre Deploy Ended",
+        "required": [
+          "deployCommandExecutionId",
+          "deployId",
+          "status",
+          "preDeployStatus",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "deployCommandExecutionId": {
+            "type": "string"
+          },
+          "deployId": {
+            "type": "string"
+          },
+          "preDeployStatus": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "deprecated": true
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsPreDeployStarted": {
+        "title": "Pre Deploy Started",
+        "required": [
+          "deployCommandExecutionId",
+          "deployId"
+        ],
+        "type": "object",
+        "properties": {
+          "deployCommandExecutionId": {
+            "type": "string"
+          },
+          "deployId": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsServerFailed": {
+        "title": "Server Failed",
+        "type": "object",
+        "properties": {
+          "instanceID": {
+            "pattern": "^srv-[0-9a-z]{20}-[0-9a-z]{5}$",
+            "type": "string",
+            "example": "srv-d0cjkelq67qs70c2pugg-sbpkm"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsServerRestarted": {
+        "title": "Server Restarted",
+        "required": [
+          "triggeredByUser"
+        ],
+        "type": "object",
+        "properties": {
+          "triggeredByUser": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsSuspenderAdded": {
+        "title": "Suspender Added",
+        "required": [
+          "actor"
+        ],
+        "type": "object",
+        "properties": {
+          "actor": {
+            "type": "string"
+          },
+          "suspendedByUser": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsSuspenderRemoved": {
+        "title": "Suspender Removed",
+        "required": [
+          "actor"
+        ],
+        "type": "object",
+        "properties": {
+          "actor": {
+            "type": "string"
+          },
+          "resumedByUser": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsZeroDowntimeRedeployStarted": {
+        "title": "Zero Downtime Redeploy Started",
+        "required": [
+          "trigger"
+        ],
+        "type": "object",
+        "properties": {
+          "trigger": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsEdgeCacheDisabled": {
+        "title": "Edge Cache Disabled",
+        "required": [
+          "trigger"
+        ],
+        "type": "object",
+        "properties": {
+          "trigger": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsEdgeCacheDisabledTrigger"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsEdgeCacheEnabled": {
+        "title": "Edge Cache Enabled",
+        "required": [
+          "trigger"
+        ],
+        "type": "object",
+        "properties": {
+          "trigger": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsEdgeCachePurged": {
+        "title": "Edge Cache Purged",
+        "required": [
+          "trigger"
+        ],
+        "type": "object",
+        "properties": {
+          "trigger": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsAutoDeployDisabled": {
+        "title": "Auto Deploy Disabled",
+        "required": [
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "Why auto-deploy was disabled (manual_deploy, rollback, or setting_change)"
+          },
+          "fromTrigger": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsAutoDeployEnabled": {
+        "title": "Auto Deploy Enabled",
+        "type": "object",
+        "properties": {
+          "newTrigger": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsAutoDeployEnabledNewTrigger"
+          }
+        }
       },
       "RetrieveEvent200ResponseDetailsPostgresEventDetailsPostgresClusterLeaderChanged": {
         "title": "Postgres Cluster Leader Changed",
@@ -19573,6 +19145,54 @@
           }
         }
       },
+      "UpdateEnvVarsForServiceRequestItem": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "generateValue": {
+            "type": "boolean",
+            "description": "If true, Render generates a strong random value for this environment variable on creation. Cannot be combined with \u0060value\u0060."
+          }
+        }
+      },
+      "UpdateSecretFilesForServiceRequestItem": {
+        "required": [
+          "name",
+          "content"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      },
+      "AutoscaleServiceRequestCriteria": {
+        "required": [
+          "cpu",
+          "memory"
+        ],
+        "type": "object",
+        "properties": {
+          "cpu": {
+            "$ref": "#/components/schemas/AutoscaleServiceRequestCriteriaCpu"
+          },
+          "memory": {
+            "type": "string"
+          }
+        }
+      },
       "SubscribeLogs101ResponseLabelsItem": {
         "required": [
           "name",
@@ -19851,42 +19471,70 @@
         },
         "description": "The number of sequential scans performed against a table."
       },
-      "GetTaskRun200ResponseResultsItem": {
-        "type": "object"
-      },
-      "GetTaskRun200ResponseAttemptsItem": {
+      "CreateWorkflowRequestBuildConfig": {
         "required": [
-          "status",
-          "startedAt"
+          "buildCommand",
+          "repo",
+          "runtime"
         ],
         "type": "object",
         "properties": {
-          "status": {
-            "type": "string"
-          },
-          "enqueuedAt": {
+          "branch": {
             "type": "string",
-            "format": "date-time"
+            "description": "The branch to use for the build, if applicable."
           },
-          "startedAt": {
+          "buildCommand": {
             "type": "string",
-            "format": "date-time"
+            "description": "The command to run to build the workflow."
           },
-          "completedAt": {
+          "repo": {
             "type": "string",
-            "format": "date-time"
+            "description": "The repository URL to use for the build."
           },
-          "error": {
+          "rootDir": {
             "type": "string",
-            "description": "Error message if the task attempt failed."
+            "description": "The root directory of the repository to use for the build, if applicable."
           },
-          "results": {
-            "type": "string"
+          "runtime": {
+            "$ref": "#/components/schemas/CreateWorkflowRequestBuildConfigRuntime"
           }
         }
       },
       "CreateTaskRequestInputBranch1ValueItem": {
         "type": "object"
+      },
+      "UpdateEnvVarsForServiceRequestRequestBodyItem": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "generateValue": {
+            "type": "boolean",
+            "description": "If true, Render generates a strong random value for this environment variable on creation. Cannot be combined with \u0060value\u0060."
+          }
+        }
+      },
+      "UpdateSecretFilesForServiceRequestRequestBodyItem": {
+        "required": [
+          "name",
+          "content"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
       },
       "GetCpu200ResponseSchemaItem": {
         "required": [
@@ -19984,6 +19632,242 @@
           }
         }
       },
+      "CreateTask202ResponseAttemptsItem": {
+        "required": [
+          "status",
+          "startedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "enqueuedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "GetTaskRun200ResponseResultsItem": {
+        "type": "object"
+      },
+      "GetTaskRun200ResponseAttemptsItem": {
+        "required": [
+          "status",
+          "startedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "enqueuedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "error": {
+            "type": "string",
+            "description": "Error message if the task attempt failed."
+          },
+          "results": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEndedReason": {
+        "type": "object",
+        "properties": {
+          "buildFailed": {
+            "type": "string"
+          },
+          "newBuild": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEndedReasonNewBuild"
+          },
+          "newDeploy": {
+            "type": "string"
+          },
+          "failure": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsBuildStartedTrigger": {
+        "required": [
+          "firstBuild",
+          "envUpdated",
+          "manual",
+          "deployedByRender",
+          "clearCache",
+          "rollback"
+        ],
+        "type": "object",
+        "properties": {
+          "firstBuild": {
+            "type": "boolean",
+            "description": "Deploy was triggered by service creation"
+          },
+          "envUpdated": {
+            "type": "boolean",
+            "description": "Deploy was triggered by an environment update"
+          },
+          "manual": {
+            "type": "boolean",
+            "description": "Deploy was triggered manually from the dashboard"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "updatedProperty": {
+            "type": "string",
+            "description": "Updated property that triggered the deploy"
+          },
+          "newCommit": {
+            "type": "string",
+            "description": "Commit that triggered the deploy"
+          },
+          "deployedByRender": {
+            "type": "boolean",
+            "description": "Deploy was triggered by Render"
+          },
+          "clearCache": {
+            "type": "boolean",
+            "description": "Whether the cache was cleared for the deploy"
+          },
+          "rollback": {
+            "type": "boolean",
+            "description": "Whether the deploy was triggered by a rollback"
+          },
+          "rollbackTargetDeployId": {
+            "type": "string",
+            "description": "Deploy ID that was rolled back to"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEndedReason": {
+        "required": [
+          "evicted"
+        ],
+        "type": "object",
+        "properties": {
+          "evicted": {
+            "type": "boolean"
+          },
+          "evictionReason": {
+            "type": "string",
+            "description": "Details about why the application was evicted."
+          },
+          "nonZeroExit": {
+            "type": "integer",
+            "description": "If present, the application exited with the specified non-zero status."
+          },
+          "earlyExit": {
+            "type": "boolean",
+            "description": "If true, the application exited early. Services besides cron jobs should not exit unless receiving a \u0060SIGTERM\u0060 signal from Render."
+          },
+          "oomKilled": {
+            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEndedReasonOomKilled"
+          },
+          "timedOutSeconds": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "unhealthy": {
+            "type": "string"
+          },
+          "timedOutReason": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEndedUser": {
+        "required": [
+          "id",
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "description": "User who triggered the action"
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsMaintenanceStartedTrigger": {
+        "required": [
+          "manual",
+          "startedByRender"
+        ],
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "manual": {
+            "type": "boolean",
+            "description": "Maintenance was triggered manually"
+          },
+          "startedByRender": {
+            "type": "boolean",
+            "description": "Maintenance was triggered by Render"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsEdgeCacheDisabledTrigger": {
+        "required": [
+          "manual",
+          "system"
+        ],
+        "type": "object",
+        "properties": {
+          "manual": {
+            "type": "boolean",
+            "description": "Edge Cache change was triggered manually from the dashboard"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "system": {
+            "type": "boolean",
+            "description": "Edge Cache Change was triggered by Render"
+          }
+        }
+      },
+      "AutoscaleServiceRequestCriteriaCpu": {
+        "required": [
+          "enabled",
+          "percentage"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "percentage": {
+            "type": "integer",
+            "description": "Determines when your service will be scaled. If the average resource utilization is significantly above/below the target, we will increase/decrease the number of instances.\n"
+          }
+        }
+      },
       "GetCpu200ResponseItemLabelsItem": {
         "required": [
           "field",
@@ -20044,6 +19928,28 @@
           "value": {
             "type": "number",
             "example": 100
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEndedReasonNewBuild": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEndedReasonOomKilled": {
+        "required": [
+          "memoryLimit"
+        ],
+        "type": "object",
+        "properties": {
+          "memoryLimit": {
+            "type": "string"
           }
         }
       },
@@ -20481,7 +20387,7 @@
           ]
         }
       },
-      "PostgresPlan": {
+      "PostgresPostInputPlan": {
         "enum": [
           "free",
           "starter",
@@ -20515,7 +20421,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "PostgresPlan",
+          "name": "PostgresPostInputPlan",
           "modelAsString": false,
           "values": [
             {
@@ -20709,297 +20615,6 @@
           ]
         }
       },
-      "ServiceEventWithCursorEventDetailsBuildEndedBuildStatus": {
-        "enum": [
-          "succeeded",
-          "failed",
-          "canceled"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "ServiceEventWithCursorEventDetailsBuildEndedBuildStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "succeeded",
-              "name": "Succeeded"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            }
-          ]
-        }
-      },
-      "ServiceEventWithCursorEventDetailsCronJobRunEndedStatus": {
-        "enum": [
-          "canceled",
-          "pending",
-          "successful",
-          "unsuccessful"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "ServiceEventWithCursorEventDetailsCronJobRunEndedStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "successful",
-              "name": "Successful"
-            },
-            {
-              "value": "unsuccessful",
-              "name": "Unsuccessful"
-            }
-          ]
-        }
-      },
-      "ServiceEventWithCursorEventDetailsAutoDeployEnabledNewTrigger": {
-        "enum": [
-          "commit",
-          "off",
-          "checksPass"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "The auto-deploy trigger value after it was re-enabled",
-        "x-ms-enum": {
-          "name": "ServiceEventWithCursorEventDetailsAutoDeployEnabledNewTrigger",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "commit",
-              "name": "Commit"
-            },
-            {
-              "value": "off",
-              "name": "Off"
-            },
-            {
-              "value": "checksPass",
-              "name": "ChecksPass"
-            }
-          ]
-        }
-      },
-      "WorkflowVersionWithCursorWorkflowVersionStatus": {
-        "enum": [
-          "created",
-          "building",
-          "registering",
-          "build_failed",
-          "registration_failed",
-          "ready"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "WorkflowVersionWithCursorWorkflowVersionStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "created",
-              "name": "Created"
-            },
-            {
-              "value": "building",
-              "name": "Building"
-            },
-            {
-              "value": "registering",
-              "name": "Registering"
-            },
-            {
-              "value": "build_failed",
-              "name": "BuildFailed"
-            },
-            {
-              "value": "registration_failed",
-              "name": "RegistrationFailed"
-            },
-            {
-              "value": "ready",
-              "name": "Ready"
-            }
-          ]
-        }
-      },
-      "WorkflowWithCursorWorkflowRegion": {
-        "enum": [
-          "frankfurt",
-          "oregon",
-          "ohio",
-          "singapore",
-          "virginia"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Defaults to \u0022oregon\u0022",
-        "x-ms-enum": {
-          "name": "WorkflowWithCursorWorkflowRegion",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "frankfurt",
-              "name": "Frankfurt"
-            },
-            {
-              "value": "oregon",
-              "name": "Oregon"
-            },
-            {
-              "value": "ohio",
-              "name": "Ohio"
-            },
-            {
-              "value": "singapore",
-              "name": "Singapore"
-            },
-            {
-              "value": "virginia",
-              "name": "Virginia"
-            }
-          ]
-        }
-      },
-      "WorkflowWithCursorWorkflowAutoDeployTrigger": {
-        "enum": [
-          "commit",
-          "off",
-          "checksPass"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Controls autodeploy behavior. \u0022commit\u0022 deploys when a commit is pushed to the branch. \u0022checksPass\u0022 waits for CI checks to pass before deploying. \u0022off\u0022 disables autodeploy.",
-        "x-ms-enum": {
-          "name": "WorkflowWithCursorWorkflowAutoDeployTrigger",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "commit",
-              "name": "Commit"
-            },
-            {
-              "value": "off",
-              "name": "Off"
-            },
-            {
-              "value": "checksPass",
-              "name": "ChecksPass"
-            }
-          ]
-        }
-      },
-      "NotificationOverrideWithCursorOverridePreviewNotificationsEnabled": {
-        "enum": [
-          "default",
-          "false",
-          "true"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "NotificationOverrideWithCursorOverridePreviewNotificationsEnabled",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "default",
-              "name": "DefaultValue"
-            },
-            {
-              "value": "false",
-              "name": "FalseValue"
-            },
-            {
-              "value": "true",
-              "name": "TrueValue"
-            }
-          ]
-        }
-      },
-      "NotificationOverrideWithCursorOverrideNotificationsToSend": {
-        "enum": [
-          "default",
-          "none",
-          "failure",
-          "all"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "NotificationOverrideWithCursorOverrideNotificationsToSend",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "default",
-              "name": "DefaultValue"
-            },
-            {
-              "value": "none",
-              "name": "None"
-            },
-            {
-              "value": "failure",
-              "name": "Failure"
-            },
-            {
-              "value": "all",
-              "name": "All"
-            }
-          ]
-        }
-      },
-      "BlueprintWithCursorBlueprintStatus": {
-        "enum": [
-          "created",
-          "paused",
-          "in_sync",
-          "syncing",
-          "error"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "BlueprintWithCursorBlueprintStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "created",
-              "name": "Created"
-            },
-            {
-              "value": "paused",
-              "name": "Paused"
-            },
-            {
-              "value": "in_sync",
-              "name": "InSync"
-            },
-            {
-              "value": "syncing",
-              "name": "Syncing"
-            },
-            {
-              "value": "error",
-              "name": "Error"
-            }
-          ]
-        }
-      },
       "SyncWithCursorSyncState": {
         "enum": [
           "created",
@@ -21037,7 +20652,153 @@
           ]
         }
       },
-      "WebhookEventWithCursorWebhookEventEventType": {
+      "RetrieveBlueprint200ResponseStatus": {
+        "enum": [
+          "created",
+          "paused",
+          "in_sync",
+          "syncing",
+          "error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RetrieveBlueprint200ResponseStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "paused",
+              "name": "Paused"
+            },
+            {
+              "value": "in_sync",
+              "name": "InSync"
+            },
+            {
+              "value": "syncing",
+              "name": "Syncing"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            }
+          ]
+        }
+      },
+      "PatchOwnerNotificationSettingsRequestNotificationsToSend": {
+        "enum": [
+          "none",
+          "failure",
+          "all"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchOwnerNotificationSettingsRequestNotificationsToSend",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "failure",
+              "name": "Failure"
+            },
+            {
+              "value": "all",
+              "name": "All"
+            }
+          ]
+        }
+      },
+      "PatchServiceNotificationOverridesRequestPreviewNotificationsEnabled": {
+        "enum": [
+          "default",
+          "false",
+          "true"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchServiceNotificationOverridesRequestPreviewNotificationsEnabled",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "default",
+              "name": "DefaultValue"
+            },
+            {
+              "value": "false",
+              "name": "FalseValue"
+            },
+            {
+              "value": "true",
+              "name": "TrueValue"
+            }
+          ]
+        }
+      },
+      "PatchServiceNotificationOverridesRequestNotificationsToSend": {
+        "enum": [
+          "default",
+          "none",
+          "failure",
+          "all"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchServiceNotificationOverridesRequestNotificationsToSend",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "default",
+              "name": "DefaultValue"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "failure",
+              "name": "Failure"
+            },
+            {
+              "value": "all",
+              "name": "All"
+            }
+          ]
+        }
+      },
+      "CreateDeployRequestClearCache": {
+        "enum": [
+          "clear",
+          "do_not_clear"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "If \u0060clear\u0060, Render clears the service\u0027s build cache before deploying. This can be useful if you\u0027re experiencing issues with your build.",
+        "x-ms-enum": {
+          "name": "CreateDeployRequestClearCache",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "clear",
+              "name": "Clear"
+            },
+            {
+              "value": "do_not_clear",
+              "name": "DoNotClear"
+            }
+          ]
+        }
+      },
+      "RetrieveEvent200ResponseType": {
         "enum": [
           "artifact_fetch_failed",
           "artifact_source_changed",
@@ -21110,7 +20871,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "WebhookEventWithCursorWebhookEventEventType",
+          "name": "RetrieveEvent200ResponseType",
           "modelAsString": false,
           "values": [
             {
@@ -21384,141 +21145,6 @@
           ]
         }
       },
-      "TaskRunWithCursorTaskRunStatus": {
-        "enum": [
-          "pending",
-          "running",
-          "completed",
-          "succeeded",
-          "failed",
-          "canceled",
-          "paused"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "TaskRunWithCursorTaskRunStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "running",
-              "name": "Running"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "succeeded",
-              "name": "Succeeded"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "paused",
-              "name": "Paused"
-            }
-          ]
-        }
-      },
-      "WorkflowWithCursorWorkflowBuildConfigRuntime": {
-        "enum": [
-          "elixir",
-          "go",
-          "node",
-          "python",
-          "ruby"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "The runtime environment for the workflow (e.g., node, python, etc.).",
-        "x-ms-enum": {
-          "name": "WorkflowWithCursorWorkflowBuildConfigRuntime",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "elixir",
-              "name": "Elixir"
-            },
-            {
-              "value": "go",
-              "name": "Go"
-            },
-            {
-              "value": "node",
-              "name": "Node"
-            },
-            {
-              "value": "python",
-              "name": "Python"
-            },
-            {
-              "value": "ruby",
-              "name": "Ruby"
-            }
-          ]
-        }
-      },
-      "PatchOwnerNotificationSettingsRequestNotificationsToSend": {
-        "enum": [
-          "none",
-          "failure",
-          "all"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "PatchOwnerNotificationSettingsRequestNotificationsToSend",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "none",
-              "name": "None"
-            },
-            {
-              "value": "failure",
-              "name": "Failure"
-            },
-            {
-              "value": "all",
-              "name": "All"
-            }
-          ]
-        }
-      },
-      "CreateDeployRequestClearCache": {
-        "enum": [
-          "clear",
-          "do_not_clear"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "If \u0060clear\u0060, Render clears the service\u0027s build cache before deploying. This can be useful if you\u0027re experiencing issues with your build.",
-        "x-ms-enum": {
-          "name": "CreateDeployRequestClearCache",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "clear",
-              "name": "Clear"
-            },
-            {
-              "value": "do_not_clear",
-              "name": "DoNotClear"
-            }
-          ]
-        }
-      },
       "UpdateOwnerLogStreamRequestPreview": {
         "enum": [
           "send",
@@ -21624,6 +21250,248 @@
             {
               "value": "NOT_AVAILABLE",
               "name": "NotAvailable"
+            }
+          ]
+        }
+      },
+      "CreateWorkflowRequestRegion": {
+        "enum": [
+          "frankfurt",
+          "oregon",
+          "ohio",
+          "singapore",
+          "virginia"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Defaults to \u0022oregon\u0022",
+        "x-ms-enum": {
+          "name": "CreateWorkflowRequestRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "frankfurt",
+              "name": "Frankfurt"
+            },
+            {
+              "value": "oregon",
+              "name": "Oregon"
+            },
+            {
+              "value": "ohio",
+              "name": "Ohio"
+            },
+            {
+              "value": "singapore",
+              "name": "Singapore"
+            },
+            {
+              "value": "virginia",
+              "name": "Virginia"
+            }
+          ]
+        }
+      },
+      "CreateWorkflowRequestAutoDeployTrigger": {
+        "enum": [
+          "commit",
+          "off",
+          "checksPass"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Controls autodeploy behavior. \u0022commit\u0022 deploys when a commit is pushed to the branch. \u0022checksPass\u0022 waits for CI checks to pass before deploying. \u0022off\u0022 disables autodeploy.",
+        "x-ms-enum": {
+          "name": "CreateWorkflowRequestAutoDeployTrigger",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "commit",
+              "name": "Commit"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "checksPass",
+              "name": "ChecksPass"
+            }
+          ]
+        }
+      },
+      "GetWorkflowVersion200ResponseStatus": {
+        "enum": [
+          "created",
+          "building",
+          "registering",
+          "build_failed",
+          "registration_failed",
+          "ready"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetWorkflowVersion200ResponseStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "building",
+              "name": "Building"
+            },
+            {
+              "value": "registering",
+              "name": "Registering"
+            },
+            {
+              "value": "build_failed",
+              "name": "BuildFailed"
+            },
+            {
+              "value": "registration_failed",
+              "name": "RegistrationFailed"
+            },
+            {
+              "value": "ready",
+              "name": "Ready"
+            }
+          ]
+        }
+      },
+      "GetTaskRun200ResponseStatus": {
+        "enum": [
+          "pending",
+          "running",
+          "completed",
+          "succeeded",
+          "failed",
+          "canceled",
+          "paused"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetTaskRun200ResponseStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "completed",
+              "name": "Completed"
+            },
+            {
+              "value": "succeeded",
+              "name": "Succeeded"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "canceled",
+              "name": "Canceled"
+            },
+            {
+              "value": "paused",
+              "name": "Paused"
+            }
+          ]
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEndedBuildStatus": {
+        "enum": [
+          "succeeded",
+          "failed",
+          "canceled"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEndedBuildStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "succeeded",
+              "name": "Succeeded"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "canceled",
+              "name": "Canceled"
+            }
+          ]
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEndedStatus": {
+        "enum": [
+          "canceled",
+          "pending",
+          "successful",
+          "unsuccessful"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEndedStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "canceled",
+              "name": "Canceled"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "successful",
+              "name": "Successful"
+            },
+            {
+              "value": "unsuccessful",
+              "name": "Unsuccessful"
+            }
+          ]
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsAutoDeployEnabledNewTrigger": {
+        "enum": [
+          "commit",
+          "off",
+          "checksPass"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The auto-deploy trigger value after it was re-enabled",
+        "x-ms-enum": {
+          "name": "RetrieveEvent200ResponseDetailsServiceEventDetailsAutoDeployEnabledNewTrigger",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "commit",
+              "name": "Commit"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "checksPass",
+              "name": "ChecksPass"
             }
           ]
         }
@@ -21814,6 +21682,44 @@
             {
               "value": "statusCode",
               "name": "StatusCode"
+            }
+          ]
+        }
+      },
+      "CreateWorkflowRequestBuildConfigRuntime": {
+        "enum": [
+          "elixir",
+          "go",
+          "node",
+          "python",
+          "ruby"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The runtime environment for the workflow (e.g., node, python, etc.).",
+        "x-ms-enum": {
+          "name": "CreateWorkflowRequestBuildConfigRuntime",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "elixir",
+              "name": "Elixir"
+            },
+            {
+              "value": "go",
+              "name": "Go"
+            },
+            {
+              "value": "node",
+              "name": "Node"
+            },
+            {
+              "value": "python",
+              "name": "Python"
+            },
+            {
+              "value": "ruby",
+              "name": "Ruby"
             }
           ]
         }

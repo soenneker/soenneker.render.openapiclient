@@ -31,7 +31,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string EventId { get; set; }
 #endif
         /// <summary>The eventType property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursorWebhookEventEventType? EventType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EventType { get; set; }
+#nullable restore
+#else
+        public string EventType { get; set; }
+#endif
         /// <summary>the id of the webhook event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +85,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             {
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "eventId", n => { EventId = n.GetStringValue(); } },
-                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursorWebhookEventEventType>(); } },
+                { "eventType", n => { EventType = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "responseBody", n => { ResponseBody = n.GetStringValue(); } },
                 { "sentAt", n => { SentAt = n.GetDateTimeOffsetValue(); } },
@@ -95,7 +101,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("error", Error);
             writer.WriteStringValue("eventId", EventId);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.WebhookEventWithCursorWebhookEventEventType>("eventType", EventType);
+            writer.WriteStringValue("eventType", EventType);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("responseBody", ResponseBody);
             writer.WriteDateTimeOffsetValue("sentAt", SentAt);

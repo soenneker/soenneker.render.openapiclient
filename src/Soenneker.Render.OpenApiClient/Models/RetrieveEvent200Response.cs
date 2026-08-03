@@ -41,13 +41,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The timestamp property</summary>
         public DateTimeOffset? Timestamp { get; set; }
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Render.OpenApiClient.Models.RetrieveEvent200ResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.RetrieveEvent200Response"/> and sets the default values.
         /// </summary>
@@ -77,7 +71,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "serviceId", n => { ServiceId = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RetrieveEvent200ResponseType>(); } },
             };
         }
         /// <summary>
@@ -91,7 +85,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("serviceId", ServiceId);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.RetrieveEvent200ResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

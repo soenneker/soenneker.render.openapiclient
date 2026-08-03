@@ -9,19 +9,13 @@ namespace Soenneker.Render.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ServiceEventWithCursorEvent : IAdditionalDataHolder, IParsable
+    public partial class AddDisk201Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The details property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Details { get; set; }
-#nullable restore
-#else
-        public string Details { get; set; }
-#endif
+        /// <summary>The createdAt property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +23,22 @@ namespace Soenneker.Render.OpenApiClient.Models
 #nullable restore
 #else
         public string Id { get; set; }
+#endif
+        /// <summary>The mountPath property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MountPath { get; set; }
+#nullable restore
+#else
+        public string MountPath { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
 #endif
         /// <summary>The serviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,32 +48,26 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string ServiceId { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
-        public DateTimeOffset? Timestamp { get; set; }
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The sizeGB property</summary>
+        public int? SizeGB { get; set; }
+        /// <summary>The updatedAt property</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.AddDisk201Response"/> and sets the default values.
         /// </summary>
-        public ServiceEventWithCursorEvent()
+        public AddDisk201Response()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.AddDisk201Response"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.AddDisk201Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent();
+            return new global::Soenneker.Render.OpenApiClient.Models.AddDisk201Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,11 +77,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "details", n => { Details = n.GetStringValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "mountPath", n => { MountPath = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "serviceId", n => { ServiceId = n.GetStringValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "sizeGB", n => { SizeGB = n.GetIntValue(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -87,11 +93,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("details", Details);
+            writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("mountPath", MountPath);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("serviceId", ServiceId);
-            writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
-            writer.WriteStringValue("type", Type);
+            writer.WriteIntValue("sizeGB", SizeGB);
+            writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

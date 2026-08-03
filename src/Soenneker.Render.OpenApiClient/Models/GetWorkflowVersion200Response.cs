@@ -9,19 +9,13 @@ namespace Soenneker.Render.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ServiceEventWithCursorEvent : IAdditionalDataHolder, IParsable
+    public partial class GetWorkflowVersion200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The details property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Details { get; set; }
-#nullable restore
-#else
-        public string Details { get; set; }
-#endif
+        /// <summary>The createdAt property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,40 +24,40 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The serviceId property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceId { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string ServiceId { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
-        public DateTimeOffset? Timestamp { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The status property</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.GetWorkflowVersion200ResponseStatus? Status { get; set; }
+        /// <summary>The workflowId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? WorkflowId { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string WorkflowId { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.GetWorkflowVersion200Response"/> and sets the default values.
         /// </summary>
-        public ServiceEventWithCursorEvent()
+        public GetWorkflowVersion200Response()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.GetWorkflowVersion200Response"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.GetWorkflowVersion200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent();
+            return new global::Soenneker.Render.OpenApiClient.Models.GetWorkflowVersion200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,11 +67,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "details", n => { Details = n.GetStringValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "serviceId", n => { ServiceId = n.GetStringValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.GetWorkflowVersion200ResponseStatus>(); } },
+                { "workflowId", n => { WorkflowId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,11 +81,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("details", Details);
+            writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("serviceId", ServiceId);
-            writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
-            writer.WriteStringValue("type", Type);
+            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.GetWorkflowVersion200ResponseStatus>("status", Status);
+            writer.WriteStringValue("workflowId", WorkflowId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

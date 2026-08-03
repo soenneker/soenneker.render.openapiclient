@@ -9,28 +9,44 @@ namespace Soenneker.Render.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreateWorkflowRequest : IAdditionalDataHolder, IParsable
+    public partial class CreateWorkflow201Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Controls autodeploy behavior. &quot;commit&quot; deploys when a commit is pushed to the branch. &quot;checksPass&quot; waits for CI checks to pass before deploying. &quot;off&quot; disables autodeploy.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestAutoDeployTrigger? AutoDeployTrigger { get; set; }
+        /// <summary>The autoDeployTrigger property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AutoDeployTrigger { get; set; }
+#nullable restore
+#else
+        public string AutoDeployTrigger { get; set; }
+#endif
         /// <summary>The buildConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig? BuildConfig { get; set; }
+        public string? BuildConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig BuildConfig { get; set; }
+        public string BuildConfig { get; set; }
 #endif
-        /// <summary>The envVars property</summary>
+        /// <summary>The createdAt property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The environmentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvVars { get; set; }
+        public string? EnvironmentId { get; set; }
 #nullable restore
 #else
-        public string EnvVars { get; set; }
+        public string EnvironmentId { get; set; }
+#endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,8 +65,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string OwnerId { get; set; }
 #endif
         /// <summary>Defaults to &quot;oregon&quot;</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestRegion? Region { get; set; }
-        /// <summary>The command to run the workflow</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.Region? Region { get; set; }
+        /// <summary>Command to run the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RunCommand { get; set; }
@@ -58,22 +74,32 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string RunCommand { get; set; }
 #endif
+        /// <summary>The slug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
+#endif
+        /// <summary>The updatedAt property</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateWorkflow201Response"/> and sets the default values.
         /// </summary>
-        public CreateWorkflowRequest()
+        public CreateWorkflow201Response()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequest"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateWorkflow201Response"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.CreateWorkflow201Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequest();
+            return new global::Soenneker.Render.OpenApiClient.Models.CreateWorkflow201Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,13 +109,17 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestAutoDeployTrigger>(); } },
-                { "buildConfig", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig>(global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig.CreateFromDiscriminatorValue); } },
-                { "envVars", n => { EnvVars = n.GetStringValue(); } },
+                { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetStringValue(); } },
+                { "buildConfig", n => { BuildConfig = n.GetStringValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestRegion>(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
                 { "runCommand", n => { RunCommand = n.GetStringValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -99,13 +129,17 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestAutoDeployTrigger>("autoDeployTrigger", AutoDeployTrigger);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig>("buildConfig", BuildConfig);
-            writer.WriteStringValue("envVars", EnvVars);
+            writer.WriteStringValue("autoDeployTrigger", AutoDeployTrigger);
+            writer.WriteStringValue("buildConfig", BuildConfig);
+            writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            writer.WriteStringValue("environmentId", EnvironmentId);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestRegion>("region", Region);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);
             writer.WriteStringValue("runCommand", RunCommand);
+            writer.WriteStringValue("slug", Slug);
+            writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

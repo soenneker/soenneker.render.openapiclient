@@ -9,61 +9,45 @@ namespace Soenneker.Render.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ServiceEventWithCursorEvent : IAdditionalDataHolder, IParsable
+    public partial class UpdateEnvVarsForServiceRequestRequestBodyItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The details property</summary>
+        /// <summary>If true, Render generates a strong random value for this environment variable on creation. Cannot be combined with `value`.</summary>
+        public bool? GenerateValue { get; set; }
+        /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Details { get; set; }
+        public string? Key { get; set; }
 #nullable restore
 #else
-        public string Details { get; set; }
+        public string Key { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Value { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
-#endif
-        /// <summary>The serviceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ServiceId { get; set; }
-#nullable restore
-#else
-        public string ServiceId { get; set; }
-#endif
-        /// <summary>The timestamp property</summary>
-        public DateTimeOffset? Timestamp { get; set; }
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
+        public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem"/> and sets the default values.
         /// </summary>
-        public ServiceEventWithCursorEvent()
+        public UpdateEnvVarsForServiceRequestRequestBodyItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent();
+            return new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,11 +57,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "details", n => { Details = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "serviceId", n => { ServiceId = n.GetStringValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "generateValue", n => { GenerateValue = n.GetBoolValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,11 +69,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("details", Details);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("serviceId", ServiceId);
-            writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
-            writer.WriteStringValue("type", Type);
+            writer.WriteBoolValue("generateValue", GenerateValue);
+            writer.WriteStringValue("key", Key);
+            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,15 +15,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The notificationsToSend property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NotificationsToSend { get; set; }
-#nullable restore
-#else
-        public string NotificationsToSend { get; set; }
-#endif
+        public global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequestNotificationsToSend? NotificationsToSend { get; set; }
         /// <summary>The previewNotificationsEnabled property</summary>
-        public bool? PreviewNotificationsEnabled { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequestPreviewNotificationsEnabled? PreviewNotificationsEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequest"/> and sets the default values.
         /// </summary>
@@ -49,8 +43,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "notificationsToSend", n => { NotificationsToSend = n.GetStringValue(); } },
-                { "previewNotificationsEnabled", n => { PreviewNotificationsEnabled = n.GetBoolValue(); } },
+                { "notificationsToSend", n => { NotificationsToSend = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequestNotificationsToSend>(); } },
+                { "previewNotificationsEnabled", n => { PreviewNotificationsEnabled = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequestPreviewNotificationsEnabled>(); } },
             };
         }
         /// <summary>
@@ -60,8 +54,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("notificationsToSend", NotificationsToSend);
-            writer.WriteBoolValue("previewNotificationsEnabled", PreviewNotificationsEnabled);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequestNotificationsToSend>("notificationsToSend", NotificationsToSend);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PatchServiceNotificationOverridesRequestPreviewNotificationsEnabled>("previewNotificationsEnabled", PreviewNotificationsEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

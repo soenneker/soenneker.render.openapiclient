@@ -7,46 +7,34 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
-    /// <summary>
-    /// A Blueprint with a cursor
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BlueprintWithCursor : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class AutoscaleServiceRequestCriteriaCpu : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blueprint property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Blueprint { get; set; }
-#nullable restore
-#else
-        public string Blueprint { get; set; }
-#endif
-        /// <summary>The cursor property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Cursor { get; set; }
-#nullable restore
-#else
-        public string Cursor { get; set; }
-#endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>Determines when your service will be scaled. If the average resource utilization is significantly above/below the target, we will increase/decrease the number of instances.</summary>
+        public int? Percentage { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteriaCpu"/> and sets the default values.
         /// </summary>
-        public BlueprintWithCursor()
+        public AutoscaleServiceRequestCriteriaCpu()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteriaCpu"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteriaCpu CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor();
+            return new global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteriaCpu();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,8 +44,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "blueprint", n => { Blueprint = n.GetStringValue(); } },
-                { "cursor", n => { Cursor = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "percentage", n => { Percentage = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +55,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("blueprint", Blueprint);
-            writer.WriteStringValue("cursor", Cursor);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteIntValue("percentage", Percentage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

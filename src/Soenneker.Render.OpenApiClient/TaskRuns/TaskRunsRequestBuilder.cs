@@ -89,7 +89,7 @@ namespace Soenneker.Render.OpenApiClient.TaskRuns
         /// <summary>
         /// Kicks off a run of the workflow task with the provided ID, passing the provided input data.
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTask202Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,11 +102,11 @@ namespace Soenneker.Render.OpenApiClient.TaskRuns
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.CreateTask202Response?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> PostAsync(global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.CreateTask202Response> PostAsync(global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -121,7 +121,7 @@ namespace Soenneker.Render.OpenApiClient.TaskRuns
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.CreateTask202Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.CreateTask202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List task runs that match the provided filters. If no filters are provided, all task runs accessible by the authenticated user are returned.

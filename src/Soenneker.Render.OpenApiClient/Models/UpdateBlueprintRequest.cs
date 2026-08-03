@@ -14,14 +14,8 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autoSync property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AutoSync { get; set; }
-#nullable restore
-#else
-        public string AutoSync { get; set; }
-#endif
+        /// <summary>Automatically sync changes to render.yaml</summary>
+        public bool? AutoSync { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,7 +24,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The path property</summary>
+        /// <summary>Path to the Blueprint file in the repository</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path { get; set; }
@@ -63,7 +57,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "autoSync", n => { AutoSync = n.GetStringValue(); } },
+                { "autoSync", n => { AutoSync = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
             };
@@ -75,7 +69,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("autoSync", AutoSync);
+            writer.WriteBoolValue("autoSync", AutoSync);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("path", Path);
             writer.WriteAdditionalData(AdditionalData);

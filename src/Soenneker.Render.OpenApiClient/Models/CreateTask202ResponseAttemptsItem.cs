@@ -7,46 +7,43 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
-    /// <summary>
-    /// A Blueprint with a cursor
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BlueprintWithCursor : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class CreateTask202ResponseAttemptsItem : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blueprint property</summary>
+        /// <summary>The completedAt property</summary>
+        public DateTimeOffset? CompletedAt { get; set; }
+        /// <summary>The enqueuedAt property</summary>
+        public DateTimeOffset? EnqueuedAt { get; set; }
+        /// <summary>The startedAt property</summary>
+        public DateTimeOffset? StartedAt { get; set; }
+        /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Blueprint { get; set; }
+        public string? Status { get; set; }
 #nullable restore
 #else
-        public string Blueprint { get; set; }
-#endif
-        /// <summary>The cursor property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Cursor { get; set; }
-#nullable restore
-#else
-        public string Cursor { get; set; }
+        public string Status { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTask202ResponseAttemptsItem"/> and sets the default values.
         /// </summary>
-        public BlueprintWithCursor()
+        public CreateTask202ResponseAttemptsItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTask202ResponseAttemptsItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.CreateTask202ResponseAttemptsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.BlueprintWithCursor();
+            return new global::Soenneker.Render.OpenApiClient.Models.CreateTask202ResponseAttemptsItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,8 +53,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "blueprint", n => { Blueprint = n.GetStringValue(); } },
-                { "cursor", n => { Cursor = n.GetStringValue(); } },
+                { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
+                { "enqueuedAt", n => { EnqueuedAt = n.GetDateTimeOffsetValue(); } },
+                { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +66,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("blueprint", Blueprint);
-            writer.WriteStringValue("cursor", Cursor);
+            writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
+            writer.WriteDateTimeOffsetValue("enqueuedAt", EnqueuedAt);
+            writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
+            writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

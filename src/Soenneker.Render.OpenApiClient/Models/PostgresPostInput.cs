@@ -101,8 +101,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputParameterOverrides ParameterOverrides { get; set; }
 #endif
-        /// <summary>The instance type to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get; set; }
+        /// <summary>The plan property</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputPlan? Plan { get; set; }
         /// <summary>The readReplicas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,7 +158,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "parameterOverrides", n => { ParameterOverrides = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputParameterOverrides>(global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputParameterOverrides.CreateFromDiscriminatorValue); } },
-                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); } },
+                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputPlan>(); } },
                 { "readReplicas", n => { ReadReplicas = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput>(global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
                 { "version", n => { Version = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresVersion>(); } },
@@ -184,7 +184,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputParameterOverrides>("parameterOverrides", ParameterOverrides);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>("plan", Plan);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputPlan>("plan", Plan);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput>("readReplicas", ReadReplicas);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresVersion>("version", Version);

@@ -43,10 +43,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The envVars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.ServicePostEnvVarsItem>? EnvVars { get; set; }
+        public string? EnvVars { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.ServicePostEnvVarsItem> EnvVars { get; set; }
+        public string EnvVars { get; set; }
 #endif
         /// <summary>The image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,10 +91,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The secretFiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.ServicePostSecretFilesItem>? SecretFiles { get; set; }
+        public List<string>? SecretFiles { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.ServicePostSecretFilesItem> SecretFiles { get; set; }
+        public List<string> SecretFiles { get; set; }
 #endif
         /// <summary>The serviceDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,14 +134,14 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "autoDeploy", n => { AutoDeploy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeploy>(); } },
                 { "branch", n => { Branch = n.GetStringValue(); } },
                 { "buildFilter", n => { BuildFilter = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.BuildFilter>(global::Soenneker.Render.OpenApiClient.Models.BuildFilter.CreateFromDiscriminatorValue); } },
-                { "envVars", n => { EnvVars = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ServicePostEnvVarsItem>(global::Soenneker.Render.OpenApiClient.Models.ServicePostEnvVarsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "envVars", n => { EnvVars = n.GetStringValue(); } },
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "image", n => { Image = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Image>(global::Soenneker.Render.OpenApiClient.Models.Image.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
                 { "rootDir", n => { RootDir = n.GetStringValue(); } },
-                { "secretFiles", n => { SecretFiles = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ServicePostSecretFilesItem>(global::Soenneker.Render.OpenApiClient.Models.ServicePostSecretFilesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "secretFiles", n => { SecretFiles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "serviceDetails", n => { ServiceDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServicePostServiceDetails>(global::Soenneker.Render.OpenApiClient.Models.ServicePostServiceDetails.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceType>(); } },
             };
@@ -157,13 +157,13 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("branch", Branch);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.BuildFilter>("buildFilter", BuildFilter);
             writer.WriteStringValue("environmentId", EnvironmentId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ServicePostEnvVarsItem>("envVars", EnvVars);
+            writer.WriteStringValue("envVars", EnvVars);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Image>("image", Image);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("repo", Repo);
             writer.WriteStringValue("rootDir", RootDir);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ServicePostSecretFilesItem>("secretFiles", SecretFiles);
+            writer.WriteCollectionOfPrimitiveValues<string>("secretFiles", SecretFiles);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServicePostServiceDetails>("serviceDetails", ServiceDetails);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

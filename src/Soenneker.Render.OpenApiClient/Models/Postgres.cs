@@ -96,8 +96,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.Owner Owner { get; set; }
 #endif
-        /// <summary>The plan property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.PostgresPlan? Plan { get; set; }
+        /// <summary>The instance type to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get; set; }
         /// <summary>The primaryPostgresID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -173,7 +173,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Owner>(global::Soenneker.Render.OpenApiClient.Models.Owner.CreateFromDiscriminatorValue); } },
-                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPlan>(); } },
+                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); } },
                 { "primaryPostgresID", n => { PrimaryPostgresID = n.GetStringValue(); } },
                 { "readReplicas", n => { ReadReplicas = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplica>(global::Soenneker.Render.OpenApiClient.Models.ReadReplica.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
@@ -206,7 +206,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>("ipAllowList", IpAllowList);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Owner>("owner", Owner);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPlan>("plan", Plan);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>("plan", Plan);
             writer.WriteStringValue("primaryPostgresID", PrimaryPostgresID);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplica>("readReplicas", ReadReplicas);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);

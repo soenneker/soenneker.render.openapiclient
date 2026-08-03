@@ -9,45 +9,42 @@ namespace Soenneker.Render.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class NotificationOverrideWithCursorOverride : IAdditionalDataHolder, IParsable
+    public partial class AutoscaleServiceRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The notificationsToSend property</summary>
+        /// <summary>The criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationsToSend { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria? Criteria { get; set; }
 #nullable restore
 #else
-        public string NotificationsToSend { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria Criteria { get; set; }
 #endif
-        /// <summary>The previewNotificationsEnabled property</summary>
-        public bool? PreviewNotificationsEnabled { get; set; }
-        /// <summary>The serviceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ServiceId { get; set; }
-#nullable restore
-#else
-        public string ServiceId { get; set; }
-#endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The maximum number of instances for the service</summary>
+        public int? Max { get; set; }
+        /// <summary>The minimum number of instances for the service</summary>
+        public int? Min { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequest"/> and sets the default values.
         /// </summary>
-        public NotificationOverrideWithCursorOverride()
+        public AutoscaleServiceRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.NotificationOverrideWithCursorOverride();
+            return new global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,9 +54,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "notificationsToSend", n => { NotificationsToSend = n.GetStringValue(); } },
-                { "previewNotificationsEnabled", n => { PreviewNotificationsEnabled = n.GetBoolValue(); } },
-                { "serviceId", n => { ServiceId = n.GetStringValue(); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria>(global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "max", n => { Max = n.GetIntValue(); } },
+                { "min", n => { Min = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -69,9 +67,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("notificationsToSend", NotificationsToSend);
-            writer.WriteBoolValue("previewNotificationsEnabled", PreviewNotificationsEnabled);
-            writer.WriteStringValue("serviceId", ServiceId);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria>("criteria", Criteria);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteIntValue("max", Max);
+            writer.WriteIntValue("min", Min);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

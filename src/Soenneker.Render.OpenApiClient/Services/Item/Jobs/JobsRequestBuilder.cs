@@ -83,7 +83,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.Jobs
         /// <summary>
         /// Create a one-off job using the provided service. For details, see [One-Off Jobs](https://render.com/docs/one-off-jobs).
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.PostJob201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,11 +95,11 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.Jobs
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.PostJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.PostJob201Response?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.PostJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> PostAsync(global::Soenneker.Render.OpenApiClient.Models.PostJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.PostJob201Response> PostAsync(global::Soenneker.Render.OpenApiClient.Models.PostJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -113,7 +113,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.Jobs
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.PostJob201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.PostJob201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List jobs for the provided service that match the provided filters. If no filters are provided, all jobs for the service are returned.

@@ -17,10 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The autoscaling property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsAutoscaling? Autoscaling { get; set; }
+        public string? Autoscaling { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsAutoscaling Autoscaling { get; set; }
+        public string Autoscaling { get; set; }
 #endif
         /// <summary>The buildPlan property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.BuildPlan? BuildPlan { get; set; }
@@ -155,7 +155,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "autoscaling", n => { Autoscaling = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsAutoscaling>(global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsAutoscaling.CreateFromDiscriminatorValue); } },
+                { "autoscaling", n => { Autoscaling = n.GetStringValue(); } },
                 { "buildPlan", n => { BuildPlan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.BuildPlan>(); } },
                 { "cache", n => { Cache = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Cache>(global::Soenneker.Render.OpenApiClient.Models.Cache.CreateFromDiscriminatorValue); } },
                 { "disk", n => { Disk = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk>(global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk.CreateFromDiscriminatorValue); } },
@@ -185,7 +185,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsAutoscaling>("autoscaling", Autoscaling);
+            writer.WriteStringValue("autoscaling", Autoscaling);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.BuildPlan>("buildPlan", BuildPlan);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Cache>("cache", Cache);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk>("disk", Disk);

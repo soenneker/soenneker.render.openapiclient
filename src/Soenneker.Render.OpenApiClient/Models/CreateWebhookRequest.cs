@@ -16,13 +16,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The eventFilter property</summary>
+        /// <summary>The event types that will trigger the webhook. An empty list means all event types will trigger the webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventFilter { get; set; }
+        public List<string>? EventFilter { get; set; }
 #nullable restore
 #else
-        public string EventFilter { get; set; }
+        public List<string> EventFilter { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "eventFilter", n => { EventFilter = n.GetStringValue(); } },
+                { "eventFilter", n => { EventFilter = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -88,7 +88,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteStringValue("eventFilter", EventFilter);
+            writer.WriteCollectionOfPrimitiveValues<string>("eventFilter", EventFilter);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("url", Url);

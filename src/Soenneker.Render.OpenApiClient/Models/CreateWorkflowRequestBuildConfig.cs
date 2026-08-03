@@ -9,61 +9,61 @@ namespace Soenneker.Render.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ServiceEventWithCursorEvent : IAdditionalDataHolder, IParsable
+    public partial class CreateWorkflowRequestBuildConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The details property</summary>
+        /// <summary>The branch to use for the build, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Details { get; set; }
+        public string? Branch { get; set; }
 #nullable restore
 #else
-        public string Details { get; set; }
+        public string Branch { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The command to run to build the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? BuildCommand { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string BuildCommand { get; set; }
 #endif
-        /// <summary>The serviceId property</summary>
+        /// <summary>The repository URL to use for the build.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceId { get; set; }
+        public string? Repo { get; set; }
 #nullable restore
 #else
-        public string ServiceId { get; set; }
+        public string Repo { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
-        public DateTimeOffset? Timestamp { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The root directory of the repository to use for the build, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? RootDir { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string RootDir { get; set; }
 #endif
+        /// <summary>The runtime environment for the workflow (e.g., node, python, etc.).</summary>
+        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfigRuntime? Runtime { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig"/> and sets the default values.
         /// </summary>
-        public ServiceEventWithCursorEvent()
+        public CreateWorkflowRequestBuildConfig()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.ServiceEventWithCursorEvent();
+            return new global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,11 +73,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "details", n => { Details = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "serviceId", n => { ServiceId = n.GetStringValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "branch", n => { Branch = n.GetStringValue(); } },
+                { "buildCommand", n => { BuildCommand = n.GetStringValue(); } },
+                { "repo", n => { Repo = n.GetStringValue(); } },
+                { "rootDir", n => { RootDir = n.GetStringValue(); } },
+                { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfigRuntime>(); } },
             };
         }
         /// <summary>
@@ -87,11 +87,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("details", Details);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("serviceId", ServiceId);
-            writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
-            writer.WriteStringValue("type", Type);
+            writer.WriteStringValue("branch", Branch);
+            writer.WriteStringValue("buildCommand", BuildCommand);
+            writer.WriteStringValue("repo", Repo);
+            writer.WriteStringValue("rootDir", RootDir);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfigRuntime>("runtime", Runtime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
