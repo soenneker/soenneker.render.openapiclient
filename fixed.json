@@ -19639,6 +19639,10 @@
         ],
         "type": "object",
         "properties": {
+          "taskRunId": {
+            "type": "string",
+            "description": "The ID of the task run this attempt belongs to."
+          },
           "status": {
             "type": "string"
           },
@@ -19666,6 +19670,10 @@
         ],
         "type": "object",
         "properties": {
+          "taskRunId": {
+            "type": "string",
+            "description": "The ID of the task run this attempt belongs to."
+          },
           "status": {
             "type": "string"
           },

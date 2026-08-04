@@ -44,6 +44,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>The ID of the task run this attempt belongs to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaskRunId { get; set; }
+#nullable restore
+#else
+        public string TaskRunId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.GetTaskRun200ResponseAttemptsItem"/> and sets the default values.
         /// </summary>
@@ -75,6 +83,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "results", n => { Results = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
+                { "taskRunId", n => { TaskRunId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -90,6 +99,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("results", Results);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteStringValue("status", Status);
+            writer.WriteStringValue("taskRunId", TaskRunId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
