@@ -79,7 +79,7 @@
           "Blueprints"
         ],
         "summary": "Validate Blueprint",
-        "description": "\u0022Validate a \u0060render.yaml\u0060 Blueprint file without creating or modifying any resources. This endpoint checks the syntax and structure of the Blueprint, validates that all required fields are present, and returns a plan indicating the resources that would be created.\n\nRequests to this endpoint use \u0060Content-Type: multipart/form-data\u0060. The provided Blueprint file cannot exceed 10MB in size.\n\u0022",
+        "description": "\u0022Validate a \u0060render.yaml\u0060 Blueprint file without creating or modifying any resources. This endpoint checks the syntax and structure of the Blueprint, validates that all required fields are present, and returns a plan indicating the resources that would be created.\n\nRequests to this endpoint use \u0060Content-Type: multipart/form-data\u0060. The request body (including the Blueprint file) cannot exceed 10MB in size.\n\u0022",
         "operationId": "ValidateBlueprint",
         "requestBody": {
           "content": {
@@ -109,6 +109,9 @@
           },
           "403": {
             "$ref": "#/components/responses/403Forbidden"
+          },
+          "413": {
+            "$ref": "#/components/responses/413RequestEntityTooLarge"
           },
           "429": {
             "$ref": "#/components/responses/429RateLimit"
@@ -17885,6 +17888,10 @@
           "parentTaskRunId": {
             "type": "string"
           },
+          "parentTaskAttempt": {
+            "type": "integer",
+            "description": "The 0-indexed attempt of the parent task run that spawned this task run. Omitted for root task runs and for task runs created before this field was introduced."
+          },
           "rootTaskRunId": {
             "type": "string"
           },
@@ -17949,6 +17956,10 @@
           },
           "parentTaskRunId": {
             "type": "string"
+          },
+          "parentTaskAttempt": {
+            "type": "integer",
+            "description": "The 0-indexed attempt of the parent task run that spawned this task run. Omitted for root task runs and for task runs created before this field was introduced."
           },
           "rootTaskRunId": {
             "type": "string"
@@ -19635,13 +19646,18 @@
       "CreateTask202ResponseAttemptsItem": {
         "required": [
           "status",
-          "startedAt"
+          "startedAt",
+          "attempt"
         ],
         "type": "object",
         "properties": {
           "taskRunId": {
             "type": "string",
             "description": "The ID of the task run this attempt belongs to."
+          },
+          "attempt": {
+            "type": "integer",
+            "description": "The 0-indexed attempt number."
           },
           "status": {
             "type": "string"
@@ -19666,13 +19682,18 @@
       "GetTaskRun200ResponseAttemptsItem": {
         "required": [
           "status",
-          "startedAt"
+          "startedAt",
+          "attempt"
         ],
         "type": "object",
         "properties": {
           "taskRunId": {
             "type": "string",
             "description": "The ID of the task run this attempt belongs to."
+          },
+          "attempt": {
+            "type": "integer",
+            "description": "The 0-indexed attempt number."
           },
           "status": {
             "type": "string"
@@ -22420,6 +22441,16 @@
       },
       "410Gone": {
         "description": "The requested resource is no longer available.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "413RequestEntityTooLarge": {
+        "description": "The request body exceeded the maximum allowed size.",
         "content": {
           "application/json": {
             "schema": {

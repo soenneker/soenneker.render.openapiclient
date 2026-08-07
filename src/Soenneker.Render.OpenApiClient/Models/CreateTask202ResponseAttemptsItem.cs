@@ -14,6 +14,8 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The 0-indexed attempt number.</summary>
+        public int? Attempt { get; set; }
         /// <summary>The completedAt property</summary>
         public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The enqueuedAt property</summary>
@@ -61,6 +63,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "attempt", n => { Attempt = n.GetIntValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "enqueuedAt", n => { EnqueuedAt = n.GetDateTimeOffsetValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -75,6 +78,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("attempt", Attempt);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteDateTimeOffsetValue("enqueuedAt", EnqueuedAt);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);

@@ -32,6 +32,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The 0-indexed attempt of the parent task run that spawned this task run. Omitted for root task runs and for task runs created before this field was introduced.</summary>
+        public int? ParentTaskAttempt { get; set; }
         /// <summary>The parentTaskRunId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +98,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "attempts", n => { Attempts = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CreateTask202ResponseAttemptsItem>(global::Soenneker.Render.OpenApiClient.Models.CreateTask202ResponseAttemptsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "parentTaskAttempt", n => { ParentTaskAttempt = n.GetIntValue(); } },
                 { "parentTaskRunId", n => { ParentTaskRunId = n.GetStringValue(); } },
                 { "retries", n => { Retries = n.GetIntValue(); } },
                 { "rootTaskRunId", n => { RootTaskRunId = n.GetStringValue(); } },
@@ -114,6 +117,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CreateTask202ResponseAttemptsItem>("attempts", Attempts);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("parentTaskAttempt", ParentTaskAttempt);
             writer.WriteStringValue("parentTaskRunId", ParentTaskRunId);
             writer.WriteIntValue("retries", Retries);
             writer.WriteStringValue("rootTaskRunId", RootTaskRunId);
