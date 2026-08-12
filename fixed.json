@@ -13675,7 +13675,35 @@
           },
           "message": {
             "type": "string"
+          },
+          "code": {
+            "type": "string",
+            "description": "A stable, machine-readable identifier present on specific errors that clients can handle specially. Each endpoint documents the codes it can return. The errorCode schema lists the full vocabulary of codes."
           }
+        }
+      },
+      "ErrorCode": {
+        "enum": [
+          "multiple_regions"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The machine-readable codes that can appear in the error object\u0027s \u0022code\u0022 field. The field is a plain string so new codes are not breaking changes; this vocabulary exists so generated clients get typed constants. OpenAPI cannot deprecate individual enum values, so deprecation notes live in x-enum-descriptions.",
+        "x-enum-varnames": [
+          "ErrorCodeMultipleRegions"
+        ],
+        "x-enum-descriptions": [
+          "A metrics query over resources spanning multiple regions is not supported."
+        ],
+        "x-ms-enum": {
+          "name": "ErrorCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "multiple_regions",
+              "name": "MultipleRegions"
+            }
+          ]
         }
       },
       "PullRequestPreviewsEnabled": {
