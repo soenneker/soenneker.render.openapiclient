@@ -13684,16 +13684,19 @@
       },
       "ErrorCode": {
         "enum": [
-          "multiple_regions"
+          "multiple_regions",
+          "duplicate_saved_search_name"
         ],
         "type": "string",
         "additionalProperties": false,
         "description": "The machine-readable codes that can appear in the error object\u0027s \u0022code\u0022 field. The field is a plain string so new codes are not breaking changes; this vocabulary exists so generated clients get typed constants. OpenAPI cannot deprecate individual enum values, so deprecation notes live in x-enum-descriptions.",
         "x-enum-varnames": [
-          "ErrorCodeMultipleRegions"
+          "ErrorCodeMultipleRegions",
+          "ErrorCodeDuplicateSavedSearchName"
         ],
         "x-enum-descriptions": [
-          "A metrics query over resources spanning multiple regions is not supported."
+          "A metrics query over resources spanning multiple regions is not supported.",
+          "A saved-search create or rename hit a name already used in the project."
         ],
         "x-ms-enum": {
           "name": "ErrorCode",
@@ -13702,6 +13705,10 @@
             {
               "value": "multiple_regions",
               "name": "MultipleRegions"
+            },
+            {
+              "value": "duplicate_saved_search_name",
+              "name": "DuplicateSavedSearchName"
             }
           ]
         }
@@ -22488,11 +22495,44 @@
         }
       },
       "429RateLimit": {
-        "description": "Rate limit has been surpassed.",
+        "description": "Rate limit has been surpassed.\n\nRate-limited endpoints also return \u0060RateLimit-Limit\u0060, \u0060RateLimit-Remaining\u0060, and\n\u0060RateLimit-Reset\u0060 on successful responses so clients can track their remaining quota.\n",
+        "headers": {
+          "Retry-After": {
+            "description": "Seconds to wait before retrying the request.",
+            "schema": {
+              "type": "integer",
+              "example": 30
+            }
+          },
+          "RateLimit-Limit": {
+            "description": "Maximum number of requests allowed in the current window.",
+            "schema": {
+              "type": "integer",
+              "example": 100
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "Number of requests remaining in the current window. Always \u00600\u0060 for this response.",
+            "schema": {
+              "type": "integer",
+              "example": 0
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "Seconds until the current rate limit window resets.",
+            "schema": {
+              "type": "integer",
+              "example": 30
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "message": "rate limit exceeded"
             }
           }
         }
