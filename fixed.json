@@ -79,7 +79,7 @@
           "Blueprints"
         ],
         "summary": "Validate Blueprint",
-        "description": "\u0022Validate a \u0060render.yaml\u0060 Blueprint file without creating or modifying any resources. This endpoint checks the syntax and structure of the Blueprint, validates that all required fields are present, and returns a plan indicating the resources that would be created.\n\nRequests to this endpoint use \u0060Content-Type: multipart/form-data\u0060. The request body (including the Blueprint file) cannot exceed 10MB in size.\n\u0022",
+        "description": "Validate a \u0060render.yaml\u0060 Blueprint file without creating or modifying any resources. This endpoint checks the syntax and structure of the Blueprint, validates that all required fields are present, and returns a plan indicating the resources that would be created.\n\nRequests to this endpoint use \u0060Content-Type: multipart/form-data\u0060. The request body (including the Blueprint file) cannot exceed 10MB in size.\n",
         "operationId": "ValidateBlueprint",
         "requestBody": {
           "content": {
@@ -88,7 +88,8 @@
                 "$ref": "#/components/schemas/ValidateBlueprintFormDataRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -140,7 +141,8 @@
                 "role": "ADMIN"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -195,6 +197,9 @@
         "description": "Remove a user from the specified workspace.\n",
         "operationId": "RemoveWorkspaceMember",
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -286,7 +291,8 @@
                 "$ref": "#/components/schemas/UpdateBlueprintRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -333,6 +339,9 @@
         "description": "Disconnect the Blueprint with the provided ID.\n\nDisconnecting a Blueprint stops automatic resource syncing via the associated \u0060render.yaml\u0060 file. It does not _delete_ any services or other resources that were managed by the blueprint.\n",
         "operationId": "DisconnectBlueprint",
         "responses": {
+          "204": {
+            "description": "Blueprint disconnected"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -488,7 +497,7 @@
           "Dedicated IPs"
         ],
         "summary": "Create dedicated IP set",
-        "description": "\u0022Create a dedicated IP set. Provisioning an IP set is asynchronous. The response returns immediately with \u0060status: CREATING\u0060 and \u0060ips: []\u0060. When provisioning completes, status changes to \u0060RUNNING\u0060 and \u0060ips\u0060 contains your assigned addresses.\n\nIf \u0060environmentIds\u0060 is omitted or empty, this IP set applies to all services in the workspace in the selected region. Otherwise, it applies only to services in the listed environments in that region.\n\u0022",
+        "description": "Create a dedicated IP set. Provisioning an IP set is asynchronous. The response returns immediately with \u0060status: CREATING\u0060 and \u0060ips: []\u0060. When provisioning completes, status changes to \u0060RUNNING\u0060 and \u0060ips\u0060 contains your assigned addresses.\n\nIf \u0060environmentIds\u0060 is omitted or empty, this IP set applies to all services in the workspace in the selected region. Otherwise, it applies only to services in the listed environments in that region.\n",
         "operationId": "CreateDedicatedIp",
         "requestBody": {
           "content": {
@@ -497,7 +506,8 @@
                 "$ref": "#/components/schemas/DedicatedIppost"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -590,7 +600,7 @@
           "Dedicated IPs"
         ],
         "summary": "Update dedicated IP set",
-        "description": "\u0022Update the dedicated IP set with the provided ID. All fields are optional. Omitted fields are left unchanged. To switch from environment-scoped to workspace-scoped, provide \u0060environmentIds: []\u0060.\n\u0022",
+        "description": "Update the dedicated IP set with the provided ID. All fields are optional. Omitted fields are left unchanged. To switch from environment-scoped to workspace-scoped, provide \u0060environmentIds: []\u0060.\n",
         "operationId": "UpdateDedicatedIp",
         "requestBody": {
           "content": {
@@ -599,7 +609,8 @@
                 "$ref": "#/components/schemas/DedicatedIppatch"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -652,6 +663,9 @@
         "description": "Delete the dedicated IP set with the provided ID.\n",
         "operationId": "DeleteDedicatedIp",
         "responses": {
+          "204": {
+            "description": "Dedicated IP deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -789,7 +803,8 @@
                 "$ref": "#/components/schemas/AddDiskRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -891,7 +906,8 @@
                 "$ref": "#/components/schemas/UpdateDiskRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -941,6 +957,9 @@
         "description": "Delete a persistent disk attached to a service.\n\n**All data on the disk will be lost.** The disk\u0027s associated service will immediately lose access to it.\n",
         "operationId": "DeleteDisk",
         "responses": {
+          "204": {
+            "description": "Disk deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -1056,7 +1075,8 @@
                 "$ref": "#/components/schemas/SnapshotRestorePost"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -1548,7 +1568,8 @@
                 "$ref": "#/components/schemas/PatchOwnerNotificationSettingsRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -1685,7 +1706,8 @@
                 "$ref": "#/components/schemas/PatchServiceNotificationOverridesRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -1858,7 +1880,8 @@
                 "$ref": "#/components/schemas/CreateRegistryCredentialRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -1957,7 +1980,8 @@
                 "$ref": "#/components/schemas/UpdateRegistryCredentialRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2013,6 +2037,9 @@
         "description": "Delete the registry credential with the provided ID.",
         "operationId": "DeleteRegistryCredential",
         "responses": {
+          "204": {
+            "description": "Registry credential deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -2145,7 +2172,8 @@
                 "$ref": "#/components/schemas/ServicePost"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -2247,7 +2275,8 @@
                 "$ref": "#/components/schemas/ServicePatch"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2303,6 +2332,9 @@
         "description": "Delete the service with the provided ID.\n",
         "operationId": "DeleteService",
         "responses": {
+          "204": {
+            "description": "Service deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -2344,16 +2376,12 @@
         "description": "Trigger cache purge for the web service if caching is enabled.\n",
         "operationId": "PurgeCache",
         "requestBody": {
-          "description": "Fallback request body",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PurgeCacheRequest"
-              }
-            }
-          }
+          "content": {}
         },
         "responses": {
+          "202": {
+            "description": "Cache purge request accepted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -2527,7 +2555,8 @@
                 "$ref": "#/components/schemas/CreateDeployRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -2539,6 +2568,9 @@
                 }
               }
             }
+          },
+          "202": {
+            "description": "Queued"
           },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
@@ -2695,7 +2727,8 @@
                 "$ref": "#/components/schemas/RollbackDeployRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -2804,7 +2837,8 @@
                 "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestRequestBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2911,7 +2945,8 @@
                 "$ref": "#/components/schemas/AddUpdateEnvVarInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2961,6 +2996,9 @@
         "description": "Delete a particular environment variable from a particular service.\n\nThis only applies to environment variables set directly on the service, not to environment variables in a linked environment group.\n",
         "operationId": "DeleteEnvVar",
         "responses": {
+          "204": {
+            "description": "Environment variable deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -3063,7 +3101,8 @@
                 "$ref": "#/components/schemas/UpdateSecretFilesForServiceRequestRequestBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3170,7 +3209,8 @@
                 "$ref": "#/components/schemas/AddOrUpdateSecretFileRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -3220,6 +3260,9 @@
         "description": "Delete a particular secret file from a particular service.\n\nThis only applies to secret files set directly on the service, not to secret files in a linked environment group.\n",
         "operationId": "DeleteSecretFile",
         "responses": {
+          "204": {
+            "description": "Secret file deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -3424,7 +3467,8 @@
                 "$ref": "#/components/schemas/HeaderInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -3477,7 +3521,8 @@
                 "$ref": "#/components/schemas/UpdateHeadersRequestRequestBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3534,6 +3579,9 @@
         "description": "Delete a particular response header rule for a particular service.\n",
         "operationId": "DeleteHeader",
         "responses": {
+          "204": {
+            "description": "Header deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -3678,7 +3726,8 @@
                 "$ref": "#/components/schemas/RoutePost"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -3734,7 +3783,8 @@
                 "$ref": "#/components/schemas/PutRoutesRequestRequestBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3797,7 +3847,8 @@
                 "$ref": "#/components/schemas/RoutePatch"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3844,6 +3895,9 @@
         "description": "Delete a particular redirect/rewrite rule for a particular service.\n",
         "operationId": "DeleteRoute",
         "responses": {
+          "204": {
+            "description": "Route deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -4003,7 +4057,8 @@
                 "$ref": "#/components/schemas/CreateCustomDomainRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -4113,6 +4168,9 @@
         "description": "Delete a custom domain for a service given the service id and custom domain id or name.\n",
         "operationId": "DeleteCustomDomain",
         "responses": {
+          "204": {
+            "description": "Custom domain deleted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -4160,6 +4218,9 @@
         "description": "Verify the DNS configuration for a custom domain.\n",
         "operationId": "RefreshCustomDomain",
         "responses": {
+          "202": {
+            "description": "Custom domain verification triggered"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -4207,6 +4268,9 @@
         "description": "Suspend the service with the provided ID.\n",
         "operationId": "SuspendService",
         "responses": {
+          "202": {
+            "description": "Service suspended successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -4251,6 +4315,9 @@
         "description": "Resume the service with the provided ID (if it\u0027s currently suspended).\n",
         "operationId": "ResumeService",
         "responses": {
+          "202": {
+            "description": "Service resumed successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -4295,6 +4362,9 @@
         "description": "Restart the service with the provided ID.\n\nNot supported for cron jobs.\n",
         "operationId": "RestartService",
         "responses": {
+          "200": {
+            "description": "Service restarted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -4345,9 +4415,13 @@
                 "$ref": "#/components/schemas/ScaleServiceRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "202": {
+            "description": "Service scaled successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -4398,7 +4472,8 @@
                 "$ref": "#/components/schemas/AutoscaleServiceRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -4448,6 +4523,9 @@
         "description": "Delete the autoscaling config for a service given the service id.\n",
         "operationId": "DeleteAutoscalingConfig",
         "responses": {
+          "204": {
+            "description": "Autoscaling config deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -4495,7 +4573,8 @@
                 "$ref": "#/components/schemas/PreviewInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -4670,7 +4749,8 @@
                 "$ref": "#/components/schemas/PostJobRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -4899,6 +4979,9 @@
         "description": "Cancel a currently running cron job.",
         "operationId": "CancelCronJobRun",
         "responses": {
+          "204": {
+            "description": "Cancelled"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -5489,7 +5572,8 @@
                 "$ref": "#/components/schemas/UpdateOwnerLogStreamRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -5543,6 +5627,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Log stream setting deleted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -5733,7 +5820,8 @@
                 "$ref": "#/components/schemas/UpdateResourceLogStreamRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -5787,6 +5875,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Log stream setting deleted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -5830,6 +5921,9 @@
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
+          "404": {
+            "description": "metrics stream not found"
+          },
           "500": {
             "$ref": "#/components/responses/500InternalServerError"
           }
@@ -5849,7 +5943,8 @@
                 "$ref": "#/components/schemas/UpsertOwnerMetricsStreamRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -5878,8 +5973,14 @@
         "description": "Deletes the metrics stream for the specified workspace.",
         "operationId": "DeleteOwnerMetricsStream",
         "responses": {
+          "204": {
+            "description": "metrics stream integration deleted successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
+          },
+          "404": {
+            "description": "metrics stream not found"
           },
           "500": {
             "$ref": "#/components/responses/500InternalServerError"
@@ -6417,7 +6518,7 @@
             }
           },
           "400": {
-            "description": "\u0022Bad request, such as a time range that predates traffic source\ndata availability. The error body\u0027s optional \u0060code\u0060 field\nidentifies specific failures that clients can handle\nmachine-readably.\n\nError codes:\n- \u0060too_many_resources\u0060: the query requests more resources than\n  the breakdown supports (maximum 30)\n\u0022",
+            "description": "Bad request, such as a time range that predates traffic source\ndata availability. The error body\u0027s optional \u0060code\u0060 field\nidentifies specific failures that clients can handle\nmachine-readably.\n\nError codes:\n- \u0060too_many_resources\u0060: the query requests more resources than\n  the breakdown supports (maximum 30)\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -6888,7 +6989,7 @@
           "in": "query",
           "description": "The field to aggregate by",
           "schema": {
-            "$ref": "#/components/schemas/MetricsTaskRunsCompletedAggregateBy"
+            "$ref": "#/components/schemas/StateAggregateBy"
           }
         }
       ]
@@ -6981,7 +7082,8 @@
                 "$ref": "#/components/schemas/KeyValuePostInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -7088,7 +7190,8 @@
                 "$ref": "#/components/schemas/KeyValuePatchInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -7142,6 +7245,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Key Value instance deleted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -7222,6 +7328,9 @@
         "description": "Suspend a Key Value instance by ID.\n",
         "operationId": "SuspendKeyValue",
         "responses": {
+          "202": {
+            "description": "Service suspended successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -7271,6 +7380,9 @@
         "description": "Resume a Key Value instance by ID.\n",
         "operationId": "ResumeKeyValue",
         "responses": {
+          "202": {
+            "description": "Service resumed successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -7299,6 +7411,443 @@
             "$ref": "#/components/responses/503ServiceUnavailable"
           }
         }
+      },
+      "parameters": [
+        {
+          "name": "redisId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/redis": {
+      "get": {
+        "tags": [
+          "Redis (Deprecated)"
+        ],
+        "summary": "List Redis instances",
+        "description": "List Redis instances matching the provided filters. If no filters are provided, all Redis instances are returned.\nThis API is deprecated in favor of the Key Value API.\n",
+        "operationId": "ListRedis",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/nameParam"
+          },
+          {
+            "$ref": "#/components/parameters/regionParam"
+          },
+          {
+            "$ref": "#/components/parameters/createdBeforeParam"
+          },
+          {
+            "$ref": "#/components/parameters/createdAfterParam"
+          },
+          {
+            "$ref": "#/components/parameters/updatedBeforeParam"
+          },
+          {
+            "$ref": "#/components/parameters/updatedAfterParam"
+          },
+          {
+            "$ref": "#/components/parameters/ownerIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/environmentIdParam"
+          },
+          {
+            "$ref": "#/components/parameters/cursorParam"
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListRedis200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/409Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        },
+        "deprecated": true
+      },
+      "post": {
+        "tags": [
+          "Redis (Deprecated)"
+        ],
+        "summary": "Create Redis instance",
+        "description": "Create a new Redis instance. This API is deprecated in favor of the Key Value API.\n",
+        "operationId": "CreateRedis",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RedisPostInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RedisDetail"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/redis/{redisId}": {
+      "get": {
+        "tags": [
+          "Redis (Deprecated)"
+        ],
+        "summary": "Retrieve Redis instance",
+        "description": "Retrieve a Redis instance by ID. This API is deprecated in favor of the Key Value API.\n",
+        "operationId": "RetrieveRedis",
+        "parameters": [
+          {
+            "name": "redisId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RedisDetail"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        },
+        "deprecated": true
+      },
+      "patch": {
+        "tags": [
+          "Redis (Deprecated)"
+        ],
+        "summary": "Update Redis instance",
+        "description": "Update a Redis instance by ID. This API is deprecated in favor of the Key Value API.\n",
+        "operationId": "UpdateRedis",
+        "parameters": [
+          {
+            "name": "redisId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RedisPatchInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RedisDetail"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/409Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        },
+        "deprecated": true
+      },
+      "delete": {
+        "tags": [
+          "Redis (Deprecated)"
+        ],
+        "summary": "Delete Redis instance",
+        "description": "Delete a Redis instance by ID. This API is deprecated in favor of the Key Value API.\n",
+        "operationId": "DeleteRedis",
+        "parameters": [
+          {
+            "name": "redisId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Redis instance deleted"
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/redis/{redisId}/connection-info": {
+      "get": {
+        "tags": [
+          "Redis (Deprecated)"
+        ],
+        "summary": "Retrieve Redis connection info",
+        "description": "Retrieve connection info for a Redis instance by ID. Connection info includes sensitive information.\nThis API is deprecated in favor of the Key Value API.\n",
+        "operationId": "RetrieveRedisConnectionInfo",
+        "parameters": [
+          {
+            "name": "redisId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RedisConnectionInfo"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/redis/{redisId}/suspend": {
+      "post": {
+        "tags": [
+          "Redis (Deprecated)"
+        ],
+        "summary": "Suspend Redis instance",
+        "description": "Suspend a Redis instance by ID. This API is deprecated in favor of the Key Value API.\n",
+        "operationId": "SuspendRedis",
+        "responses": {
+          "202": {
+            "description": "Service suspended successfully"
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "406": {
+            "$ref": "#/components/responses/406NotAcceptable"
+          },
+          "410": {
+            "$ref": "#/components/responses/410Gone"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        },
+        "deprecated": true
+      },
+      "parameters": [
+        {
+          "name": "redisId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/redis/{redisId}/resume": {
+      "post": {
+        "tags": [
+          "Redis (Deprecated)"
+        ],
+        "summary": "Resume Redis instance",
+        "description": "Resume a Redis instance by ID. This API is deprecated in favor of the Key Value API.\n",
+        "operationId": "ResumeRedis",
+        "responses": {
+          "202": {
+            "description": "Service resumed successfully"
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "406": {
+            "$ref": "#/components/responses/406NotAcceptable"
+          },
+          "410": {
+            "$ref": "#/components/responses/410Gone"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        },
+        "deprecated": true
       },
       "parameters": [
         {
@@ -7405,7 +7954,8 @@
                 "$ref": "#/components/schemas/PostgresPostInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -7512,7 +8062,8 @@
                 "$ref": "#/components/schemas/PostgresPatchInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -7566,6 +8117,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Postgres instance deleted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -7710,7 +8264,8 @@
                 "$ref": "#/components/schemas/RecoverPostgresRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -7762,6 +8317,9 @@
         "description": "Suspend a Postgres instance by ID.\n",
         "operationId": "SuspendPostgres",
         "responses": {
+          "202": {
+            "description": "Service suspended successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -7811,6 +8369,9 @@
         "description": "Resume a Postgres instance by ID.\n",
         "operationId": "ResumePostgres",
         "responses": {
+          "202": {
+            "description": "Service resumed successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -7860,6 +8421,9 @@
         "description": "Restart a Postgres instance by ID.\n",
         "operationId": "RestartPostgres",
         "responses": {
+          "202": {
+            "description": "Service restarted successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -7909,6 +8473,9 @@
         "description": "Failover a [highly available Postgres](https://render.com/docs/postgresql-high-availability) instance.\n",
         "operationId": "FailoverPostgres",
         "responses": {
+          "202": {
+            "description": "Service failed over successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -7996,6 +8563,9 @@
         "description": "Create an [export](https://render.com/docs/postgresql-backups#logical-backups) of a Postgres instance by ID.\n",
         "operationId": "CreatePostgresExport",
         "responses": {
+          "202": {
+            "description": "Export started successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -8089,9 +8659,13 @@
                 "$ref": "#/components/schemas/CreatePostgresUserRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "202": {
+            "description": "PostgreSQL user created successfully"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -8141,6 +8715,9 @@
         "description": "Delete a PostgreSQL user from the Render Postgres instance with the provided ID.\n",
         "operationId": "DeletePostgresUser",
         "responses": {
+          "200": {
+            "description": "PostgreSQL user deleted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -8459,7 +9036,8 @@
                 "$ref": "#/components/schemas/ProjectPostInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -8566,7 +9144,8 @@
                 "$ref": "#/components/schemas/ProjectPatchInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -8617,6 +9196,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Project deleted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -8653,7 +9235,8 @@
                 "$ref": "#/components/schemas/EnvironmentPostInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -8830,7 +9413,8 @@
                 "$ref": "#/components/schemas/EnvironmentPatchInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -8881,6 +9465,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Environment deleted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -8927,7 +9514,8 @@
                 "$ref": "#/components/schemas/EnvironmentResourcesPostInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -8990,6 +9578,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Resources removed from environment"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -9093,7 +9684,8 @@
                 "$ref": "#/components/schemas/EnvGroupPostInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -9195,7 +9787,8 @@
                 "$ref": "#/components/schemas/EnvGroupPatchInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -9246,6 +9839,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "environment group deleted"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -9340,6 +9936,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "service unlinked from environment group"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -9430,7 +10029,8 @@
                 "$ref": "#/components/schemas/AddUpdateEnvVarInput"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -9484,6 +10084,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "environment variable removed from environment group"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -9584,7 +10187,8 @@
                 "$ref": "#/components/schemas/UpdateEnvGroupSecretFileRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -9633,6 +10237,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "secret file removed from environment group"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -9791,9 +10398,13 @@
                 "$ref": "#/components/schemas/UpdateMaintenanceRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "202": {
+            "description": "Maintenance run updated"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -9829,6 +10440,9 @@
           }
         ],
         "responses": {
+          "202": {
+            "description": "Maintenance run triggered"
+          },
           "400": {
             "$ref": "#/components/responses/400BadRequest"
           },
@@ -9865,7 +10479,8 @@
                 "$ref": "#/components/schemas/CreateWebhookRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -9998,7 +10613,8 @@
                 "$ref": "#/components/schemas/UpdateWebhookRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -10039,6 +10655,9 @@
         "description": "Delete the webhook with the provided ID.\n",
         "operationId": "DeleteWebhook",
         "responses": {
+          "204": {
+            "description": "Webhook deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -10216,7 +10835,8 @@
                 "$ref": "#/components/schemas/CreateWorkflowRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -10303,7 +10923,8 @@
                 "$ref": "#/components/schemas/UpdateWorkflowRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -10344,6 +10965,9 @@
         "description": "Delete the workflow service with the provided ID.",
         "operationId": "DeleteWorkflow",
         "responses": {
+          "204": {
+            "description": "Workflow deleted"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -10446,9 +11070,13 @@
                 "$ref": "#/components/schemas/CreateWorkflowVersionRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "202": {
+            "description": "Workflow version created"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -10746,7 +11374,8 @@
                 "$ref": "#/components/schemas/CreateTaskRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "202": {
@@ -10789,7 +11418,7 @@
           "Workflow Tasks (Beta)"
         ],
         "summary": "Stream realtime events (SSE)",
-        "description": "\u0022Establishes a unidirectional event stream. The server sends events as lines\nformatted per the SSE spec. Clients SHOULD set \u0060Accept: text/event-stream\u0060\nand keep the connection open.\n\u0022",
+        "description": "Establishes a unidirectional event stream. The server sends events as lines\nformatted per the SSE spec. Clients SHOULD set \u0060Accept: text/event-stream\u0060\nand keep the connection open.\n",
         "operationId": "StreamTaskRunsEvents",
         "parameters": [
           {
@@ -10813,13 +11442,36 @@
             "in": "header",
             "description": "Must be \u0060text/event-stream\u0060.",
             "schema": {
-              "$ref": "#/components/schemas/StreamTaskRunsEventsAcceptParameter"
+              "$ref": "#/components/schemas/TextEventStreamAccept"
             }
           }
         ],
         "responses": {
           "200": {
             "description": "Event stream established",
+            "headers": {
+              "Content-Type": {
+                "description": "Always \u0060text/event-stream; charset=utf-8\u0060",
+                "schema": {
+                  "type": "string",
+                  "example": "text/event-stream; charset=utf-8"
+                }
+              },
+              "Cache-Control": {
+                "description": "SSE responses should be non-cacheable.",
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, no-transform"
+                }
+              },
+              "Connection": {
+                "description": "Keep-alive for streaming.",
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              }
+            },
             "content": {
               "text/event-stream": {
                 "schema": {
@@ -10905,6 +11557,9 @@
         "description": "Cancel a running task run with the provided ID.",
         "operationId": "CancelTaskRun",
         "responses": {
+          "204": {
+            "description": "Task run canceled"
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -10941,9 +11596,6 @@
   "components": {
     "schemas": {
       "ServicePatchServiceDetails": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -10963,19 +11615,53 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "StaticSiteDetailsPatch": "#/components/schemas/StaticSiteDetailsPatch",
-            "WebServiceDetailsPatch": "#/components/schemas/WebServiceDetailsPatch",
-            "PrivateServiceDetailsPatch": "#/components/schemas/PrivateServiceDetailsPatch",
-            "BackgroundWorkerDetailsPatch": "#/components/schemas/BackgroundWorkerDetailsPatch",
-            "CronJobDetailsPatch": "#/components/schemas/CronJobDetailsPatch"
+          "buildCommand": {
+            "type": "string"
+          },
+          "publishPath": {
+            "type": "string"
+          },
+          "pullRequestPreviewsEnabled": {
+            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
+          },
+          "previews": {
+            "$ref": "#/components/schemas/Previews"
+          },
+          "renderSubdomainPolicy": {
+            "$ref": "#/components/schemas/RenderSubdomainPolicy"
+          },
+          "ipAllowList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CidrBlockAndDescription"
+            }
+          },
+          "envSpecificDetails": {
+            "$ref": "#/components/schemas/EnvSpecificDetailsPatch"
+          },
+          "healthCheckPath": {
+            "type": "string"
+          },
+          "maintenanceMode": {
+            "$ref": "#/components/schemas/MaintenanceMode"
+          },
+          "preDeployCommand": {
+            "type": "string"
+          },
+          "runtime": {
+            "$ref": "#/components/schemas/ServiceRuntime"
+          },
+          "maxShutdownDelaySeconds": {
+            "maximum": 300,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+          },
+          "cache": {
+            "$ref": "#/components/schemas/Cache"
+          },
+          "schedule": {
+            "type": "string"
           }
         }
       },
@@ -11499,7 +12185,7 @@
             }
           }
         },
-        "description": "\u0022Input for updating a dedicated IP set. All fields are optional. Omitted fields are left unchanged. Provide \u0060environmentIds: []\u0060 to switch from environment-scoped to workspace-scoped.\n\u0022"
+        "description": "Input for updating a dedicated IP set. All fields are optional. Omitted fields are left unchanged. Provide \u0060environmentIds: []\u0060 to switch from environment-scoped to workspace-scoped.\n"
       },
       "Image": {
         "required": [
@@ -11623,9 +12309,6 @@
         }
       },
       "ServicePostServiceDetails": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -11645,19 +12328,77 @@
           }
         ],
         "properties": {
-          "type": {
+          "buildCommand": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeaderInput"
+            }
+          },
+          "publishPath": {
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "StaticSiteDetailsPost": "#/components/schemas/StaticSiteDetailsPost",
-            "WebServiceDetailsPost": "#/components/schemas/WebServiceDetailsPost",
-            "PrivateServiceDetailsPost": "#/components/schemas/PrivateServiceDetailsPost",
-            "BackgroundWorkerDetailsPost": "#/components/schemas/BackgroundWorkerDetailsPost",
-            "CronJobDetailsPost": "#/components/schemas/CronJobDetailsPost"
+            "description": "Defaults to \u0022public\u0022"
+          },
+          "pullRequestPreviewsEnabled": {
+            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
+          },
+          "previews": {
+            "$ref": "#/components/schemas/Previews"
+          },
+          "routes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoutePost"
+            }
+          },
+          "renderSubdomainPolicy": {
+            "$ref": "#/components/schemas/RenderSubdomainPolicy"
+          },
+          "ipAllowList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CidrBlockAndDescription"
+            }
+          },
+          "autoscaling": {
+            "type": "string"
+          },
+          "disk": {
+            "$ref": "#/components/schemas/ServiceDisk"
+          },
+          "env": {
+            "$ref": "#/components/schemas/ServiceEnv"
+          },
+          "runtime": {
+            "$ref": "#/components/schemas/ServiceRuntime"
+          },
+          "healthCheckPath": {
+            "type": "string"
+          },
+          "maintenanceMode": {
+            "$ref": "#/components/schemas/MaintenanceMode"
+          },
+          "numInstances": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Defaults to 1"
+          },
+          "preDeployCommand": {
+            "type": "string"
+          },
+          "region": {
+            "$ref": "#/components/schemas/Region"
+          },
+          "maxShutdownDelaySeconds": {
+            "maximum": 300,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+          },
+          "schedule": {
+            "type": "string"
           }
         }
       },
@@ -11753,9 +12494,6 @@
         }
       },
       "EnvSpecificDetails": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -11766,23 +12504,30 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DockerDetails": "#/components/schemas/DockerDetails",
-            "NativeEnvironmentDetails": "#/components/schemas/NativeEnvironmentDetails"
+          "dockerCommand": {
+            "type": "string"
+          },
+          "dockerContext": {
+            "type": "string"
+          },
+          "dockerfilePath": {
+            "type": "string"
+          },
+          "preDeployCommand": {
+            "type": "string"
+          },
+          "registryCredential": {
+            "$ref": "#/components/schemas/RegistryCredential"
+          },
+          "buildCommand": {
+            "type": "string"
+          },
+          "startCommand": {
+            "type": "string"
           }
         }
       },
       "EnvSpecificDetailsPatch": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -11793,23 +12538,27 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DockerDetailsPatch": "#/components/schemas/DockerDetailsPatch",
-            "NativeEnvironmentDetailsPatch": "#/components/schemas/NativeEnvironmentDetailsPatch"
+          "dockerCommand": {
+            "type": "string"
+          },
+          "dockerContext": {
+            "type": "string"
+          },
+          "dockerfilePath": {
+            "type": "string"
+          },
+          "registryCredentialId": {
+            "type": "string"
+          },
+          "buildCommand": {
+            "type": "string"
+          },
+          "startCommand": {
+            "type": "string"
           }
         }
       },
       "EnvSpecificDetailsPost": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -11820,16 +12569,24 @@
           }
         ],
         "properties": {
-          "type": {
+          "dockerCommand": {
+            "type": "string"
+          },
+          "dockerContext": {
+            "type": "string"
+          },
+          "dockerfilePath": {
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DockerDetailsPost": "#/components/schemas/DockerDetailsPost",
-            "NativeEnvironmentDetailsPost": "#/components/schemas/NativeEnvironmentDetailsPost"
+            "description": "Defaults to \u0022./Dockerfile\u0022"
+          },
+          "registryCredentialId": {
+            "type": "string"
+          },
+          "buildCommand": {
+            "type": "string"
+          },
+          "startCommand": {
+            "type": "string"
           }
         }
       },
@@ -11967,9 +12724,6 @@
         }
       },
       "ServiceServiceDetails": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -11989,19 +12743,89 @@
           }
         ],
         "properties": {
-          "type": {
+          "buildCommand": {
+            "type": "string"
+          },
+          "ipAllowList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CidrBlockAndDescription"
+            }
+          },
+          "parentServer": {
+            "$ref": "#/components/schemas/Resource"
+          },
+          "publishPath": {
+            "type": "string"
+          },
+          "pullRequestPreviewsEnabled": {
+            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
+          },
+          "previews": {
+            "$ref": "#/components/schemas/Previews"
+          },
+          "url": {
+            "type": "string"
+          },
+          "buildPlan": {
+            "$ref": "#/components/schemas/BuildPlan"
+          },
+          "renderSubdomainPolicy": {
+            "$ref": "#/components/schemas/RenderSubdomainPolicy"
+          },
+          "autoscaling": {
+            "type": "string"
+          },
+          "cache": {
+            "$ref": "#/components/schemas/Cache"
+          },
+          "env": {
+            "$ref": "#/components/schemas/ServiceEnv"
+          },
+          "envSpecificDetails": {
+            "$ref": "#/components/schemas/EnvSpecificDetails"
+          },
+          "healthCheckPath": {
+            "type": "string"
+          },
+          "maintenanceMode": {
+            "$ref": "#/components/schemas/MaintenanceMode"
+          },
+          "numInstances": {
+            "type": "integer",
+            "description": "For a *manually* scaled service, this is the number of instances the service is scaled to. DOES NOT indicate the number of running instances for an *autoscaled* service."
+          },
+          "openPorts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServerPort"
+            }
+          },
+          "plan": {
+            "$ref": "#/components/schemas/Plan"
+          },
+          "region": {
+            "$ref": "#/components/schemas/Region"
+          },
+          "runtime": {
+            "$ref": "#/components/schemas/ServiceRuntime"
+          },
+          "sshAddress": {
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "StaticSiteDetails": "#/components/schemas/StaticSiteDetails",
-            "WebServiceDetails": "#/components/schemas/WebServiceDetails",
-            "PrivateServiceDetails": "#/components/schemas/PrivateServiceDetails",
-            "BackgroundWorkerDetails": "#/components/schemas/BackgroundWorkerDetails",
-            "CronJobDetails": "#/components/schemas/CronJobDetails"
+            "description": "The SSH address for the service. Only present for services that have SSH enabled."
+          },
+          "maxShutdownDelaySeconds": {
+            "maximum": 300,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+          },
+          "lastSuccessfulRunAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "schedule": {
+            "type": "string"
           }
         }
       },
@@ -12707,9 +13531,6 @@
         }
       },
       "AddUpdateEnvVarInput": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -12720,16 +13541,11 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "EnvVarValue": "#/components/schemas/EnvVarValue",
-            "EnvVarGenerateValue": "#/components/schemas/EnvVarGenerateValue"
+          "value": {
+            "type": "string"
+          },
+          "generateValue": {
+            "type": "boolean"
           }
         }
       },
@@ -12741,7 +13557,7 @@
         "properties": {
           "imagePath": {
             "type": "string",
-            "description": "\u0022Must be either a full URL or the relative path to an image. If a relative path, Render uses the base service\u0027s image URL as its root. For example, if the base service\u0027s image URL is \u0060docker.io/library/nginx:latest\u0060, then valid values are: \u0060docker.io/library/nginx:\u003Cany tag or SHA\u003E\u0060, \u0060library/nginx:\u003Cany tag or SHA\u003E\u0060, or \u0060nginx:\u003Cany tag or SHA\u003E\u0060. Note that the path must match (only the tag or SHA can vary).\u0022",
+            "description": "Must be either a full URL or the relative path to an image. If a relative path, Render uses the base service\u0027s image URL as its root. For example, if the base service\u0027s image URL is \u0060docker.io/library/nginx:latest\u0060, then valid values are: \u0060docker.io/library/nginx:\u003Cany tag or SHA\u003E\u0060, \u0060library/nginx:\u003Cany tag or SHA\u003E\u0060, or \u0060nginx:\u003Cany tag or SHA\u003E\u0060. Note that the path must match (only the tag or SHA can vary).",
             "example": "docker.io/library/nginx:latest"
           },
           "name": {
@@ -14581,7 +15397,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Controls deployment behavior when triggering a deploy.\n\n- \u0060deploy_only\u0060: Deploy the last successful build without rebuilding (minimizes downtime)\n- \u0060build_and_deploy\u0060: Build new code and deploy it (default behavior when not specified)\n\n**Note:** \u0060deploy_only\u0060 cannot be combined with \u0060commitId\u0060, \u0060imageUrl\u0060 or \u0060clearCache\u0060 parameters,\nas those are build related fields.\n\u0022",
+        "description": "Controls deployment behavior when triggering a deploy.\n\n- \u0060deploy_only\u0060: Deploy the last successful build without rebuilding (minimizes downtime)\n- \u0060build_and_deploy\u0060: Build new code and deploy it (default behavior when not specified)\n\n**Note:** \u0060deploy_only\u0060 cannot be combined with \u0060commitId\u0060, \u0060imageUrl\u0060 or \u0060clearCache\u0060 parameters,\nas those are build related fields.\n",
         "x-ms-enum": {
           "name": "DeployMode",
           "modelAsString": false,
@@ -16879,6 +17695,12 @@
           "$ref": "#/components/schemas/KeyValueWithCursor"
         }
       },
+      "ListRedis200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/RedisWithCursor"
+        }
+      },
       "ListPostgres200Response": {
         "type": "array",
         "items": {
@@ -17567,9 +18389,6 @@
           "$ref": "#/components/schemas/ServiceWithCursor"
         }
       },
-      "PurgeCacheRequest": {
-        "type": "object"
-      },
       "ListDeploys200Response": {
         "type": "array",
         "items": {
@@ -17800,6 +18619,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/KeyValueWithCursor"
+        }
+      },
+      "ListRedis200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/RedisWithCursor"
         }
       },
       "ListPostgres200ResponseSchema": {
@@ -18272,6 +19097,15 @@
             "description": "Named parameters passed to the task function as keyword arguments"
           }
         ],
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateTaskRequestInputBranch1ValueItem"
+            },
+            "description": "Positional arguments passed to the task function"
+          }
+        },
         "description": "Input data for a task. Can be either an array (for positional arguments) or an object (for named parameters)."
       },
       "RetrieveEvent200ResponseDetailsServiceEventDetailsArtifactFetchFailed": {
@@ -19304,7 +20138,7 @@
         "type": "object",
         "properties": {
           "filter": {
-            "$ref": "#/components/schemas/ListApplicationFilterValues200ResponseItemFilter"
+            "$ref": "#/components/schemas/InstanceFilter"
           },
           "values": {
             "type": "array",
@@ -19616,7 +20450,7 @@
         "type": "object",
         "properties": {
           "filter": {
-            "$ref": "#/components/schemas/ListApplicationFilterValues200ResponseItemFilter"
+            "$ref": "#/components/schemas/InstanceFilter"
           },
           "values": {
             "type": "array",
@@ -21712,14 +22546,14 @@
           ]
         }
       },
-      "ListApplicationFilterValues200ResponseItemFilter": {
+      "InstanceFilter": {
         "enum": [
           "instance"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "ListApplicationFilterValues200ResponseItemFilter",
+          "name": "InstanceFilter",
           "modelAsString": false,
           "values": [
             {
@@ -22327,14 +23161,14 @@
           ]
         }
       },
-      "MetricsTaskRunsCompletedAggregateBy": {
+      "StateAggregateBy": {
         "enum": [
           "state"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "MetricsTaskRunsCompletedAggregateBy",
+          "name": "StateAggregateBy",
           "modelAsString": false,
           "values": [
             {
@@ -22386,14 +23220,14 @@
           ]
         }
       },
-      "StreamTaskRunsEventsAcceptParameter": {
+      "TextEventStreamAccept": {
         "enum": [
           "text/event-stream"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "StreamTaskRunsEventsAcceptParameter",
+          "name": "TextEventStreamAccept",
           "modelAsString": false,
           "values": [
             {
@@ -22956,12 +23790,6 @@
       "BearerAuth": {
         "type": "http",
         "scheme": "bearer"
-      },
-      "assets_jwt": {
-        "type": "http",
-        "description": "JWT used for assets upload",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
       }
     }
   },

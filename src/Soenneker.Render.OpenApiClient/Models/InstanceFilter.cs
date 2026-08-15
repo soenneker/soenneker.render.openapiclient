@@ -5,7 +5,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum ListApplicationFilterValues200ResponseItemFilter
+    public enum InstanceFilter
     #pragma warning restore CS1591
     {
         [EnumMember(Value = "instance")]

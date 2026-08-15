@@ -61,7 +61,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public static global::Soenneker.Render.OpenApiClient.Models.ServicePatchServiceDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Render.OpenApiClient.Models.ServicePatchServiceDetails();
             if("BackgroundWorkerDetailsPatch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {

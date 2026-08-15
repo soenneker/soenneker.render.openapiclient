@@ -15,7 +15,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The filter property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseItemFilter? Filter { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.InstanceFilter? Filter { get; set; }
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filter", n => { Filter = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseItemFilter>(); } },
+                { "filter", n => { Filter = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.InstanceFilter>(); } },
                 { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ListApplicationFilterValues200ResponseItemFilter>("filter", Filter);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.InstanceFilter>("filter", Filter);
             writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }

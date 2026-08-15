@@ -94,7 +94,7 @@ namespace Soenneker.Render.OpenApiClient.Metrics.TaskRunsCompleted
         {
             /// <summary>The field to aggregate by</summary>
             [QueryParameter("aggregateBy")]
-            public global::Soenneker.Render.OpenApiClient.Models.MetricsTaskRunsCompletedAggregateBy? AggregateBy { get; set; }
+            public global::Soenneker.Render.OpenApiClient.Models.StateAggregateBy? AggregateBy { get; set; }
             /// <summary>Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.</summary>
             [QueryParameter("endTime")]
             public DateTimeOffset? EndTime { get; set; }

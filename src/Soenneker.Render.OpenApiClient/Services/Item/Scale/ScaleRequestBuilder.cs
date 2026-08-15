@@ -36,7 +36,6 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.Scale
         /// <summary>
         /// [Scale](https://render.com/docs/scaling#manual-scaling) the service with the provided ID to a fixed number of instances.Render ignores this value as long as autoscaling is enabled for the service.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,11 +50,11 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.Scale
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.ScaleServiceRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Render.OpenApiClient.Models.ScaleServiceRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.Render.OpenApiClient.Models.ScaleServiceRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Render.OpenApiClient.Models.ScaleServiceRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -72,7 +71,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.Scale
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// [Scale](https://render.com/docs/scaling#manual-scaling) the service with the provided ID to a fixed number of instances.Render ignores this value as long as autoscaling is enabled for the service.

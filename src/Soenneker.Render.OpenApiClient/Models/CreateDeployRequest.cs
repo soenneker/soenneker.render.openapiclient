@@ -24,7 +24,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string CommitId { get; set; }
 #endif
-        /// <summary>&quot;Controls deployment behavior when triggering a deploy.- `deploy_only`: Deploy the last successful build without rebuilding (minimizes downtime)- `build_and_deploy`: Build new code and deploy it (default behavior when not specified)**Note:** `deploy_only` cannot be combined with `commitId`, `imageUrl` or `clearCache` parameters,as those are build related fields.&quot;</summary>
+        /// <summary>Controls deployment behavior when triggering a deploy.- `deploy_only`: Deploy the last successful build without rebuilding (minimizes downtime)- `build_and_deploy`: Build new code and deploy it (default behavior when not specified)**Note:** `deploy_only` cannot be combined with `commitId`, `imageUrl` or `clearCache` parameters,as those are build related fields.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.DeployMode? DeployMode { get; set; }
         /// <summary>The URL of the image to deploy for an image-backed service.The host, repository, and image name all must match the currently configured image for the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

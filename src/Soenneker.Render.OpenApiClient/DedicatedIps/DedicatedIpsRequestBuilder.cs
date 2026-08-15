@@ -83,7 +83,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Create a dedicated IP set. Provisioning an IP set is asynchronous. The response returns immediately with `status: CREATING` and `ips: []`. When provisioning completes, status changes to `RUNNING` and `ips` contains your assigned addresses.If `environmentIds` is omitted or empty, this IP set applies to all services in the workspace in the selected region. Otherwise, it applies only to services in the listed environments in that region.&quot;
+        /// Create a dedicated IP set. Provisioning an IP set is asynchronous. The response returns immediately with `status: CREATING` and `ips: []`. When provisioning completes, status changes to `RUNNING` and `ips` contains your assigned addresses.If `environmentIds` is omitted or empty, this IP set applies to all services in the workspace in the selected region. Otherwise, it applies only to services in the listed environments in that region.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.DedicatedIp"/></returns>
         /// <param name="body">Input for creating a dedicated IP set.</param>
@@ -143,7 +143,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a dedicated IP set. Provisioning an IP set is asynchronous. The response returns immediately with `status: CREATING` and `ips: []`. When provisioning completes, status changes to `RUNNING` and `ips` contains your assigned addresses.If `environmentIds` is omitted or empty, this IP set applies to all services in the workspace in the selected region. Otherwise, it applies only to services in the listed environments in that region.&quot;
+        /// Create a dedicated IP set. Provisioning an IP set is asynchronous. The response returns immediately with `status: CREATING` and `ips: []`. When provisioning completes, status changes to `RUNNING` and `ips` contains your assigned addresses.If `environmentIds` is omitted or empty, this IP set applies to all services in the workspace in the selected region. Otherwise, it applies only to services in the listed environments in that region.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Input for creating a dedicated IP set.</param>
