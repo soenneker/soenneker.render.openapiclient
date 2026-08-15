@@ -6417,11 +6417,14 @@
             }
           },
           "400": {
-            "description": "Bad request - invalid date range",
+            "description": "\u0022Bad request, such as a time range that predates traffic source\ndata availability. The error body\u0027s optional \u0060code\u0060 field\nidentifies specific failures that clients can handle\nmachine-readably.\n\nError codes:\n- \u0060too_many_resources\u0060: the query requests more resources than\n  the breakdown supports (maximum 30)\n\u0022",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetBandwidthSources400Response"
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "message": "bandwidth sources data is only available after 2025-03-09"
                 }
               }
             }
@@ -13685,18 +13688,21 @@
       "ErrorCode": {
         "enum": [
           "multiple_regions",
-          "duplicate_saved_search_name"
+          "duplicate_saved_search_name",
+          "too_many_resources"
         ],
         "type": "string",
         "additionalProperties": false,
         "description": "The machine-readable codes that can appear in the error object\u0027s \u0022code\u0022 field. The field is a plain string so new codes are not breaking changes; this vocabulary exists so generated clients get typed constants. OpenAPI cannot deprecate individual enum values, so deprecation notes live in x-enum-descriptions.",
         "x-enum-varnames": [
           "ErrorCodeMultipleRegions",
-          "ErrorCodeDuplicateSavedSearchName"
+          "ErrorCodeDuplicateSavedSearchName",
+          "ErrorCodeTooManyResources"
         ],
         "x-enum-descriptions": [
           "A metrics query over resources spanning multiple regions is not supported.",
-          "A saved-search create or rename hit a name already used in the project."
+          "A saved-search create or rename hit a name already used in the project.",
+          "A metrics query over more resources than the query supports; the bandwidth per-source breakdown caps at 30."
         ],
         "x-ms-enum": {
           "name": "ErrorCode",
@@ -13709,6 +13715,10 @@
             {
               "value": "duplicate_saved_search_name",
               "name": "DuplicateSavedSearchName"
+            },
+            {
+              "value": "too_many_resources",
+              "name": "TooManyResources"
             }
           ]
         }
@@ -16829,15 +16839,6 @@
             "items": {
               "$ref": "#/components/schemas/GetBandwidthSources200ResponseDataItem"
             }
-          }
-        }
-      },
-      "GetBandwidthSources400Response": {
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "string",
-            "example": "bandwidth sources data is only available after 2025-03-09"
           }
         }
       },
