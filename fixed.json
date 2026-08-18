@@ -456,6 +456,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "Filter dedicated IP sets limited to this environment. Excludes workspace-scoped dedicated IP sets.\n\nThe environment must belong to the workspace named by \u0060ownerId\u0060.\n",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -4917,6 +4925,54 @@
           },
           "404": {
             "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/serviceIdParam"
+        }
+      ]
+    },
+    "/services/{serviceId}/outbound-ips": {
+      "get": {
+        "tags": [
+          "Services"
+        ],
+        "summary": "Retrieve service outbound IPs",
+        "description": "Retrieve the IP addresses the service\u0027s outbound traffic originates from.\n\nA service uses either a dedicated IP set that applies to it, or the shared Render IPs for its region.\n",
+        "operationId": "RetrieveServiceOutboundIps",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutboundIps"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "406": {
+            "$ref": "#/components/responses/406NotAcceptable"
           },
           "429": {
             "$ref": "#/components/responses/429RateLimit"
@@ -16658,6 +16714,30 @@
           }
         }
       },
+      "OutboundIps": {
+        "required": [
+          "type",
+          "ips"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/OutboundIpsType"
+          },
+          "dedicatedIpId": {
+            "type": "string",
+            "description": "The dedicated IP set the traffic originates from. Only present when \u0060type\u0060 is \u0060dedicated\u0060.",
+            "example": "egs-abc123"
+          },
+          "ips": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The IP addresses the resource\u0027s outbound traffic originates from."
+          }
+        }
+      },
       "TaskRunWithCursor": {
         "required": [
           "taskRun",
@@ -20879,6 +20959,7 @@
           "CreateProjectEvent",
           "CreateRedisEvent",
           "CreateSSOConnectionEvent",
+          "CreateSavedSearchEvent",
           "CreateServerDiskEvent",
           "CreateServerEvent",
           "CreateWebhookEvent",
@@ -20894,6 +20975,7 @@
           "DeleteProjectEvent",
           "DeleteRedisEvent",
           "DeleteSSOConnectionEvent",
+          "DeleteSavedSearchEvent",
           "DeleteServerDiskEvent",
           "DeleteServerEvent",
           "DeleteWebhookEvent",
@@ -21510,6 +21592,33 @@
             {
               "value": "canceled",
               "name": "Canceled"
+            }
+          ]
+        }
+      },
+      "OutboundIpsType": {
+        "enum": [
+          "shared",
+          "dedicated"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0060dedicated\u0060 if a dedicated IP set applies to the resource, \u0060shared\u0060 if its traffic originates from the shared Render IPs for its region.\n",
+        "x-enum-varnames": [
+          "OutboundIpsTypeShared",
+          "OutboundIpsTypeDedicated"
+        ],
+        "x-ms-enum": {
+          "name": "OutboundIpsType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "shared",
+              "name": "Shared"
+            },
+            {
+              "value": "dedicated",
+              "name": "Dedicated"
             }
           ]
         }

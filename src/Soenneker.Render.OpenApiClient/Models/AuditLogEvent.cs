@@ -107,6 +107,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         CreateSsoConnectionEvent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CreateSavedSearchEvent")]
+        #pragma warning disable CS1591
+        CreateSavedSearchEvent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CreateServerDiskEvent")]
         #pragma warning disable CS1591
         CreateServerDiskEvent,
@@ -166,6 +170,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         [EnumMember(Value = "DeleteSSOConnectionEvent")]
         #pragma warning disable CS1591
         DeleteSsoConnectionEvent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DeleteSavedSearchEvent")]
+        #pragma warning disable CS1591
+        DeleteSavedSearchEvent,
         #pragma warning restore CS1591
         [EnumMember(Value = "DeleteServerDiskEvent")]
         #pragma warning disable CS1591

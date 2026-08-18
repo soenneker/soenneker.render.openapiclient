@@ -35,7 +35,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DedicatedIpsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dedicated-ips", pathParameters)
+        public DedicatedIpsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dedicated-ips{?environmentId*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DedicatedIpsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dedicated-ips", rawUrl)
+        public DedicatedIpsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dedicated-ips{?environmentId*}", rawUrl)
         {
         }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.DedicatedIps.DedicatedIpsRequestBuilder.DedicatedIpsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/dedicated-ips?ownerId={ownerId}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/dedicated-ips?ownerId={ownerId}{&environmentId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -179,6 +179,16 @@ namespace Soenneker.Render.OpenApiClient.DedicatedIps
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DedicatedIpsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filter dedicated IP sets limited to this environment. Excludes workspace-scoped dedicated IP sets.The environment must belong to the workspace named by `ownerId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("environmentId")]
+            public string? EnvironmentId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("environmentId")]
+            public string EnvironmentId { get; set; }
+#endif
             /// <summary>The ID of the workspace to list dedicated IP sets for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

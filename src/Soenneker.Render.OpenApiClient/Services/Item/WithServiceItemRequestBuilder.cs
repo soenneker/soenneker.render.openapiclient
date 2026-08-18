@@ -13,6 +13,7 @@ using Soenneker.Render.OpenApiClient.Services.Item.Events;
 using Soenneker.Render.OpenApiClient.Services.Item.Headers;
 using Soenneker.Render.OpenApiClient.Services.Item.Instances;
 using Soenneker.Render.OpenApiClient.Services.Item.Jobs;
+using Soenneker.Render.OpenApiClient.Services.Item.OutboundIps;
 using Soenneker.Render.OpenApiClient.Services.Item.Preview;
 using Soenneker.Render.OpenApiClient.Services.Item.Restart;
 using Soenneker.Render.OpenApiClient.Services.Item.Resume;
@@ -78,6 +79,11 @@ namespace Soenneker.Render.OpenApiClient.Services.Item
         public global::Soenneker.Render.OpenApiClient.Services.Item.Jobs.JobsRequestBuilder Jobs
         {
             get => new global::Soenneker.Render.OpenApiClient.Services.Item.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The outboundIps property</summary>
+        public global::Soenneker.Render.OpenApiClient.Services.Item.OutboundIps.OutboundIpsRequestBuilder OutboundIps
+        {
+            get => new global::Soenneker.Render.OpenApiClient.Services.Item.OutboundIps.OutboundIpsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The preview property</summary>
         public global::Soenneker.Render.OpenApiClient.Services.Item.Preview.PreviewRequestBuilder Preview
