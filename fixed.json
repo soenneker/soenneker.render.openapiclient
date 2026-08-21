@@ -14561,7 +14561,12 @@
         "enum": [
           "multiple_regions",
           "duplicate_saved_search_name",
-          "too_many_resources"
+          "too_many_resources",
+          "preauth_consent_required",
+          "preauth_declined",
+          "preauth_attempt_spent",
+          "preauth_no_payment_method",
+          "preauth_unavailable"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -14569,12 +14574,22 @@
         "x-enum-varnames": [
           "ErrorCodeMultipleRegions",
           "ErrorCodeDuplicateSavedSearchName",
-          "ErrorCodeTooManyResources"
+          "ErrorCodeTooManyResources",
+          "ErrorCodePreauthConsentRequired",
+          "ErrorCodePreauthDeclined",
+          "ErrorCodePreauthAttemptSpent",
+          "ErrorCodePreauthNoPaymentMethod",
+          "ErrorCodePreauthUnavailable"
         ],
         "x-enum-descriptions": [
           "A metrics query over resources spanning multiple regions is not supported.",
           "A saved-search create or rename hit a name already used in the project.",
-          "A metrics query over more resources than the query supports; the bandwidth per-source breakdown caps at 30."
+          "A metrics query over more resources than the query supports; the bandwidth per-source breakdown caps at 30.",
+          "The plan needs a spend authorization the requester has not accepted.",
+          "The owner\u0027s card declined the spend authorization.",
+          "The owner\u0027s one authorization attempt has already been declined.",
+          "The plan needs a spend authorization and no payment method is on file.",
+          "The authorization could not be attempted; the operation can be retried."
         ],
         "x-ms-enum": {
           "name": "ErrorCode",
@@ -14591,6 +14606,26 @@
             {
               "value": "too_many_resources",
               "name": "TooManyResources"
+            },
+            {
+              "value": "preauth_consent_required",
+              "name": "PreauthConsentRequired"
+            },
+            {
+              "value": "preauth_declined",
+              "name": "PreauthDeclined"
+            },
+            {
+              "value": "preauth_attempt_spent",
+              "name": "PreauthAttemptSpent"
+            },
+            {
+              "value": "preauth_no_payment_method",
+              "name": "PreauthNoPaymentMethod"
+            },
+            {
+              "value": "preauth_unavailable",
+              "name": "PreauthUnavailable"
             }
           ]
         }
