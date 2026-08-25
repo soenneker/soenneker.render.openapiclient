@@ -49,6 +49,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 #endif
         /// <summary>The total number of actions that would be performed by the Blueprint. In addition to created resources, this includes modifications to individual configuration fields.</summary>
         public int? TotalActions { get; set; }
+        /// <summary>The names of workflows that would be created as part of the Blueprint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Workflows { get; set; }
+#nullable restore
+#else
+        public List<string> Workflows { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ValidateBlueprint200ResponsePlan"/> and sets the default values.
         /// </summary>
@@ -79,6 +87,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "keyValue", n => { KeyValue = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "services", n => { Services = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "totalActions", n => { TotalActions = n.GetIntValue(); } },
+                { "workflows", n => { Workflows = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -93,6 +102,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("keyValue", KeyValue);
             writer.WriteCollectionOfPrimitiveValues<string>("services", Services);
             writer.WriteIntValue("totalActions", TotalActions);
+            writer.WriteCollectionOfPrimitiveValues<string>("workflows", Workflows);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
