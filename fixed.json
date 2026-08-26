@@ -14566,7 +14566,9 @@
           "preauth_declined",
           "preauth_attempt_spent",
           "preauth_no_payment_method",
-          "preauth_unavailable"
+          "preauth_unavailable",
+          "cursor_origin_receipt_expired",
+          "cursor_origin_receipt_invalid"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -14579,7 +14581,9 @@
           "ErrorCodePreauthDeclined",
           "ErrorCodePreauthAttemptSpent",
           "ErrorCodePreauthNoPaymentMethod",
-          "ErrorCodePreauthUnavailable"
+          "ErrorCodePreauthUnavailable",
+          "ErrorCodeCursorOriginReceiptExpired",
+          "ErrorCodeCursorOriginReceiptInvalid"
         ],
         "x-enum-descriptions": [
           "A metrics query over resources spanning multiple regions is not supported.",
@@ -14589,7 +14593,9 @@
           "The owner\u0027s card declined the spend authorization.",
           "The owner\u0027s one authorization attempt has already been declined.",
           "The plan needs a spend authorization and no payment method is on file.",
-          "The authorization could not be attempted; the operation can be retried."
+          "The authorization could not be attempted; the operation can be retried.",
+          "The Cursor Origin installation receipt was past its five-minute expiry.",
+          "The Cursor Origin installation receipt failed verification."
         ],
         "x-ms-enum": {
           "name": "ErrorCode",
@@ -14626,6 +14632,14 @@
             {
               "value": "preauth_unavailable",
               "name": "PreauthUnavailable"
+            },
+            {
+              "value": "cursor_origin_receipt_expired",
+              "name": "CursorOriginReceiptExpired"
+            },
+            {
+              "value": "cursor_origin_receipt_invalid",
+              "name": "CursorOriginReceiptInvalid"
             }
           ]
         }
