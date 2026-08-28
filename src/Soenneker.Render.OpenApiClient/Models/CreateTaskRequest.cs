@@ -22,7 +22,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInput Input { get; set; }
 #endif
-        /// <summary>A task slug in the format workflow-slug/task-name. An optional version can be appended (workflow-slug/task-name:version). If no version is provided, the latest version is used.</summary>
+        /// <summary>A task slug in the format workflow-slug/task-name. An optional version can be appended (workflow-slug/task-name:version). If no version is provided, the latest version is used. Cannot be blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Task { get; set; }

@@ -45,7 +45,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public int? MaxShutdownDelaySeconds { get; set; }
         /// <summary>Defaults to 1</summary>
         public int? NumInstances { get; set; }
-        /// <summary>Defaults to `starter` when creating a new database.</summary>
+        /// <summary>Defaults to `0.5c-512mb` when creating a new service.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.PaidPlan? Plan { get; set; }
         /// <summary>The preDeployCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

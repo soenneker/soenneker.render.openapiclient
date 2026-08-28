@@ -22,7 +22,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch EnvSpecificDetails { get; set; }
 #endif
-        /// <summary>Defaults to `starter` when creating a new database.</summary>
+        /// <summary>Defaults to `0.5c-512mb` when creating a new service.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.PaidPlan? Plan { get; set; }
         /// <summary>Runtime</summary>
         public global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime? Runtime { get; set; }

@@ -13642,11 +13642,25 @@
           "standard_legacy",
           "standard_plus_legacy",
           "pro_legacy",
-          "pro_plus_legacy"
+          "pro_plus_legacy",
+          "0.5c-512mb",
+          "1c-2g",
+          "2c-4g",
+          "2c-8g",
+          "2c-16g",
+          "4c-8g",
+          "4c-16g",
+          "4c-32g",
+          "8c-16g",
+          "8c-32g",
+          "8c-64g",
+          "12c-24g",
+          "12c-48g",
+          "12c-96g"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The instance type to use. Legacy variants (\u0060*_legacy\u0060) identify grandfathered plans no longer offered for new services. Note that base services on any paid instance type can\u0027t create preview instances with the \u0060free\u0060 instance type.",
+        "description": "The compute plan to use. Legacy variants (\u0060*_legacy\u0060) identify grandfathered plans no longer offered for new services. Note that base services on any paid compute plan can\u0027t create preview instances with the \u0060free\u0060 plan.",
         "example": "starter",
         "x-ms-enum": {
           "name": "Plan",
@@ -13711,6 +13725,62 @@
             {
               "value": "pro_plus_legacy",
               "name": "ProPlusLegacy"
+            },
+            {
+              "value": "0.5c-512mb",
+              "name": "Value05C512Mb"
+            },
+            {
+              "value": "1c-2g",
+              "name": "Value1C2G"
+            },
+            {
+              "value": "2c-4g",
+              "name": "Value2C4G"
+            },
+            {
+              "value": "2c-8g",
+              "name": "Value2C8G"
+            },
+            {
+              "value": "2c-16g",
+              "name": "Value2C16G"
+            },
+            {
+              "value": "4c-8g",
+              "name": "Value4C8G"
+            },
+            {
+              "value": "4c-16g",
+              "name": "Value4C16G"
+            },
+            {
+              "value": "4c-32g",
+              "name": "Value4C32G"
+            },
+            {
+              "value": "8c-16g",
+              "name": "Value8C16G"
+            },
+            {
+              "value": "8c-32g",
+              "name": "Value8C32G"
+            },
+            {
+              "value": "8c-64g",
+              "name": "Value8C64G"
+            },
+            {
+              "value": "12c-24g",
+              "name": "Value12C24G"
+            },
+            {
+              "value": "12c-48g",
+              "name": "Value12C48G"
+            },
+            {
+              "value": "12c-96g",
+              "name": "Value12C96G"
             }
           ]
         }
@@ -15084,7 +15154,13 @@
           "standard",
           "pro",
           "pro_plus",
-          "custom"
+          "custom",
+          "256mb",
+          "1g",
+          "5g",
+          "10g",
+          "20g",
+          "40g"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -15115,6 +15191,30 @@
             {
               "value": "custom",
               "name": "Custom"
+            },
+            {
+              "value": "256mb",
+              "name": "Value256Mb"
+            },
+            {
+              "value": "1g",
+              "name": "Value1G"
+            },
+            {
+              "value": "5g",
+              "name": "Value5G"
+            },
+            {
+              "value": "10g",
+              "name": "Value10G"
+            },
+            {
+              "value": "20g",
+              "name": "Value20G"
+            },
+            {
+              "value": "40g",
+              "name": "Value40G"
             }
           ]
         }
@@ -15385,7 +15485,13 @@
           "standard",
           "pro",
           "pro_plus",
-          "custom"
+          "custom",
+          "256mb",
+          "1g",
+          "5g",
+          "10g",
+          "20g",
+          "40g"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -15395,7 +15501,13 @@
           "RedisPlanStandard",
           "RedisPlanPro",
           "RedisPlanPro_plus",
-          "RedisPlanCustom"
+          "RedisPlanCustom",
+          "RedisPlan256mb",
+          "RedisPlan1g",
+          "RedisPlan5g",
+          "RedisPlan10g",
+          "RedisPlan20g",
+          "RedisPlan40g"
         ],
         "x-ms-enum": {
           "name": "RedisPlan",
@@ -15424,6 +15536,30 @@
             {
               "value": "custom",
               "name": "Custom"
+            },
+            {
+              "value": "256mb",
+              "name": "Value256Mb"
+            },
+            {
+              "value": "1g",
+              "name": "Value1G"
+            },
+            {
+              "value": "5g",
+              "name": "Value5G"
+            },
+            {
+              "value": "10g",
+              "name": "Value10G"
+            },
+            {
+              "value": "20g",
+              "name": "Value20G"
+            },
+            {
+              "value": "40g",
+              "name": "Value40G"
             }
           ]
         }
@@ -16571,11 +16707,25 @@
           "pro",
           "pro_plus",
           "pro_max",
-          "pro_ultra"
+          "pro_ultra",
+          "0.5c-512mb",
+          "1c-2g",
+          "2c-4g",
+          "2c-8g",
+          "2c-16g",
+          "4c-8g",
+          "4c-16g",
+          "4c-32g",
+          "8c-16g",
+          "8c-32g",
+          "8c-64g",
+          "12c-24g",
+          "12c-48g",
+          "12c-96g"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "Defaults to \u0060starter\u0060 when creating a new database.",
+        "description": "Defaults to \u00600.5c-512mb\u0060 when creating a new service.",
         "x-ms-enum": {
           "name": "PaidPlan",
           "modelAsString": false,
@@ -16603,6 +16753,62 @@
             {
               "value": "pro_ultra",
               "name": "ProUltra"
+            },
+            {
+              "value": "0.5c-512mb",
+              "name": "Value05C512Mb"
+            },
+            {
+              "value": "1c-2g",
+              "name": "Value1C2G"
+            },
+            {
+              "value": "2c-4g",
+              "name": "Value2C4G"
+            },
+            {
+              "value": "2c-8g",
+              "name": "Value2C8G"
+            },
+            {
+              "value": "2c-16g",
+              "name": "Value2C16G"
+            },
+            {
+              "value": "4c-8g",
+              "name": "Value4C8G"
+            },
+            {
+              "value": "4c-16g",
+              "name": "Value4C16G"
+            },
+            {
+              "value": "4c-32g",
+              "name": "Value4C32G"
+            },
+            {
+              "value": "8c-16g",
+              "name": "Value8C16G"
+            },
+            {
+              "value": "8c-32g",
+              "name": "Value8C32G"
+            },
+            {
+              "value": "8c-64g",
+              "name": "Value8C64G"
+            },
+            {
+              "value": "12c-24g",
+              "name": "Value12C24G"
+            },
+            {
+              "value": "12c-48g",
+              "name": "Value12C48G"
+            },
+            {
+              "value": "12c-96g",
+              "name": "Value12C96G"
             }
           ]
         }
@@ -18157,8 +18363,9 @@
             "$ref": "#/components/schemas/CreateWorkflowRequestBuildConfig"
           },
           "runCommand": {
+            "pattern": "\\S",
             "type": "string",
-            "description": "The command to run the workflow"
+            "description": "The command to run the workflow. Cannot be blank."
           },
           "region": {
             "$ref": "#/components/schemas/CreateWorkflowRequestRegion"
@@ -18229,11 +18436,12 @@
             "type": "string"
           },
           "buildConfig": {
-            "type": "string"
+            "$ref": "#/components/schemas/UpdateWorkflowRequestBuildConfig"
           },
           "runCommand": {
+            "pattern": "\\S",
             "type": "string",
-            "description": "The command to run the workflow"
+            "description": "The command to run the workflow. Cannot be blank."
           },
           "autoDeployTrigger": {
             "type": "string"
@@ -18336,8 +18544,9 @@
         "type": "object",
         "properties": {
           "task": {
+            "pattern": "\\S",
             "type": "string",
-            "description": "A task slug in the format workflow-slug/task-name. An optional version can be appended (workflow-slug/task-name:version). If no version is provided, the latest version is used.",
+            "description": "A task slug in the format workflow-slug/task-name. An optional version can be appended (workflow-slug/task-name:version). If no version is provided, the latest version is used. Cannot be blank.",
             "example": "my-workflow-slug/my-task, my-workflow-slug/my-task:SHA123"
           },
           "input": {
@@ -20571,17 +20780,44 @@
             "description": "The command to run to build the workflow."
           },
           "repo": {
+            "pattern": "\\S",
             "type": "string",
-            "description": "The repository URL to use for the build."
+            "description": "The repository URL to use for the build. Cannot be blank."
           },
           "rootDir": {
             "type": "string",
             "description": "The root directory of the repository to use for the build, if applicable."
           },
           "runtime": {
-            "$ref": "#/components/schemas/CreateWorkflowRequestBuildConfigRuntime"
+            "type": "string"
           }
         }
+      },
+      "UpdateWorkflowRequestBuildConfig": {
+        "type": "object",
+        "properties": {
+          "branch": {
+            "type": "string",
+            "description": "The branch to use for the build, if applicable."
+          },
+          "buildCommand": {
+            "type": "string",
+            "description": "The command to run to build the workflow."
+          },
+          "repo": {
+            "pattern": "\\S",
+            "type": "string",
+            "description": "The repository URL to use for the build. Cannot be blank."
+          },
+          "rootDir": {
+            "type": "string",
+            "description": "The root directory of the repository to use for the build, if applicable."
+          },
+          "runtime": {
+            "$ref": "#/components/schemas/UpdateWorkflowRequestBuildConfigRuntime"
+          }
+        },
+        "description": "A partial update to a workflow\u0027s build config. Every field is optional; omitted fields are left unchanged."
       },
       "CreateTaskRequestInputBranch1ValueItem": {
         "type": "object"
@@ -21519,7 +21755,30 @@
           "accelerated_384gb",
           "accelerated_512gb",
           "accelerated_768gb",
-          "accelerated_1024gb"
+          "accelerated_1024gb",
+          "0.1c-256mb",
+          "0.5c-1g",
+          "1c-2g",
+          "1c-4g",
+          "2c-4g",
+          "2c-8g",
+          "2c-16g",
+          "4c-16g",
+          "4c-32g",
+          "8c-32g",
+          "8c-64g",
+          "16c-64g",
+          "16c-128g",
+          "32c-128g",
+          "32c-256g",
+          "48c-192g",
+          "48c-384g",
+          "64c-256g",
+          "64c-512g",
+          "96c-384g",
+          "96c-768g",
+          "128c-512g",
+          "128c-1024g"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -21638,6 +21897,98 @@
             {
               "value": "accelerated_1024gb",
               "name": "Accelerated1024Gb"
+            },
+            {
+              "value": "0.1c-256mb",
+              "name": "Value01C256Mb"
+            },
+            {
+              "value": "0.5c-1g",
+              "name": "Value05C1G"
+            },
+            {
+              "value": "1c-2g",
+              "name": "Value1C2G"
+            },
+            {
+              "value": "1c-4g",
+              "name": "Value1C4G"
+            },
+            {
+              "value": "2c-4g",
+              "name": "Value2C4G"
+            },
+            {
+              "value": "2c-8g",
+              "name": "Value2C8G"
+            },
+            {
+              "value": "2c-16g",
+              "name": "Value2C16G"
+            },
+            {
+              "value": "4c-16g",
+              "name": "Value4C16G"
+            },
+            {
+              "value": "4c-32g",
+              "name": "Value4C32G"
+            },
+            {
+              "value": "8c-32g",
+              "name": "Value8C32G"
+            },
+            {
+              "value": "8c-64g",
+              "name": "Value8C64G"
+            },
+            {
+              "value": "16c-64g",
+              "name": "Value16C64G"
+            },
+            {
+              "value": "16c-128g",
+              "name": "Value16C128G"
+            },
+            {
+              "value": "32c-128g",
+              "name": "Value32C128G"
+            },
+            {
+              "value": "32c-256g",
+              "name": "Value32C256G"
+            },
+            {
+              "value": "48c-192g",
+              "name": "Value48C192G"
+            },
+            {
+              "value": "48c-384g",
+              "name": "Value48C384G"
+            },
+            {
+              "value": "64c-256g",
+              "name": "Value64C256G"
+            },
+            {
+              "value": "64c-512g",
+              "name": "Value64C512G"
+            },
+            {
+              "value": "96c-384g",
+              "name": "Value96C384G"
+            },
+            {
+              "value": "96c-768g",
+              "name": "Value96C768G"
+            },
+            {
+              "value": "128c-512g",
+              "name": "Value128C512G"
+            },
+            {
+              "value": "128c-1024g",
+              "name": "Value128C1024G"
             }
           ]
         }
@@ -22816,7 +23167,7 @@
           ]
         }
       },
-      "CreateWorkflowRequestBuildConfigRuntime": {
+      "UpdateWorkflowRequestBuildConfigRuntime": {
         "enum": [
           "elixir",
           "go",
@@ -22828,7 +23179,7 @@
         "additionalProperties": false,
         "description": "The runtime environment for the workflow (e.g., node, python, etc.).",
         "x-ms-enum": {
-          "name": "CreateWorkflowRequestBuildConfigRuntime",
+          "name": "UpdateWorkflowRequestBuildConfigRuntime",
           "modelAsString": false,
           "values": [
             {

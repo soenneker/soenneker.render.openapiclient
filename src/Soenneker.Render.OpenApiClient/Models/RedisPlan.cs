@@ -32,5 +32,29 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         Custom,
         #pragma warning restore CS1591
+        [EnumMember(Value = "256mb")]
+        #pragma warning disable CS1591
+        Value256Mb,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "1g")]
+        #pragma warning disable CS1591
+        Value1G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "5g")]
+        #pragma warning disable CS1591
+        Value5G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "10g")]
+        #pragma warning disable CS1591
+        Value10G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "20g")]
+        #pragma warning disable CS1591
+        Value20G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "40g")]
+        #pragma warning disable CS1591
+        Value40G,
+        #pragma warning restore CS1591
     }
 }

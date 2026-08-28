@@ -96,7 +96,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.Owner Owner { get; set; }
 #endif
-        /// <summary>The instance type to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid instance type can&apos;t create preview instances with the `free` instance type.</summary>
+        /// <summary>The compute plan to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid compute plan can&apos;t create preview instances with the `free` plan.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get; set; }
         /// <summary>The primaryPostgresID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

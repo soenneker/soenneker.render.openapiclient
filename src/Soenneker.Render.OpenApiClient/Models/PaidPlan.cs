@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
-    /// <summary>Defaults to `starter` when creating a new database.</summary>
+    /// <summary>Defaults to `0.5c-512mb` when creating a new service.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaidPlan
     {
@@ -30,6 +30,62 @@ namespace Soenneker.Render.OpenApiClient.Models
         [EnumMember(Value = "pro_ultra")]
         #pragma warning disable CS1591
         ProUltra,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "0.5c-512mb")]
+        #pragma warning disable CS1591
+        Value05C512Mb,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "1c-2g")]
+        #pragma warning disable CS1591
+        Value1C2G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "2c-4g")]
+        #pragma warning disable CS1591
+        Value2C4G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "2c-8g")]
+        #pragma warning disable CS1591
+        Value2C8G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "2c-16g")]
+        #pragma warning disable CS1591
+        Value2C16G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "4c-8g")]
+        #pragma warning disable CS1591
+        Value4C8G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "4c-16g")]
+        #pragma warning disable CS1591
+        Value4C16G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "4c-32g")]
+        #pragma warning disable CS1591
+        Value4C32G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "8c-16g")]
+        #pragma warning disable CS1591
+        Value8C16G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "8c-32g")]
+        #pragma warning disable CS1591
+        Value8C32G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "8c-64g")]
+        #pragma warning disable CS1591
+        Value8C64G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "12c-24g")]
+        #pragma warning disable CS1591
+        Value12C24G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "12c-48g")]
+        #pragma warning disable CS1591
+        Value12C48G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "12c-96g")]
+        #pragma warning disable CS1591
+        Value12C96G,
         #pragma warning restore CS1591
     }
 }

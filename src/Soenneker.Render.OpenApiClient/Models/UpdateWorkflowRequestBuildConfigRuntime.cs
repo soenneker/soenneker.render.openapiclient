@@ -5,7 +5,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>The runtime environment for the workflow (e.g., node, python, etc.).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum CreateWorkflowRequestBuildConfigRuntime
+    public enum UpdateWorkflowRequestBuildConfigRuntime
     {
         [EnumMember(Value = "elixir")]
         #pragma warning disable CS1591

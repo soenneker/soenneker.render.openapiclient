@@ -24,7 +24,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #endif
         /// <summary>The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.</summary>
         public int? MaxShutdownDelaySeconds { get; set; }
-        /// <summary>Defaults to `starter` when creating a new database.</summary>
+        /// <summary>Defaults to `0.5c-512mb` when creating a new service.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.PaidPlan? Plan { get; set; }
         /// <summary>The preDeployCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

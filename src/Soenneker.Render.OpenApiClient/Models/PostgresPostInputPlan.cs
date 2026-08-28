@@ -120,5 +120,97 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         Accelerated1024Gb,
         #pragma warning restore CS1591
+        [EnumMember(Value = "0.1c-256mb")]
+        #pragma warning disable CS1591
+        Value01C256Mb,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "0.5c-1g")]
+        #pragma warning disable CS1591
+        Value05C1G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "1c-2g")]
+        #pragma warning disable CS1591
+        Value1C2G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "1c-4g")]
+        #pragma warning disable CS1591
+        Value1C4G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "2c-4g")]
+        #pragma warning disable CS1591
+        Value2C4G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "2c-8g")]
+        #pragma warning disable CS1591
+        Value2C8G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "2c-16g")]
+        #pragma warning disable CS1591
+        Value2C16G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "4c-16g")]
+        #pragma warning disable CS1591
+        Value4C16G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "4c-32g")]
+        #pragma warning disable CS1591
+        Value4C32G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "8c-32g")]
+        #pragma warning disable CS1591
+        Value8C32G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "8c-64g")]
+        #pragma warning disable CS1591
+        Value8C64G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "16c-64g")]
+        #pragma warning disable CS1591
+        Value16C64G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "16c-128g")]
+        #pragma warning disable CS1591
+        Value16C128G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "32c-128g")]
+        #pragma warning disable CS1591
+        Value32C128G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "32c-256g")]
+        #pragma warning disable CS1591
+        Value32C256G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "48c-192g")]
+        #pragma warning disable CS1591
+        Value48C192G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "48c-384g")]
+        #pragma warning disable CS1591
+        Value48C384G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "64c-256g")]
+        #pragma warning disable CS1591
+        Value64C256G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "64c-512g")]
+        #pragma warning disable CS1591
+        Value64C512G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "96c-384g")]
+        #pragma warning disable CS1591
+        Value96C384G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "96c-768g")]
+        #pragma warning disable CS1591
+        Value96C768G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "128c-512g")]
+        #pragma warning disable CS1591
+        Value128C512G,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "128c-1024g")]
+        #pragma warning disable CS1591
+        Value128C1024G,
+        #pragma warning restore CS1591
     }
 }

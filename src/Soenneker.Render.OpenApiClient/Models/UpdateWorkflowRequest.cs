@@ -22,13 +22,13 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string AutoDeployTrigger { get; set; }
 #endif
-        /// <summary>The buildConfig property</summary>
+        /// <summary>A partial update to a workflow&apos;s build config. Every field is optional; omitted fields are left unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildConfig { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.UpdateWorkflowRequestBuildConfig? BuildConfig { get; set; }
 #nullable restore
 #else
-        public string BuildConfig { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.UpdateWorkflowRequestBuildConfig BuildConfig { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,7 +38,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The command to run the workflow</summary>
+        /// <summary>The command to run the workflow. Cannot be blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RunCommand { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetStringValue(); } },
-                { "buildConfig", n => { BuildConfig = n.GetStringValue(); } },
+                { "buildConfig", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.UpdateWorkflowRequestBuildConfig>(global::Soenneker.Render.OpenApiClient.Models.UpdateWorkflowRequestBuildConfig.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "runCommand", n => { RunCommand = n.GetStringValue(); } },
             };
@@ -85,7 +85,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("autoDeployTrigger", AutoDeployTrigger);
-            writer.WriteStringValue("buildConfig", BuildConfig);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.UpdateWorkflowRequestBuildConfig>("buildConfig", BuildConfig);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("runCommand", RunCommand);
             writer.WriteAdditionalData(AdditionalData);

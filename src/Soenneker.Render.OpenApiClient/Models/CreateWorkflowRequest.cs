@@ -50,7 +50,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #endif
         /// <summary>Defaults to &quot;oregon&quot;</summary>
         public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestRegion? Region { get; set; }
-        /// <summary>The command to run the workflow</summary>
+        /// <summary>The command to run the workflow. Cannot be blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RunCommand { get; set; }
