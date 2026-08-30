@@ -19134,9 +19134,7 @@
           },
           "results": {
             "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetTaskRun200ResponseResultsItem"
-            }
+            "items": {}
           },
           "error": {
             "type": "string",
@@ -20983,9 +20981,6 @@
             "format": "date-time"
           }
         }
-      },
-      "GetTaskRun200ResponseResultsItem": {
-        "type": "object"
       },
       "GetTaskRun200ResponseAttemptsItem": {
         "required": [

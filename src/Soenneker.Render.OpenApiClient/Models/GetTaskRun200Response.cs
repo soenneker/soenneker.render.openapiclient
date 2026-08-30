@@ -61,10 +61,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.GetTaskRun200ResponseResultsItem>? Results { get; set; }
+        public UntypedNode? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.GetTaskRun200ResponseResultsItem> Results { get; set; }
+        public UntypedNode Results { get; set; }
 #endif
         /// <summary>The retries property</summary>
         public int? Retries { get; set; }
@@ -120,7 +120,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "input", n => { Input = n.GetStringValue(); } },
                 { "parentTaskAttempt", n => { ParentTaskAttempt = n.GetIntValue(); } },
                 { "parentTaskRunId", n => { ParentTaskRunId = n.GetStringValue(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.GetTaskRun200ResponseResultsItem>(global::Soenneker.Render.OpenApiClient.Models.GetTaskRun200ResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "retries", n => { Retries = n.GetIntValue(); } },
                 { "rootTaskRunId", n => { RootTaskRunId = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -142,7 +142,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("input", Input);
             writer.WriteIntValue("parentTaskAttempt", ParentTaskAttempt);
             writer.WriteStringValue("parentTaskRunId", ParentTaskRunId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.GetTaskRun200ResponseResultsItem>("results", Results);
+            writer.WriteObjectValue<UntypedNode>("results", Results);
             writer.WriteIntValue("retries", Retries);
             writer.WriteStringValue("rootTaskRunId", RootTaskRunId);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
