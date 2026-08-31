@@ -19453,13 +19453,14 @@
       "RetrieveEvent200ResponseDetailsServiceEventDetailsArtifactFetchFailed": {
         "title": "Artifact Fetch Failed",
         "required": [
-          "artifactId",
+          "buildId",
           "message"
         ],
         "type": "object",
         "properties": {
-          "artifactId": {
-            "type": "string"
+          "buildId": {
+            "type": "string",
+            "description": "The build published by the build source that could not be fetched."
           },
           "message": {
             "type": "string"
@@ -19470,13 +19471,13 @@
         "title": "Artifact Source Changed",
         "type": "object",
         "properties": {
-          "fromArtifactSourceId": {
+          "fromBuildSourceId": {
             "type": "string",
-            "description": "The previously linked artifact source. Absent when the service was newly attached."
+            "description": "The previously linked build source. Absent when the service was newly attached."
           },
-          "toArtifactSourceId": {
+          "toBuildSourceId": {
             "type": "string",
-            "description": "The newly linked artifact source. Absent when the service was detached."
+            "description": "The newly linked build source. Absent when the service was detached."
           }
         }
       },
@@ -19675,9 +19676,9 @@
             "type": "integer",
             "deprecated": true
           },
-          "artifactId": {
+          "buildId": {
             "type": "string",
-            "description": "Set when the deploy shipped an artifact published by the service\u0027s linked artifact source."
+            "description": "Set when the deploy shipped a build published by the service\u0027s linked build source."
           }
         }
       },
@@ -19695,9 +19696,9 @@
           "trigger": {
             "type": "string"
           },
-          "artifactId": {
+          "buildId": {
             "type": "string",
-            "description": "Set when the deploy ships an artifact published by the service\u0027s linked artifact source."
+            "description": "Set when the deploy ships a build published by the service\u0027s linked build source."
           }
         }
       },
@@ -22983,7 +22984,7 @@
           "key_value",
           "postgres",
           "environment_group",
-          "artifact_source"
+          "build_source"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -23029,8 +23030,8 @@
               "name": "EnvironmentGroup"
             },
             {
-              "value": "artifact_source",
-              "name": "ArtifactSource"
+              "value": "build_source",
+              "name": "BuildSource"
             }
           ]
         }
