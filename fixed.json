@@ -22984,7 +22984,8 @@
           "key_value",
           "postgres",
           "environment_group",
-          "build_source"
+          "build_source",
+          "workflow"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -23032,6 +23033,10 @@
             {
               "value": "build_source",
               "name": "BuildSource"
+            },
+            {
+              "value": "workflow",
+              "name": "Workflow"
             }
           ]
         }

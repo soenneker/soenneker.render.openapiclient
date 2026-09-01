@@ -47,5 +47,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         BuildSource,
         #pragma warning restore CS1591
+        [EnumMember(Value = "workflow")]
+        #pragma warning disable CS1591
+        Workflow,
+        #pragma warning restore CS1591
     }
 }
