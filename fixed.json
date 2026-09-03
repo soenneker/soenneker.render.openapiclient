@@ -10821,7 +10821,7 @@
     "/workflows": {
       "get": {
         "tags": [
-          "Workflows (Beta)"
+          "Workflows"
         ],
         "summary": "List workflows",
         "description": "List workflows that match the provided filters. If no filters are provided, all workflows accessible by the authenticated user are returned.",
@@ -10879,7 +10879,7 @@
       },
       "post": {
         "tags": [
-          "Workflows (Beta)"
+          "Workflows"
         ],
         "summary": "Create a workflow",
         "description": "Create a new workflow service with the specified configuration.",
@@ -10929,7 +10929,7 @@
     "/workflows/{workflowId}": {
       "get": {
         "tags": [
-          "Workflows (Beta)"
+          "Workflows"
         ],
         "summary": "Retrieve workflow",
         "description": "Retrieve the workflow service with the provided ID.",
@@ -10967,7 +10967,7 @@
       },
       "patch": {
         "tags": [
-          "Workflows (Beta)"
+          "Workflows"
         ],
         "summary": "Update workflow",
         "description": "Update the workflow service with the provided ID.",
@@ -11015,7 +11015,7 @@
       },
       "delete": {
         "tags": [
-          "Workflows (Beta)"
+          "Workflows"
         ],
         "summary": "Delete workflow",
         "description": "Delete the workflow service with the provided ID.",
@@ -11059,7 +11059,7 @@
     "/workflowversions": {
       "get": {
         "tags": [
-          "Workflows (Beta)"
+          "Workflows"
         ],
         "summary": "List workflow versions",
         "description": "List known versions of the workflow service with the provided ID.",
@@ -11114,7 +11114,7 @@
       },
       "post": {
         "tags": [
-          "Workflows (Beta)"
+          "Workflows"
         ],
         "summary": "Deploy a workflow version",
         "description": "Creates and deploys a new version of a workflow.",
@@ -11157,7 +11157,7 @@
     "/workflowversions/{workflowVersionId}": {
       "get": {
         "tags": [
-          "Workflows (Beta)"
+          "Workflows"
         ],
         "summary": "Retrieve workflow version",
         "description": "Retrieve the specific workflow service version with the provided ID.",
@@ -11208,7 +11208,7 @@
     "/tasks": {
       "get": {
         "tags": [
-          "Workflow Tasks (Beta)"
+          "Workflow Tasks"
         ],
         "summary": "List tasks",
         "description": "List workflow tasks that match the provided filters. If no filters are provided, all task definitions accessible by the authenticated user are returned.",
@@ -11298,7 +11298,7 @@
     "/tasks/{taskId}": {
       "get": {
         "tags": [
-          "Workflow Tasks (Beta)"
+          "Workflow Tasks"
         ],
         "summary": "Retrieve task",
         "description": "Retrieve the workflow task with the provided ID.",
@@ -11349,7 +11349,7 @@
     "/task-runs": {
       "get": {
         "tags": [
-          "Workflow Tasks (Beta)"
+          "Workflow Tasks"
         ],
         "summary": "List task runs",
         "description": "List task runs that match the provided filters. If no filters are provided, all task runs accessible by the authenticated user are returned.",
@@ -11418,7 +11418,7 @@
       },
       "post": {
         "tags": [
-          "Workflow Tasks (Beta)"
+          "Workflow Tasks"
         ],
         "summary": "Run task",
         "description": "Kicks off a run of the workflow task with the provided ID, passing the provided input data.",
@@ -11471,10 +11471,10 @@
     "/task-runs/events": {
       "get": {
         "tags": [
-          "Workflow Tasks (Beta)"
+          "Workflow Tasks"
         ],
         "summary": "Stream realtime events (SSE)",
-        "description": "Establishes a unidirectional event stream. The server sends events as lines\nformatted per the SSE spec. Clients SHOULD set \u0060Accept: text/event-stream\u0060\nand keep the connection open.\n",
+        "description": "Establishes a unidirectional event stream. The server sends events as lines\nformatted per the SSE spec. Clients should set \u0060Accept: text/event-stream\u0060\nand keep the connection open.\n\nThe server sends a \u0060task.completed\u0060 event whenever a requested task run reaches\nany terminal state (\u0060completed\u0060, \u0060failed\u0060, or \u0060canceled\u0060).\nThe \u0060status\u0060 field of the payload indicates which state was reached.\n\nThe server automatically closes the stream in the following cases:\n\n- All requested task runs have reached a terminal state.\n- The stream has not sent any events for 30 minutes.\n\nFor tasks with a timeout higher than 30 minutes, waiting clients should fall back\nto polling with the [Retrieve task run](https://api-docs.render.com/reference/gettaskrun)\nendpoint.\n",
         "operationId": "StreamTaskRunsEvents",
         "parameters": [
           {
@@ -11569,7 +11569,7 @@
     "/task-runs/{taskRunId}": {
       "get": {
         "tags": [
-          "Workflow Tasks (Beta)"
+          "Workflow Tasks"
         ],
         "summary": "Retrieve task run",
         "description": "Retrieve the workflow task run with the provided ID.",
@@ -11607,7 +11607,7 @@
       },
       "delete": {
         "tags": [
-          "Workflow Tasks (Beta)"
+          "Workflow Tasks"
         ],
         "summary": "Cancel task run",
         "description": "Cancel a running task run with the provided ID.",
@@ -18058,9 +18058,6 @@
         }
       },
       "RecoverPostgresRequest": {
-        "required": [
-          "restoreTime"
-        ],
         "type": "object",
         "properties": {
           "restoreName": {
@@ -24489,12 +24486,12 @@
       "description": "[Webhooks](https://render.com/docs/webhooks) allow you to manage your Render webhook configuration.\n"
     },
     {
-      "name": "Workflows (Beta)",
-      "description": "Create and manage [Render Workflows](https://render.com/docs/workflows) services. Workflows are in public beta.\n"
+      "name": "Workflows",
+      "description": "Create and manage [Render Workflows](https://render.com/docs/workflows) services.\n"
     },
     {
-      "name": "Workflow Tasks (Beta)",
-      "description": "Run and manage tasks as part of [Render Workflows](https://render.com/docs/workflows). Workflows are in public beta.\n"
+      "name": "Workflow Tasks",
+      "description": "Run and manage tasks as part of [Render Workflows](https://render.com/docs/workflows).\n"
     },
     {
       "name": "Redis (Deprecated)",

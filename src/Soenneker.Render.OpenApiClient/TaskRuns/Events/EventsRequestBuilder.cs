@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.TaskRuns.Events
         {
         }
         /// <summary>
-        /// Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients SHOULD set `Accept: text/event-stream`and keep the connection open.
+        /// Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients should set `Accept: text/event-stream`and keep the connection open.The server sends a `task.completed` event whenever a requested task run reachesany terminal state (`completed`, `failed`, or `canceled`).The `status` field of the payload indicates which state was reached.The server automatically closes the stream in the following cases:- All requested task runs have reached a terminal state.- The stream has not sent any events for 30 minutes.For tasks with a timeout higher than 30 minutes, waiting clients should fall backto polling with the [Retrieve task run](https://api-docs.render.com/reference/gettaskrun)endpoint.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Render.OpenApiClient.TaskRuns.Events
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients SHOULD set `Accept: text/event-stream`and keep the connection open.
+        /// Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients should set `Accept: text/event-stream`and keep the connection open.The server sends a `task.completed` event whenever a requested task run reachesany terminal state (`completed`, `failed`, or `canceled`).The `status` field of the payload indicates which state was reached.The server automatically closes the stream in the following cases:- All requested task runs have reached a terminal state.- The stream has not sent any events for 30 minutes.For tasks with a timeout higher than 30 minutes, waiting clients should fall backto polling with the [Retrieve task run](https://api-docs.render.com/reference/gettaskrun)endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,7 +97,7 @@ namespace Soenneker.Render.OpenApiClient.TaskRuns.Events
             return new global::Soenneker.Render.OpenApiClient.TaskRuns.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients SHOULD set `Accept: text/event-stream`and keep the connection open.
+        /// Establishes a unidirectional event stream. The server sends events as linesformatted per the SSE spec. Clients should set `Accept: text/event-stream`and keep the connection open.The server sends a `task.completed` event whenever a requested task run reachesany terminal state (`completed`, `failed`, or `canceled`).The `status` field of the payload indicates which state was reached.The server automatically closes the stream in the following cases:- All requested task runs have reached a terminal state.- The stream has not sent any events for 30 minutes.For tasks with a timeout higher than 30 minutes, waiting clients should fall backto polling with the [Retrieve task run](https://api-docs.render.com/reference/gettaskrun)endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
