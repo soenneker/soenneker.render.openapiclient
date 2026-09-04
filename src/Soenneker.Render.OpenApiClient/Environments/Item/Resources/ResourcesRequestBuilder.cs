@@ -114,7 +114,7 @@ namespace Soenneker.Render.OpenApiClient.Environments.Item.Resources
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Environments.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/environments/{environmentId}/resources?resourceIds={resourceIds}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/environments/{environmentId}/resources{?resourceIds*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -158,12 +158,16 @@ namespace Soenneker.Render.OpenApiClient.Environments.Item.Resources
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resourceIds")]
             public string[]? ResourceIds { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resourceIds")]
             public string[] ResourceIds { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

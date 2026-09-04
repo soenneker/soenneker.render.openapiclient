@@ -40,7 +40,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}&resource={resource}{&direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*}", pathParameters)
+        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}{&direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*,resource*}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}&resource={resource}{&direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*}", rawUrl)
+        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}{&direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*,resource*}", rawUrl)
         {
         }
         /// <summary>

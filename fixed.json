@@ -14638,7 +14638,12 @@
           "preauth_no_payment_method",
           "preauth_unavailable",
           "cursor_origin_receipt_expired",
-          "cursor_origin_receipt_invalid"
+          "cursor_origin_receipt_invalid",
+          "sandbox_not_running",
+          "snapshot_creating",
+          "snapshot_not_available",
+          "snapshot_plan_mismatch",
+          "snapshot_not_found"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -14653,7 +14658,12 @@
           "ErrorCodePreauthNoPaymentMethod",
           "ErrorCodePreauthUnavailable",
           "ErrorCodeCursorOriginReceiptExpired",
-          "ErrorCodeCursorOriginReceiptInvalid"
+          "ErrorCodeCursorOriginReceiptInvalid",
+          "ErrorCodeSandboxNotRunning",
+          "ErrorCodeSnapshotCreating",
+          "ErrorCodeSnapshotNotAvailable",
+          "ErrorCodeSnapshotPlanMismatch",
+          "ErrorCodeSnapshotNotFound"
         ],
         "x-enum-descriptions": [
           "A metrics query over resources spanning multiple regions is not supported.",
@@ -14665,7 +14675,12 @@
           "The plan needs a spend authorization and no payment method is on file.",
           "The authorization could not be attempted; the operation can be retried.",
           "The Cursor Origin installation receipt was past its five-minute expiry.",
-          "The Cursor Origin installation receipt failed verification."
+          "The Cursor Origin installation receipt failed verification.",
+          "A snapshot capture was requested on a sandbox that is not running.",
+          "A snapshot delete was requested while the capture is still in progress.",
+          "A sandbox create named a source snapshot that is not available.",
+          "A sandbox create named a runtime source snapshot with a different plan.",
+          "A sandbox create named a source snapshot that does not exist."
         ],
         "x-ms-enum": {
           "name": "ErrorCode",
@@ -14710,6 +14725,26 @@
             {
               "value": "cursor_origin_receipt_invalid",
               "name": "CursorOriginReceiptInvalid"
+            },
+            {
+              "value": "sandbox_not_running",
+              "name": "SandboxNotRunning"
+            },
+            {
+              "value": "snapshot_creating",
+              "name": "SnapshotCreating"
+            },
+            {
+              "value": "snapshot_not_available",
+              "name": "SnapshotNotAvailable"
+            },
+            {
+              "value": "snapshot_plan_mismatch",
+              "name": "SnapshotPlanMismatch"
+            },
+            {
+              "value": "snapshot_not_found",
+              "name": "SnapshotNotFound"
             }
           ]
         }

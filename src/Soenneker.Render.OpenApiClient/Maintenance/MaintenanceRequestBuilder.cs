@@ -126,21 +126,29 @@ namespace Soenneker.Render.OpenApiClient.Maintenance
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resourceId")]
             public string[]? ResourceId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resourceId")]
             public string[] ResourceId { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("state")]
             public global::Soenneker.Render.OpenApiClient.Models.ListMaintenanceStateParameterItem[]? State { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("state")]
             public global::Soenneker.Render.OpenApiClient.Models.ListMaintenanceStateParameterItem[] State { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }
