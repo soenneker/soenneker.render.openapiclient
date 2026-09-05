@@ -38,7 +38,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string DockerfilePath { get; set; }
 #endif
-        /// <summary>The registryCredentialId property</summary>
+        /// <summary>Optional reference to the registry credential for this build. Omit the field to leave the stored credential unchanged; send an empty string to clear it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegistryCredentialId { get; set; }
