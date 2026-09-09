@@ -14645,7 +14645,9 @@
           "snapshot_creating",
           "snapshot_not_available",
           "snapshot_plan_mismatch",
-          "snapshot_not_found"
+          "snapshot_not_found",
+          "invalid_sandbox_group_id",
+          "invalid_snapshot_id"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -14665,7 +14667,9 @@
           "ErrorCodeSnapshotCreating",
           "ErrorCodeSnapshotNotAvailable",
           "ErrorCodeSnapshotPlanMismatch",
-          "ErrorCodeSnapshotNotFound"
+          "ErrorCodeSnapshotNotFound",
+          "ErrorCodeInvalidSandboxGroupID",
+          "ErrorCodeInvalidSnapshotID"
         ],
         "x-enum-descriptions": [
           "A metrics query over resources spanning multiple regions is not supported.",
@@ -14682,7 +14686,9 @@
           "A snapshot delete was requested while the capture is still in progress.",
           "A sandbox create named a source snapshot that is not available.",
           "A sandbox create named a runtime source snapshot with a different plan.",
-          "A sandbox create named a source snapshot that does not exist."
+          "A sandbox create named a source snapshot that does not exist.",
+          "A request path named a sandbox group ID that is not a well-formed sbg- identifier.",
+          "A request path named a snapshot ID that is not a well-formed snp- identifier."
         ],
         "x-ms-enum": {
           "name": "ErrorCode",
@@ -14747,6 +14753,14 @@
             {
               "value": "snapshot_not_found",
               "name": "SnapshotNotFound"
+            },
+            {
+              "value": "invalid_sandbox_group_id",
+              "name": "InvalidSandboxGroupId"
+            },
+            {
+              "value": "invalid_snapshot_id",
+              "name": "InvalidSnapshotId"
             }
           ]
         }
@@ -16947,11 +16961,16 @@
       },
       "User": {
         "required": [
+          "id",
           "email",
           "name"
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "The authenticated user\u0027s ID."
+          },
           "email": {
             "type": "string"
           },
