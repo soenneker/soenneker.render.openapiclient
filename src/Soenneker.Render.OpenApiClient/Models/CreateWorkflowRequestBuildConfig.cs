@@ -22,7 +22,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Branch { get; set; }
 #endif
-        /// <summary>The command to run to build the workflow.</summary>
+        /// <summary>The command to run to build the workflow. Required for every runtime except docker, which builds from its Dockerfile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BuildCommand { get; set; }
