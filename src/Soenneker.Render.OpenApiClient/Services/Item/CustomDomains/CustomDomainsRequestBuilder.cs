@@ -19,7 +19,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.CustomDomains
     public partial class CustomDomainsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.services.item.customDomains.item collection</summary>
-        /// <param name="position">The ID or name of the custom domain</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.WithCustomDomainNameOrItemRequestBuilder"/></returns>
         public global::Soenneker.Render.OpenApiClient.Services.Item.CustomDomains.Item.WithCustomDomainNameOrItemRequestBuilder this[string position]
         {

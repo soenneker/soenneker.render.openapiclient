@@ -390,6 +390,16 @@
         "summary": "List Blueprint syncs",
         "description": "List syncs for the Blueprint with the provided ID.\n",
         "operationId": "ListBlueprintSyncs",
+        "parameters": [
+          {
+            "name": "blueprintId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -4166,7 +4176,17 @@
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "customDomainNameOrId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -4206,14 +4226,21 @@
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "customDomainNameOrId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "parameters": [
         {
           "$ref": "#/components/parameters/serviceIdParam"
-        },
-        {
-          "$ref": "#/components/parameters/customDomainIdOrNameParam"
         }
       ]
     },
@@ -4256,14 +4283,21 @@
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "customDomainNameOrId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "parameters": [
         {
           "$ref": "#/components/parameters/serviceIdParam"
-        },
-        {
-          "$ref": "#/components/parameters/customDomainIdOrNameParam"
         }
       ]
     },
@@ -4861,6 +4895,16 @@
         "summary": "Cancel running job",
         "description": "Cancel a particular one-off job for a particular service.\n",
         "operationId": "CancelJob",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -10445,6 +10489,14 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/0"
+          },
+          {
+            "name": "maintenanceRunId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -10493,6 +10545,14 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/0"
+          },
+          {
+            "name": "maintenanceRunId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10779,6 +10839,14 @@
           },
           {
             "$ref": "#/components/parameters/cursorParam"
+          },
+          {
+            "name": "webhookId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
