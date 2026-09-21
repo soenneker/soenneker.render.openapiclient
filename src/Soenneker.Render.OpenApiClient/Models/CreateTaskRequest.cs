@@ -14,6 +14,14 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A client-generated key that makes starting a task run safe to retry. Repeating a request with the same key within 24 hours returns the task run that the first request started instead of starting another one; the repeated request&apos;s input is ignored. Keys are scoped to a single workflow version, so the same key used against a different version starts a separate run. Omit the key to always start a new run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdempotencyKey { get; set; }
+#nullable restore
+#else
+        public string IdempotencyKey { get; set; }
+#endif
         /// <summary>Input data for a task. Can be either an array (for positional arguments) or an object (for named parameters).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,6 +63,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "idempotencyKey", n => { IdempotencyKey = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInput>(global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInput.CreateFromDiscriminatorValue); } },
                 { "task", n => { Task = n.GetStringValue(); } },
             };
@@ -66,6 +75,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("idempotencyKey", IdempotencyKey);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInput>("input", Input);
             writer.WriteStringValue("task", Task);
             writer.WriteAdditionalData(AdditionalData);

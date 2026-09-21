@@ -32,6 +32,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.BuildFilter BuildFilter { get; set; }
 #endif
+        /// <summary>The buildSourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildSourceId { get; set; }
+#nullable restore
+#else
+        public string BuildSourceId { get; set; }
+#endif
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The URL to view the service in the Render Dashboard</summary>
@@ -166,6 +174,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "autoDeploy", n => { AutoDeploy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeploy>(); } },
                 { "branch", n => { Branch = n.GetStringValue(); } },
                 { "buildFilter", n => { BuildFilter = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.BuildFilter>(global::Soenneker.Render.OpenApiClient.Models.BuildFilter.CreateFromDiscriminatorValue); } },
+                { "buildSourceId", n => { BuildSourceId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dashboardUrl", n => { DashboardUrl = n.GetStringValue(); } },
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
@@ -195,6 +204,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeploy>("autoDeploy", AutoDeploy);
             writer.WriteStringValue("branch", Branch);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.BuildFilter>("buildFilter", BuildFilter);
+            writer.WriteStringValue("buildSourceId", BuildSourceId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("dashboardUrl", DashboardUrl);
             writer.WriteStringValue("environmentId", EnvironmentId);

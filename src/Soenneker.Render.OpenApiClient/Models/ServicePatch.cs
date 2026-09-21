@@ -32,6 +32,22 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.BuildFilter BuildFilter { get; set; }
 #endif
+        /// <summary>The buildId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildId { get; set; }
+#nullable restore
+#else
+        public string BuildId { get; set; }
+#endif
+        /// <summary>The buildSourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildSourceId { get; set; }
+#nullable restore
+#else
+        public string BuildSourceId { get; set; }
+#endif
         /// <summary>The image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +116,8 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "autoDeploy", n => { AutoDeploy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeploy>(); } },
                 { "branch", n => { Branch = n.GetStringValue(); } },
                 { "buildFilter", n => { BuildFilter = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.BuildFilter>(global::Soenneker.Render.OpenApiClient.Models.BuildFilter.CreateFromDiscriminatorValue); } },
+                { "buildId", n => { BuildId = n.GetStringValue(); } },
+                { "buildSourceId", n => { BuildSourceId = n.GetStringValue(); } },
                 { "image", n => { Image = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Image>(global::Soenneker.Render.OpenApiClient.Models.Image.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
@@ -117,6 +135,8 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeploy>("autoDeploy", AutoDeploy);
             writer.WriteStringValue("branch", Branch);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.BuildFilter>("buildFilter", BuildFilter);
+            writer.WriteStringValue("buildId", BuildId);
+            writer.WriteStringValue("buildSourceId", BuildSourceId);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Image>("image", Image);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("repo", Repo);

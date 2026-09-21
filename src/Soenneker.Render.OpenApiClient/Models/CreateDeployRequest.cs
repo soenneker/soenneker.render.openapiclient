@@ -14,9 +14,17 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ID of the build to deploy. Cannot be combined with `commitId`, `imageUrl`, or `deployMode`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildId { get; set; }
+#nullable restore
+#else
+        public string BuildId { get; set; }
+#endif
         /// <summary>If `clear`, Render clears the service&apos;s build cache before deploying. This can be useful if you&apos;re experiencing issues with your build.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.CreateDeployRequestClearCache? ClearCache { get; set; }
-        /// <summary>The SHA of a specific Git commit to deploy for a service. Defaults to the latest commit on the service&apos;s connected branch.Note that deploying a specific commit with this endpoint does not disable autodeploys for the service.You can toggle autodeploys for your service with the [Update service](https://api-docs.render.com/reference/update-service) endpoint or in the Render Dashboard.Not supported for cron jobs.</summary>
+        /// <summary>The SHA of a specific Git commit to deploy for a service. Defaults to the latest commit on the service&apos;s connected branch. Cannot be combined with `buildId`, `imageUrl`, or `deployMode: deploy_only`.Note that deploying a specific commit with this endpoint does not disable autodeploys for the service.You can toggle autodeploys for your service with the [Update service](https://api-docs.render.com/reference/update-service) endpoint or in the Render Dashboard.Not supported for cron jobs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommitId { get; set; }
@@ -24,9 +32,9 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string CommitId { get; set; }
 #endif
-        /// <summary>Controls deployment behavior when triggering a deploy.- `deploy_only`: Deploy the last successful build without rebuilding (minimizes downtime)- `build_and_deploy`: Build new code and deploy it (default behavior when not specified)**Note:** `deploy_only` cannot be combined with `commitId`, `imageUrl` or `clearCache` parameters,as those are build related fields.</summary>
+        /// <summary>Controls deployment behavior when triggering a deploy.- `deploy_only`: Deploy the last successful build without rebuilding (minimizes downtime)- `build_and_deploy`: Build new code and deploy it (default behavior when not specified)**Note:** `deployMode` cannot be combined with `buildId`. `deploy_only` cannot be combined with`commitId`, `imageUrl`, or `clearCache`, as those are build related fields.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.DeployMode? DeployMode { get; set; }
-        /// <summary>The URL of the image to deploy for an image-backed service.The host, repository, and image name all must match the currently configured image for the service.</summary>
+        /// <summary>The URL of the image to deploy for an image-backed service. Cannot be combined with `buildId`, `commitId`, or `deployMode: deploy_only`.The host, repository, and image name all must match the currently configured image for the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImageUrl { get; set; }
@@ -59,6 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "buildId", n => { BuildId = n.GetStringValue(); } },
                 { "clearCache", n => { ClearCache = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateDeployRequestClearCache>(); } },
                 { "commitId", n => { CommitId = n.GetStringValue(); } },
                 { "deployMode", n => { DeployMode = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.DeployMode>(); } },
@@ -72,6 +81,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("buildId", BuildId);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateDeployRequestClearCache>("clearCache", ClearCache);
             writer.WriteStringValue("commitId", CommitId);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.DeployMode>("deployMode", DeployMode);

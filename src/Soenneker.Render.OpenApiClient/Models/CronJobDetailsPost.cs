@@ -14,6 +14,14 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The buildSourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildSourceId { get; set; }
+#nullable restore
+#else
+        public string BuildSourceId { get; set; }
+#endif
         /// <summary>This field has been deprecated, runtime should be used in its place.</summary>
         [Obsolete("")]
         public global::Soenneker.Render.OpenApiClient.Models.ServiceEnv? Env { get; set; }
@@ -64,6 +72,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "buildSourceId", n => { BuildSourceId = n.GetStringValue(); } },
                 { "env", n => { Env = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>(); } },
                 { "envSpecificDetails", n => { EnvSpecificDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails>(global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails.CreateFromDiscriminatorValue); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PaidPlan>(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("buildSourceId", BuildSourceId);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>("env", Env);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails>("envSpecificDetails", EnvSpecificDetails);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PaidPlan>("plan", Plan);

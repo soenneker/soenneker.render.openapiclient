@@ -7,6 +7,7 @@ using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Render.OpenApiClient.Blueprints;
+using Soenneker.Render.OpenApiClient.BuildSources;
 using Soenneker.Render.OpenApiClient.CronJobs;
 using Soenneker.Render.OpenApiClient.DedicatedIps;
 using Soenneker.Render.OpenApiClient.Disks;
@@ -48,6 +49,11 @@ namespace Soenneker.Render.OpenApiClient
         public global::Soenneker.Render.OpenApiClient.Blueprints.BlueprintsRequestBuilder Blueprints
         {
             get => new global::Soenneker.Render.OpenApiClient.Blueprints.BlueprintsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The buildSources property</summary>
+        public global::Soenneker.Render.OpenApiClient.BuildSources.BuildSourcesRequestBuilder BuildSources
+        {
+            get => new global::Soenneker.Render.OpenApiClient.BuildSources.BuildSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cronJobs property</summary>
         public global::Soenneker.Render.OpenApiClient.CronJobs.CronJobsRequestBuilder CronJobs

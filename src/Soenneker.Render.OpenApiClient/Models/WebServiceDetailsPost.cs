@@ -22,6 +22,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Autoscaling { get; set; }
 #endif
+        /// <summary>The buildSourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildSourceId { get; set; }
+#nullable restore
+#else
+        public string BuildSourceId { get; set; }
+#endif
         /// <summary>The disk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,6 +130,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "autoscaling", n => { Autoscaling = n.GetStringValue(); } },
+                { "buildSourceId", n => { BuildSourceId = n.GetStringValue(); } },
                 { "disk", n => { Disk = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceDisk>(global::Soenneker.Render.OpenApiClient.Models.ServiceDisk.CreateFromDiscriminatorValue); } },
                 { "env", n => { Env = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>(); } },
                 { "envSpecificDetails", n => { EnvSpecificDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPost>(global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPost.CreateFromDiscriminatorValue); } },
@@ -147,6 +156,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("autoscaling", Autoscaling);
+            writer.WriteStringValue("buildSourceId", BuildSourceId);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ServiceDisk>("disk", Disk);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>("env", Env);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPost>("envSpecificDetails", EnvSpecificDetails);
