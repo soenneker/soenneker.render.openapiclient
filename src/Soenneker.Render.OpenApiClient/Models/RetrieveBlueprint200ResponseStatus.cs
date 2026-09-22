@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>A Blueprint has status `created` until its first Sync is approved.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum RetrieveBlueprint200ResponseStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "created")]
         #pragma warning disable CS1591

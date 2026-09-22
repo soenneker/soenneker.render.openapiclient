@@ -14,7 +14,7 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Automatically sync changes to render.yaml</summary>
+        /// <summary>Configuration value that controls whether or not this blueprint will be re-synced on each git push to the configured branch.Even when true, autoSync will not apply when the blueprint has the Created status, which indicates its first sync has not yet been approved.Other conditions, such as a locked workspace, can also prevent automatic syncing even when this is true.</summary>
         public bool? AutoSync { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

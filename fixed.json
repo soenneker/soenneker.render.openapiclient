@@ -12810,75 +12810,8 @@
   },
   "components": {
     "schemas": {
-      "ServicePatchServiceDetails": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/StaticSiteDetailsPatch"
-          },
-          {
-            "$ref": "#/components/schemas/WebServiceDetailsPatch"
-          },
-          {
-            "$ref": "#/components/schemas/PrivateServiceDetailsPatch"
-          },
-          {
-            "$ref": "#/components/schemas/BackgroundWorkerDetailsPatch"
-          },
-          {
-            "$ref": "#/components/schemas/CronJobDetailsPatch"
-          }
-        ],
-        "properties": {
-          "buildCommand": {
-            "type": "string"
-          },
-          "publishPath": {
-            "type": "string"
-          },
-          "pullRequestPreviewsEnabled": {
-            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
-          },
-          "previews": {
-            "$ref": "#/components/schemas/Previews"
-          },
-          "renderSubdomainPolicy": {
-            "$ref": "#/components/schemas/RenderSubdomainPolicy"
-          },
-          "ipAllowList": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CidrBlockAndDescription"
-            }
-          },
-          "envSpecificDetails": {
-            "$ref": "#/components/schemas/EnvSpecificDetailsPatch"
-          },
-          "healthCheckPath": {
-            "type": "string"
-          },
-          "maintenanceMode": {
-            "$ref": "#/components/schemas/MaintenanceMode"
-          },
-          "preDeployCommand": {
-            "type": "string"
-          },
-          "runtime": {
-            "$ref": "#/components/schemas/ServiceRuntime"
-          },
-          "maxShutdownDelaySeconds": {
-            "maximum": 300,
-            "minimum": 1,
-            "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
-          },
-          "cache": {
-            "$ref": "#/components/schemas/Cache"
-          },
-          "schedule": {
-            "type": "string"
-          }
-        }
+      "Cursor": {
+        "type": "string"
       },
       "AuditLogWithCursor": {
         "required": [
@@ -13526,102 +13459,12 @@
           }
         }
       },
-      "ServicePostServiceDetails": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/StaticSiteDetailsPost"
-          },
-          {
-            "$ref": "#/components/schemas/WebServiceDetailsPost"
-          },
-          {
-            "$ref": "#/components/schemas/PrivateServiceDetailsPost"
-          },
-          {
-            "$ref": "#/components/schemas/BackgroundWorkerDetailsPost"
-          },
-          {
-            "$ref": "#/components/schemas/CronJobDetailsPost"
-          }
-        ],
-        "properties": {
-          "buildCommand": {
-            "type": "string"
-          },
-          "headers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/HeaderInput"
-            }
-          },
-          "publishPath": {
-            "type": "string",
-            "description": "Defaults to \u0022public\u0022"
-          },
-          "pullRequestPreviewsEnabled": {
-            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
-          },
-          "previews": {
-            "$ref": "#/components/schemas/Previews"
-          },
-          "routes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RoutePost"
-            }
-          },
-          "renderSubdomainPolicy": {
-            "$ref": "#/components/schemas/RenderSubdomainPolicy"
-          },
-          "ipAllowList": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CidrBlockAndDescription"
-            }
-          },
-          "buildSourceId": {
-            "type": "string"
-          },
-          "autoscaling": {
-            "type": "string"
-          },
-          "disk": {
-            "$ref": "#/components/schemas/ServiceDisk"
-          },
-          "env": {
-            "$ref": "#/components/schemas/ServiceEnv"
-          },
-          "runtime": {
-            "$ref": "#/components/schemas/ServiceRuntime"
-          },
-          "healthCheckPath": {
-            "type": "string"
-          },
-          "maintenanceMode": {
-            "$ref": "#/components/schemas/MaintenanceMode"
-          },
-          "numInstances": {
-            "minimum": 1,
-            "type": "integer",
-            "description": "Defaults to 1"
-          },
-          "preDeployCommand": {
-            "type": "string"
-          },
-          "region": {
-            "$ref": "#/components/schemas/Region"
-          },
-          "maxShutdownDelaySeconds": {
-            "maximum": 300,
-            "minimum": 1,
-            "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
-          },
-          "schedule": {
-            "type": "string"
-          }
-        }
+      "MaxShutdownDelaySeconds": {
+        "maximum": 300,
+        "minimum": 1,
+        "type": "integer",
+        "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+        "default": 30
       },
       "WebServiceDetails": {
         "required": [
@@ -13945,111 +13788,9 @@
           }
         }
       },
-      "ServiceServiceDetails": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/StaticSiteDetails"
-          },
-          {
-            "$ref": "#/components/schemas/WebServiceDetails"
-          },
-          {
-            "$ref": "#/components/schemas/PrivateServiceDetails"
-          },
-          {
-            "$ref": "#/components/schemas/BackgroundWorkerDetails"
-          },
-          {
-            "$ref": "#/components/schemas/CronJobDetails"
-          }
-        ],
-        "properties": {
-          "buildCommand": {
-            "type": "string"
-          },
-          "ipAllowList": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CidrBlockAndDescription"
-            }
-          },
-          "parentServer": {
-            "$ref": "#/components/schemas/Resource"
-          },
-          "publishPath": {
-            "type": "string"
-          },
-          "pullRequestPreviewsEnabled": {
-            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
-          },
-          "previews": {
-            "$ref": "#/components/schemas/Previews"
-          },
-          "url": {
-            "type": "string"
-          },
-          "buildPlan": {
-            "$ref": "#/components/schemas/BuildPlan"
-          },
-          "renderSubdomainPolicy": {
-            "$ref": "#/components/schemas/RenderSubdomainPolicy"
-          },
-          "autoscaling": {
-            "type": "string"
-          },
-          "cache": {
-            "$ref": "#/components/schemas/Cache"
-          },
-          "env": {
-            "$ref": "#/components/schemas/ServiceEnv"
-          },
-          "envSpecificDetails": {
-            "$ref": "#/components/schemas/EnvSpecificDetails"
-          },
-          "healthCheckPath": {
-            "type": "string"
-          },
-          "maintenanceMode": {
-            "$ref": "#/components/schemas/MaintenanceMode"
-          },
-          "numInstances": {
-            "type": "integer",
-            "description": "For a *manually* scaled service, this is the number of instances the service is scaled to. DOES NOT indicate the number of running instances for an *autoscaled* service."
-          },
-          "openPorts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServerPort"
-            }
-          },
-          "plan": {
-            "$ref": "#/components/schemas/Plan"
-          },
-          "region": {
-            "$ref": "#/components/schemas/Region"
-          },
-          "runtime": {
-            "$ref": "#/components/schemas/ServiceRuntime"
-          },
-          "sshAddress": {
-            "type": "string",
-            "description": "The SSH address for the service. Only present for services that have SSH enabled."
-          },
-          "maxShutdownDelaySeconds": {
-            "maximum": 300,
-            "minimum": 1,
-            "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
-          },
-          "lastSuccessfulRunAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "schedule": {
-            "type": "string"
-          }
-        }
+      "InstanceId": {
+        "type": "string",
+        "description": "When a service with a disk is scaled, the instanceId is used to identify the instance that the disk is attached to. Each instance\u0027s disks get their own snapshots, and can be restored separately."
       },
       "DiskSnapshot": {
         "type": "object",
@@ -15473,11 +15214,9 @@
           ]
         }
       },
-      "LogsValues200ResponseResponse": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
+      "SshAddress": {
+        "type": "string",
+        "description": "The SSH address for the service. Only present for services that have SSH enabled."
       },
       "Region": {
         "enum": [
@@ -17202,39 +16941,9 @@
           ]
         }
       },
-      "Logs200ResponseResponse": {
-        "required": [
-          "hasMore",
-          "nextStartTime",
-          "nextEndTime",
-          "logs"
-        ],
-        "type": "object",
-        "properties": {
-          "hasMore": {
-            "type": "boolean",
-            "description": "True if there are more logs to fetch"
-          },
-          "nextStartTime": {
-            "type": "string",
-            "description": "The start time to use in the next query to fetch the next set of logs",
-            "format": "date-time",
-            "example": "2021-07-15T07:20:05.777035-07:00"
-          },
-          "nextEndTime": {
-            "type": "string",
-            "description": "The end time to use in the next query to fetch the next set of logs",
-            "format": "date-time",
-            "example": "2021-07-15T07:20:05.777035-07:00"
-          },
-          "logs": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "description": "A run of a cron job"
+      "NetworkIsolationEnabled": {
+        "type": "boolean",
+        "description": "Indicates whether network connections across environments are allowed."
       },
       "EnvGroupPostInput": {
         "required": [
@@ -18282,6 +17991,319 @@
           }
         }
       },
+      "Logs200ResponseResponse": {
+        "required": [
+          "hasMore",
+          "nextStartTime",
+          "nextEndTime",
+          "logs"
+        ],
+        "type": "object",
+        "properties": {
+          "hasMore": {
+            "type": "boolean",
+            "description": "True if there are more logs to fetch"
+          },
+          "nextStartTime": {
+            "type": "string",
+            "description": "The start time to use in the next query to fetch the next set of logs",
+            "format": "date-time",
+            "example": "2021-07-15T07:20:05.777035-07:00"
+          },
+          "nextEndTime": {
+            "type": "string",
+            "description": "The end time to use in the next query to fetch the next set of logs",
+            "format": "date-time",
+            "example": "2021-07-15T07:20:05.777035-07:00"
+          },
+          "logs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "description": "A run of a cron job"
+      },
+      "LogsValues200ResponseResponse": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "ServiceServiceDetails": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/StaticSiteDetails"
+          },
+          {
+            "$ref": "#/components/schemas/WebServiceDetails"
+          },
+          {
+            "$ref": "#/components/schemas/PrivateServiceDetails"
+          },
+          {
+            "$ref": "#/components/schemas/BackgroundWorkerDetails"
+          },
+          {
+            "$ref": "#/components/schemas/CronJobDetails"
+          }
+        ],
+        "properties": {
+          "buildCommand": {
+            "type": "string"
+          },
+          "ipAllowList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CidrBlockAndDescription"
+            }
+          },
+          "parentServer": {
+            "$ref": "#/components/schemas/Resource"
+          },
+          "publishPath": {
+            "type": "string"
+          },
+          "pullRequestPreviewsEnabled": {
+            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
+          },
+          "previews": {
+            "$ref": "#/components/schemas/Previews"
+          },
+          "url": {
+            "type": "string"
+          },
+          "buildPlan": {
+            "$ref": "#/components/schemas/BuildPlan"
+          },
+          "renderSubdomainPolicy": {
+            "$ref": "#/components/schemas/RenderSubdomainPolicy"
+          },
+          "autoscaling": {
+            "type": "string"
+          },
+          "cache": {
+            "$ref": "#/components/schemas/Cache"
+          },
+          "env": {
+            "$ref": "#/components/schemas/ServiceEnv"
+          },
+          "envSpecificDetails": {
+            "$ref": "#/components/schemas/EnvSpecificDetails"
+          },
+          "healthCheckPath": {
+            "type": "string"
+          },
+          "maintenanceMode": {
+            "$ref": "#/components/schemas/MaintenanceMode"
+          },
+          "numInstances": {
+            "type": "integer",
+            "description": "For a *manually* scaled service, this is the number of instances the service is scaled to. DOES NOT indicate the number of running instances for an *autoscaled* service."
+          },
+          "openPorts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServerPort"
+            }
+          },
+          "plan": {
+            "$ref": "#/components/schemas/Plan"
+          },
+          "region": {
+            "$ref": "#/components/schemas/Region"
+          },
+          "runtime": {
+            "$ref": "#/components/schemas/ServiceRuntime"
+          },
+          "sshAddress": {
+            "type": "string",
+            "description": "The SSH address for the service. Only present for services that have SSH enabled."
+          },
+          "maxShutdownDelaySeconds": {
+            "maximum": 300,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+          },
+          "lastSuccessfulRunAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "schedule": {
+            "type": "string"
+          }
+        }
+      },
+      "ServicePostServiceDetails": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/StaticSiteDetailsPost"
+          },
+          {
+            "$ref": "#/components/schemas/WebServiceDetailsPost"
+          },
+          {
+            "$ref": "#/components/schemas/PrivateServiceDetailsPost"
+          },
+          {
+            "$ref": "#/components/schemas/BackgroundWorkerDetailsPost"
+          },
+          {
+            "$ref": "#/components/schemas/CronJobDetailsPost"
+          }
+        ],
+        "properties": {
+          "buildCommand": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeaderInput"
+            }
+          },
+          "publishPath": {
+            "type": "string",
+            "description": "Defaults to \u0022public\u0022"
+          },
+          "pullRequestPreviewsEnabled": {
+            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
+          },
+          "previews": {
+            "$ref": "#/components/schemas/Previews"
+          },
+          "routes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoutePost"
+            }
+          },
+          "renderSubdomainPolicy": {
+            "$ref": "#/components/schemas/RenderSubdomainPolicy"
+          },
+          "ipAllowList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CidrBlockAndDescription"
+            }
+          },
+          "buildSourceId": {
+            "type": "string"
+          },
+          "autoscaling": {
+            "type": "string"
+          },
+          "disk": {
+            "$ref": "#/components/schemas/ServiceDisk"
+          },
+          "env": {
+            "$ref": "#/components/schemas/ServiceEnv"
+          },
+          "runtime": {
+            "$ref": "#/components/schemas/ServiceRuntime"
+          },
+          "healthCheckPath": {
+            "type": "string"
+          },
+          "maintenanceMode": {
+            "$ref": "#/components/schemas/MaintenanceMode"
+          },
+          "numInstances": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Defaults to 1"
+          },
+          "preDeployCommand": {
+            "type": "string"
+          },
+          "region": {
+            "$ref": "#/components/schemas/Region"
+          },
+          "maxShutdownDelaySeconds": {
+            "maximum": 300,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+          },
+          "schedule": {
+            "type": "string"
+          }
+        }
+      },
+      "ServicePatchServiceDetails": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/StaticSiteDetailsPatch"
+          },
+          {
+            "$ref": "#/components/schemas/WebServiceDetailsPatch"
+          },
+          {
+            "$ref": "#/components/schemas/PrivateServiceDetailsPatch"
+          },
+          {
+            "$ref": "#/components/schemas/BackgroundWorkerDetailsPatch"
+          },
+          {
+            "$ref": "#/components/schemas/CronJobDetailsPatch"
+          }
+        ],
+        "properties": {
+          "buildCommand": {
+            "type": "string"
+          },
+          "publishPath": {
+            "type": "string"
+          },
+          "pullRequestPreviewsEnabled": {
+            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
+          },
+          "previews": {
+            "$ref": "#/components/schemas/Previews"
+          },
+          "renderSubdomainPolicy": {
+            "$ref": "#/components/schemas/RenderSubdomainPolicy"
+          },
+          "ipAllowList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CidrBlockAndDescription"
+            }
+          },
+          "envSpecificDetails": {
+            "$ref": "#/components/schemas/EnvSpecificDetailsPatch"
+          },
+          "healthCheckPath": {
+            "type": "string"
+          },
+          "maintenanceMode": {
+            "$ref": "#/components/schemas/MaintenanceMode"
+          },
+          "preDeployCommand": {
+            "type": "string"
+          },
+          "runtime": {
+            "$ref": "#/components/schemas/ServiceRuntime"
+          },
+          "maxShutdownDelaySeconds": {
+            "maximum": 300,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+          },
+          "cache": {
+            "$ref": "#/components/schemas/Cache"
+          },
+          "schedule": {
+            "type": "string"
+          }
+        }
+      },
       "EnvGroupAllOf2": {
         "required": [
           "envVars",
@@ -18646,7 +18668,7 @@
           },
           "autoSync": {
             "type": "boolean",
-            "description": "Automatically sync changes to render.yaml"
+            "description": "Configuration value that controls whether or not this blueprint will be re-synced on each git push to the configured branch.\nEven when true, autoSync will not apply when the blueprint has the Created status, which indicates its first sync has not yet been approved.\nOther conditions, such as a locked workspace, can also prevent automatic syncing even when this is true.\n"
           },
           "path": {
             "type": "string",
@@ -23916,6 +23938,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "A Blueprint has status \u0060created\u0060 until its first Sync is approved.",
         "x-ms-enum": {
           "name": "RetrieveBlueprint200ResponseStatus",
           "modelAsString": false,

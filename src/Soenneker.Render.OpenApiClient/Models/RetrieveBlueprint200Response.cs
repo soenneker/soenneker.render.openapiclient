@@ -72,7 +72,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public List<global::Soenneker.Render.OpenApiClient.Models.RetrieveBlueprint200ResponseResourcesItem> Resources { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>A Blueprint has status `created` until its first Sync is approved.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.RetrieveBlueprint200ResponseStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.RetrieveBlueprint200Response"/> and sets the default values.
