@@ -17867,6 +17867,9 @@
         "properties": {
           "event": {
             "$ref": "#/components/schemas/ServiceEventWithCursorEvent"
+          },
+          "cursor": {
+            "type": "string"
           }
         },
         "description": "A service event with a cursor"
