@@ -104,14 +104,6 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public global::Soenneker.Render.OpenApiClient.Models.Owner Owner { get; set; }
 #endif
-        /// <summary>The parameterOverrides property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.PostgresDetailParameterOverrides? ParameterOverrides { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.PostgresDetailParameterOverrides ParameterOverrides { get; set; }
-#endif
         /// <summary>The compute plan to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid compute plan can&apos;t create preview instances with the `free` plan.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get; set; }
         /// <summary>The primaryPostgresID property</summary>
@@ -190,7 +182,6 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "maintenance", n => { Maintenance = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Owner>(global::Soenneker.Render.OpenApiClient.Models.Owner.CreateFromDiscriminatorValue); } },
-                { "parameterOverrides", n => { ParameterOverrides = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresDetailParameterOverrides>(global::Soenneker.Render.OpenApiClient.Models.PostgresDetailParameterOverrides.CreateFromDiscriminatorValue); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); } },
                 { "primaryPostgresID", n => { PrimaryPostgresID = n.GetStringValue(); } },
                 { "readReplicas", n => { ReadReplicas = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplica>(global::Soenneker.Render.OpenApiClient.Models.ReadReplica.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -225,7 +216,6 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("maintenance", Maintenance);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.Owner>("owner", Owner);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresDetailParameterOverrides>("parameterOverrides", ParameterOverrides);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>("plan", Plan);
             writer.WriteStringValue("primaryPostgresID", PrimaryPostgresID);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplica>("readReplicas", ReadReplicas);

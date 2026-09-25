@@ -17200,9 +17200,6 @@
               "$ref": "#/components/schemas/CidrBlockAndDescription"
             }
           },
-          "parameterOverrides": {
-            "$ref": "#/components/schemas/PostgresPostInputParameterOverrides"
-          },
           "readReplicas": {
             "type": "array",
             "items": {
@@ -17254,9 +17251,6 @@
               "$ref": "#/components/schemas/CidrBlockAndDescription"
             }
           },
-          "parameterOverrides": {
-            "$ref": "#/components/schemas/PostgresPatchInputParameterOverrides"
-          },
           "readReplicas": {
             "type": "array",
             "items": {
@@ -17285,9 +17279,6 @@
           "name": {
             "type": "string",
             "description": "The display name of the replica instance."
-          },
-          "parameterOverrides": {
-            "$ref": "#/components/schemas/ReadReplicaParameterOverrides"
           }
         }
       },
@@ -17306,16 +17297,7 @@
           "name": {
             "type": "string",
             "description": "The display name of the replica instance."
-          },
-          "parameterOverrides": {
-            "$ref": "#/components/schemas/ReadReplicaInputParameterOverrides"
           }
-        }
-      },
-      "PostgresParameterOverrides": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
         }
       },
       "PostgresConnectionInfo": {
@@ -17560,9 +17542,6 @@
           },
           "diskSizeGB": {
             "type": "integer"
-          },
-          "parameterOverrides": {
-            "$ref": "#/components/schemas/PostgresDetailParameterOverrides"
           },
           "primaryPostgresID": {
             "type": "string"
@@ -21871,36 +21850,6 @@
           "type": "string"
         },
         "description": "Additional context information about the event"
-      },
-      "PostgresPostInputParameterOverrides": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "PostgresPatchInputParameterOverrides": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "ReadReplicaParameterOverrides": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "ReadReplicaInputParameterOverrides": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "PostgresDetailParameterOverrides": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
       },
       "ValidateBlueprint200ResponseErrorsItem": {
         "required": [

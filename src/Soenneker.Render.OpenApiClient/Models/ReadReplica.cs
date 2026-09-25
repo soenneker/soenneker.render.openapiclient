@@ -30,14 +30,6 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The parameterOverrides property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.ReadReplicaParameterOverrides? ParameterOverrides { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.ReadReplicaParameterOverrides ParameterOverrides { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ReadReplica"/> and sets the default values.
         /// </summary>
@@ -65,7 +57,6 @@ namespace Soenneker.Render.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parameterOverrides", n => { ParameterOverrides = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaParameterOverrides>(global::Soenneker.Render.OpenApiClient.Models.ReadReplicaParameterOverrides.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +68,6 @@ namespace Soenneker.Render.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaParameterOverrides>("parameterOverrides", ParameterOverrides);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

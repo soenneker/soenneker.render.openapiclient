@@ -93,14 +93,6 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string OwnerId { get; set; }
 #endif
-        /// <summary>The parameterOverrides property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputParameterOverrides? ParameterOverrides { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputParameterOverrides ParameterOverrides { get; set; }
-#endif
         /// <summary>The plan property</summary>
         public global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputPlan? Plan { get; set; }
         /// <summary>The readReplicas property</summary>
@@ -157,7 +149,6 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "parameterOverrides", n => { ParameterOverrides = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputParameterOverrides>(global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputParameterOverrides.CreateFromDiscriminatorValue); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputPlan>(); } },
                 { "readReplicas", n => { ReadReplicas = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput>(global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
@@ -183,7 +174,6 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>("ipAllowList", IpAllowList);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputParameterOverrides>("parameterOverrides", ParameterOverrides);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPostInputPlan>("plan", Plan);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput>("readReplicas", ReadReplicas);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>("region", Region);

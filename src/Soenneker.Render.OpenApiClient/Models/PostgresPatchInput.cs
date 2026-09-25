@@ -60,14 +60,6 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The parameterOverrides property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.PostgresPatchInputParameterOverrides? ParameterOverrides { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.PostgresPatchInputParameterOverrides ParameterOverrides { get; set; }
-#endif
         /// <summary>The compute plan to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid compute plan can&apos;t create preview instances with the `free` plan.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get; set; }
         /// <summary>The readReplicas property</summary>
@@ -112,7 +104,6 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "enableHighAvailability", n => { EnableHighAvailability = n.GetBoolValue(); } },
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parameterOverrides", n => { ParameterOverrides = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPatchInputParameterOverrides>(global::Soenneker.Render.OpenApiClient.Models.PostgresPatchInputParameterOverrides.CreateFromDiscriminatorValue); } },
                 { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); } },
                 { "readReplicas", n => { ReadReplicas = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput>(global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -132,7 +123,6 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteBoolValue("enableHighAvailability", EnableHighAvailability);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>("ipAllowList", IpAllowList);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.PostgresPatchInputParameterOverrides>("parameterOverrides", ParameterOverrides);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>("plan", Plan);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ReadReplicaInput>("readReplicas", ReadReplicas);
             writer.WriteAdditionalData(AdditionalData);
