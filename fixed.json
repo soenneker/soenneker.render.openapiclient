@@ -12913,6 +12913,9 @@
           "autoDeploy": {
             "$ref": "#/components/schemas/AutoDeploy"
           },
+          "autoDeployTrigger": {
+            "type": "string"
+          },
           "branch": {
             "type": "string"
           },
@@ -13056,6 +13059,8 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "Deprecated: use \u0060autoDeployTrigger\u0060 instead. You can\u0027t set both \u0060autoDeploy\u0060 and \u0060autoDeployTrigger\u0060 in the same request.\n\n- \u0060yes\u0060 is equivalent to \u0060autoDeployTrigger: commit\u0060.\n- \u0060no\u0060 is equivalent to \u0060autoDeployTrigger: off\u0060.\n",
+        "deprecated": true,
         "x-ms-enum": {
           "name": "AutoDeploy",
           "modelAsString": false,
@@ -13971,6 +13976,9 @@
           "autoDeploy": {
             "$ref": "#/components/schemas/AutoDeploy"
           },
+          "autoDeployTrigger": {
+            "$ref": "#/components/schemas/ServicePostAutoDeployTrigger"
+          },
           "branch": {
             "type": "string",
             "description": "The repo branch to pull, build, and deploy. If omitted, uses the repository\u0027s default branch."
@@ -14289,6 +14297,9 @@
           },
           "autoDeploy": {
             "$ref": "#/components/schemas/AutoDeploy"
+          },
+          "autoDeployTrigger": {
+            "type": "string"
           },
           "repo": {
             "type": "string"
@@ -21661,7 +21672,7 @@
         "type": "object",
         "properties": {
           "newTrigger": {
-            "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsAutoDeployEnabledNewTrigger"
+            "type": "string"
           }
         }
       },
@@ -23273,6 +23284,34 @@
           ]
         }
       },
+      "ServicePostAutoDeployTrigger": {
+        "enum": [
+          "commit",
+          "off",
+          "checksPass"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Controls autodeploy behavior.\n\n- \u0060commit\u0060: Deploy each time a commit is pushed to the service\u0027s linked branch.\n- \u0060checksPass\u0060: Deploy each time a commit is pushed to the linked branch, but only after the commit\u0027s CI checks pass.\n- \u0060off\u0060: Disable autodeploys.\n",
+        "x-ms-enum": {
+          "name": "ServicePostAutoDeployTrigger",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "commit",
+              "name": "Commit"
+            },
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "checksPass",
+              "name": "ChecksPass"
+            }
+          ]
+        }
+      },
       "OwnerType": {
         "enum": [
           "user",
@@ -24693,34 +24732,6 @@
             {
               "value": "unsuccessful",
               "name": "Unsuccessful"
-            }
-          ]
-        }
-      },
-      "RetrieveEvent200ResponseDetailsServiceEventDetailsAutoDeployEnabledNewTrigger": {
-        "enum": [
-          "commit",
-          "off",
-          "checksPass"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "The auto-deploy trigger value after it was re-enabled",
-        "x-ms-enum": {
-          "name": "RetrieveEvent200ResponseDetailsServiceEventDetailsAutoDeployEnabledNewTrigger",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "commit",
-              "name": "Commit"
-            },
-            {
-              "value": "off",
-              "name": "Off"
-            },
-            {
-              "value": "checksPass",
-              "name": "ChecksPass"
             }
           ]
         }

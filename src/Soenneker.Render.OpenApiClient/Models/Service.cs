@@ -14,8 +14,17 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autoDeploy property</summary>
+        /// <summary>Deprecated: use `autoDeployTrigger` instead. You can&apos;t set both `autoDeploy` and `autoDeployTrigger` in the same request.- `yes` is equivalent to `autoDeployTrigger: commit`.- `no` is equivalent to `autoDeployTrigger: off`.</summary>
+        [Obsolete("")]
         public global::Soenneker.Render.OpenApiClient.Models.AutoDeploy? AutoDeploy { get; set; }
+        /// <summary>The autoDeployTrigger property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AutoDeployTrigger { get; set; }
+#nullable restore
+#else
+        public string AutoDeployTrigger { get; set; }
+#endif
         /// <summary>The branch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -172,6 +181,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "autoDeploy", n => { AutoDeploy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeploy>(); } },
+                { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetStringValue(); } },
                 { "branch", n => { Branch = n.GetStringValue(); } },
                 { "buildFilter", n => { BuildFilter = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.BuildFilter>(global::Soenneker.Render.OpenApiClient.Models.BuildFilter.CreateFromDiscriminatorValue); } },
                 { "buildSourceId", n => { BuildSourceId = n.GetStringValue(); } },
@@ -202,6 +212,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.AutoDeploy>("autoDeploy", AutoDeploy);
+            writer.WriteStringValue("autoDeployTrigger", AutoDeployTrigger);
             writer.WriteStringValue("branch", Branch);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.BuildFilter>("buildFilter", BuildFilter);
             writer.WriteStringValue("buildSourceId", BuildSourceId);

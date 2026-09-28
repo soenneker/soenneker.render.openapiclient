@@ -3,10 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>Deprecated: use `autoDeployTrigger` instead. You can&apos;t set both `autoDeploy` and `autoDeployTrigger` in the same request.- `yes` is equivalent to `autoDeployTrigger: commit`.- `no` is equivalent to `autoDeployTrigger: off`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
+    [Obsolete("")]
     public enum AutoDeploy
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "yes")]
         #pragma warning disable CS1591
