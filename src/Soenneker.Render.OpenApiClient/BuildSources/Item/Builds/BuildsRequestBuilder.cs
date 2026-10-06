@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Render.OpenApiClient.BuildSources.Item.Builds.Item;
 using Soenneker.Render.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,18 @@ namespace Soenneker.Render.OpenApiClient.BuildSources.Item.Builds
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BuildsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.buildSources.item.builds.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.BuildSources.Item.Builds.Item.WithBuildItemRequestBuilder"/></returns>
+        public global::Soenneker.Render.OpenApiClient.BuildSources.Item.Builds.Item.WithBuildItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("buildId", position);
+                return new global::Soenneker.Render.OpenApiClient.BuildSources.Item.Builds.Item.WithBuildItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.BuildSources.Item.Builds.BuildsRequestBuilder"/> and sets the default values.
         /// </summary>

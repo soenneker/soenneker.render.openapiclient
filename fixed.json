@@ -10942,6 +10942,75 @@
         }
       ]
     },
+    "/build-sources/{buildSourceId}/builds/{buildId}": {
+      "get": {
+        "tags": [
+          "Build Sources"
+        ],
+        "summary": "Retrieve a build",
+        "description": "Retrieve a build of a build source, including its status.\n",
+        "operationId": "RetrieveBuildSourceBuild",
+        "parameters": [
+          {
+            "name": "buildSourceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveBuildSourceBuild200Response"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "406": {
+            "$ref": "#/components/responses/406NotAcceptable"
+          },
+          "410": {
+            "$ref": "#/components/responses/410Gone"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/0"
+        },
+        {
+          "name": "buildId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "/build-sources/{buildSourceId}/env-vars": {
       "get": {
         "tags": [
@@ -20526,6 +20595,9 @@
         "items": {
           "type": "string"
         }
+      },
+      "RetrieveBuildSourceBuild200Response": {
+        "type": "string"
       },
       "GetEnvVarsForBuildSource200ResponseSchema": {
         "type": "array",
