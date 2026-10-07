@@ -47,9 +47,9 @@ namespace Soenneker.Render.OpenApiClient.BuildSources.Item.Builds
         {
         }
         /// <summary>
-        /// List builds in a build source.
+        /// List builds in a build source, newest first. Pass the last item&apos;s`cursor` as the `cursor` parameter to fetch the next page.
         /// </summary>
-        /// <returns>A List&lt;string&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.ListBuildsInBuildSource200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 401 status code</exception>
@@ -62,11 +62,11 @@ namespace Soenneker.Render.OpenApiClient.BuildSources.Item.Builds
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<string>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.BuildSources.Item.Builds.BuildsRequestBuilder.BuildsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.ListBuildsInBuildSource200ResponseSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.BuildSources.Item.Builds.BuildsRequestBuilder.BuildsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<string>> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.BuildSources.Item.Builds.BuildsRequestBuilder.BuildsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.ListBuildsInBuildSource200ResponseSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.BuildSources.Item.Builds.BuildsRequestBuilder.BuildsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -81,7 +81,7 @@ namespace Soenneker.Render.OpenApiClient.BuildSources.Item.Builds
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Render.OpenApiClient.Models.ListBuildsInBuildSource200ResponseSchemaItem>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.ListBuildsInBuildSource200ResponseSchemaItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -120,7 +120,7 @@ namespace Soenneker.Render.OpenApiClient.BuildSources.Item.Builds
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List builds in a build source.
+        /// List builds in a build source, newest first. Pass the last item&apos;s`cursor` as the `cursor` parameter to fetch the next page.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -167,7 +167,7 @@ namespace Soenneker.Render.OpenApiClient.BuildSources.Item.Builds
             return new global::Soenneker.Render.OpenApiClient.BuildSources.Item.Builds.BuildsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List builds in a build source.
+        /// List builds in a build source, newest first. Pass the last item&apos;s`cursor` as the `cursor` parameter to fetch the next page.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BuildsRequestBuilderGetQueryParameters 

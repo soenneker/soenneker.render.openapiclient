@@ -10830,7 +10830,7 @@
           "Build Sources"
         ],
         "summary": "List builds in a build source",
-        "description": "List builds in a build source.\n",
+        "description": "List builds in a build source, newest first. Pass the last item\u0027s\n\u0060cursor\u0060 as the \u0060cursor\u0060 parameter to fetch the next page.\n",
         "operationId": "ListBuildsInBuildSource",
         "parameters": [
           {
@@ -19733,7 +19733,7 @@
       "ListBuildsInBuildSource200Response": {
         "type": "array",
         "items": {
-          "type": "string"
+          "$ref": "#/components/schemas/ListBuildsInBuildSource200ResponseItem"
         }
       },
       "TriggerBuildSourceBuild201Response": {
@@ -20593,7 +20593,7 @@
       "ListBuildsInBuildSource200ResponseSchema": {
         "type": "array",
         "items": {
-          "type": "string"
+          "$ref": "#/components/schemas/ListBuildsInBuildSource200ResponseSchemaItem"
         }
       },
       "RetrieveBuildSourceBuild200Response": {
@@ -22514,6 +22514,21 @@
         },
         "description": "Patch shape for a build source\u0027s image identity. Unset fields are left unchanged on the underlying image reference. ownerId is intentionally omitted \u2014 a build source\u0027s owner is fixed at creation, and changing the image\u0027s owner would amount to a different identity.\n"
       },
+      "ListBuildsInBuildSource200ResponseItem": {
+        "required": [
+          "build",
+          "cursor"
+        ],
+        "type": "object",
+        "properties": {
+          "build": {
+            "type": "string"
+          },
+          "cursor": {
+            "type": "string"
+          }
+        }
+      },
       "TriggerBuildSourceBuild201ResponseBuildRun": {
         "required": [
           "id"
@@ -22763,6 +22778,21 @@
         "type": "object",
         "properties": {
           "buildSource": {
+            "type": "string"
+          },
+          "cursor": {
+            "type": "string"
+          }
+        }
+      },
+      "ListBuildsInBuildSource200ResponseSchemaItem": {
+        "required": [
+          "build",
+          "cursor"
+        ],
+        "type": "object",
+        "properties": {
+          "build": {
             "type": "string"
           },
           "cursor": {
