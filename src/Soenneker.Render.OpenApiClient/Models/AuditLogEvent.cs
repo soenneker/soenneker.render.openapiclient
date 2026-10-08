@@ -291,6 +291,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         UpdateIpAllowListEvent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "UpdateOrgPaymentMethodEvent")]
+        #pragma warning disable CS1591
+        UpdateOrgPaymentMethodEvent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "UpdateOtelIntegrationEvent")]
         #pragma warning disable CS1591
         UpdateOtelIntegrationEvent,
@@ -306,6 +310,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         [EnumMember(Value = "UpdateWebhookEvent")]
         #pragma warning disable CS1591
         UpdateWebhookEvent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UpdateWorkspacePaymentMethodEvent")]
+        #pragma warning disable CS1591
+        UpdateWorkspacePaymentMethodEvent,
         #pragma warning restore CS1591
         [EnumMember(Value = "VerifyOrgDomainEvent")]
         #pragma warning disable CS1591
