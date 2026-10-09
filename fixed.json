@@ -22363,9 +22363,6 @@
         ],
         "type": "object",
         "properties": {
-          "baseDir": {
-            "type": "string"
-          },
           "branch": {
             "type": "string"
           },
@@ -22374,6 +22371,10 @@
           },
           "buildFilter": {
             "$ref": "#/components/schemas/BuildFilter"
+          },
+          "dockerContext": {
+            "type": "string",
+            "description": "Directory passed to \u0060docker build\u0060 as the build context, relative to the repository root. Only valid for the \u0060docker\u0060 runtime. Defaults to \u0022.\u0022.\n"
           },
           "dockerfilePath": {
             "type": "string"
@@ -22468,9 +22469,6 @@
       "UpdateBuildSourceRequestGit": {
         "type": "object",
         "properties": {
-          "baseDir": {
-            "type": "string"
-          },
           "branch": {
             "type": "string"
           },
@@ -22479,6 +22477,10 @@
           },
           "buildFilter": {
             "$ref": "#/components/schemas/UpdateBuildSourceRequestGitBuildFilter"
+          },
+          "dockerContext": {
+            "type": "string",
+            "description": "Directory passed to \u0060docker build\u0060 as the build context, relative to the repository root. Only valid for the \u0060docker\u0060 runtime.\n"
           },
           "dockerfilePath": {
             "type": "string"

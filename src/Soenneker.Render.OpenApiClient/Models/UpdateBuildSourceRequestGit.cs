@@ -14,14 +14,6 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The baseDir property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BaseDir { get; set; }
-#nullable restore
-#else
-        public string BaseDir { get; set; }
-#endif
         /// <summary>The branch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +37,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Render.OpenApiClient.Models.UpdateBuildSourceRequestGitBuildFilter BuildFilter { get; set; }
+#endif
+        /// <summary>Directory passed to `docker build` as the build context, relative to the repository root. Only valid for the `docker` runtime.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DockerContext { get; set; }
+#nullable restore
+#else
+        public string DockerContext { get; set; }
 #endif
         /// <summary>The dockerfilePath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,10 +107,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "baseDir", n => { BaseDir = n.GetStringValue(); } },
                 { "branch", n => { Branch = n.GetStringValue(); } },
                 { "buildCommand", n => { BuildCommand = n.GetStringValue(); } },
                 { "buildFilter", n => { BuildFilter = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.UpdateBuildSourceRequestGitBuildFilter>(global::Soenneker.Render.OpenApiClient.Models.UpdateBuildSourceRequestGitBuildFilter.CreateFromDiscriminatorValue); } },
+                { "dockerContext", n => { DockerContext = n.GetStringValue(); } },
                 { "dockerfilePath", n => { DockerfilePath = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.UpdateBuildSourceRequestGitRegion>(); } },
                 { "registryCredentialId", n => { RegistryCredentialId = n.GetStringValue(); } },
@@ -126,10 +126,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("baseDir", BaseDir);
             writer.WriteStringValue("branch", Branch);
             writer.WriteStringValue("buildCommand", BuildCommand);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.UpdateBuildSourceRequestGitBuildFilter>("buildFilter", BuildFilter);
+            writer.WriteStringValue("dockerContext", DockerContext);
             writer.WriteStringValue("dockerfilePath", DockerfilePath);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.UpdateBuildSourceRequestGitRegion>("region", Region);
             writer.WriteStringValue("registryCredentialId", RegistryCredentialId);
