@@ -14162,9 +14162,6 @@
         }
       },
       "WebServiceDetailsPost": {
-        "required": [
-          "runtime"
-        ],
         "type": "object",
         "properties": {
           "buildSourceId": {
@@ -14229,9 +14226,6 @@
         }
       },
       "PrivateServiceDetailsPost": {
-        "required": [
-          "runtime"
-        ],
         "type": "object",
         "properties": {
           "buildSourceId": {
@@ -14282,9 +14276,6 @@
         }
       },
       "BackgroundWorkerDetailsPost": {
-        "required": [
-          "runtime"
-        ],
         "type": "object",
         "properties": {
           "buildSourceId": {
@@ -14336,7 +14327,6 @@
       },
       "CronJobDetailsPost": {
         "required": [
-          "runtime",
           "schedule"
         ],
         "type": "object",
