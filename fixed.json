@@ -392,6 +392,12 @@
         "operationId": "ListBlueprintSyncs",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cursorParam"
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
             "name": "blueprintId",
             "in": "path",
             "required": true,
@@ -440,12 +446,6 @@
       "parameters": [
         {
           "$ref": "#/components/parameters/0"
-        },
-        {
-          "$ref": "#/components/parameters/cursorParam"
-        },
-        {
-          "$ref": "#/components/parameters/limitParam"
         }
       ]
     },
@@ -5080,7 +5080,7 @@
         "operationId": "CancelCronJobRun",
         "responses": {
           "204": {
-            "description": "Cancelled"
+            "description": "Canceled"
           },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
@@ -17879,7 +17879,7 @@
           },
           "canceledBy": {
             "type": "string",
-            "description": "user who cancelled the cron job run"
+            "description": "user who canceled the cron job run"
           }
         },
         "description": "A run of a cron job"
