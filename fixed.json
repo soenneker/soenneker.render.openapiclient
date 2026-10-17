@@ -388,7 +388,7 @@
           "Blueprints"
         ],
         "summary": "List Blueprint syncs",
-        "description": "List syncs for the Blueprint with the provided ID.\n",
+        "description": "List syncs for the Blueprint with the provided ID.\nSyncs that are planned but not yet approved (in the \u0060created\u0060 state) are not included.\n",
         "operationId": "ListBlueprintSyncs",
         "parameters": [
           {
