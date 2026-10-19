@@ -15653,7 +15653,8 @@
           "invalid_status",
           "invalid_cursor",
           "invalid_limit",
-          "invalid_snapshot_name"
+          "invalid_snapshot_name",
+          "sandbox_group_suspended"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -15797,6 +15798,10 @@
             {
               "value": "invalid_snapshot_name",
               "name": "InvalidSnapshotName"
+            },
+            {
+              "value": "sandbox_group_suspended",
+              "name": "SandboxGroupSuspended"
             }
           ]
         }
