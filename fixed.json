@@ -15654,7 +15654,8 @@
           "invalid_cursor",
           "invalid_limit",
           "invalid_snapshot_name",
-          "sandbox_group_suspended"
+          "sandbox_group_suspended",
+          "sandbox_group_limit_reached"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -15681,7 +15682,9 @@
           "ErrorCodeInvalidStatus",
           "ErrorCodeInvalidCursor",
           "ErrorCodeInvalidLimit",
-          "ErrorCodeInvalidSnapshotName"
+          "ErrorCodeInvalidSnapshotName",
+          "ErrorCodeSandboxGroupSuspended",
+          "ErrorCodeSandboxGroupLimitReached"
         ],
         "x-enum-descriptions": [
           "A metrics query over resources spanning multiple regions is not supported.",
@@ -15705,7 +15708,9 @@
           "A list request filtered on a status value outside the resource\u0027s status vocabulary.",
           "A list request passed a cursor that is malformed or not visible to the caller.",
           "A list request passed a limit that is not a positive integer within the route\u0027s maximum.",
-          "A snapshot name is empty, longer than 64 characters, or starts with snp-."
+          "A snapshot name is empty, longer than 64 characters, or starts with snp-.",
+          "A create, connect, or snapshot request named a sandbox whose group is suspended.",
+          "A sandbox group create, or a sandbox create that needs a new default group, for an owner already at its sandbox group limit."
         ],
         "x-ms-enum": {
           "name": "ErrorCode",
@@ -15802,6 +15807,10 @@
             {
               "value": "sandbox_group_suspended",
               "name": "SandboxGroupSuspended"
+            },
+            {
+              "value": "sandbox_group_limit_reached",
+              "name": "SandboxGroupLimitReached"
             }
           ]
         }
@@ -20115,7 +20124,7 @@
             "maxLength": 255,
             "minLength": 1,
             "type": "string",
-            "description": "A client-generated key that makes starting a task run safe to retry. Repeating a request with the same key within 24 hours returns the task run that the first request started instead of starting another one; the repeated request\u0027s input is ignored. Keys are scoped to a single workflow version, so the same key used against a different version starts a separate run. Omit the key to always start a new run.",
+            "description": "A client-generated key that makes starting a task run safe to retry. Repeating a request with the same key within 24 hours returns the task run that the first request started instead of starting another one; the repeated request\u0027s input is ignored. Keys are scoped to a workflow. Omit the key to always start a new run.",
             "example": "6b2f1f7a-6a0e-4f6f-9d1a-2b1d0d5f6c11"
           }
         }
