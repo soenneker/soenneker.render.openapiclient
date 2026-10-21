@@ -305,6 +305,16 @@
               }
             }
           },
+          "400": {
+            "description": "The request contains invalid values (such as an empty branch or path),\nbranch updates are not available for the workspace, or the Blueprint file\ncould not be read and validated after changing the branch.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "401": {
             "$ref": "#/components/responses/401Unauthorized"
           },
@@ -312,7 +322,14 @@
             "$ref": "#/components/responses/403Forbidden"
           },
           "404": {
-            "$ref": "#/components/responses/404NotFound"
+            "description": "The Blueprint was not found, or the Blueprint file could not be found\nat the requested path when the branch is unchanged.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           },
           "406": {
             "$ref": "#/components/responses/406NotAcceptable"
@@ -18749,6 +18766,11 @@
             "type": "string",
             "description": "Path to the Blueprint file in the repository",
             "example": "render.yaml"
+          },
+          "branch": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The Git branch to read the Blueprint file from. Requires Blueprint onboarding early access.\nThe branch must contain a Blueprint file at the configured path.\nUpdating this field does not plan a sync.\n"
           }
         }
       },

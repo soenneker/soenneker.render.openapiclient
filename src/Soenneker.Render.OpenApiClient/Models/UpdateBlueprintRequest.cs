@@ -16,6 +16,14 @@ namespace Soenneker.Render.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configuration value that controls whether or not this blueprint will be re-synced on each git push to the configured branch.Even when true, autoSync will not apply when the blueprint has the Created status, which indicates its first sync has not yet been approved.Other conditions, such as a locked workspace, can also prevent automatic syncing even when this is true.</summary>
         public bool? AutoSync { get; set; }
+        /// <summary>The Git branch to read the Blueprint file from. Requires Blueprint onboarding early access.The branch must contain a Blueprint file at the configured path.Updating this field does not plan a sync.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Branch { get; set; }
+#nullable restore
+#else
+        public string Branch { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +66,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "autoSync", n => { AutoSync = n.GetBoolValue(); } },
+                { "branch", n => { Branch = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
             };
@@ -70,6 +79,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("autoSync", AutoSync);
+            writer.WriteStringValue("branch", Branch);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("path", Path);
             writer.WriteAdditionalData(AdditionalData);
