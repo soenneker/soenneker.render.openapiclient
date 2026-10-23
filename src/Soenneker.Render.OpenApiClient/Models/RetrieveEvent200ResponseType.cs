@@ -72,6 +72,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         DiskDeleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "disk_snapshot_restored")]
+        #pragma warning disable CS1591
+        DiskSnapshotRestored,
+        #pragma warning restore CS1591
         [EnumMember(Value = "image_pull_failed")]
         #pragma warning disable CS1591
         ImagePullFailed,

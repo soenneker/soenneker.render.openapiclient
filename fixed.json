@@ -15672,7 +15672,8 @@
           "invalid_limit",
           "invalid_snapshot_name",
           "sandbox_group_suspended",
-          "sandbox_group_limit_reached"
+          "sandbox_group_limit_reached",
+          "invalid_sandbox_plan"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -15701,7 +15702,8 @@
           "ErrorCodeInvalidLimit",
           "ErrorCodeInvalidSnapshotName",
           "ErrorCodeSandboxGroupSuspended",
-          "ErrorCodeSandboxGroupLimitReached"
+          "ErrorCodeSandboxGroupLimitReached",
+          "ErrorCodeInvalidSandboxPlan"
         ],
         "x-enum-descriptions": [
           "A metrics query over resources spanning multiple regions is not supported.",
@@ -15727,7 +15729,8 @@
           "A list request passed a limit that is not a positive integer within the route\u0027s maximum.",
           "A snapshot name is empty, longer than 64 characters, or starts with snp-.",
           "A create, connect, or snapshot request named a sandbox whose group is suspended.",
-          "A sandbox group create, or a sandbox create that needs a new default group, for an owner already at its sandbox group limit."
+          "A sandbox group create, or a sandbox create that needs a new default group, for an owner already at its sandbox group limit.",
+          "A sandbox create asked for a plan that does not exist or is not offered."
         ],
         "x-ms-enum": {
           "name": "ErrorCode",
@@ -15828,6 +15831,10 @@
             {
               "value": "sandbox_group_limit_reached",
               "name": "SandboxGroupLimitReached"
+            },
+            {
+              "value": "invalid_sandbox_plan",
+              "name": "InvalidSandboxPlan"
             }
           ]
         }
@@ -20885,6 +20892,9 @@
                 "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsDiskDeleted"
               },
               {
+                "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsDiskSnapshotRestored"
+              },
+              {
                 "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsServiceDiskUsageHigh"
               },
               {
@@ -21398,6 +21408,32 @@
         "properties": {
           "diskId": {
             "type": "string"
+          }
+        }
+      },
+      "RetrieveEvent200ResponseDetailsServiceEventDetailsDiskSnapshotRestored": {
+        "title": "Disk Snapshot Restored",
+        "required": [
+          "diskId",
+          "triggeredByUser"
+        ],
+        "type": "object",
+        "properties": {
+          "diskId": {
+            "type": "string"
+          },
+          "instanceId": {
+            "type": "string",
+            "description": "The instance whose disk was restored, when the restore named one. A service instance ID, or the service ID for an older single disk."
+          },
+          "snapshotCreatedAt": {
+            "type": "string",
+            "description": "When the restored snapshot was taken",
+            "format": "date-time"
+          },
+          "triggeredByUser": {
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -24225,6 +24261,7 @@
           "disk_created",
           "disk_updated",
           "disk_deleted",
+          "disk_snapshot_restored",
           "image_pull_failed",
           "instance_count_changed",
           "job_run_ended",
@@ -24346,6 +24383,10 @@
             {
               "value": "disk_deleted",
               "name": "DiskDeleted"
+            },
+            {
+              "value": "disk_snapshot_restored",
+              "name": "DiskSnapshotRestored"
             },
             {
               "value": "image_pull_failed",
@@ -25449,6 +25490,7 @@
           "disk_created",
           "disk_updated",
           "disk_deleted",
+          "disk_snapshot_restored",
           "service_disk_usage_high",
           "service_disk_usage_recovered",
           "image_pull_failed",
@@ -25546,6 +25588,10 @@
             {
               "value": "disk_deleted",
               "name": "DiskDeleted"
+            },
+            {
+              "value": "disk_snapshot_restored",
+              "name": "DiskSnapshotRestored"
             },
             {
               "value": "service_disk_usage_high",
