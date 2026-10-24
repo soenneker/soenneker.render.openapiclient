@@ -8,28 +8,27 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// Input data for a task. Can be either an array (for positional arguments) or an object (for named parameters).
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateTaskRequestInput : IAdditionalDataHolder, IParsable
+    public partial class CreateTaskRequestInput : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Positional arguments passed to the task function</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputBranch1ValueItem>? Value { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1? CreateTaskRequestInputMember1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputBranch1ValueItem> Value { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1 CreateTaskRequestInputMember1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInput"/> and sets the default values.
-        /// </summary>
-        public CreateTaskRequestInput()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2? CreateTaskRequestInputOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2 CreateTaskRequestInputOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +37,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         public static global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInput();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInput();
+            if("CreateTaskRequestInputOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateTaskRequestInputOneOf2 = new global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,10 +51,15 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateTaskRequestInputMember1 != null)
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputBranch1ValueItem>(global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputBranch1ValueItem.CreateFromDiscriminatorValue)?.AsList(); } },
-            };
+                return CreateTaskRequestInputMember1.GetFieldDeserializers();
+            }
+            else if(CreateTaskRequestInputOneOf2 != null)
+            {
+                return CreateTaskRequestInputOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -58,8 +68,14 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputBranch1ValueItem>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CreateTaskRequestInputMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1>(null, CreateTaskRequestInputMember1);
+            }
+            else if(CreateTaskRequestInputOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2>(null, CreateTaskRequestInputOneOf2);
+            }
         }
     }
 }

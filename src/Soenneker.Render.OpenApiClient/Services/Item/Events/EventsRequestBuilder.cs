@@ -121,15 +121,8 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.Events
             [QueryParameter("startTime")]
             public DateTimeOffset? StartTime { get; set; }
             /// <summary>The type of event to filter to</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public global::Soenneker.Render.OpenApiClient.Services.Item.Events.GetTypeQueryParameterType? Type { get; set; }
         }
     }
 }

@@ -225,10 +225,24 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/ownerIdPathParam"
+          "name": "ownerId",
+          "in": "path",
+          "description": "The ID of the workspace to return resources for",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         },
         {
-          "$ref": "#/components/parameters/userIdPathParam"
+          "name": "userId",
+          "in": "path",
+          "description": "The ID of the user (Render object ID with a \u0060usr-\u0060 prefix).",
+          "required": true,
+          "schema": {
+            "pattern": "^usr-[0-9a-v]{20}$",
+            "type": "string",
+            "example": "usr-5k6m7n8p9q0r1s2t3u4v"
+          }
         }
       ]
     },
@@ -1458,7 +1472,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/ownerIdPathParam"
+          "name": "ownerId",
+          "in": "path",
+          "description": "The ID of the workspace to return resources for",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -1636,7 +1656,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/ownerIdPathParam"
+          "name": "ownerId",
+          "in": "path",
+          "description": "The ID of the workspace to return resources for",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -1774,7 +1800,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -2398,7 +2430,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -2448,7 +2486,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -2638,7 +2682,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -2689,10 +2739,22 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         },
         {
-          "$ref": "#/components/parameters/deployIdParam"
+          "name": "deployId",
+          "in": "path",
+          "description": "The ID of the deploy",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -2740,10 +2802,22 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         },
         {
-          "$ref": "#/components/parameters/deployIdParam"
+          "name": "deployId",
+          "in": "path",
+          "description": "The ID of the deploy",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -2801,7 +2875,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -2917,7 +2997,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -3062,10 +3148,22 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         },
         {
-          "$ref": "#/components/parameters/envVarKeyParam"
+          "name": "envVarKey",
+          "in": "path",
+          "description": "The name of the environment variable",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -3181,7 +3279,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -3326,7 +3430,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         },
         {
           "name": "envVarKey",
@@ -3349,7 +3459,13 @@
         "operationId": "ListEvents",
         "parameters": [
           {
-            "$ref": "#/components/parameters/serviceIdParam"
+            "name": "serviceId",
+            "in": "path",
+            "description": "The ID of the service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "$ref": "#/components/parameters/eventTypeParam"
@@ -3601,7 +3717,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -3645,7 +3767,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         },
         {
           "name": "headerId",
@@ -3863,7 +3991,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -3961,7 +4095,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         },
         {
           "name": "routeId",
@@ -4143,7 +4283,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -4193,17 +4339,7 @@
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
           }
-        },
-        "parameters": [
-          {
-            "name": "customDomainNameOrId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        }
       },
       "delete": {
         "tags": [
@@ -4243,21 +4379,26 @@
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
           }
-        },
-        "parameters": [
-          {
-            "name": "customDomainNameOrId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        }
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "customDomainNameOrId",
+          "in": "path",
+          "description": "The ID or name of the custom domain",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -4300,21 +4441,26 @@
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
           }
-        },
-        "parameters": [
-          {
-            "name": "customDomainNameOrId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        }
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "customDomainNameOrId",
+          "in": "path",
+          "description": "The ID or name of the custom domain",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -4361,7 +4507,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -4408,7 +4560,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -4455,7 +4613,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -4512,7 +4676,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -4613,7 +4783,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -4671,7 +4847,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -4844,7 +5026,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -4889,7 +5077,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         },
         {
           "name": "jobId",
@@ -4955,7 +5149,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         },
         {
           "$ref": "#/components/parameters/1"
@@ -5000,7 +5200,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -5048,7 +5254,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/serviceIdParam"
+          "name": "serviceId",
+          "in": "path",
+          "description": "The ID of the service",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -5118,7 +5330,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/cronJobIdParam"
+          "name": "cronJobId",
+          "in": "path",
+          "description": "The ID of the cron job",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -9846,7 +10064,13 @@
         "operationId": "RetrieveEnvGroup",
         "parameters": [
           {
-            "$ref": "#/components/parameters/envGroupIdParam"
+            "name": "envGroupId",
+            "in": "path",
+            "description": "Filter for resources that belong to an environment group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9990,10 +10214,22 @@
         "operationId": "LinkServiceToEnvGroup",
         "parameters": [
           {
-            "$ref": "#/components/parameters/envGroupIdParam"
+            "name": "envGroupId",
+            "in": "path",
+            "description": "Filter for resources that belong to an environment group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "$ref": "#/components/parameters/serviceIdParam"
+            "name": "serviceId",
+            "in": "path",
+            "description": "The ID of the service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10087,10 +10323,22 @@
         "operationId": "RetrieveEnvGroupEnvVar",
         "parameters": [
           {
-            "$ref": "#/components/parameters/envGroupIdParam"
+            "name": "envGroupId",
+            "in": "path",
+            "description": "Filter for resources that belong to an environment group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "$ref": "#/components/parameters/envVarKeyParam"
+            "name": "envVarKey",
+            "in": "path",
+            "description": "The name of the environment variable",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10133,10 +10381,22 @@
         "operationId": "UpdateEnvGroupEnvVar",
         "parameters": [
           {
-            "$ref": "#/components/parameters/envGroupIdParam"
+            "name": "envGroupId",
+            "in": "path",
+            "description": "Filter for resources that belong to an environment group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "$ref": "#/components/parameters/envVarKeyParam"
+            "name": "envVarKey",
+            "in": "path",
+            "description": "The name of the environment variable",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -10197,7 +10457,13 @@
             }
           },
           {
-            "$ref": "#/components/parameters/envVarKeyParam"
+            "name": "envVarKey",
+            "in": "path",
+            "description": "The name of the environment variable",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10235,10 +10501,22 @@
         "operationId": "RetrieveEnvGroupSecretFile",
         "parameters": [
           {
-            "$ref": "#/components/parameters/envGroupIdParam"
+            "name": "envGroupId",
+            "in": "path",
+            "description": "Filter for resources that belong to an environment group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "$ref": "#/components/parameters/secretFileNameParam"
+            "name": "envVarKey",
+            "in": "path",
+            "description": "The name of the secret file",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10347,10 +10625,22 @@
         "operationId": "DeleteEnvGroupSecretFile",
         "parameters": [
           {
-            "$ref": "#/components/parameters/envGroupIdParam"
+            "name": "envGroupId",
+            "in": "path",
+            "description": "Filter for resources that belong to an environment group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "$ref": "#/components/parameters/secretFileNameParam"
+            "name": "envVarKey",
+            "in": "path",
+            "description": "The name of the secret file",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11336,7 +11626,13 @@
           "$ref": "#/components/parameters/0"
         },
         {
-          "$ref": "#/components/parameters/envVarKeyParam"
+          "name": "envVarKey",
+          "in": "path",
+          "description": "The name of the environment variable",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -11753,7 +12049,13 @@
           "$ref": "#/components/parameters/0"
         },
         {
-          "$ref": "#/components/parameters/envGroupIdParam"
+          "name": "envGroupId",
+          "in": "path",
+          "description": "Filter for resources that belong to an environment group",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -13153,7 +13455,6 @@
           "no"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Deprecated: use \u0060autoDeployTrigger\u0060 instead. You can\u0027t set both \u0060autoDeploy\u0060 and \u0060autoDeployTrigger\u0060 in the same request.\n\n- \u0060yes\u0060 is equivalent to \u0060autoDeployTrigger: commit\u0060.\n- \u0060no\u0060 is equivalent to \u0060autoDeployTrigger: off\u0060.\n",
         "deprecated": true,
         "x-ms-enum": {
@@ -13216,7 +13517,6 @@
           "AWS_ECR"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The registry to use this credential with",
         "x-ms-enum": {
           "name": "RegistryCredentialRegistry",
@@ -13288,7 +13588,6 @@
           "DELETED"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Current status of a dedicated IP set.",
         "x-ms-enum": {
           "name": "DedicatedIpStatus",
@@ -13650,7 +13949,8 @@
             "maximum": 300,
             "minimum": 1,
             "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+            "default": 30
           },
           "renderSubdomainPolicy": {
             "$ref": "#/components/schemas/RenderSubdomainPolicy"
@@ -13658,7 +13958,6 @@
         }
       },
       "EnvSpecificDetails": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/DockerDetails"
@@ -13666,33 +13965,9 @@
           {
             "$ref": "#/components/schemas/NativeEnvironmentDetails"
           }
-        ],
-        "properties": {
-          "dockerCommand": {
-            "type": "string"
-          },
-          "dockerContext": {
-            "type": "string"
-          },
-          "dockerfilePath": {
-            "type": "string"
-          },
-          "preDeployCommand": {
-            "type": "string"
-          },
-          "registryCredential": {
-            "$ref": "#/components/schemas/RegistryCredential"
-          },
-          "buildCommand": {
-            "type": "string"
-          },
-          "startCommand": {
-            "type": "string"
-          }
-        }
+        ]
       },
       "EnvSpecificDetailsPatch": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/DockerDetailsPatch"
@@ -13700,31 +13975,9 @@
           {
             "$ref": "#/components/schemas/NativeEnvironmentDetailsPatch"
           }
-        ],
-        "properties": {
-          "dockerCommand": {
-            "type": "string"
-          },
-          "dockerContext": {
-            "type": "string"
-          },
-          "dockerfilePath": {
-            "type": "string"
-          },
-          "registryCredentialId": {
-            "type": "string",
-            "description": "Optional reference to the registry credential for this build. Omit the field to leave the stored credential unchanged; send an empty string to clear it."
-          },
-          "buildCommand": {
-            "type": "string"
-          },
-          "startCommand": {
-            "type": "string"
-          }
-        }
+        ]
       },
       "EnvSpecificDetailsPost": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/DockerDetailsPost"
@@ -13732,28 +13985,7 @@
           {
             "$ref": "#/components/schemas/NativeEnvironmentDetailsPost"
           }
-        ],
-        "properties": {
-          "dockerCommand": {
-            "type": "string"
-          },
-          "dockerContext": {
-            "type": "string"
-          },
-          "dockerfilePath": {
-            "type": "string",
-            "description": "Defaults to \u0022./Dockerfile\u0022"
-          },
-          "registryCredentialId": {
-            "type": "string"
-          },
-          "buildCommand": {
-            "type": "string"
-          },
-          "startCommand": {
-            "type": "string"
-          }
-        }
+        ]
       },
       "Resource": {
         "required": [
@@ -13838,7 +14070,8 @@
             "maximum": 300,
             "minimum": 1,
             "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+            "default": 30
           }
         }
       },
@@ -13980,7 +14213,8 @@
             "maximum": 300,
             "minimum": 1,
             "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+            "default": 30
           }
         }
       },
@@ -14229,7 +14463,8 @@
             "maximum": 300,
             "minimum": 1,
             "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+            "default": 30
           },
           "renderSubdomainPolicy": {
             "$ref": "#/components/schemas/RenderSubdomainPolicy"
@@ -14288,7 +14523,8 @@
             "maximum": 300,
             "minimum": 1,
             "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+            "default": 30
           }
         }
       },
@@ -14338,7 +14574,8 @@
             "maximum": 300,
             "minimum": 1,
             "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+            "default": 30
           }
         }
       },
@@ -14495,7 +14732,8 @@
             "maximum": 300,
             "minimum": 1,
             "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+            "default": 30
           },
           "renderSubdomainPolicy": {
             "$ref": "#/components/schemas/RenderSubdomainPolicy"
@@ -14536,7 +14774,8 @@
             "maximum": 300,
             "minimum": 1,
             "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+            "default": 30
           }
         }
       },
@@ -14565,7 +14804,8 @@
             "maximum": 300,
             "minimum": 1,
             "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
+            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+            "default": 30
           }
         }
       },
@@ -14609,7 +14849,6 @@
         }
       },
       "AddUpdateEnvVarInput": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/EnvVarValue"
@@ -14617,15 +14856,7 @@
           {
             "$ref": "#/components/schemas/EnvVarGenerateValue"
           }
-        ],
-        "properties": {
-          "value": {
-            "type": "string"
-          },
-          "generateValue": {
-            "type": "boolean"
-          }
-        }
+        ]
       },
       "PreviewInput": {
         "required": [
@@ -14681,7 +14912,6 @@
           "12c-96g"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The compute plan to use. Legacy variants (\u0060*_legacy\u0060) identify grandfathered plans no longer offered for new services. Note that base services on any paid compute plan can\u0027t create preview instances with the \u0060free\u0060 plan.",
         "example": "starter",
         "x-ms-enum": {
@@ -14949,7 +15179,6 @@
           "WORKSPACE_VIEWER"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The member\u0027s workspace role. Values are always returned in uppercase.",
         "example": "DEVELOPER",
         "x-ms-enum": {
@@ -15113,7 +15342,6 @@
           "rewrite"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "RouteType",
           "modelAsString": false,
@@ -15138,7 +15366,6 @@
           "cron_job"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ServiceType",
           "modelAsString": false,
@@ -15175,7 +15402,6 @@
           "cron"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ServiceTypeShort",
           "modelAsString": false,
@@ -15215,7 +15441,6 @@
           "image"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Runtime",
         "x-ms-enum": {
           "name": "ServiceRuntime",
@@ -15268,7 +15493,6 @@
           "image"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "This field has been deprecated, runtime should be used in its place.",
         "deprecated": true,
         "x-ms-enum": {
@@ -15323,7 +15547,6 @@
           "virginia"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Defaults to \u0022oregon\u0022",
         "x-ms-enum": {
           "name": "Region",
@@ -15359,7 +15582,6 @@
           "ignore"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "NotifySetting",
           "modelAsString": false,
@@ -15390,7 +15612,6 @@
           "unknown"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SuspenderType",
           "modelAsString": false,
@@ -15441,7 +15662,6 @@
           "pre_deploy_failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DeployStatus",
           "modelAsString": false,
@@ -15676,7 +15896,6 @@
           "invalid_sandbox_plan"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The machine-readable codes that can appear in the error object\u0027s \u0022code\u0022 field. The field is a plain string so new codes are not breaking changes; this vocabulary exists so generated clients get typed constants. OpenAPI cannot deprecate individual enum values, so deprecation notes live in x-enum-descriptions.",
         "x-enum-varnames": [
           "ErrorCodeMultipleRegions",
@@ -15845,7 +16064,6 @@
           "no"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "This field has been deprecated. previews.generation should be used in its place.",
         "deprecated": true,
         "x-ms-enum": {
@@ -15877,7 +16095,6 @@
           "performance"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "BuildPlan",
           "modelAsString": false,
@@ -15899,7 +16116,6 @@
           "disabled"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Controls whether render.com subdomains are available for the service",
         "x-ms-enum": {
           "name": "RenderSubdomainPolicy",
@@ -15988,7 +16204,6 @@
           "off"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The persistence mode for the Key Value instance. The default for paid instances is journal_snapshot (both journaling and snapshots). Only turn off persistence if you\u0027re using this Key Value instance as a cache and are okay with losing data. Free instances do not have persistence.",
         "x-ms-enum": {
           "name": "PersistenceMode",
@@ -16021,7 +16236,6 @@
           "volatile_ttl"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The eviction policy for the Key Value instance",
         "x-ms-enum": {
           "name": "MaxmemoryPolicy",
@@ -16288,7 +16502,6 @@
           "40g"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "KeyValuePlan",
           "modelAsString": false,
@@ -16619,7 +16832,6 @@
           "40g"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-enum-varnames": [
           "RedisPlanFree",
           "RedisPlanStarter",
@@ -16704,7 +16916,6 @@
           "updating_instance"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DatabaseStatus",
           "modelAsString": false,
@@ -16762,7 +16973,6 @@
           "build_and_deploy"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Controls deployment behavior when triggering a deploy.\n\n- \u0060deploy_only\u0060: Deploy the last successful build without rebuilding (minimizes downtime)\n- \u0060build_and_deploy\u0060: Build new code and deploy it (default behavior when not specified)\n\n**Note:** \u0060deployMode\u0060 cannot be combined with \u0060buildId\u0060. \u0060deploy_only\u0060 cannot be combined with\n\u0060commitId\u0060, \u0060imageUrl\u0060, or \u0060clearCache\u0060, as those are build related fields.\n",
         "x-ms-enum": {
           "name": "DeployMode",
@@ -17041,7 +17251,6 @@
           "protected"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Indicates whether an environment is \u0060unprotected\u0060 or \u0060protected\u0060. Only admin users can perform destructive actions in \u0060protected\u0060 environments.",
         "x-ms-enum": {
           "name": "ProtectedStatus",
@@ -17711,7 +17920,6 @@
           "18"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The PostgreSQL version",
         "x-ms-enum": {
           "name": "PostgresVersion",
@@ -17758,7 +17966,6 @@
           "replica"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DatabaseRole",
           "modelAsString": false,
@@ -17798,7 +18005,6 @@
           "12c-96g"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Defaults to \u00600.5c-512mb\u0060 when creating a new service.",
         "x-ms-enum": {
           "name": "PaidPlan",
@@ -18131,7 +18337,6 @@
         }
       },
       "ServiceServiceDetails": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/StaticSiteDetails"
@@ -18148,96 +18353,9 @@
           {
             "$ref": "#/components/schemas/CronJobDetails"
           }
-        ],
-        "properties": {
-          "buildCommand": {
-            "type": "string"
-          },
-          "ipAllowList": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CidrBlockAndDescription"
-            }
-          },
-          "parentServer": {
-            "$ref": "#/components/schemas/Resource"
-          },
-          "publishPath": {
-            "type": "string"
-          },
-          "pullRequestPreviewsEnabled": {
-            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
-          },
-          "previews": {
-            "$ref": "#/components/schemas/Previews"
-          },
-          "url": {
-            "type": "string"
-          },
-          "buildPlan": {
-            "$ref": "#/components/schemas/BuildPlan"
-          },
-          "renderSubdomainPolicy": {
-            "$ref": "#/components/schemas/RenderSubdomainPolicy"
-          },
-          "autoscaling": {
-            "type": "string"
-          },
-          "cache": {
-            "$ref": "#/components/schemas/Cache"
-          },
-          "env": {
-            "$ref": "#/components/schemas/ServiceEnv"
-          },
-          "envSpecificDetails": {
-            "$ref": "#/components/schemas/EnvSpecificDetails"
-          },
-          "healthCheckPath": {
-            "type": "string"
-          },
-          "maintenanceMode": {
-            "$ref": "#/components/schemas/MaintenanceMode"
-          },
-          "numInstances": {
-            "type": "integer",
-            "description": "For a *manually* scaled service, this is the number of instances the service is scaled to. DOES NOT indicate the number of running instances for an *autoscaled* service."
-          },
-          "openPorts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ServerPort"
-            }
-          },
-          "plan": {
-            "$ref": "#/components/schemas/Plan"
-          },
-          "region": {
-            "$ref": "#/components/schemas/Region"
-          },
-          "runtime": {
-            "$ref": "#/components/schemas/ServiceRuntime"
-          },
-          "sshAddress": {
-            "type": "string",
-            "description": "The SSH address for the service. Only present for services that have SSH enabled."
-          },
-          "maxShutdownDelaySeconds": {
-            "maximum": 300,
-            "minimum": 1,
-            "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
-          },
-          "lastSuccessfulRunAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "schedule": {
-            "type": "string"
-          }
-        }
+        ]
       },
       "ServicePostServiceDetails": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/StaticSiteDetailsPost"
@@ -18254,87 +18372,9 @@
           {
             "$ref": "#/components/schemas/CronJobDetailsPost"
           }
-        ],
-        "properties": {
-          "buildCommand": {
-            "type": "string"
-          },
-          "headers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/HeaderInput"
-            }
-          },
-          "publishPath": {
-            "type": "string",
-            "description": "Defaults to \u0022public\u0022"
-          },
-          "pullRequestPreviewsEnabled": {
-            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
-          },
-          "previews": {
-            "$ref": "#/components/schemas/Previews"
-          },
-          "routes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RoutePost"
-            }
-          },
-          "renderSubdomainPolicy": {
-            "$ref": "#/components/schemas/RenderSubdomainPolicy"
-          },
-          "ipAllowList": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CidrBlockAndDescription"
-            }
-          },
-          "buildSourceId": {
-            "type": "string"
-          },
-          "autoscaling": {
-            "type": "string"
-          },
-          "disk": {
-            "$ref": "#/components/schemas/ServiceDisk"
-          },
-          "env": {
-            "$ref": "#/components/schemas/ServiceEnv"
-          },
-          "runtime": {
-            "$ref": "#/components/schemas/ServiceRuntime"
-          },
-          "healthCheckPath": {
-            "type": "string"
-          },
-          "maintenanceMode": {
-            "$ref": "#/components/schemas/MaintenanceMode"
-          },
-          "numInstances": {
-            "minimum": 1,
-            "type": "integer",
-            "description": "Defaults to 1"
-          },
-          "preDeployCommand": {
-            "type": "string"
-          },
-          "region": {
-            "$ref": "#/components/schemas/Region"
-          },
-          "maxShutdownDelaySeconds": {
-            "maximum": 300,
-            "minimum": 1,
-            "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
-          },
-          "schedule": {
-            "type": "string"
-          }
-        }
+        ]
       },
       "ServicePatchServiceDetails": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/StaticSiteDetailsPatch"
@@ -18351,57 +18391,7 @@
           {
             "$ref": "#/components/schemas/CronJobDetailsPatch"
           }
-        ],
-        "properties": {
-          "buildCommand": {
-            "type": "string"
-          },
-          "publishPath": {
-            "type": "string"
-          },
-          "pullRequestPreviewsEnabled": {
-            "$ref": "#/components/schemas/PullRequestPreviewsEnabled"
-          },
-          "previews": {
-            "$ref": "#/components/schemas/Previews"
-          },
-          "renderSubdomainPolicy": {
-            "$ref": "#/components/schemas/RenderSubdomainPolicy"
-          },
-          "ipAllowList": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CidrBlockAndDescription"
-            }
-          },
-          "envSpecificDetails": {
-            "$ref": "#/components/schemas/EnvSpecificDetailsPatch"
-          },
-          "healthCheckPath": {
-            "type": "string"
-          },
-          "maintenanceMode": {
-            "$ref": "#/components/schemas/MaintenanceMode"
-          },
-          "preDeployCommand": {
-            "type": "string"
-          },
-          "runtime": {
-            "$ref": "#/components/schemas/ServiceRuntime"
-          },
-          "maxShutdownDelaySeconds": {
-            "maximum": 300,
-            "minimum": 1,
-            "type": "integer",
-            "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal."
-          },
-          "cache": {
-            "$ref": "#/components/schemas/Cache"
-          },
-          "schedule": {
-            "type": "string"
-          }
-        }
+        ]
       },
       "EnvGroupAllOf2": {
         "required": [
@@ -19720,7 +19710,6 @@
           },
           "git": {
             "type": "string",
-            "additionalProperties": false,
             "description": "Present when the build source is currently build-based. Mutually exclusive with \u0060image\u0060.\n"
           },
           "image": {
@@ -20166,21 +20155,6 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "CreateTaskRequestInputBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateTaskRequestInputBranch1ValueItem"
-            },
-            "description": "Positional arguments passed to the task function"
-          }
-        }
-      },
       "ListBlueprints200ResponseSchema": {
         "type": "array",
         "items": {
@@ -20529,6 +20503,9 @@
         }
       },
       "GetCpu200ResponseSchema": {
+        "required": [
+          "items"
+        ],
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/GetCpu200ResponseSchemaItem"
@@ -20536,6 +20513,9 @@
         "description": "A collection of time series"
       },
       "ListApplicationFilterValues200ResponseSchema": {
+        "required": [
+          "items"
+        ],
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListApplicationFilterValues200ResponseSchemaItem"
@@ -20543,6 +20523,9 @@
         "description": "A collection of filter values for application metrics"
       },
       "ListHttpFilterValues200ResponseSchema": {
+        "required": [
+          "items"
+        ],
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListHttpFilterValues200ResponseSchemaItem"
@@ -20550,6 +20533,9 @@
         "description": "A collection of filter values for HTTP metrics"
       },
       "ListPathFilterValues200ResponseSchema": {
+        "required": [
+          "items"
+        ],
         "type": "array",
         "items": {
           "type": "string",
@@ -20836,12 +20822,20 @@
           "type": "string"
         }
       },
+      "UpdateEnvVarsForServiceRequestItem": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItemOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItemOneOf2"
+          }
+        ]
+      },
       "RetrieveEvent200ResponseDetails": {
-        "type": "object",
         "oneOf": [
           {
             "title": "Service Event Details",
-            "type": "object",
             "oneOf": [
               {
                 "$ref": "#/components/schemas/RetrieveEvent200ResponseDetailsServiceEventDetailsArtifactFetchFailed"
@@ -20994,7 +20988,6 @@
           },
           {
             "title": "Postgres Event Details",
-            "type": "object",
             "oneOf": [
               {
                 "title": "Postgres Available",
@@ -21069,7 +21062,6 @@
           },
           {
             "title": "Key Value Event Details",
-            "type": "object",
             "oneOf": [
               {
                 "title": "Key Value Available",
@@ -21087,29 +21079,58 @@
         ]
       },
       "CreateTaskRequestInput": {
-        "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/CreateTaskRequestInputBranch1"
+            "type": "array",
+            "items": {},
+            "description": "Positional arguments passed to the task function"
           },
           {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            },
-            "description": "Named parameters passed to the task function as keyword arguments"
+            "$ref": "#/components/schemas/CreateTaskRequestInputOneOf2"
           }
         ],
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateTaskRequestInputBranch1ValueItem"
-            },
-            "description": "Positional arguments passed to the task function"
-          }
-        },
         "description": "Input data for a task. Can be either an array (for positional arguments) or an object (for named parameters)."
+      },
+      "UpdateEnvVarsForServiceRequestRequestBodyItem": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItemOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItemOneOf2"
+          }
+        ]
+      },
+      "UpdateEnvVarsForServiceRequestItemOneOf1": {
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateEnvVarsForServiceRequestItemOneOf2": {
+        "required": [
+          "key",
+          "generateValue"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "generateValue": {
+            "type": "boolean",
+            "description": "If true, Render generates a strong random value for this environment variable on creation. Cannot be combined with \u0060value\u0060."
+          }
+        }
       },
       "RetrieveEvent200ResponseDetailsServiceEventDetailsArtifactFetchFailed": {
         "title": "Artifact Fetch Failed",
@@ -22003,7 +22024,11 @@
         "additionalProperties": {
           "type": "string"
         },
-        "description": "Additional context information about the event"
+        "description": "Additional context information about the event",
+        "example": {
+          "service": "srv-123456789",
+          "field": "env_vars"
+        }
       },
       "ValidateBlueprint200ResponseErrorsItem": {
         "required": [
@@ -22090,24 +22115,6 @@
           },
           "type": {
             "$ref": "#/components/schemas/RetrieveBlueprint200ResponseResourcesItemType"
-          }
-        }
-      },
-      "UpdateEnvVarsForServiceRequestItem": {
-        "required": [
-          "key"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string"
-          },
-          "value": {
-            "type": "string"
-          },
-          "generateValue": {
-            "type": "boolean",
-            "description": "If true, Render generates a strong random value for this environment variable on creation. Cannot be combined with \u0060value\u0060."
           }
         }
       },
@@ -22702,27 +22709,6 @@
         },
         "description": "A partial update to a workflow\u0027s build config. Every field is optional; omitted fields are left unchanged."
       },
-      "CreateTaskRequestInputBranch1ValueItem": {
-        "type": "object"
-      },
-      "UpdateEnvVarsForServiceRequestRequestBodyItem": {
-        "required": [
-          "key"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string"
-          },
-          "value": {
-            "type": "string"
-          },
-          "generateValue": {
-            "type": "boolean",
-            "description": "If true, Render generates a strong random value for this environment variable on creation. Cannot be combined with \u0060value\u0060."
-          }
-        }
-      },
       "UpdateSecretFilesForServiceRequestRequestBodyItem": {
         "required": [
           "name",
@@ -23308,7 +23294,6 @@
           "RevokeOAuthAccessEvent"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The type of event that occurred",
         "example": "CreateServerEvent",
         "x-ms-enum": {
@@ -23364,7 +23349,6 @@
           "error"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The status of the event",
         "example": "success",
         "x-ms-enum": {
@@ -23389,7 +23373,6 @@
           "system"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The type of actor that performed the action",
         "example": "user",
         "x-ms-enum": {
@@ -23418,7 +23401,6 @@
           "not_suspended"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ServiceSuspended",
           "modelAsString": false,
@@ -23441,7 +23423,6 @@
           "origin-controlled-all"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CacheProfile",
           "modelAsString": false,
@@ -23468,7 +23449,6 @@
           "checksPass"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Controls autodeploy behavior.\n\n- \u0060commit\u0060: Deploy each time a commit is pushed to the service\u0027s linked branch.\n- \u0060checksPass\u0060: Deploy each time a commit is pushed to the linked branch, but only after the commit\u0027s CI checks pass.\n- \u0060off\u0060: Disable autodeploys.\n",
         "x-ms-enum": {
           "name": "ServicePostAutoDeployTrigger",
@@ -23495,7 +23475,6 @@
           "team"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "OwnerType",
           "modelAsString": false,
@@ -23517,7 +23496,6 @@
           "inactive"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TeamMemberStatus",
           "modelAsString": false,
@@ -23547,7 +23525,6 @@
           "service_updated"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DeployTrigger",
           "modelAsString": false,
@@ -23601,7 +23578,6 @@
           "subdomain"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CustomDomainDomainType",
           "modelAsString": false,
@@ -23623,7 +23599,6 @@
           "unverified"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CustomDomainVerificationStatus",
           "modelAsString": false,
@@ -23645,7 +23620,6 @@
           "UDP"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ServerPortProtocol",
           "modelAsString": false,
@@ -23668,7 +23642,6 @@
           "automatic"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Defaults to \u0022off\u0022",
         "x-ms-enum": {
           "name": "PreviewsGeneration",
@@ -23744,7 +23717,6 @@
           "128c-1024g"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "PostgresPostInputPlan",
           "modelAsString": false,
@@ -23962,7 +23934,6 @@
           "not_suspended"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "PostgresSuspended",
           "modelAsString": false,
@@ -23984,7 +23955,6 @@
           "not_suspended"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "PostgresDetailSuspended",
           "modelAsString": false,
@@ -24008,7 +23978,6 @@
           "canceled"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CronJobRunStatus",
           "modelAsString": false,
@@ -24038,7 +24007,6 @@
           "dedicated"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "\u0060dedicated\u0060 if a dedicated IP set applies to the resource, \u0060shared\u0060 if its traffic originates from the shared Render IPs for its region.\n",
         "x-enum-varnames": [
           "OutboundIpsTypeShared",
@@ -24068,7 +24036,6 @@
           "success"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SyncWithCursorSyncState",
           "modelAsString": false,
@@ -24105,7 +24072,6 @@
           "error"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "A Blueprint has status \u0060created\u0060 until its first Sync is approved.",
         "x-ms-enum": {
           "name": "RetrieveBlueprint200ResponseStatus",
@@ -24141,7 +24107,6 @@
           "all"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "PatchOwnerNotificationSettingsRequestNotificationsToSend",
           "modelAsString": false,
@@ -24168,7 +24133,6 @@
           "true"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "PatchServiceNotificationOverridesRequestPreviewNotificationsEnabled",
           "modelAsString": false,
@@ -24196,7 +24160,6 @@
           "all"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "PatchServiceNotificationOverridesRequestNotificationsToSend",
           "modelAsString": false,
@@ -24226,7 +24189,6 @@
           "do_not_clear"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "If \u0060clear\u0060, Render clears the service\u0027s build cache before deploying. This can be useful if you\u0027re experiencing issues with your build.",
         "x-ms-enum": {
           "name": "CreateDeployRequestClearCache",
@@ -24315,7 +24277,6 @@
           "key_value_unhealthy"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "RetrieveEvent200ResponseType",
           "modelAsString": false,
@@ -24601,7 +24562,6 @@
           "drop"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Whether to send logs or drop them.",
         "x-ms-enum": {
           "name": "UpdateOwnerLogStreamRequestPreview",
@@ -24631,7 +24591,6 @@
           "CUSTOM"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Provider to send metrics to",
         "x-ms-enum": {
           "name": "UpsertOwnerMetricsStreamRequestProvider",
@@ -24683,7 +24642,6 @@
           "NOT_AVAILABLE"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Availability of point-in-time recovery.",
         "x-ms-enum": {
           "name": "RetrievePostgresRecoveryInfo200ResponseRecoveryStatus",
@@ -24713,7 +24671,6 @@
           "virginia"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Defaults to \u0022oregon\u0022",
         "x-ms-enum": {
           "name": "CreateWorkflowRequestRegion",
@@ -24749,7 +24706,6 @@
           "checksPass"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Controls autodeploy behavior. \u0022commit\u0022 deploys when a commit is pushed to the branch. \u0022checksPass\u0022 waits for CI checks to pass before deploying. \u0022off\u0022 disables autodeploy.",
         "x-ms-enum": {
           "name": "CreateWorkflowRequestAutoDeployTrigger",
@@ -24780,7 +24736,6 @@
           "ready"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GetWorkflowVersion200ResponseStatus",
           "modelAsString": false,
@@ -24823,7 +24778,6 @@
           "paused"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GetTaskRun200ResponseStatus",
           "modelAsString": false,
@@ -24866,7 +24820,6 @@
           "canceled"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEndedBuildStatus",
           "modelAsString": false,
@@ -24894,7 +24847,6 @@
           "unsuccessful"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "RetrieveEvent200ResponseDetailsServiceEventDetailsCronJobRunEndedStatus",
           "modelAsString": false,
@@ -24933,7 +24885,6 @@
           "workflow"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "type of the resource (ex. web_service or postgres)",
         "x-ms-enum": {
           "name": "RetrieveBlueprint200ResponseResourcesItemType",
@@ -25005,7 +24956,6 @@
           "blocked"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The name of the log label",
         "x-ms-enum": {
           "name": "SubscribeLogs101ResponseLabelsItemName",
@@ -25079,7 +25029,6 @@
           "instance"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "InstanceFilter",
           "modelAsString": false,
@@ -25097,7 +25046,6 @@
           "statusCode"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListHttpFilterValues200ResponseItemFilter",
           "modelAsString": false,
@@ -25124,7 +25072,6 @@
           "rust"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Build runtime for the build source. Static sites are not supported for build sources.\n",
         "x-ms-enum": {
           "name": "CreateBuildSourceRequestGitRuntime",
@@ -25170,7 +25117,6 @@
           "virginia"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Defaults to \u0022oregon\u0022",
         "x-ms-enum": {
           "name": "CreateBuildSourceRequestGitRegion",
@@ -25210,7 +25156,6 @@
           "rust"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Build runtime for the build source. Static sites are not supported for build sources.\n",
         "x-ms-enum": {
           "name": "UpdateBuildSourceRequestGitRuntime",
@@ -25256,7 +25201,6 @@
           "virginia"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Region for the build. Honored only when this PATCH performs an image\u2192build transition; rejected on a pure build patch (the cluster is pinned for an existing build), and must match the prior build region when switching back to build after time as an external image. Defaults to \u0022oregon\u0022 for first-time builds.\n",
         "x-ms-enum": {
           "name": "UpdateBuildSourceRequestGitRegion",
@@ -25295,7 +25239,6 @@
           "unknown"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TriggerBuildSourceBuild201ResponseBuildRunStatus",
           "modelAsString": false,
@@ -25338,7 +25281,6 @@
           "rust"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TriggerBuildSourceBuild201ResponseBuildRunRuntime",
           "modelAsString": false,
@@ -25383,7 +25325,6 @@
           "ruby"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The runtime environment for the workflow (e.g., node, python, etc.).",
         "x-ms-enum": {
           "name": "UpdateWorkflowRequestBuildConfigRuntime",
@@ -25421,7 +25362,6 @@
           "privatelink"
         ],
         "type": "string",
-        "additionalProperties": false,
         "example": "http",
         "x-ms-enum": {
           "name": "GetBandwidthSources200ResponseDataItemLabelsTrafficSource",
@@ -25456,7 +25396,6 @@
           "not_suspended"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SuspendedParamItem",
           "modelAsString": false,
@@ -25520,7 +25459,6 @@
           "auto_deploy_enabled"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "EventTypeParamAnyOf1",
           "modelAsString": false,
@@ -25710,7 +25648,6 @@
           "rewrite"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListRoutesTypeParameterItem",
           "modelAsString": false,
@@ -25732,7 +25669,6 @@
           "subdomain"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListCustomDomainsDomainTypeParameter",
           "modelAsString": false,
@@ -25754,7 +25690,6 @@
           "unverified"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListCustomDomainsVerificationStatusParameter",
           "modelAsString": false,
@@ -25779,7 +25714,6 @@
           "canceled"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListJobStatusParameterItem",
           "modelAsString": false,
@@ -25813,7 +25747,6 @@
           "backward"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListLogsDirectionParameter",
           "modelAsString": false,
@@ -25839,7 +25772,6 @@
           "type"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListLogsValuesLabelParameter",
           "modelAsString": false,
@@ -25877,7 +25809,6 @@
           "drop"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Whether to send logs or drop them.",
         "x-ms-enum": {
           "name": "ListResourceLogStreamsSettingParameterItem",
@@ -25901,7 +25832,6 @@
           "MIN"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MetricsCpuAggregationMethod",
           "modelAsString": false,
@@ -25927,7 +25857,6 @@
           "host"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MetricsHttpRequestsAggregateBy",
           "modelAsString": false,
@@ -25949,7 +25878,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MetricsTaskRunsCompletedState",
           "modelAsString": false,
@@ -25970,7 +25898,6 @@
           "state"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "StateAggregateBy",
           "modelAsString": false,
@@ -25992,7 +25919,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListMaintenanceStateParameterItem",
           "modelAsString": false,
@@ -26029,7 +25955,6 @@
           "text/event-stream"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TextEventStreamAccept",
           "modelAsString": false,
@@ -26040,6 +25965,11 @@
             }
           ]
         }
+      },
+      "CreateTaskRequestInputOneOf2": {
+        "type": "object",
+        "additionalProperties": {},
+        "description": "Named parameters passed to the task function as keyword arguments"
       }
     },
     "responses": {
@@ -26582,11 +26512,235 @@
         "in": "query",
         "description": "The type of event to filter to",
         "schema": {
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/EventTypeParamAnyOf1"
-            }
-          ]
+          "enum": [
+            "artifact_fetch_failed",
+            "artifact_source_changed",
+            "autoscaling_config_changed",
+            "autoscaling_ended",
+            "autoscaling_started",
+            "branch_deleted",
+            "build_ended",
+            "build_started",
+            "commit_ignored",
+            "cron_job_run_ended",
+            "cron_job_run_started",
+            "deploy_ended",
+            "deploy_started",
+            "disk_created",
+            "disk_updated",
+            "disk_deleted",
+            "disk_snapshot_restored",
+            "service_disk_usage_high",
+            "service_disk_usage_recovered",
+            "image_pull_failed",
+            "initial_deploy_hook_ended",
+            "initial_deploy_hook_started",
+            "instance_count_changed",
+            "job_run_ended",
+            "maintenance_mode_enabled",
+            "maintenance_mode_uri_updated",
+            "maintenance_ended",
+            "maintenance_started",
+            "pipeline_minutes_exhausted",
+            "plan_changed",
+            "pre_deploy_ended",
+            "pre_deploy_started",
+            "server_available",
+            "server_failed",
+            "server_hardware_failure",
+            "server_restarted",
+            "service_resumed",
+            "service_suspended",
+            "suspender_added",
+            "suspender_removed",
+            "zero_downtime_redeploy_ended",
+            "zero_downtime_redeploy_started",
+            "auto_deploy_disabled",
+            "auto_deploy_enabled"
+          ],
+          "type": "string",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "artifact_fetch_failed",
+                "name": "ArtifactFetchFailed"
+              },
+              {
+                "value": "artifact_source_changed",
+                "name": "ArtifactSourceChanged"
+              },
+              {
+                "value": "autoscaling_config_changed",
+                "name": "AutoscalingConfigChanged"
+              },
+              {
+                "value": "autoscaling_ended",
+                "name": "AutoscalingEnded"
+              },
+              {
+                "value": "autoscaling_started",
+                "name": "AutoscalingStarted"
+              },
+              {
+                "value": "branch_deleted",
+                "name": "BranchDeleted"
+              },
+              {
+                "value": "build_ended",
+                "name": "BuildEnded"
+              },
+              {
+                "value": "build_started",
+                "name": "BuildStarted"
+              },
+              {
+                "value": "commit_ignored",
+                "name": "CommitIgnored"
+              },
+              {
+                "value": "cron_job_run_ended",
+                "name": "CronJobRunEnded"
+              },
+              {
+                "value": "cron_job_run_started",
+                "name": "CronJobRunStarted"
+              },
+              {
+                "value": "deploy_ended",
+                "name": "DeployEnded"
+              },
+              {
+                "value": "deploy_started",
+                "name": "DeployStarted"
+              },
+              {
+                "value": "disk_created",
+                "name": "DiskCreated"
+              },
+              {
+                "value": "disk_updated",
+                "name": "DiskUpdated"
+              },
+              {
+                "value": "disk_deleted",
+                "name": "DiskDeleted"
+              },
+              {
+                "value": "disk_snapshot_restored",
+                "name": "DiskSnapshotRestored"
+              },
+              {
+                "value": "service_disk_usage_high",
+                "name": "ServiceDiskUsageHigh"
+              },
+              {
+                "value": "service_disk_usage_recovered",
+                "name": "ServiceDiskUsageRecovered"
+              },
+              {
+                "value": "image_pull_failed",
+                "name": "ImagePullFailed"
+              },
+              {
+                "value": "initial_deploy_hook_ended",
+                "name": "InitialDeployHookEnded"
+              },
+              {
+                "value": "initial_deploy_hook_started",
+                "name": "InitialDeployHookStarted"
+              },
+              {
+                "value": "instance_count_changed",
+                "name": "InstanceCountChanged"
+              },
+              {
+                "value": "job_run_ended",
+                "name": "JobRunEnded"
+              },
+              {
+                "value": "maintenance_mode_enabled",
+                "name": "MaintenanceModeEnabled"
+              },
+              {
+                "value": "maintenance_mode_uri_updated",
+                "name": "MaintenanceModeUriUpdated"
+              },
+              {
+                "value": "maintenance_ended",
+                "name": "MaintenanceEnded"
+              },
+              {
+                "value": "maintenance_started",
+                "name": "MaintenanceStarted"
+              },
+              {
+                "value": "pipeline_minutes_exhausted",
+                "name": "PipelineMinutesExhausted"
+              },
+              {
+                "value": "plan_changed",
+                "name": "PlanChanged"
+              },
+              {
+                "value": "pre_deploy_ended",
+                "name": "PreDeployEnded"
+              },
+              {
+                "value": "pre_deploy_started",
+                "name": "PreDeployStarted"
+              },
+              {
+                "value": "server_available",
+                "name": "ServerAvailable"
+              },
+              {
+                "value": "server_failed",
+                "name": "ServerFailed"
+              },
+              {
+                "value": "server_hardware_failure",
+                "name": "ServerHardwareFailure"
+              },
+              {
+                "value": "server_restarted",
+                "name": "ServerRestarted"
+              },
+              {
+                "value": "service_resumed",
+                "name": "ServiceResumed"
+              },
+              {
+                "value": "service_suspended",
+                "name": "ServiceSuspended"
+              },
+              {
+                "value": "suspender_added",
+                "name": "SuspenderAdded"
+              },
+              {
+                "value": "suspender_removed",
+                "name": "SuspenderRemoved"
+              },
+              {
+                "value": "zero_downtime_redeploy_ended",
+                "name": "ZeroDowntimeRedeployEnded"
+              },
+              {
+                "value": "zero_downtime_redeploy_started",
+                "name": "ZeroDowntimeRedeployStarted"
+              },
+              {
+                "value": "auto_deploy_disabled",
+                "name": "AutoDeployDisabled"
+              },
+              {
+                "value": "auto_deploy_enabled",
+                "name": "AutoDeployEnabled"
+              }
+            ]
+          }
         }
       }
     },

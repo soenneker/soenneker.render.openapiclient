@@ -84,6 +84,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public PrivateServiceDetailsPost()
         {
             AdditionalData = new Dictionary<string, object>();
+            MaxShutdownDelaySeconds = 30;
             NumInstances = 1;
         }
         /// <summary>

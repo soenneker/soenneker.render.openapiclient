@@ -102,6 +102,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public PrivateServiceDetails()
         {
             AdditionalData = new Dictionary<string, object>();
+            MaxShutdownDelaySeconds = 30;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

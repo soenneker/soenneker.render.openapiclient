@@ -7,38 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf1"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class UpdateEnvVarsForServiceRequestRequestBodyItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class UpdateEnvVarsForServiceRequestRequestBodyItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>If true, Render generates a strong random value for this environment variable on creation. Cannot be combined with `value`.</summary>
-        public bool? GenerateValue { get; set; }
-        /// <summary>The key property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf1? UpdateEnvVarsForServiceRequestItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Key { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf1 UpdateEnvVarsForServiceRequestItemOneOf1 { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf2? UpdateEnvVarsForServiceRequestItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf2 UpdateEnvVarsForServiceRequestItemOneOf2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem"/> and sets the default values.
-        /// </summary>
-        public UpdateEnvVarsForServiceRequestRequestBodyItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +37,17 @@ namespace Soenneker.Render.OpenApiClient.Models
         public static global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem();
+            if("UpdateEnvVarsForServiceRequestItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateEnvVarsForServiceRequestItemOneOf1 = new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf1();
+            }
+            else if("UpdateEnvVarsForServiceRequestItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateEnvVarsForServiceRequestItemOneOf2 = new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,12 +55,15 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(UpdateEnvVarsForServiceRequestItemOneOf1 != null)
             {
-                { "generateValue", n => { GenerateValue = n.GetBoolValue(); } },
-                { "key", n => { Key = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
-            };
+                return UpdateEnvVarsForServiceRequestItemOneOf1.GetFieldDeserializers();
+            }
+            else if(UpdateEnvVarsForServiceRequestItemOneOf2 != null)
+            {
+                return UpdateEnvVarsForServiceRequestItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -69,10 +72,14 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("generateValue", GenerateValue);
-            writer.WriteStringValue("key", Key);
-            writer.WriteStringValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(UpdateEnvVarsForServiceRequestItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf1>(null, UpdateEnvVarsForServiceRequestItemOneOf1);
+            }
+            else if(UpdateEnvVarsForServiceRequestItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf2>(null, UpdateEnvVarsForServiceRequestItemOneOf2);
+            }
         }
     }
 }

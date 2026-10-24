@@ -17,10 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.RetrieveEvent200ResponseDetails? Details { get; set; }
+        public UntypedNode? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.RetrieveEvent200ResponseDetails Details { get; set; }
+        public UntypedNode Details { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.RetrieveEvent200ResponseDetails>(global::Soenneker.Render.OpenApiClient.Models.RetrieveEvent200ResponseDetails.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "serviceId", n => { ServiceId = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.RetrieveEvent200ResponseDetails>("details", Details);
+            writer.WriteObjectValue<UntypedNode>("details", Details);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("serviceId", ServiceId);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
