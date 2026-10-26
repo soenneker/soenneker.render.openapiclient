@@ -63,9 +63,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         ChangeWorkspacePrivacyEvent,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CreateArtifactSourceEvent")]
+        [EnumMember(Value = "CreateBuildSourceEvent")]
         #pragma warning disable CS1591
-        CreateArtifactSourceEvent,
+        CreateBuildSourceEvent,
         #pragma warning restore CS1591
         [EnumMember(Value = "CreateCronJobEvent")]
         #pragma warning disable CS1591

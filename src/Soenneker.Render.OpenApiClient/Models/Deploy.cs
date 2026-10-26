@@ -14,6 +14,14 @@ namespace Soenneker.Render.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ID of the build this deploy shipped. Only present for deploys of a build from a Build Source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildId { get; set; }
+#nullable restore
+#else
+        public string BuildId { get; set; }
+#endif
         /// <summary>The commit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +83,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "buildId", n => { BuildId = n.GetStringValue(); } },
                 { "commit", n => { Commit = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.DeployCommit>(global::Soenneker.Render.OpenApiClient.Models.DeployCommit.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "finishedAt", n => { FinishedAt = n.GetDateTimeOffsetValue(); } },
@@ -93,6 +102,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("buildId", BuildId);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.DeployCommit>("commit", Commit);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteDateTimeOffsetValue("finishedAt", FinishedAt);
