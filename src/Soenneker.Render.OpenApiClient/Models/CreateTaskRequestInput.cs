@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputAnyOf2"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateTaskRequestInput : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputAnyOf2? CreateTaskRequestInputAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputAnyOf2 CreateTaskRequestInputAnyOf2 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +28,6 @@ namespace Soenneker.Render.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1 CreateTaskRequestInputMember1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2? CreateTaskRequestInputOneOf2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2 CreateTaskRequestInputOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,12 +37,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         public static global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInput();
-            if("CreateTaskRequestInputOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CreateTaskRequestInputOneOf2 = new global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2();
-            }
+            result.CreateTaskRequestInputAnyOf2 = new global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputAnyOf2();
+            result.CreateTaskRequestInputMember1 = new global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1();
             return result;
         }
         /// <summary>
@@ -51,13 +48,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateTaskRequestInputMember1 != null)
+            if(CreateTaskRequestInputAnyOf2 != null || CreateTaskRequestInputMember1 != null)
             {
-                return CreateTaskRequestInputMember1.GetFieldDeserializers();
-            }
-            else if(CreateTaskRequestInputOneOf2 != null)
-            {
-                return CreateTaskRequestInputOneOf2.GetFieldDeserializers();
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateTaskRequestInputAnyOf2, CreateTaskRequestInputMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -68,14 +61,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CreateTaskRequestInputMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputMember1>(null, CreateTaskRequestInputMember1);
-            }
-            else if(CreateTaskRequestInputOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputOneOf2>(null, CreateTaskRequestInputOneOf2);
-            }
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateTaskRequestInputAnyOf2>(null, CreateTaskRequestInputAnyOf2, CreateTaskRequestInputMember1);
         }
     }
 }

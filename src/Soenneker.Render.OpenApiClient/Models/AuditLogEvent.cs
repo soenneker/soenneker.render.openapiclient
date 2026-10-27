@@ -67,6 +67,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         CreateBuildSourceEvent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "DeleteBuildSourceEvent")]
+        #pragma warning disable CS1591
+        DeleteBuildSourceEvent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CreateCronJobEvent")]
         #pragma warning disable CS1591
         CreateCronJobEvent,
