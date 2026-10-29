@@ -219,6 +219,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         JoinTeamEvent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "LinkBuildSourceEnvGroupEvent")]
+        #pragma warning disable CS1591
+        LinkBuildSourceEnvGroupEvent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "LoginEvent")]
         #pragma warning disable CS1591
         LoginEvent,
@@ -286,6 +290,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         [EnumMember(Value = "SuspendServiceEvent")]
         #pragma warning disable CS1591
         SuspendServiceEvent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UnlinkBuildSourceEnvGroupEvent")]
+        #pragma warning disable CS1591
+        UnlinkBuildSourceEnvGroupEvent,
         #pragma warning restore CS1591
         [EnumMember(Value = "UpdateEnvVarsEvent")]
         #pragma warning disable CS1591
