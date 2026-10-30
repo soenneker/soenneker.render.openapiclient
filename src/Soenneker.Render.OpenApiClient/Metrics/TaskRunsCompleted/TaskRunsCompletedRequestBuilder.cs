@@ -74,7 +74,7 @@ namespace Soenneker.Render.OpenApiClient.Metrics.TaskRunsCompleted
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Metrics.TaskRunsCompleted.TaskRunsCompletedRequestBuilder.TaskRunsCompletedRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.render.com/v1", "/metrics/task-runs-completed", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

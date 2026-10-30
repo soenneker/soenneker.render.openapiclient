@@ -17,27 +17,48 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autoscaling") is { } nullNodeAutoscaling && nullNodeAutoscaling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autoscaling = null;
-            if (parseNode.GetChildNode("buildPlan") is { } nullNodeBuildPlan && nullNodeBuildPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildPlan = null;
-            if (parseNode.GetChildNode("cache") is { } nullNodeCache && nullNodeCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cache = null;
-            if (parseNode.GetChildNode("disk") is { } nullNodeDisk && nullNodeDisk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disk = null;
-            if (parseNode.GetChildNode("env") is { } nullNodeEnv && nullNodeEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Env = null;
-            if (parseNode.GetChildNode("envSpecificDetails") is { } nullNodeEnvSpecificDetails && nullNodeEnvSpecificDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvSpecificDetails = null;
-            if (parseNode.GetChildNode("healthCheckPath") is { } nullNodeHealthCheckPath && nullNodeHealthCheckPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheckPath = null;
-            if (parseNode.GetChildNode("ipAllowList") is { } nullNodeIpAllowList && nullNodeIpAllowList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpAllowList = null;
-            if (parseNode.GetChildNode("maintenanceMode") is { } nullNodeMaintenanceMode && nullNodeMaintenanceMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintenanceMode = null;
-            if (parseNode.GetChildNode("maxShutdownDelaySeconds") is { } nullNodeMaxShutdownDelaySeconds && nullNodeMaxShutdownDelaySeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxShutdownDelaySeconds = null;
-            if (parseNode.GetChildNode("numInstances") is { } nullNodeNumInstances && nullNodeNumInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumInstances = null;
-            if (parseNode.GetChildNode("openPorts") is { } nullNodeOpenPorts && nullNodeOpenPorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenPorts = null;
-            if (parseNode.GetChildNode("parentServer") is { } nullNodeParentServer && nullNodeParentServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentServer = null;
-            if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
-            if (parseNode.GetChildNode("previews") is { } nullNodePreviews && nullNodePreviews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previews = null;
-            if (parseNode.GetChildNode("pullRequestPreviewsEnabled") is { } nullNodePullRequestPreviewsEnabled && nullNodePullRequestPreviewsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequestPreviewsEnabled = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("renderSubdomainPolicy") is { } nullNodeRenderSubdomainPolicy && nullNodeRenderSubdomainPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderSubdomainPolicy = null;
-            if (parseNode.GetChildNode("runtime") is { } nullNodeRuntime && nullNodeRuntime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Runtime = null;
-            if (parseNode.GetChildNode("sshAddress") is { } nullNodeSshAddress && nullNodeSshAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SshAddress = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("autoscaling") is null) { _explicitNullValueAutoscaling = default!; _explicitNullProperties?.Remove("autoscaling"); }
+            else if (parseNode.GetChildNode("autoscaling") is { } nullNodeAutoscaling && nullNodeAutoscaling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autoscaling = null;
+            if (parseNode.GetChildNode("buildPlan") is null) { _explicitNullValueBuildPlan = default!; _explicitNullProperties?.Remove("buildPlan"); }
+            else if (parseNode.GetChildNode("buildPlan") is { } nullNodeBuildPlan && nullNodeBuildPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildPlan = null;
+            if (parseNode.GetChildNode("cache") is null) { _explicitNullValueCache = default!; _explicitNullProperties?.Remove("cache"); }
+            else if (parseNode.GetChildNode("cache") is { } nullNodeCache && nullNodeCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cache = null;
+            if (parseNode.GetChildNode("disk") is null) { _explicitNullValueDisk = default!; _explicitNullProperties?.Remove("disk"); }
+            else if (parseNode.GetChildNode("disk") is { } nullNodeDisk && nullNodeDisk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disk = null;
+            if (parseNode.GetChildNode("env") is null) { _explicitNullValueEnv = default!; _explicitNullProperties?.Remove("env"); }
+            else if (parseNode.GetChildNode("env") is { } nullNodeEnv && nullNodeEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Env = null;
+            if (parseNode.GetChildNode("envSpecificDetails") is null) { _explicitNullValueEnvSpecificDetails = default!; _explicitNullProperties?.Remove("envSpecificDetails"); }
+            else if (parseNode.GetChildNode("envSpecificDetails") is { } nullNodeEnvSpecificDetails && nullNodeEnvSpecificDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvSpecificDetails = null;
+            if (parseNode.GetChildNode("healthCheckPath") is null) { _explicitNullValueHealthCheckPath = default!; _explicitNullProperties?.Remove("healthCheckPath"); }
+            else if (parseNode.GetChildNode("healthCheckPath") is { } nullNodeHealthCheckPath && nullNodeHealthCheckPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthCheckPath = null;
+            if (parseNode.GetChildNode("ipAllowList") is null) { _explicitNullValueIpAllowList = default!; _explicitNullProperties?.Remove("ipAllowList"); }
+            else if (parseNode.GetChildNode("ipAllowList") is { } nullNodeIpAllowList && nullNodeIpAllowList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpAllowList = null;
+            if (parseNode.GetChildNode("maintenanceMode") is null) { _explicitNullValueMaintenanceMode = default!; _explicitNullProperties?.Remove("maintenanceMode"); }
+            else if (parseNode.GetChildNode("maintenanceMode") is { } nullNodeMaintenanceMode && nullNodeMaintenanceMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintenanceMode = null;
+            if (parseNode.GetChildNode("maxShutdownDelaySeconds") is null) { _explicitNullValueMaxShutdownDelaySeconds = default!; _explicitNullProperties?.Remove("maxShutdownDelaySeconds"); }
+            else if (parseNode.GetChildNode("maxShutdownDelaySeconds") is { } nullNodeMaxShutdownDelaySeconds && nullNodeMaxShutdownDelaySeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxShutdownDelaySeconds = null;
+            if (parseNode.GetChildNode("numInstances") is null) { _explicitNullValueNumInstances = default!; _explicitNullProperties?.Remove("numInstances"); }
+            else if (parseNode.GetChildNode("numInstances") is { } nullNodeNumInstances && nullNodeNumInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumInstances = null;
+            if (parseNode.GetChildNode("openPorts") is null) { _explicitNullValueOpenPorts = default!; _explicitNullProperties?.Remove("openPorts"); }
+            else if (parseNode.GetChildNode("openPorts") is { } nullNodeOpenPorts && nullNodeOpenPorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenPorts = null;
+            if (parseNode.GetChildNode("parentServer") is null) { _explicitNullValueParentServer = default!; _explicitNullProperties?.Remove("parentServer"); }
+            else if (parseNode.GetChildNode("parentServer") is { } nullNodeParentServer && nullNodeParentServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentServer = null;
+            if (parseNode.GetChildNode("plan") is null) { _explicitNullValuePlan = default!; _explicitNullProperties?.Remove("plan"); }
+            else if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+            if (parseNode.GetChildNode("previews") is null) { _explicitNullValuePreviews = default!; _explicitNullProperties?.Remove("previews"); }
+            else if (parseNode.GetChildNode("previews") is { } nullNodePreviews && nullNodePreviews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previews = null;
+            if (parseNode.GetChildNode("pullRequestPreviewsEnabled") is null) { _explicitNullValuePullRequestPreviewsEnabled = default!; _explicitNullProperties?.Remove("pullRequestPreviewsEnabled"); }
+            else if (parseNode.GetChildNode("pullRequestPreviewsEnabled") is { } nullNodePullRequestPreviewsEnabled && nullNodePullRequestPreviewsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequestPreviewsEnabled = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("renderSubdomainPolicy") is null) { _explicitNullValueRenderSubdomainPolicy = default!; _explicitNullProperties?.Remove("renderSubdomainPolicy"); }
+            else if (parseNode.GetChildNode("renderSubdomainPolicy") is { } nullNodeRenderSubdomainPolicy && nullNodeRenderSubdomainPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderSubdomainPolicy = null;
+            if (parseNode.GetChildNode("runtime") is null) { _explicitNullValueRuntime = default!; _explicitNullProperties?.Remove("runtime"); }
+            else if (parseNode.GetChildNode("runtime") is { } nullNodeRuntime && nullNodeRuntime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Runtime = null;
+            if (parseNode.GetChildNode("sshAddress") is null) { _explicitNullValueSshAddress = default!; _explicitNullProperties?.Remove("sshAddress"); }
+            else if (parseNode.GetChildNode("sshAddress") is { } nullNodeSshAddress && nullNodeSshAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SshAddress = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,150 +66,150 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The autoscaling property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Autoscaling { get => _explicitNullValueAutoscaling; set { _explicitNullValueAutoscaling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoscaling"); else _explicitNullProperties?.Remove("autoscaling"); } }
+        public string? Autoscaling { get => _explicitNullValueAutoscaling; set { _explicitNullValueAutoscaling = value; AdditionalData?.Remove("autoscaling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoscaling"); else _explicitNullProperties?.Remove("autoscaling"); } }
         private string? _explicitNullValueAutoscaling = default!;
 #nullable restore
 #else
-        public string Autoscaling { get => _explicitNullValueAutoscaling; set { _explicitNullValueAutoscaling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoscaling"); else _explicitNullProperties?.Remove("autoscaling"); } }
+        public string Autoscaling { get => _explicitNullValueAutoscaling; set { _explicitNullValueAutoscaling = value; AdditionalData?.Remove("autoscaling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoscaling"); else _explicitNullProperties?.Remove("autoscaling"); } }
         private string _explicitNullValueAutoscaling = default!;
 #endif
         /// <summary>The buildPlan property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.BuildPlan? BuildPlan { get => _explicitNullValueBuildPlan; set { _explicitNullValueBuildPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildPlan"); else _explicitNullProperties?.Remove("buildPlan"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.BuildPlan? BuildPlan { get => _explicitNullValueBuildPlan; set { _explicitNullValueBuildPlan = value; AdditionalData?.Remove("buildPlan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildPlan"); else _explicitNullProperties?.Remove("buildPlan"); } }
         private global::Soenneker.Render.OpenApiClient.Models.BuildPlan? _explicitNullValueBuildPlan = default!;
         /// <summary>The cache property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.Cache? Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Cache? Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; AdditionalData?.Remove("cache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Cache? _explicitNullValueCache = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.Cache Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Cache Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; AdditionalData?.Remove("cache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Cache _explicitNullValueCache = default!;
 #endif
         /// <summary>The disk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk? Disk { get => _explicitNullValueDisk; set { _explicitNullValueDisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk"); else _explicitNullProperties?.Remove("disk"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk? Disk { get => _explicitNullValueDisk; set { _explicitNullValueDisk = value; AdditionalData?.Remove("disk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk"); else _explicitNullProperties?.Remove("disk"); } }
         private global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk? _explicitNullValueDisk = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk Disk { get => _explicitNullValueDisk; set { _explicitNullValueDisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk"); else _explicitNullProperties?.Remove("disk"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk Disk { get => _explicitNullValueDisk; set { _explicitNullValueDisk = value; AdditionalData?.Remove("disk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk"); else _explicitNullProperties?.Remove("disk"); } }
         private global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk _explicitNullValueDisk = default!;
 #endif
         /// <summary>This field has been deprecated, runtime should be used in its place.</summary>
         [Obsolete("")]
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceEnv? Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceEnv? Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; AdditionalData?.Remove("env"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
         private global::Soenneker.Render.OpenApiClient.Models.ServiceEnv? _explicitNullValueEnv = default!;
         /// <summary>The envSpecificDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails? EnvSpecificDetails { get => _explicitNullValueEnvSpecificDetails; set { _explicitNullValueEnvSpecificDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envSpecificDetails"); else _explicitNullProperties?.Remove("envSpecificDetails"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails? EnvSpecificDetails { get => _explicitNullValueEnvSpecificDetails; set { _explicitNullValueEnvSpecificDetails = value; AdditionalData?.Remove("envSpecificDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envSpecificDetails"); else _explicitNullProperties?.Remove("envSpecificDetails"); } }
         private global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails? _explicitNullValueEnvSpecificDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails EnvSpecificDetails { get => _explicitNullValueEnvSpecificDetails; set { _explicitNullValueEnvSpecificDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envSpecificDetails"); else _explicitNullProperties?.Remove("envSpecificDetails"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails EnvSpecificDetails { get => _explicitNullValueEnvSpecificDetails; set { _explicitNullValueEnvSpecificDetails = value; AdditionalData?.Remove("envSpecificDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envSpecificDetails"); else _explicitNullProperties?.Remove("envSpecificDetails"); } }
         private global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails _explicitNullValueEnvSpecificDetails = default!;
 #endif
         /// <summary>The healthCheckPath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HealthCheckPath { get => _explicitNullValueHealthCheckPath; set { _explicitNullValueHealthCheckPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthCheckPath"); else _explicitNullProperties?.Remove("healthCheckPath"); } }
+        public string? HealthCheckPath { get => _explicitNullValueHealthCheckPath; set { _explicitNullValueHealthCheckPath = value; AdditionalData?.Remove("healthCheckPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthCheckPath"); else _explicitNullProperties?.Remove("healthCheckPath"); } }
         private string? _explicitNullValueHealthCheckPath = default!;
 #nullable restore
 #else
-        public string HealthCheckPath { get => _explicitNullValueHealthCheckPath; set { _explicitNullValueHealthCheckPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthCheckPath"); else _explicitNullProperties?.Remove("healthCheckPath"); } }
+        public string HealthCheckPath { get => _explicitNullValueHealthCheckPath; set { _explicitNullValueHealthCheckPath = value; AdditionalData?.Remove("healthCheckPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthCheckPath"); else _explicitNullProperties?.Remove("healthCheckPath"); } }
         private string _explicitNullValueHealthCheckPath = default!;
 #endif
         /// <summary>The ipAllowList property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>? IpAllowList { get => _explicitNullValueIpAllowList; set { _explicitNullValueIpAllowList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAllowList"); else _explicitNullProperties?.Remove("ipAllowList"); } }
+        public List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>? IpAllowList { get => _explicitNullValueIpAllowList; set { _explicitNullValueIpAllowList = value; AdditionalData?.Remove("ipAllowList"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAllowList"); else _explicitNullProperties?.Remove("ipAllowList"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>? _explicitNullValueIpAllowList = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription> IpAllowList { get => _explicitNullValueIpAllowList; set { _explicitNullValueIpAllowList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAllowList"); else _explicitNullProperties?.Remove("ipAllowList"); } }
+        public List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription> IpAllowList { get => _explicitNullValueIpAllowList; set { _explicitNullValueIpAllowList = value; AdditionalData?.Remove("ipAllowList"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAllowList"); else _explicitNullProperties?.Remove("ipAllowList"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription> _explicitNullValueIpAllowList = default!;
 #endif
         /// <summary>The maintenanceMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.MaintenanceMode? MaintenanceMode { get => _explicitNullValueMaintenanceMode; set { _explicitNullValueMaintenanceMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenanceMode"); else _explicitNullProperties?.Remove("maintenanceMode"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.MaintenanceMode? MaintenanceMode { get => _explicitNullValueMaintenanceMode; set { _explicitNullValueMaintenanceMode = value; AdditionalData?.Remove("maintenanceMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenanceMode"); else _explicitNullProperties?.Remove("maintenanceMode"); } }
         private global::Soenneker.Render.OpenApiClient.Models.MaintenanceMode? _explicitNullValueMaintenanceMode = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.MaintenanceMode MaintenanceMode { get => _explicitNullValueMaintenanceMode; set { _explicitNullValueMaintenanceMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenanceMode"); else _explicitNullProperties?.Remove("maintenanceMode"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.MaintenanceMode MaintenanceMode { get => _explicitNullValueMaintenanceMode; set { _explicitNullValueMaintenanceMode = value; AdditionalData?.Remove("maintenanceMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintenanceMode"); else _explicitNullProperties?.Remove("maintenanceMode"); } }
         private global::Soenneker.Render.OpenApiClient.Models.MaintenanceMode _explicitNullValueMaintenanceMode = default!;
 #endif
         /// <summary>The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.</summary>
-        public int? MaxShutdownDelaySeconds { get => _explicitNullValueMaxShutdownDelaySeconds; set { _explicitNullValueMaxShutdownDelaySeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxShutdownDelaySeconds"); else _explicitNullProperties?.Remove("maxShutdownDelaySeconds"); } }
+        public int? MaxShutdownDelaySeconds { get => _explicitNullValueMaxShutdownDelaySeconds; set { _explicitNullValueMaxShutdownDelaySeconds = value; AdditionalData?.Remove("maxShutdownDelaySeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxShutdownDelaySeconds"); else _explicitNullProperties?.Remove("maxShutdownDelaySeconds"); } }
         private int? _explicitNullValueMaxShutdownDelaySeconds = default!;
         /// <summary>For a *manually* scaled service, this is the number of instances the service is scaled to. DOES NOT indicate the number of running instances for an *autoscaled* service.</summary>
-        public int? NumInstances { get => _explicitNullValueNumInstances; set { _explicitNullValueNumInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numInstances"); else _explicitNullProperties?.Remove("numInstances"); } }
+        public int? NumInstances { get => _explicitNullValueNumInstances; set { _explicitNullValueNumInstances = value; AdditionalData?.Remove("numInstances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numInstances"); else _explicitNullProperties?.Remove("numInstances"); } }
         private int? _explicitNullValueNumInstances = default!;
         /// <summary>The openPorts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.ServerPort>? OpenPorts { get => _explicitNullValueOpenPorts; set { _explicitNullValueOpenPorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openPorts"); else _explicitNullProperties?.Remove("openPorts"); } }
+        public List<global::Soenneker.Render.OpenApiClient.Models.ServerPort>? OpenPorts { get => _explicitNullValueOpenPorts; set { _explicitNullValueOpenPorts = value; AdditionalData?.Remove("openPorts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openPorts"); else _explicitNullProperties?.Remove("openPorts"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.ServerPort>? _explicitNullValueOpenPorts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.ServerPort> OpenPorts { get => _explicitNullValueOpenPorts; set { _explicitNullValueOpenPorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openPorts"); else _explicitNullProperties?.Remove("openPorts"); } }
+        public List<global::Soenneker.Render.OpenApiClient.Models.ServerPort> OpenPorts { get => _explicitNullValueOpenPorts; set { _explicitNullValueOpenPorts = value; AdditionalData?.Remove("openPorts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openPorts"); else _explicitNullProperties?.Remove("openPorts"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.ServerPort> _explicitNullValueOpenPorts = default!;
 #endif
         /// <summary>The parentServer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.Resource? ParentServer { get => _explicitNullValueParentServer; set { _explicitNullValueParentServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentServer"); else _explicitNullProperties?.Remove("parentServer"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Resource? ParentServer { get => _explicitNullValueParentServer; set { _explicitNullValueParentServer = value; AdditionalData?.Remove("parentServer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentServer"); else _explicitNullProperties?.Remove("parentServer"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Resource? _explicitNullValueParentServer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.Resource ParentServer { get => _explicitNullValueParentServer; set { _explicitNullValueParentServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentServer"); else _explicitNullProperties?.Remove("parentServer"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Resource ParentServer { get => _explicitNullValueParentServer; set { _explicitNullValueParentServer = value; AdditionalData?.Remove("parentServer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentServer"); else _explicitNullProperties?.Remove("parentServer"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Resource _explicitNullValueParentServer = default!;
 #endif
         /// <summary>The compute plan to use. Legacy variants (`*_legacy`) identify grandfathered plans no longer offered for new services. Note that base services on any paid compute plan can&apos;t create preview instances with the `free` plan.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Plan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Plan? _explicitNullValuePlan = default!;
         /// <summary>The previews property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.Previews? Previews { get => _explicitNullValuePreviews; set { _explicitNullValuePreviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews"); else _explicitNullProperties?.Remove("previews"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Previews? Previews { get => _explicitNullValuePreviews; set { _explicitNullValuePreviews = value; AdditionalData?.Remove("previews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews"); else _explicitNullProperties?.Remove("previews"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Previews? _explicitNullValuePreviews = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.Previews Previews { get => _explicitNullValuePreviews; set { _explicitNullValuePreviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews"); else _explicitNullProperties?.Remove("previews"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Previews Previews { get => _explicitNullValuePreviews; set { _explicitNullValuePreviews = value; AdditionalData?.Remove("previews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews"); else _explicitNullProperties?.Remove("previews"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Previews _explicitNullValuePreviews = default!;
 #endif
         /// <summary>This field has been deprecated. previews.generation should be used in its place.</summary>
         [Obsolete("")]
-        public global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled? PullRequestPreviewsEnabled { get => _explicitNullValuePullRequestPreviewsEnabled; set { _explicitNullValuePullRequestPreviewsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pullRequestPreviewsEnabled"); else _explicitNullProperties?.Remove("pullRequestPreviewsEnabled"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled? PullRequestPreviewsEnabled { get => _explicitNullValuePullRequestPreviewsEnabled; set { _explicitNullValuePullRequestPreviewsEnabled = value; AdditionalData?.Remove("pullRequestPreviewsEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pullRequestPreviewsEnabled"); else _explicitNullProperties?.Remove("pullRequestPreviewsEnabled"); } }
         private global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled? _explicitNullValuePullRequestPreviewsEnabled = default!;
         /// <summary>Defaults to &quot;oregon&quot;</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.Region? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Region? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Region? _explicitNullValueRegion = default!;
         /// <summary>Controls whether render.com subdomains are available for the service</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy? RenderSubdomainPolicy { get => _explicitNullValueRenderSubdomainPolicy; set { _explicitNullValueRenderSubdomainPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renderSubdomainPolicy"); else _explicitNullProperties?.Remove("renderSubdomainPolicy"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy? RenderSubdomainPolicy { get => _explicitNullValueRenderSubdomainPolicy; set { _explicitNullValueRenderSubdomainPolicy = value; AdditionalData?.Remove("renderSubdomainPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renderSubdomainPolicy"); else _explicitNullProperties?.Remove("renderSubdomainPolicy"); } }
         private global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy? _explicitNullValueRenderSubdomainPolicy = default!;
         /// <summary>Runtime</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime? Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime? Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; AdditionalData?.Remove("runtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
         private global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime? _explicitNullValueRuntime = default!;
         /// <summary>The SSH address for the service. Only present for services that have SSH enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SshAddress { get => _explicitNullValueSshAddress; set { _explicitNullValueSshAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sshAddress"); else _explicitNullProperties?.Remove("sshAddress"); } }
+        public string? SshAddress { get => _explicitNullValueSshAddress; set { _explicitNullValueSshAddress = value; AdditionalData?.Remove("sshAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sshAddress"); else _explicitNullProperties?.Remove("sshAddress"); } }
         private string? _explicitNullValueSshAddress = default!;
 #nullable restore
 #else
-        public string SshAddress { get => _explicitNullValueSshAddress; set { _explicitNullValueSshAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sshAddress"); else _explicitNullProperties?.Remove("sshAddress"); } }
+        public string SshAddress { get => _explicitNullValueSshAddress; set { _explicitNullValueSshAddress = value; AdditionalData?.Remove("sshAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sshAddress"); else _explicitNullProperties?.Remove("sshAddress"); } }
         private string _explicitNullValueSshAddress = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
@@ -218,10 +239,10 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "autoscaling", n => { Autoscaling = n.GetStringValue(); } },
-                { "buildPlan", n => { BuildPlan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.BuildPlan>(); } },
+                { "buildPlan", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.BuildPlan>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBuildPlan = default; _explicitNullProperties?.Remove("buildPlan"); AdditionalData["buildPlan"] = unknown; } else { BuildPlan = parsed; AdditionalData.Remove("buildPlan"); } } },
                 { "cache", n => { Cache = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Cache>(global::Soenneker.Render.OpenApiClient.Models.Cache.CreateFromDiscriminatorValue); } },
                 { "disk", n => { Disk = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk>(global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsDisk.CreateFromDiscriminatorValue); } },
-                { "env", n => { Env = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>(); } },
+                { "env", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceEnv>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEnv = default; _explicitNullProperties?.Remove("env"); AdditionalData["env"] = unknown; } else { Env = parsed; AdditionalData.Remove("env"); } } },
                 { "envSpecificDetails", n => { EnvSpecificDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails>(global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetails.CreateFromDiscriminatorValue); } },
                 { "healthCheckPath", n => { HealthCheckPath = n.GetStringValue(); } },
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -230,12 +251,12 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "numInstances", n => { NumInstances = n.GetIntValue(); } },
                 { "openPorts", n => { OpenPorts = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.ServerPort>(global::Soenneker.Render.OpenApiClient.Models.ServerPort.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "parentServer", n => { ParentServer = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Resource>(global::Soenneker.Render.OpenApiClient.Models.Resource.CreateFromDiscriminatorValue); } },
-                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); } },
+                { "plan", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Plan>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlan = default; _explicitNullProperties?.Remove("plan"); AdditionalData["plan"] = unknown; } else { Plan = parsed; AdditionalData.Remove("plan"); } } },
                 { "previews", n => { Previews = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Previews>(global::Soenneker.Render.OpenApiClient.Models.Previews.CreateFromDiscriminatorValue); } },
-                { "pullRequestPreviewsEnabled", n => { PullRequestPreviewsEnabled = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled>(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); } },
-                { "renderSubdomainPolicy", n => { RenderSubdomainPolicy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy>(); } },
-                { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime>(); } },
+                { "pullRequestPreviewsEnabled", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePullRequestPreviewsEnabled = default; _explicitNullProperties?.Remove("pullRequestPreviewsEnabled"); AdditionalData["pullRequestPreviewsEnabled"] = unknown; } else { PullRequestPreviewsEnabled = parsed; AdditionalData.Remove("pullRequestPreviewsEnabled"); } } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.Region>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
+                { "renderSubdomainPolicy", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRenderSubdomainPolicy = default; _explicitNullProperties?.Remove("renderSubdomainPolicy"); AdditionalData["renderSubdomainPolicy"] = unknown; } else { RenderSubdomainPolicy = parsed; AdditionalData.Remove("renderSubdomainPolicy"); } } },
+                { "runtime", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRuntime = default; _explicitNullProperties?.Remove("runtime"); AdditionalData["runtime"] = unknown; } else { Runtime = parsed; AdditionalData.Remove("runtime"); } } },
                 { "sshAddress", n => { SshAddress = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };

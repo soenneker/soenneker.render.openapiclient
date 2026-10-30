@@ -17,8 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("planId") is { } nullNodePlanId && nullNodePlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanId = null;
-            if (parseNode.GetChildNode("startCommand") is { } nullNodeStartCommand && nullNodeStartCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartCommand = null;
+            if (parseNode.GetChildNode("planId") is null) { _explicitNullValuePlanId = default!; _explicitNullProperties?.Remove("planId"); }
+            else if (parseNode.GetChildNode("planId") is { } nullNodePlanId && nullNodePlanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanId = null;
+            if (parseNode.GetChildNode("startCommand") is null) { _explicitNullValueStartCommand = default!; _explicitNullProperties?.Remove("startCommand"); }
+            else if (parseNode.GetChildNode("startCommand") is { } nullNodeStartCommand && nullNodeStartCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartCommand = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The planId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
+        public string? PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; AdditionalData?.Remove("planId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
         private string? _explicitNullValuePlanId = default!;
 #nullable restore
 #else
-        public string PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
+        public string PlanId { get => _explicitNullValuePlanId; set { _explicitNullValuePlanId = value; AdditionalData?.Remove("planId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planId"); else _explicitNullProperties?.Remove("planId"); } }
         private string _explicitNullValuePlanId = default!;
 #endif
         /// <summary>The startCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartCommand { get => _explicitNullValueStartCommand; set { _explicitNullValueStartCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startCommand"); else _explicitNullProperties?.Remove("startCommand"); } }
+        public string? StartCommand { get => _explicitNullValueStartCommand; set { _explicitNullValueStartCommand = value; AdditionalData?.Remove("startCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startCommand"); else _explicitNullProperties?.Remove("startCommand"); } }
         private string? _explicitNullValueStartCommand = default!;
 #nullable restore
 #else
-        public string StartCommand { get => _explicitNullValueStartCommand; set { _explicitNullValueStartCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startCommand"); else _explicitNullProperties?.Remove("startCommand"); } }
+        public string StartCommand { get => _explicitNullValueStartCommand; set { _explicitNullValueStartCommand = value; AdditionalData?.Remove("startCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startCommand"); else _explicitNullProperties?.Remove("startCommand"); } }
         private string _explicitNullValueStartCommand = default!;
 #endif
         /// <summary>

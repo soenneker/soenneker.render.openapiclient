@@ -17,12 +17,18 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("buildCommand") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
-            if (parseNode.GetChildNode("ipAllowList") is { } nullNodeIpAllowList && nullNodeIpAllowList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpAllowList = null;
-            if (parseNode.GetChildNode("previews") is { } nullNodePreviews && nullNodePreviews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previews = null;
-            if (parseNode.GetChildNode("publishPath") is { } nullNodePublishPath && nullNodePublishPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishPath = null;
-            if (parseNode.GetChildNode("pullRequestPreviewsEnabled") is { } nullNodePullRequestPreviewsEnabled && nullNodePullRequestPreviewsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequestPreviewsEnabled = null;
-            if (parseNode.GetChildNode("renderSubdomainPolicy") is { } nullNodeRenderSubdomainPolicy && nullNodeRenderSubdomainPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderSubdomainPolicy = null;
+            if (parseNode.GetChildNode("buildCommand") is null) { _explicitNullValueBuildCommand = default!; _explicitNullProperties?.Remove("buildCommand"); }
+            else if (parseNode.GetChildNode("buildCommand") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
+            if (parseNode.GetChildNode("ipAllowList") is null) { _explicitNullValueIpAllowList = default!; _explicitNullProperties?.Remove("ipAllowList"); }
+            else if (parseNode.GetChildNode("ipAllowList") is { } nullNodeIpAllowList && nullNodeIpAllowList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpAllowList = null;
+            if (parseNode.GetChildNode("previews") is null) { _explicitNullValuePreviews = default!; _explicitNullProperties?.Remove("previews"); }
+            else if (parseNode.GetChildNode("previews") is { } nullNodePreviews && nullNodePreviews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previews = null;
+            if (parseNode.GetChildNode("publishPath") is null) { _explicitNullValuePublishPath = default!; _explicitNullProperties?.Remove("publishPath"); }
+            else if (parseNode.GetChildNode("publishPath") is { } nullNodePublishPath && nullNodePublishPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishPath = null;
+            if (parseNode.GetChildNode("pullRequestPreviewsEnabled") is null) { _explicitNullValuePullRequestPreviewsEnabled = default!; _explicitNullProperties?.Remove("pullRequestPreviewsEnabled"); }
+            else if (parseNode.GetChildNode("pullRequestPreviewsEnabled") is { } nullNodePullRequestPreviewsEnabled && nullNodePullRequestPreviewsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequestPreviewsEnabled = null;
+            if (parseNode.GetChildNode("renderSubdomainPolicy") is null) { _explicitNullValueRenderSubdomainPolicy = default!; _explicitNullProperties?.Remove("renderSubdomainPolicy"); }
+            else if (parseNode.GetChildNode("renderSubdomainPolicy") is { } nullNodeRenderSubdomainPolicy && nullNodeRenderSubdomainPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderSubdomainPolicy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,49 +36,49 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The buildCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
+        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; AdditionalData?.Remove("buildCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
         private string? _explicitNullValueBuildCommand = default!;
 #nullable restore
 #else
-        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
+        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; AdditionalData?.Remove("buildCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
         private string _explicitNullValueBuildCommand = default!;
 #endif
         /// <summary>The ipAllowList property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>? IpAllowList { get => _explicitNullValueIpAllowList; set { _explicitNullValueIpAllowList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAllowList"); else _explicitNullProperties?.Remove("ipAllowList"); } }
+        public List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>? IpAllowList { get => _explicitNullValueIpAllowList; set { _explicitNullValueIpAllowList = value; AdditionalData?.Remove("ipAllowList"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAllowList"); else _explicitNullProperties?.Remove("ipAllowList"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>? _explicitNullValueIpAllowList = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription> IpAllowList { get => _explicitNullValueIpAllowList; set { _explicitNullValueIpAllowList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAllowList"); else _explicitNullProperties?.Remove("ipAllowList"); } }
+        public List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription> IpAllowList { get => _explicitNullValueIpAllowList; set { _explicitNullValueIpAllowList = value; AdditionalData?.Remove("ipAllowList"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAllowList"); else _explicitNullProperties?.Remove("ipAllowList"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription> _explicitNullValueIpAllowList = default!;
 #endif
         /// <summary>The previews property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.Previews? Previews { get => _explicitNullValuePreviews; set { _explicitNullValuePreviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews"); else _explicitNullProperties?.Remove("previews"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Previews? Previews { get => _explicitNullValuePreviews; set { _explicitNullValuePreviews = value; AdditionalData?.Remove("previews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews"); else _explicitNullProperties?.Remove("previews"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Previews? _explicitNullValuePreviews = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.Previews Previews { get => _explicitNullValuePreviews; set { _explicitNullValuePreviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews"); else _explicitNullProperties?.Remove("previews"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Previews Previews { get => _explicitNullValuePreviews; set { _explicitNullValuePreviews = value; AdditionalData?.Remove("previews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previews"); else _explicitNullProperties?.Remove("previews"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Previews _explicitNullValuePreviews = default!;
 #endif
         /// <summary>The publishPath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublishPath { get => _explicitNullValuePublishPath; set { _explicitNullValuePublishPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publishPath"); else _explicitNullProperties?.Remove("publishPath"); } }
+        public string? PublishPath { get => _explicitNullValuePublishPath; set { _explicitNullValuePublishPath = value; AdditionalData?.Remove("publishPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publishPath"); else _explicitNullProperties?.Remove("publishPath"); } }
         private string? _explicitNullValuePublishPath = default!;
 #nullable restore
 #else
-        public string PublishPath { get => _explicitNullValuePublishPath; set { _explicitNullValuePublishPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publishPath"); else _explicitNullProperties?.Remove("publishPath"); } }
+        public string PublishPath { get => _explicitNullValuePublishPath; set { _explicitNullValuePublishPath = value; AdditionalData?.Remove("publishPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publishPath"); else _explicitNullProperties?.Remove("publishPath"); } }
         private string _explicitNullValuePublishPath = default!;
 #endif
         /// <summary>This field has been deprecated. previews.generation should be used in its place.</summary>
         [Obsolete("")]
-        public global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled? PullRequestPreviewsEnabled { get => _explicitNullValuePullRequestPreviewsEnabled; set { _explicitNullValuePullRequestPreviewsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pullRequestPreviewsEnabled"); else _explicitNullProperties?.Remove("pullRequestPreviewsEnabled"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled? PullRequestPreviewsEnabled { get => _explicitNullValuePullRequestPreviewsEnabled; set { _explicitNullValuePullRequestPreviewsEnabled = value; AdditionalData?.Remove("pullRequestPreviewsEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pullRequestPreviewsEnabled"); else _explicitNullProperties?.Remove("pullRequestPreviewsEnabled"); } }
         private global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled? _explicitNullValuePullRequestPreviewsEnabled = default!;
         /// <summary>Controls whether render.com subdomains are available for the service</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy? RenderSubdomainPolicy { get => _explicitNullValueRenderSubdomainPolicy; set { _explicitNullValueRenderSubdomainPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renderSubdomainPolicy"); else _explicitNullProperties?.Remove("renderSubdomainPolicy"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy? RenderSubdomainPolicy { get => _explicitNullValueRenderSubdomainPolicy; set { _explicitNullValueRenderSubdomainPolicy = value; AdditionalData?.Remove("renderSubdomainPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renderSubdomainPolicy"); else _explicitNullProperties?.Remove("renderSubdomainPolicy"); } }
         private global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy? _explicitNullValueRenderSubdomainPolicy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetailsPatch"/> and sets the default values.
@@ -103,8 +109,8 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "previews", n => { Previews = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Previews>(global::Soenneker.Render.OpenApiClient.Models.Previews.CreateFromDiscriminatorValue); } },
                 { "publishPath", n => { PublishPath = n.GetStringValue(); } },
-                { "pullRequestPreviewsEnabled", n => { PullRequestPreviewsEnabled = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled>(); } },
-                { "renderSubdomainPolicy", n => { RenderSubdomainPolicy = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy>(); } },
+                { "pullRequestPreviewsEnabled", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PullRequestPreviewsEnabled>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePullRequestPreviewsEnabled = default; _explicitNullProperties?.Remove("pullRequestPreviewsEnabled"); AdditionalData["pullRequestPreviewsEnabled"] = unknown; } else { PullRequestPreviewsEnabled = parsed; AdditionalData.Remove("pullRequestPreviewsEnabled"); } } },
+                { "renderSubdomainPolicy", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RenderSubdomainPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRenderSubdomainPolicy = default; _explicitNullProperties?.Remove("renderSubdomainPolicy"); AdditionalData["renderSubdomainPolicy"] = unknown; } else { RenderSubdomainPolicy = parsed; AdditionalData.Remove("renderSubdomainPolicy"); } } },
             };
         }
         /// <summary>

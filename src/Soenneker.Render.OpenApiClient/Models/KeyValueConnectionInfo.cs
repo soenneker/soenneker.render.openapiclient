@@ -18,9 +18,12 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cliCommand") is { } nullNodeCliCommand && nullNodeCliCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CliCommand = null;
-            if (parseNode.GetChildNode("externalConnectionString") is { } nullNodeExternalConnectionString && nullNodeExternalConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalConnectionString = null;
-            if (parseNode.GetChildNode("internalConnectionString") is { } nullNodeInternalConnectionString && nullNodeInternalConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalConnectionString = null;
+            if (parseNode.GetChildNode("cliCommand") is null) { _explicitNullValueCliCommand = default!; _explicitNullProperties?.Remove("cliCommand"); }
+            else if (parseNode.GetChildNode("cliCommand") is { } nullNodeCliCommand && nullNodeCliCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CliCommand = null;
+            if (parseNode.GetChildNode("externalConnectionString") is null) { _explicitNullValueExternalConnectionString = default!; _explicitNullProperties?.Remove("externalConnectionString"); }
+            else if (parseNode.GetChildNode("externalConnectionString") is { } nullNodeExternalConnectionString && nullNodeExternalConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalConnectionString = null;
+            if (parseNode.GetChildNode("internalConnectionString") is null) { _explicitNullValueInternalConnectionString = default!; _explicitNullProperties?.Remove("internalConnectionString"); }
+            else if (parseNode.GetChildNode("internalConnectionString") is { } nullNodeInternalConnectionString && nullNodeInternalConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalConnectionString = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The CLI (redis-cli or valkey-cli) command to connect to the Key Value instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CliCommand { get => _explicitNullValueCliCommand; set { _explicitNullValueCliCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cliCommand"); else _explicitNullProperties?.Remove("cliCommand"); } }
+        public string? CliCommand { get => _explicitNullValueCliCommand; set { _explicitNullValueCliCommand = value; AdditionalData?.Remove("cliCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cliCommand"); else _explicitNullProperties?.Remove("cliCommand"); } }
         private string? _explicitNullValueCliCommand = default!;
 #nullable restore
 #else
-        public string CliCommand { get => _explicitNullValueCliCommand; set { _explicitNullValueCliCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cliCommand"); else _explicitNullProperties?.Remove("cliCommand"); } }
+        public string CliCommand { get => _explicitNullValueCliCommand; set { _explicitNullValueCliCommand = value; AdditionalData?.Remove("cliCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cliCommand"); else _explicitNullProperties?.Remove("cliCommand"); } }
         private string _explicitNullValueCliCommand = default!;
 #endif
         /// <summary>The connection string to use from outside Render</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalConnectionString { get => _explicitNullValueExternalConnectionString; set { _explicitNullValueExternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionString"); else _explicitNullProperties?.Remove("externalConnectionString"); } }
+        public string? ExternalConnectionString { get => _explicitNullValueExternalConnectionString; set { _explicitNullValueExternalConnectionString = value; AdditionalData?.Remove("externalConnectionString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionString"); else _explicitNullProperties?.Remove("externalConnectionString"); } }
         private string? _explicitNullValueExternalConnectionString = default!;
 #nullable restore
 #else
-        public string ExternalConnectionString { get => _explicitNullValueExternalConnectionString; set { _explicitNullValueExternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionString"); else _explicitNullProperties?.Remove("externalConnectionString"); } }
+        public string ExternalConnectionString { get => _explicitNullValueExternalConnectionString; set { _explicitNullValueExternalConnectionString = value; AdditionalData?.Remove("externalConnectionString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionString"); else _explicitNullProperties?.Remove("externalConnectionString"); } }
         private string _explicitNullValueExternalConnectionString = default!;
 #endif
         /// <summary>The connection string to use from within Render</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternalConnectionString { get => _explicitNullValueInternalConnectionString; set { _explicitNullValueInternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionString"); else _explicitNullProperties?.Remove("internalConnectionString"); } }
+        public string? InternalConnectionString { get => _explicitNullValueInternalConnectionString; set { _explicitNullValueInternalConnectionString = value; AdditionalData?.Remove("internalConnectionString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionString"); else _explicitNullProperties?.Remove("internalConnectionString"); } }
         private string? _explicitNullValueInternalConnectionString = default!;
 #nullable restore
 #else
-        public string InternalConnectionString { get => _explicitNullValueInternalConnectionString; set { _explicitNullValueInternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionString"); else _explicitNullProperties?.Remove("internalConnectionString"); } }
+        public string InternalConnectionString { get => _explicitNullValueInternalConnectionString; set { _explicitNullValueInternalConnectionString = value; AdditionalData?.Remove("internalConnectionString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionString"); else _explicitNullProperties?.Remove("internalConnectionString"); } }
         private string _explicitNullValueInternalConnectionString = default!;
 #endif
         /// <summary>

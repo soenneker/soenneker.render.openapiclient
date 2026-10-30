@@ -17,13 +17,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("profile") is { } nullNodeProfile && nullNodeProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profile = null;
+            if (parseNode.GetChildNode("profile") is null) { _explicitNullValueProfile = default!; _explicitNullProperties?.Remove("profile"); }
+            else if (parseNode.GetChildNode("profile") is { } nullNodeProfile && nullNodeProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profile = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The profile property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.CacheProfile? Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.CacheProfile? Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; AdditionalData?.Remove("profile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CacheProfile? _explicitNullValueProfile = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.Cache"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "profile", n => { Profile = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CacheProfile>(); } },
+                { "profile", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CacheProfile>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProfile = default; _explicitNullProperties?.Remove("profile"); AdditionalData["profile"] = unknown; } else { Profile = parsed; AdditionalData.Remove("profile"); } } },
             };
         }
         /// <summary>

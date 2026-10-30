@@ -17,10 +17,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("envSpecificDetails") is { } nullNodeEnvSpecificDetails && nullNodeEnvSpecificDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvSpecificDetails = null;
-            if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
-            if (parseNode.GetChildNode("runtime") is { } nullNodeRuntime && nullNodeRuntime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Runtime = null;
-            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("envSpecificDetails") is null) { _explicitNullValueEnvSpecificDetails = default!; _explicitNullProperties?.Remove("envSpecificDetails"); }
+            else if (parseNode.GetChildNode("envSpecificDetails") is { } nullNodeEnvSpecificDetails && nullNodeEnvSpecificDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvSpecificDetails = null;
+            if (parseNode.GetChildNode("plan") is null) { _explicitNullValuePlan = default!; _explicitNullProperties?.Remove("plan"); }
+            else if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+            if (parseNode.GetChildNode("runtime") is null) { _explicitNullValueRuntime = default!; _explicitNullProperties?.Remove("runtime"); }
+            else if (parseNode.GetChildNode("runtime") is { } nullNodeRuntime && nullNodeRuntime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Runtime = null;
+            if (parseNode.GetChildNode("schedule") is null) { _explicitNullValueSchedule = default!; _explicitNullProperties?.Remove("schedule"); }
+            else if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,27 +32,27 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The envSpecificDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch? EnvSpecificDetails { get => _explicitNullValueEnvSpecificDetails; set { _explicitNullValueEnvSpecificDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envSpecificDetails"); else _explicitNullProperties?.Remove("envSpecificDetails"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch? EnvSpecificDetails { get => _explicitNullValueEnvSpecificDetails; set { _explicitNullValueEnvSpecificDetails = value; AdditionalData?.Remove("envSpecificDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envSpecificDetails"); else _explicitNullProperties?.Remove("envSpecificDetails"); } }
         private global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch? _explicitNullValueEnvSpecificDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch EnvSpecificDetails { get => _explicitNullValueEnvSpecificDetails; set { _explicitNullValueEnvSpecificDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envSpecificDetails"); else _explicitNullProperties?.Remove("envSpecificDetails"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch EnvSpecificDetails { get => _explicitNullValueEnvSpecificDetails; set { _explicitNullValueEnvSpecificDetails = value; AdditionalData?.Remove("envSpecificDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envSpecificDetails"); else _explicitNullProperties?.Remove("envSpecificDetails"); } }
         private global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch _explicitNullValueEnvSpecificDetails = default!;
 #endif
         /// <summary>Defaults to `0.5c-512mb` when creating a new service.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.PaidPlan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.PaidPlan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
         private global::Soenneker.Render.OpenApiClient.Models.PaidPlan? _explicitNullValuePlan = default!;
         /// <summary>Runtime</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime? Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime? Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; AdditionalData?.Remove("runtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
         private global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime? _explicitNullValueRuntime = default!;
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        public string? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
         private string? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public string Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        public string Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
         private string _explicitNullValueSchedule = default!;
 #endif
         /// <summary>
@@ -77,8 +81,8 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "envSpecificDetails", n => { EnvSpecificDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch>(global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch.CreateFromDiscriminatorValue); } },
-                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PaidPlan>(); } },
-                { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime>(); } },
+                { "plan", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PaidPlan>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlan = default; _explicitNullProperties?.Remove("plan"); AdditionalData["plan"] = unknown; } else { Plan = parsed; AdditionalData.Remove("plan"); } } },
+                { "runtime", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.ServiceRuntime>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRuntime = default; _explicitNullProperties?.Remove("runtime"); AdditionalData["runtime"] = unknown; } else { Runtime = parsed; AdditionalData.Remove("runtime"); } } },
                 { "schedule", n => { Schedule = n.GetStringValue(); } },
             };
         }

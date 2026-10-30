@@ -17,15 +17,24 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("envGroupIds") is { } nullNodeEnvGroupIds && nullNodeEnvGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvGroupIds = null;
-            if (parseNode.GetChildNode("envVars") is { } nullNodeEnvVars && nullNodeEnvVars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvVars = null;
-            if (parseNode.GetChildNode("git") is { } nullNodeGit && nullNodeGit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Git = null;
-            if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("ownerId") is { } nullNodeOwnerId && nullNodeOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerId = null;
-            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("secretFiles") is { } nullNodeSecretFiles && nullNodeSecretFiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretFiles = null;
-            if (parseNode.GetChildNode("serviceIds") is { } nullNodeServiceIds && nullNodeServiceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceIds = null;
+            if (parseNode.GetChildNode("envGroupIds") is null) { _explicitNullValueEnvGroupIds = default!; _explicitNullProperties?.Remove("envGroupIds"); }
+            else if (parseNode.GetChildNode("envGroupIds") is { } nullNodeEnvGroupIds && nullNodeEnvGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvGroupIds = null;
+            if (parseNode.GetChildNode("envVars") is null) { _explicitNullValueEnvVars = default!; _explicitNullProperties?.Remove("envVars"); }
+            else if (parseNode.GetChildNode("envVars") is { } nullNodeEnvVars && nullNodeEnvVars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvVars = null;
+            if (parseNode.GetChildNode("git") is null) { _explicitNullValueGit = default!; _explicitNullProperties?.Remove("git"); }
+            else if (parseNode.GetChildNode("git") is { } nullNodeGit && nullNodeGit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Git = null;
+            if (parseNode.GetChildNode("image") is null) { _explicitNullValueImage = default!; _explicitNullProperties?.Remove("image"); }
+            else if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("ownerId") is null) { _explicitNullValueOwnerId = default!; _explicitNullProperties?.Remove("ownerId"); }
+            else if (parseNode.GetChildNode("ownerId") is { } nullNodeOwnerId && nullNodeOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerId = null;
+            if (parseNode.GetChildNode("projectId") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("projectId"); }
+            else if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("secretFiles") is null) { _explicitNullValueSecretFiles = default!; _explicitNullProperties?.Remove("secretFiles"); }
+            else if (parseNode.GetChildNode("secretFiles") is { } nullNodeSecretFiles && nullNodeSecretFiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretFiles = null;
+            if (parseNode.GetChildNode("serviceIds") is null) { _explicitNullValueServiceIds = default!; _explicitNullProperties?.Remove("serviceIds"); }
+            else if (parseNode.GetChildNode("serviceIds") is { } nullNodeServiceIds && nullNodeServiceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,91 +42,91 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>IDs of env groups to link to the build source. Only valid for `git` sources; env groups must belong to the same workspace and must not be scoped to an environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnvGroupIds { get => _explicitNullValueEnvGroupIds; set { _explicitNullValueEnvGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envGroupIds"); else _explicitNullProperties?.Remove("envGroupIds"); } }
+        public List<string>? EnvGroupIds { get => _explicitNullValueEnvGroupIds; set { _explicitNullValueEnvGroupIds = value; AdditionalData?.Remove("envGroupIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envGroupIds"); else _explicitNullProperties?.Remove("envGroupIds"); } }
         private List<string>? _explicitNullValueEnvGroupIds = default!;
 #nullable restore
 #else
-        public List<string> EnvGroupIds { get => _explicitNullValueEnvGroupIds; set { _explicitNullValueEnvGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envGroupIds"); else _explicitNullProperties?.Remove("envGroupIds"); } }
+        public List<string> EnvGroupIds { get => _explicitNullValueEnvGroupIds; set { _explicitNullValueEnvGroupIds = value; AdditionalData?.Remove("envGroupIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envGroupIds"); else _explicitNullProperties?.Remove("envGroupIds"); } }
         private List<string> _explicitNullValueEnvGroupIds = default!;
 #endif
         /// <summary>The envVars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envVars"); else _explicitNullProperties?.Remove("envVars"); } }
+        public string? EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; AdditionalData?.Remove("envVars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envVars"); else _explicitNullProperties?.Remove("envVars"); } }
         private string? _explicitNullValueEnvVars = default!;
 #nullable restore
 #else
-        public string EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envVars"); else _explicitNullProperties?.Remove("envVars"); } }
+        public string EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; AdditionalData?.Remove("envVars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envVars"); else _explicitNullProperties?.Remove("envVars"); } }
         private string _explicitNullValueEnvVars = default!;
 #endif
         /// <summary>The git property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestGit? Git { get => _explicitNullValueGit; set { _explicitNullValueGit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("git"); else _explicitNullProperties?.Remove("git"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestGit? Git { get => _explicitNullValueGit; set { _explicitNullValueGit = value; AdditionalData?.Remove("git"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("git"); else _explicitNullProperties?.Remove("git"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestGit? _explicitNullValueGit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestGit Git { get => _explicitNullValueGit; set { _explicitNullValueGit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("git"); else _explicitNullProperties?.Remove("git"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestGit Git { get => _explicitNullValueGit; set { _explicitNullValueGit = value; AdditionalData?.Remove("git"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("git"); else _explicitNullProperties?.Remove("git"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestGit _explicitNullValueGit = default!;
 #endif
         /// <summary>The image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestImage? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestImage? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; AdditionalData?.Remove("image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestImage? _explicitNullValueImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestImage Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestImage Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; AdditionalData?.Remove("image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateBuildSourceRequestImage _explicitNullValueImage = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
+        public string? OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
         private string? _explicitNullValueOwnerId = default!;
 #nullable restore
 #else
-        public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
+        public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
         private string _explicitNullValueOwnerId = default!;
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>Secret files for the build source&apos;s build. Only valid for `git` sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SecretFiles { get => _explicitNullValueSecretFiles; set { _explicitNullValueSecretFiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretFiles"); else _explicitNullProperties?.Remove("secretFiles"); } }
+        public List<string>? SecretFiles { get => _explicitNullValueSecretFiles; set { _explicitNullValueSecretFiles = value; AdditionalData?.Remove("secretFiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretFiles"); else _explicitNullProperties?.Remove("secretFiles"); } }
         private List<string>? _explicitNullValueSecretFiles = default!;
 #nullable restore
 #else
-        public List<string> SecretFiles { get => _explicitNullValueSecretFiles; set { _explicitNullValueSecretFiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretFiles"); else _explicitNullProperties?.Remove("secretFiles"); } }
+        public List<string> SecretFiles { get => _explicitNullValueSecretFiles; set { _explicitNullValueSecretFiles = value; AdditionalData?.Remove("secretFiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretFiles"); else _explicitNullProperties?.Remove("secretFiles"); } }
         private List<string> _explicitNullValueSecretFiles = default!;
 #endif
         /// <summary>The serviceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ServiceIds { get => _explicitNullValueServiceIds; set { _explicitNullValueServiceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceIds"); else _explicitNullProperties?.Remove("serviceIds"); } }
+        public List<string>? ServiceIds { get => _explicitNullValueServiceIds; set { _explicitNullValueServiceIds = value; AdditionalData?.Remove("serviceIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceIds"); else _explicitNullProperties?.Remove("serviceIds"); } }
         private List<string>? _explicitNullValueServiceIds = default!;
 #nullable restore
 #else
-        public List<string> ServiceIds { get => _explicitNullValueServiceIds; set { _explicitNullValueServiceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceIds"); else _explicitNullProperties?.Remove("serviceIds"); } }
+        public List<string> ServiceIds { get => _explicitNullValueServiceIds; set { _explicitNullValueServiceIds = value; AdditionalData?.Remove("serviceIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceIds"); else _explicitNullProperties?.Remove("serviceIds"); } }
         private List<string> _explicitNullValueServiceIds = default!;
 #endif
         /// <summary>

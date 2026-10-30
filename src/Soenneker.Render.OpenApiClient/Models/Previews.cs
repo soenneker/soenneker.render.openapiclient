@@ -17,13 +17,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("generation") is { } nullNodeGeneration && nullNodeGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Generation = null;
+            if (parseNode.GetChildNode("generation") is null) { _explicitNullValueGeneration = default!; _explicitNullProperties?.Remove("generation"); }
+            else if (parseNode.GetChildNode("generation") is { } nullNodeGeneration && nullNodeGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Generation = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defaults to &quot;off&quot;</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.PreviewsGeneration? Generation { get => _explicitNullValueGeneration; set { _explicitNullValueGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation"); else _explicitNullProperties?.Remove("generation"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.PreviewsGeneration? Generation { get => _explicitNullValueGeneration; set { _explicitNullValueGeneration = value; AdditionalData?.Remove("generation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation"); else _explicitNullProperties?.Remove("generation"); } }
         private global::Soenneker.Render.OpenApiClient.Models.PreviewsGeneration? _explicitNullValueGeneration = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.Previews"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "generation", n => { Generation = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PreviewsGeneration>(); } },
+                { "generation", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PreviewsGeneration>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGeneration = default; _explicitNullProperties?.Remove("generation"); AdditionalData["generation"] = unknown; } else { Generation = parsed; AdditionalData.Remove("generation"); } } },
             };
         }
         /// <summary>

@@ -17,11 +17,16 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("buildId") is { } nullNodeBuildId && nullNodeBuildId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildId = null;
-            if (parseNode.GetChildNode("clearCache") is { } nullNodeClearCache && nullNodeClearCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClearCache = null;
-            if (parseNode.GetChildNode("commitId") is { } nullNodeCommitId && nullNodeCommitId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitId = null;
-            if (parseNode.GetChildNode("deployMode") is { } nullNodeDeployMode && nullNodeDeployMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployMode = null;
-            if (parseNode.GetChildNode("imageUrl") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
+            if (parseNode.GetChildNode("buildId") is null) { _explicitNullValueBuildId = default!; _explicitNullProperties?.Remove("buildId"); }
+            else if (parseNode.GetChildNode("buildId") is { } nullNodeBuildId && nullNodeBuildId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildId = null;
+            if (parseNode.GetChildNode("clearCache") is null) { _explicitNullValueClearCache = default!; _explicitNullProperties?.Remove("clearCache"); }
+            else if (parseNode.GetChildNode("clearCache") is { } nullNodeClearCache && nullNodeClearCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClearCache = null;
+            if (parseNode.GetChildNode("commitId") is null) { _explicitNullValueCommitId = default!; _explicitNullProperties?.Remove("commitId"); }
+            else if (parseNode.GetChildNode("commitId") is { } nullNodeCommitId && nullNodeCommitId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitId = null;
+            if (parseNode.GetChildNode("deployMode") is null) { _explicitNullValueDeployMode = default!; _explicitNullProperties?.Remove("deployMode"); }
+            else if (parseNode.GetChildNode("deployMode") is { } nullNodeDeployMode && nullNodeDeployMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployMode = null;
+            if (parseNode.GetChildNode("imageUrl") is null) { _explicitNullValueImageUrl = default!; _explicitNullProperties?.Remove("imageUrl"); }
+            else if (parseNode.GetChildNode("imageUrl") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,37 +34,37 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The ID of the build to deploy. Cannot be combined with `commitId`, `imageUrl`, or `deployMode`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
+        public string? BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; AdditionalData?.Remove("buildId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
         private string? _explicitNullValueBuildId = default!;
 #nullable restore
 #else
-        public string BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
+        public string BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; AdditionalData?.Remove("buildId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
         private string _explicitNullValueBuildId = default!;
 #endif
         /// <summary>If `clear`, Render clears the service&apos;s build cache before deploying. This can be useful if you&apos;re experiencing issues with your build.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.CreateDeployRequestClearCache? ClearCache { get => _explicitNullValueClearCache; set { _explicitNullValueClearCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clearCache"); else _explicitNullProperties?.Remove("clearCache"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateDeployRequestClearCache? ClearCache { get => _explicitNullValueClearCache; set { _explicitNullValueClearCache = value; AdditionalData?.Remove("clearCache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clearCache"); else _explicitNullProperties?.Remove("clearCache"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateDeployRequestClearCache? _explicitNullValueClearCache = default!;
         /// <summary>The SHA of a specific Git commit to deploy for a service. Defaults to the latest commit on the service&apos;s connected branch. Cannot be combined with `buildId`, `imageUrl`, or `deployMode: deploy_only`.Note that deploying a specific commit with this endpoint does not disable autodeploys for the service.You can toggle autodeploys for your service with the [Update service](https://api-docs.render.com/reference/update-service) endpoint or in the Render Dashboard.Not supported for cron jobs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitId { get => _explicitNullValueCommitId; set { _explicitNullValueCommitId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitId"); else _explicitNullProperties?.Remove("commitId"); } }
+        public string? CommitId { get => _explicitNullValueCommitId; set { _explicitNullValueCommitId = value; AdditionalData?.Remove("commitId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitId"); else _explicitNullProperties?.Remove("commitId"); } }
         private string? _explicitNullValueCommitId = default!;
 #nullable restore
 #else
-        public string CommitId { get => _explicitNullValueCommitId; set { _explicitNullValueCommitId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitId"); else _explicitNullProperties?.Remove("commitId"); } }
+        public string CommitId { get => _explicitNullValueCommitId; set { _explicitNullValueCommitId = value; AdditionalData?.Remove("commitId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitId"); else _explicitNullProperties?.Remove("commitId"); } }
         private string _explicitNullValueCommitId = default!;
 #endif
         /// <summary>Controls deployment behavior when triggering a deploy.- `deploy_only`: Deploy the last successful build without rebuilding (minimizes downtime)- `build_and_deploy`: Build new code and deploy it (default behavior when not specified)**Note:** `deployMode` cannot be combined with `buildId`. `deploy_only` cannot be combined with`commitId`, `imageUrl`, or `clearCache`, as those are build related fields.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.DeployMode? DeployMode { get => _explicitNullValueDeployMode; set { _explicitNullValueDeployMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployMode"); else _explicitNullProperties?.Remove("deployMode"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.DeployMode? DeployMode { get => _explicitNullValueDeployMode; set { _explicitNullValueDeployMode = value; AdditionalData?.Remove("deployMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployMode"); else _explicitNullProperties?.Remove("deployMode"); } }
         private global::Soenneker.Render.OpenApiClient.Models.DeployMode? _explicitNullValueDeployMode = default!;
         /// <summary>The URL of the image to deploy for an image-backed service. Cannot be combined with `buildId`, `commitId`, or `deployMode: deploy_only`.The host, repository, and image name all must match the currently configured image for the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageUrl"); else _explicitNullProperties?.Remove("imageUrl"); } }
+        public string? ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; AdditionalData?.Remove("imageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageUrl"); else _explicitNullProperties?.Remove("imageUrl"); } }
         private string? _explicitNullValueImageUrl = default!;
 #nullable restore
 #else
-        public string ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageUrl"); else _explicitNullProperties?.Remove("imageUrl"); } }
+        public string ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; AdditionalData?.Remove("imageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageUrl"); else _explicitNullProperties?.Remove("imageUrl"); } }
         private string _explicitNullValueImageUrl = default!;
 #endif
         /// <summary>
@@ -88,9 +93,9 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "buildId", n => { BuildId = n.GetStringValue(); } },
-                { "clearCache", n => { ClearCache = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateDeployRequestClearCache>(); } },
+                { "clearCache", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateDeployRequestClearCache>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueClearCache = default; _explicitNullProperties?.Remove("clearCache"); AdditionalData["clearCache"] = unknown; } else { ClearCache = parsed; AdditionalData.Remove("clearCache"); } } },
                 { "commitId", n => { CommitId = n.GetStringValue(); } },
-                { "deployMode", n => { DeployMode = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.DeployMode>(); } },
+                { "deployMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.DeployMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeployMode = default; _explicitNullProperties?.Remove("deployMode"); AdditionalData["deployMode"] = unknown; } else { DeployMode = parsed; AdditionalData.Remove("deployMode"); } } },
                 { "imageUrl", n => { ImageUrl = n.GetStringValue(); } },
             };
         }

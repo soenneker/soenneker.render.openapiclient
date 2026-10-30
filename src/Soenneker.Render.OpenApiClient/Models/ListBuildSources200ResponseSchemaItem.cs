@@ -17,8 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("buildSource") is { } nullNodeBuildSource && nullNodeBuildSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildSource = null;
-            if (parseNode.GetChildNode("cursor") is { } nullNodeCursor && nullNodeCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cursor = null;
+            if (parseNode.GetChildNode("buildSource") is null) { _explicitNullValueBuildSource = default!; _explicitNullProperties?.Remove("buildSource"); }
+            else if (parseNode.GetChildNode("buildSource") is { } nullNodeBuildSource && nullNodeBuildSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildSource = null;
+            if (parseNode.GetChildNode("cursor") is null) { _explicitNullValueCursor = default!; _explicitNullProperties?.Remove("cursor"); }
+            else if (parseNode.GetChildNode("cursor") is { } nullNodeCursor && nullNodeCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cursor = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The buildSource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildSource { get => _explicitNullValueBuildSource; set { _explicitNullValueBuildSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildSource"); else _explicitNullProperties?.Remove("buildSource"); } }
+        public string? BuildSource { get => _explicitNullValueBuildSource; set { _explicitNullValueBuildSource = value; AdditionalData?.Remove("buildSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildSource"); else _explicitNullProperties?.Remove("buildSource"); } }
         private string? _explicitNullValueBuildSource = default!;
 #nullable restore
 #else
-        public string BuildSource { get => _explicitNullValueBuildSource; set { _explicitNullValueBuildSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildSource"); else _explicitNullProperties?.Remove("buildSource"); } }
+        public string BuildSource { get => _explicitNullValueBuildSource; set { _explicitNullValueBuildSource = value; AdditionalData?.Remove("buildSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildSource"); else _explicitNullProperties?.Remove("buildSource"); } }
         private string _explicitNullValueBuildSource = default!;
 #endif
         /// <summary>The cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
+        public string? Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; AdditionalData?.Remove("cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
         private string? _explicitNullValueCursor = default!;
 #nullable restore
 #else
-        public string Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
+        public string Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; AdditionalData?.Remove("cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
         private string _explicitNullValueCursor = default!;
 #endif
         /// <summary>

@@ -17,10 +17,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("max") is { } nullNodeMax && nullNodeMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Max = null;
-            if (parseNode.GetChildNode("min") is { } nullNodeMin && nullNodeMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Min = null;
+            if (parseNode.GetChildNode("criteria") is null) { _explicitNullValueCriteria = default!; _explicitNullProperties?.Remove("criteria"); }
+            else if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("max") is null) { _explicitNullValueMax = default!; _explicitNullProperties?.Remove("max"); }
+            else if (parseNode.GetChildNode("max") is { } nullNodeMax && nullNodeMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Max = null;
+            if (parseNode.GetChildNode("min") is null) { _explicitNullValueMin = default!; _explicitNullProperties?.Remove("min"); }
+            else if (parseNode.GetChildNode("min") is { } nullNodeMin && nullNodeMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Min = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,21 +32,21 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria? _explicitNullValueCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteria _explicitNullValueCriteria = default!;
 #endif
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The maximum number of instances for the service</summary>
-        public int? Max { get => _explicitNullValueMax; set { _explicitNullValueMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max"); else _explicitNullProperties?.Remove("max"); } }
+        public int? Max { get => _explicitNullValueMax; set { _explicitNullValueMax = value; AdditionalData?.Remove("max"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max"); else _explicitNullProperties?.Remove("max"); } }
         private int? _explicitNullValueMax = default!;
         /// <summary>The minimum number of instances for the service</summary>
-        public int? Min { get => _explicitNullValueMin; set { _explicitNullValueMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min"); else _explicitNullProperties?.Remove("min"); } }
+        public int? Min { get => _explicitNullValueMin; set { _explicitNullValueMin = value; AdditionalData?.Remove("min"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min"); else _explicitNullProperties?.Remove("min"); } }
         private int? _explicitNullValueMin = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequest"/> and sets the default values.

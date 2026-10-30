@@ -17,13 +17,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scheduledAt") is { } nullNodeScheduledAt && nullNodeScheduledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledAt = null;
+            if (parseNode.GetChildNode("scheduledAt") is null) { _explicitNullValueScheduledAt = default!; _explicitNullProperties?.Remove("scheduledAt"); }
+            else if (parseNode.GetChildNode("scheduledAt") is { } nullNodeScheduledAt && nullNodeScheduledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date-time at which the maintenance is scheduled to start. This must be before the pendingMaintenanceBy date-time.</summary>
-        public DateTimeOffset? ScheduledAt { get => _explicitNullValueScheduledAt; set { _explicitNullValueScheduledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduledAt"); else _explicitNullProperties?.Remove("scheduledAt"); } }
+        public DateTimeOffset? ScheduledAt { get => _explicitNullValueScheduledAt; set { _explicitNullValueScheduledAt = value; AdditionalData?.Remove("scheduledAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduledAt"); else _explicitNullProperties?.Remove("scheduledAt"); } }
         private DateTimeOffset? _explicitNullValueScheduledAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateMaintenanceRequest"/> and sets the default values.

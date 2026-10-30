@@ -17,11 +17,16 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
-            if (parseNode.GetChildNode("buildCommand") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
-            if (parseNode.GetChildNode("repo") is { } nullNodeRepo && nullNodeRepo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repo = null;
-            if (parseNode.GetChildNode("rootDir") is { } nullNodeRootDir && nullNodeRootDir.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDir = null;
-            if (parseNode.GetChildNode("runtime") is { } nullNodeRuntime && nullNodeRuntime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Runtime = null;
+            if (parseNode.GetChildNode("branch") is null) { _explicitNullValueBranch = default!; _explicitNullProperties?.Remove("branch"); }
+            else if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
+            if (parseNode.GetChildNode("buildCommand") is null) { _explicitNullValueBuildCommand = default!; _explicitNullProperties?.Remove("buildCommand"); }
+            else if (parseNode.GetChildNode("buildCommand") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
+            if (parseNode.GetChildNode("repo") is null) { _explicitNullValueRepo = default!; _explicitNullProperties?.Remove("repo"); }
+            else if (parseNode.GetChildNode("repo") is { } nullNodeRepo && nullNodeRepo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repo = null;
+            if (parseNode.GetChildNode("rootDir") is null) { _explicitNullValueRootDir = default!; _explicitNullProperties?.Remove("rootDir"); }
+            else if (parseNode.GetChildNode("rootDir") is { } nullNodeRootDir && nullNodeRootDir.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootDir = null;
+            if (parseNode.GetChildNode("runtime") is null) { _explicitNullValueRuntime = default!; _explicitNullProperties?.Remove("runtime"); }
+            else if (parseNode.GetChildNode("runtime") is { } nullNodeRuntime && nullNodeRuntime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Runtime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The branch to use for the build, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
         private string? _explicitNullValueBranch = default!;
 #nullable restore
 #else
-        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
         private string _explicitNullValueBranch = default!;
 #endif
         /// <summary>The command to run to build the workflow. Required for every runtime except docker, which builds from its Dockerfile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
+        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; AdditionalData?.Remove("buildCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
         private string? _explicitNullValueBuildCommand = default!;
 #nullable restore
 #else
-        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
+        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; AdditionalData?.Remove("buildCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
         private string _explicitNullValueBuildCommand = default!;
 #endif
         /// <summary>The repository URL to use for the build. Cannot be blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repo { get => _explicitNullValueRepo; set { _explicitNullValueRepo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo"); else _explicitNullProperties?.Remove("repo"); } }
+        public string? Repo { get => _explicitNullValueRepo; set { _explicitNullValueRepo = value; AdditionalData?.Remove("repo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo"); else _explicitNullProperties?.Remove("repo"); } }
         private string? _explicitNullValueRepo = default!;
 #nullable restore
 #else
-        public string Repo { get => _explicitNullValueRepo; set { _explicitNullValueRepo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo"); else _explicitNullProperties?.Remove("repo"); } }
+        public string Repo { get => _explicitNullValueRepo; set { _explicitNullValueRepo = value; AdditionalData?.Remove("repo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo"); else _explicitNullProperties?.Remove("repo"); } }
         private string _explicitNullValueRepo = default!;
 #endif
         /// <summary>The root directory of the repository to use for the build, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootDir { get => _explicitNullValueRootDir; set { _explicitNullValueRootDir = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDir"); else _explicitNullProperties?.Remove("rootDir"); } }
+        public string? RootDir { get => _explicitNullValueRootDir; set { _explicitNullValueRootDir = value; AdditionalData?.Remove("rootDir"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDir"); else _explicitNullProperties?.Remove("rootDir"); } }
         private string? _explicitNullValueRootDir = default!;
 #nullable restore
 #else
-        public string RootDir { get => _explicitNullValueRootDir; set { _explicitNullValueRootDir = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDir"); else _explicitNullProperties?.Remove("rootDir"); } }
+        public string RootDir { get => _explicitNullValueRootDir; set { _explicitNullValueRootDir = value; AdditionalData?.Remove("rootDir"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootDir"); else _explicitNullProperties?.Remove("rootDir"); } }
         private string _explicitNullValueRootDir = default!;
 #endif
         /// <summary>The runtime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
+        public string? Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; AdditionalData?.Remove("runtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
         private string? _explicitNullValueRuntime = default!;
 #nullable restore
 #else
-        public string Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
+        public string Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; AdditionalData?.Remove("runtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
         private string _explicitNullValueRuntime = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("buildCommand") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
-            if (parseNode.GetChildNode("startCommand") is { } nullNodeStartCommand && nullNodeStartCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartCommand = null;
+            if (parseNode.GetChildNode("buildCommand") is null) { _explicitNullValueBuildCommand = default!; _explicitNullProperties?.Remove("buildCommand"); }
+            else if (parseNode.GetChildNode("buildCommand") is { } nullNodeBuildCommand && nullNodeBuildCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCommand = null;
+            if (parseNode.GetChildNode("startCommand") is null) { _explicitNullValueStartCommand = default!; _explicitNullProperties?.Remove("startCommand"); }
+            else if (parseNode.GetChildNode("startCommand") is { } nullNodeStartCommand && nullNodeStartCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartCommand = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The buildCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
+        public string? BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; AdditionalData?.Remove("buildCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
         private string? _explicitNullValueBuildCommand = default!;
 #nullable restore
 #else
-        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
+        public string BuildCommand { get => _explicitNullValueBuildCommand; set { _explicitNullValueBuildCommand = value; AdditionalData?.Remove("buildCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCommand"); else _explicitNullProperties?.Remove("buildCommand"); } }
         private string _explicitNullValueBuildCommand = default!;
 #endif
         /// <summary>The startCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartCommand { get => _explicitNullValueStartCommand; set { _explicitNullValueStartCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startCommand"); else _explicitNullProperties?.Remove("startCommand"); } }
+        public string? StartCommand { get => _explicitNullValueStartCommand; set { _explicitNullValueStartCommand = value; AdditionalData?.Remove("startCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startCommand"); else _explicitNullProperties?.Remove("startCommand"); } }
         private string? _explicitNullValueStartCommand = default!;
 #nullable restore
 #else
-        public string StartCommand { get => _explicitNullValueStartCommand; set { _explicitNullValueStartCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startCommand"); else _explicitNullProperties?.Remove("startCommand"); } }
+        public string StartCommand { get => _explicitNullValueStartCommand; set { _explicitNullValueStartCommand = value; AdditionalData?.Remove("startCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startCommand"); else _explicitNullProperties?.Remove("startCommand"); } }
         private string _explicitNullValueStartCommand = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tableScans") is { } nullNodeTableScans && nullNodeTableScans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableScans = null;
+            if (parseNode.GetChildNode("tableScans") is null) { _explicitNullValueTableScans = default!; _explicitNullProperties?.Remove("tableScans"); }
+            else if (parseNode.GetChildNode("tableScans") is { } nullNodeTableScans && nullNodeTableScans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableScans = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The tableScans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresTableScans200ResponseTableScansItem>? TableScans { get => _explicitNullValueTableScans; set { _explicitNullValueTableScans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tableScans"); else _explicitNullProperties?.Remove("tableScans"); } }
+        public List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresTableScans200ResponseTableScansItem>? TableScans { get => _explicitNullValueTableScans; set { _explicitNullValueTableScans = value; AdditionalData?.Remove("tableScans"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tableScans"); else _explicitNullProperties?.Remove("tableScans"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresTableScans200ResponseTableScansItem>? _explicitNullValueTableScans = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresTableScans200ResponseTableScansItem> TableScans { get => _explicitNullValueTableScans; set { _explicitNullValueTableScans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tableScans"); else _explicitNullProperties?.Remove("tableScans"); } }
+        public List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresTableScans200ResponseTableScansItem> TableScans { get => _explicitNullValueTableScans; set { _explicitNullValueTableScans = value; AdditionalData?.Remove("tableScans"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tableScans"); else _explicitNullProperties?.Remove("tableScans"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresTableScans200ResponseTableScansItem> _explicitNullValueTableScans = default!;
 #endif
         /// <summary>

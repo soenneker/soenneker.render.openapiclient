@@ -104,11 +104,11 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.EnvVars
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.EnvVarWithCursor>?> PutAsync(List<global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.EnvVarWithCursor>?> PutAsync(List<global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.EnvVarWithCursor>> PutAsync(List<global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Render.OpenApiClient.Models.EnvVarWithCursor>> PutAsync(List<global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -144,7 +144,7 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.EnvVars
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Services.Item.EnvVars.EnvVarsRequestBuilder.EnvVarsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.render.com/v1", "/services/{serviceId}/env-vars", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -157,15 +157,15 @@ namespace Soenneker.Render.OpenApiClient.Services.Item.EnvVars
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.render.com/v1", "/services/{serviceId}/env-vars", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

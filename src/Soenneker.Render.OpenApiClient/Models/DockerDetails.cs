@@ -17,11 +17,16 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dockerCommand") is { } nullNodeDockerCommand && nullNodeDockerCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DockerCommand = null;
-            if (parseNode.GetChildNode("dockerContext") is { } nullNodeDockerContext && nullNodeDockerContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DockerContext = null;
-            if (parseNode.GetChildNode("dockerfilePath") is { } nullNodeDockerfilePath && nullNodeDockerfilePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DockerfilePath = null;
-            if (parseNode.GetChildNode("preDeployCommand") is { } nullNodePreDeployCommand && nullNodePreDeployCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreDeployCommand = null;
-            if (parseNode.GetChildNode("registryCredential") is { } nullNodeRegistryCredential && nullNodeRegistryCredential.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistryCredential = null;
+            if (parseNode.GetChildNode("dockerCommand") is null) { _explicitNullValueDockerCommand = default!; _explicitNullProperties?.Remove("dockerCommand"); }
+            else if (parseNode.GetChildNode("dockerCommand") is { } nullNodeDockerCommand && nullNodeDockerCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DockerCommand = null;
+            if (parseNode.GetChildNode("dockerContext") is null) { _explicitNullValueDockerContext = default!; _explicitNullProperties?.Remove("dockerContext"); }
+            else if (parseNode.GetChildNode("dockerContext") is { } nullNodeDockerContext && nullNodeDockerContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DockerContext = null;
+            if (parseNode.GetChildNode("dockerfilePath") is null) { _explicitNullValueDockerfilePath = default!; _explicitNullProperties?.Remove("dockerfilePath"); }
+            else if (parseNode.GetChildNode("dockerfilePath") is { } nullNodeDockerfilePath && nullNodeDockerfilePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DockerfilePath = null;
+            if (parseNode.GetChildNode("preDeployCommand") is null) { _explicitNullValuePreDeployCommand = default!; _explicitNullProperties?.Remove("preDeployCommand"); }
+            else if (parseNode.GetChildNode("preDeployCommand") is { } nullNodePreDeployCommand && nullNodePreDeployCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreDeployCommand = null;
+            if (parseNode.GetChildNode("registryCredential") is null) { _explicitNullValueRegistryCredential = default!; _explicitNullProperties?.Remove("registryCredential"); }
+            else if (parseNode.GetChildNode("registryCredential") is { } nullNodeRegistryCredential && nullNodeRegistryCredential.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistryCredential = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The dockerCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DockerCommand { get => _explicitNullValueDockerCommand; set { _explicitNullValueDockerCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerCommand"); else _explicitNullProperties?.Remove("dockerCommand"); } }
+        public string? DockerCommand { get => _explicitNullValueDockerCommand; set { _explicitNullValueDockerCommand = value; AdditionalData?.Remove("dockerCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerCommand"); else _explicitNullProperties?.Remove("dockerCommand"); } }
         private string? _explicitNullValueDockerCommand = default!;
 #nullable restore
 #else
-        public string DockerCommand { get => _explicitNullValueDockerCommand; set { _explicitNullValueDockerCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerCommand"); else _explicitNullProperties?.Remove("dockerCommand"); } }
+        public string DockerCommand { get => _explicitNullValueDockerCommand; set { _explicitNullValueDockerCommand = value; AdditionalData?.Remove("dockerCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerCommand"); else _explicitNullProperties?.Remove("dockerCommand"); } }
         private string _explicitNullValueDockerCommand = default!;
 #endif
         /// <summary>The dockerContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DockerContext { get => _explicitNullValueDockerContext; set { _explicitNullValueDockerContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerContext"); else _explicitNullProperties?.Remove("dockerContext"); } }
+        public string? DockerContext { get => _explicitNullValueDockerContext; set { _explicitNullValueDockerContext = value; AdditionalData?.Remove("dockerContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerContext"); else _explicitNullProperties?.Remove("dockerContext"); } }
         private string? _explicitNullValueDockerContext = default!;
 #nullable restore
 #else
-        public string DockerContext { get => _explicitNullValueDockerContext; set { _explicitNullValueDockerContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerContext"); else _explicitNullProperties?.Remove("dockerContext"); } }
+        public string DockerContext { get => _explicitNullValueDockerContext; set { _explicitNullValueDockerContext = value; AdditionalData?.Remove("dockerContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerContext"); else _explicitNullProperties?.Remove("dockerContext"); } }
         private string _explicitNullValueDockerContext = default!;
 #endif
         /// <summary>The dockerfilePath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DockerfilePath { get => _explicitNullValueDockerfilePath; set { _explicitNullValueDockerfilePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerfilePath"); else _explicitNullProperties?.Remove("dockerfilePath"); } }
+        public string? DockerfilePath { get => _explicitNullValueDockerfilePath; set { _explicitNullValueDockerfilePath = value; AdditionalData?.Remove("dockerfilePath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerfilePath"); else _explicitNullProperties?.Remove("dockerfilePath"); } }
         private string? _explicitNullValueDockerfilePath = default!;
 #nullable restore
 #else
-        public string DockerfilePath { get => _explicitNullValueDockerfilePath; set { _explicitNullValueDockerfilePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerfilePath"); else _explicitNullProperties?.Remove("dockerfilePath"); } }
+        public string DockerfilePath { get => _explicitNullValueDockerfilePath; set { _explicitNullValueDockerfilePath = value; AdditionalData?.Remove("dockerfilePath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerfilePath"); else _explicitNullProperties?.Remove("dockerfilePath"); } }
         private string _explicitNullValueDockerfilePath = default!;
 #endif
         /// <summary>The preDeployCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreDeployCommand { get => _explicitNullValuePreDeployCommand; set { _explicitNullValuePreDeployCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preDeployCommand"); else _explicitNullProperties?.Remove("preDeployCommand"); } }
+        public string? PreDeployCommand { get => _explicitNullValuePreDeployCommand; set { _explicitNullValuePreDeployCommand = value; AdditionalData?.Remove("preDeployCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preDeployCommand"); else _explicitNullProperties?.Remove("preDeployCommand"); } }
         private string? _explicitNullValuePreDeployCommand = default!;
 #nullable restore
 #else
-        public string PreDeployCommand { get => _explicitNullValuePreDeployCommand; set { _explicitNullValuePreDeployCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preDeployCommand"); else _explicitNullProperties?.Remove("preDeployCommand"); } }
+        public string PreDeployCommand { get => _explicitNullValuePreDeployCommand; set { _explicitNullValuePreDeployCommand = value; AdditionalData?.Remove("preDeployCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preDeployCommand"); else _explicitNullProperties?.Remove("preDeployCommand"); } }
         private string _explicitNullValuePreDeployCommand = default!;
 #endif
         /// <summary>The registryCredential property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.RegistryCredential? RegistryCredential { get => _explicitNullValueRegistryCredential; set { _explicitNullValueRegistryCredential = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registryCredential"); else _explicitNullProperties?.Remove("registryCredential"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.RegistryCredential? RegistryCredential { get => _explicitNullValueRegistryCredential; set { _explicitNullValueRegistryCredential = value; AdditionalData?.Remove("registryCredential"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registryCredential"); else _explicitNullProperties?.Remove("registryCredential"); } }
         private global::Soenneker.Render.OpenApiClient.Models.RegistryCredential? _explicitNullValueRegistryCredential = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.RegistryCredential RegistryCredential { get => _explicitNullValueRegistryCredential; set { _explicitNullValueRegistryCredential = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registryCredential"); else _explicitNullProperties?.Remove("registryCredential"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.RegistryCredential RegistryCredential { get => _explicitNullValueRegistryCredential; set { _explicitNullValueRegistryCredential = value; AdditionalData?.Remove("registryCredential"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registryCredential"); else _explicitNullProperties?.Remove("registryCredential"); } }
         private global::Soenneker.Render.OpenApiClient.Models.RegistryCredential _explicitNullValueRegistryCredential = default!;
 #endif
         /// <summary>

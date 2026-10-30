@@ -18,11 +18,16 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("imageUrl") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
-            if (parseNode.GetChildNode("imageVersionId") is { } nullNodeImageVersionId && nullNodeImageVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageVersionId = null;
-            if (parseNode.GetChildNode("ref") is { } nullNodeRef && nullNodeRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ref = null;
-            if (parseNode.GetChildNode("registryCredentialId") is { } nullNodeRegistryCredentialId && nullNodeRegistryCredentialId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistryCredentialId = null;
-            if (parseNode.GetChildNode("SHA") is { } nullNodeSHA && nullNodeSHA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SHA = null;
+            if (parseNode.GetChildNode("imageUrl") is null) { _explicitNullValueImageUrl = default!; _explicitNullProperties?.Remove("imageUrl"); }
+            else if (parseNode.GetChildNode("imageUrl") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
+            if (parseNode.GetChildNode("imageVersionId") is null) { _explicitNullValueImageVersionId = default!; _explicitNullProperties?.Remove("imageVersionId"); }
+            else if (parseNode.GetChildNode("imageVersionId") is { } nullNodeImageVersionId && nullNodeImageVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageVersionId = null;
+            if (parseNode.GetChildNode("ref") is null) { _explicitNullValueRef = default!; _explicitNullProperties?.Remove("ref"); }
+            else if (parseNode.GetChildNode("ref") is { } nullNodeRef && nullNodeRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ref = null;
+            if (parseNode.GetChildNode("registryCredentialId") is null) { _explicitNullValueRegistryCredentialId = default!; _explicitNullProperties?.Remove("registryCredentialId"); }
+            else if (parseNode.GetChildNode("registryCredentialId") is { } nullNodeRegistryCredentialId && nullNodeRegistryCredentialId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistryCredentialId = null;
+            if (parseNode.GetChildNode("SHA") is null) { _explicitNullValueSHA = default!; _explicitNullProperties?.Remove("SHA"); }
+            else if (parseNode.GetChildNode("SHA") is { } nullNodeSHA && nullNodeSHA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SHA = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The imageUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageUrl"); else _explicitNullProperties?.Remove("imageUrl"); } }
+        public string? ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; AdditionalData?.Remove("imageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageUrl"); else _explicitNullProperties?.Remove("imageUrl"); } }
         private string? _explicitNullValueImageUrl = default!;
 #nullable restore
 #else
-        public string ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageUrl"); else _explicitNullProperties?.Remove("imageUrl"); } }
+        public string ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; AdditionalData?.Remove("imageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageUrl"); else _explicitNullProperties?.Remove("imageUrl"); } }
         private string _explicitNullValueImageUrl = default!;
 #endif
         /// <summary>The imageVersionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageVersionId { get => _explicitNullValueImageVersionId; set { _explicitNullValueImageVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageVersionId"); else _explicitNullProperties?.Remove("imageVersionId"); } }
+        public string? ImageVersionId { get => _explicitNullValueImageVersionId; set { _explicitNullValueImageVersionId = value; AdditionalData?.Remove("imageVersionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageVersionId"); else _explicitNullProperties?.Remove("imageVersionId"); } }
         private string? _explicitNullValueImageVersionId = default!;
 #nullable restore
 #else
-        public string ImageVersionId { get => _explicitNullValueImageVersionId; set { _explicitNullValueImageVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageVersionId"); else _explicitNullProperties?.Remove("imageVersionId"); } }
+        public string ImageVersionId { get => _explicitNullValueImageVersionId; set { _explicitNullValueImageVersionId = value; AdditionalData?.Remove("imageVersionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageVersionId"); else _explicitNullProperties?.Remove("imageVersionId"); } }
         private string _explicitNullValueImageVersionId = default!;
 #endif
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
+        public string? Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; AdditionalData?.Remove("ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
         private string? _explicitNullValueRef = default!;
 #nullable restore
 #else
-        public string Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
+        public string Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; AdditionalData?.Remove("ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
         private string _explicitNullValueRef = default!;
 #endif
         /// <summary>The registryCredentialId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistryCredentialId { get => _explicitNullValueRegistryCredentialId; set { _explicitNullValueRegistryCredentialId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registryCredentialId"); else _explicitNullProperties?.Remove("registryCredentialId"); } }
+        public string? RegistryCredentialId { get => _explicitNullValueRegistryCredentialId; set { _explicitNullValueRegistryCredentialId = value; AdditionalData?.Remove("registryCredentialId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registryCredentialId"); else _explicitNullProperties?.Remove("registryCredentialId"); } }
         private string? _explicitNullValueRegistryCredentialId = default!;
 #nullable restore
 #else
-        public string RegistryCredentialId { get => _explicitNullValueRegistryCredentialId; set { _explicitNullValueRegistryCredentialId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registryCredentialId"); else _explicitNullProperties?.Remove("registryCredentialId"); } }
+        public string RegistryCredentialId { get => _explicitNullValueRegistryCredentialId; set { _explicitNullValueRegistryCredentialId = value; AdditionalData?.Remove("registryCredentialId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registryCredentialId"); else _explicitNullProperties?.Remove("registryCredentialId"); } }
         private string _explicitNullValueRegistryCredentialId = default!;
 #endif
         /// <summary>The SHA property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SHA { get => _explicitNullValueSHA; set { _explicitNullValueSHA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SHA"); else _explicitNullProperties?.Remove("SHA"); } }
+        public string? SHA { get => _explicitNullValueSHA; set { _explicitNullValueSHA = value; AdditionalData?.Remove("SHA"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SHA"); else _explicitNullProperties?.Remove("SHA"); } }
         private string? _explicitNullValueSHA = default!;
 #nullable restore
 #else
-        public string SHA { get => _explicitNullValueSHA; set { _explicitNullValueSHA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SHA"); else _explicitNullProperties?.Remove("SHA"); } }
+        public string SHA { get => _explicitNullValueSHA; set { _explicitNullValueSHA = value; AdditionalData?.Remove("SHA"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SHA"); else _explicitNullProperties?.Remove("SHA"); } }
         private string _explicitNullValueSHA = default!;
 #endif
         /// <summary>

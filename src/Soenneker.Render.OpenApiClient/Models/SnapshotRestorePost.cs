@@ -17,8 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("instanceId") is { } nullNodeInstanceId && nullNodeInstanceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceId = null;
-            if (parseNode.GetChildNode("snapshotKey") is { } nullNodeSnapshotKey && nullNodeSnapshotKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotKey = null;
+            if (parseNode.GetChildNode("instanceId") is null) { _explicitNullValueInstanceId = default!; _explicitNullProperties?.Remove("instanceId"); }
+            else if (parseNode.GetChildNode("instanceId") is { } nullNodeInstanceId && nullNodeInstanceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceId = null;
+            if (parseNode.GetChildNode("snapshotKey") is null) { _explicitNullValueSnapshotKey = default!; _explicitNullProperties?.Remove("snapshotKey"); }
+            else if (parseNode.GetChildNode("snapshotKey") is { } nullNodeSnapshotKey && nullNodeSnapshotKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>When a service with a disk is scaled, the instanceId is used to identify the instance that the disk is attached to. Each instance&apos;s disks get their own snapshots, and can be restored separately.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstanceId { get => _explicitNullValueInstanceId; set { _explicitNullValueInstanceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instanceId"); else _explicitNullProperties?.Remove("instanceId"); } }
+        public string? InstanceId { get => _explicitNullValueInstanceId; set { _explicitNullValueInstanceId = value; AdditionalData?.Remove("instanceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instanceId"); else _explicitNullProperties?.Remove("instanceId"); } }
         private string? _explicitNullValueInstanceId = default!;
 #nullable restore
 #else
-        public string InstanceId { get => _explicitNullValueInstanceId; set { _explicitNullValueInstanceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instanceId"); else _explicitNullProperties?.Remove("instanceId"); } }
+        public string InstanceId { get => _explicitNullValueInstanceId; set { _explicitNullValueInstanceId = value; AdditionalData?.Remove("instanceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instanceId"); else _explicitNullProperties?.Remove("instanceId"); } }
         private string _explicitNullValueInstanceId = default!;
 #endif
         /// <summary>The snapshotKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SnapshotKey { get => _explicitNullValueSnapshotKey; set { _explicitNullValueSnapshotKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotKey"); else _explicitNullProperties?.Remove("snapshotKey"); } }
+        public string? SnapshotKey { get => _explicitNullValueSnapshotKey; set { _explicitNullValueSnapshotKey = value; AdditionalData?.Remove("snapshotKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotKey"); else _explicitNullProperties?.Remove("snapshotKey"); } }
         private string? _explicitNullValueSnapshotKey = default!;
 #nullable restore
 #else
-        public string SnapshotKey { get => _explicitNullValueSnapshotKey; set { _explicitNullValueSnapshotKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotKey"); else _explicitNullProperties?.Remove("snapshotKey"); } }
+        public string SnapshotKey { get => _explicitNullValueSnapshotKey; set { _explicitNullValueSnapshotKey = value; AdditionalData?.Remove("snapshotKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotKey"); else _explicitNullProperties?.Remove("snapshotKey"); } }
         private string _explicitNullValueSnapshotKey = default!;
 #endif
         /// <summary>

@@ -17,17 +17,19 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("recoveryStatus") is { } nullNodeRecoveryStatus && nullNodeRecoveryStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecoveryStatus = null;
-            if (parseNode.GetChildNode("startsAt") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
+            if (parseNode.GetChildNode("recoveryStatus") is null) { _explicitNullValueRecoveryStatus = default!; _explicitNullProperties?.Remove("recoveryStatus"); }
+            else if (parseNode.GetChildNode("recoveryStatus") is { } nullNodeRecoveryStatus && nullNodeRecoveryStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecoveryStatus = null;
+            if (parseNode.GetChildNode("startsAt") is null) { _explicitNullValueStartsAt = default!; _explicitNullProperties?.Remove("startsAt"); }
+            else if (parseNode.GetChildNode("startsAt") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Availability of point-in-time recovery.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.RetrievePostgresRecoveryInfo200ResponseRecoveryStatus? RecoveryStatus { get => _explicitNullValueRecoveryStatus; set { _explicitNullValueRecoveryStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recoveryStatus"); else _explicitNullProperties?.Remove("recoveryStatus"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.RetrievePostgresRecoveryInfo200ResponseRecoveryStatus? RecoveryStatus { get => _explicitNullValueRecoveryStatus; set { _explicitNullValueRecoveryStatus = value; AdditionalData?.Remove("recoveryStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recoveryStatus"); else _explicitNullProperties?.Remove("recoveryStatus"); } }
         private global::Soenneker.Render.OpenApiClient.Models.RetrievePostgresRecoveryInfo200ResponseRecoveryStatus? _explicitNullValueRecoveryStatus = default!;
         /// <summary>The startsAt property</summary>
-        public DateTimeOffset? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsAt"); else _explicitNullProperties?.Remove("startsAt"); } }
+        public DateTimeOffset? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; AdditionalData?.Remove("startsAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsAt"); else _explicitNullProperties?.Remove("startsAt"); } }
         private DateTimeOffset? _explicitNullValueStartsAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.RetrievePostgresRecoveryInfo200Response"/> and sets the default values.
@@ -54,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "recoveryStatus", n => { RecoveryStatus = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RetrievePostgresRecoveryInfo200ResponseRecoveryStatus>(); } },
+                { "recoveryStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RetrievePostgresRecoveryInfo200ResponseRecoveryStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRecoveryStatus = default; _explicitNullProperties?.Remove("recoveryStatus"); AdditionalData["recoveryStatus"] = unknown; } else { RecoveryStatus = parsed; AdditionalData.Remove("recoveryStatus"); } } },
                 { "startsAt", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
             };
         }

@@ -18,8 +18,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ignoredPaths") is { } nullNodeIgnoredPaths && nullNodeIgnoredPaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoredPaths = null;
-            if (parseNode.GetChildNode("paths") is { } nullNodePaths && nullNodePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paths = null;
+            if (parseNode.GetChildNode("ignoredPaths") is null) { _explicitNullValueIgnoredPaths = default!; _explicitNullProperties?.Remove("ignoredPaths"); }
+            else if (parseNode.GetChildNode("ignoredPaths") is { } nullNodeIgnoredPaths && nullNodeIgnoredPaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoredPaths = null;
+            if (parseNode.GetChildNode("paths") is null) { _explicitNullValuePaths = default!; _explicitNullProperties?.Remove("paths"); }
+            else if (parseNode.GetChildNode("paths") is { } nullNodePaths && nullNodePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paths = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The ignoredPaths property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IgnoredPaths { get => _explicitNullValueIgnoredPaths; set { _explicitNullValueIgnoredPaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoredPaths"); else _explicitNullProperties?.Remove("ignoredPaths"); } }
+        public List<string>? IgnoredPaths { get => _explicitNullValueIgnoredPaths; set { _explicitNullValueIgnoredPaths = value; AdditionalData?.Remove("ignoredPaths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoredPaths"); else _explicitNullProperties?.Remove("ignoredPaths"); } }
         private List<string>? _explicitNullValueIgnoredPaths = default!;
 #nullable restore
 #else
-        public List<string> IgnoredPaths { get => _explicitNullValueIgnoredPaths; set { _explicitNullValueIgnoredPaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoredPaths"); else _explicitNullProperties?.Remove("ignoredPaths"); } }
+        public List<string> IgnoredPaths { get => _explicitNullValueIgnoredPaths; set { _explicitNullValueIgnoredPaths = value; AdditionalData?.Remove("ignoredPaths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoredPaths"); else _explicitNullProperties?.Remove("ignoredPaths"); } }
         private List<string> _explicitNullValueIgnoredPaths = default!;
 #endif
         /// <summary>The paths property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
+        public List<string>? Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; AdditionalData?.Remove("paths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
         private List<string>? _explicitNullValuePaths = default!;
 #nullable restore
 #else
-        public List<string> Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
+        public List<string> Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; AdditionalData?.Remove("paths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
         private List<string> _explicitNullValuePaths = default!;
 #endif
         /// <summary>

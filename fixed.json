@@ -20366,7 +20366,7 @@
       "UpdateEnvVarsForServiceRequestRequestBody": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestRequestBodyItem"
+          "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItem"
         }
       },
       "UpdateEnvVarsForService200ResponseSchema": {

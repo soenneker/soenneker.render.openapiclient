@@ -18,56 +18,61 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Bytes") is { } nullNodeBytes && nullNodeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bytes = null;
-            if (parseNode.GetChildNode("Database") is { } nullNodeDatabase && nullNodeDatabase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Database = null;
-            if (parseNode.GetChildNode("Index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
-            if (parseNode.GetChildNode("Schema") is { } nullNodeSchema && nullNodeSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schema = null;
-            if (parseNode.GetChildNode("Table") is { } nullNodeTable && nullNodeTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Table = null;
+            if (parseNode.GetChildNode("Bytes") is null) { _explicitNullValueBytes = default!; _explicitNullProperties?.Remove("Bytes"); }
+            else if (parseNode.GetChildNode("Bytes") is { } nullNodeBytes && nullNodeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bytes = null;
+            if (parseNode.GetChildNode("Database") is null) { _explicitNullValueDatabase = default!; _explicitNullProperties?.Remove("Database"); }
+            else if (parseNode.GetChildNode("Database") is { } nullNodeDatabase && nullNodeDatabase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Database = null;
+            if (parseNode.GetChildNode("Index") is null) { _explicitNullValueIndex = default!; _explicitNullProperties?.Remove("Index"); }
+            else if (parseNode.GetChildNode("Index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
+            if (parseNode.GetChildNode("Schema") is null) { _explicitNullValueSchema = default!; _explicitNullProperties?.Remove("Schema"); }
+            else if (parseNode.GetChildNode("Schema") is { } nullNodeSchema && nullNodeSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schema = null;
+            if (parseNode.GetChildNode("Table") is null) { _explicitNullValueTable = default!; _explicitNullProperties?.Remove("Table"); }
+            else if (parseNode.GetChildNode("Table") is { } nullNodeTable && nullNodeTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Table = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Bytes property</summary>
-        public int? Bytes { get => _explicitNullValueBytes; set { _explicitNullValueBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Bytes"); else _explicitNullProperties?.Remove("Bytes"); } }
+        public int? Bytes { get => _explicitNullValueBytes; set { _explicitNullValueBytes = value; AdditionalData?.Remove("Bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Bytes"); else _explicitNullProperties?.Remove("Bytes"); } }
         private int? _explicitNullValueBytes = default!;
         /// <summary>The Database property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Database { get => _explicitNullValueDatabase; set { _explicitNullValueDatabase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Database"); else _explicitNullProperties?.Remove("Database"); } }
+        public string? Database { get => _explicitNullValueDatabase; set { _explicitNullValueDatabase = value; AdditionalData?.Remove("Database"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Database"); else _explicitNullProperties?.Remove("Database"); } }
         private string? _explicitNullValueDatabase = default!;
 #nullable restore
 #else
-        public string Database { get => _explicitNullValueDatabase; set { _explicitNullValueDatabase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Database"); else _explicitNullProperties?.Remove("Database"); } }
+        public string Database { get => _explicitNullValueDatabase; set { _explicitNullValueDatabase = value; AdditionalData?.Remove("Database"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Database"); else _explicitNullProperties?.Remove("Database"); } }
         private string _explicitNullValueDatabase = default!;
 #endif
         /// <summary>The Index property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Index"); else _explicitNullProperties?.Remove("Index"); } }
+        public string? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; AdditionalData?.Remove("Index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Index"); else _explicitNullProperties?.Remove("Index"); } }
         private string? _explicitNullValueIndex = default!;
 #nullable restore
 #else
-        public string Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Index"); else _explicitNullProperties?.Remove("Index"); } }
+        public string Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; AdditionalData?.Remove("Index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Index"); else _explicitNullProperties?.Remove("Index"); } }
         private string _explicitNullValueIndex = default!;
 #endif
         /// <summary>The Schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Schema"); else _explicitNullProperties?.Remove("Schema"); } }
+        public string? Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; AdditionalData?.Remove("Schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Schema"); else _explicitNullProperties?.Remove("Schema"); } }
         private string? _explicitNullValueSchema = default!;
 #nullable restore
 #else
-        public string Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Schema"); else _explicitNullProperties?.Remove("Schema"); } }
+        public string Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; AdditionalData?.Remove("Schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Schema"); else _explicitNullProperties?.Remove("Schema"); } }
         private string _explicitNullValueSchema = default!;
 #endif
         /// <summary>The Table property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Table { get => _explicitNullValueTable; set { _explicitNullValueTable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Table"); else _explicitNullProperties?.Remove("Table"); } }
+        public string? Table { get => _explicitNullValueTable; set { _explicitNullValueTable = value; AdditionalData?.Remove("Table"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Table"); else _explicitNullProperties?.Remove("Table"); } }
         private string? _explicitNullValueTable = default!;
 #nullable restore
 #else
-        public string Table { get => _explicitNullValueTable; set { _explicitNullValueTable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Table"); else _explicitNullProperties?.Remove("Table"); } }
+        public string Table { get => _explicitNullValueTable; set { _explicitNullValueTable = value; AdditionalData?.Remove("Table"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Table"); else _explicitNullProperties?.Remove("Table"); } }
         private string _explicitNullValueTable = default!;
 #endif
         /// <summary>

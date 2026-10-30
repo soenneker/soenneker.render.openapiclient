@@ -17,71 +17,78 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autoDeployTrigger") is { } nullNodeAutoDeployTrigger && nullNodeAutoDeployTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoDeployTrigger = null;
-            if (parseNode.GetChildNode("buildConfig") is { } nullNodeBuildConfig && nullNodeBuildConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildConfig = null;
-            if (parseNode.GetChildNode("envVars") is { } nullNodeEnvVars && nullNodeEnvVars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvVars = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("ownerId") is { } nullNodeOwnerId && nullNodeOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerId = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("runCommand") is { } nullNodeRunCommand && nullNodeRunCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunCommand = null;
+            if (parseNode.GetChildNode("autoDeployTrigger") is null) { _explicitNullValueAutoDeployTrigger = default!; _explicitNullProperties?.Remove("autoDeployTrigger"); }
+            else if (parseNode.GetChildNode("autoDeployTrigger") is { } nullNodeAutoDeployTrigger && nullNodeAutoDeployTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoDeployTrigger = null;
+            if (parseNode.GetChildNode("buildConfig") is null) { _explicitNullValueBuildConfig = default!; _explicitNullProperties?.Remove("buildConfig"); }
+            else if (parseNode.GetChildNode("buildConfig") is { } nullNodeBuildConfig && nullNodeBuildConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildConfig = null;
+            if (parseNode.GetChildNode("envVars") is null) { _explicitNullValueEnvVars = default!; _explicitNullProperties?.Remove("envVars"); }
+            else if (parseNode.GetChildNode("envVars") is { } nullNodeEnvVars && nullNodeEnvVars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvVars = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("ownerId") is null) { _explicitNullValueOwnerId = default!; _explicitNullProperties?.Remove("ownerId"); }
+            else if (parseNode.GetChildNode("ownerId") is { } nullNodeOwnerId && nullNodeOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerId = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("runCommand") is null) { _explicitNullValueRunCommand = default!; _explicitNullProperties?.Remove("runCommand"); }
+            else if (parseNode.GetChildNode("runCommand") is { } nullNodeRunCommand && nullNodeRunCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunCommand = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Controls autodeploy behavior. &quot;commit&quot; deploys when a commit is pushed to the branch. &quot;checksPass&quot; waits for CI checks to pass before deploying. &quot;off&quot; disables autodeploy.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestAutoDeployTrigger? AutoDeployTrigger { get => _explicitNullValueAutoDeployTrigger; set { _explicitNullValueAutoDeployTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoDeployTrigger"); else _explicitNullProperties?.Remove("autoDeployTrigger"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestAutoDeployTrigger? AutoDeployTrigger { get => _explicitNullValueAutoDeployTrigger; set { _explicitNullValueAutoDeployTrigger = value; AdditionalData?.Remove("autoDeployTrigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoDeployTrigger"); else _explicitNullProperties?.Remove("autoDeployTrigger"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestAutoDeployTrigger? _explicitNullValueAutoDeployTrigger = default!;
         /// <summary>The buildConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig? BuildConfig { get => _explicitNullValueBuildConfig; set { _explicitNullValueBuildConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildConfig"); else _explicitNullProperties?.Remove("buildConfig"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig? BuildConfig { get => _explicitNullValueBuildConfig; set { _explicitNullValueBuildConfig = value; AdditionalData?.Remove("buildConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildConfig"); else _explicitNullProperties?.Remove("buildConfig"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig? _explicitNullValueBuildConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig BuildConfig { get => _explicitNullValueBuildConfig; set { _explicitNullValueBuildConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildConfig"); else _explicitNullProperties?.Remove("buildConfig"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig BuildConfig { get => _explicitNullValueBuildConfig; set { _explicitNullValueBuildConfig = value; AdditionalData?.Remove("buildConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildConfig"); else _explicitNullProperties?.Remove("buildConfig"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig _explicitNullValueBuildConfig = default!;
 #endif
         /// <summary>The envVars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envVars"); else _explicitNullProperties?.Remove("envVars"); } }
+        public string? EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; AdditionalData?.Remove("envVars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envVars"); else _explicitNullProperties?.Remove("envVars"); } }
         private string? _explicitNullValueEnvVars = default!;
 #nullable restore
 #else
-        public string EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envVars"); else _explicitNullProperties?.Remove("envVars"); } }
+        public string EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; AdditionalData?.Remove("envVars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envVars"); else _explicitNullProperties?.Remove("envVars"); } }
         private string _explicitNullValueEnvVars = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
+        public string? OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
         private string? _explicitNullValueOwnerId = default!;
 #nullable restore
 #else
-        public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
+        public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
         private string _explicitNullValueOwnerId = default!;
 #endif
         /// <summary>Defaults to &quot;oregon&quot;</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestRegion? _explicitNullValueRegion = default!;
         /// <summary>The command to run the workflow. Cannot be blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RunCommand { get => _explicitNullValueRunCommand; set { _explicitNullValueRunCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runCommand"); else _explicitNullProperties?.Remove("runCommand"); } }
+        public string? RunCommand { get => _explicitNullValueRunCommand; set { _explicitNullValueRunCommand = value; AdditionalData?.Remove("runCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runCommand"); else _explicitNullProperties?.Remove("runCommand"); } }
         private string? _explicitNullValueRunCommand = default!;
 #nullable restore
 #else
-        public string RunCommand { get => _explicitNullValueRunCommand; set { _explicitNullValueRunCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runCommand"); else _explicitNullProperties?.Remove("runCommand"); } }
+        public string RunCommand { get => _explicitNullValueRunCommand; set { _explicitNullValueRunCommand = value; AdditionalData?.Remove("runCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runCommand"); else _explicitNullProperties?.Remove("runCommand"); } }
         private string _explicitNullValueRunCommand = default!;
 #endif
         /// <summary>
@@ -109,12 +116,12 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestAutoDeployTrigger>(); } },
+                { "autoDeployTrigger", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestAutoDeployTrigger>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAutoDeployTrigger = default; _explicitNullProperties?.Remove("autoDeployTrigger"); AdditionalData["autoDeployTrigger"] = unknown; } else { AutoDeployTrigger = parsed; AdditionalData.Remove("autoDeployTrigger"); } } },
                 { "buildConfig", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig>(global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestBuildConfig.CreateFromDiscriminatorValue); } },
                 { "envVars", n => { EnvVars = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestRegion>(); } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateWorkflowRequestRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
                 { "runCommand", n => { RunCommand = n.GetStringValue(); } },
             };
         }

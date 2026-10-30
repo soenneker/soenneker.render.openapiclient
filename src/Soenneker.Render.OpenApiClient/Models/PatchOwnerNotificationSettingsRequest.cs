@@ -17,21 +17,24 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("emailEnabled") is { } nullNodeEmailEnabled && nullNodeEmailEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailEnabled = null;
-            if (parseNode.GetChildNode("notificationsToSend") is { } nullNodeNotificationsToSend && nullNodeNotificationsToSend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationsToSend = null;
-            if (parseNode.GetChildNode("previewNotificationsEnabled") is { } nullNodePreviewNotificationsEnabled && nullNodePreviewNotificationsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewNotificationsEnabled = null;
+            if (parseNode.GetChildNode("emailEnabled") is null) { _explicitNullValueEmailEnabled = default!; _explicitNullProperties?.Remove("emailEnabled"); }
+            else if (parseNode.GetChildNode("emailEnabled") is { } nullNodeEmailEnabled && nullNodeEmailEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailEnabled = null;
+            if (parseNode.GetChildNode("notificationsToSend") is null) { _explicitNullValueNotificationsToSend = default!; _explicitNullProperties?.Remove("notificationsToSend"); }
+            else if (parseNode.GetChildNode("notificationsToSend") is { } nullNodeNotificationsToSend && nullNodeNotificationsToSend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationsToSend = null;
+            if (parseNode.GetChildNode("previewNotificationsEnabled") is null) { _explicitNullValuePreviewNotificationsEnabled = default!; _explicitNullProperties?.Remove("previewNotificationsEnabled"); }
+            else if (parseNode.GetChildNode("previewNotificationsEnabled") is { } nullNodePreviewNotificationsEnabled && nullNodePreviewNotificationsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewNotificationsEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The emailEnabled property</summary>
-        public bool? EmailEnabled { get => _explicitNullValueEmailEnabled; set { _explicitNullValueEmailEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailEnabled"); else _explicitNullProperties?.Remove("emailEnabled"); } }
+        public bool? EmailEnabled { get => _explicitNullValueEmailEnabled; set { _explicitNullValueEmailEnabled = value; AdditionalData?.Remove("emailEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailEnabled"); else _explicitNullProperties?.Remove("emailEnabled"); } }
         private bool? _explicitNullValueEmailEnabled = default!;
         /// <summary>The notificationsToSend property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.PatchOwnerNotificationSettingsRequestNotificationsToSend? NotificationsToSend { get => _explicitNullValueNotificationsToSend; set { _explicitNullValueNotificationsToSend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationsToSend"); else _explicitNullProperties?.Remove("notificationsToSend"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.PatchOwnerNotificationSettingsRequestNotificationsToSend? NotificationsToSend { get => _explicitNullValueNotificationsToSend; set { _explicitNullValueNotificationsToSend = value; AdditionalData?.Remove("notificationsToSend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationsToSend"); else _explicitNullProperties?.Remove("notificationsToSend"); } }
         private global::Soenneker.Render.OpenApiClient.Models.PatchOwnerNotificationSettingsRequestNotificationsToSend? _explicitNullValueNotificationsToSend = default!;
         /// <summary>The previewNotificationsEnabled property</summary>
-        public bool? PreviewNotificationsEnabled { get => _explicitNullValuePreviewNotificationsEnabled; set { _explicitNullValuePreviewNotificationsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewNotificationsEnabled"); else _explicitNullProperties?.Remove("previewNotificationsEnabled"); } }
+        public bool? PreviewNotificationsEnabled { get => _explicitNullValuePreviewNotificationsEnabled; set { _explicitNullValuePreviewNotificationsEnabled = value; AdditionalData?.Remove("previewNotificationsEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewNotificationsEnabled"); else _explicitNullProperties?.Remove("previewNotificationsEnabled"); } }
         private bool? _explicitNullValuePreviewNotificationsEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.PatchOwnerNotificationSettingsRequest"/> and sets the default values.
@@ -59,7 +62,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "emailEnabled", n => { EmailEnabled = n.GetBoolValue(); } },
-                { "notificationsToSend", n => { NotificationsToSend = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PatchOwnerNotificationSettingsRequestNotificationsToSend>(); } },
+                { "notificationsToSend", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PatchOwnerNotificationSettingsRequestNotificationsToSend>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNotificationsToSend = default; _explicitNullProperties?.Remove("notificationsToSend"); AdditionalData["notificationsToSend"] = unknown; } else { NotificationsToSend = parsed; AdditionalData.Remove("notificationsToSend"); } } },
                 { "previewNotificationsEnabled", n => { PreviewNotificationsEnabled = n.GetBoolValue(); } },
             };
         }

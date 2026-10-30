@@ -17,12 +17,18 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("externalConnectionPoolString") is { } nullNodeExternalConnectionPoolString && nullNodeExternalConnectionPoolString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalConnectionPoolString = null;
-            if (parseNode.GetChildNode("externalConnectionString") is { } nullNodeExternalConnectionString && nullNodeExternalConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalConnectionString = null;
-            if (parseNode.GetChildNode("internalConnectionPoolString") is { } nullNodeInternalConnectionPoolString && nullNodeInternalConnectionPoolString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalConnectionPoolString = null;
-            if (parseNode.GetChildNode("internalConnectionString") is { } nullNodeInternalConnectionString && nullNodeInternalConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalConnectionString = null;
-            if (parseNode.GetChildNode("password") is { } nullNodePassword && nullNodePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Password = null;
-            if (parseNode.GetChildNode("psqlCommand") is { } nullNodePsqlCommand && nullNodePsqlCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PsqlCommand = null;
+            if (parseNode.GetChildNode("externalConnectionPoolString") is null) { _explicitNullValueExternalConnectionPoolString = default!; _explicitNullProperties?.Remove("externalConnectionPoolString"); }
+            else if (parseNode.GetChildNode("externalConnectionPoolString") is { } nullNodeExternalConnectionPoolString && nullNodeExternalConnectionPoolString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalConnectionPoolString = null;
+            if (parseNode.GetChildNode("externalConnectionString") is null) { _explicitNullValueExternalConnectionString = default!; _explicitNullProperties?.Remove("externalConnectionString"); }
+            else if (parseNode.GetChildNode("externalConnectionString") is { } nullNodeExternalConnectionString && nullNodeExternalConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalConnectionString = null;
+            if (parseNode.GetChildNode("internalConnectionPoolString") is null) { _explicitNullValueInternalConnectionPoolString = default!; _explicitNullProperties?.Remove("internalConnectionPoolString"); }
+            else if (parseNode.GetChildNode("internalConnectionPoolString") is { } nullNodeInternalConnectionPoolString && nullNodeInternalConnectionPoolString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalConnectionPoolString = null;
+            if (parseNode.GetChildNode("internalConnectionString") is null) { _explicitNullValueInternalConnectionString = default!; _explicitNullProperties?.Remove("internalConnectionString"); }
+            else if (parseNode.GetChildNode("internalConnectionString") is { } nullNodeInternalConnectionString && nullNodeInternalConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalConnectionString = null;
+            if (parseNode.GetChildNode("password") is null) { _explicitNullValuePassword = default!; _explicitNullProperties?.Remove("password"); }
+            else if (parseNode.GetChildNode("password") is { } nullNodePassword && nullNodePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Password = null;
+            if (parseNode.GetChildNode("psqlCommand") is null) { _explicitNullValuePsqlCommand = default!; _explicitNullProperties?.Remove("psqlCommand"); }
+            else if (parseNode.GetChildNode("psqlCommand") is { } nullNodePsqlCommand && nullNodePsqlCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PsqlCommand = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The externalConnectionPoolString property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalConnectionPoolString { get => _explicitNullValueExternalConnectionPoolString; set { _explicitNullValueExternalConnectionPoolString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionPoolString"); else _explicitNullProperties?.Remove("externalConnectionPoolString"); } }
+        public string? ExternalConnectionPoolString { get => _explicitNullValueExternalConnectionPoolString; set { _explicitNullValueExternalConnectionPoolString = value; AdditionalData?.Remove("externalConnectionPoolString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionPoolString"); else _explicitNullProperties?.Remove("externalConnectionPoolString"); } }
         private string? _explicitNullValueExternalConnectionPoolString = default!;
 #nullable restore
 #else
-        public string ExternalConnectionPoolString { get => _explicitNullValueExternalConnectionPoolString; set { _explicitNullValueExternalConnectionPoolString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionPoolString"); else _explicitNullProperties?.Remove("externalConnectionPoolString"); } }
+        public string ExternalConnectionPoolString { get => _explicitNullValueExternalConnectionPoolString; set { _explicitNullValueExternalConnectionPoolString = value; AdditionalData?.Remove("externalConnectionPoolString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionPoolString"); else _explicitNullProperties?.Remove("externalConnectionPoolString"); } }
         private string _explicitNullValueExternalConnectionPoolString = default!;
 #endif
         /// <summary>The externalConnectionString property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalConnectionString { get => _explicitNullValueExternalConnectionString; set { _explicitNullValueExternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionString"); else _explicitNullProperties?.Remove("externalConnectionString"); } }
+        public string? ExternalConnectionString { get => _explicitNullValueExternalConnectionString; set { _explicitNullValueExternalConnectionString = value; AdditionalData?.Remove("externalConnectionString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionString"); else _explicitNullProperties?.Remove("externalConnectionString"); } }
         private string? _explicitNullValueExternalConnectionString = default!;
 #nullable restore
 #else
-        public string ExternalConnectionString { get => _explicitNullValueExternalConnectionString; set { _explicitNullValueExternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionString"); else _explicitNullProperties?.Remove("externalConnectionString"); } }
+        public string ExternalConnectionString { get => _explicitNullValueExternalConnectionString; set { _explicitNullValueExternalConnectionString = value; AdditionalData?.Remove("externalConnectionString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionString"); else _explicitNullProperties?.Remove("externalConnectionString"); } }
         private string _explicitNullValueExternalConnectionString = default!;
 #endif
         /// <summary>The internalConnectionPoolString property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternalConnectionPoolString { get => _explicitNullValueInternalConnectionPoolString; set { _explicitNullValueInternalConnectionPoolString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionPoolString"); else _explicitNullProperties?.Remove("internalConnectionPoolString"); } }
+        public string? InternalConnectionPoolString { get => _explicitNullValueInternalConnectionPoolString; set { _explicitNullValueInternalConnectionPoolString = value; AdditionalData?.Remove("internalConnectionPoolString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionPoolString"); else _explicitNullProperties?.Remove("internalConnectionPoolString"); } }
         private string? _explicitNullValueInternalConnectionPoolString = default!;
 #nullable restore
 #else
-        public string InternalConnectionPoolString { get => _explicitNullValueInternalConnectionPoolString; set { _explicitNullValueInternalConnectionPoolString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionPoolString"); else _explicitNullProperties?.Remove("internalConnectionPoolString"); } }
+        public string InternalConnectionPoolString { get => _explicitNullValueInternalConnectionPoolString; set { _explicitNullValueInternalConnectionPoolString = value; AdditionalData?.Remove("internalConnectionPoolString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionPoolString"); else _explicitNullProperties?.Remove("internalConnectionPoolString"); } }
         private string _explicitNullValueInternalConnectionPoolString = default!;
 #endif
         /// <summary>The internalConnectionString property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternalConnectionString { get => _explicitNullValueInternalConnectionString; set { _explicitNullValueInternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionString"); else _explicitNullProperties?.Remove("internalConnectionString"); } }
+        public string? InternalConnectionString { get => _explicitNullValueInternalConnectionString; set { _explicitNullValueInternalConnectionString = value; AdditionalData?.Remove("internalConnectionString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionString"); else _explicitNullProperties?.Remove("internalConnectionString"); } }
         private string? _explicitNullValueInternalConnectionString = default!;
 #nullable restore
 #else
-        public string InternalConnectionString { get => _explicitNullValueInternalConnectionString; set { _explicitNullValueInternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionString"); else _explicitNullProperties?.Remove("internalConnectionString"); } }
+        public string InternalConnectionString { get => _explicitNullValueInternalConnectionString; set { _explicitNullValueInternalConnectionString = value; AdditionalData?.Remove("internalConnectionString"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionString"); else _explicitNullProperties?.Remove("internalConnectionString"); } }
         private string _explicitNullValueInternalConnectionString = default!;
 #endif
         /// <summary>The password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password"); else _explicitNullProperties?.Remove("password"); } }
+        public string? Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; AdditionalData?.Remove("password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password"); else _explicitNullProperties?.Remove("password"); } }
         private string? _explicitNullValuePassword = default!;
 #nullable restore
 #else
-        public string Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password"); else _explicitNullProperties?.Remove("password"); } }
+        public string Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; AdditionalData?.Remove("password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password"); else _explicitNullProperties?.Remove("password"); } }
         private string _explicitNullValuePassword = default!;
 #endif
         /// <summary>The psqlCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PsqlCommand { get => _explicitNullValuePsqlCommand; set { _explicitNullValuePsqlCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psqlCommand"); else _explicitNullProperties?.Remove("psqlCommand"); } }
+        public string? PsqlCommand { get => _explicitNullValuePsqlCommand; set { _explicitNullValuePsqlCommand = value; AdditionalData?.Remove("psqlCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psqlCommand"); else _explicitNullProperties?.Remove("psqlCommand"); } }
         private string? _explicitNullValuePsqlCommand = default!;
 #nullable restore
 #else
-        public string PsqlCommand { get => _explicitNullValuePsqlCommand; set { _explicitNullValuePsqlCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psqlCommand"); else _explicitNullProperties?.Remove("psqlCommand"); } }
+        public string PsqlCommand { get => _explicitNullValuePsqlCommand; set { _explicitNullValuePsqlCommand = value; AdditionalData?.Remove("psqlCommand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psqlCommand"); else _explicitNullProperties?.Remove("psqlCommand"); } }
         private string _explicitNullValuePsqlCommand = default!;
 #endif
         /// <summary>

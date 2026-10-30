@@ -18,12 +18,18 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("databases") is { } nullNodeDatabases && nullNodeDatabases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Databases = null;
-            if (parseNode.GetChildNode("envGroups") is { } nullNodeEnvGroups && nullNodeEnvGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvGroups = null;
-            if (parseNode.GetChildNode("keyValue") is { } nullNodeKeyValue && nullNodeKeyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyValue = null;
-            if (parseNode.GetChildNode("services") is { } nullNodeServices && nullNodeServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Services = null;
-            if (parseNode.GetChildNode("totalActions") is { } nullNodeTotalActions && nullNodeTotalActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalActions = null;
-            if (parseNode.GetChildNode("workflows") is { } nullNodeWorkflows && nullNodeWorkflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workflows = null;
+            if (parseNode.GetChildNode("databases") is null) { _explicitNullValueDatabases = default!; _explicitNullProperties?.Remove("databases"); }
+            else if (parseNode.GetChildNode("databases") is { } nullNodeDatabases && nullNodeDatabases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Databases = null;
+            if (parseNode.GetChildNode("envGroups") is null) { _explicitNullValueEnvGroups = default!; _explicitNullProperties?.Remove("envGroups"); }
+            else if (parseNode.GetChildNode("envGroups") is { } nullNodeEnvGroups && nullNodeEnvGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvGroups = null;
+            if (parseNode.GetChildNode("keyValue") is null) { _explicitNullValueKeyValue = default!; _explicitNullProperties?.Remove("keyValue"); }
+            else if (parseNode.GetChildNode("keyValue") is { } nullNodeKeyValue && nullNodeKeyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyValue = null;
+            if (parseNode.GetChildNode("services") is null) { _explicitNullValueServices = default!; _explicitNullProperties?.Remove("services"); }
+            else if (parseNode.GetChildNode("services") is { } nullNodeServices && nullNodeServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Services = null;
+            if (parseNode.GetChildNode("totalActions") is null) { _explicitNullValueTotalActions = default!; _explicitNullProperties?.Remove("totalActions"); }
+            else if (parseNode.GetChildNode("totalActions") is { } nullNodeTotalActions && nullNodeTotalActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalActions = null;
+            if (parseNode.GetChildNode("workflows") is null) { _explicitNullValueWorkflows = default!; _explicitNullProperties?.Remove("workflows"); }
+            else if (parseNode.GetChildNode("workflows") is { } nullNodeWorkflows && nullNodeWorkflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workflows = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,54 +37,54 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The names of Render Postgres databases that would be created as part of the Blueprint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Databases { get => _explicitNullValueDatabases; set { _explicitNullValueDatabases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("databases"); else _explicitNullProperties?.Remove("databases"); } }
+        public List<string>? Databases { get => _explicitNullValueDatabases; set { _explicitNullValueDatabases = value; AdditionalData?.Remove("databases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("databases"); else _explicitNullProperties?.Remove("databases"); } }
         private List<string>? _explicitNullValueDatabases = default!;
 #nullable restore
 #else
-        public List<string> Databases { get => _explicitNullValueDatabases; set { _explicitNullValueDatabases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("databases"); else _explicitNullProperties?.Remove("databases"); } }
+        public List<string> Databases { get => _explicitNullValueDatabases; set { _explicitNullValueDatabases = value; AdditionalData?.Remove("databases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("databases"); else _explicitNullProperties?.Remove("databases"); } }
         private List<string> _explicitNullValueDatabases = default!;
 #endif
         /// <summary>The names of environment groups that would be created as part of the Blueprint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnvGroups { get => _explicitNullValueEnvGroups; set { _explicitNullValueEnvGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envGroups"); else _explicitNullProperties?.Remove("envGroups"); } }
+        public List<string>? EnvGroups { get => _explicitNullValueEnvGroups; set { _explicitNullValueEnvGroups = value; AdditionalData?.Remove("envGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envGroups"); else _explicitNullProperties?.Remove("envGroups"); } }
         private List<string>? _explicitNullValueEnvGroups = default!;
 #nullable restore
 #else
-        public List<string> EnvGroups { get => _explicitNullValueEnvGroups; set { _explicitNullValueEnvGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envGroups"); else _explicitNullProperties?.Remove("envGroups"); } }
+        public List<string> EnvGroups { get => _explicitNullValueEnvGroups; set { _explicitNullValueEnvGroups = value; AdditionalData?.Remove("envGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envGroups"); else _explicitNullProperties?.Remove("envGroups"); } }
         private List<string> _explicitNullValueEnvGroups = default!;
 #endif
         /// <summary>The names of Render Key Value instances that would be created as part of the Blueprint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? KeyValue { get => _explicitNullValueKeyValue; set { _explicitNullValueKeyValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyValue"); else _explicitNullProperties?.Remove("keyValue"); } }
+        public List<string>? KeyValue { get => _explicitNullValueKeyValue; set { _explicitNullValueKeyValue = value; AdditionalData?.Remove("keyValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyValue"); else _explicitNullProperties?.Remove("keyValue"); } }
         private List<string>? _explicitNullValueKeyValue = default!;
 #nullable restore
 #else
-        public List<string> KeyValue { get => _explicitNullValueKeyValue; set { _explicitNullValueKeyValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyValue"); else _explicitNullProperties?.Remove("keyValue"); } }
+        public List<string> KeyValue { get => _explicitNullValueKeyValue; set { _explicitNullValueKeyValue = value; AdditionalData?.Remove("keyValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyValue"); else _explicitNullProperties?.Remove("keyValue"); } }
         private List<string> _explicitNullValueKeyValue = default!;
 #endif
         /// <summary>The names of services that would be created as part of the Blueprint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
+        public List<string>? Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; AdditionalData?.Remove("services"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
         private List<string>? _explicitNullValueServices = default!;
 #nullable restore
 #else
-        public List<string> Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
+        public List<string> Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; AdditionalData?.Remove("services"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
         private List<string> _explicitNullValueServices = default!;
 #endif
         /// <summary>The total number of actions that would be performed by the Blueprint. In addition to created resources, this includes modifications to individual configuration fields.</summary>
-        public int? TotalActions { get => _explicitNullValueTotalActions; set { _explicitNullValueTotalActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalActions"); else _explicitNullProperties?.Remove("totalActions"); } }
+        public int? TotalActions { get => _explicitNullValueTotalActions; set { _explicitNullValueTotalActions = value; AdditionalData?.Remove("totalActions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalActions"); else _explicitNullProperties?.Remove("totalActions"); } }
         private int? _explicitNullValueTotalActions = default!;
         /// <summary>The names of workflows that would be created as part of the Blueprint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Workflows { get => _explicitNullValueWorkflows; set { _explicitNullValueWorkflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflows"); else _explicitNullProperties?.Remove("workflows"); } }
+        public List<string>? Workflows { get => _explicitNullValueWorkflows; set { _explicitNullValueWorkflows = value; AdditionalData?.Remove("workflows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflows"); else _explicitNullProperties?.Remove("workflows"); } }
         private List<string>? _explicitNullValueWorkflows = default!;
 #nullable restore
 #else
-        public List<string> Workflows { get => _explicitNullValueWorkflows; set { _explicitNullValueWorkflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflows"); else _explicitNullProperties?.Remove("workflows"); } }
+        public List<string> Workflows { get => _explicitNullValueWorkflows; set { _explicitNullValueWorkflows = value; AdditionalData?.Remove("workflows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflows"); else _explicitNullProperties?.Remove("workflows"); } }
         private List<string> _explicitNullValueWorkflows = default!;
 #endif
         /// <summary>

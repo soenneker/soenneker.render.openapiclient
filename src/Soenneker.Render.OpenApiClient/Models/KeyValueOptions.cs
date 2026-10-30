@@ -18,8 +18,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("maxmemoryPolicy") is { } nullNodeMaxmemoryPolicy && nullNodeMaxmemoryPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxmemoryPolicy = null;
-            if (parseNode.GetChildNode("persistenceMode") is { } nullNodePersistenceMode && nullNodePersistenceMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersistenceMode = null;
+            if (parseNode.GetChildNode("maxmemoryPolicy") is null) { _explicitNullValueMaxmemoryPolicy = default!; _explicitNullProperties?.Remove("maxmemoryPolicy"); }
+            else if (parseNode.GetChildNode("maxmemoryPolicy") is { } nullNodeMaxmemoryPolicy && nullNodeMaxmemoryPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxmemoryPolicy = null;
+            if (parseNode.GetChildNode("persistenceMode") is null) { _explicitNullValuePersistenceMode = default!; _explicitNullProperties?.Remove("persistenceMode"); }
+            else if (parseNode.GetChildNode("persistenceMode") is { } nullNodePersistenceMode && nullNodePersistenceMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersistenceMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The maxmemoryPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxmemoryPolicy { get => _explicitNullValueMaxmemoryPolicy; set { _explicitNullValueMaxmemoryPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxmemoryPolicy"); else _explicitNullProperties?.Remove("maxmemoryPolicy"); } }
+        public string? MaxmemoryPolicy { get => _explicitNullValueMaxmemoryPolicy; set { _explicitNullValueMaxmemoryPolicy = value; AdditionalData?.Remove("maxmemoryPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxmemoryPolicy"); else _explicitNullProperties?.Remove("maxmemoryPolicy"); } }
         private string? _explicitNullValueMaxmemoryPolicy = default!;
 #nullable restore
 #else
-        public string MaxmemoryPolicy { get => _explicitNullValueMaxmemoryPolicy; set { _explicitNullValueMaxmemoryPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxmemoryPolicy"); else _explicitNullProperties?.Remove("maxmemoryPolicy"); } }
+        public string MaxmemoryPolicy { get => _explicitNullValueMaxmemoryPolicy; set { _explicitNullValueMaxmemoryPolicy = value; AdditionalData?.Remove("maxmemoryPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxmemoryPolicy"); else _explicitNullProperties?.Remove("maxmemoryPolicy"); } }
         private string _explicitNullValueMaxmemoryPolicy = default!;
 #endif
         /// <summary>The persistence mode for the Key Value instance. The default for paid instances is journal_snapshot (both journaling and snapshots). Only turn off persistence if you&apos;re using this Key Value instance as a cache and are okay with losing data. Free instances do not have persistence.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.PersistenceMode? PersistenceMode { get => _explicitNullValuePersistenceMode; set { _explicitNullValuePersistenceMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persistenceMode"); else _explicitNullProperties?.Remove("persistenceMode"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.PersistenceMode? PersistenceMode { get => _explicitNullValuePersistenceMode; set { _explicitNullValuePersistenceMode = value; AdditionalData?.Remove("persistenceMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persistenceMode"); else _explicitNullProperties?.Remove("persistenceMode"); } }
         private global::Soenneker.Render.OpenApiClient.Models.PersistenceMode? _explicitNullValuePersistenceMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.KeyValueOptions"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "maxmemoryPolicy", n => { MaxmemoryPolicy = n.GetStringValue(); } },
-                { "persistenceMode", n => { PersistenceMode = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PersistenceMode>(); } },
+                { "persistenceMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.PersistenceMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePersistenceMode = default; _explicitNullProperties?.Remove("persistenceMode"); AdditionalData["persistenceMode"] = unknown; } else { PersistenceMode = parsed; AdditionalData.Remove("persistenceMode"); } } },
             };
         }
         /// <summary>

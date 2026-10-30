@@ -17,8 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cpu") is { } nullNodeCpu && nullNodeCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cpu = null;
-            if (parseNode.GetChildNode("memory") is { } nullNodeMemory && nullNodeMemory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Memory = null;
+            if (parseNode.GetChildNode("cpu") is null) { _explicitNullValueCpu = default!; _explicitNullProperties?.Remove("cpu"); }
+            else if (parseNode.GetChildNode("cpu") is { } nullNodeCpu && nullNodeCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cpu = null;
+            if (parseNode.GetChildNode("memory") is null) { _explicitNullValueMemory = default!; _explicitNullProperties?.Remove("memory"); }
+            else if (parseNode.GetChildNode("memory") is { } nullNodeMemory && nullNodeMemory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Memory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The cpu property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteriaCpu? Cpu { get => _explicitNullValueCpu; set { _explicitNullValueCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu"); else _explicitNullProperties?.Remove("cpu"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteriaCpu? Cpu { get => _explicitNullValueCpu; set { _explicitNullValueCpu = value; AdditionalData?.Remove("cpu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu"); else _explicitNullProperties?.Remove("cpu"); } }
         private global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteriaCpu? _explicitNullValueCpu = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteriaCpu Cpu { get => _explicitNullValueCpu; set { _explicitNullValueCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu"); else _explicitNullProperties?.Remove("cpu"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteriaCpu Cpu { get => _explicitNullValueCpu; set { _explicitNullValueCpu = value; AdditionalData?.Remove("cpu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu"); else _explicitNullProperties?.Remove("cpu"); } }
         private global::Soenneker.Render.OpenApiClient.Models.AutoscaleServiceRequestCriteriaCpu _explicitNullValueCpu = default!;
 #endif
         /// <summary>The memory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Memory { get => _explicitNullValueMemory; set { _explicitNullValueMemory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory"); else _explicitNullProperties?.Remove("memory"); } }
+        public string? Memory { get => _explicitNullValueMemory; set { _explicitNullValueMemory = value; AdditionalData?.Remove("memory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory"); else _explicitNullProperties?.Remove("memory"); } }
         private string? _explicitNullValueMemory = default!;
 #nullable restore
 #else
-        public string Memory { get => _explicitNullValueMemory; set { _explicitNullValueMemory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory"); else _explicitNullProperties?.Remove("memory"); } }
+        public string Memory { get => _explicitNullValueMemory; set { _explicitNullValueMemory = value; AdditionalData?.Remove("memory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory"); else _explicitNullProperties?.Remove("memory"); } }
         private string _explicitNullValueMemory = default!;
 #endif
         /// <summary>

@@ -17,12 +17,18 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("datadogApiKey") is { } nullNodeDatadogApiKey && nullNodeDatadogApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatadogApiKey = null;
-            if (parseNode.GetChildNode("datadogSite") is { } nullNodeDatadogSite && nullNodeDatadogSite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatadogSite = null;
-            if (parseNode.GetChildNode("environmentId") is { } nullNodeEnvironmentId && nullNodeEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentId = null;
-            if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
-            if (parseNode.GetChildNode("restoreName") is { } nullNodeRestoreName && nullNodeRestoreName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestoreName = null;
-            if (parseNode.GetChildNode("restoreTime") is { } nullNodeRestoreTime && nullNodeRestoreTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestoreTime = null;
+            if (parseNode.GetChildNode("datadogApiKey") is null) { _explicitNullValueDatadogApiKey = default!; _explicitNullProperties?.Remove("datadogApiKey"); }
+            else if (parseNode.GetChildNode("datadogApiKey") is { } nullNodeDatadogApiKey && nullNodeDatadogApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatadogApiKey = null;
+            if (parseNode.GetChildNode("datadogSite") is null) { _explicitNullValueDatadogSite = default!; _explicitNullProperties?.Remove("datadogSite"); }
+            else if (parseNode.GetChildNode("datadogSite") is { } nullNodeDatadogSite && nullNodeDatadogSite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatadogSite = null;
+            if (parseNode.GetChildNode("environmentId") is null) { _explicitNullValueEnvironmentId = default!; _explicitNullProperties?.Remove("environmentId"); }
+            else if (parseNode.GetChildNode("environmentId") is { } nullNodeEnvironmentId && nullNodeEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentId = null;
+            if (parseNode.GetChildNode("plan") is null) { _explicitNullValuePlan = default!; _explicitNullProperties?.Remove("plan"); }
+            else if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+            if (parseNode.GetChildNode("restoreName") is null) { _explicitNullValueRestoreName = default!; _explicitNullProperties?.Remove("restoreName"); }
+            else if (parseNode.GetChildNode("restoreName") is { } nullNodeRestoreName && nullNodeRestoreName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestoreName = null;
+            if (parseNode.GetChildNode("restoreTime") is null) { _explicitNullValueRestoreTime = default!; _explicitNullProperties?.Remove("restoreTime"); }
+            else if (parseNode.GetChildNode("restoreTime") is { } nullNodeRestoreTime && nullNodeRestoreTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestoreTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,55 +36,55 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Datadog API key to use for monitoring the new database. Defaults to the API key of the original database. Use an empty string to prevent copying of the API key to the new database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatadogApiKey { get => _explicitNullValueDatadogApiKey; set { _explicitNullValueDatadogApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadogApiKey"); else _explicitNullProperties?.Remove("datadogApiKey"); } }
+        public string? DatadogApiKey { get => _explicitNullValueDatadogApiKey; set { _explicitNullValueDatadogApiKey = value; AdditionalData?.Remove("datadogApiKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadogApiKey"); else _explicitNullProperties?.Remove("datadogApiKey"); } }
         private string? _explicitNullValueDatadogApiKey = default!;
 #nullable restore
 #else
-        public string DatadogApiKey { get => _explicitNullValueDatadogApiKey; set { _explicitNullValueDatadogApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadogApiKey"); else _explicitNullProperties?.Remove("datadogApiKey"); } }
+        public string DatadogApiKey { get => _explicitNullValueDatadogApiKey; set { _explicitNullValueDatadogApiKey = value; AdditionalData?.Remove("datadogApiKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadogApiKey"); else _explicitNullProperties?.Remove("datadogApiKey"); } }
         private string _explicitNullValueDatadogApiKey = default!;
 #endif
         /// <summary>Datadog region code to use for monitoring the new database. Defaults to the region code of the original database. Use an empty string to prevent copying of the region code to the new database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatadogSite { get => _explicitNullValueDatadogSite; set { _explicitNullValueDatadogSite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadogSite"); else _explicitNullProperties?.Remove("datadogSite"); } }
+        public string? DatadogSite { get => _explicitNullValueDatadogSite; set { _explicitNullValueDatadogSite = value; AdditionalData?.Remove("datadogSite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadogSite"); else _explicitNullProperties?.Remove("datadogSite"); } }
         private string? _explicitNullValueDatadogSite = default!;
 #nullable restore
 #else
-        public string DatadogSite { get => _explicitNullValueDatadogSite; set { _explicitNullValueDatadogSite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadogSite"); else _explicitNullProperties?.Remove("datadogSite"); } }
+        public string DatadogSite { get => _explicitNullValueDatadogSite; set { _explicitNullValueDatadogSite = value; AdditionalData?.Remove("datadogSite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadogSite"); else _explicitNullProperties?.Remove("datadogSite"); } }
         private string _explicitNullValueDatadogSite = default!;
 #endif
         /// <summary>The environment to create the new database in. Defaults to the environment of the original database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentId"); else _explicitNullProperties?.Remove("environmentId"); } }
+        public string? EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; AdditionalData?.Remove("environmentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentId"); else _explicitNullProperties?.Remove("environmentId"); } }
         private string? _explicitNullValueEnvironmentId = default!;
 #nullable restore
 #else
-        public string EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentId"); else _explicitNullProperties?.Remove("environmentId"); } }
+        public string EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; AdditionalData?.Remove("environmentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentId"); else _explicitNullProperties?.Remove("environmentId"); } }
         private string _explicitNullValueEnvironmentId = default!;
 #endif
         /// <summary>The plan to use for the new database. Defaults to the same plan as the original database. Cannot be a lower tier plan than the original database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        public string? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
         private string? _explicitNullValuePlan = default!;
 #nullable restore
 #else
-        public string Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        public string Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
         private string _explicitNullValuePlan = default!;
 #endif
         /// <summary>Name of the new database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RestoreName { get => _explicitNullValueRestoreName; set { _explicitNullValueRestoreName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restoreName"); else _explicitNullProperties?.Remove("restoreName"); } }
+        public string? RestoreName { get => _explicitNullValueRestoreName; set { _explicitNullValueRestoreName = value; AdditionalData?.Remove("restoreName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restoreName"); else _explicitNullProperties?.Remove("restoreName"); } }
         private string? _explicitNullValueRestoreName = default!;
 #nullable restore
 #else
-        public string RestoreName { get => _explicitNullValueRestoreName; set { _explicitNullValueRestoreName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restoreName"); else _explicitNullProperties?.Remove("restoreName"); } }
+        public string RestoreName { get => _explicitNullValueRestoreName; set { _explicitNullValueRestoreName = value; AdditionalData?.Remove("restoreName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restoreName"); else _explicitNullProperties?.Remove("restoreName"); } }
         private string _explicitNullValueRestoreName = default!;
 #endif
         /// <summary>The point in time to restore the database to. See `/recovery-info` for restore availability</summary>
-        public DateTimeOffset? RestoreTime { get => _explicitNullValueRestoreTime; set { _explicitNullValueRestoreTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restoreTime"); else _explicitNullProperties?.Remove("restoreTime"); } }
+        public DateTimeOffset? RestoreTime { get => _explicitNullValueRestoreTime; set { _explicitNullValueRestoreTime = value; AdditionalData?.Remove("restoreTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restoreTime"); else _explicitNullProperties?.Remove("restoreTime"); } }
         private DateTimeOffset? _explicitNullValueRestoreTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.RecoverPostgresRequest"/> and sets the default values.

@@ -17,7 +17,8 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("processes") is { } nullNodeProcesses && nullNodeProcesses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Processes = null;
+            if (parseNode.GetChildNode("processes") is null) { _explicitNullValueProcesses = default!; _explicitNullProperties?.Remove("processes"); }
+            else if (parseNode.GetChildNode("processes") is { } nullNodeProcesses && nullNodeProcesses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Processes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The processes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresProcesses200ResponseProcessesItem>? Processes { get => _explicitNullValueProcesses; set { _explicitNullValueProcesses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processes"); else _explicitNullProperties?.Remove("processes"); } }
+        public List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresProcesses200ResponseProcessesItem>? Processes { get => _explicitNullValueProcesses; set { _explicitNullValueProcesses = value; AdditionalData?.Remove("processes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processes"); else _explicitNullProperties?.Remove("processes"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresProcesses200ResponseProcessesItem>? _explicitNullValueProcesses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresProcesses200ResponseProcessesItem> Processes { get => _explicitNullValueProcesses; set { _explicitNullValueProcesses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processes"); else _explicitNullProperties?.Remove("processes"); } }
+        public List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresProcesses200ResponseProcessesItem> Processes { get => _explicitNullValueProcesses; set { _explicitNullValueProcesses = value; AdditionalData?.Remove("processes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processes"); else _explicitNullProperties?.Remove("processes"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.ListPostgresProcesses200ResponseProcessesItem> _explicitNullValueProcesses = default!;
 #endif
         /// <summary>

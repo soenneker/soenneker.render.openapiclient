@@ -17,13 +17,14 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("numInstances") is { } nullNodeNumInstances && nullNodeNumInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumInstances = null;
+            if (parseNode.GetChildNode("numInstances") is null) { _explicitNullValueNumInstances = default!; _explicitNullProperties?.Remove("numInstances"); }
+            else if (parseNode.GetChildNode("numInstances") is { } nullNodeNumInstances && nullNodeNumInstances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumInstances = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The numInstances property</summary>
-        public int? NumInstances { get => _explicitNullValueNumInstances; set { _explicitNullValueNumInstances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numInstances"); else _explicitNullProperties?.Remove("numInstances"); } }
+        public int? NumInstances { get => _explicitNullValueNumInstances; set { _explicitNullValueNumInstances = value; AdditionalData?.Remove("numInstances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numInstances"); else _explicitNullProperties?.Remove("numInstances"); } }
         private int? _explicitNullValueNumInstances = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ScaleServiceRequest"/> and sets the default values.

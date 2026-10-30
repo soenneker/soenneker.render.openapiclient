@@ -17,8 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cursor") is { } nullNodeCursor && nullNodeCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cursor = null;
-            if (parseNode.GetChildNode("postgres") is { } nullNodePostgres && nullNodePostgres.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Postgres = null;
+            if (parseNode.GetChildNode("cursor") is null) { _explicitNullValueCursor = default!; _explicitNullProperties?.Remove("cursor"); }
+            else if (parseNode.GetChildNode("cursor") is { } nullNodeCursor && nullNodeCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cursor = null;
+            if (parseNode.GetChildNode("postgres") is null) { _explicitNullValuePostgres = default!; _explicitNullProperties?.Remove("postgres"); }
+            else if (parseNode.GetChildNode("postgres") is { } nullNodePostgres && nullNodePostgres.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Postgres = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
+        public string? Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; AdditionalData?.Remove("cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
         private string? _explicitNullValueCursor = default!;
 #nullable restore
 #else
-        public string Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
+        public string Cursor { get => _explicitNullValueCursor; set { _explicitNullValueCursor = value; AdditionalData?.Remove("cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor"); else _explicitNullProperties?.Remove("cursor"); } }
         private string _explicitNullValueCursor = default!;
 #endif
         /// <summary>The postgres property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.Postgres? Postgres { get => _explicitNullValuePostgres; set { _explicitNullValuePostgres = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres"); else _explicitNullProperties?.Remove("postgres"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Postgres? Postgres { get => _explicitNullValuePostgres; set { _explicitNullValuePostgres = value; AdditionalData?.Remove("postgres"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres"); else _explicitNullProperties?.Remove("postgres"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Postgres? _explicitNullValuePostgres = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.Postgres Postgres { get => _explicitNullValuePostgres; set { _explicitNullValuePostgres = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres"); else _explicitNullProperties?.Remove("postgres"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.Postgres Postgres { get => _explicitNullValuePostgres; set { _explicitNullValuePostgres = value; AdditionalData?.Remove("postgres"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres"); else _explicitNullProperties?.Remove("postgres"); } }
         private global::Soenneker.Render.OpenApiClient.Models.Postgres _explicitNullValuePostgres = default!;
 #endif
         /// <summary>

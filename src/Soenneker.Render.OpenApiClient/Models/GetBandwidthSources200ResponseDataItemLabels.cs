@@ -17,8 +17,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("resource") is { } nullNodeResource && nullNodeResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resource = null;
-            if (parseNode.GetChildNode("trafficSource") is { } nullNodeTrafficSource && nullNodeTrafficSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficSource = null;
+            if (parseNode.GetChildNode("resource") is null) { _explicitNullValueResource = default!; _explicitNullProperties?.Remove("resource"); }
+            else if (parseNode.GetChildNode("resource") is { } nullNodeResource && nullNodeResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resource = null;
+            if (parseNode.GetChildNode("trafficSource") is null) { _explicitNullValueTrafficSource = default!; _explicitNullProperties?.Remove("trafficSource"); }
+            else if (parseNode.GetChildNode("trafficSource") is { } nullNodeTrafficSource && nullNodeTrafficSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficSource = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        public string? Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; AdditionalData?.Remove("resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
         private string? _explicitNullValueResource = default!;
 #nullable restore
 #else
-        public string Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        public string Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; AdditionalData?.Remove("resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
         private string _explicitNullValueResource = default!;
 #endif
         /// <summary>The trafficSource property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200ResponseDataItemLabelsTrafficSource? TrafficSource { get => _explicitNullValueTrafficSource; set { _explicitNullValueTrafficSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trafficSource"); else _explicitNullProperties?.Remove("trafficSource"); } }
+        public global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200ResponseDataItemLabelsTrafficSource? TrafficSource { get => _explicitNullValueTrafficSource; set { _explicitNullValueTrafficSource = value; AdditionalData?.Remove("trafficSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trafficSource"); else _explicitNullProperties?.Remove("trafficSource"); } }
         private global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200ResponseDataItemLabelsTrafficSource? _explicitNullValueTrafficSource = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200ResponseDataItemLabels"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "resource", n => { Resource = n.GetStringValue(); } },
-                { "trafficSource", n => { TrafficSource = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200ResponseDataItemLabelsTrafficSource>(); } },
+                { "trafficSource", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.GetBandwidthSources200ResponseDataItemLabelsTrafficSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTrafficSource = default; _explicitNullProperties?.Remove("trafficSource"); AdditionalData["trafficSource"] = unknown; } else { TrafficSource = parsed; AdditionalData.Remove("trafficSource"); } } },
             };
         }
         /// <summary>

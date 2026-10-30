@@ -11,7 +11,7 @@ namespace Soenneker.Render.OpenApiClient.Models
     /// Composed type wrapper for classes <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf1"/>, <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdateEnvVarsForServiceRequestRequestBodyItem : IComposedTypeWrapper, IParsable
+    public partial class UpdateEnvVarsForServiceRequestItem : IComposedTypeWrapper, IParsable
     , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
         // Preserve ambiguous union payloads without inventing a discriminator.
         /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
@@ -37,13 +37,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestRequestBodyItem();
+            var result = new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItem();
             if("UpdateEnvVarsForServiceRequestItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
@@ -54,10 +54,14 @@ namespace Soenneker.Render.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("key") != null && parseNode.GetChildNode("value") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("key") != null && parseNode.GetChildNode("generateValue") != null))();
-            if (result.UpdateEnvVarsForServiceRequestItemOneOf1 == null && result.UpdateEnvVarsForServiceRequestItemOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.UpdateEnvVarsForServiceRequestItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf1(), parseNode);
-            if (result.UpdateEnvVarsForServiceRequestItemOneOf1 == null && result.UpdateEnvVarsForServiceRequestItemOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.UpdateEnvVarsForServiceRequestItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf2(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("key") && shapeMembers1.ContainsKey("value") && (!shapeMembers1.ContainsKey("key") || (((shapeMembers1["key"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("value") || (((shapeMembers1["value"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("key") && shapeMembers1.ContainsKey("generateValue") && (!shapeMembers1.ContainsKey("key") || (((shapeMembers1["key"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("generateValue") || (((shapeMembers1["generateValue"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.UpdateEnvVarsForServiceRequestItemOneOf1 == null && result.UpdateEnvVarsForServiceRequestItemOneOf2 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.UpdateEnvVarsForServiceRequestItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.UpdateEnvVarsForServiceRequestItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.UpdateEnvVarsForServiceRequestItemOneOf2(), parseNode);
             if (result.UpdateEnvVarsForServiceRequestItemOneOf1 == null && result.UpdateEnvVarsForServiceRequestItemOneOf2 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -67,6 +71,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(UpdateEnvVarsForServiceRequestItemOneOf1 != null)
             {
                 return UpdateEnvVarsForServiceRequestItemOneOf1.GetFieldDeserializers();
@@ -85,8 +91,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (UpdateEnvVarsForServiceRequestItemOneOf1 == null && UpdateEnvVarsForServiceRequestItemOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (UpdateEnvVarsForServiceRequestItemOneOf1 != null && UpdateEnvVarsForServiceRequestItemOneOf2 == null) { if (UpdateEnvVarsForServiceRequestItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateEnvVarsForServiceRequestItemOneOf1); return; }
-            if (UpdateEnvVarsForServiceRequestItemOneOf2 != null && UpdateEnvVarsForServiceRequestItemOneOf1 == null) { if (UpdateEnvVarsForServiceRequestItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateEnvVarsForServiceRequestItemOneOf2); return; }
+            int selectedUnionBranches = 0;
+            if (UpdateEnvVarsForServiceRequestItemOneOf1 != null) selectedUnionBranches++;
+            if (UpdateEnvVarsForServiceRequestItemOneOf2 != null) selectedUnionBranches++;
+            if (UpdateEnvVarsForServiceRequestItemOneOf1 != null && selectedUnionBranches == 1) { if (UpdateEnvVarsForServiceRequestItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateEnvVarsForServiceRequestItemOneOf1); return; }
+            if (UpdateEnvVarsForServiceRequestItemOneOf2 != null && selectedUnionBranches == 1) { if (UpdateEnvVarsForServiceRequestItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateEnvVarsForServiceRequestItemOneOf2); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(UpdateEnvVarsForServiceRequestItemOneOf1 != null)

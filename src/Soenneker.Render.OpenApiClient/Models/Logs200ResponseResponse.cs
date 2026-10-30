@@ -18,32 +18,36 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hasMore") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
-            if (parseNode.GetChildNode("logs") is { } nullNodeLogs && nullNodeLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logs = null;
-            if (parseNode.GetChildNode("nextEndTime") is { } nullNodeNextEndTime && nullNodeNextEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextEndTime = null;
-            if (parseNode.GetChildNode("nextStartTime") is { } nullNodeNextStartTime && nullNodeNextStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextStartTime = null;
+            if (parseNode.GetChildNode("hasMore") is null) { _explicitNullValueHasMore = default!; _explicitNullProperties?.Remove("hasMore"); }
+            else if (parseNode.GetChildNode("hasMore") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("logs") is null) { _explicitNullValueLogs = default!; _explicitNullProperties?.Remove("logs"); }
+            else if (parseNode.GetChildNode("logs") is { } nullNodeLogs && nullNodeLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logs = null;
+            if (parseNode.GetChildNode("nextEndTime") is null) { _explicitNullValueNextEndTime = default!; _explicitNullProperties?.Remove("nextEndTime"); }
+            else if (parseNode.GetChildNode("nextEndTime") is { } nullNodeNextEndTime && nullNodeNextEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextEndTime = null;
+            if (parseNode.GetChildNode("nextStartTime") is null) { _explicitNullValueNextStartTime = default!; _explicitNullProperties?.Remove("nextStartTime"); }
+            else if (parseNode.GetChildNode("nextStartTime") is { } nullNodeNextStartTime && nullNodeNextStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextStartTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True if there are more logs to fetch</summary>
-        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasMore"); else _explicitNullProperties?.Remove("hasMore"); } }
+        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; AdditionalData?.Remove("hasMore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasMore"); else _explicitNullProperties?.Remove("hasMore"); } }
         private bool? _explicitNullValueHasMore = default!;
         /// <summary>The logs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
+        public List<string>? Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; AdditionalData?.Remove("logs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
         private List<string>? _explicitNullValueLogs = default!;
 #nullable restore
 #else
-        public List<string> Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
+        public List<string> Logs { get => _explicitNullValueLogs; set { _explicitNullValueLogs = value; AdditionalData?.Remove("logs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs"); else _explicitNullProperties?.Remove("logs"); } }
         private List<string> _explicitNullValueLogs = default!;
 #endif
         /// <summary>The end time to use in the next query to fetch the next set of logs</summary>
-        public DateTimeOffset? NextEndTime { get => _explicitNullValueNextEndTime; set { _explicitNullValueNextEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextEndTime"); else _explicitNullProperties?.Remove("nextEndTime"); } }
+        public DateTimeOffset? NextEndTime { get => _explicitNullValueNextEndTime; set { _explicitNullValueNextEndTime = value; AdditionalData?.Remove("nextEndTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextEndTime"); else _explicitNullProperties?.Remove("nextEndTime"); } }
         private DateTimeOffset? _explicitNullValueNextEndTime = default!;
         /// <summary>The start time to use in the next query to fetch the next set of logs</summary>
-        public DateTimeOffset? NextStartTime { get => _explicitNullValueNextStartTime; set { _explicitNullValueNextStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextStartTime"); else _explicitNullProperties?.Remove("nextStartTime"); } }
+        public DateTimeOffset? NextStartTime { get => _explicitNullValueNextStartTime; set { _explicitNullValueNextStartTime = value; AdditionalData?.Remove("nextStartTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextStartTime"); else _explicitNullProperties?.Remove("nextStartTime"); } }
         private DateTimeOffset? _explicitNullValueNextStartTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.Logs200ResponseResponse"/> and sets the default values.
