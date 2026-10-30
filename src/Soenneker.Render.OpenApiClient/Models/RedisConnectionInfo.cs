@@ -12,32 +12,48 @@ namespace Soenneker.Render.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RedisConnectionInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("externalConnectionString") is { } nullNodeExternalConnectionString && nullNodeExternalConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalConnectionString = null;
+            if (parseNode.GetChildNode("internalConnectionString") is { } nullNodeInternalConnectionString && nullNodeInternalConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalConnectionString = null;
+            if (parseNode.GetChildNode("redisCLICommand") is { } nullNodeRedisCLICommand && nullNodeRedisCLICommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedisCLICommand = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The connection string to use from outside Render</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalConnectionString { get; set; }
+        public string? ExternalConnectionString { get => _explicitNullValueExternalConnectionString; set { _explicitNullValueExternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionString"); else _explicitNullProperties?.Remove("externalConnectionString"); } }
+        private string? _explicitNullValueExternalConnectionString = default!;
 #nullable restore
 #else
-        public string ExternalConnectionString { get; set; }
+        public string ExternalConnectionString { get => _explicitNullValueExternalConnectionString; set { _explicitNullValueExternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalConnectionString"); else _explicitNullProperties?.Remove("externalConnectionString"); } }
+        private string _explicitNullValueExternalConnectionString = default!;
 #endif
         /// <summary>The connection string to use from within Render</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternalConnectionString { get; set; }
+        public string? InternalConnectionString { get => _explicitNullValueInternalConnectionString; set { _explicitNullValueInternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionString"); else _explicitNullProperties?.Remove("internalConnectionString"); } }
+        private string? _explicitNullValueInternalConnectionString = default!;
 #nullable restore
 #else
-        public string InternalConnectionString { get; set; }
+        public string InternalConnectionString { get => _explicitNullValueInternalConnectionString; set { _explicitNullValueInternalConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internalConnectionString"); else _explicitNullProperties?.Remove("internalConnectionString"); } }
+        private string _explicitNullValueInternalConnectionString = default!;
 #endif
         /// <summary>The Redis CLI command to connect to the Redis instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedisCLICommand { get; set; }
+        public string? RedisCLICommand { get => _explicitNullValueRedisCLICommand; set { _explicitNullValueRedisCLICommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redisCLICommand"); else _explicitNullProperties?.Remove("redisCLICommand"); } }
+        private string? _explicitNullValueRedisCLICommand = default!;
 #nullable restore
 #else
-        public string RedisCLICommand { get; set; }
+        public string RedisCLICommand { get => _explicitNullValueRedisCLICommand; set { _explicitNullValueRedisCLICommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redisCLICommand"); else _explicitNullProperties?.Remove("redisCLICommand"); } }
+        private string _explicitNullValueRedisCLICommand = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.RedisConnectionInfo"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public static global::Soenneker.Render.OpenApiClient.Models.RedisConnectionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.RedisConnectionInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.RedisConnectionInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("externalConnectionString", ExternalConnectionString);
             writer.WriteStringValue("internalConnectionString", InternalConnectionString);
             writer.WriteStringValue("redisCLICommand", RedisCLICommand);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

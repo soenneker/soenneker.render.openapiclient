@@ -11,31 +11,50 @@ namespace Soenneker.Render.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RetrieveOwnerNotificationSettings200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("emailEnabled") is { } nullNodeEmailEnabled && nullNodeEmailEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailEnabled = null;
+            if (parseNode.GetChildNode("notificationsToSend") is { } nullNodeNotificationsToSend && nullNodeNotificationsToSend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationsToSend = null;
+            if (parseNode.GetChildNode("ownerId") is { } nullNodeOwnerId && nullNodeOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerId = null;
+            if (parseNode.GetChildNode("previewNotificationsEnabled") is { } nullNodePreviewNotificationsEnabled && nullNodePreviewNotificationsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewNotificationsEnabled = null;
+            if (parseNode.GetChildNode("slackEnabled") is { } nullNodeSlackEnabled && nullNodeSlackEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SlackEnabled = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The emailEnabled property</summary>
-        public bool? EmailEnabled { get; set; }
+        public bool? EmailEnabled { get => _explicitNullValueEmailEnabled; set { _explicitNullValueEmailEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailEnabled"); else _explicitNullProperties?.Remove("emailEnabled"); } }
+        private bool? _explicitNullValueEmailEnabled = default!;
         /// <summary>The notificationsToSend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationsToSend { get; set; }
+        public string? NotificationsToSend { get => _explicitNullValueNotificationsToSend; set { _explicitNullValueNotificationsToSend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationsToSend"); else _explicitNullProperties?.Remove("notificationsToSend"); } }
+        private string? _explicitNullValueNotificationsToSend = default!;
 #nullable restore
 #else
-        public string NotificationsToSend { get; set; }
+        public string NotificationsToSend { get => _explicitNullValueNotificationsToSend; set { _explicitNullValueNotificationsToSend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationsToSend"); else _explicitNullProperties?.Remove("notificationsToSend"); } }
+        private string _explicitNullValueNotificationsToSend = default!;
 #endif
         /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerId { get; set; }
+        public string? OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
+        private string? _explicitNullValueOwnerId = default!;
 #nullable restore
 #else
-        public string OwnerId { get; set; }
+        public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
+        private string _explicitNullValueOwnerId = default!;
 #endif
         /// <summary>The previewNotificationsEnabled property</summary>
-        public bool? PreviewNotificationsEnabled { get; set; }
+        public bool? PreviewNotificationsEnabled { get => _explicitNullValuePreviewNotificationsEnabled; set { _explicitNullValuePreviewNotificationsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previewNotificationsEnabled"); else _explicitNullProperties?.Remove("previewNotificationsEnabled"); } }
+        private bool? _explicitNullValuePreviewNotificationsEnabled = default!;
         /// <summary>The slackEnabled property</summary>
-        public bool? SlackEnabled { get; set; }
+        public bool? SlackEnabled { get => _explicitNullValueSlackEnabled; set { _explicitNullValueSlackEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slackEnabled"); else _explicitNullProperties?.Remove("slackEnabled"); } }
+        private bool? _explicitNullValueSlackEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.RetrieveOwnerNotificationSettings200Response"/> and sets the default values.
         /// </summary>
@@ -51,7 +70,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public static global::Soenneker.Render.OpenApiClient.Models.RetrieveOwnerNotificationSettings200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.RetrieveOwnerNotificationSettings200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.RetrieveOwnerNotificationSettings200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +99,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteBoolValue("previewNotificationsEnabled", PreviewNotificationsEnabled);
             writer.WriteBoolValue("slackEnabled", SlackEnabled);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,19 +12,31 @@ namespace Soenneker.Render.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KeyValueOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("maxmemoryPolicy") is { } nullNodeMaxmemoryPolicy && nullNodeMaxmemoryPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxmemoryPolicy = null;
+            if (parseNode.GetChildNode("persistenceMode") is { } nullNodePersistenceMode && nullNodePersistenceMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersistenceMode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maxmemoryPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxmemoryPolicy { get; set; }
+        public string? MaxmemoryPolicy { get => _explicitNullValueMaxmemoryPolicy; set { _explicitNullValueMaxmemoryPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxmemoryPolicy"); else _explicitNullProperties?.Remove("maxmemoryPolicy"); } }
+        private string? _explicitNullValueMaxmemoryPolicy = default!;
 #nullable restore
 #else
-        public string MaxmemoryPolicy { get; set; }
+        public string MaxmemoryPolicy { get => _explicitNullValueMaxmemoryPolicy; set { _explicitNullValueMaxmemoryPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxmemoryPolicy"); else _explicitNullProperties?.Remove("maxmemoryPolicy"); } }
+        private string _explicitNullValueMaxmemoryPolicy = default!;
 #endif
         /// <summary>The persistence mode for the Key Value instance. The default for paid instances is journal_snapshot (both journaling and snapshots). Only turn off persistence if you&apos;re using this Key Value instance as a cache and are okay with losing data. Free instances do not have persistence.</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.PersistenceMode? PersistenceMode { get; set; }
+        public global::Soenneker.Render.OpenApiClient.Models.PersistenceMode? PersistenceMode { get => _explicitNullValuePersistenceMode; set { _explicitNullValuePersistenceMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persistenceMode"); else _explicitNullProperties?.Remove("persistenceMode"); } }
+        private global::Soenneker.Render.OpenApiClient.Models.PersistenceMode? _explicitNullValuePersistenceMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.KeyValueOptions"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public static global::Soenneker.Render.OpenApiClient.Models.KeyValueOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.KeyValueOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.KeyValueOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("maxmemoryPolicy", MaxmemoryPolicy);
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.PersistenceMode>("persistenceMode", PersistenceMode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

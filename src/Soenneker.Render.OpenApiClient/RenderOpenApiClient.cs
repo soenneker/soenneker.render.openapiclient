@@ -136,6 +136,7 @@ namespace Soenneker.Render.OpenApiClient
             get => new global::Soenneker.Render.OpenApiClient.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The redis property</summary>
+        [Obsolete("")]
         public global::Soenneker.Render.OpenApiClient.Redis.RedisRequestBuilder Redis
         {
             get => new global::Soenneker.Render.OpenApiClient.Redis.RedisRequestBuilder(PathParameters, RequestAdapter);

@@ -74,12 +74,14 @@ namespace Soenneker.Render.OpenApiClient.Services
                 { "429", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Render.OpenApiClient.Models.ServiceWithCursor>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.ServiceWithCursor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Creates a new Render service in the specified workspace with the specified configuration.
+        /// Creates a new Render service in the specified workspace with the specified configuration.400 with `code: build_source_region_mismatch` if `buildSourceId` names a git-backedBuild Source in a different region than the service.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ServiceAndDeploy"/></returns>
         /// <param name="body">The request body</param>
@@ -116,6 +118,8 @@ namespace Soenneker.Render.OpenApiClient.Services
                 { "429", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.ServiceAndDeploy>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.ServiceAndDeploy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -139,7 +143,7 @@ namespace Soenneker.Render.OpenApiClient.Services
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new Render service in the specified workspace with the specified configuration.
+        /// Creates a new Render service in the specified workspace with the specified configuration.400 with `code: build_source_region_mismatch` if `buildSourceId` names a git-backedBuild Source in a different region than the service.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

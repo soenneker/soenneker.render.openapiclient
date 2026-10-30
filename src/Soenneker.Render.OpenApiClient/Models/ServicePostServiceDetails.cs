@@ -12,7 +12,12 @@ namespace Soenneker.Render.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServicePostServiceDetails : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetailsPost"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,25 +70,30 @@ namespace Soenneker.Render.OpenApiClient.Models
             var result = new global::Soenneker.Render.OpenApiClient.Models.ServicePostServiceDetails();
             if("BackgroundWorkerDetailsPost".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BackgroundWorkerDetailsPost = new global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetailsPost();
+                
             }
             else if("CronJobDetailsPost".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CronJobDetailsPost = new global::Soenneker.Render.OpenApiClient.Models.CronJobDetailsPost();
+                
             }
             else if("PrivateServiceDetailsPost".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PrivateServiceDetailsPost = new global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetailsPost();
+                
             }
             else if("StaticSiteDetailsPost".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.StaticSiteDetailsPost = new global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetailsPost();
+                
             }
             else if("WebServiceDetailsPost".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WebServiceDetailsPost = new global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsPost();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("schedule") != null && (parseNode.GetChildNode("env") == null || (parseNode.GetChildNode("env")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("docker".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "elixir".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "go".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "node".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "python".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "ruby".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "rust".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "image".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("runtime") == null || (parseNode.GetChildNode("runtime")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("docker".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "elixir".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "go".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "node".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "python".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "ruby".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "rust".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "image".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("plan") == null || (parseNode.GetChildNode("plan")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("starter".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "standard".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "pro".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "pro_plus".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "pro_max".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "pro_ultra".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "0.5c-512mb".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "1c-2g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "2c-4g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "2c-8g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "2c-16g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "4c-8g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "4c-16g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "4c-32g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "8c-16g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "8c-32g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "8c-64g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "12c-24g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "12c-48g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "12c-96g".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("region") == null || (parseNode.GetChildNode("region")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("frankfurt".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "oregon".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "ohio".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "singapore".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "virginia".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.BackgroundWorkerDetailsPost == null && result.CronJobDetailsPost == null && result.PrivateServiceDetailsPost == null && result.StaticSiteDetailsPost == null && result.WebServiceDetailsPost == null && matchesUnionBranch0) result.CronJobDetailsPost = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.CronJobDetailsPost(), parseNode);
+            if (result.BackgroundWorkerDetailsPost == null && result.CronJobDetailsPost == null && result.PrivateServiceDetailsPost == null && result.StaticSiteDetailsPost == null && result.WebServiceDetailsPost == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,25 +129,38 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (BackgroundWorkerDetailsPost == null && CronJobDetailsPost == null && PrivateServiceDetailsPost == null && StaticSiteDetailsPost == null && WebServiceDetailsPost == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (BackgroundWorkerDetailsPost != null && CronJobDetailsPost == null && PrivateServiceDetailsPost == null && StaticSiteDetailsPost == null && WebServiceDetailsPost == null) { if (BackgroundWorkerDetailsPost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BackgroundWorkerDetailsPost); return; }
+            if (CronJobDetailsPost != null && BackgroundWorkerDetailsPost == null && PrivateServiceDetailsPost == null && StaticSiteDetailsPost == null && WebServiceDetailsPost == null) { if (CronJobDetailsPost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CronJobDetailsPost); return; }
+            if (PrivateServiceDetailsPost != null && BackgroundWorkerDetailsPost == null && CronJobDetailsPost == null && StaticSiteDetailsPost == null && WebServiceDetailsPost == null) { if (PrivateServiceDetailsPost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PrivateServiceDetailsPost); return; }
+            if (StaticSiteDetailsPost != null && BackgroundWorkerDetailsPost == null && CronJobDetailsPost == null && PrivateServiceDetailsPost == null && WebServiceDetailsPost == null) { if (StaticSiteDetailsPost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, StaticSiteDetailsPost); return; }
+            if (WebServiceDetailsPost != null && BackgroundWorkerDetailsPost == null && CronJobDetailsPost == null && PrivateServiceDetailsPost == null && StaticSiteDetailsPost == null) { if (WebServiceDetailsPost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WebServiceDetailsPost); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(BackgroundWorkerDetailsPost != null)
             {
+                if (BackgroundWorkerDetailsPost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetailsPost>(null, BackgroundWorkerDetailsPost);
             }
             else if(CronJobDetailsPost != null)
             {
+                if (CronJobDetailsPost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CronJobDetailsPost>(null, CronJobDetailsPost);
             }
             else if(PrivateServiceDetailsPost != null)
             {
+                if (PrivateServiceDetailsPost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetailsPost>(null, PrivateServiceDetailsPost);
             }
             else if(StaticSiteDetailsPost != null)
             {
+                if (StaticSiteDetailsPost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetailsPost>(null, StaticSiteDetailsPost);
             }
             else if(WebServiceDetailsPost != null)
             {
+                if (WebServiceDetailsPost is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsPost>(null, WebServiceDetailsPost);
             }
         }

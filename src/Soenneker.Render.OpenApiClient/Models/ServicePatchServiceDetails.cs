@@ -12,7 +12,12 @@ namespace Soenneker.Render.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServicePatchServiceDetails : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetailsPatch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,25 +70,28 @@ namespace Soenneker.Render.OpenApiClient.Models
             var result = new global::Soenneker.Render.OpenApiClient.Models.ServicePatchServiceDetails();
             if("BackgroundWorkerDetailsPatch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BackgroundWorkerDetailsPatch = new global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetailsPatch();
+                
             }
             else if("CronJobDetailsPatch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CronJobDetailsPatch = new global::Soenneker.Render.OpenApiClient.Models.CronJobDetailsPatch();
+                
             }
             else if("PrivateServiceDetailsPatch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PrivateServiceDetailsPatch = new global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetailsPatch();
+                
             }
             else if("StaticSiteDetailsPatch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.StaticSiteDetailsPatch = new global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetailsPatch();
+                
             }
             else if("WebServiceDetailsPatch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WebServiceDetailsPatch = new global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsPatch();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.BackgroundWorkerDetailsPatch == null && result.CronJobDetailsPatch == null && result.PrivateServiceDetailsPatch == null && result.StaticSiteDetailsPatch == null && result.WebServiceDetailsPatch == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,25 +127,38 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (BackgroundWorkerDetailsPatch == null && CronJobDetailsPatch == null && PrivateServiceDetailsPatch == null && StaticSiteDetailsPatch == null && WebServiceDetailsPatch == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (BackgroundWorkerDetailsPatch != null && CronJobDetailsPatch == null && PrivateServiceDetailsPatch == null && StaticSiteDetailsPatch == null && WebServiceDetailsPatch == null) { if (BackgroundWorkerDetailsPatch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BackgroundWorkerDetailsPatch); return; }
+            if (CronJobDetailsPatch != null && BackgroundWorkerDetailsPatch == null && PrivateServiceDetailsPatch == null && StaticSiteDetailsPatch == null && WebServiceDetailsPatch == null) { if (CronJobDetailsPatch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CronJobDetailsPatch); return; }
+            if (PrivateServiceDetailsPatch != null && BackgroundWorkerDetailsPatch == null && CronJobDetailsPatch == null && StaticSiteDetailsPatch == null && WebServiceDetailsPatch == null) { if (PrivateServiceDetailsPatch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PrivateServiceDetailsPatch); return; }
+            if (StaticSiteDetailsPatch != null && BackgroundWorkerDetailsPatch == null && CronJobDetailsPatch == null && PrivateServiceDetailsPatch == null && WebServiceDetailsPatch == null) { if (StaticSiteDetailsPatch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, StaticSiteDetailsPatch); return; }
+            if (WebServiceDetailsPatch != null && BackgroundWorkerDetailsPatch == null && CronJobDetailsPatch == null && PrivateServiceDetailsPatch == null && StaticSiteDetailsPatch == null) { if (WebServiceDetailsPatch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WebServiceDetailsPatch); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(BackgroundWorkerDetailsPatch != null)
             {
+                if (BackgroundWorkerDetailsPatch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.BackgroundWorkerDetailsPatch>(null, BackgroundWorkerDetailsPatch);
             }
             else if(CronJobDetailsPatch != null)
             {
+                if (CronJobDetailsPatch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CronJobDetailsPatch>(null, CronJobDetailsPatch);
             }
             else if(PrivateServiceDetailsPatch != null)
             {
+                if (PrivateServiceDetailsPatch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.PrivateServiceDetailsPatch>(null, PrivateServiceDetailsPatch);
             }
             else if(StaticSiteDetailsPatch != null)
             {
+                if (StaticSiteDetailsPatch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.StaticSiteDetailsPatch>(null, StaticSiteDetailsPatch);
             }
             else if(WebServiceDetailsPatch != null)
             {
+                if (WebServiceDetailsPatch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.WebServiceDetailsPatch>(null, WebServiceDetailsPatch);
             }
         }

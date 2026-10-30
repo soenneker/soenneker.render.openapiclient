@@ -12,59 +12,106 @@ namespace Soenneker.Render.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListPostgresTopQueries200ResponseTopQueriesItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("calls") is { } nullNodeCalls && nullNodeCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calls = null;
+            if (parseNode.GetChildNode("localBlocksDirtied") is { } nullNodeLocalBlocksDirtied && nullNodeLocalBlocksDirtied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalBlocksDirtied = null;
+            if (parseNode.GetChildNode("localBlocksHit") is { } nullNodeLocalBlocksHit && nullNodeLocalBlocksHit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalBlocksHit = null;
+            if (parseNode.GetChildNode("localBlocksRead") is { } nullNodeLocalBlocksRead && nullNodeLocalBlocksRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalBlocksRead = null;
+            if (parseNode.GetChildNode("localBlocksWritten") is { } nullNodeLocalBlocksWritten && nullNodeLocalBlocksWritten.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalBlocksWritten = null;
+            if (parseNode.GetChildNode("maxTimeMs") is { } nullNodeMaxTimeMs && nullNodeMaxTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTimeMs = null;
+            if (parseNode.GetChildNode("meanTimeMs") is { } nullNodeMeanTimeMs && nullNodeMeanTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeanTimeMs = null;
+            if (parseNode.GetChildNode("minTimeMs") is { } nullNodeMinTimeMs && nullNodeMinTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTimeMs = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("queryId") is { } nullNodeQueryId && nullNodeQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryId = null;
+            if (parseNode.GetChildNode("rows") is { } nullNodeRows && nullNodeRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rows = null;
+            if (parseNode.GetChildNode("sharedBlocksDirtied") is { } nullNodeSharedBlocksDirtied && nullNodeSharedBlocksDirtied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedBlocksDirtied = null;
+            if (parseNode.GetChildNode("sharedBlocksHit") is { } nullNodeSharedBlocksHit && nullNodeSharedBlocksHit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedBlocksHit = null;
+            if (parseNode.GetChildNode("sharedBlocksRead") is { } nullNodeSharedBlocksRead && nullNodeSharedBlocksRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedBlocksRead = null;
+            if (parseNode.GetChildNode("sharedBlocksWritten") is { } nullNodeSharedBlocksWritten && nullNodeSharedBlocksWritten.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedBlocksWritten = null;
+            if (parseNode.GetChildNode("stddevTimeMs") is { } nullNodeStddevTimeMs && nullNodeStddevTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StddevTimeMs = null;
+            if (parseNode.GetChildNode("tempBlocksRead") is { } nullNodeTempBlocksRead && nullNodeTempBlocksRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TempBlocksRead = null;
+            if (parseNode.GetChildNode("tempBlocksWritten") is { } nullNodeTempBlocksWritten && nullNodeTempBlocksWritten.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TempBlocksWritten = null;
+            if (parseNode.GetChildNode("totalTimeMs") is { } nullNodeTotalTimeMs && nullNodeTotalTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalTimeMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The calls property</summary>
-        public int? Calls { get; set; }
+        public int? Calls { get => _explicitNullValueCalls; set { _explicitNullValueCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calls"); else _explicitNullProperties?.Remove("calls"); } }
+        private int? _explicitNullValueCalls = default!;
         /// <summary>The localBlocksDirtied property</summary>
-        public int? LocalBlocksDirtied { get; set; }
+        public int? LocalBlocksDirtied { get => _explicitNullValueLocalBlocksDirtied; set { _explicitNullValueLocalBlocksDirtied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localBlocksDirtied"); else _explicitNullProperties?.Remove("localBlocksDirtied"); } }
+        private int? _explicitNullValueLocalBlocksDirtied = default!;
         /// <summary>The localBlocksHit property</summary>
-        public int? LocalBlocksHit { get; set; }
+        public int? LocalBlocksHit { get => _explicitNullValueLocalBlocksHit; set { _explicitNullValueLocalBlocksHit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localBlocksHit"); else _explicitNullProperties?.Remove("localBlocksHit"); } }
+        private int? _explicitNullValueLocalBlocksHit = default!;
         /// <summary>The localBlocksRead property</summary>
-        public int? LocalBlocksRead { get; set; }
+        public int? LocalBlocksRead { get => _explicitNullValueLocalBlocksRead; set { _explicitNullValueLocalBlocksRead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localBlocksRead"); else _explicitNullProperties?.Remove("localBlocksRead"); } }
+        private int? _explicitNullValueLocalBlocksRead = default!;
         /// <summary>The localBlocksWritten property</summary>
-        public int? LocalBlocksWritten { get; set; }
+        public int? LocalBlocksWritten { get => _explicitNullValueLocalBlocksWritten; set { _explicitNullValueLocalBlocksWritten = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localBlocksWritten"); else _explicitNullProperties?.Remove("localBlocksWritten"); } }
+        private int? _explicitNullValueLocalBlocksWritten = default!;
         /// <summary>The maxTimeMs property</summary>
-        public double? MaxTimeMs { get; set; }
+        public double? MaxTimeMs { get => _explicitNullValueMaxTimeMs; set { _explicitNullValueMaxTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxTimeMs"); else _explicitNullProperties?.Remove("maxTimeMs"); } }
+        private double? _explicitNullValueMaxTimeMs = default!;
         /// <summary>The meanTimeMs property</summary>
-        public double? MeanTimeMs { get; set; }
+        public double? MeanTimeMs { get => _explicitNullValueMeanTimeMs; set { _explicitNullValueMeanTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meanTimeMs"); else _explicitNullProperties?.Remove("meanTimeMs"); } }
+        private double? _explicitNullValueMeanTimeMs = default!;
         /// <summary>The minTimeMs property</summary>
-        public double? MinTimeMs { get; set; }
+        public double? MinTimeMs { get => _explicitNullValueMinTimeMs; set { _explicitNullValueMinTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minTimeMs"); else _explicitNullProperties?.Remove("minTimeMs"); } }
+        private double? _explicitNullValueMinTimeMs = default!;
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>The queryId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryId { get; set; }
+        public string? QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryId"); else _explicitNullProperties?.Remove("queryId"); } }
+        private string? _explicitNullValueQueryId = default!;
 #nullable restore
 #else
-        public string QueryId { get; set; }
+        public string QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryId"); else _explicitNullProperties?.Remove("queryId"); } }
+        private string _explicitNullValueQueryId = default!;
 #endif
         /// <summary>The rows property</summary>
-        public int? Rows { get; set; }
+        public int? Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
+        private int? _explicitNullValueRows = default!;
         /// <summary>The sharedBlocksDirtied property</summary>
-        public int? SharedBlocksDirtied { get; set; }
+        public int? SharedBlocksDirtied { get => _explicitNullValueSharedBlocksDirtied; set { _explicitNullValueSharedBlocksDirtied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedBlocksDirtied"); else _explicitNullProperties?.Remove("sharedBlocksDirtied"); } }
+        private int? _explicitNullValueSharedBlocksDirtied = default!;
         /// <summary>The sharedBlocksHit property</summary>
-        public int? SharedBlocksHit { get; set; }
+        public int? SharedBlocksHit { get => _explicitNullValueSharedBlocksHit; set { _explicitNullValueSharedBlocksHit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedBlocksHit"); else _explicitNullProperties?.Remove("sharedBlocksHit"); } }
+        private int? _explicitNullValueSharedBlocksHit = default!;
         /// <summary>The sharedBlocksRead property</summary>
-        public int? SharedBlocksRead { get; set; }
+        public int? SharedBlocksRead { get => _explicitNullValueSharedBlocksRead; set { _explicitNullValueSharedBlocksRead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedBlocksRead"); else _explicitNullProperties?.Remove("sharedBlocksRead"); } }
+        private int? _explicitNullValueSharedBlocksRead = default!;
         /// <summary>The sharedBlocksWritten property</summary>
-        public int? SharedBlocksWritten { get; set; }
+        public int? SharedBlocksWritten { get => _explicitNullValueSharedBlocksWritten; set { _explicitNullValueSharedBlocksWritten = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharedBlocksWritten"); else _explicitNullProperties?.Remove("sharedBlocksWritten"); } }
+        private int? _explicitNullValueSharedBlocksWritten = default!;
         /// <summary>The stddevTimeMs property</summary>
-        public double? StddevTimeMs { get; set; }
+        public double? StddevTimeMs { get => _explicitNullValueStddevTimeMs; set { _explicitNullValueStddevTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stddevTimeMs"); else _explicitNullProperties?.Remove("stddevTimeMs"); } }
+        private double? _explicitNullValueStddevTimeMs = default!;
         /// <summary>The tempBlocksRead property</summary>
-        public int? TempBlocksRead { get; set; }
+        public int? TempBlocksRead { get => _explicitNullValueTempBlocksRead; set { _explicitNullValueTempBlocksRead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tempBlocksRead"); else _explicitNullProperties?.Remove("tempBlocksRead"); } }
+        private int? _explicitNullValueTempBlocksRead = default!;
         /// <summary>The tempBlocksWritten property</summary>
-        public int? TempBlocksWritten { get; set; }
+        public int? TempBlocksWritten { get => _explicitNullValueTempBlocksWritten; set { _explicitNullValueTempBlocksWritten = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tempBlocksWritten"); else _explicitNullProperties?.Remove("tempBlocksWritten"); } }
+        private int? _explicitNullValueTempBlocksWritten = default!;
         /// <summary>The totalTimeMs property</summary>
-        public double? TotalTimeMs { get; set; }
+        public double? TotalTimeMs { get => _explicitNullValueTotalTimeMs; set { _explicitNullValueTotalTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalTimeMs"); else _explicitNullProperties?.Remove("totalTimeMs"); } }
+        private double? _explicitNullValueTotalTimeMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.ListPostgresTopQueries200ResponseTopQueriesItem"/> and sets the default values.
         /// </summary>
@@ -80,7 +127,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public static global::Soenneker.Render.OpenApiClient.Models.ListPostgresTopQueries200ResponseTopQueriesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Render.OpenApiClient.Models.ListPostgresTopQueries200ResponseTopQueriesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.ListPostgresTopQueries200ResponseTopQueriesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -137,6 +184,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteIntValue("tempBlocksRead", TempBlocksRead);
             writer.WriteIntValue("tempBlocksWritten", TempBlocksWritten);
             writer.WriteDoubleValue("totalTimeMs", TotalTimeMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
