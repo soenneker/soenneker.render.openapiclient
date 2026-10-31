@@ -595,6 +595,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DedicatedIp"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -892,6 +903,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddDisk201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1094,6 +1116,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListSnapshots201ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -2279,6 +2312,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceAndDeploy"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -2677,6 +2721,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deploy"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -2870,6 +2925,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deploy"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -3388,6 +3454,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecretFile"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -3655,6 +3732,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddHeaders201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -3929,6 +4017,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Route"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -4278,6 +4377,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCustomDomain201ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -5021,6 +5131,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostJob201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -7448,6 +7569,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueDetail"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -7878,6 +8010,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RedisDetail"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "deprecated": true
@@ -8320,6 +8463,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresDetail"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -9402,6 +9556,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Project"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -9601,6 +9766,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Environment"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -10050,6 +10226,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvGroup"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -10933,6 +11120,17 @@
           },
           "500": {
             "$ref": "#/components/responses/500InternalServerError"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateBuildSource201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -11240,6 +11438,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Build started",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TriggerBuildSourceBuild201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -11889,6 +12098,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecretFile"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -12105,6 +12325,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateWebhook201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -12469,6 +12700,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Workflow created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateWorkflow201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -13014,6 +13256,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Task run created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTask202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         }
       }
@@ -13279,6 +13532,31 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Sandbox created. Returns the initial sandbox snapshot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSandbox201Response"
+                },
+                "example": {
+                  "id": "sbx-1cd4gcph1rs3idesc73a2b2mg",
+                  "status": "creating",
+                  "plan": "standard",
+                  "networkPolicy": {
+                    "type": "deny-all",
+                    "default": "deny-all"
+                  },
+                  "region": "oregon",
+                  "timeoutSeconds": 7200,
+                  "idleTimeoutSeconds": 900,
+                  "createdAt": "2026-04-01T18:30:00Z",
+                  "terminatedAt": null
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -13430,6 +13708,28 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Sandbox group created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSandboxGroup201Response"
+                },
+                "example": {
+                  "id": "sbg-cph1rs3idesc73a2b2mg",
+                  "ownerId": "tea-cph1rs3idesc73a2b2mg",
+                  "name": "CI agents",
+                  "region": "oregon",
+                  "isDefault": false,
+                  "environmentId": null,
+                  "concurrencyLimit": 10,
+                  "createdAt": "2026-07-02T18:30:00Z",
+                  "updatedAt": "2026-07-02T18:30:00Z"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -13813,6 +14113,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Capture accepted. Returns the snapshot in \u0060creating\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSandboxSnapshot202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         }
       },
@@ -14206,6 +14517,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Connect token minted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectSandboxRun201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -14285,6 +14607,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Connect token minted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectSandboxFiles201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
