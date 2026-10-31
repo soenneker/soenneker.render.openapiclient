@@ -13203,6 +13203,1105 @@
           }
         }
       ]
+    },
+    "/sandboxes": {
+      "post": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Create sandbox",
+        "description": "Create a sandbox. Returns the initial sandbox snapshot synchronously.\n\nWith \u0060snapshotId\u0060: 404 with \u0060code: snapshot_not_found\u0060 if the snapshot does not\nexist; 409 with \u0060code: snapshot_not_available\u0060 if it is not \u0060available\u0060, or\n\u0060code: snapshot_plan_mismatch\u0060 if a \u0060runtime\u0060 snapshot was requested with a\ndifferent \u0060plan\u0060.\n\nWith \u0060snapshotName\u0060: 400 with \u0060code: invalid_snapshot_name\u0060 if the name is\nmalformed, 400 without a code if \u0060snapshotId\u0060 is also set, and 404 with\n\u0060code: snapshot_not_found\u0060 if no \u0060available\u0060 snapshot in the group has the\nname. The 409 cases above apply to the resolved snapshot.\n\n409 with \u0060code: sandbox_group_suspended\u0060 if the sandbox group is suspended.\n\n400 with \u0060code: sandbox_group_limit_reached\u0060 if the owner has no default\nsandbox group and is already at its sandbox group limit.\n\n400 with \u0060code: invalid_sandbox_plan\u0060 if \u0060plan\u0060 is not one the API currently\naccepts. The message lists the accepted plans.\n\n400 with \u0060code: invalid_timeout_seconds\u0060 if \u0060timeoutSeconds\u0060 is below 0 or\nabove the plan\u0027s maximum: 2592000 (30 days), or 86400 (24 hours) on Hobby\nworkspaces.\n",
+        "operationId": "CreateSandbox",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSandboxRequest"
+              },
+              "example": {
+                "ownerId": "tea-cph1rs3idesc73a2b2mg",
+                "networkPolicy": {
+                  "type": "deny-all"
+                },
+                "plan": "standard",
+                "timeoutSeconds": 7200,
+                "idleTimeoutSeconds": 900
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Sandbox created. Returns the initial sandbox snapshot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSandbox201Response"
+                },
+                "example": {
+                  "id": "sbx-1cd4gcph1rs3idesc73a2b2mg",
+                  "status": "creating",
+                  "plan": "standard",
+                  "networkPolicy": {
+                    "type": "deny-all",
+                    "default": "deny-all"
+                  },
+                  "region": "oregon",
+                  "timeoutSeconds": 7200,
+                  "idleTimeoutSeconds": 900,
+                  "createdAt": "2026-04-01T18:30:00Z",
+                  "terminatedAt": null
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/409Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "List sandboxes",
+        "description": "List sandboxes for a single workspace. Sandboxes are scoped to the region of\ntheir workspace\u0027s sandbox group, so one workspace must be named per request.\n",
+        "operationId": "ListSandboxes",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "description": "The ID of the workspace whose sandboxes to return.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sandboxGroupId",
+            "in": "query",
+            "description": "Return only sandboxes in this group. The group must belong to ownerId.",
+            "schema": {
+              "pattern": "^sbg-[0-9a-v]{20}$",
+              "type": "string",
+              "example": "sbg-cph1rs3idesc73a2b2mg"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/cursorParam"
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by sandbox status. If omitted, returns sandboxes in every status\nexcept \u0060terminated\u0060. To include terminated sandboxes, list \u0060terminated\u0060\nexplicitly.\n",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListSandboxesStatusParameterItem"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListSandboxes200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/sandbox-groups": {
+      "post": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Create sandbox group",
+        "description": "Create a sandbox group. The workspace\u0027s first group becomes its default.\nReturns 409 if the \u0060name\u0060 is taken.\n",
+        "operationId": "CreateSandboxGroup",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSandboxGroupRequest"
+              },
+              "example": {
+                "ownerId": "tea-cph1rs3idesc73a2b2mg",
+                "name": "CI agents"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Sandbox group created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSandboxGroup201Response"
+                },
+                "example": {
+                  "id": "sbg-cph1rs3idesc73a2b2mg",
+                  "ownerId": "tea-cph1rs3idesc73a2b2mg",
+                  "name": "CI agents",
+                  "region": "oregon",
+                  "isDefault": false,
+                  "environmentId": null,
+                  "concurrencyLimit": 10,
+                  "createdAt": "2026-07-02T18:30:00Z",
+                  "updatedAt": "2026-07-02T18:30:00Z"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/409Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "List sandbox groups",
+        "description": "List sandbox groups for a single workspace, newest first. The default\npage size is 20 and the maximum is 100.\nUse the last item\u0027s cursor to fetch the next page, until it is empty.\n",
+        "operationId": "ListSandboxGroups",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "description": "The ID of the workspace whose sandbox groups to return.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/cursorParam"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum groups to return.",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListSandboxGroups200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/sandboxes/{sandboxId}": {
+      "get": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Retrieve sandbox",
+        "description": "Retrieve the sandbox with the provided ID.",
+        "operationId": "RetrieveSandbox",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "description": "The ID of the workspace the sandbox belongs to. Optional: the workspace is\ndetermined from the sandbox ID, and this parameter is ignored when supplied.\n",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveSandbox200Response"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "sandboxId",
+          "in": "path",
+          "description": "The ID of the sandbox",
+          "required": true,
+          "schema": {
+            "pattern": "^sbx-[0-9a-v]{25}$",
+            "type": "string",
+            "example": "sbx-1cd4gcph1rs3idesc73a2b2mg"
+          }
+        }
+      ]
+    },
+    "/sandboxes/{sandboxId}/execs": {
+      "get": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "List executions",
+        "description": "List execution records for the sandbox, ordered by start time, newest first.",
+        "operationId": "ListSandboxExecutions",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/0"
+          },
+          {
+            "$ref": "#/components/parameters/cursorParam"
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "name": "sandboxId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListSandboxExecutions200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/0"
+        }
+      ]
+    },
+    "/sandboxes/{sandboxId}/execs/{execId}": {
+      "get": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Retrieve execution",
+        "description": "Retrieve one execution record for the sandbox.",
+        "operationId": "RetrieveSandboxExecution",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/0"
+          },
+          {
+            "name": "sandboxId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveSandboxExecution200Response"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/0"
+        },
+        {
+          "name": "execId",
+          "in": "path",
+          "description": "The ID of the execution",
+          "required": true,
+          "schema": {
+            "pattern": "^exe-[0-9a-v]{20}$",
+            "type": "string",
+            "example": "exe-cph1rs3idesc73a2b2mg"
+          }
+        }
+      ]
+    },
+    "/sandboxes/{sandboxId}/terminate": {
+      "post": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Terminate sandbox",
+        "description": "Terminate the sandbox with the provided ID. Idempotent: returns 204 from any\nstate, including \u0060terminated\u0060. Terminating a \u0060creating\u0060 sandbox cancels\nboot/setup immediately.\n",
+        "operationId": "TerminateSandbox",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/0"
+          },
+          {
+            "name": "sandboxId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/0"
+        }
+      ]
+    },
+    "/sandboxes/{sandboxId}/snapshots": {
+      "post": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Create sandbox snapshot",
+        "description": "Capture a snapshot of a running sandbox. Returns 202 with the snapshot in\n\u0060creating\u0060. Poll until it is \u0060available\u0060 or \u0060failed\u0060. The sandbox keeps\nrunning; a runtime capture pauses it briefly.\n\n400 with \u0060code: invalid_snapshot_name\u0060 if \u0060name\u0060 is malformed. 409 with\n\u0060code: sandbox_not_running\u0060 if the sandbox is not \u0060running\u0060, or\n\u0060code: sandbox_group_suspended\u0060 if the sandbox group is suspended.\n",
+        "operationId": "CreateSandboxSnapshot",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/0"
+          },
+          {
+            "name": "sandboxId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSandboxSnapshotRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Capture accepted. Returns the snapshot in \u0060creating\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSandboxSnapshot202Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/409Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/0"
+        }
+      ]
+    },
+    "/sandbox-groups/{sandboxGroupId}": {
+      "get": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Retrieve sandbox group",
+        "description": "Retrieve a sandbox group. 400 \u0060invalid_sandbox_group_id\u0060 for a malformed ID.\n",
+        "operationId": "RetrieveSandboxGroup",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveSandboxGroup200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Update sandbox group",
+        "description": "Update a sandbox group\u0027s concurrency limit. Returns 400 for a malformed\nID (\u0060invalid_sandbox_group_id\u0060), missing \u0060concurrencyLimit\u0060, or a value\nbelow 1. The response returns the effective limit after applying Render\u0027s cap.\n",
+        "operationId": "UpdateSandboxGroup",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSandboxGroupRequest"
+              },
+              "example": {
+                "concurrencyLimit": 10
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Sandbox group updated.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateSandboxGroup200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/409Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "sandboxGroupId",
+          "in": "path",
+          "description": "The ID of the sandbox group",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/sandbox-groups/{sandboxGroupId}/snapshots": {
+      "get": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "List sandbox snapshots",
+        "description": "Snapshots in a sandbox group, newest first. Expired and deleted snapshots\nare omitted.\n\n400 with \u0060code: invalid_sandbox_group_id\u0060 if \u0060sandboxGroupId\u0060 is not a\nwell-formed \u0060sbg-\u0060 ID, \u0060code: invalid_owner_id\u0060 if \u0060ownerId\u0060 is missing or\nrepeated, \u0060code: invalid_status\u0060 for a status outside the snapshot status\nvocabulary, \u0060code: invalid_cursor\u0060 for a malformed or unknown cursor, or\n\u0060code: invalid_limit\u0060 for a limit outside 1 to 100.\n",
+        "operationId": "ListSandboxSnapshots",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "description": "The ID of the workspace whose snapshots to return.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/cursorParam"
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by snapshot status.",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListSandboxSnapshotsStatusParameterItem"
+              }
+            }
+          },
+          {
+            "name": "sandboxGroupId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListSandboxSnapshots200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/0"
+        }
+      ]
+    },
+    "/sandbox-groups/{sandboxGroupId}/snapshots/{snapshotId}": {
+      "get": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Retrieve sandbox snapshot",
+        "description": "One snapshot by ID. Deleted and expired snapshots return 404. A snapshot\nthat belongs to another sandbox group returns 404.\n\n400 with \u0060code: invalid_sandbox_group_id\u0060 if \u0060sandboxGroupId\u0060 is not a\nwell-formed \u0060sbg-\u0060 ID, or \u0060code: invalid_snapshot_id\u0060 if \u0060snapshotId\u0060 is\nnot a well-formed \u0060snp-\u0060 ID.\n",
+        "operationId": "RetrieveSandboxSnapshot",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "description": "The ID of the workspace the sandbox group belongs to. Optional: the workspace\nis determined from the sandbox group ID, and this parameter is ignored when\nsupplied.\n",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sandboxGroupId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveSandboxSnapshot200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Delete sandbox snapshot",
+        "description": "Idempotent: returns 204 if the snapshot is already deleted or expired.\nSandboxes created from the snapshot are not affected. A snapshot that\nbelongs to another sandbox group returns 404.\n\n400 with \u0060code: invalid_sandbox_group_id\u0060 when \u0060sandboxGroupId\u0060 is malformed.\n400 with \u0060code: invalid_snapshot_id\u0060 when \u0060snapshotId\u0060 is malformed.\n409 with \u0060code: snapshot_creating\u0060 while the capture is in progress.\n",
+        "operationId": "DeleteSandboxSnapshot",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/0"
+          },
+          {
+            "name": "sandboxGroupId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/409Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/0"
+        },
+        {
+          "name": "snapshotId",
+          "in": "path",
+          "description": "The ID of the snapshot",
+          "required": true,
+          "schema": {
+            "pattern": "^snp-[0-9a-v]{20}$",
+            "type": "string",
+            "example": "snp-cph1rs3idesc73a2b2mg"
+          }
+        }
+      ]
+    },
+    "/sandboxes/{sandboxId}/runs/{operation}/token": {
+      "post": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Create a connect token for a sandbox run",
+        "description": "Mint a short-lived, capability-scoped connect token that authorizes a\nsingle run operation against the specified sandbox. The response contains\nthe sandbox URI where the caller sends the command with the token as a bearer credential.\n\n409 with \u0060code: sandbox_group_suspended\u0060 if the sandbox group is suspended.\n",
+        "operationId": "ConnectSandboxRun",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/0"
+          },
+          {
+            "name": "sandboxId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectSandboxRunRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Connect token minted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectSandboxRun201Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/0"
+        },
+        {
+          "name": "operation",
+          "in": "path",
+          "description": "The run operation to authorize \u2014 \u0060sync\u0060 (buffered) or \u0060stream\u0060 (server-sent events).",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/SandboxesSandboxIdRunsOperationTokenOperation"
+          }
+        }
+      ]
+    },
+    "/sandboxes/{sandboxId}/files/{operation}/token": {
+      "post": {
+        "tags": [
+          "Sandboxes (Beta)"
+        ],
+        "summary": "Mint a connect token for a sandbox file transfer",
+        "description": "Mint a short-lived, capability-scoped connect token that authorizes a\nsingle file upload or download against the sandbox, and return the\nsandbox-proxy endpoint to invoke with it. The caller streams the file\nbytes directly to (or from) that endpoint with the token as a bearer\ncredential. \u0060application/octet-stream\u0060 carries a single file and\n\u0060application/x-tar\u0060 a directory archive, with compression carried\nseparately by \u0060Content-Encoding: gzip\u0060 in either direction; directory\ndownloads return \u0060application/x-tar\u0060 with \u0060Content-Encoding: gzip\u0060. The\ntoken is bound to this sandbox, operation, and path, and expires\nshortly after issuance.\n\n409 with \u0060code: sandbox_group_suspended\u0060 if the sandbox group is suspended.\n",
+        "operationId": "ConnectSandboxFiles",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/0"
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "description": "Path in the sandbox this token authorizes. A relative path resolves within the sandbox\u0027s home directory (\u0022.\u0022 is the home directory itself); an absolute path addresses the sandbox filesystem root. For an archive upload, the extraction root; for a download, the file or directory to fetch.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sandboxId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Connect token minted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectSandboxFiles201Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/0"
+        },
+        {
+          "name": "operation",
+          "in": "path",
+          "description": "The file operation to authorize \u2014 \u0060upload\u0060 (PUT a file or tar archive) or \u0060download\u0060 (GET a file, or a directory as a tar archive).",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/SandboxesSandboxIdFilesOperationTokenOperation"
+          }
+        }
+      ]
     }
   },
   "components": {
@@ -18164,6 +19263,70 @@
         },
         "description": "A run of a cron job"
       },
+      "SandboxWithCursor": {
+        "required": [
+          "sandbox",
+          "cursor"
+        ],
+        "type": "object",
+        "properties": {
+          "sandbox": {
+            "type": "string"
+          },
+          "cursor": {
+            "type": "string"
+          }
+        },
+        "description": "A sandbox with a cursor"
+      },
+      "ExecutionWithCursor": {
+        "required": [
+          "execution",
+          "cursor"
+        ],
+        "type": "object",
+        "properties": {
+          "execution": {
+            "type": "string"
+          },
+          "cursor": {
+            "type": "string"
+          }
+        },
+        "description": "A sandbox execution with a cursor"
+      },
+      "SandboxSnapshotWithCursor": {
+        "required": [
+          "snapshot",
+          "cursor"
+        ],
+        "type": "object",
+        "properties": {
+          "snapshot": {
+            "type": "string"
+          },
+          "cursor": {
+            "type": "string"
+          }
+        },
+        "description": "A sandbox snapshot with a cursor"
+      },
+      "SandboxGroupWithCursor": {
+        "required": [
+          "sandboxGroup",
+          "cursor"
+        ],
+        "type": "object",
+        "properties": {
+          "sandboxGroup": {
+            "type": "string"
+          },
+          "cursor": {
+            "type": "string"
+          }
+        },
+        "description": "A sandbox group with a cursor"
+      },
       "BlueprintWithCursor": {
         "required": [
           "blueprint",
@@ -20197,6 +21360,362 @@
         "type": "string",
         "description": "Stream of SSE frames. Each event may include \u0060id\u0060, \u0060event\u0060, \u0060data\u0060,\nand optional \u0060retry\u0060. Frames are separated by a blank line.\n"
       },
+      "CreateSandboxRequest": {
+        "required": [
+          "ownerId"
+        ],
+        "type": "object",
+        "properties": {
+          "ownerId": {
+            "type": "string",
+            "description": "The ID of the workspace the sandbox belongs to."
+          },
+          "sandboxGroupId": {
+            "type": "string",
+            "description": "Group to create the sandbox in; defaults to the workspace\u0027s default group."
+          },
+          "networkPolicy": {
+            "$ref": "#/components/schemas/CreateSandboxRequestNetworkPolicy"
+          },
+          "plan": {
+            "type": "string",
+            "x-client-inline-scalar": true,
+            "description": "Compute plan. See \u0060sandboxPlan\u0060 for known values.",
+            "x-go-type": "SandboxPlan"
+          },
+          "timeoutSeconds": {
+            "type": "integer",
+            "description": "Maximum sandbox lifetime in seconds. Sandbox is terminated when reached. Use 0 for no timeout.",
+            "default": 86400
+          },
+          "idleTimeoutSeconds": {
+            "maximum": 86400,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Seconds of inactivity before the sandbox is suspended. Use 0 to disable automatic idle suspension. Positive values must be at least 300.",
+            "default": 900
+          },
+          "env": {
+            "$ref": "#/components/schemas/CreateSandboxRequestEnv"
+          },
+          "snapshotId": {
+            "type": "string",
+            "description": "Start from this snapshot instead of the base image. Must be \u0060available\u0060\nand in the same sandbox group. For a \u0060runtime\u0060 snapshot, \u0060plan\u0060 must\nmatch the snapshot\u0027s plan.\n"
+          },
+          "snapshotName": {
+            "type": "string",
+            "description": "Start from the snapshot this name currently resolves to in the sandbox\ngroup. Mutually exclusive with \u0060snapshotId\u0060. Same restore rules as\n\u0060snapshotId\u0060.\n"
+          }
+        }
+      },
+      "CreateSandbox201Response": {
+        "required": [
+          "id",
+          "status",
+          "plan",
+          "networkPolicy",
+          "region",
+          "timeoutSeconds",
+          "idleTimeoutSeconds",
+          "createdAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "sandboxGroupId": {
+            "type": "string",
+            "description": "The sandbox group this sandbox belongs to."
+          },
+          "status": {
+            "type": "string"
+          },
+          "plan": {
+            "type": "string",
+            "x-client-inline-scalar": true,
+            "description": "Compute plan. See \u0060sandboxPlan\u0060 for known values.",
+            "x-go-type": "SandboxPlan"
+          },
+          "networkPolicy": {
+            "$ref": "#/components/schemas/CreateSandbox201ResponseNetworkPolicy"
+          },
+          "region": {
+            "type": "string",
+            "description": "Region the sandbox is running in.",
+            "example": "oregon"
+          },
+          "timeoutSeconds": {
+            "type": "integer",
+            "description": "Maximum sandbox lifetime in seconds. 0 means the sandbox has no timeout.",
+            "example": 86400
+          },
+          "idleTimeoutSeconds": {
+            "type": "integer",
+            "description": "Seconds of inactivity before the sandbox is suspended. 0 disables automatic idle suspension.",
+            "example": 900
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-04-01T18:30:00Z"
+          },
+          "terminatedAt": {
+            "type": "string",
+            "description": "When the sandbox was terminated, or null.",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "ListSandboxes200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SandboxWithCursor"
+        }
+      },
+      "CreateSandboxGroupRequest": {
+        "required": [
+          "ownerId",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "ownerId": {
+            "type": "string",
+            "description": "Workspace ID.",
+            "example": "tea-cph1rs3idesc73a2b2mg"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name, unique within the workspace.",
+            "example": "CI agents"
+          },
+          "region": {
+            "type": "string",
+            "description": "Region for the group\u0027s sandboxes. Defaults to Render\u0027s default sandbox region.",
+            "default": "oregon",
+            "example": "oregon"
+          }
+        }
+      },
+      "ListSandboxGroups200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SandboxGroupWithCursor"
+        }
+      },
+      "ListSandboxExecutions200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExecutionWithCursor"
+        }
+      },
+      "RetrieveSandboxExecution200Response": {
+        "required": [
+          "id",
+          "sandboxId",
+          "type",
+          "operation",
+          "userId",
+          "startedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "sandboxId": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/RetrieveSandboxExecution200ResponseType"
+          },
+          "operation": {
+            "$ref": "#/components/schemas/RetrieveSandboxExecution200ResponseOperation"
+          },
+          "command": {
+            "type": "string",
+            "description": "The execution target. For runs, the truncated command; for file transfers, the target file path."
+          },
+          "userId": {
+            "type": "string",
+            "description": "The ID of the user the execution token was minted for.",
+            "example": "usr-cph1rs3idesc73a2b2mg"
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-08-01T10:00:00Z"
+          },
+          "stoppedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-08-01T10:05:00Z"
+          },
+          "exitCode": {
+            "type": "integer",
+            "example": 0
+          }
+        },
+        "description": "One recorded sandbox execution (a command run or file transfer).\n\u0060startedAt\u0060 is the token provisioning time. \u0060command\u0060 may be present\nwhile the execution is in flight (recorded at token mint). \u0060stoppedAt\u0060\nand \u0060exitCode\u0060 are absent until a status report or sandbox finalization.\n"
+      },
+      "CreateSandboxSnapshotRequest": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string",
+            "description": "Case sensitive. Scoped to the sandbox group. Must not start with \u0060snp-\u0060\nso clients can tell a name from a snapshot ID. Several snapshots may\nshare a name; the most recently available one is the one the name\nresolves to.\n",
+            "example": "gold"
+          },
+          "expiresAt": {
+            "type": "string",
+            "description": "The time after which the snapshot can no longer be retrieved or restored.\nMust be in the future. Omit to use Render\u0027s default snapshot lifetime.\n",
+            "format": "date-time"
+          }
+        }
+      },
+      "CreateSandboxSnapshot202Response": {
+        "required": [
+          "id",
+          "sandboxGroupId",
+          "sourceSandboxId",
+          "kind",
+          "status",
+          "plan",
+          "requestedAt",
+          "expiresAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "sandboxGroupId": {
+            "type": "string"
+          },
+          "sourceSandboxId": {
+            "type": "string",
+            "description": "The sandbox this snapshot was captured from. Lineage only."
+          },
+          "name": {
+            "type": "string",
+            "description": "Set at create. Never changes. Null when created without a name."
+          },
+          "kind": {
+            "$ref": "#/components/schemas/CreateSandboxSnapshot202ResponseKind"
+          },
+          "status": {
+            "type": "string"
+          },
+          "plan": {
+            "type": "string",
+            "x-client-inline-scalar": true,
+            "description": "Plan of the source sandbox at capture time. See \u0060sandboxPlan\u0060 for known values.",
+            "x-go-type": "SandboxPlan"
+          },
+          "requestedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "capturedAt": {
+            "type": "string",
+            "description": "When the sandbox was frozen for capture. Null until \u0060available\u0060.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "expiresAt": {
+            "type": "string",
+            "description": "The time after which the snapshot can no longer be retrieved or restored.\nSet by Render when the create request did not specify one.\n",
+            "format": "date-time"
+          },
+          "sizeBytes": {
+            "type": "integer",
+            "description": "Null until \u0060available\u0060.",
+            "format": "int64",
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "description": "Null unless \u0060failed\u0060.",
+            "nullable": true
+          }
+        }
+      },
+      "UpdateSandboxGroupRequest": {
+        "required": [
+          "concurrencyLimit"
+        ],
+        "type": "object",
+        "properties": {
+          "concurrencyLimit": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Maximum active sandboxes in the group. The configured value is capped\nby Render\u0027s limit for this workspace. Responses return the effective limit.\nLowering the limit does not stop existing sandboxes.\n",
+            "example": 10
+          }
+        }
+      },
+      "ListSandboxSnapshots200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SandboxSnapshotWithCursor"
+        }
+      },
+      "ConnectSandboxRunRequest": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Command text for the sandbox event timeline."
+          }
+        },
+        "description": "Optional body when minting a run connect token. \u0060command\u0060 is stored on\nthe exec timeline (truncated to 4KB); the full command is still sent\nto the sandbox proxy when executing.\n"
+      },
+      "ConnectSandboxRun201Response": {
+        "required": [
+          "executionId",
+          "token",
+          "uri",
+          "method",
+          "expiresAt"
+        ],
+        "type": "object",
+        "properties": {
+          "executionId": {
+            "type": "string",
+            "description": "Identifier for this execution.",
+            "example": "exe-cph1rs3idesc73a2b2mg"
+          },
+          "token": {
+            "type": "string",
+            "description": "Short-lived bearer token authorizing exactly this operation against the sandbox."
+          },
+          "uri": {
+            "type": "string",
+            "description": "The sandbox-proxy endpoint to invoke.",
+            "format": "uri",
+            "example": "https://sbx-abc123.oregon.sandbox.onrender.com/runs/stream"
+          },
+          "method": {
+            "type": "string",
+            "description": "HTTP method to use against \u0060uri\u0060.",
+            "example": "POST"
+          },
+          "expiresAt": {
+            "type": "string",
+            "description": "When \u0060token\u0060 stops being valid. Start the run before this time.",
+            "format": "date-time",
+            "example": "2026-07-10T12:00:00Z"
+          }
+        },
+        "description": "A minted connect token and the sandbox-proxy endpoint to invoke with it.\nSend the request (and body, where the operation takes one) to \u0060uri\u0060\nusing \u0060method\u0060, with \u0060token\u0060 as a bearer credential.\n"
+      },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
@@ -20862,6 +22381,102 @@
           }
         }
       },
+      "ListSandboxes200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SandboxWithCursor"
+        }
+      },
+      "CreateSandboxGroup201Response": {
+        "required": [
+          "id",
+          "ownerId",
+          "name",
+          "region",
+          "isDefault",
+          "concurrencyLimit",
+          "createdAt",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ownerId": {
+            "type": "string",
+            "description": "The ID of the workspace this group belongs to.",
+            "example": "tea-cph1rs3idesc73a2b2mg"
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-friendly name for the group.",
+            "example": "Default"
+          },
+          "region": {
+            "type": "string",
+            "description": "Render region the group operates in.",
+            "example": "oregon"
+          },
+          "isDefault": {
+            "type": "boolean",
+            "description": "Whether this is the workspace\u0027s default group. Sandboxes are created\nhere unless a group is given.\n"
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "Environment this group is bound to.",
+            "nullable": true
+          },
+          "concurrencyLimit": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "The effective limit on active sandboxes in this group, capped by Render\u0027s limit for this workspace."
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-07-02T18:30:00Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-07-02T18:30:00Z"
+          }
+        }
+      },
+      "ListSandboxGroups200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SandboxGroupWithCursor"
+        }
+      },
+      "RetrieveSandbox200Response": {
+        "type": "string"
+      },
+      "ListSandboxExecutions200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExecutionWithCursor"
+        }
+      },
+      "RetrieveSandboxGroup200Response": {
+        "type": "string"
+      },
+      "UpdateSandboxGroup200Response": {
+        "type": "string"
+      },
+      "ListSandboxSnapshots200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SandboxSnapshotWithCursor"
+        }
+      },
+      "RetrieveSandboxSnapshot200Response": {
+        "type": "string"
+      },
+      "ConnectSandboxFiles201Response": {
+        "type": "string"
+      },
       "LogsValues200ResponseResponseContent": {
         "type": "array",
         "items": {
@@ -21136,6 +22751,24 @@
             "$ref": "#/components/schemas/CreateTaskRequestInputAnyOf2"
           }
         ]
+      },
+      "CreateSandboxRequestPlan": {
+        "type": "string",
+        "x-client-inline-scalar": true,
+        "description": "Compute plan. See \u0060sandboxPlan\u0060 for known values.",
+        "x-go-type": "SandboxPlan"
+      },
+      "CreateSandbox201ResponsePlan": {
+        "type": "string",
+        "x-client-inline-scalar": true,
+        "description": "Compute plan. See \u0060sandboxPlan\u0060 for known values.",
+        "x-go-type": "SandboxPlan"
+      },
+      "CreateSandboxSnapshot202ResponsePlan": {
+        "type": "string",
+        "x-client-inline-scalar": true,
+        "description": "Plan of the source sandbox at capture time. See \u0060sandboxPlan\u0060 for known values.",
+        "x-go-type": "SandboxPlan"
       },
       "UpdateEnvVarsForServiceRequestRequestBodyItem": {
         "oneOf": [
@@ -22755,6 +24388,60 @@
         },
         "description": "A partial update to a workflow\u0027s build config. Every field is optional; omitted fields are left unchanged."
       },
+      "CreateSandboxRequestNetworkPolicy": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CreateSandboxRequestNetworkPolicyType"
+          },
+          "default": {
+            "type": "string",
+            "description": "Deprecated alias for \u0060type\u0060, accepted so that clients built against\nthe earlier schema keep working. To be removed before GA.\n",
+            "deprecated": true
+          },
+          "rules": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateSandboxRequestNetworkPolicyRulesItem"
+            },
+            "description": "Destinations the sandbox may reach, required when the policy is\n\u0060allow-list\u0060 and rejected otherwise. Each domain may be listed once.\n"
+          }
+        },
+        "description": "Set either \u0060type\u0060 or its deprecated alias \u0060default\u0060. Sending both is\nonly accepted when they name the same policy.\n"
+      },
+      "CreateSandboxRequestEnv": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Inline environment variables injected into the sandbox at creation."
+      },
+      "CreateSandbox201ResponseNetworkPolicy": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "How outbound traffic is handled. \u0060allow-all\u0060, \u0060deny-all\u0060, or\n\u0060allow-list\u0060 (requires additional \u0060rules\u0060).\n"
+          },
+          "default": {
+            "type": "string",
+            "description": "Deprecated alias for \u0060type\u0060, always returned with the same value.\nTo be removed before GA; read \u0060type\u0060 instead.\n",
+            "deprecated": true
+          },
+          "rules": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Destinations the sandbox may reach, present when \u0060type\u0060 is\n\u0060allow-list\u0060 and absent otherwise. Each domain may be listed once.\n"
+          }
+        }
+      },
       "UpdateSecretFilesForServiceRequestRequestBodyItem": {
         "required": [
           "name",
@@ -23231,6 +24918,23 @@
           }
         },
         "description": "Glob patterns matched against files changed by a commit. When set, a commit only triggers a build when at least one changed file matches \u0060paths\u0060 and none match \u0060ignoredPaths\u0060. Useful for monorepos where a single repo backs many services.\n"
+      },
+      "CreateSandboxRequestNetworkPolicyRulesItem": {
+        "required": [
+          "domain"
+        ],
+        "type": "object",
+        "properties": {
+          "domain": {
+            "maxLength": 253,
+            "type": "string",
+            "description": "Hostname to apply the rule to. Matching is exact: \u0060foo.local\u0060 does not\ncover \u0060api.foo.local\u0060, which needs its own rule or \u0060*.foo.local\u0060. A\nwildcard is only allowed as the leftmost label.\n",
+            "example": "*.bar.local"
+          },
+          "protocol": {
+            "$ref": "#/components/schemas/HttpsProtocol"
+          }
+        }
       },
       "RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEndedReasonNewBuild": {
         "required": [
@@ -24817,6 +26521,80 @@
           ]
         }
       },
+      "RetrieveSandboxExecution200ResponseType": {
+        "enum": [
+          "runs",
+          "files"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "RetrieveSandboxExecution200ResponseType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "runs",
+              "name": "Runs"
+            },
+            {
+              "value": "files",
+              "name": "Files"
+            }
+          ]
+        }
+      },
+      "RetrieveSandboxExecution200ResponseOperation": {
+        "enum": [
+          "sync",
+          "stream",
+          "upload",
+          "download"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "RetrieveSandboxExecution200ResponseOperation",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "sync",
+              "name": "Sync"
+            },
+            {
+              "value": "stream",
+              "name": "Stream"
+            },
+            {
+              "value": "upload",
+              "name": "Upload"
+            },
+            {
+              "value": "download",
+              "name": "Download"
+            }
+          ]
+        }
+      },
+      "CreateSandboxSnapshot202ResponseKind": {
+        "enum": [
+          "filesystem",
+          "runtime"
+        ],
+        "type": "string",
+        "description": "\u0060filesystem\u0060 captures the writable filesystem and restores onto any plan.\n\u0060runtime\u0060 also captures memory and CPU state and restores only onto the\nplan of the source sandbox.\n",
+        "x-ms-enum": {
+          "name": "CreateSandboxSnapshot202ResponseKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "filesystem",
+              "name": "Filesystem"
+            },
+            {
+              "value": "runtime",
+              "name": "Runtime"
+            }
+          ]
+        }
+      },
       "GetTaskRun200ResponseStatus": {
         "enum": [
           "pending",
@@ -24859,6 +26637,62 @@
             {
               "value": "paused",
               "name": "Paused"
+            }
+          ]
+        }
+      },
+      "CreateSandboxRequestPlanAnyOf1": {
+        "enum": [
+          "starter",
+          "standard",
+          "pro",
+          "1c-2g",
+          "2c-4g",
+          "4c-8g",
+          "8c-16g"
+        ],
+        "type": "string",
+        "description": "The compute plan to use. \u0060starter\u0060, \u0060standard\u0060 and \u0060pro\u0060 are deprecated.",
+        "x-enum-varnames": [
+          "Starter",
+          "Standard",
+          "Pro",
+          "SandboxPlan1c2g",
+          "SandboxPlan2c4g",
+          "SandboxPlan4c8g",
+          "SandboxPlan8c16g"
+        ],
+        "x-ms-enum": {
+          "name": "CreateSandboxRequestPlanAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "starter",
+              "name": "Starter"
+            },
+            {
+              "value": "standard",
+              "name": "Standard"
+            },
+            {
+              "value": "pro",
+              "name": "Pro"
+            },
+            {
+              "value": "1c-2g",
+              "name": "Value1C2G"
+            },
+            {
+              "value": "2c-4g",
+              "name": "Value2C4G"
+            },
+            {
+              "value": "4c-8g",
+              "name": "Value4C8G"
+            },
+            {
+              "value": "8c-16g",
+              "name": "Value8C16G"
             }
           ]
         }
@@ -25403,6 +27237,33 @@
           ]
         }
       },
+      "CreateSandboxRequestNetworkPolicyType": {
+        "enum": [
+          "allow-all",
+          "deny-all",
+          "allow-list"
+        ],
+        "type": "string",
+        "description": "How outbound traffic is handled. \u0060allow-all\u0060, \u0060deny-all\u0060, or\n\u0060allow-list\u0060 (requires additional \u0060rules\u0060).\n",
+        "x-ms-enum": {
+          "name": "CreateSandboxRequestNetworkPolicyType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "allow-all",
+              "name": "AllowAll"
+            },
+            {
+              "value": "deny-all",
+              "name": "DenyAll"
+            },
+            {
+              "value": "allow-list",
+              "name": "AllowList"
+            }
+          ]
+        }
+      },
       "GetBandwidthSources200ResponseDataItemLabelsTrafficSource": {
         "enum": [
           "total",
@@ -25436,6 +27297,23 @@
             {
               "value": "privatelink",
               "name": "Privatelink"
+            }
+          ]
+        }
+      },
+      "HttpsProtocol": {
+        "enum": [
+          "https"
+        ],
+        "type": "string",
+        "description": "Protocol this rule admits. Only \u0060https\u0060 is accepted:\nunder \u0060allow-list\u0060 every other outbound protocol is dropped.\n",
+        "x-ms-enum": {
+          "name": "HttpsProtocol",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https",
+              "name": "Https"
             }
           ]
         }
@@ -26012,6 +27890,120 @@
             {
               "value": "text/event-stream",
               "name": "TextEventStream"
+            }
+          ]
+        }
+      },
+      "ListSandboxesStatusParameterItem": {
+        "enum": [
+          "creating",
+          "running",
+          "suspending",
+          "suspended",
+          "resuming",
+          "errored",
+          "terminated"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ListSandboxesStatusParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "creating",
+              "name": "Creating"
+            },
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "suspending",
+              "name": "Suspending"
+            },
+            {
+              "value": "suspended",
+              "name": "Suspended"
+            },
+            {
+              "value": "resuming",
+              "name": "Resuming"
+            },
+            {
+              "value": "errored",
+              "name": "Errored"
+            },
+            {
+              "value": "terminated",
+              "name": "Terminated"
+            }
+          ]
+        }
+      },
+      "ListSandboxSnapshotsStatusParameterItem": {
+        "enum": [
+          "creating",
+          "available",
+          "failed"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ListSandboxSnapshotsStatusParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "creating",
+              "name": "Creating"
+            },
+            {
+              "value": "available",
+              "name": "Available"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            }
+          ]
+        }
+      },
+      "SandboxesSandboxIdRunsOperationTokenOperation": {
+        "enum": [
+          "sync",
+          "stream"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "SandboxesSandboxIdRunsOperationTokenOperation",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "sync",
+              "name": "Sync"
+            },
+            {
+              "value": "stream",
+              "name": "Stream"
+            }
+          ]
+        }
+      },
+      "SandboxesSandboxIdFilesOperationTokenOperation": {
+        "enum": [
+          "upload",
+          "download"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "SandboxesSandboxIdFilesOperationTokenOperation",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "upload",
+              "name": "Upload"
+            },
+            {
+              "value": "download",
+              "name": "Download"
             }
           ]
         }
@@ -26874,6 +28866,10 @@
     {
       "name": "Registry Credentials",
       "description": "[Registry Credentials](https://render.com/docs/deploying-an-image#credentials-for-private-images) allow you to manage credentials for private Docker images.\n"
+    },
+    {
+      "name": "Sandboxes (Beta)",
+      "description": "Sandboxes are ephemeral, isolated compute environments for running code, executing commands, and transferring files. Sandboxes are in public beta.\n"
     },
     {
       "name": "Services",

@@ -118,7 +118,7 @@ namespace Soenneker.Render.OpenApiClient.Environments.Item.Resources
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Environments.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/environments/{environmentId}/resources{?resourceIds*}", RequestAdapter.BaseUrl, "https://api.render.com/v1", "/environments/{environmentId}/resources", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/environments/{environmentId}/resources{?resourceIds*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -139,7 +139,7 @@ namespace Soenneker.Render.OpenApiClient.Environments.Item.Resources
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.render.com/v1", "/environments/{environmentId}/resources", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
