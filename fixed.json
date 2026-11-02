@@ -21938,7 +21938,8 @@
           },
           "name": {
             "type": "string",
-            "description": "Set at create. Never changes. Null when created without a name."
+            "description": "Set at create. Never changes. Null when created without a name.",
+            "nullable": true
           },
           "kind": {
             "$ref": "#/components/schemas/CreateSandboxSnapshot202ResponseKind"
