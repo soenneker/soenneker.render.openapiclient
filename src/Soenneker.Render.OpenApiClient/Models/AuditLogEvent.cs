@@ -319,6 +319,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         UpdateSsoConnectionEvent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "UpdateServiceBuildSourceEvent")]
+        #pragma warning disable CS1591
+        UpdateServiceBuildSourceEvent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "UpdateServiceNameEvent")]
         #pragma warning disable CS1591
         UpdateServiceNameEvent,

@@ -24514,6 +24514,7 @@
           "UpdateOrgPaymentMethodEvent",
           "UpdateOtelIntegrationEvent",
           "UpdateSSOConnectionEvent",
+          "UpdateServiceBuildSourceEvent",
           "UpdateServiceNameEvent",
           "UpdateWebhookEvent",
           "UpdateWorkspacePaymentMethodEvent",
