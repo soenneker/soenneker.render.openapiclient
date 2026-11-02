@@ -14639,9 +14639,6 @@
   },
   "components": {
     "schemas": {
-      "Cursor": {
-        "type": "string"
-      },
       "AuditLogWithCursor": {
         "required": [
           "cursor",
@@ -14806,12 +14803,6 @@
           "serviceDetails": {
             "$ref": "#/components/schemas/ServiceServiceDetails"
           }
-        }
-      },
-      "DeployList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DeployWithCursor"
         }
       },
       "WorkflowVersionWithCursor": {
@@ -15290,13 +15281,6 @@
           }
         }
       },
-      "MaxShutdownDelaySeconds": {
-        "maximum": 300,
-        "minimum": 1,
-        "type": "integer",
-        "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
-        "default": 30
-      },
       "WebServiceDetails": {
         "required": [
           "env",
@@ -15553,10 +15537,6 @@
           }
         }
       },
-      "InstanceId": {
-        "type": "string",
-        "description": "When a service with a disk is scaled, the instanceId is used to identify the instance that the disk is attached to. Each instance\u0027s disks get their own snapshots, and can be restored separately."
-      },
       "DiskSnapshot": {
         "type": "object",
         "properties": {
@@ -15687,12 +15667,6 @@
           "buildPlan": {
             "$ref": "#/components/schemas/BuildPlan"
           }
-        }
-      },
-      "ServiceList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ServiceWithCursor"
         }
       },
       "ServiceWithCursor": {
@@ -16593,12 +16567,6 @@
           }
         }
       },
-      "TeamMembers": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/TeamMember"
-        }
-      },
       "TeamMemberRole": {
         "enum": [
           "ADMIN",
@@ -16963,10 +16931,6 @@
           ]
         }
       },
-      "SshAddress": {
-        "type": "string",
-        "description": "The SSH address for the service. Only present for services that have SSH enabled."
-      },
       "Region": {
         "enum": [
           "frankfurt",
@@ -17298,232 +17262,6 @@
             "type": "string",
             "description": "A stable, machine-readable identifier present on specific errors that clients can handle specially. Each endpoint documents the codes it can return. The errorCode schema lists the full vocabulary of codes."
           }
-        }
-      },
-      "ErrorCode": {
-        "enum": [
-          "insufficient_token_scope",
-          "multiple_regions",
-          "duplicate_saved_search_name",
-          "too_many_resources",
-          "preauth_consent_required",
-          "preauth_declined",
-          "preauth_attempt_spent",
-          "preauth_no_payment_method",
-          "preauth_unavailable",
-          "cursor_origin_receipt_expired",
-          "cursor_origin_receipt_invalid",
-          "sandbox_not_running",
-          "snapshot_creating",
-          "snapshot_not_available",
-          "snapshot_plan_mismatch",
-          "snapshot_not_found",
-          "build_not_found",
-          "build_not_succeeded",
-          "invalid_sandbox_group_id",
-          "invalid_snapshot_id",
-          "invalid_owner_id",
-          "invalid_status",
-          "invalid_cursor",
-          "invalid_limit",
-          "invalid_snapshot_name",
-          "sandbox_group_suspended",
-          "sandbox_group_limit_reached",
-          "invalid_sandbox_plan",
-          "invalid_timeout_seconds",
-          "build_source_region_mismatch"
-        ],
-        "type": "string",
-        "description": "The machine-readable codes that can appear in the error object\u0027s \u0022code\u0022 field. The field is a plain string so new codes are not breaking changes; this vocabulary exists so generated clients get typed constants. OpenAPI cannot deprecate individual enum values, so deprecation notes live in x-enum-descriptions.",
-        "x-enum-varnames": [
-          "ErrorCodeInsufficientTokenScope",
-          "ErrorCodeMultipleRegions",
-          "ErrorCodeDuplicateSavedSearchName",
-          "ErrorCodeTooManyResources",
-          "ErrorCodePreauthConsentRequired",
-          "ErrorCodePreauthDeclined",
-          "ErrorCodePreauthAttemptSpent",
-          "ErrorCodePreauthNoPaymentMethod",
-          "ErrorCodePreauthUnavailable",
-          "ErrorCodeCursorOriginReceiptExpired",
-          "ErrorCodeCursorOriginReceiptInvalid",
-          "ErrorCodeSandboxNotRunning",
-          "ErrorCodeSnapshotCreating",
-          "ErrorCodeSnapshotNotAvailable",
-          "ErrorCodeSnapshotPlanMismatch",
-          "ErrorCodeSnapshotNotFound",
-          "ErrorCodeBuildNotFound",
-          "ErrorCodeBuildNotSucceeded",
-          "ErrorCodeInvalidSandboxGroupID",
-          "ErrorCodeInvalidSnapshotID",
-          "ErrorCodeInvalidOwnerID",
-          "ErrorCodeInvalidStatus",
-          "ErrorCodeInvalidCursor",
-          "ErrorCodeInvalidLimit",
-          "ErrorCodeInvalidSnapshotName",
-          "ErrorCodeSandboxGroupSuspended",
-          "ErrorCodeSandboxGroupLimitReached",
-          "ErrorCodeInvalidSandboxPlan",
-          "ErrorCodeInvalidTimeoutSeconds",
-          "ErrorCodeBuildSourceRegionMismatch"
-        ],
-        "x-enum-descriptions": [
-          "The scoped API token does not satisfy the endpoint\u0027s minimum scope requirements.",
-          "A metrics query over resources spanning multiple regions is not supported.",
-          "A saved-search create or rename hit a name already used in the project.",
-          "A metrics query over more resources than the query supports; the bandwidth per-source breakdown caps at 30.",
-          "The plan needs a spend authorization the requester has not accepted.",
-          "The owner\u0027s card declined the spend authorization.",
-          "The owner\u0027s one authorization attempt has already been declined.",
-          "The plan needs a spend authorization and no payment method is on file.",
-          "The authorization could not be attempted; the operation can be retried.",
-          "The Cursor Origin installation receipt was past its five-minute expiry.",
-          "The Cursor Origin installation receipt failed verification.",
-          "A snapshot capture was requested on a sandbox that is not running.",
-          "A snapshot delete was requested while the capture is still in progress.",
-          "A sandbox create named a source snapshot that is not available.",
-          "A sandbox create named a runtime source snapshot with a different plan.",
-          "A sandbox create named a source snapshot that does not exist.",
-          "A sandbox create or build request named a build that does not exist in the sandbox group.",
-          "A sandbox create named a build that has not succeeded.",
-          "A request path named a sandbox group ID that is not a well-formed sbg- identifier.",
-          "A request path named a snapshot ID that is not a well-formed snp- identifier.",
-          "A list request omitted ownerId or named more than one.",
-          "A list request filtered on a status value outside the resource\u0027s status vocabulary.",
-          "A list request passed a cursor that is malformed or not visible to the caller.",
-          "A list request passed a limit that is not a positive integer within the route\u0027s maximum.",
-          "A snapshot name is empty, longer than 64 characters, or starts with snp-.",
-          "A create, connect, or snapshot request named a sandbox whose group is suspended.",
-          "A sandbox group create, or a sandbox create that needs a new default group, for an owner already at its sandbox group limit.",
-          "A sandbox create asked for a plan that does not exist or is not offered.",
-          "A sandbox create asked for a timeoutSeconds below 0 or above the workspace plan\u0027s maximum.",
-          "A service create or update linked a git-backed Build Source in a different region than the service."
-        ],
-        "x-ms-enum": {
-          "name": "ErrorCode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "insufficient_token_scope",
-              "name": "InsufficientTokenScope"
-            },
-            {
-              "value": "multiple_regions",
-              "name": "MultipleRegions"
-            },
-            {
-              "value": "duplicate_saved_search_name",
-              "name": "DuplicateSavedSearchName"
-            },
-            {
-              "value": "too_many_resources",
-              "name": "TooManyResources"
-            },
-            {
-              "value": "preauth_consent_required",
-              "name": "PreauthConsentRequired"
-            },
-            {
-              "value": "preauth_declined",
-              "name": "PreauthDeclined"
-            },
-            {
-              "value": "preauth_attempt_spent",
-              "name": "PreauthAttemptSpent"
-            },
-            {
-              "value": "preauth_no_payment_method",
-              "name": "PreauthNoPaymentMethod"
-            },
-            {
-              "value": "preauth_unavailable",
-              "name": "PreauthUnavailable"
-            },
-            {
-              "value": "cursor_origin_receipt_expired",
-              "name": "CursorOriginReceiptExpired"
-            },
-            {
-              "value": "cursor_origin_receipt_invalid",
-              "name": "CursorOriginReceiptInvalid"
-            },
-            {
-              "value": "sandbox_not_running",
-              "name": "SandboxNotRunning"
-            },
-            {
-              "value": "snapshot_creating",
-              "name": "SnapshotCreating"
-            },
-            {
-              "value": "snapshot_not_available",
-              "name": "SnapshotNotAvailable"
-            },
-            {
-              "value": "snapshot_plan_mismatch",
-              "name": "SnapshotPlanMismatch"
-            },
-            {
-              "value": "snapshot_not_found",
-              "name": "SnapshotNotFound"
-            },
-            {
-              "value": "build_not_found",
-              "name": "BuildNotFound"
-            },
-            {
-              "value": "build_not_succeeded",
-              "name": "BuildNotSucceeded"
-            },
-            {
-              "value": "invalid_sandbox_group_id",
-              "name": "InvalidSandboxGroupId"
-            },
-            {
-              "value": "invalid_snapshot_id",
-              "name": "InvalidSnapshotId"
-            },
-            {
-              "value": "invalid_owner_id",
-              "name": "InvalidOwnerId"
-            },
-            {
-              "value": "invalid_status",
-              "name": "InvalidStatus"
-            },
-            {
-              "value": "invalid_cursor",
-              "name": "InvalidCursor"
-            },
-            {
-              "value": "invalid_limit",
-              "name": "InvalidLimit"
-            },
-            {
-              "value": "invalid_snapshot_name",
-              "name": "InvalidSnapshotName"
-            },
-            {
-              "value": "sandbox_group_suspended",
-              "name": "SandboxGroupSuspended"
-            },
-            {
-              "value": "sandbox_group_limit_reached",
-              "name": "SandboxGroupLimitReached"
-            },
-            {
-              "value": "invalid_sandbox_plan",
-              "name": "InvalidSandboxPlan"
-            },
-            {
-              "value": "invalid_timeout_seconds",
-              "name": "InvalidTimeoutSeconds"
-            },
-            {
-              "value": "build_source_region_mismatch",
-              "name": "BuildSourceRegionMismatch"
-            }
-          ]
         }
       },
       "PullRequestPreviewsEnabled": {
@@ -17916,12 +17654,12 @@
           "externalConnectionString": {
             "type": "string",
             "description": "The connection string to use from outside Render",
-            "format": "password"
+            "x-client-original-format": "password"
           },
           "cliCommand": {
             "type": "string",
             "description": "The CLI (redis-cli or valkey-cli) command to connect to the Key Value instance",
-            "format": "password"
+            "x-client-original-format": "password"
           }
         },
         "description": "A Key Value instance"
@@ -18262,12 +18000,12 @@
           "externalConnectionString": {
             "type": "string",
             "description": "The connection string to use from outside Render",
-            "format": "password"
+            "x-client-original-format": "password"
           },
           "redisCLICommand": {
             "type": "string",
             "description": "The Redis CLI command to connect to the Redis instance",
-            "format": "password"
+            "x-client-original-format": "password"
           }
         },
         "description": "A Redis instance"
@@ -18735,10 +18473,6 @@
           ]
         }
       },
-      "NetworkIsolationEnabled": {
-        "type": "boolean",
-        "description": "Indicates whether network connections across environments are allowed."
-      },
       "EnvGroupPostInput": {
         "required": [
           "name",
@@ -19053,12 +18787,6 @@
           }
         }
       },
-      "ReadReplicas": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ReadReplica"
-        }
-      },
       "ReadReplica": {
         "required": [
           "id",
@@ -19074,12 +18802,6 @@
             "type": "string",
             "description": "The display name of the replica instance."
           }
-        }
-      },
-      "ReadReplicasInput": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ReadReplicaInput"
         }
       },
       "ReadReplicaInput": {
@@ -19105,27 +18827,27 @@
         "properties": {
           "password": {
             "type": "string",
-            "format": "password"
+            "x-client-original-format": "password"
           },
           "internalConnectionString": {
             "type": "string",
-            "format": "password"
+            "x-client-original-format": "password"
           },
           "externalConnectionString": {
             "type": "string",
-            "format": "password"
+            "x-client-original-format": "password"
           },
           "internalConnectionPoolString": {
             "type": "string",
-            "format": "password"
+            "x-client-original-format": "password"
           },
           "externalConnectionPoolString": {
             "type": "string",
-            "format": "password"
+            "x-client-original-format": "password"
           },
           "psqlCommand": {
             "type": "string",
-            "format": "password"
+            "x-client-original-format": "password"
           }
         }
       },
@@ -19862,12 +19584,6 @@
         },
         "description": "A run of a cron job"
       },
-      "LogsValues200ResponseResponse": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
       "ServiceServiceDetails": {
         "oneOf": [
           {
@@ -19924,38 +19640,6 @@
             "$ref": "#/components/schemas/CronJobDetailsPatch"
           }
         ]
-      },
-      "EnvGroupAllOf2": {
-        "required": [
-          "envVars",
-          "secretFiles"
-        ],
-        "type": "object",
-        "properties": {
-          "envVars": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EnvVar"
-            }
-          },
-          "secretFiles": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SecretFile"
-            }
-          }
-        }
-      },
-      "AuditLogMetadata": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "Additional context information about the event",
-        "example": {
-          "service": "srv-123456789",
-          "field": "env_vars"
-        }
       },
       "WebServiceDetailsDisk": {
         "required": [
@@ -20177,12 +19861,6 @@
           }
         }
       },
-      "ListBlueprints200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/BlueprintWithCursor"
-        }
-      },
       "ValidateBlueprintFormDataRequest": {
         "required": [
           "ownerId",
@@ -20352,24 +20030,6 @@
           }
         }
       },
-      "ListBlueprintSyncs200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SyncWithCursor"
-        }
-      },
-      "ListDedicatedIps200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DedicatedIp"
-        }
-      },
-      "ListDisks200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DiskWithCursor"
-        }
-      },
       "AddDiskRequest": {
         "required": [
           "name",
@@ -20407,30 +20067,6 @@
           }
         }
       },
-      "ListSnapshots201Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DiskSnapshot"
-        }
-      },
-      "ListOwners200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/OwnerWithCursor"
-        }
-      },
-      "ListOwnerAuditLogs200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AuditLogWithCursor"
-        }
-      },
-      "ListOrganizationAuditLogs200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AuditLogWithCursor"
-        }
-      },
       "PatchOwnerNotificationSettingsRequest": {
         "type": "object",
         "properties": {
@@ -20443,12 +20079,6 @@
           "notificationsToSend": {
             "$ref": "#/components/schemas/PatchOwnerNotificationSettingsRequestNotificationsToSend"
           }
-        }
-      },
-      "ListNotificationOverrides200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/NotificationOverrideWithCursor"
         }
       },
       "RetrieveServiceNotificationOverrides200Response": {
@@ -20479,12 +20109,6 @@
           "notificationsToSend": {
             "$ref": "#/components/schemas/PatchServiceNotificationOverridesRequestNotificationsToSend"
           }
-        }
-      },
-      "ListRegistryCredentials200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/RegistryCredential"
         }
       },
       "CreateRegistryCredentialRequest": {
@@ -20572,96 +20196,12 @@
           }
         }
       },
-      "GetEnvVarsForService200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/EnvVarWithCursor"
-        }
-      },
-      "UpdateEnvVarsForServiceRequest": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItem"
-        }
-      },
-      "UpdateEnvVarsForService200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/EnvVarWithCursor"
-        }
-      },
-      "ListSecretFilesForService200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SecretFileWithCursor"
-        }
-      },
-      "UpdateSecretFilesForServiceRequest": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/UpdateSecretFilesForServiceRequestItem"
-        }
-      },
-      "UpdateSecretFilesForService200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SecretFileWithCursor"
-        }
-      },
       "AddOrUpdateSecretFileRequest": {
         "type": "object",
         "properties": {
           "content": {
             "type": "string"
           }
-        }
-      },
-      "ListEvents200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ServiceEventWithCursor"
-        }
-      },
-      "ListHeaders200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/HeaderWithCursor"
-        }
-      },
-      "UpdateHeadersRequest": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/HeaderInput"
-        }
-      },
-      "UpdateHeaders200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Header"
-        }
-      },
-      "ListRoutes200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/RouteWithCursor"
-        }
-      },
-      "PutRoutesRequest": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/RoutePut"
-        }
-      },
-      "PutRoutes200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Route"
-        }
-      },
-      "ListCustomDomains200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/CustomDomainWithCursor"
         }
       },
       "CreateCustomDomainRequest": {
@@ -20673,12 +20213,6 @@
           "name": {
             "type": "string"
           }
-        }
-      },
-      "CreateCustomDomain201Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/CustomDomain"
         }
       },
       "ScaleServiceRequest": {
@@ -20717,12 +20251,6 @@
           "criteria": {
             "$ref": "#/components/schemas/AutoscaleServiceRequestCriteria"
           }
-        }
-      },
-      "ListJob200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/JobWithCursor"
         }
       },
       "PostJobRequest": {
@@ -20782,12 +20310,6 @@
             "format": "date-time",
             "example": "2021-07-15T07:20:05.777035-07:00"
           }
-        }
-      },
-      "ListInstances200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ServiceInstance"
         }
       },
       "RetrieveEvent200Response": {
@@ -20868,12 +20390,6 @@
           }
         }
       },
-      "ListResourceLogStreams200Response": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
       "UpdateResourceLogStreamRequest": {
         "required": [
           "setting"
@@ -20908,16 +20424,6 @@
         },
         "description": "Input for creating or updating a metrics stream"
       },
-      "GetCpu200Response": {
-        "required": [
-          "items"
-        ],
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/GetCpu200ResponseItem"
-        },
-        "description": "A collection of time series"
-      },
       "GetBandwidthSources200Response": {
         "type": "object",
         "properties": {
@@ -20927,55 +20433,6 @@
               "$ref": "#/components/schemas/GetBandwidthSources200ResponseDataItem"
             }
           }
-        }
-      },
-      "ListApplicationFilterValues200Response": {
-        "required": [
-          "items"
-        ],
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ListApplicationFilterValues200ResponseItem"
-        },
-        "description": "A collection of filter values for application metrics"
-      },
-      "ListHttpFilterValues200Response": {
-        "required": [
-          "items"
-        ],
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ListHttpFilterValues200ResponseItem"
-        },
-        "description": "A collection of filter values for HTTP metrics"
-      },
-      "ListPathFilterValues200Response": {
-        "required": [
-          "items"
-        ],
-        "type": "array",
-        "items": {
-          "type": "string",
-          "example": "/user/*"
-        },
-        "description": "A collection of suggested paths to filter by"
-      },
-      "ListKeyValue200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/KeyValueWithCursor"
-        }
-      },
-      "ListRedis200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/RedisWithCursor"
-        }
-      },
-      "ListPostgres200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PostgresWithCursor"
         }
       },
       "RetrievePostgresRecoveryInfo200Response": {
@@ -21021,18 +20478,6 @@
             "type": "string",
             "description": "The environment to create the new database in. Defaults to the environment of the original database."
           }
-        }
-      },
-      "ListPostgresExport200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ListPostgresExport200ResponseItem"
-        }
-      },
-      "ListPostgresUsers200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ListPostgresUsers200ResponseItem"
         }
       },
       "CreatePostgresUserRequest": {
@@ -21103,36 +20548,12 @@
           }
         }
       },
-      "ListProjects200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ProjectWithCursor"
-        }
-      },
-      "ListEnvironments200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/EnvironmentWithCursor"
-        }
-      },
-      "ListEnvGroups200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/EnvGroupMeta"
-        }
-      },
       "UpdateEnvGroupSecretFileRequest": {
         "type": "object",
         "properties": {
           "content": {
             "type": "string"
           }
-        }
-      },
-      "ListMaintenance200Response": {
-        "type": "array",
-        "items": {
-          "type": "string"
         }
       },
       "RetrieveMaintenance200Response": {
@@ -21274,12 +20695,6 @@
           }
         }
       },
-      "ListBuildSources200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ListBuildSources200ResponseItem"
-        }
-      },
       "UpdateBuildSourceRequest": {
         "type": "object",
         "properties": {
@@ -21292,12 +20707,6 @@
           "image": {
             "$ref": "#/components/schemas/UpdateBuildSourceRequestImage"
           }
-        }
-      },
-      "ListBuildsInBuildSource200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ListBuildsInBuildSource200ResponseItem"
         }
       },
       "TriggerBuildSourceBuild201Response": {
@@ -21333,36 +20742,6 @@
             "type": "string",
             "format": "date-time"
           }
-        }
-      },
-      "GetEnvVarsForBuildSource200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/EnvVarWithCursor"
-        }
-      },
-      "UpdateEnvVarsForBuildSource200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/EnvVarWithCursor"
-        }
-      },
-      "ListSecretFilesForBuildSource200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SecretFileWithCursor"
-        }
-      },
-      "UpdateSecretFilesForBuildSourceRequest": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "UpdateSecretFilesForBuildSource200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SecretFileWithCursor"
         }
       },
       "AddOrUpdateBuildSourceSecretFileRequest": {
@@ -21436,12 +20815,6 @@
           }
         }
       },
-      "ListWebhooks200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/WebhookWithCursor"
-        }
-      },
       "UpdateWebhookRequest": {
         "type": "object",
         "properties": {
@@ -21457,18 +20830,6 @@
           "eventFilter": {
             "type": "string"
           }
-        }
-      },
-      "ListWebhookEvents200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/WebhookEventWithCursor"
-        }
-      },
-      "ListWorkflows200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/WorkflowWithCursor"
         }
       },
       "CreateWorkflowRequest": {
@@ -21576,12 +20937,6 @@
           }
         }
       },
-      "ListWorkflowVersions200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/WorkflowVersionWithCursor"
-        }
-      },
       "CreateWorkflowVersionRequest": {
         "required": [
           "workflowId"
@@ -21626,12 +20981,6 @@
           }
         }
       },
-      "ListTasks200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/TaskWithCursor"
-        }
-      },
       "GetTask200Response": {
         "required": [
           "id",
@@ -21658,12 +21007,6 @@
           }
         }
       },
-      "ListTaskRuns200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/TaskRunWithCursor"
-        }
-      },
       "CreateTaskRequest": {
         "required": [
           "task",
@@ -21688,10 +21031,6 @@
             "example": "6b2f1f7a-6a0e-4f6f-9d1a-2b1d0d5f6c11"
           }
         }
-      },
-      "StreamTaskRunsEvents200EventStreamResponse": {
-        "type": "string",
-        "description": "Stream of SSE frames. Each event may include \u0060id\u0060, \u0060event\u0060, \u0060data\u0060,\nand optional \u0060retry\u0060. Frames are separated by a blank line.\n"
       },
       "CreateSandboxRequest": {
         "required": [
@@ -21801,12 +21140,6 @@
           }
         }
       },
-      "ListSandboxes200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SandboxWithCursor"
-        }
-      },
       "CreateSandboxGroupRequest": {
         "required": [
           "ownerId",
@@ -21830,18 +21163,6 @@
             "default": "oregon",
             "example": "oregon"
           }
-        }
-      },
-      "ListSandboxGroups200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SandboxGroupWithCursor"
-        }
-      },
-      "ListSandboxExecutions200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ExecutionWithCursor"
         }
       },
       "RetrieveSandboxExecution200Response": {
@@ -21995,12 +21316,6 @@
           }
         }
       },
-      "ListSandboxSnapshots200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SandboxSnapshotWithCursor"
-        }
-      },
       "ConnectSandboxRunRequest": {
         "type": "object",
         "properties": {
@@ -22033,8 +21348,8 @@
           "uri": {
             "type": "string",
             "description": "The sandbox-proxy endpoint to invoke.",
-            "format": "uri",
-            "example": "https://sbx-abc123.oregon.sandbox.onrender.com/runs/stream"
+            "example": "https://sbx-abc123.oregon.sandbox.onrender.com/runs/stream",
+            "x-client-original-format": "uri"
           },
           "method": {
             "type": "string",
@@ -22049,10 +21364,6 @@
           }
         },
         "description": "A minted connect token and the sandbox-proxy endpoint to invoke with it.\nSend the request (and body, where the operation takes one) to \u0060uri\u0060\nusing \u0060method\u0060, with \u0060token\u0060 as a bearer credential.\n"
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "ListBlueprints200ResponseSchema": {
         "type": "array",
@@ -23086,34 +22397,6 @@
           }
         ]
       },
-      "CreateSandboxRequestPlan": {
-        "type": "string",
-        "x-client-inline-scalar": true,
-        "description": "Compute plan. See \u0060sandboxPlan\u0060 for known values.",
-        "x-go-type": "SandboxPlan"
-      },
-      "CreateSandbox201ResponsePlan": {
-        "type": "string",
-        "x-client-inline-scalar": true,
-        "description": "Compute plan. See \u0060sandboxPlan\u0060 for known values.",
-        "x-go-type": "SandboxPlan"
-      },
-      "CreateSandboxSnapshot202ResponsePlan": {
-        "type": "string",
-        "x-client-inline-scalar": true,
-        "description": "Plan of the source sandbox at capture time. See \u0060sandboxPlan\u0060 for known values.",
-        "x-go-type": "SandboxPlan"
-      },
-      "UpdateEnvVarsForServiceRequestRequestBodyItem": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItemOneOf1"
-          },
-          {
-            "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItemOneOf2"
-          }
-        ]
-      },
       "UpdateEnvVarsForServiceRequestItemOneOf1": {
         "required": [
           "key",
@@ -24131,21 +23414,6 @@
           }
         }
       },
-      "UpdateSecretFilesForServiceRequestItem": {
-        "required": [
-          "name",
-          "content"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "content": {
-            "type": "string"
-          }
-        }
-      },
       "AutoscaleServiceRequestCriteria": {
         "required": [
           "cpu",
@@ -24178,35 +23446,6 @@
         },
         "description": "A log label"
       },
-      "GetCpu200ResponseItem": {
-        "required": [
-          "labels",
-          "values",
-          "unit"
-        ],
-        "type": "object",
-        "properties": {
-          "labels": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetCpu200ResponseItemLabelsItem"
-            },
-            "description": "List of labels describing the time series"
-          },
-          "values": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetCpu200ResponseItemValuesItem"
-            },
-            "description": "The values of the time series"
-          },
-          "unit": {
-            "type": "string",
-            "example": "GB"
-          }
-        },
-        "description": "A time series data point"
-      },
       "GetBandwidthSources200ResponseDataItem": {
         "type": "object",
         "properties": {
@@ -24218,73 +23457,6 @@
             "items": {
               "$ref": "#/components/schemas/GetBandwidthSources200ResponseDataItemValuesItem"
             }
-          }
-        }
-      },
-      "ListApplicationFilterValues200ResponseItem": {
-        "type": "object",
-        "properties": {
-          "filter": {
-            "$ref": "#/components/schemas/InstanceFilter"
-          },
-          "values": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "example": "srv-xxxxx-yyyy"
-            }
-          }
-        }
-      },
-      "ListHttpFilterValues200ResponseItem": {
-        "type": "object",
-        "properties": {
-          "filter": {
-            "$ref": "#/components/schemas/ListHttpFilterValues200ResponseItemFilter"
-          },
-          "values": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "example": "api.example.com"
-            }
-          }
-        }
-      },
-      "ListPostgresExport200ResponseItem": {
-        "required": [
-          "id",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "url": {
-            "type": "string",
-            "description": "URL to download the Postgres export"
-          }
-        }
-      },
-      "ListPostgresUsers200ResponseItem": {
-        "type": "object",
-        "properties": {
-          "username": {
-            "type": "string"
-          },
-          "default": {
-            "type": "boolean"
-          },
-          "createdAt": {
-            "type": "string"
-          },
-          "openConnections": {
-            "type": "integer"
           }
         }
       },
@@ -24533,21 +23705,6 @@
           }
         }
       },
-      "ListBuildSources200ResponseItem": {
-        "required": [
-          "buildSource",
-          "cursor"
-        ],
-        "type": "object",
-        "properties": {
-          "buildSource": {
-            "type": "string"
-          },
-          "cursor": {
-            "type": "string"
-          }
-        }
-      },
       "UpdateBuildSourceRequestGit": {
         "type": "object",
         "properties": {
@@ -24597,21 +23754,6 @@
           }
         },
         "description": "Patch shape for a build source\u0027s image identity. Unset fields are left unchanged on the underlying image reference. ownerId is intentionally omitted \u2014 a build source\u0027s owner is fixed at creation, and changing the image\u0027s owner would amount to a different identity.\n"
-      },
-      "ListBuildsInBuildSource200ResponseItem": {
-        "required": [
-          "build",
-          "cursor"
-        ],
-        "type": "object",
-        "properties": {
-          "build": {
-            "type": "string"
-          },
-          "cursor": {
-            "type": "string"
-          }
-        }
       },
       "TriggerBuildSourceBuild201ResponseBuildRun": {
         "required": [
@@ -26975,62 +26117,6 @@
           ]
         }
       },
-      "CreateSandboxRequestPlanAnyOf1": {
-        "enum": [
-          "starter",
-          "standard",
-          "pro",
-          "1c-2g",
-          "2c-4g",
-          "4c-8g",
-          "8c-16g"
-        ],
-        "type": "string",
-        "description": "The compute plan to use. \u0060starter\u0060, \u0060standard\u0060 and \u0060pro\u0060 are deprecated.",
-        "x-enum-varnames": [
-          "Starter",
-          "Standard",
-          "Pro",
-          "SandboxPlan1c2g",
-          "SandboxPlan2c4g",
-          "SandboxPlan4c8g",
-          "SandboxPlan8c16g"
-        ],
-        "x-ms-enum": {
-          "name": "CreateSandboxRequestPlanAnyOf1",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "starter",
-              "name": "Starter"
-            },
-            {
-              "value": "standard",
-              "name": "Standard"
-            },
-            {
-              "value": "pro",
-              "name": "Pro"
-            },
-            {
-              "value": "1c-2g",
-              "name": "Value1C2G"
-            },
-            {
-              "value": "2c-4g",
-              "name": "Value2C4G"
-            },
-            {
-              "value": "4c-8g",
-              "name": "Value4C8G"
-            },
-            {
-              "value": "8c-16g",
-              "name": "Value8C16G"
-            }
-          ]
-        }
-      },
       "RetrieveEvent200ResponseDetailsServiceEventDetailsBuildEndedBuildStatus": {
         "enum": [
           "succeeded",
@@ -27669,237 +26755,6 @@
             {
               "value": "not_suspended",
               "name": "NotSuspended"
-            }
-          ]
-        }
-      },
-      "EventTypeParamAnyOf1": {
-        "enum": [
-          "artifact_fetch_failed",
-          "artifact_source_changed",
-          "autoscaling_config_changed",
-          "autoscaling_ended",
-          "autoscaling_started",
-          "branch_deleted",
-          "build_ended",
-          "build_started",
-          "commit_ignored",
-          "cron_job_run_ended",
-          "cron_job_run_started",
-          "deploy_ended",
-          "deploy_started",
-          "disk_created",
-          "disk_updated",
-          "disk_deleted",
-          "disk_snapshot_restored",
-          "service_disk_usage_high",
-          "service_disk_usage_recovered",
-          "image_pull_failed",
-          "initial_deploy_hook_ended",
-          "initial_deploy_hook_started",
-          "instance_count_changed",
-          "job_run_ended",
-          "maintenance_mode_enabled",
-          "maintenance_mode_uri_updated",
-          "maintenance_ended",
-          "maintenance_started",
-          "pipeline_minutes_exhausted",
-          "plan_changed",
-          "pre_deploy_ended",
-          "pre_deploy_started",
-          "server_available",
-          "server_failed",
-          "server_hardware_failure",
-          "server_restarted",
-          "service_resumed",
-          "service_suspended",
-          "suspender_added",
-          "suspender_removed",
-          "zero_downtime_redeploy_ended",
-          "zero_downtime_redeploy_started",
-          "auto_deploy_disabled",
-          "auto_deploy_enabled"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "EventTypeParamAnyOf1",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "artifact_fetch_failed",
-              "name": "ArtifactFetchFailed"
-            },
-            {
-              "value": "artifact_source_changed",
-              "name": "ArtifactSourceChanged"
-            },
-            {
-              "value": "autoscaling_config_changed",
-              "name": "AutoscalingConfigChanged"
-            },
-            {
-              "value": "autoscaling_ended",
-              "name": "AutoscalingEnded"
-            },
-            {
-              "value": "autoscaling_started",
-              "name": "AutoscalingStarted"
-            },
-            {
-              "value": "branch_deleted",
-              "name": "BranchDeleted"
-            },
-            {
-              "value": "build_ended",
-              "name": "BuildEnded"
-            },
-            {
-              "value": "build_started",
-              "name": "BuildStarted"
-            },
-            {
-              "value": "commit_ignored",
-              "name": "CommitIgnored"
-            },
-            {
-              "value": "cron_job_run_ended",
-              "name": "CronJobRunEnded"
-            },
-            {
-              "value": "cron_job_run_started",
-              "name": "CronJobRunStarted"
-            },
-            {
-              "value": "deploy_ended",
-              "name": "DeployEnded"
-            },
-            {
-              "value": "deploy_started",
-              "name": "DeployStarted"
-            },
-            {
-              "value": "disk_created",
-              "name": "DiskCreated"
-            },
-            {
-              "value": "disk_updated",
-              "name": "DiskUpdated"
-            },
-            {
-              "value": "disk_deleted",
-              "name": "DiskDeleted"
-            },
-            {
-              "value": "disk_snapshot_restored",
-              "name": "DiskSnapshotRestored"
-            },
-            {
-              "value": "service_disk_usage_high",
-              "name": "ServiceDiskUsageHigh"
-            },
-            {
-              "value": "service_disk_usage_recovered",
-              "name": "ServiceDiskUsageRecovered"
-            },
-            {
-              "value": "image_pull_failed",
-              "name": "ImagePullFailed"
-            },
-            {
-              "value": "initial_deploy_hook_ended",
-              "name": "InitialDeployHookEnded"
-            },
-            {
-              "value": "initial_deploy_hook_started",
-              "name": "InitialDeployHookStarted"
-            },
-            {
-              "value": "instance_count_changed",
-              "name": "InstanceCountChanged"
-            },
-            {
-              "value": "job_run_ended",
-              "name": "JobRunEnded"
-            },
-            {
-              "value": "maintenance_mode_enabled",
-              "name": "MaintenanceModeEnabled"
-            },
-            {
-              "value": "maintenance_mode_uri_updated",
-              "name": "MaintenanceModeUriUpdated"
-            },
-            {
-              "value": "maintenance_ended",
-              "name": "MaintenanceEnded"
-            },
-            {
-              "value": "maintenance_started",
-              "name": "MaintenanceStarted"
-            },
-            {
-              "value": "pipeline_minutes_exhausted",
-              "name": "PipelineMinutesExhausted"
-            },
-            {
-              "value": "plan_changed",
-              "name": "PlanChanged"
-            },
-            {
-              "value": "pre_deploy_ended",
-              "name": "PreDeployEnded"
-            },
-            {
-              "value": "pre_deploy_started",
-              "name": "PreDeployStarted"
-            },
-            {
-              "value": "server_available",
-              "name": "ServerAvailable"
-            },
-            {
-              "value": "server_failed",
-              "name": "ServerFailed"
-            },
-            {
-              "value": "server_hardware_failure",
-              "name": "ServerHardwareFailure"
-            },
-            {
-              "value": "server_restarted",
-              "name": "ServerRestarted"
-            },
-            {
-              "value": "service_resumed",
-              "name": "ServiceResumed"
-            },
-            {
-              "value": "service_suspended",
-              "name": "ServiceSuspended"
-            },
-            {
-              "value": "suspender_added",
-              "name": "SuspenderAdded"
-            },
-            {
-              "value": "suspender_removed",
-              "name": "SuspenderRemoved"
-            },
-            {
-              "value": "zero_downtime_redeploy_ended",
-              "name": "ZeroDowntimeRedeployEnded"
-            },
-            {
-              "value": "zero_downtime_redeploy_started",
-              "name": "ZeroDowntimeRedeployStarted"
-            },
-            {
-              "value": "auto_deploy_disabled",
-              "name": "AutoDeployDisabled"
-            },
-            {
-              "value": "auto_deploy_enabled",
-              "name": "AutoDeployEnabled"
             }
           ]
         }
@@ -29252,5 +28107,1152 @@
   ],
   "x-readme": {
     "metrics-enabled": false
+  },
+  "x-client-unused-schemas": {
+    "Cursor": {
+      "type": "string"
+    },
+    "DeployList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DeployWithCursor"
+      }
+    },
+    "MaxShutdownDelaySeconds": {
+      "maximum": 300,
+      "minimum": 1,
+      "type": "integer",
+      "description": "The maximum amount of time (in seconds) that Render waits for your application process to exit gracefully after sending it a SIGTERM signal.",
+      "default": 30
+    },
+    "InstanceId": {
+      "type": "string",
+      "description": "When a service with a disk is scaled, the instanceId is used to identify the instance that the disk is attached to. Each instance\u0027s disks get their own snapshots, and can be restored separately."
+    },
+    "ServiceList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ServiceWithCursor"
+      }
+    },
+    "TeamMembers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TeamMember"
+      }
+    },
+    "SshAddress": {
+      "type": "string",
+      "description": "The SSH address for the service. Only present for services that have SSH enabled."
+    },
+    "ErrorCode": {
+      "enum": [
+        "insufficient_token_scope",
+        "multiple_regions",
+        "duplicate_saved_search_name",
+        "too_many_resources",
+        "preauth_consent_required",
+        "preauth_declined",
+        "preauth_attempt_spent",
+        "preauth_no_payment_method",
+        "preauth_unavailable",
+        "cursor_origin_receipt_expired",
+        "cursor_origin_receipt_invalid",
+        "sandbox_not_running",
+        "snapshot_creating",
+        "snapshot_not_available",
+        "snapshot_plan_mismatch",
+        "snapshot_not_found",
+        "build_not_found",
+        "build_not_succeeded",
+        "invalid_sandbox_group_id",
+        "invalid_snapshot_id",
+        "invalid_owner_id",
+        "invalid_status",
+        "invalid_cursor",
+        "invalid_limit",
+        "invalid_snapshot_name",
+        "sandbox_group_suspended",
+        "sandbox_group_limit_reached",
+        "invalid_sandbox_plan",
+        "invalid_timeout_seconds",
+        "build_source_region_mismatch"
+      ],
+      "type": "string",
+      "description": "The machine-readable codes that can appear in the error object\u0027s \u0022code\u0022 field. The field is a plain string so new codes are not breaking changes; this vocabulary exists so generated clients get typed constants. OpenAPI cannot deprecate individual enum values, so deprecation notes live in x-enum-descriptions.",
+      "x-enum-varnames": [
+        "ErrorCodeInsufficientTokenScope",
+        "ErrorCodeMultipleRegions",
+        "ErrorCodeDuplicateSavedSearchName",
+        "ErrorCodeTooManyResources",
+        "ErrorCodePreauthConsentRequired",
+        "ErrorCodePreauthDeclined",
+        "ErrorCodePreauthAttemptSpent",
+        "ErrorCodePreauthNoPaymentMethod",
+        "ErrorCodePreauthUnavailable",
+        "ErrorCodeCursorOriginReceiptExpired",
+        "ErrorCodeCursorOriginReceiptInvalid",
+        "ErrorCodeSandboxNotRunning",
+        "ErrorCodeSnapshotCreating",
+        "ErrorCodeSnapshotNotAvailable",
+        "ErrorCodeSnapshotPlanMismatch",
+        "ErrorCodeSnapshotNotFound",
+        "ErrorCodeBuildNotFound",
+        "ErrorCodeBuildNotSucceeded",
+        "ErrorCodeInvalidSandboxGroupID",
+        "ErrorCodeInvalidSnapshotID",
+        "ErrorCodeInvalidOwnerID",
+        "ErrorCodeInvalidStatus",
+        "ErrorCodeInvalidCursor",
+        "ErrorCodeInvalidLimit",
+        "ErrorCodeInvalidSnapshotName",
+        "ErrorCodeSandboxGroupSuspended",
+        "ErrorCodeSandboxGroupLimitReached",
+        "ErrorCodeInvalidSandboxPlan",
+        "ErrorCodeInvalidTimeoutSeconds",
+        "ErrorCodeBuildSourceRegionMismatch"
+      ],
+      "x-enum-descriptions": [
+        "The scoped API token does not satisfy the endpoint\u0027s minimum scope requirements.",
+        "A metrics query over resources spanning multiple regions is not supported.",
+        "A saved-search create or rename hit a name already used in the project.",
+        "A metrics query over more resources than the query supports; the bandwidth per-source breakdown caps at 30.",
+        "The plan needs a spend authorization the requester has not accepted.",
+        "The owner\u0027s card declined the spend authorization.",
+        "The owner\u0027s one authorization attempt has already been declined.",
+        "The plan needs a spend authorization and no payment method is on file.",
+        "The authorization could not be attempted; the operation can be retried.",
+        "The Cursor Origin installation receipt was past its five-minute expiry.",
+        "The Cursor Origin installation receipt failed verification.",
+        "A snapshot capture was requested on a sandbox that is not running.",
+        "A snapshot delete was requested while the capture is still in progress.",
+        "A sandbox create named a source snapshot that is not available.",
+        "A sandbox create named a runtime source snapshot with a different plan.",
+        "A sandbox create named a source snapshot that does not exist.",
+        "A sandbox create or build request named a build that does not exist in the sandbox group.",
+        "A sandbox create named a build that has not succeeded.",
+        "A request path named a sandbox group ID that is not a well-formed sbg- identifier.",
+        "A request path named a snapshot ID that is not a well-formed snp- identifier.",
+        "A list request omitted ownerId or named more than one.",
+        "A list request filtered on a status value outside the resource\u0027s status vocabulary.",
+        "A list request passed a cursor that is malformed or not visible to the caller.",
+        "A list request passed a limit that is not a positive integer within the route\u0027s maximum.",
+        "A snapshot name is empty, longer than 64 characters, or starts with snp-.",
+        "A create, connect, or snapshot request named a sandbox whose group is suspended.",
+        "A sandbox group create, or a sandbox create that needs a new default group, for an owner already at its sandbox group limit.",
+        "A sandbox create asked for a plan that does not exist or is not offered.",
+        "A sandbox create asked for a timeoutSeconds below 0 or above the workspace plan\u0027s maximum.",
+        "A service create or update linked a git-backed Build Source in a different region than the service."
+      ],
+      "x-ms-enum": {
+        "name": "ErrorCode",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "insufficient_token_scope",
+            "name": "InsufficientTokenScope"
+          },
+          {
+            "value": "multiple_regions",
+            "name": "MultipleRegions"
+          },
+          {
+            "value": "duplicate_saved_search_name",
+            "name": "DuplicateSavedSearchName"
+          },
+          {
+            "value": "too_many_resources",
+            "name": "TooManyResources"
+          },
+          {
+            "value": "preauth_consent_required",
+            "name": "PreauthConsentRequired"
+          },
+          {
+            "value": "preauth_declined",
+            "name": "PreauthDeclined"
+          },
+          {
+            "value": "preauth_attempt_spent",
+            "name": "PreauthAttemptSpent"
+          },
+          {
+            "value": "preauth_no_payment_method",
+            "name": "PreauthNoPaymentMethod"
+          },
+          {
+            "value": "preauth_unavailable",
+            "name": "PreauthUnavailable"
+          },
+          {
+            "value": "cursor_origin_receipt_expired",
+            "name": "CursorOriginReceiptExpired"
+          },
+          {
+            "value": "cursor_origin_receipt_invalid",
+            "name": "CursorOriginReceiptInvalid"
+          },
+          {
+            "value": "sandbox_not_running",
+            "name": "SandboxNotRunning"
+          },
+          {
+            "value": "snapshot_creating",
+            "name": "SnapshotCreating"
+          },
+          {
+            "value": "snapshot_not_available",
+            "name": "SnapshotNotAvailable"
+          },
+          {
+            "value": "snapshot_plan_mismatch",
+            "name": "SnapshotPlanMismatch"
+          },
+          {
+            "value": "snapshot_not_found",
+            "name": "SnapshotNotFound"
+          },
+          {
+            "value": "build_not_found",
+            "name": "BuildNotFound"
+          },
+          {
+            "value": "build_not_succeeded",
+            "name": "BuildNotSucceeded"
+          },
+          {
+            "value": "invalid_sandbox_group_id",
+            "name": "InvalidSandboxGroupId"
+          },
+          {
+            "value": "invalid_snapshot_id",
+            "name": "InvalidSnapshotId"
+          },
+          {
+            "value": "invalid_owner_id",
+            "name": "InvalidOwnerId"
+          },
+          {
+            "value": "invalid_status",
+            "name": "InvalidStatus"
+          },
+          {
+            "value": "invalid_cursor",
+            "name": "InvalidCursor"
+          },
+          {
+            "value": "invalid_limit",
+            "name": "InvalidLimit"
+          },
+          {
+            "value": "invalid_snapshot_name",
+            "name": "InvalidSnapshotName"
+          },
+          {
+            "value": "sandbox_group_suspended",
+            "name": "SandboxGroupSuspended"
+          },
+          {
+            "value": "sandbox_group_limit_reached",
+            "name": "SandboxGroupLimitReached"
+          },
+          {
+            "value": "invalid_sandbox_plan",
+            "name": "InvalidSandboxPlan"
+          },
+          {
+            "value": "invalid_timeout_seconds",
+            "name": "InvalidTimeoutSeconds"
+          },
+          {
+            "value": "build_source_region_mismatch",
+            "name": "BuildSourceRegionMismatch"
+          }
+        ]
+      }
+    },
+    "NetworkIsolationEnabled": {
+      "type": "boolean",
+      "description": "Indicates whether network connections across environments are allowed."
+    },
+    "ReadReplicas": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReadReplica"
+      }
+    },
+    "ReadReplicasInput": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReadReplicaInput"
+      }
+    },
+    "LogsValues200ResponseResponse": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "EnvGroupAllOf2": {
+      "required": [
+        "envVars",
+        "secretFiles"
+      ],
+      "type": "object",
+      "properties": {
+        "envVars": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/EnvVar"
+          }
+        },
+        "secretFiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/SecretFile"
+          }
+        }
+      }
+    },
+    "AuditLogMetadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Additional context information about the event",
+      "example": {
+        "service": "srv-123456789",
+        "field": "env_vars"
+      }
+    },
+    "ListBlueprints200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BlueprintWithCursor"
+      }
+    },
+    "ListBlueprintSyncs200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SyncWithCursor"
+      }
+    },
+    "ListDedicatedIps200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DedicatedIp"
+      }
+    },
+    "ListDisks200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DiskWithCursor"
+      }
+    },
+    "ListSnapshots201Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DiskSnapshot"
+      }
+    },
+    "ListOwners200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OwnerWithCursor"
+      }
+    },
+    "ListOwnerAuditLogs200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AuditLogWithCursor"
+      }
+    },
+    "ListOrganizationAuditLogs200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AuditLogWithCursor"
+      }
+    },
+    "ListNotificationOverrides200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/NotificationOverrideWithCursor"
+      }
+    },
+    "ListRegistryCredentials200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RegistryCredential"
+      }
+    },
+    "GetEnvVarsForService200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvVarWithCursor"
+      }
+    },
+    "UpdateEnvVarsForServiceRequest": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItem"
+      }
+    },
+    "UpdateEnvVarsForService200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvVarWithCursor"
+      }
+    },
+    "ListSecretFilesForService200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SecretFileWithCursor"
+      }
+    },
+    "UpdateSecretFilesForServiceRequest": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/UpdateSecretFilesForServiceRequestItem"
+      }
+    },
+    "UpdateSecretFilesForService200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SecretFileWithCursor"
+      }
+    },
+    "ListEvents200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ServiceEventWithCursor"
+      }
+    },
+    "ListHeaders200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HeaderWithCursor"
+      }
+    },
+    "UpdateHeadersRequest": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HeaderInput"
+      }
+    },
+    "UpdateHeaders200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Header"
+      }
+    },
+    "ListRoutes200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RouteWithCursor"
+      }
+    },
+    "PutRoutesRequest": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RoutePut"
+      }
+    },
+    "PutRoutes200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Route"
+      }
+    },
+    "ListCustomDomains200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CustomDomainWithCursor"
+      }
+    },
+    "CreateCustomDomain201Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CustomDomain"
+      }
+    },
+    "ListJob200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/JobWithCursor"
+      }
+    },
+    "ListInstances200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ServiceInstance"
+      }
+    },
+    "ListResourceLogStreams200Response": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "GetCpu200Response": {
+      "required": [
+        "items"
+      ],
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/GetCpu200ResponseItem"
+      },
+      "description": "A collection of time series"
+    },
+    "ListApplicationFilterValues200Response": {
+      "required": [
+        "items"
+      ],
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ListApplicationFilterValues200ResponseItem"
+      },
+      "description": "A collection of filter values for application metrics"
+    },
+    "ListHttpFilterValues200Response": {
+      "required": [
+        "items"
+      ],
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ListHttpFilterValues200ResponseItem"
+      },
+      "description": "A collection of filter values for HTTP metrics"
+    },
+    "ListPathFilterValues200Response": {
+      "required": [
+        "items"
+      ],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "example": "/user/*"
+      },
+      "description": "A collection of suggested paths to filter by"
+    },
+    "ListKeyValue200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/KeyValueWithCursor"
+      }
+    },
+    "ListRedis200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RedisWithCursor"
+      }
+    },
+    "ListPostgres200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PostgresWithCursor"
+      }
+    },
+    "ListPostgresExport200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ListPostgresExport200ResponseItem"
+      }
+    },
+    "ListPostgresUsers200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ListPostgresUsers200ResponseItem"
+      }
+    },
+    "ListProjects200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ProjectWithCursor"
+      }
+    },
+    "ListEnvironments200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvironmentWithCursor"
+      }
+    },
+    "ListEnvGroups200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvGroupMeta"
+      }
+    },
+    "ListMaintenance200Response": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ListBuildSources200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ListBuildSources200ResponseItem"
+      }
+    },
+    "ListBuildsInBuildSource200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ListBuildsInBuildSource200ResponseItem"
+      }
+    },
+    "GetEnvVarsForBuildSource200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvVarWithCursor"
+      }
+    },
+    "UpdateEnvVarsForBuildSource200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvVarWithCursor"
+      }
+    },
+    "ListSecretFilesForBuildSource200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SecretFileWithCursor"
+      }
+    },
+    "UpdateSecretFilesForBuildSourceRequest": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "UpdateSecretFilesForBuildSource200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SecretFileWithCursor"
+      }
+    },
+    "ListWebhooks200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WebhookWithCursor"
+      }
+    },
+    "ListWebhookEvents200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WebhookEventWithCursor"
+      }
+    },
+    "ListWorkflows200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WorkflowWithCursor"
+      }
+    },
+    "ListWorkflowVersions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WorkflowVersionWithCursor"
+      }
+    },
+    "ListTasks200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TaskWithCursor"
+      }
+    },
+    "ListTaskRuns200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TaskRunWithCursor"
+      }
+    },
+    "StreamTaskRunsEvents200EventStreamResponse": {
+      "type": "string",
+      "description": "Stream of SSE frames. Each event may include \u0060id\u0060, \u0060event\u0060, \u0060data\u0060,\nand optional \u0060retry\u0060. Frames are separated by a blank line.\n"
+    },
+    "ListSandboxes200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SandboxWithCursor"
+      }
+    },
+    "ListSandboxGroups200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SandboxGroupWithCursor"
+      }
+    },
+    "ListSandboxExecutions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ExecutionWithCursor"
+      }
+    },
+    "ListSandboxSnapshots200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SandboxSnapshotWithCursor"
+      }
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    },
+    "CreateSandboxRequestPlan": {
+      "type": "string",
+      "x-client-inline-scalar": true,
+      "description": "Compute plan. See \u0060sandboxPlan\u0060 for known values.",
+      "x-go-type": "SandboxPlan"
+    },
+    "CreateSandbox201ResponsePlan": {
+      "type": "string",
+      "x-client-inline-scalar": true,
+      "description": "Compute plan. See \u0060sandboxPlan\u0060 for known values.",
+      "x-go-type": "SandboxPlan"
+    },
+    "CreateSandboxSnapshot202ResponsePlan": {
+      "type": "string",
+      "x-client-inline-scalar": true,
+      "description": "Plan of the source sandbox at capture time. See \u0060sandboxPlan\u0060 for known values.",
+      "x-go-type": "SandboxPlan"
+    },
+    "UpdateEnvVarsForServiceRequestRequestBodyItem": {
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItemOneOf1"
+        },
+        {
+          "$ref": "#/components/schemas/UpdateEnvVarsForServiceRequestItemOneOf2"
+        }
+      ]
+    },
+    "UpdateSecretFilesForServiceRequestItem": {
+      "required": [
+        "name",
+        "content"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "GetCpu200ResponseItem": {
+      "required": [
+        "labels",
+        "values",
+        "unit"
+      ],
+      "type": "object",
+      "properties": {
+        "labels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/GetCpu200ResponseItemLabelsItem"
+          },
+          "description": "List of labels describing the time series"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/GetCpu200ResponseItemValuesItem"
+          },
+          "description": "The values of the time series"
+        },
+        "unit": {
+          "type": "string",
+          "example": "GB"
+        }
+      },
+      "description": "A time series data point"
+    },
+    "ListApplicationFilterValues200ResponseItem": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "$ref": "#/components/schemas/InstanceFilter"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "srv-xxxxx-yyyy"
+          }
+        }
+      }
+    },
+    "ListHttpFilterValues200ResponseItem": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "$ref": "#/components/schemas/ListHttpFilterValues200ResponseItemFilter"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "api.example.com"
+          }
+        }
+      }
+    },
+    "ListPostgresExport200ResponseItem": {
+      "required": [
+        "id",
+        "createdAt"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "url": {
+          "type": "string",
+          "description": "URL to download the Postgres export"
+        }
+      }
+    },
+    "ListPostgresUsers200ResponseItem": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "default": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "openConnections": {
+          "type": "integer"
+        }
+      }
+    },
+    "ListBuildSources200ResponseItem": {
+      "required": [
+        "buildSource",
+        "cursor"
+      ],
+      "type": "object",
+      "properties": {
+        "buildSource": {
+          "type": "string"
+        },
+        "cursor": {
+          "type": "string"
+        }
+      }
+    },
+    "ListBuildsInBuildSource200ResponseItem": {
+      "required": [
+        "build",
+        "cursor"
+      ],
+      "type": "object",
+      "properties": {
+        "build": {
+          "type": "string"
+        },
+        "cursor": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateSandboxRequestPlanAnyOf1": {
+      "enum": [
+        "starter",
+        "standard",
+        "pro",
+        "1c-2g",
+        "2c-4g",
+        "4c-8g",
+        "8c-16g"
+      ],
+      "type": "string",
+      "description": "The compute plan to use. \u0060starter\u0060, \u0060standard\u0060 and \u0060pro\u0060 are deprecated.",
+      "x-enum-varnames": [
+        "Starter",
+        "Standard",
+        "Pro",
+        "SandboxPlan1c2g",
+        "SandboxPlan2c4g",
+        "SandboxPlan4c8g",
+        "SandboxPlan8c16g"
+      ],
+      "x-ms-enum": {
+        "name": "CreateSandboxRequestPlanAnyOf1",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "starter",
+            "name": "Starter"
+          },
+          {
+            "value": "standard",
+            "name": "Standard"
+          },
+          {
+            "value": "pro",
+            "name": "Pro"
+          },
+          {
+            "value": "1c-2g",
+            "name": "Value1C2G"
+          },
+          {
+            "value": "2c-4g",
+            "name": "Value2C4G"
+          },
+          {
+            "value": "4c-8g",
+            "name": "Value4C8G"
+          },
+          {
+            "value": "8c-16g",
+            "name": "Value8C16G"
+          }
+        ]
+      }
+    },
+    "EventTypeParamAnyOf1": {
+      "enum": [
+        "artifact_fetch_failed",
+        "artifact_source_changed",
+        "autoscaling_config_changed",
+        "autoscaling_ended",
+        "autoscaling_started",
+        "branch_deleted",
+        "build_ended",
+        "build_started",
+        "commit_ignored",
+        "cron_job_run_ended",
+        "cron_job_run_started",
+        "deploy_ended",
+        "deploy_started",
+        "disk_created",
+        "disk_updated",
+        "disk_deleted",
+        "disk_snapshot_restored",
+        "service_disk_usage_high",
+        "service_disk_usage_recovered",
+        "image_pull_failed",
+        "initial_deploy_hook_ended",
+        "initial_deploy_hook_started",
+        "instance_count_changed",
+        "job_run_ended",
+        "maintenance_mode_enabled",
+        "maintenance_mode_uri_updated",
+        "maintenance_ended",
+        "maintenance_started",
+        "pipeline_minutes_exhausted",
+        "plan_changed",
+        "pre_deploy_ended",
+        "pre_deploy_started",
+        "server_available",
+        "server_failed",
+        "server_hardware_failure",
+        "server_restarted",
+        "service_resumed",
+        "service_suspended",
+        "suspender_added",
+        "suspender_removed",
+        "zero_downtime_redeploy_ended",
+        "zero_downtime_redeploy_started",
+        "auto_deploy_disabled",
+        "auto_deploy_enabled"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "name": "EventTypeParamAnyOf1",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "artifact_fetch_failed",
+            "name": "ArtifactFetchFailed"
+          },
+          {
+            "value": "artifact_source_changed",
+            "name": "ArtifactSourceChanged"
+          },
+          {
+            "value": "autoscaling_config_changed",
+            "name": "AutoscalingConfigChanged"
+          },
+          {
+            "value": "autoscaling_ended",
+            "name": "AutoscalingEnded"
+          },
+          {
+            "value": "autoscaling_started",
+            "name": "AutoscalingStarted"
+          },
+          {
+            "value": "branch_deleted",
+            "name": "BranchDeleted"
+          },
+          {
+            "value": "build_ended",
+            "name": "BuildEnded"
+          },
+          {
+            "value": "build_started",
+            "name": "BuildStarted"
+          },
+          {
+            "value": "commit_ignored",
+            "name": "CommitIgnored"
+          },
+          {
+            "value": "cron_job_run_ended",
+            "name": "CronJobRunEnded"
+          },
+          {
+            "value": "cron_job_run_started",
+            "name": "CronJobRunStarted"
+          },
+          {
+            "value": "deploy_ended",
+            "name": "DeployEnded"
+          },
+          {
+            "value": "deploy_started",
+            "name": "DeployStarted"
+          },
+          {
+            "value": "disk_created",
+            "name": "DiskCreated"
+          },
+          {
+            "value": "disk_updated",
+            "name": "DiskUpdated"
+          },
+          {
+            "value": "disk_deleted",
+            "name": "DiskDeleted"
+          },
+          {
+            "value": "disk_snapshot_restored",
+            "name": "DiskSnapshotRestored"
+          },
+          {
+            "value": "service_disk_usage_high",
+            "name": "ServiceDiskUsageHigh"
+          },
+          {
+            "value": "service_disk_usage_recovered",
+            "name": "ServiceDiskUsageRecovered"
+          },
+          {
+            "value": "image_pull_failed",
+            "name": "ImagePullFailed"
+          },
+          {
+            "value": "initial_deploy_hook_ended",
+            "name": "InitialDeployHookEnded"
+          },
+          {
+            "value": "initial_deploy_hook_started",
+            "name": "InitialDeployHookStarted"
+          },
+          {
+            "value": "instance_count_changed",
+            "name": "InstanceCountChanged"
+          },
+          {
+            "value": "job_run_ended",
+            "name": "JobRunEnded"
+          },
+          {
+            "value": "maintenance_mode_enabled",
+            "name": "MaintenanceModeEnabled"
+          },
+          {
+            "value": "maintenance_mode_uri_updated",
+            "name": "MaintenanceModeUriUpdated"
+          },
+          {
+            "value": "maintenance_ended",
+            "name": "MaintenanceEnded"
+          },
+          {
+            "value": "maintenance_started",
+            "name": "MaintenanceStarted"
+          },
+          {
+            "value": "pipeline_minutes_exhausted",
+            "name": "PipelineMinutesExhausted"
+          },
+          {
+            "value": "plan_changed",
+            "name": "PlanChanged"
+          },
+          {
+            "value": "pre_deploy_ended",
+            "name": "PreDeployEnded"
+          },
+          {
+            "value": "pre_deploy_started",
+            "name": "PreDeployStarted"
+          },
+          {
+            "value": "server_available",
+            "name": "ServerAvailable"
+          },
+          {
+            "value": "server_failed",
+            "name": "ServerFailed"
+          },
+          {
+            "value": "server_hardware_failure",
+            "name": "ServerHardwareFailure"
+          },
+          {
+            "value": "server_restarted",
+            "name": "ServerRestarted"
+          },
+          {
+            "value": "service_resumed",
+            "name": "ServiceResumed"
+          },
+          {
+            "value": "service_suspended",
+            "name": "ServiceSuspended"
+          },
+          {
+            "value": "suspender_added",
+            "name": "SuspenderAdded"
+          },
+          {
+            "value": "suspender_removed",
+            "name": "SuspenderRemoved"
+          },
+          {
+            "value": "zero_downtime_redeploy_ended",
+            "name": "ZeroDowntimeRedeployEnded"
+          },
+          {
+            "value": "zero_downtime_redeploy_started",
+            "name": "ZeroDowntimeRedeployStarted"
+          },
+          {
+            "value": "auto_deploy_disabled",
+            "name": "AutoDeployDisabled"
+          },
+          {
+            "value": "auto_deploy_enabled",
+            "name": "AutoDeployEnabled"
+          }
+        ]
+      }
+    }
   }
 }
