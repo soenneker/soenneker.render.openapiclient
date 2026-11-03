@@ -13965,10 +13965,10 @@
     "/sandboxes": {
       "post": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Create sandbox",
-        "description": "Create a sandbox. Returns the initial sandbox snapshot synchronously.\n\nWith \u0060snapshotId\u0060: 404 with \u0060code: snapshot_not_found\u0060 if the snapshot does not\nexist; 409 with \u0060code: snapshot_not_available\u0060 if it is not \u0060available\u0060, or\n\u0060code: snapshot_plan_mismatch\u0060 if a \u0060runtime\u0060 snapshot was requested with a\ndifferent \u0060plan\u0060.\n\nWith \u0060snapshotName\u0060: 400 with \u0060code: invalid_snapshot_name\u0060 if the name is\nmalformed, 400 without a code if \u0060snapshotId\u0060 is also set, and 404 with\n\u0060code: snapshot_not_found\u0060 if no \u0060available\u0060 snapshot in the group has the\nname. The 409 cases above apply to the resolved snapshot.\n\n409 with \u0060code: sandbox_group_suspended\u0060 if the sandbox group is suspended.\n\n400 with \u0060code: sandbox_group_limit_reached\u0060 if the owner has no default\nsandbox group and is already at its sandbox group limit.\n\n400 with \u0060code: invalid_sandbox_plan\u0060 if \u0060plan\u0060 is not one the API currently\naccepts. The message lists the accepted plans.\n\n400 with \u0060code: invalid_timeout_seconds\u0060 if \u0060timeoutSeconds\u0060 is below 0 or\nabove the plan\u0027s maximum: 2592000 (30 days), or 86400 (24 hours) on Hobby\nworkspaces.\n",
+        "description": "Create a sandbox. Returns the initial sandbox snapshot synchronously.\n\nWith \u0060snapshotId\u0060: 404 with \u0060code: snapshot_not_found\u0060 if the snapshot does not\nexist; 409 with \u0060code: snapshot_not_available\u0060 if it is not \u0060available\u0060, or\n\u0060code: snapshot_plan_mismatch\u0060 if a \u0060runtime\u0060 snapshot was requested with a\ndifferent \u0060plan\u0060.\n\nWith \u0060snapshotName\u0060: 400 with \u0060code: invalid_snapshot_name\u0060 if the name is\nmalformed, 400 without a code if \u0060snapshotId\u0060 is also set, and 404 with\n\u0060code: snapshot_not_found\u0060 if no \u0060available\u0060 snapshot in the group has the\nname. The 409 cases above apply to the resolved snapshot.\n\n409 with \u0060code: sandbox_group_suspended\u0060 if the sandbox group is suspended.\n\n400 with \u0060code: sandbox_group_limit_reached\u0060 if the owner has no default\nsandbox group and is already at its sandbox group limit.\n\n400 with \u0060code: invalid_sandbox_plan\u0060 if \u0060plan\u0060 is not one the API currently\naccepts. The message lists the accepted plans.\n\n400 with \u0060code: invalid_timeout_seconds\u0060 if \u0060timeoutSeconds\u0060 is below 0 or\nabove 2592000 (30 days).\n",
         "operationId": "CreateSandbox",
         "requestBody": {
           "content": {
@@ -14067,7 +14067,7 @@
       },
       "get": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "List sandboxes",
         "description": "List sandboxes for a single workspace. Sandboxes are scoped to the region of\ntheir workspace\u0027s sandbox group, so one workspace must be named per request.\n",
@@ -14149,7 +14149,7 @@
     "/sandbox-groups": {
       "post": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Create sandbox group",
         "description": "Create a sandbox group. The workspace\u0027s first group becomes its default.\nReturns 409 if the \u0060name\u0060 is taken.\n",
@@ -14240,7 +14240,7 @@
       },
       "get": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "List sandbox groups",
         "description": "List sandbox groups for a single workspace, newest first. The default\npage size is 20 and the maximum is 100.\nUse the last item\u0027s cursor to fetch the next page, until it is empty.\n",
@@ -14307,7 +14307,7 @@
     "/sandboxes/{sandboxId}": {
       "get": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Retrieve sandbox",
         "description": "Retrieve the sandbox with the provided ID.",
@@ -14370,7 +14370,7 @@
     "/sandboxes/{sandboxId}/execs": {
       "get": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "List executions",
         "description": "List execution records for the sandbox, ordered by start time, newest first.",
@@ -14437,7 +14437,7 @@
     "/sandboxes/{sandboxId}/execs/{execId}": {
       "get": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Retrieve execution",
         "description": "Retrieve one execution record for the sandbox.",
@@ -14506,7 +14506,7 @@
     "/sandboxes/{sandboxId}/terminate": {
       "post": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Terminate sandbox",
         "description": "Terminate the sandbox with the provided ID. Idempotent: returns 204 from any\nstate, including \u0060terminated\u0060. Terminating a \u0060creating\u0060 sandbox cancels\nboot/setup immediately.\n",
@@ -14557,7 +14557,7 @@
     "/sandboxes/{sandboxId}/snapshots": {
       "post": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Create sandbox snapshot",
         "description": "Capture a snapshot of a running sandbox. Returns 202 with the snapshot in\n\u0060creating\u0060. Poll until it is \u0060available\u0060 or \u0060failed\u0060. The sandbox keeps\nrunning; a runtime capture pauses it briefly.\n\n400 with \u0060code: invalid_snapshot_name\u0060 if \u0060name\u0060 is malformed. 409 with\n\u0060code: sandbox_not_running\u0060 if the sandbox is not \u0060running\u0060, or\n\u0060code: sandbox_group_suspended\u0060 if the sandbox group is suspended.\n",
@@ -14641,7 +14641,7 @@
     "/sandbox-groups/{sandboxGroupId}": {
       "get": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Retrieve sandbox group",
         "description": "Retrieve a sandbox group. 400 \u0060invalid_sandbox_group_id\u0060 for a malformed ID.\n",
@@ -14682,7 +14682,7 @@
       },
       "patch": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Update sandbox group",
         "description": "Update a sandbox group\u0027s concurrency limit. Returns 400 for a malformed\nID (\u0060invalid_sandbox_group_id\u0060), missing \u0060concurrencyLimit\u0060, or a value\nbelow 1. The response returns the effective limit after applying Render\u0027s cap.\n",
@@ -14752,7 +14752,7 @@
     "/sandbox-groups/{sandboxGroupId}/snapshots": {
       "get": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "List sandbox snapshots",
         "description": "Snapshots in a sandbox group, newest first. Expired and deleted snapshots\nare omitted.\n\n400 with \u0060code: invalid_sandbox_group_id\u0060 if \u0060sandboxGroupId\u0060 is not a\nwell-formed \u0060sbg-\u0060 ID, \u0060code: invalid_owner_id\u0060 if \u0060ownerId\u0060 is missing or\nrepeated, \u0060code: invalid_status\u0060 for a status outside the snapshot status\nvocabulary, \u0060code: invalid_cursor\u0060 for a malformed or unknown cursor, or\n\u0060code: invalid_limit\u0060 for a limit outside 1 to 100.\n",
@@ -14837,7 +14837,7 @@
     "/sandbox-groups/{sandboxGroupId}/snapshots/{snapshotId}": {
       "get": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Retrieve sandbox snapshot",
         "description": "One snapshot by ID. Deleted and expired snapshots return 404. A snapshot\nthat belongs to another sandbox group returns 404.\n\n400 with \u0060code: invalid_sandbox_group_id\u0060 if \u0060sandboxGroupId\u0060 is not a\nwell-formed \u0060sbg-\u0060 ID, or \u0060code: invalid_snapshot_id\u0060 if \u0060snapshotId\u0060 is\nnot a well-formed \u0060snp-\u0060 ID.\n",
@@ -14896,7 +14896,7 @@
       },
       "delete": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Delete sandbox snapshot",
         "description": "Idempotent: returns 204 if the snapshot is already deleted or expired.\nSandboxes created from the snapshot are not affected. A snapshot that\nbelongs to another sandbox group returns 404.\n\n400 with \u0060code: invalid_sandbox_group_id\u0060 when \u0060sandboxGroupId\u0060 is malformed.\n400 with \u0060code: invalid_snapshot_id\u0060 when \u0060snapshotId\u0060 is malformed.\n409 with \u0060code: snapshot_creating\u0060 while the capture is in progress.\n",
@@ -14964,7 +14964,7 @@
     "/sandboxes/{sandboxId}/runs/{operation}/token": {
       "post": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Create a connect token for a sandbox run",
         "description": "Mint a short-lived, capability-scoped connect token that authorizes a\nsingle run operation against the specified sandbox. The response contains\nthe sandbox URI where the caller sends the command with the token as a bearer credential.\n\n409 with \u0060code: sandbox_group_suspended\u0060 if the sandbox group is suspended.\n",
@@ -15054,7 +15054,7 @@
     "/sandboxes/{sandboxId}/files/{operation}/token": {
       "post": {
         "tags": [
-          "Sandboxes (Beta)"
+          "Sandboxes"
         ],
         "summary": "Mint a connect token for a sandbox file transfer",
         "description": "Mint a short-lived, capability-scoped connect token that authorizes a\nsingle file upload or download against the sandbox, and return the\nsandbox-proxy endpoint to invoke with it. The caller streams the file\nbytes directly to (or from) that endpoint with the token as a bearer\ncredential. \u0060application/octet-stream\u0060 carries a single file and\n\u0060application/x-tar\u0060 a directory archive, with compression carried\nseparately by \u0060Content-Encoding: gzip\u0060 in either direction; directory\ndownloads return \u0060application/x-tar\u0060 with \u0060Content-Encoding: gzip\u0060. The\ntoken is bound to this sandbox, operation, and path, and expires\nshortly after issuance.\n\n409 with \u0060code: sandbox_group_suspended\u0060 if the sandbox group is suspended.\n",
@@ -29126,7 +29126,7 @@
       "description": "[Registry Credentials](https://render.com/docs/deploying-an-image#credentials-for-private-images) allow you to manage credentials for private Docker images.\n"
     },
     {
-      "name": "Sandboxes (Beta)",
+      "name": "Sandboxes",
       "description": "Sandboxes are ephemeral, isolated compute environments for running code, executing commands, and transferring files. Sandboxes are in public beta.\n"
     },
     {
@@ -29314,7 +29314,7 @@
         "A create, connect, or snapshot request named a sandbox whose group is suspended.",
         "A sandbox group create, or a sandbox create that needs a new default group, for an owner already at its sandbox group limit.",
         "A sandbox create asked for a plan that does not exist or is not offered.",
-        "A sandbox create asked for a timeoutSeconds below 0 or above the workspace plan\u0027s maximum.",
+        "A sandbox create asked for a timeoutSeconds below 0 or above the maximum.",
         "A service create or update linked a git-backed Build Source in a different region than the service."
       ],
       "x-ms-enum": {
