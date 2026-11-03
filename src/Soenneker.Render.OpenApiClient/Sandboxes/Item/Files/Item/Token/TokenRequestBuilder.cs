@@ -104,7 +104,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TokenRequestBuilderPostQueryParameters 
         {
-            /// <summary>Path in the sandbox this token authorizes. A relative path resolves within the sandbox&apos;s home directory (&quot;.&quot; is the home directory itself); an absolute path addresses the sandbox filesystem root. For an archive upload, the extraction root; for a download, the file or directory to fetch.</summary>
+            /// <summary>Path in the sandbox this token authorizes. A relative path resolves within the sandbox&apos;s working directory, which is the image&apos;s WORKDIR or, when the image sets none, the home directory (&quot;.&quot; is the working directory itself); an absolute path addresses the sandbox filesystem root. For an archive upload, the extraction root; for a download, the file or directory to fetch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("path")]

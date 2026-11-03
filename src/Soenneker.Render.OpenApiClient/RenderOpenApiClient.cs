@@ -14,6 +14,8 @@ using Soenneker.Render.OpenApiClient.Disks;
 using Soenneker.Render.OpenApiClient.EnvGroups;
 using Soenneker.Render.OpenApiClient.Environments;
 using Soenneker.Render.OpenApiClient.Events;
+using Soenneker.Render.OpenApiClient.FlowRuns;
+using Soenneker.Render.OpenApiClient.Flows;
 using Soenneker.Render.OpenApiClient.KeyValue;
 using Soenneker.Render.OpenApiClient.Logs;
 using Soenneker.Render.OpenApiClient.Maintenance;
@@ -86,6 +88,16 @@ namespace Soenneker.Render.OpenApiClient
         public global::Soenneker.Render.OpenApiClient.Events.EventsRequestBuilder Events
         {
             get => new global::Soenneker.Render.OpenApiClient.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The flowRuns property</summary>
+        public global::Soenneker.Render.OpenApiClient.FlowRuns.FlowRunsRequestBuilder FlowRuns
+        {
+            get => new global::Soenneker.Render.OpenApiClient.FlowRuns.FlowRunsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The flows property</summary>
+        public global::Soenneker.Render.OpenApiClient.Flows.FlowsRequestBuilder Flows
+        {
+            get => new global::Soenneker.Render.OpenApiClient.Flows.FlowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keyValue property</summary>
         public global::Soenneker.Render.OpenApiClient.KeyValue.KeyValueRequestBuilder KeyValue
