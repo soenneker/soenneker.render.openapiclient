@@ -23,6 +23,8 @@ namespace Soenneker.Render.OpenApiClient.Models
             else if (parseNode.GetChildNode("buildConfig") is { } nullNodeBuildConfig && nullNodeBuildConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildConfig = null;
             if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
             else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("defaultVersionId") is null) { _explicitNullValueDefaultVersionId = default!; _explicitNullProperties?.Remove("defaultVersionId"); }
+            else if (parseNode.GetChildNode("defaultVersionId") is { } nullNodeDefaultVersionId && nullNodeDefaultVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultVersionId = null;
             if (parseNode.GetChildNode("environmentId") is null) { _explicitNullValueEnvironmentId = default!; _explicitNullProperties?.Remove("environmentId"); }
             else if (parseNode.GetChildNode("environmentId") is { } nullNodeEnvironmentId && nullNodeEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentId = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
@@ -66,6 +68,16 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
+        /// <summary>ID of the workflow version that new task runs use by default. Omitted until a version has been registered.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultVersionId { get => _explicitNullValueDefaultVersionId; set { _explicitNullValueDefaultVersionId = value; AdditionalData?.Remove("defaultVersionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultVersionId"); else _explicitNullProperties?.Remove("defaultVersionId"); } }
+        private string? _explicitNullValueDefaultVersionId = default!;
+#nullable restore
+#else
+        public string DefaultVersionId { get => _explicitNullValueDefaultVersionId; set { _explicitNullValueDefaultVersionId = value; AdditionalData?.Remove("defaultVersionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultVersionId"); else _explicitNullProperties?.Remove("defaultVersionId"); } }
+        private string _explicitNullValueDefaultVersionId = default!;
+#endif
         /// <summary>The environmentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,6 +172,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetStringValue(); } },
                 { "buildConfig", n => { BuildConfig = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "defaultVersionId", n => { DefaultVersionId = n.GetStringValue(); } },
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -180,6 +193,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("autoDeployTrigger", AutoDeployTrigger);
             writer.WriteStringValue("buildConfig", BuildConfig);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            writer.WriteStringValue("defaultVersionId", DefaultVersionId);
             writer.WriteStringValue("environmentId", EnvironmentId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

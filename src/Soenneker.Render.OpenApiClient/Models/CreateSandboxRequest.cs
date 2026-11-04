@@ -112,7 +112,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string SnapshotName { get => _explicitNullValueSnapshotName; set { _explicitNullValueSnapshotName = value; AdditionalData?.Remove("snapshotName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotName"); else _explicitNullProperties?.Remove("snapshotName"); } }
         private string _explicitNullValueSnapshotName = default!;
 #endif
-        /// <summary>Maximum sandbox lifetime in seconds. Sandbox is terminated when reached. Use 0 for no timeout.</summary>
+        /// <summary>Maximum sandbox lifetime in seconds. Sandbox is terminated when reached. Use 0 for no timeout. Positive values must be at least 60.</summary>
         public int? TimeoutSeconds { get => _explicitNullValueTimeoutSeconds; set { _explicitNullValueTimeoutSeconds = value; AdditionalData?.Remove("timeoutSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeoutSeconds"); else _explicitNullProperties?.Remove("timeoutSeconds"); } }
         private int? _explicitNullValueTimeoutSeconds = default!;
         /// <summary>

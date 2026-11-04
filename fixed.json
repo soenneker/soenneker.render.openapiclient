@@ -21450,6 +21450,10 @@
           },
           "autoDeployTrigger": {
             "type": "string"
+          },
+          "defaultVersionId": {
+            "type": "string",
+            "description": "ID of the workflow version that new task runs use by default. Omitted until a version has been registered."
           }
         }
       },
@@ -21777,7 +21781,7 @@
           },
           "timeoutSeconds": {
             "type": "integer",
-            "description": "Maximum sandbox lifetime in seconds. Sandbox is terminated when reached. Use 0 for no timeout.",
+            "description": "Maximum sandbox lifetime in seconds. Sandbox is terminated when reached. Use 0 for no timeout. Positive values must be at least 60.",
             "default": 86400
           },
           "idleTimeoutSeconds": {
