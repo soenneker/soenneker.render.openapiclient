@@ -23,6 +23,8 @@ namespace Soenneker.Render.OpenApiClient.Models
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("idleTimeoutSeconds") is null) { _explicitNullValueIdleTimeoutSeconds = default!; _explicitNullProperties?.Remove("idleTimeoutSeconds"); }
             else if (parseNode.GetChildNode("idleTimeoutSeconds") is { } nullNodeIdleTimeoutSeconds && nullNodeIdleTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdleTimeoutSeconds = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("networkPolicy") is null) { _explicitNullValueNetworkPolicy = default!; _explicitNullProperties?.Remove("networkPolicy"); }
             else if (parseNode.GetChildNode("networkPolicy") is { } nullNodeNetworkPolicy && nullNodeNetworkPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkPolicy = null;
             if (parseNode.GetChildNode("plan") is null) { _explicitNullValuePlan = default!; _explicitNullProperties?.Remove("plan"); }
@@ -57,6 +59,16 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>Seconds of inactivity before the sandbox is suspended. 0 disables automatic idle suspension.</summary>
         public int? IdleTimeoutSeconds { get => _explicitNullValueIdleTimeoutSeconds; set { _explicitNullValueIdleTimeoutSeconds = value; AdditionalData?.Remove("idleTimeoutSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idleTimeoutSeconds"); else _explicitNullProperties?.Remove("idleTimeoutSeconds"); } }
         private int? _explicitNullValueIdleTimeoutSeconds = default!;
+        /// <summary>The label set when the sandbox was created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
+#nullable restore
+#else
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
+#endif
         /// <summary>The networkPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,6 +153,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "idleTimeoutSeconds", n => { IdleTimeoutSeconds = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201ResponseNetworkPolicy>(global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201ResponseNetworkPolicy.CreateFromDiscriminatorValue); } },
                 { "plan", n => { Plan = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
@@ -160,6 +173,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("idleTimeoutSeconds", IdleTimeoutSeconds);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201ResponseNetworkPolicy>("networkPolicy", NetworkPolicy);
             writer.WriteStringValue("plan", Plan);
             writer.WriteStringValue("region", Region);

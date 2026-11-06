@@ -35,7 +35,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SandboxesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sandboxes{?cursor*,limit*,sandboxGroupId*,status}", pathParameters)
+        public SandboxesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sandboxes{?cursor*,limit*,name*,sandboxGroupId*,status}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SandboxesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sandboxes{?cursor*,limit*,sandboxGroupId*,status}", rawUrl)
+        public SandboxesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sandboxes{?cursor*,limit*,name*,sandboxGroupId*,status}", rawUrl)
         {
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a sandbox. Returns the initial sandbox snapshot synchronously.With `snapshotId`: 404 with `code: snapshot_not_found` if the snapshot does notexist; 409 with `code: snapshot_not_available` if it is not `available`, or`code: snapshot_plan_mismatch` if a `runtime` snapshot was requested with adifferent `plan`.With `snapshotName`: 400 with `code: invalid_snapshot_name` if the name ismalformed, 400 without a code if `snapshotId` is also set, and 404 with`code: snapshot_not_found` if no `available` snapshot in the group has thename. The 409 cases above apply to the resolved snapshot.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.400 with `code: sandbox_group_limit_reached` if the owner has no defaultsandbox group and is already at its sandbox group limit.400 with `code: invalid_sandbox_plan` if `plan` is not one the API currentlyaccepts. The message lists the accepted plans.400 with `code: invalid_timeout_seconds` if `timeoutSeconds` is below 0 orabove 2592000 (30 days).
+        /// Create a sandbox. Returns the initial sandbox snapshot synchronously.With `snapshotId`: 404 with `code: snapshot_not_found` if the snapshot does notexist; 409 with `code: snapshot_not_available` if it is not `available`, or`code: snapshot_plan_mismatch` if a `runtime` snapshot was requested with adifferent `plan`.With `snapshotName`: 400 with `code: invalid_snapshot_name` if the name ismalformed, 400 without a code if `snapshotId` is also set, and 404 with`code: snapshot_not_found` if no `available` snapshot in the group has thename. The 409 cases above apply to the resolved snapshot.400 with `code: invalid_sandbox_name` if `name` is longer than 64 charactersor starts with `sbx-`.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.400 with `code: sandbox_group_limit_reached` if the owner has no defaultsandbox group and is already at its sandbox group limit.400 with `code: invalid_sandbox_plan` if `plan` is not one the API currentlyaccepts. The message lists the accepted plans.400 with `code: invalid_timeout_seconds` if `timeoutSeconds` is below 0 orabove 2592000 (30 days).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -139,13 +139,13 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/sandboxes?ownerId={ownerId}{&cursor*,limit*,sandboxGroupId*,status}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/sandboxes?ownerId={ownerId}{&cursor*,limit*,name*,sandboxGroupId*,status}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Create a sandbox. Returns the initial sandbox snapshot synchronously.With `snapshotId`: 404 with `code: snapshot_not_found` if the snapshot does notexist; 409 with `code: snapshot_not_available` if it is not `available`, or`code: snapshot_plan_mismatch` if a `runtime` snapshot was requested with adifferent `plan`.With `snapshotName`: 400 with `code: invalid_snapshot_name` if the name ismalformed, 400 without a code if `snapshotId` is also set, and 404 with`code: snapshot_not_found` if no `available` snapshot in the group has thename. The 409 cases above apply to the resolved snapshot.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.400 with `code: sandbox_group_limit_reached` if the owner has no defaultsandbox group and is already at its sandbox group limit.400 with `code: invalid_sandbox_plan` if `plan` is not one the API currentlyaccepts. The message lists the accepted plans.400 with `code: invalid_timeout_seconds` if `timeoutSeconds` is below 0 orabove 2592000 (30 days).
+        /// Create a sandbox. Returns the initial sandbox snapshot synchronously.With `snapshotId`: 404 with `code: snapshot_not_found` if the snapshot does notexist; 409 with `code: snapshot_not_available` if it is not `available`, or`code: snapshot_plan_mismatch` if a `runtime` snapshot was requested with adifferent `plan`.With `snapshotName`: 400 with `code: invalid_snapshot_name` if the name ismalformed, 400 without a code if `snapshotId` is also set, and 404 with`code: snapshot_not_found` if no `available` snapshot in the group has thename. The 409 cases above apply to the resolved snapshot.400 with `code: invalid_sandbox_name` if `name` is longer than 64 charactersor starts with `sbx-`.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.400 with `code: sandbox_group_limit_reached` if the owner has no defaultsandbox group and is already at its sandbox group limit.400 with `code: invalid_sandbox_plan` if `plan` is not one the API currentlyaccepts. The message lists the accepted plans.400 with `code: invalid_timeout_seconds` if `timeoutSeconds` is below 0 orabove 2592000 (30 days).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -194,6 +194,16 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             /// <summary>The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Return only sandboxes with exactly this name. Names aren&apos;t unique, sothis can match more than one sandbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string Name { get; set; }
+#endif
             /// <summary>The ID of the workspace whose sandboxes to return.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

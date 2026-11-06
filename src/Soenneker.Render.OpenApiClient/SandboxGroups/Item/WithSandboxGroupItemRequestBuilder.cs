@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Render.OpenApiClient.Models;
+using Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds;
 using Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSandboxGroupItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The builds property</summary>
+        public global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.BuildsRequestBuilder Builds
+        {
+            get => new global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.BuildsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The snapshots property</summary>
         public global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.SnapshotsRequestBuilder Snapshots
         {

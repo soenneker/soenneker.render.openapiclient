@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.Token
         {
         }
         /// <summary>
-        /// Mint a short-lived, capability-scoped connect token that authorizes asingle run operation against the specified sandbox. The response containsthe sandbox URI where the caller sends the command with the token as a bearer credential.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Mint a short-lived, capability-scoped connect token that authorizes asingle run operation against the specified sandbox. The response containsthe sandbox URI where the caller sends the command with the token as a bearer credential.409 with `code: sandbox_not_running` if the sandbox is terminated orerrored, or `code: sandbox_group_suspended` if the sandbox group is suspended.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response"/></returns>
         /// <param name="body">Optional body when minting a run connect token. `command` is stored onthe exec timeline (truncated to 4KB); the full command is still sentto the sandbox proxy when executing.</param>
@@ -44,6 +44,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.Token
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
@@ -64,6 +65,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.Token
                 { "401", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
@@ -73,7 +75,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.Token
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mint a short-lived, capability-scoped connect token that authorizes asingle run operation against the specified sandbox. The response containsthe sandbox URI where the caller sends the command with the token as a bearer credential.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Mint a short-lived, capability-scoped connect token that authorizes asingle run operation against the specified sandbox. The response containsthe sandbox URI where the caller sends the command with the token as a bearer credential.409 with `code: sandbox_not_running` if the sandbox is terminated orerrored, or `code: sandbox_group_suspended` if the sandbox group is suspended.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Optional body when minting a run connect token. `command` is stored onthe exec timeline (truncated to 4KB); the full command is still sentto the sandbox proxy when executing.</param>

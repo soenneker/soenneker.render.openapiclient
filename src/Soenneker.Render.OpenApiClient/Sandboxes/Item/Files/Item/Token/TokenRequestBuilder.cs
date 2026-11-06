@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
         {
         }
         /// <summary>
-        /// Mint a short-lived, capability-scoped connect token that authorizes asingle file upload or download against the sandbox, and return thesandbox-proxy endpoint to invoke with it. The caller streams the filebytes directly to (or from) that endpoint with the token as a bearercredential. `application/octet-stream` carries a single file and`application/x-tar` a directory archive, with compression carriedseparately by `Content-Encoding: gzip` in either direction; directorydownloads return `application/x-tar` with `Content-Encoding: gzip`. Thetoken is bound to this sandbox, operation, and path, and expiresshortly after issuance.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Mint a short-lived, capability-scoped connect token that authorizes asingle file upload or download against the sandbox, and return thesandbox-proxy endpoint to invoke with it. The caller streams the filebytes directly to (or from) that endpoint with the token as a bearercredential. `application/octet-stream` carries a single file and`application/x-tar` a directory archive, with compression carriedseparately by `Content-Encoding: gzip` in either direction; directorydownloads return `application/x-tar` with `Content-Encoding: gzip`. Thetoken is bound to this sandbox, operation, and path, and expiresshortly after issuance.409 with `code: sandbox_not_running` if the sandbox is terminated orerrored, or `code: sandbox_group_suspended` if the sandbox group is suspended.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -43,6 +43,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
@@ -62,6 +63,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
                 { "401", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
@@ -71,7 +73,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mint a short-lived, capability-scoped connect token that authorizes asingle file upload or download against the sandbox, and return thesandbox-proxy endpoint to invoke with it. The caller streams the filebytes directly to (or from) that endpoint with the token as a bearercredential. `application/octet-stream` carries a single file and`application/x-tar` a directory archive, with compression carriedseparately by `Content-Encoding: gzip` in either direction; directorydownloads return `application/x-tar` with `Content-Encoding: gzip`. Thetoken is bound to this sandbox, operation, and path, and expiresshortly after issuance.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Mint a short-lived, capability-scoped connect token that authorizes asingle file upload or download against the sandbox, and return thesandbox-proxy endpoint to invoke with it. The caller streams the filebytes directly to (or from) that endpoint with the token as a bearercredential. `application/octet-stream` carries a single file and`application/x-tar` a directory archive, with compression carriedseparately by `Content-Encoding: gzip` in either direction; directorydownloads return `application/x-tar` with `Content-Encoding: gzip`. Thetoken is bound to this sandbox, operation, and path, and expiresshortly after issuance.409 with `code: sandbox_not_running` if the sandbox is terminated orerrored, or `code: sandbox_group_suspended` if the sandbox group is suspended.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,7 +101,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
             return new global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token.TokenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Mint a short-lived, capability-scoped connect token that authorizes asingle file upload or download against the sandbox, and return thesandbox-proxy endpoint to invoke with it. The caller streams the filebytes directly to (or from) that endpoint with the token as a bearercredential. `application/octet-stream` carries a single file and`application/x-tar` a directory archive, with compression carriedseparately by `Content-Encoding: gzip` in either direction; directorydownloads return `application/x-tar` with `Content-Encoding: gzip`. Thetoken is bound to this sandbox, operation, and path, and expiresshortly after issuance.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Mint a short-lived, capability-scoped connect token that authorizes asingle file upload or download against the sandbox, and return thesandbox-proxy endpoint to invoke with it. The caller streams the filebytes directly to (or from) that endpoint with the token as a bearercredential. `application/octet-stream` carries a single file and`application/x-tar` a directory archive, with compression carriedseparately by `Content-Encoding: gzip` in either direction; directorydownloads return `application/x-tar` with `Content-Encoding: gzip`. Thetoken is bound to this sandbox, operation, and path, and expiresshortly after issuance.409 with `code: sandbox_not_running` if the sandbox is terminated orerrored, or `code: sandbox_group_suspended` if the sandbox group is suspended.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TokenRequestBuilderPostQueryParameters 

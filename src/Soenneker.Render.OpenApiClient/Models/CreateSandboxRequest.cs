@@ -17,10 +17,16 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("buildId") is null) { _explicitNullValueBuildId = default!; _explicitNullProperties?.Remove("buildId"); }
+            else if (parseNode.GetChildNode("buildId") is { } nullNodeBuildId && nullNodeBuildId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildId = null;
+            if (parseNode.GetChildNode("buildName") is null) { _explicitNullValueBuildName = default!; _explicitNullProperties?.Remove("buildName"); }
+            else if (parseNode.GetChildNode("buildName") is { } nullNodeBuildName && nullNodeBuildName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildName = null;
             if (parseNode.GetChildNode("env") is null) { _explicitNullValueEnv = default!; _explicitNullProperties?.Remove("env"); }
             else if (parseNode.GetChildNode("env") is { } nullNodeEnv && nullNodeEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Env = null;
             if (parseNode.GetChildNode("idleTimeoutSeconds") is null) { _explicitNullValueIdleTimeoutSeconds = default!; _explicitNullProperties?.Remove("idleTimeoutSeconds"); }
             else if (parseNode.GetChildNode("idleTimeoutSeconds") is { } nullNodeIdleTimeoutSeconds && nullNodeIdleTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdleTimeoutSeconds = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("networkPolicy") is null) { _explicitNullValueNetworkPolicy = default!; _explicitNullProperties?.Remove("networkPolicy"); }
             else if (parseNode.GetChildNode("networkPolicy") is { } nullNodeNetworkPolicy && nullNodeNetworkPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkPolicy = null;
             if (parseNode.GetChildNode("ownerId") is null) { _explicitNullValueOwnerId = default!; _explicitNullProperties?.Remove("ownerId"); }
@@ -39,6 +45,26 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Start from this build&apos;s image instead of the base image. The buildmust have succeeded and be in the sandbox&apos;s group: 404 with `code:build_not_found` if it isn&apos;t in the group, and 409 with `code:build_not_succeeded` if it hasn&apos;t succeeded. Mutually exclusivewith `buildName`, `snapshotId` and `snapshotName`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; AdditionalData?.Remove("buildId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
+        private string? _explicitNullValueBuildId = default!;
+#nullable restore
+#else
+        public string BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; AdditionalData?.Remove("buildId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
+        private string _explicitNullValueBuildId = default!;
+#endif
+        /// <summary>Start from the newest succeeded build with this name in thesandbox&apos;s group. 404 with `code: build_not_found` if the group hasno build with the name, and 409 with `code: build_not_succeeded` ifnone of them has succeeded. Mutually exclusive with `buildId`,`snapshotId` and `snapshotName`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildName { get => _explicitNullValueBuildName; set { _explicitNullValueBuildName = value; AdditionalData?.Remove("buildName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildName"); else _explicitNullProperties?.Remove("buildName"); } }
+        private string? _explicitNullValueBuildName = default!;
+#nullable restore
+#else
+        public string BuildName { get => _explicitNullValueBuildName; set { _explicitNullValueBuildName = value; AdditionalData?.Remove("buildName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildName"); else _explicitNullProperties?.Remove("buildName"); } }
+        private string _explicitNullValueBuildName = default!;
+#endif
         /// <summary>Inline environment variables injected into the sandbox at creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,9 +75,19 @@ namespace Soenneker.Render.OpenApiClient.Models
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestEnv Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; AdditionalData?.Remove("env"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestEnv _explicitNullValueEnv = default!;
 #endif
-        /// <summary>Seconds of inactivity before the sandbox is suspended. Use 0 to disable automatic idle suspension. Positive values must be at least 300.</summary>
+        /// <summary>Seconds of inactivity before the sandbox is suspended. Use 0 to disableautomatic idle suspension. Positive values must be at least 300. Defaultsto 900, or to the source sandbox&apos;s idle timeout when starting from asnapshot.</summary>
         public int? IdleTimeoutSeconds { get => _explicitNullValueIdleTimeoutSeconds; set { _explicitNullValueIdleTimeoutSeconds = value; AdditionalData?.Remove("idleTimeoutSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idleTimeoutSeconds"); else _explicitNullProperties?.Remove("idleTimeoutSeconds"); } }
         private int? _explicitNullValueIdleTimeoutSeconds = default!;
+        /// <summary>A label for the sandbox, like `my-agent`. It isn&apos;t unique, so thesandbox ID stays the handle. It can&apos;t start with `sbx-`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
+#nullable restore
+#else
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
+#endif
         /// <summary>Set either `type` or its deprecated alias `default`. Sending both isonly accepted when they name the same policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,7 +128,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string SandboxGroupId { get => _explicitNullValueSandboxGroupId; set { _explicitNullValueSandboxGroupId = value; AdditionalData?.Remove("sandboxGroupId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxGroupId"); else _explicitNullProperties?.Remove("sandboxGroupId"); } }
         private string _explicitNullValueSandboxGroupId = default!;
 #endif
-        /// <summary>Start from this snapshot instead of the base image. Must be `available`and in the same sandbox group. For a `runtime` snapshot, `plan` mustmatch the snapshot&apos;s plan.</summary>
+        /// <summary>Start from this snapshot instead of the base image. Must be `available`and in the same sandbox group. For a `runtime` snapshot, `plan` mustmatch the snapshot&apos;s plan. The new sandbox uses the source sandbox&apos;snetwork policy, timeout and idle timeout. Include `networkPolicy`,`timeoutSeconds` or `idleTimeoutSeconds` to set a different one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; AdditionalData?.Remove("snapshotId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotId"); else _explicitNullProperties?.Remove("snapshotId"); } }
@@ -112,7 +148,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string SnapshotName { get => _explicitNullValueSnapshotName; set { _explicitNullValueSnapshotName = value; AdditionalData?.Remove("snapshotName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotName"); else _explicitNullProperties?.Remove("snapshotName"); } }
         private string _explicitNullValueSnapshotName = default!;
 #endif
-        /// <summary>Maximum sandbox lifetime in seconds. Sandbox is terminated when reached. Use 0 for no timeout. Positive values must be at least 60.</summary>
+        /// <summary>Maximum sandbox lifetime in seconds. Sandbox is terminated when reached.Use 0 for no timeout. Positive values must be at least 60. Defaults to86400, or to the source sandbox&apos;s timeout when starting from a snapshot.</summary>
         public int? TimeoutSeconds { get => _explicitNullValueTimeoutSeconds; set { _explicitNullValueTimeoutSeconds = value; AdditionalData?.Remove("timeoutSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeoutSeconds"); else _explicitNullProperties?.Remove("timeoutSeconds"); } }
         private int? _explicitNullValueTimeoutSeconds = default!;
         /// <summary>
@@ -121,8 +157,6 @@ namespace Soenneker.Render.OpenApiClient.Models
         public CreateSandboxRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            IdleTimeoutSeconds = 900;
-            TimeoutSeconds = 86400;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -142,8 +176,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "buildId", n => { BuildId = n.GetStringValue(); } },
+                { "buildName", n => { BuildName = n.GetStringValue(); } },
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestEnv>(global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestEnv.CreateFromDiscriminatorValue); } },
                 { "idleTimeoutSeconds", n => { IdleTimeoutSeconds = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestNetworkPolicy>(global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestNetworkPolicy.CreateFromDiscriminatorValue); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "plan", n => { Plan = n.GetStringValue(); } },
@@ -160,8 +197,11 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("buildId", BuildId);
+            writer.WriteStringValue("buildName", BuildName);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestEnv>("env", Env);
             writer.WriteIntValue("idleTimeoutSeconds", IdleTimeoutSeconds);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestNetworkPolicy>("networkPolicy", NetworkPolicy);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("plan", Plan);
