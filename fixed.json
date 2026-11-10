@@ -15004,6 +15004,14 @@
             }
           },
           {
+            "name": "name",
+            "in": "query",
+            "description": "Return only snapshots with exactly this name. Each snapshot taken\nwith a name is a new version, so this lists every version, newest\nfirst. The first \u0060available\u0060 one is the version \u0060snapshotName\u0060\nboots on sandbox create.\n",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "$ref": "#/components/parameters/cursorParam"
           },
           {
@@ -22394,7 +22402,9 @@
         "properties": {
           "command": {
             "type": "string",
-            "description": "Command text for the sandbox event timeline."
+            "description": "Command text for the sandbox event timeline.",
+            "deprecated": true,
+            "x-deprecated-reason": "Ignored. The sandbox timeline records the command sent in the run request."
           }
         },
         "description": "Optional body when minting a run connect token. \u0060command\u0060 is stored on\nthe exec timeline (truncated to 4KB); the full command is still sent\nto the sandbox proxy when executing.\n"

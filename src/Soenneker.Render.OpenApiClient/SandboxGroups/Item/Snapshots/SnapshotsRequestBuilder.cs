@@ -35,7 +35,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SnapshotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sandbox-groups/{sandboxGroupId}/snapshots?ownerId={ownerId}{&cursor*,limit*,status}", pathParameters)
+        public SnapshotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sandbox-groups/{sandboxGroupId}/snapshots?ownerId={ownerId}{&cursor*,limit*,name*,status}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SnapshotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sandbox-groups/{sandboxGroupId}/snapshots?ownerId={ownerId}{&cursor*,limit*,status}", rawUrl)
+        public SnapshotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sandbox-groups/{sandboxGroupId}/snapshots?ownerId={ownerId}{&cursor*,limit*,name*,status}", rawUrl)
         {
         }
         /// <summary>
@@ -131,6 +131,16 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
             /// <summary>The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Return only snapshots with exactly this name. Each snapshot takenwith a name is a new version, so this lists every version, newestfirst. The first `available` one is the version `snapshotName`boots on sandbox create.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string Name { get; set; }
+#endif
             /// <summary>The ID of the workspace whose snapshots to return.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
