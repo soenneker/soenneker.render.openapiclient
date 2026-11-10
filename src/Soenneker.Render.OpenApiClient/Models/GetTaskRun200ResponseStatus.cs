@@ -36,5 +36,13 @@ namespace Soenneker.Render.OpenApiClient.Models
         #pragma warning disable CS1591
         Paused,
         #pragma warning restore CS1591
+        [EnumMember(Value = "suspended")]
+        #pragma warning disable CS1591
+        Suspended,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sleeping")]
+        #pragma warning disable CS1591
+        Sleeping,
+        #pragma warning restore CS1591
     }
 }

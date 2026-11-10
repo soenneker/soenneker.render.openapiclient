@@ -27437,7 +27437,9 @@
           "succeeded",
           "failed",
           "canceled",
-          "paused"
+          "paused",
+          "suspended",
+          "sleeping"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -27471,6 +27473,14 @@
             {
               "value": "paused",
               "name": "Paused"
+            },
+            {
+              "value": "suspended",
+              "name": "Suspended"
+            },
+            {
+              "value": "sleeping",
+              "name": "Sleeping"
             }
           ]
         }
@@ -28505,7 +28515,9 @@
           "succeeded",
           "failed",
           "canceled",
-          "paused"
+          "paused",
+          "suspended",
+          "sleeping"
         ],
         "type": "string",
         "description": "The status of a flow run.",
@@ -28515,7 +28527,9 @@
           "FlowRunStatusSucceeded",
           "FlowRunStatusFailed",
           "FlowRunStatusCanceled",
-          "FlowRunStatusPaused"
+          "FlowRunStatusPaused",
+          "FlowRunStatusSuspended",
+          "FlowRunStatusSleeping"
         ],
         "x-ms-enum": {
           "name": "ListFlowRunsStatusParameterItem",
@@ -28544,6 +28558,14 @@
             {
               "value": "paused",
               "name": "Paused"
+            },
+            {
+              "value": "suspended",
+              "name": "Suspended"
+            },
+            {
+              "value": "sleeping",
+              "name": "Sleeping"
             }
           ]
         }
