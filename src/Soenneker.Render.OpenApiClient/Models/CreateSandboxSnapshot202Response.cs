@@ -41,6 +41,8 @@ namespace Soenneker.Render.OpenApiClient.Models
             else if (parseNode.GetChildNode("sourceSandboxId") is { } nullNodeSourceSandboxId && nullNodeSourceSandboxId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceSandboxId = null;
             if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("ttlSeconds") is null) { _explicitNullValueTtlSeconds = default!; _explicitNullProperties?.Remove("ttlSeconds"); }
+            else if (parseNode.GetChildNode("ttlSeconds") is { } nullNodeTtlSeconds && nullNodeTtlSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtlSeconds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -58,7 +60,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private string _explicitNullValueError = default!;
 #endif
-        /// <summary>The time after which the snapshot can no longer be retrieved or restored.Set by Render when the create request did not specify one.</summary>
+        /// <summary>The time after which the snapshot can no longer be retrieved or restored.Each time you create a sandbox from the snapshot, Render moves this timeforward so that the snapshot lives for its TTL after that use. For asnapshot that does not expire (a TTL of 0), this is 9999-12-31T23:59:59Z.</summary>
         public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
         private DateTimeOffset? _explicitNullValueExpiresAt = default!;
         /// <summary>The id property</summary>
@@ -130,6 +132,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
+        /// <summary>How long the snapshot lives after its last use, in seconds. 0 means thesnapshot does not expire. Absent for a snapshot that was created beforesnapshots had a TTL. Such a snapshot uses Render&apos;s default snapshot lifetime.</summary>
+        public int? TtlSeconds { get => _explicitNullValueTtlSeconds; set { _explicitNullValueTtlSeconds = value; AdditionalData?.Remove("ttlSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttlSeconds"); else _explicitNullProperties?.Remove("ttlSeconds"); } }
+        private int? _explicitNullValueTtlSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202Response"/> and sets the default values.
         /// </summary>
@@ -167,6 +172,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "sizeBytes", n => { SizeBytes = n.GetLongValue(); } },
                 { "sourceSandboxId", n => { SourceSandboxId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
+                { "ttlSeconds", n => { TtlSeconds = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -188,6 +194,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteLongValue("sizeBytes", SizeBytes);
             writer.WriteStringValue("sourceSandboxId", SourceSandboxId);
             writer.WriteStringValue("status", Status);
+            writer.WriteIntValue("ttlSeconds", TtlSeconds);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

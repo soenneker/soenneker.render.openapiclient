@@ -23,11 +23,14 @@ namespace Soenneker.Render.OpenApiClient.Models
             else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("ttlSeconds") is null) { _explicitNullValueTtlSeconds = default!; _explicitNullProperties?.Remove("ttlSeconds"); }
+            else if (parseNode.GetChildNode("ttlSeconds") is { } nullNodeTtlSeconds && nullNodeTtlSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtlSeconds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The time after which the snapshot can no longer be retrieved or restored.Must be in the future. Omit to use Render&apos;s default snapshot lifetime.</summary>
+        /// <summary>Deprecated. Use `ttlSeconds`. Must be in the future. Render sets the TTLto the time from the request until `expiresAt`.</summary>
+        [Obsolete("")]
         public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
         private DateTimeOffset? _explicitNullValueExpiresAt = default!;
         /// <summary>The kind property</summary>
@@ -50,6 +53,9 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
+        /// <summary>How long the snapshot lives after its last use, in seconds. Each time youcreate a sandbox from the snapshot, the snapshot lives for this long again.Use 0 to keep the snapshot until you delete it. Omit to use Render&apos;sdefault snapshot lifetime. Do not set both `ttlSeconds` and `expiresAt`.</summary>
+        public int? TtlSeconds { get => _explicitNullValueTtlSeconds; set { _explicitNullValueTtlSeconds = value; AdditionalData?.Remove("ttlSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttlSeconds"); else _explicitNullProperties?.Remove("ttlSeconds"); } }
+        private int? _explicitNullValueTtlSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshotRequest"/> and sets the default values.
         /// </summary>
@@ -78,6 +84,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "ttlSeconds", n => { TtlSeconds = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -90,6 +97,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("kind", Kind);
             writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("ttlSeconds", TtlSeconds);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

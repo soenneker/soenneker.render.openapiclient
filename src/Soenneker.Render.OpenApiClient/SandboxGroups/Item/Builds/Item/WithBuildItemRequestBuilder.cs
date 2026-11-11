@@ -34,6 +34,44 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.Item
         {
         }
         /// <summary>
+        /// Deletes one build: one version of an image. The build no longerappears in lists, can&apos;t be retrieved, and can&apos;t start sandboxes,including through the image&apos;s name. Deleting a deleted build returns 204.409 with `code: image_in_use` while sandboxes that aren&apos;t terminated, orsnapshots that haven&apos;t expired, still boot from the build. That includessnapshots of sandboxes restored from such snapshots, and pausedsandboxes. The message lists up to 10 of them. Delete them, or wait forthem to expire, and retry.404 with `code: build_not_found` if the build doesn&apos;t exist or belongsto another sandbox group.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `invalid build ID` if `buildId` is not awell-formed `sbb-` ID.
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// One build by ID. 404 with `code: build_not_found` if the build doesn&apos;texist or belongs to another sandbox group.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `invalid build ID` if `buildId` is not awell-formed `sbb-` ID.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
@@ -69,6 +107,25 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.Item
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Deletes one build: one version of an image. The build no longerappears in lists, can&apos;t be retrieved, and can&apos;t start sandboxes,including through the image&apos;s name. Deleting a deleted build returns 204.409 with `code: image_in_use` while sandboxes that aren&apos;t terminated, orsnapshots that haven&apos;t expired, still boot from the build. That includessnapshots of sandboxes restored from such snapshots, and pausedsandboxes. The message lists up to 10 of them. Delete them, or wait forthem to expire, and retry.404 with `code: build_not_found` if the build doesn&apos;t exist or belongsto another sandbox group.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `invalid build ID` if `buildId` is not awell-formed `sbb-` ID.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// One build by ID. 404 with `code: build_not_found` if the build doesn&apos;texist or belongs to another sandbox group.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `invalid build ID` if `buildId` is not awell-formed `sbb-` ID.

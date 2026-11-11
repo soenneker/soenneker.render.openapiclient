@@ -19,6 +19,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
             else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("failureCode") is null) { _explicitNullValueFailureCode = default!; _explicitNullProperties?.Remove("failureCode"); }
+            else if (parseNode.GetChildNode("failureCode") is { } nullNodeFailureCode && nullNodeFailureCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureCode = null;
             if (parseNode.GetChildNode("failureReason") is null) { _explicitNullValueFailureReason = default!; _explicitNullProperties?.Remove("failureReason"); }
             else if (parseNode.GetChildNode("failureReason") is { } nullNodeFailureReason && nullNodeFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureReason = null;
             if (parseNode.GetChildNode("finishedAt") is null) { _explicitNullValueFinishedAt = default!; _explicitNullProperties?.Remove("finishedAt"); }
@@ -42,7 +44,17 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
-        /// <summary>Why the build failed. Null unless `failed`.</summary>
+        /// <summary>Why the build failed, for code to check. Null unless `failed`. ThesandboxBuildFailureCode schema lists the codes. Treat a code youdon&apos;t recognize as `internal_error`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failureCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCode"); else _explicitNullProperties?.Remove("failureCode"); } }
+        private string? _explicitNullValueFailureCode = default!;
+#nullable restore
+#else
+        public string FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failureCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCode"); else _explicitNullProperties?.Remove("failureCode"); } }
+        private string _explicitNullValueFailureCode = default!;
+#endif
+        /// <summary>Why the build failed. Null unless `failed`. It can include theregistry&apos;s own error text, so show it as detail alongside amessage chosen from `failureCode` rather than as the headline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; AdditionalData?.Remove("failureReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureReason"); else _explicitNullProperties?.Remove("failureReason"); } }
@@ -141,6 +153,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "failureCode", n => { FailureCode = n.GetStringValue(); } },
                 { "failureReason", n => { FailureReason = n.GetStringValue(); } },
                 { "finishedAt", n => { FinishedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -159,6 +172,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            writer.WriteStringValue("failureCode", FailureCode);
             writer.WriteStringValue("failureReason", FailureReason);
             writer.WriteDateTimeOffsetValue("finishedAt", FinishedAt);
             writer.WriteStringValue("id", Id);
