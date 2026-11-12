@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// The sandbox group&apos;s concurrency settings to update.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class UpdateSandboxGroupRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -23,7 +24,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Maximum active sandboxes in the group. The configured value is cappedby Render&apos;s limit for this workspace. Responses return the effective limit.Lowering the limit does not stop existing sandboxes.</summary>
+        /// <summary>The maximum number of active sandboxes allowed in this group. Must be atleast 1. Render caps this value at the workspace&apos;s limit and returns theeffective limit. Lowering the limit does not stop existing sandboxes.</summary>
         public int? ConcurrencyLimit { get => _explicitNullValueConcurrencyLimit; set { _explicitNullValueConcurrencyLimit = value; AdditionalData?.Remove("concurrencyLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrencyLimit"); else _explicitNullProperties?.Remove("concurrencyLimit"); } }
         private int? _explicitNullValueConcurrencyLimit = default!;
         /// <summary>

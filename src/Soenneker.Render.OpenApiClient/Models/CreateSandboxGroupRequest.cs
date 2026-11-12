@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// The sandbox group to create.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateSandboxGroupRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -27,7 +28,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Name, unique within the workspace.</summary>
+        /// <summary>The sandbox group&apos;s name. Must be unique within the workspace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -37,7 +38,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>Workspace ID.</summary>
+        /// <summary>The ID of the workspace to create the sandbox group in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
@@ -47,7 +48,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
         private string _explicitNullValueOwnerId = default!;
 #endif
-        /// <summary>Region for the group&apos;s sandboxes. Defaults to Render&apos;s default sandbox region.</summary>
+        /// <summary>The Render region where the group&apos;s sandboxes run. Defaults to `oregon`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }

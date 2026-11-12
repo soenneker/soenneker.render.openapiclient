@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// A group of sandboxes in a workspace that share a region, concurrency limit, and credentials.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateSandboxGroup201Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -39,13 +40,13 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The effective limit on active sandboxes in this group, capped by Render&apos;s limit for this workspace.</summary>
+        /// <summary>The maximum number of active sandboxes allowed in this group, capped by Render&apos;s limit for the workspace.</summary>
         public int? ConcurrencyLimit { get => _explicitNullValueConcurrencyLimit; set { _explicitNullValueConcurrencyLimit = value; AdditionalData?.Remove("concurrencyLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrencyLimit"); else _explicitNullProperties?.Remove("concurrencyLimit"); } }
         private int? _explicitNullValueConcurrencyLimit = default!;
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp when the sandbox group was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
-        /// <summary>Environment this group is bound to.</summary>
+        /// <summary>The ID of the environment this sandbox group belongs to, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; AdditionalData?.Remove("environmentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentId"); else _explicitNullProperties?.Remove("environmentId"); } }
@@ -65,10 +66,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>Whether this is the workspace&apos;s default group. Sandboxes are createdhere unless a group is given.</summary>
+        /// <summary>Whether this is the workspace&apos;s default sandbox group. Create requests that omit `sandboxGroupId` use this group.</summary>
         public bool? IsDefault { get => _explicitNullValueIsDefault; set { _explicitNullValueIsDefault = value; AdditionalData?.Remove("isDefault"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDefault"); else _explicitNullProperties?.Remove("isDefault"); } }
         private bool? _explicitNullValueIsDefault = default!;
-        /// <summary>Human-friendly name for the group.</summary>
+        /// <summary>The sandbox group&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -88,7 +89,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
         private string _explicitNullValueOwnerId = default!;
 #endif
-        /// <summary>Render region the group operates in.</summary>
+        /// <summary>The Render region where the group&apos;s sandboxes run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
@@ -98,7 +99,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp when the sandbox group was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>

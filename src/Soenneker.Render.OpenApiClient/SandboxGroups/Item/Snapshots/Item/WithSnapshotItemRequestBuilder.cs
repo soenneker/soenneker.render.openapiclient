@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.Item
         {
         }
         /// <summary>
-        /// Idempotent: returns 204 if the snapshot is already deleted or expired.Sandboxes created from the snapshot are not affected. A snapshot thatbelongs to another sandbox group returns 404.400 with `code: invalid_sandbox_group_id` when `sandboxGroupId` is malformed.400 with `code: invalid_snapshot_id` when `snapshotId` is malformed.409 with `code: snapshot_creating` while the capture is in progress.
+        /// Delete a snapshot. Sandboxes created from it are not affected. ReturnsHTTP 204 if the snapshot is already deleted or expired.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +72,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// One snapshot by ID. Deleted and expired snapshots return 404. A snapshotthat belongs to another sandbox group returns 404.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `code: invalid_snapshot_id` if `snapshotId` isnot a well-formed `snp-` ID.
+        /// Retrieve a snapshot by ID.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -109,7 +109,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Idempotent: returns 204 if the snapshot is already deleted or expired.Sandboxes created from the snapshot are not affected. A snapshot thatbelongs to another sandbox group returns 404.400 with `code: invalid_sandbox_group_id` when `sandboxGroupId` is malformed.400 with `code: invalid_snapshot_id` when `snapshotId` is malformed.409 with `code: snapshot_creating` while the capture is in progress.
+        /// Delete a snapshot. Sandboxes created from it are not affected. ReturnsHTTP 204 if the snapshot is already deleted or expired.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.Item
             return requestInfo;
         }
         /// <summary>
-        /// One snapshot by ID. Deleted and expired snapshots return 404. A snapshotthat belongs to another sandbox group returns 404.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `code: invalid_snapshot_id` if `snapshotId` isnot a well-formed `snp-` ID.
+        /// Retrieve a snapshot by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,12 +156,12 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.Item
             return new global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.Item.WithSnapshotItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// One snapshot by ID. Deleted and expired snapshots return 404. A snapshotthat belongs to another sandbox group returns 404.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `code: invalid_snapshot_id` if `snapshotId` isnot a well-formed `snp-` ID.
+        /// Retrieve a snapshot by ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSnapshotItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>The ID of the workspace the sandbox group belongs to. Optional: the workspaceis determined from the sandbox group ID, and this parameter is ignored whensupplied.</summary>
+            /// <summary>The ID of the workspace the sandbox group belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ownerId")]

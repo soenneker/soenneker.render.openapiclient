@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// The source container image used for this build.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateSandboxBuild201ResponseSource : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -27,7 +28,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The image property</summary>
+        /// <summary>The name of the source image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; AdditionalData?.Remove("image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
@@ -37,7 +38,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; AdditionalData?.Remove("image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
         private string _explicitNullValueImage = default!;
 #endif
-        /// <summary>The reference property</summary>
+        /// <summary>The tag or digest identifying the source image version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
@@ -47,7 +48,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string _explicitNullValueReference = default!;
 #endif
-        /// <summary>The repository property</summary>
+        /// <summary>The registry and repository path containing the source image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }

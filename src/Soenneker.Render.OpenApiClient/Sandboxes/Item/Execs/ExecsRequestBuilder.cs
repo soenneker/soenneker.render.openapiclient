@@ -19,7 +19,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Execs
     public partial class ExecsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.sandboxes.item.execs.item collection</summary>
-        /// <param name="position">The ID of the execution</param>
+        /// <param name="position">The ID of the sandbox execution.</param>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Execs.Item.WithExecItemRequestBuilder"/></returns>
         public global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Execs.Item.WithExecItemRequestBuilder this[string position]
         {

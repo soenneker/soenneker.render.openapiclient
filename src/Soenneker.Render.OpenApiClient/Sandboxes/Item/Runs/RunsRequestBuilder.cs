@@ -16,7 +16,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs
     public partial class RunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.sandboxes.item.runs.item collection</summary>
-        /// <param name="position">The run operation to authorize — `sync` (buffered) or `stream` (server-sent events).</param>
+        /// <param name="position">The command run operation to authorize. Use `sync` for a buffered response or `stream` for server-sent events.</param>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.WithOperationItemRequestBuilder"/></returns>
         public global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.WithOperationItemRequestBuilder this[string position]
         {

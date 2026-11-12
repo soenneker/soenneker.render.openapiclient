@@ -16,7 +16,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files
     public partial class FilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.sandboxes.item.files.item collection</summary>
-        /// <param name="position">The file operation to authorize — `upload` (PUT a file or tar archive) or `download` (GET a file, or a directory as a tar archive).</param>
+        /// <param name="position">The file transfer operation to authorize. Use `upload` to send a file or tar archive with HTTP PUT, or `download` to retrieve a file or directory archive with HTTP GET.</param>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.WithOperationItemRequestBuilder"/></returns>
         public global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.WithOperationItemRequestBuilder this[string position]
         {

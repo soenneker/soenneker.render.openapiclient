@@ -34,10 +34,10 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Snapshots
         {
         }
         /// <summary>
-        /// Capture a snapshot of a running sandbox. Returns 202 with the snapshot in`creating`. Poll until it is `available` or `failed`. The sandbox keepsrunning; a runtime capture pauses it briefly.400 with `code: invalid_snapshot_name` if `name` is malformed. 409 with`code: sandbox_not_running` if the sandbox is not `running`, or`code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Capture a snapshot of a running sandbox. Returns HTTP 202 with the snapshotin `creating` status. Retrieve the snapshot until its status is `available`or `failed`. The sandbox continues running, with a brief pause when capturinga runtime snapshot.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202Response"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The settings for the sandbox snapshot to capture.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -75,10 +75,10 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Snapshots
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Capture a snapshot of a running sandbox. Returns 202 with the snapshot in`creating`. Poll until it is `available` or `failed`. The sandbox keepsrunning; a runtime capture pauses it briefly.400 with `code: invalid_snapshot_name` if `name` is malformed. 409 with`code: sandbox_not_running` if the sandbox is not `running`, or`code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Capture a snapshot of a running sandbox. Returns HTTP 202 with the snapshotin `creating` status. Retrieve the snapshot until its status is `available`or `failed`. The sandbox continues running, with a brief pause when capturinga runtime snapshot.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The settings for the sandbox snapshot to capture.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

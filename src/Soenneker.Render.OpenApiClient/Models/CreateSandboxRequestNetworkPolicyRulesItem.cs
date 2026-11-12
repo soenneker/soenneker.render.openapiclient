@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// A destination that sandboxes can access when the network policy is `allow-list`.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateSandboxRequestNetworkPolicyRulesItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -25,7 +26,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Hostname to apply the rule to. Matching is exact: `foo.local` does notcover `api.foo.local`, which needs its own rule or `*.foo.local`. Awildcard is only allowed as the leftmost label.</summary>
+        /// <summary>The hostname this rule allows, up to 253 characters. Matching is exact:`foo.local` does not match `api.foo.local`. Use a separate rule or`*.foo.local` for subdomains. A wildcard is allowed only as the leftmost label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
@@ -35,7 +36,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
-        /// <summary>Protocol this rule admits. Only `https` is accepted:under `allow-list` every other outbound protocol is dropped.</summary>
+        /// <summary>The protocol allowed for this destination. Defaults to `https`. The `allow-list` policy blocks outbound traffic that uses other protocols.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.HttpsProtocol? Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; AdditionalData?.Remove("protocol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
         private global::Soenneker.Render.OpenApiClient.Models.HttpsProtocol? _explicitNullValueProtocol = default!;
         /// <summary>

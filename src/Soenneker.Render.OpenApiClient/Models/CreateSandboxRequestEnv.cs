@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// Inline environment variables injected into the sandbox at creation.
+    /// The environment variables to set when creating the sandbox.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateSandboxRequestEnv : IAdditionalDataHolder, IParsable

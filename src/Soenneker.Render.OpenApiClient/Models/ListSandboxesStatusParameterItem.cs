@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>The sandbox&apos;s current status.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ListSandboxesStatusParameterItem
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "creating")]
         #pragma warning disable CS1591

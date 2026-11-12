@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Render.OpenApiClient.Models;
 using Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds;
+using Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials;
 using Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots;
 using System.Collections.Generic;
 using System.IO;
@@ -23,6 +24,11 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item
         public global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.BuildsRequestBuilder Builds
         {
             get => new global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.BuildsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The credentials property</summary>
+        public global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.CredentialsRequestBuilder Credentials
+        {
+            get => new global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.CredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The snapshots property</summary>
         public global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.SnapshotsRequestBuilder Snapshots
@@ -46,7 +52,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item
         {
         }
         /// <summary>
-        /// Retrieve a sandbox group. 400 `invalid_sandbox_group_id` for a malformed ID.
+        /// Retrieve a sandbox group by ID.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,10 +89,10 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a sandbox group&apos;s concurrency limit. Returns 400 for a malformedID (`invalid_sandbox_group_id`), missing `concurrencyLimit`, or a valuebelow 1. The response returns the effective limit after applying Render&apos;s cap.
+        /// Update a sandbox group&apos;s concurrency limit. The response contains theeffective limit after applying Render&apos;s limit for the workspace.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The sandbox group&apos;s concurrency settings to update.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -124,7 +130,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a sandbox group. 400 `invalid_sandbox_group_id` for a malformed ID.
+        /// Retrieve a sandbox group by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,10 +149,10 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a sandbox group&apos;s concurrency limit. Returns 400 for a malformedID (`invalid_sandbox_group_id`), missing `concurrencyLimit`, or a valuebelow 1. The response returns the effective limit after applying Render&apos;s cap.
+        /// Update a sandbox group&apos;s concurrency limit. The response contains theeffective limit after applying Render&apos;s limit for the workspace.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The sandbox group&apos;s concurrency settings to update.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

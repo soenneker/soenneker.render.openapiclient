@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
         {
         }
         /// <summary>
-        /// Mint a short-lived, capability-scoped connect token that authorizes asingle file upload or download against the sandbox, and return thesandbox-proxy endpoint to invoke with it. The caller streams the filebytes directly to (or from) that endpoint with the token as a bearercredential. `application/octet-stream` carries a single file and`application/x-tar` a directory archive, with compression carriedseparately by `Content-Encoding: gzip` in either direction; directorydownloads return `application/x-tar` with `Content-Encoding: gzip`. Thetoken is bound to this sandbox, operation, and path, and expiresshortly after issuance.409 with `code: sandbox_not_running` if the sandbox is terminated orerrored, or `code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Create a short-lived connect token for a file upload or download. Transferthe file directly to or from the URL in the response, using the token asthe bearer token. The token authorizes only the specified sandbox, operation,and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` fora directory archive. For gzip compression, also set `Content-Encoding: gzip`.Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mint a short-lived, capability-scoped connect token that authorizes asingle file upload or download against the sandbox, and return thesandbox-proxy endpoint to invoke with it. The caller streams the filebytes directly to (or from) that endpoint with the token as a bearercredential. `application/octet-stream` carries a single file and`application/x-tar` a directory archive, with compression carriedseparately by `Content-Encoding: gzip` in either direction; directorydownloads return `application/x-tar` with `Content-Encoding: gzip`. Thetoken is bound to this sandbox, operation, and path, and expiresshortly after issuance.409 with `code: sandbox_not_running` if the sandbox is terminated orerrored, or `code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Create a short-lived connect token for a file upload or download. Transferthe file directly to or from the URL in the response, using the token asthe bearer token. The token authorizes only the specified sandbox, operation,and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` fora directory archive. For gzip compression, also set `Content-Encoding: gzip`.Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,12 +101,12 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
             return new global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token.TokenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Mint a short-lived, capability-scoped connect token that authorizes asingle file upload or download against the sandbox, and return thesandbox-proxy endpoint to invoke with it. The caller streams the filebytes directly to (or from) that endpoint with the token as a bearercredential. `application/octet-stream` carries a single file and`application/x-tar` a directory archive, with compression carriedseparately by `Content-Encoding: gzip` in either direction; directorydownloads return `application/x-tar` with `Content-Encoding: gzip`. Thetoken is bound to this sandbox, operation, and path, and expiresshortly after issuance.409 with `code: sandbox_not_running` if the sandbox is terminated orerrored, or `code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Create a short-lived connect token for a file upload or download. Transferthe file directly to or from the URL in the response, using the token asthe bearer token. The token authorizes only the specified sandbox, operation,and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` fora directory archive. For gzip compression, also set `Content-Encoding: gzip`.Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TokenRequestBuilderPostQueryParameters 
         {
-            /// <summary>Path in the sandbox this token authorizes. A relative path resolves within the sandbox&apos;s working directory, which is the image&apos;s WORKDIR or, when the image sets none, the home directory (&quot;.&quot; is the working directory itself); an absolute path addresses the sandbox filesystem root. For an archive upload, the extraction root; for a download, the file or directory to fetch.</summary>
+            /// <summary>The file or directory path the token authorizes. For archive uploads, thisis the directory to extract into. For downloads, it is the file or directoryto retrieve.Relative paths are resolved from the image&apos;s `WORKDIR`, or the home directoryif no `WORKDIR` is set. Use `.` for that working directory. Absolute pathsare resolved from the sandbox filesystem root.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("path")]

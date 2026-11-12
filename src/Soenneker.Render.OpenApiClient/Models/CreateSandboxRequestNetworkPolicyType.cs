@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
-    /// <summary>How outbound traffic is handled. `allow-all`, `deny-all`, or`allow-list` (requires additional `rules`).</summary>
+    /// <summary>How Render handles outbound traffic from the sandbox. The `allow-list` policy requires `rules`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateSandboxRequestNetworkPolicyType
     {

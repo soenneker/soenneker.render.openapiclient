@@ -19,7 +19,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
     public partial class SnapshotsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.sandboxGroups.item.snapshots.item collection</summary>
-        /// <param name="position">The ID of the snapshot</param>
+        /// <param name="position">The ID of the sandbox snapshot.</param>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.Item.WithSnapshotItemRequestBuilder"/></returns>
         public global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.Item.WithSnapshotItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
         {
         }
         /// <summary>
-        /// Snapshots in a sandbox group, newest first. Expired and deleted snapshotsare omitted.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, `code: invalid_owner_id` if `ownerId` is missing orrepeated, `code: invalid_status` for a status outside the snapshot statusvocabulary, `code: invalid_cursor` for a malformed or unknown cursor, or`code: invalid_limit` for a limit outside 1 to 100.
+        /// List snapshots in a sandbox group, newest first. Excludes expired anddeleted snapshots.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.SandboxSnapshotWithCursor&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Snapshots in a sandbox group, newest first. Expired and deleted snapshotsare omitted.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, `code: invalid_owner_id` if `ownerId` is missing orrepeated, `code: invalid_status` for a status outside the snapshot statusvocabulary, `code: invalid_cursor` for a malformed or unknown cursor, or`code: invalid_limit` for a limit outside 1 to 100.
+        /// List snapshots in a sandbox group, newest first. Excludes expired anddeleted snapshots.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
             return new global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.SnapshotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Snapshots in a sandbox group, newest first. Expired and deleted snapshotsare omitted.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, `code: invalid_owner_id` if `ownerId` is missing orrepeated, `code: invalid_status` for a status outside the snapshot statusvocabulary, `code: invalid_cursor` for a malformed or unknown cursor, or`code: invalid_limit` for a limit outside 1 to 100.
+        /// List snapshots in a sandbox group, newest first. Excludes expired anddeleted snapshots.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SnapshotsRequestBuilderGetQueryParameters 
@@ -131,7 +131,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
             /// <summary>The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Return only snapshots with exactly this name. Each snapshot takenwith a name is a new version, so this lists every version, newestfirst. The first `available` one is the version `snapshotName`boots on sandbox create.</summary>
+            /// <summary>Filter for snapshots with exactly this name. Multiple snapshots can sharea name; results include each version, newest first. When creating a sandboxwith `snapshotName`, Render uses the most recently created snapshotwith that name that is `available` and unexpired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -151,7 +151,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
             [QueryParameter("ownerId")]
             public string OwnerId { get; set; }
 #endif
-            /// <summary>Filter by snapshot status.</summary>
+            /// <summary>Filter for snapshots with the specified statuses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

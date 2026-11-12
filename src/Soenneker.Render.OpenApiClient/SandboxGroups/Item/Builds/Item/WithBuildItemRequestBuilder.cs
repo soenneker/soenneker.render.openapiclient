@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.Item
         {
         }
         /// <summary>
-        /// Deletes one build: one version of an image. The build no longerappears in lists, can&apos;t be retrieved, and can&apos;t start sandboxes,including through the image&apos;s name. Deleting a deleted build returns 204.409 with `code: image_in_use` while sandboxes that aren&apos;t terminated, orsnapshots that haven&apos;t expired, still boot from the build. That includessnapshots of sandboxes restored from such snapshots, and pausedsandboxes. The message lists up to 10 of them. Delete them, or wait forthem to expire, and retry.404 with `code: build_not_found` if the build doesn&apos;t exist or belongsto another sandbox group.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `invalid build ID` if `buildId` is not awell-formed `sbb-` ID.
+        /// Delete a build of a sandbox image. The build no longer appears in listsand cannot be retrieved or used to create sandboxes, including by imagename. Repeated requests to delete the build return HTTP 204.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +72,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// One build by ID. 404 with `code: build_not_found` if the build doesn&apos;texist or belongs to another sandbox group.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `invalid build ID` if `buildId` is not awell-formed `sbb-` ID.
+        /// Retrieve a build by ID.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -109,7 +109,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes one build: one version of an image. The build no longerappears in lists, can&apos;t be retrieved, and can&apos;t start sandboxes,including through the image&apos;s name. Deleting a deleted build returns 204.409 with `code: image_in_use` while sandboxes that aren&apos;t terminated, orsnapshots that haven&apos;t expired, still boot from the build. That includessnapshots of sandboxes restored from such snapshots, and pausedsandboxes. The message lists up to 10 of them. Delete them, or wait forthem to expire, and retry.404 with `code: build_not_found` if the build doesn&apos;t exist or belongsto another sandbox group.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `invalid build ID` if `buildId` is not awell-formed `sbb-` ID.
+        /// Delete a build of a sandbox image. The build no longer appears in listsand cannot be retrieved or used to create sandboxes, including by imagename. Repeated requests to delete the build return HTTP 204.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.Item
             return requestInfo;
         }
         /// <summary>
-        /// One build by ID. 404 with `code: build_not_found` if the build doesn&apos;texist or belongs to another sandbox group.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or `invalid build ID` if `buildId` is not awell-formed `sbb-` ID.
+        /// Retrieve a build by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

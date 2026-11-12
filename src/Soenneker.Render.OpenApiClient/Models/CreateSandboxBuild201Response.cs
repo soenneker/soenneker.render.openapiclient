@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// A build that converts a container image into an image that sandboxes can use.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateSandboxBuild201Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -41,10 +42,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp when the sandbox build was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
-        /// <summary>Why the build failed, for code to check. Null unless `failed`. ThesandboxBuildFailureCode schema lists the codes. Treat a code youdon&apos;t recognize as `internal_error`.</summary>
+        /// <summary>A machine-readable reason the build failed. Null unless the status is`failed`. See `sandboxBuildFailureCode` for known codes. Treat unrecognizedcodes as `internal_error`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failureCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCode"); else _explicitNullProperties?.Remove("failureCode"); } }
@@ -54,7 +55,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failureCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCode"); else _explicitNullProperties?.Remove("failureCode"); } }
         private string _explicitNullValueFailureCode = default!;
 #endif
-        /// <summary>Why the build failed. Null unless `failed`. It can include theregistry&apos;s own error text, so show it as detail alongside amessage chosen from `failureCode` rather than as the headline.</summary>
+        /// <summary>A description of why the build failed. Null unless the status is `failed`.May include error text from the image registry. When displaying errors, use`failureCode` to select the main message and show this value as additionaldetail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; AdditionalData?.Remove("failureReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureReason"); else _explicitNullProperties?.Remove("failureReason"); } }
@@ -64,7 +65,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; AdditionalData?.Remove("failureReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureReason"); else _explicitNullProperties?.Remove("failureReason"); } }
         private string _explicitNullValueFailureReason = default!;
 #endif
-        /// <summary>When the build succeeded or failed.</summary>
+        /// <summary>The timestamp when the build succeeded or failed, in ISO 8601 format. Null while the build is pending or running.</summary>
         public DateTimeOffset? FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; AdditionalData?.Remove("finishedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finishedAt"); else _explicitNullProperties?.Remove("finishedAt"); } }
         private DateTimeOffset? _explicitNullValueFinishedAt = default!;
         /// <summary>The id property</summary>
@@ -77,7 +78,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>Names the image. Every build of an image shares it.</summary>
+        /// <summary>The name used to select this image when creating a sandbox. Multiple builds can share a name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -97,7 +98,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string SandboxGroupId { get => _explicitNullValueSandboxGroupId; set { _explicitNullValueSandboxGroupId = value; AdditionalData?.Remove("sandboxGroupId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxGroupId"); else _explicitNullProperties?.Remove("sandboxGroupId"); } }
         private string _explicitNullValueSandboxGroupId = default!;
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>The source container image used for this build.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandboxBuild201ResponseSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
@@ -107,7 +108,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandboxBuild201ResponseSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateSandboxBuild201ResponseSource _explicitNullValueSource = default!;
 #endif
-        /// <summary>The image digest the build converts.</summary>
+        /// <summary>The digest of the source image converted by this build.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceDigest { get => _explicitNullValueSourceDigest; set { _explicitNullValueSourceDigest = value; AdditionalData?.Remove("sourceDigest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceDigest"); else _explicitNullProperties?.Remove("sourceDigest"); } }

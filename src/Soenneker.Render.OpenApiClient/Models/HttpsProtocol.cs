@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
-    /// <summary>Protocol this rule admits. Only `https` is accepted:under `allow-list` every other outbound protocol is dropped.</summary>
+    /// <summary>The protocol allowed for this destination. Defaults to `https`. The `allow-list` policy blocks outbound traffic that uses other protocols.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum HttpsProtocol
     {

@@ -19,7 +19,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds
     public partial class BuildsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.sandboxGroups.item.builds.item collection</summary>
-        /// <param name="position">The ID of the build</param>
+        /// <param name="position">The ID of the sandbox build.</param>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.Item.WithBuildItemRequestBuilder"/></returns>
         public global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.Item.WithBuildItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds
         {
         }
         /// <summary>
-        /// Builds in a sandbox group, newest first.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, `code: invalid_status` for a status outside thebuild status vocabulary, `code: invalid_cursor` for a malformed cursor,or `code: invalid_limit` for a limit outside 1 to 100.
+        /// List builds in a sandbox group, newest first.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.SandboxBuildWithCursor&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,10 +85,10 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Starts converting an OCI image into a sandbox image, and returns thebuild without waiting for it. Poll the build until it `succeeded` or`failed`, then pass its ID as `buildId` to create a sandbox. A requestfor a name and image digest the group already has, or is building,returns that build.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or a message if the image is invalid or itsregistry can&apos;t serve it.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.429 if the group already has as many builds pending or running as itslimit allows. The message includes the limit.
+        /// Start converting an OCI container image into an image that sandboxes canuse. New builds run asynchronously. Retrieve the build until its status is`succeeded` or `failed`. After it succeeds, provide its ID as `buildId` whencreating a sandbox.If the group already has a pending, running, or succeeded build for the samename and image digest, Render returns that build. Retrying a failed buildstarts a new build.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandboxBuild201Response"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The source container image and settings for the sandbox build.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -126,7 +126,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxBuild201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.CreateSandboxBuild201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Builds in a sandbox group, newest first.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, `code: invalid_status` for a status outside thebuild status vocabulary, `code: invalid_cursor` for a malformed cursor,or `code: invalid_limit` for a limit outside 1 to 100.
+        /// List builds in a sandbox group, newest first.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,10 +145,10 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds
             return requestInfo;
         }
         /// <summary>
-        /// Starts converting an OCI image into a sandbox image, and returns thebuild without waiting for it. Poll the build until it `succeeded` or`failed`, then pass its ID as `buildId` to create a sandbox. A requestfor a name and image digest the group already has, or is building,returns that build.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, or a message if the image is invalid or itsregistry can&apos;t serve it.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.429 if the group already has as many builds pending or running as itslimit allows. The message includes the limit.
+        /// Start converting an OCI container image into an image that sandboxes canuse. New builds run asynchronously. Retrieve the build until its status is`succeeded` or `failed`. After it succeeds, provide its ID as `buildId` whencreating a sandbox.If the group already has a pending, running, or succeeded build for the samename and image digest, Render returns that build. Retrying a failed buildstarts a new build.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The source container image and settings for the sandbox build.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,7 +176,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds
             return new global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.BuildsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Builds in a sandbox group, newest first.400 with `code: invalid_sandbox_group_id` if `sandboxGroupId` is not awell-formed `sbg-` ID, `code: invalid_status` for a status outside thebuild status vocabulary, `code: invalid_cursor` for a malformed cursor,or `code: invalid_limit` for a limit outside 1 to 100.
+        /// List builds in a sandbox group, newest first.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BuildsRequestBuilderGetQueryParameters 
@@ -194,7 +194,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds
             /// <summary>The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Return only builds of the image with this name.</summary>
+            /// <summary>Filter for builds with exactly this image name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -204,7 +204,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
-            /// <summary>Filter by build status.</summary>
+            /// <summary>Filter for builds with the specified statuses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

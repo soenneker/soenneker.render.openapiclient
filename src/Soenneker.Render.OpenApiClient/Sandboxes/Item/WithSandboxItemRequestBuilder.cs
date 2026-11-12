@@ -132,7 +132,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSandboxItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>The ID of the workspace the sandbox belongs to. Optional: the workspace isdetermined from the sandbox ID, and this parameter is ignored when supplied.</summary>
+            /// <summary>The ID of the workspace the sandbox belongs to. If provided, it must match the sandbox&apos;s workspace. If omitted, Render determines the workspace from the sandbox ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ownerId")]

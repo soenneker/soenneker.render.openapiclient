@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Terminate
         {
         }
         /// <summary>
-        /// Terminate the sandbox with the provided ID. Idempotent: returns 204 from anystate, including `terminated`. Terminating a `creating` sandbox cancelsboot/setup immediately.
+        /// Terminate the sandbox with the provided ID. Returns HTTP 204 even if thesandbox is already terminated. You can also terminate a sandbox while itis starting (`creating`).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +68,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Terminate
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Terminate the sandbox with the provided ID. Idempotent: returns 204 from anystate, including `terminated`. Terminating a `creating` sandbox cancelsboot/setup immediately.
+        /// Terminate the sandbox with the provided ID. Returns HTTP 204 even if thesandbox is already terminated. You can also terminate a sandbox while itis starting (`creating`).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

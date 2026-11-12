@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// An isolated compute environment for running code, executing commands, and transferring files.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateSandbox201Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -43,7 +44,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp when the sandbox was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The id property</summary>
@@ -56,7 +57,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>Seconds of inactivity before the sandbox is suspended. 0 disables automatic idle suspension.</summary>
+        /// <summary>The number of seconds of inactivity before Render suspends the sandbox. A value of 0 disables automatic idle suspension.</summary>
         public int? IdleTimeoutSeconds { get => _explicitNullValueIdleTimeoutSeconds; set { _explicitNullValueIdleTimeoutSeconds = value; AdditionalData?.Remove("idleTimeoutSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idleTimeoutSeconds"); else _explicitNullProperties?.Remove("idleTimeoutSeconds"); } }
         private int? _explicitNullValueIdleTimeoutSeconds = default!;
         /// <summary>The label set when the sandbox was created.</summary>
@@ -69,7 +70,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The networkPolicy property</summary>
+        /// <summary>The policy that controls outbound traffic from the sandbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201ResponseNetworkPolicy? NetworkPolicy { get => _explicitNullValueNetworkPolicy; set { _explicitNullValueNetworkPolicy = value; AdditionalData?.Remove("networkPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkPolicy"); else _explicitNullProperties?.Remove("networkPolicy"); } }
@@ -79,7 +80,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201ResponseNetworkPolicy NetworkPolicy { get => _explicitNullValueNetworkPolicy; set { _explicitNullValueNetworkPolicy = value; AdditionalData?.Remove("networkPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkPolicy"); else _explicitNullProperties?.Remove("networkPolicy"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201ResponseNetworkPolicy _explicitNullValueNetworkPolicy = default!;
 #endif
-        /// <summary>Compute plan. See `sandboxPlan` for known values.</summary>
+        /// <summary>The sandbox&apos;s compute plan. See `sandboxPlan` for known values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
@@ -89,7 +90,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
         private string _explicitNullValuePlan = default!;
 #endif
-        /// <summary>Region the sandbox is running in.</summary>
+        /// <summary>The Render region where the sandbox runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
@@ -99,7 +100,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>The sandbox group this sandbox belongs to.</summary>
+        /// <summary>The ID of the sandbox group this sandbox belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SandboxGroupId { get => _explicitNullValueSandboxGroupId; set { _explicitNullValueSandboxGroupId = value; AdditionalData?.Remove("sandboxGroupId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxGroupId"); else _explicitNullProperties?.Remove("sandboxGroupId"); } }
@@ -119,10 +120,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
-        /// <summary>When the sandbox was terminated, or null.</summary>
+        /// <summary>The timestamp when the sandbox was terminated, in ISO 8601 format. Null if the sandbox has not been terminated.</summary>
         public DateTimeOffset? TerminatedAt { get => _explicitNullValueTerminatedAt; set { _explicitNullValueTerminatedAt = value; AdditionalData?.Remove("terminatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminatedAt"); else _explicitNullProperties?.Remove("terminatedAt"); } }
         private DateTimeOffset? _explicitNullValueTerminatedAt = default!;
-        /// <summary>Maximum sandbox lifetime in seconds. 0 means the sandbox has no timeout.</summary>
+        /// <summary>The maximum time the sandbox can run continuously, in seconds. The sandboxterminates when this time elapses. If the sandbox is suspended and laterresumed, this timeout restarts. A value of 0 disables the runtime timeout.</summary>
         public int? TimeoutSeconds { get => _explicitNullValueTimeoutSeconds; set { _explicitNullValueTimeoutSeconds = value; AdditionalData?.Remove("timeoutSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeoutSeconds"); else _explicitNullProperties?.Remove("timeoutSeconds"); } }
         private int? _explicitNullValueTimeoutSeconds = default!;
         /// <summary>

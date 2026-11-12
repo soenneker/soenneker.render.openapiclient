@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// A minted connect token and the sandbox-proxy endpoint to invoke with it.Send the request (and body, where the operation takes one) to `uri`using `method`, with `token` as a bearer credential.
+    /// A short-lived connect token and the URL to use it with. Send the request to`uri` using `method`, with `token` as the bearer token. Include a requestbody if the operation requires one.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectSandboxRun201Response : IAdditionalDataHolder, IParsable
@@ -32,7 +32,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Identifier for this execution.</summary>
+        /// <summary>The ID of the sandbox execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExecutionId { get => _explicitNullValueExecutionId; set { _explicitNullValueExecutionId = value; AdditionalData?.Remove("executionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionId"); else _explicitNullProperties?.Remove("executionId"); } }
@@ -42,10 +42,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string ExecutionId { get => _explicitNullValueExecutionId; set { _explicitNullValueExecutionId = value; AdditionalData?.Remove("executionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionId"); else _explicitNullProperties?.Remove("executionId"); } }
         private string _explicitNullValueExecutionId = default!;
 #endif
-        /// <summary>When `token` stops being valid. Start the run before this time.</summary>
+        /// <summary>The timestamp when the token expires, in ISO 8601 format. Start the authorized operation before this time.</summary>
         public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
         private DateTimeOffset? _explicitNullValueExpiresAt = default!;
-        /// <summary>HTTP method to use against `uri`.</summary>
+        /// <summary>The HTTP method to use when sending the request to `uri`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; AdditionalData?.Remove("method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
@@ -55,7 +55,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; AdditionalData?.Remove("method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
         private string _explicitNullValueMethod = default!;
 #endif
-        /// <summary>Short-lived bearer token authorizing exactly this operation against the sandbox.</summary>
+        /// <summary>A short-lived bearer token that authorizes only the requested operation on this sandbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
@@ -65,7 +65,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
         private string _explicitNullValueToken = default!;
 #endif
-        /// <summary>The sandbox-proxy endpoint to invoke.</summary>
+        /// <summary>The URL to send the authorized command run or file transfer request to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; AdditionalData?.Remove("uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }

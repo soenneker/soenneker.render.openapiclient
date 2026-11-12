@@ -34,10 +34,9 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.Token
         {
         }
         /// <summary>
-        /// Mint a short-lived, capability-scoped connect token that authorizes asingle run operation against the specified sandbox. The response containsthe sandbox URI where the caller sends the command with the token as a bearer credential.409 with `code: sandbox_not_running` if the sandbox is terminated orerrored, or `code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Create a short-lived connect token for a command run in this sandbox.Send the command to the URL in the response, using the token as the bearertoken. The token authorizes only the requested operation.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response"/></returns>
-        /// <param name="body">Optional body when minting a run connect token. `command` is stored onthe exec timeline (truncated to 4KB); the full command is still sentto the sandbox proxy when executing.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -50,15 +49,14 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.Token
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRunRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response> PostAsync(global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRunRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
@@ -75,25 +73,22 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.Token
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mint a short-lived, capability-scoped connect token that authorizes asingle run operation against the specified sandbox. The response containsthe sandbox URI where the caller sends the command with the token as a bearer credential.409 with `code: sandbox_not_running` if the sandbox is terminated orerrored, or `code: sandbox_group_suspended` if the sandbox group is suspended.
+        /// Create a short-lived connect token for a command run in this sandbox.Send the command to the URL in the response, using the token as the bearertoken. The token authorizes only the requested operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Optional body when minting a run connect token. `command` is stored onthe exec timeline (truncated to 4KB); the full command is still sentto the sandbox proxy when executing.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRunRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRunRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

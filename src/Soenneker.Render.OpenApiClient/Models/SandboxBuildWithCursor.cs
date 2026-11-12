@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// A sandbox build with a cursor
+    /// A sandbox build with a cursor for fetching the next page of results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SandboxBuildWithCursor : IAdditionalDataHolder, IParsable

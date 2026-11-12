@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// Set either `type` or its deprecated alias `default`. Sending both isonly accepted when they name the same policy.
+    /// The outbound traffic policy to apply to the sandbox. Provide `type` or itsdeprecated alias `default`. If both are provided, they must match.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateSandboxRequestNetworkPolicy : IAdditionalDataHolder, IParsable
@@ -28,7 +28,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Deprecated alias for `type`, accepted so that clients built againstthe earlier schema keep working. To be removed before GA.</summary>
+        /// <summary>A deprecated alias for `type`. Use `type` instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public List<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestNetworkPolicyRulesItem> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private List<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestNetworkPolicyRulesItem> _explicitNullValueRules = default!;
 #endif
-        /// <summary>How outbound traffic is handled. `allow-all`, `deny-all`, or`allow-list` (requires additional `rules`).</summary>
+        /// <summary>How Render handles outbound traffic from the sandbox. The `allow-list` policy requires `rules`.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestNetworkPolicyType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestNetworkPolicyType? _explicitNullValueType = default!;
         /// <summary>

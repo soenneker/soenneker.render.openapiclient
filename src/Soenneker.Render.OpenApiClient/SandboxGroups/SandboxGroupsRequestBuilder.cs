@@ -19,7 +19,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups
     public partial class SandboxGroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.sandboxGroups.item collection</summary>
-        /// <param name="position">The ID of the sandbox group</param>
+        /// <param name="position">The ID of the sandbox group.</param>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.WithSandboxGroupItemRequestBuilder"/></returns>
         public global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.WithSandboxGroupItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups
         {
         }
         /// <summary>
-        /// List sandbox groups for a single workspace, newest first. The defaultpage size is 20 and the maximum is 100.Use the last item&apos;s cursor to fetch the next page, until it is empty.
+        /// List sandbox groups in a workspace, newest first. Returns up to 20 groupsby default, with a maximum of 100. To fetch the next page, pass the lastresult&apos;s cursor as `cursor`. Continue until the response is empty.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.SandboxGroupWithCursor&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,10 +85,10 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a sandbox group. The workspace&apos;s first group becomes its default.Returns 409 if the `name` is taken.
+        /// Create a sandbox group. The first group in a workspace becomes its default.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandboxGroup201Response"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The sandbox group to create.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -126,7 +126,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxGroup201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.CreateSandboxGroup201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List sandbox groups for a single workspace, newest first. The defaultpage size is 20 and the maximum is 100.Use the last item&apos;s cursor to fetch the next page, until it is empty.
+        /// List sandbox groups in a workspace, newest first. Returns up to 20 groupsby default, with a maximum of 100. To fetch the next page, pass the lastresult&apos;s cursor as `cursor`. Continue until the response is empty.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,10 +145,10 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups
             return requestInfo;
         }
         /// <summary>
-        /// Create a sandbox group. The workspace&apos;s first group becomes its default.Returns 409 if the `name` is taken.
+        /// Create a sandbox group. The first group in a workspace becomes its default.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The sandbox group to create.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,7 +176,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups
             return new global::Soenneker.Render.OpenApiClient.SandboxGroups.SandboxGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List sandbox groups for a single workspace, newest first. The defaultpage size is 20 and the maximum is 100.Use the last item&apos;s cursor to fetch the next page, until it is empty.
+        /// List sandbox groups in a workspace, newest first. Returns up to 20 groupsby default, with a maximum of 100. To fetch the next page, pass the lastresult&apos;s cursor as `cursor`. Continue until the response is empty.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SandboxGroupsRequestBuilderGetQueryParameters 
@@ -191,7 +191,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>Maximum groups to return.</summary>
+            /// <summary>The maximum number of sandbox groups to return, between 1 and 100. Defaults to 20.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>The ID of the workspace whose sandbox groups to return.</summary>

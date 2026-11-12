@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// The source container image and settings for the sandbox build.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateSandboxBuildRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -27,7 +28,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Names the image. Every build of an image shares it.</summary>
+        /// <summary>The name used to select this image when creating a sandbox, between 1 and 255 characters. Multiple builds can share a name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -37,7 +38,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>Pulls `sourceImage` from a private registry. Used for this build only and never stored.</summary>
+        /// <summary>Credentials used to pull `sourceImage` from a private registry for this build.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandboxBuildRequestRegistryCredential? RegistryCredential { get => _explicitNullValueRegistryCredential; set { _explicitNullValueRegistryCredential = value; AdditionalData?.Remove("registryCredential"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registryCredential"); else _explicitNullProperties?.Remove("registryCredential"); } }
@@ -47,7 +48,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandboxBuildRequestRegistryCredential RegistryCredential { get => _explicitNullValueRegistryCredential; set { _explicitNullValueRegistryCredential = value; AdditionalData?.Remove("registryCredential"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registryCredential"); else _explicitNullProperties?.Remove("registryCredential"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateSandboxBuildRequestRegistryCredential _explicitNullValueRegistryCredential = default!;
 #endif
-        /// <summary>The image to convert, by tag or digest.</summary>
+        /// <summary>The container image to convert, specified by tag or digest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceImage { get => _explicitNullValueSourceImage; set { _explicitNullValueSourceImage = value; AdditionalData?.Remove("sourceImage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceImage"); else _explicitNullProperties?.Remove("sourceImage"); } }

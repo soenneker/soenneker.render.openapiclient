@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// The settings for the sandbox snapshot to capture.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateSandboxSnapshotRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -29,11 +30,11 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Deprecated. Use `ttlSeconds`. Must be in the future. Render sets the TTLto the time from the request until `expiresAt`.</summary>
+        /// <summary>The expiration timestamp, in ISO 8601 format. Deprecated; use `ttlSeconds`instead. Must be in the future. Render sets the snapshot lifetime to theduration between the request and this timestamp.</summary>
         [Obsolete("")]
         public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
         private DateTimeOffset? _explicitNullValueExpiresAt = default!;
-        /// <summary>The kind property</summary>
+        /// <summary>The state to capture in the snapshot. Defaults to `runtime`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
@@ -43,7 +44,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private string _explicitNullValueKind = default!;
 #endif
-        /// <summary>Case sensitive. Scoped to the sandbox group. Must not start with `snp-`so clients can tell a name from a snapshot ID. Several snapshots mayshare a name; the most recently available one is the one the nameresolves to.</summary>
+        /// <summary>A case-sensitive name for snapshots in a sandbox group, up to 64 characters.Must not start with `snp-`. Multiple snapshots can share a name. When creatinga sandbox by snapshot name, Render uses the most recently created snapshotwith that name that is `available` and unexpired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -53,7 +54,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>How long the snapshot lives after its last use, in seconds. Each time youcreate a sandbox from the snapshot, the snapshot lives for this long again.Use 0 to keep the snapshot until you delete it. Omit to use Render&apos;sdefault snapshot lifetime. Do not set both `ttlSeconds` and `expiresAt`.</summary>
+        /// <summary>The snapshot&apos;s lifetime after its last use, in seconds. Creating a sandboxfrom this snapshot resets its remaining lifetime to this duration. Use 0to keep the snapshot until you delete it. Defaults to Render&apos;s snapshotlifetime. Cannot be combined with `expiresAt`.</summary>
         public int? TtlSeconds { get => _explicitNullValueTtlSeconds; set { _explicitNullValueTtlSeconds = value; AdditionalData?.Remove("ttlSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttlSeconds"); else _explicitNullProperties?.Remove("ttlSeconds"); } }
         private int? _explicitNullValueTtlSeconds = default!;
         /// <summary>

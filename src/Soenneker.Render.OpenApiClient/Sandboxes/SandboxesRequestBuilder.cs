@@ -19,7 +19,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
     public partial class SandboxesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Render.OpenApiClient.sandboxes.item collection</summary>
-        /// <param name="position">The ID of the sandbox</param>
+        /// <param name="position">The ID of the sandbox.</param>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Sandboxes.Item.WithSandboxItemRequestBuilder"/></returns>
         public global::Soenneker.Render.OpenApiClient.Sandboxes.Item.WithSandboxItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
         {
         }
         /// <summary>
-        /// List sandboxes for a single workspace. Sandboxes are scoped to the region oftheir workspace&apos;s sandbox group, so one workspace must be named per request.
+        /// List sandboxes in a workspace. Each request must specify one workspace.Sandboxes run in the region of their sandbox group.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.SandboxWithCursor&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,10 +85,10 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a sandbox. Returns the initial sandbox snapshot synchronously.With `snapshotId`: 404 with `code: snapshot_not_found` if the snapshot does notexist; 409 with `code: snapshot_not_available` if it is not `available`, or`code: snapshot_plan_mismatch` if a `runtime` snapshot was requested with adifferent `plan`.With `snapshotName`: 400 with `code: invalid_snapshot_name` if the name ismalformed, 400 without a code if `snapshotId` is also set, and 404 with`code: snapshot_not_found` if no `available` snapshot in the group has thename. The 409 cases above apply to the resolved snapshot.400 with `code: invalid_sandbox_name` if `name` is longer than 64 charactersor starts with `sbx-`.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.400 with `code: sandbox_group_limit_reached` if the owner has no defaultsandbox group and is already at its sandbox group limit.400 with `code: invalid_sandbox_plan` if `plan` is not one the API currentlyaccepts. The message lists the accepted plans.400 with `code: invalid_timeout_seconds` if `timeoutSeconds` is below 0 orabove 2592000 (30 days).
+        /// Create a sandbox and return its initial state. The sandbox might still bestarting when the response is returned. To use a saved snapshot or customimage, provide `snapshotId`, `snapshotName`, `buildId`, or `buildName`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201Response"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The sandbox to create, including its compute plan, network policy, and optional source build or snapshot.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -126,7 +126,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List sandboxes for a single workspace. Sandboxes are scoped to the region oftheir workspace&apos;s sandbox group, so one workspace must be named per request.
+        /// List sandboxes in a workspace. Each request must specify one workspace.Sandboxes run in the region of their sandbox group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,10 +145,10 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             return requestInfo;
         }
         /// <summary>
-        /// Create a sandbox. Returns the initial sandbox snapshot synchronously.With `snapshotId`: 404 with `code: snapshot_not_found` if the snapshot does notexist; 409 with `code: snapshot_not_available` if it is not `available`, or`code: snapshot_plan_mismatch` if a `runtime` snapshot was requested with adifferent `plan`.With `snapshotName`: 400 with `code: invalid_snapshot_name` if the name ismalformed, 400 without a code if `snapshotId` is also set, and 404 with`code: snapshot_not_found` if no `available` snapshot in the group has thename. The 409 cases above apply to the resolved snapshot.400 with `code: invalid_sandbox_name` if `name` is longer than 64 charactersor starts with `sbx-`.409 with `code: sandbox_group_suspended` if the sandbox group is suspended.400 with `code: sandbox_group_limit_reached` if the owner has no defaultsandbox group and is already at its sandbox group limit.400 with `code: invalid_sandbox_plan` if `plan` is not one the API currentlyaccepts. The message lists the accepted plans.400 with `code: invalid_timeout_seconds` if `timeoutSeconds` is below 0 orabove 2592000 (30 days).
+        /// Create a sandbox and return its initial state. The sandbox might still bestarting when the response is returned. To use a saved snapshot or customimage, provide `snapshotId`, `snapshotName`, `buildId`, or `buildName`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The sandbox to create, including its compute plan, network policy, and optional source build or snapshot.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,7 +176,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             return new global::Soenneker.Render.OpenApiClient.Sandboxes.SandboxesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List sandboxes for a single workspace. Sandboxes are scoped to the region oftheir workspace&apos;s sandbox group, so one workspace must be named per request.
+        /// List sandboxes in a workspace. Each request must specify one workspace.Sandboxes run in the region of their sandbox group.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SandboxesRequestBuilderGetQueryParameters 
@@ -194,7 +194,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             /// <summary>The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Return only sandboxes with exactly this name. Names aren&apos;t unique, sothis can match more than one sandbox.</summary>
+            /// <summary>Filter for sandboxes with exactly this name. Names are not unique, so multiple sandboxes can match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -214,7 +214,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             [QueryParameter("ownerId")]
             public string OwnerId { get; set; }
 #endif
-            /// <summary>Return only sandboxes in this group. The group must belong to ownerId.</summary>
+            /// <summary>Filter for sandboxes in this group. The group must belong to the workspace specified by `ownerId`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sandboxGroupId")]
@@ -224,7 +224,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             [QueryParameter("sandboxGroupId")]
             public string SandboxGroupId { get; set; }
 #endif
-            /// <summary>Filter by sandbox status. If omitted, returns sandboxes in every statusexcept `terminated`. To include terminated sandboxes, list `terminated`explicitly.</summary>
+            /// <summary>Filter for sandboxes with the specified statuses. By default, returns allstatuses except `terminated`. Include `terminated` explicitly to returnterminated sandboxes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

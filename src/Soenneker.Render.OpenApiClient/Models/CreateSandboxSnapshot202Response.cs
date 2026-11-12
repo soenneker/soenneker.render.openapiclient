@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
+    /// <summary>
+    /// A saved filesystem or runtime state that can be used to create another sandbox.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateSandboxSnapshot202Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -47,10 +48,10 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When the sandbox was frozen for capture. Null until `available`.</summary>
+        /// <summary>The timestamp when capture completed, in ISO 8601 format. Null until the snapshot is `available`.</summary>
         public DateTimeOffset? CapturedAt { get => _explicitNullValueCapturedAt; set { _explicitNullValueCapturedAt = value; AdditionalData?.Remove("capturedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capturedAt"); else _explicitNullProperties?.Remove("capturedAt"); } }
         private DateTimeOffset? _explicitNullValueCapturedAt = default!;
-        /// <summary>Null unless `failed`.</summary>
+        /// <summary>The reason the snapshot failed. Null unless its status is `failed`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
@@ -60,7 +61,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private string _explicitNullValueError = default!;
 #endif
-        /// <summary>The time after which the snapshot can no longer be retrieved or restored.Each time you create a sandbox from the snapshot, Render moves this timeforward so that the snapshot lives for its TTL after that use. For asnapshot that does not expire (a TTL of 0), this is 9999-12-31T23:59:59Z.</summary>
+        /// <summary>The timestamp after which the snapshot can no longer be retrieved orrestored, in ISO 8601 format. Each time you create a sandbox from thissnapshot, Render resets its expiration to `ttlSeconds` seconds after thatuse. For snapshots with no expiration (`ttlSeconds: 0`), this is`9999-12-31T23:59:59Z`.</summary>
         public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
         private DateTimeOffset? _explicitNullValueExpiresAt = default!;
         /// <summary>The id property</summary>
@@ -73,10 +74,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>`filesystem` captures the writable filesystem and restores onto any plan.`runtime` also captures memory and CPU state and restores only onto theplan of the source sandbox.</summary>
+        /// <summary>The state to capture. A `filesystem` snapshot captures the writablefilesystem and can be restored to any plan. A `runtime` snapshot alsocaptures memory and CPU state and must be restored to the source sandboxplan.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202ResponseKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202ResponseKind? _explicitNullValueKind = default!;
-        /// <summary>Set at create. Never changes. Null when created without a name.</summary>
+        /// <summary>The name assigned when the snapshot was created. Cannot be changed. Null if no name was provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -86,7 +87,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>Plan of the source sandbox at capture time. See `sandboxPlan` for known values.</summary>
+        /// <summary>The source sandbox&apos;s compute plan when the snapshot was captured. See `sandboxPlan` for known values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
@@ -96,7 +97,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
         private string _explicitNullValuePlan = default!;
 #endif
-        /// <summary>The requestedAt property</summary>
+        /// <summary>The timestamp when the snapshot was requested, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get => _explicitNullValueRequestedAt; set { _explicitNullValueRequestedAt = value; AdditionalData?.Remove("requestedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestedAt"); else _explicitNullProperties?.Remove("requestedAt"); } }
         private DateTimeOffset? _explicitNullValueRequestedAt = default!;
         /// <summary>The sandboxGroupId property</summary>
@@ -109,10 +110,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string SandboxGroupId { get => _explicitNullValueSandboxGroupId; set { _explicitNullValueSandboxGroupId = value; AdditionalData?.Remove("sandboxGroupId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxGroupId"); else _explicitNullProperties?.Remove("sandboxGroupId"); } }
         private string _explicitNullValueSandboxGroupId = default!;
 #endif
-        /// <summary>Null until `available`.</summary>
+        /// <summary>The size of the snapshot, in bytes. Null until the snapshot is `available`.</summary>
         public long? SizeBytes { get => _explicitNullValueSizeBytes; set { _explicitNullValueSizeBytes = value; AdditionalData?.Remove("sizeBytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sizeBytes"); else _explicitNullProperties?.Remove("sizeBytes"); } }
         private long? _explicitNullValueSizeBytes = default!;
-        /// <summary>The sandbox this snapshot was captured from. Lineage only.</summary>
+        /// <summary>The ID of the sandbox this snapshot was captured from, recorded for reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceSandboxId { get => _explicitNullValueSourceSandboxId; set { _explicitNullValueSourceSandboxId = value; AdditionalData?.Remove("sourceSandboxId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceSandboxId"); else _explicitNullProperties?.Remove("sourceSandboxId"); } }
@@ -132,7 +133,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
-        /// <summary>How long the snapshot lives after its last use, in seconds. 0 means thesnapshot does not expire. Absent for a snapshot that was created beforesnapshots had a TTL. Such a snapshot uses Render&apos;s default snapshot lifetime.</summary>
+        /// <summary>The snapshot&apos;s lifetime after its last use, in seconds. A value of 0 meansthe snapshot does not expire. If omitted, Render&apos;s default snapshotlifetime applies.</summary>
         public int? TtlSeconds { get => _explicitNullValueTtlSeconds; set { _explicitNullValueTtlSeconds = value; AdditionalData?.Remove("ttlSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttlSeconds"); else _explicitNullProperties?.Remove("ttlSeconds"); } }
         private int? _explicitNullValueTtlSeconds = default!;
         /// <summary>

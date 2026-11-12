@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// One recorded sandbox execution (a command run or file transfer).`startedAt` is the token provisioning time. `command` may be presentwhile the execution is in flight (recorded at token mint). `stoppedAt`and `exitCode` are absent until a status report or sandbox finalization.
+    /// A record of a command run or file transfer in a sandbox. `startedAt` recordswhen the connect token was created. The command can appear while theexecution is running. `stoppedAt` and `exitCode` are omitted until Renderreceives the result or finalizes the execution when the sandbox stops.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RetrieveSandboxExecution200Response : IAdditionalDataHolder, IParsable
@@ -40,7 +40,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The execution target. For runs, the truncated command; for file transfers, the target file path.</summary>
+        /// <summary>The command run in the sandbox, or the target path for a file transfer.Command text may be redacted or truncated. Omitted if you do not havepermission to view execution commands.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
@@ -50,7 +50,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
         private string _explicitNullValueCommand = default!;
 #endif
-        /// <summary>The exitCode property</summary>
+        /// <summary>The execution exit code. Omitted until a result is available.</summary>
         public int? ExitCode { get => _explicitNullValueExitCode; set { _explicitNullValueExitCode = value; AdditionalData?.Remove("exitCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exitCode"); else _explicitNullProperties?.Remove("exitCode"); } }
         private int? _explicitNullValueExitCode = default!;
         /// <summary>The id property</summary>
@@ -63,7 +63,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The operation property</summary>
+        /// <summary>The command run or file transfer operation authorized by the connect token.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.RetrieveSandboxExecution200ResponseOperation? Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; AdditionalData?.Remove("operation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
         private global::Soenneker.Render.OpenApiClient.Models.RetrieveSandboxExecution200ResponseOperation? _explicitNullValueOperation = default!;
         /// <summary>The sandboxId property</summary>
@@ -76,16 +76,16 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string SandboxId { get => _explicitNullValueSandboxId; set { _explicitNullValueSandboxId = value; AdditionalData?.Remove("sandboxId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxId"); else _explicitNullProperties?.Remove("sandboxId"); } }
         private string _explicitNullValueSandboxId = default!;
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>The timestamp when the execution token was created, in ISO 8601 format.</summary>
         public DateTimeOffset? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("startedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startedAt"); else _explicitNullProperties?.Remove("startedAt"); } }
         private DateTimeOffset? _explicitNullValueStartedAt = default!;
-        /// <summary>The stoppedAt property</summary>
+        /// <summary>The timestamp when the execution stopped, in ISO 8601 format. Omitted until a result is available.</summary>
         public DateTimeOffset? StoppedAt { get => _explicitNullValueStoppedAt; set { _explicitNullValueStoppedAt = value; AdditionalData?.Remove("stoppedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stoppedAt"); else _explicitNullProperties?.Remove("stoppedAt"); } }
         private DateTimeOffset? _explicitNullValueStoppedAt = default!;
-        /// <summary>The type property</summary>
+        /// <summary>Whether the execution is a command run or a file transfer.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.RetrieveSandboxExecution200ResponseType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Render.OpenApiClient.Models.RetrieveSandboxExecution200ResponseType? _explicitNullValueType = default!;
-        /// <summary>The ID of the user the execution token was minted for.</summary>
+        /// <summary>The ID of the user the execution token was created for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("userId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userId"); else _explicitNullProperties?.Remove("userId"); } }
