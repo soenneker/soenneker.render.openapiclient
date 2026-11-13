@@ -123,7 +123,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The timestamp when the sandbox was terminated, in ISO 8601 format. Null if the sandbox has not been terminated.</summary>
         public DateTimeOffset? TerminatedAt { get => _explicitNullValueTerminatedAt; set { _explicitNullValueTerminatedAt = value; AdditionalData?.Remove("terminatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminatedAt"); else _explicitNullProperties?.Remove("terminatedAt"); } }
         private DateTimeOffset? _explicitNullValueTerminatedAt = default!;
-        /// <summary>The maximum time the sandbox can run continuously, in seconds. The sandboxterminates when this time elapses. If the sandbox is suspended and laterresumed, this timeout restarts. A value of 0 disables the runtime timeout.</summary>
+        /// <summary>The maximum time the sandbox can run continuously, in seconds. The sandbox terminates when this time elapses. If the sandbox is suspended and later resumed, this timeout restarts. A value of 0 disables the runtime timeout.</summary>
         public int? TimeoutSeconds { get => _explicitNullValueTimeoutSeconds; set { _explicitNullValueTimeoutSeconds = value; AdditionalData?.Remove("timeoutSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeoutSeconds"); else _explicitNullProperties?.Remove("timeoutSeconds"); } }
         private int? _explicitNullValueTimeoutSeconds = default!;
         /// <summary>

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// The credential settings to update. Omitted top-level fields keep their currentvalues. Providing `injection` replaces the entire object. Its `template`defaults to `${SECRET}` when omitted. Empty `methods` or `paths` lists removethose filters. Developers can update `injection`, `methods`, `paths`, and`enabled`. Changing `domain` or `value` requires an admin.Changes to routing, injection, or enabled state create a new version. Setting`value` creates a new version even if the secret value is unchanged. Thecredential ID cannot be changed.
+    /// The credential settings to update. Omitted top-level fields keep their current values. Providing `injection` replaces the entire object. Its `template` defaults to `${SECRET}` when omitted. Empty `methods` or `paths` lists remove those filters. Developers can update `injection`, `methods`, `paths`, and `enabled`. Changing `domain` or `value` requires an admin.Changes to routing, injection, or enabled state create a new version. Setting `value` creates a new version even if the secret value is unchanged. The credential ID cannot be changed.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateSandboxGroupCredentialRequest : IAdditionalDataHolder, IParsable
@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destination hostname to match for credential injection. Mustbe a public DNS hostname. Render normalizes it to lowercase and matches itexactly. IP addresses, ports, wildcards, and local or internal hostnames arenot supported. Omit to preserve the current hostname.</summary>
+        /// <summary>The destination hostname to match for credential injection. Must be a public DNS hostname. Render normalizes it to lowercase and matches it exactly. IP addresses, ports, wildcards, and local or internal hostnames are not supported. Omit to preserve the current hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
@@ -57,7 +57,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Injection { get => _explicitNullValueInjection; set { _explicitNullValueInjection = value; AdditionalData?.Remove("injection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injection"); else _explicitNullProperties?.Remove("injection"); } }
         private string _explicitNullValueInjection = default!;
 #endif
-        /// <summary>The HTTP methods to match for credential injection.Supported methods are GET, HEAD, POST, PUT, PATCH, DELETE, and OPTIONS,normalized to uppercase.An empty list matches any method. Omit to preserve the current filter.</summary>
+        /// <summary>The HTTP methods to match for credential injection. Supported methods are GET, HEAD, POST, PUT, PATCH, DELETE, and OPTIONS, normalized to uppercase. An empty list matches any method. Omit to preserve the current filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; AdditionalData?.Remove("methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
@@ -67,7 +67,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public List<string> Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; AdditionalData?.Remove("methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
         private List<string> _explicitNullValueMethods = default!;
 #endif
-        /// <summary>The request path patterns to match for credential injection. Eachpattern must match the entire absolute path. Use `*` for one nonempty path segment or`**` for one or more segments. Wildcards must occupy whole segments. Forexample, `/a/*` matches `/a/b`, and `/a/**` also matches `/a/b/c`. Neithermatches `/a`. Patterns do not support query strings, fragments, or escaping.Request query strings do not affect matching.An empty list matches any path. Omit to preserve the current filter.</summary>
+        /// <summary>The request path patterns to match for credential injection. Each pattern must match the entire absolute path. Use `*` for one nonempty path segment or `**` for one or more segments. Wildcards must occupy whole segments. For example, `/a/*` matches `/a/b`, and `/a/**` also matches `/a/b/c`. Neither matches `/a`. Patterns do not support query strings, fragments, or escaping. Request query strings do not affect matching. An empty list matches any path. Omit to preserve the current filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; AdditionalData?.Remove("paths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }

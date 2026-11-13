@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
         {
         }
         /// <summary>
-        /// Create a short-lived connect token for a file upload or download. Transferthe file directly to or from the URL in the response, using the token asthe bearer token. The token authorizes only the specified sandbox, operation,and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` fora directory archive. For gzip compression, also set `Content-Encoding: gzip`.Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
+        /// Create a short-lived connect token for a file upload or download. Transfer the file directly to or from the URL in the response, using the token as the bearer token. The token authorizes only the specified sandbox, operation, and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` for a directory archive. For gzip compression, also set `Content-Encoding: gzip`. Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a short-lived connect token for a file upload or download. Transferthe file directly to or from the URL in the response, using the token asthe bearer token. The token authorizes only the specified sandbox, operation,and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` fora directory archive. For gzip compression, also set `Content-Encoding: gzip`.Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
+        /// Create a short-lived connect token for a file upload or download. Transfer the file directly to or from the URL in the response, using the token as the bearer token. The token authorizes only the specified sandbox, operation, and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` for a directory archive. For gzip compression, also set `Content-Encoding: gzip`. Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,12 +101,12 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
             return new global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token.TokenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Create a short-lived connect token for a file upload or download. Transferthe file directly to or from the URL in the response, using the token asthe bearer token. The token authorizes only the specified sandbox, operation,and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` fora directory archive. For gzip compression, also set `Content-Encoding: gzip`.Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
+        /// Create a short-lived connect token for a file upload or download. Transfer the file directly to or from the URL in the response, using the token as the bearer token. The token authorizes only the specified sandbox, operation, and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` for a directory archive. For gzip compression, also set `Content-Encoding: gzip`. Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TokenRequestBuilderPostQueryParameters 
         {
-            /// <summary>The file or directory path the token authorizes. For archive uploads, thisis the directory to extract into. For downloads, it is the file or directoryto retrieve.Relative paths are resolved from the image&apos;s `WORKDIR`, or the home directoryif no `WORKDIR` is set. Use `.` for that working directory. Absolute pathsare resolved from the sandbox filesystem root.</summary>
+            /// <summary>The file or directory path the token authorizes. For archive uploads, this is the directory to extract into. For downloads, it is the file or directory to retrieve.Relative paths are resolved from the image&apos;s `WORKDIR`, or the home directory if no `WORKDIR` is set. Use `.` for that working directory. Absolute paths are resolved from the sandbox filesystem root.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("path")]

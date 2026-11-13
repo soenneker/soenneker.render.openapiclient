@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item.Res
         {
         }
         /// <summary>
-        /// Restore a retained credential version, including its routing settings,injection settings, and secret value, as a new current version. Requiresan admin.The new version has a higher ID, records who restored it and when, andidentifies the source in `restoredFromVersionId`. Its fingerprint matchesthe source version. Render retains the current configuration and the threedistinct prior configurations most recently active. Removing an olderconfiguration also removes all versions that refer to it.The response confirms the configuration was saved. It does not confirm thatcredential injection is active for a particular sandbox.These endpoints do not return secret values.
+        /// Restore a retained credential version, including its routing settings, injection settings, and secret value, as a new current version. Requires an admin.The new version has a higher ID, records who restored it and when, and identifies the source in `restoredFromVersionId`. Its fingerprint matches the source version. Render retains the current configuration and the three distinct prior configurations most recently active. Removing an older configuration also removes all versions that refer to it.The response confirms the configuration was saved. It does not confirm that credential injection is active for a particular sandbox.These endpoints do not return secret values.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="body">The retained credential version to restore.</param>
@@ -75,7 +75,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item.Res
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Restore a retained credential version, including its routing settings,injection settings, and secret value, as a new current version. Requiresan admin.The new version has a higher ID, records who restored it and when, andidentifies the source in `restoredFromVersionId`. Its fingerprint matchesthe source version. Render retains the current configuration and the threedistinct prior configurations most recently active. Removing an olderconfiguration also removes all versions that refer to it.The response confirms the configuration was saved. It does not confirm thatcredential injection is active for a particular sandbox.These endpoints do not return secret values.
+        /// Restore a retained credential version, including its routing settings, injection settings, and secret value, as a new current version. Requires an admin.The new version has a higher ID, records who restored it and when, and identifies the source in `restoredFromVersionId`. Its fingerprint matches the source version. Render retains the current configuration and the three distinct prior configurations most recently active. Removing an older configuration also removes all versions that refer to it.The response confirms the configuration was saved. It does not confirm that credential injection is active for a particular sandbox.These endpoints do not return secret values.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The retained credential version to restore.</param>

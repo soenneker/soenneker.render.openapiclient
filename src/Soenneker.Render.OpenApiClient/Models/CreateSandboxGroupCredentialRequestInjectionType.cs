@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
-    /// <summary>How Render adds the credential to a matching request. For `basic`, the valueafter applying `template` must have the form `username:password`. Do notprovide `name`.</summary>
+    /// <summary>How Render adds the credential to a matching request. For `basic`, the value after applying `template` must have the form `username:password`. Do not provide `name`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateSandboxGroupCredentialRequestInjectionType
     {

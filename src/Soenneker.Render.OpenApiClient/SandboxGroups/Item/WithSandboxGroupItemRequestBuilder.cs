@@ -89,7 +89,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a sandbox group&apos;s concurrency limit. The response contains theeffective limit after applying Render&apos;s limit for the workspace.
+        /// Update a sandbox group&apos;s concurrency limit. The response contains the effective limit after applying Render&apos;s limit for the workspace.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="body">The sandbox group&apos;s concurrency settings to update.</param>
@@ -149,7 +149,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a sandbox group&apos;s concurrency limit. The response contains theeffective limit after applying Render&apos;s limit for the workspace.
+        /// Update a sandbox group&apos;s concurrency limit. The response contains the effective limit after applying Render&apos;s limit for the workspace.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The sandbox group&apos;s concurrency settings to update.</param>

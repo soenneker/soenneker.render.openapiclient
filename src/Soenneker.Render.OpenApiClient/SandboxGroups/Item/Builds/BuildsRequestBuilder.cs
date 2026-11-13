@@ -85,7 +85,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Start converting an OCI container image into an image that sandboxes canuse. New builds run asynchronously. Retrieve the build until its status is`succeeded` or `failed`. After it succeeds, provide its ID as `buildId` whencreating a sandbox.If the group already has a pending, running, or succeeded build for the samename and image digest, Render returns that build. Retrying a failed buildstarts a new build.
+        /// Start converting an OCI container image into an image that sandboxes can use. New builds run asynchronously. Retrieve the build until its status is `succeeded` or `failed`. After it succeeds, provide its ID as `buildId` when creating a sandbox.If the group already has a pending, running, or succeeded build for the same name and image digest, Render returns that build. Retrying a failed build starts a new build.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandboxBuild201Response"/></returns>
         /// <param name="body">The source container image and settings for the sandbox build.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds
             return requestInfo;
         }
         /// <summary>
-        /// Start converting an OCI container image into an image that sandboxes canuse. New builds run asynchronously. Retrieve the build until its status is`succeeded` or `failed`. After it succeeds, provide its ID as `buildId` whencreating a sandbox.If the group already has a pending, running, or succeeded build for the samename and image digest, Render returns that build. Retrying a failed buildstarts a new build.
+        /// Start converting an OCI container image into an image that sandboxes can use. New builds run asynchronously. Retrieve the build until its status is `succeeded` or `failed`. After it succeeds, provide its ID as `buildId` when creating a sandbox.If the group already has a pending, running, or succeeded build for the same name and image digest, Render returns that build. Retrying a failed build starts a new build.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The source container image and settings for the sandbox build.</param>

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// The outbound traffic policy to apply to the sandbox. Provide `type` or itsdeprecated alias `default`. If both are provided, they must match.
+    /// The outbound traffic policy to apply to the sandbox. Provide `type` or its deprecated alias `default`. If both are provided, they must match.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateSandboxRequestNetworkPolicy : IAdditionalDataHolder, IParsable
@@ -39,7 +39,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
         private string _explicitNullValueDefault = default!;
 #endif
-        /// <summary>Destinations the sandbox may reach, required when the policy is`allow-list` and rejected otherwise. Each domain may be listed once.</summary>
+        /// <summary>Destinations the sandbox may reach, required when the policy is `allow-list` and rejected otherwise. Each domain may be listed once.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestNetworkPolicyRulesItem>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }

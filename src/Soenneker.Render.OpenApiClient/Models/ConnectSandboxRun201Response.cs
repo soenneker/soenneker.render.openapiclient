@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
     /// <summary>
-    /// A short-lived connect token and the URL to use it with. Send the request to`uri` using `method`, with `token` as the bearer token. Include a requestbody if the operation requires one.
+    /// A short-lived connect token and the URL to use it with. Send the request to `uri` using `method`, with `token` as the bearer token. Include a request body if the operation requires one.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectSandboxRun201Response : IAdditionalDataHolder, IParsable

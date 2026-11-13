@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Snapshots
         {
         }
         /// <summary>
-        /// Capture a snapshot of a running sandbox. Returns HTTP 202 with the snapshotin `creating` status. Retrieve the snapshot until its status is `available`or `failed`. The sandbox continues running, with a brief pause when capturinga runtime snapshot.
+        /// Capture a snapshot of a running sandbox. Returns HTTP 202 with the snapshot in `creating` status. Retrieve the snapshot until its status is `available` or `failed`. The sandbox continues running, with a brief pause when capturing a runtime snapshot.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202Response"/></returns>
         /// <param name="body">The settings for the sandbox snapshot to capture.</param>
@@ -75,7 +75,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Snapshots
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Capture a snapshot of a running sandbox. Returns HTTP 202 with the snapshotin `creating` status. Retrieve the snapshot until its status is `available`or `failed`. The sandbox continues running, with a brief pause when capturinga runtime snapshot.
+        /// Capture a snapshot of a running sandbox. Returns HTTP 202 with the snapshot in `creating` status. Retrieve the snapshot until its status is `available` or `failed`. The sandbox continues running, with a brief pause when capturing a runtime snapshot.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The settings for the sandbox snapshot to capture.</param>

@@ -46,7 +46,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item
         {
         }
         /// <summary>
-        /// Delete a credential from the sandbox group. Requires an admin. Repeateddelete requests are accepted, including if the credential is already absent.
+        /// Delete a credential from the sandbox group. Requires an admin. Repeated delete requests are accepted, including if the credential is already absent.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the settings and metadata for a credential in this sandbox group.These endpoints do not return secret values, including to admins.
+        /// Retrieve the settings and metadata for a credential in this sandbox group. These endpoints do not return secret values, including to admins.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,10 +121,10 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a credential. Developers can change `injection`, `methods`, `paths`,and `enabled`. Changing `domain` or `value` requires an admin.Omitted top-level fields keep their current values. Providing `injection`replaces the entire object. Its `template` defaults to `${SECRET}` whenomitted. An empty `methods` or `paths` list removes that filter. Providing`value` creates a new version.The combined serialized size of current credential settings and secretvalues in the group must remain within 200 KiB (204800 bytes).The response confirms the configuration was saved. It does not confirm thatcredential injection is active for a particular sandbox.
+        /// Update a credential. Developers can change `injection`, `methods`, `paths`, and `enabled`. Changing `domain` or `value` requires an admin.Omitted top-level fields keep their current values. Providing `injection` replaces the entire object. Its `template` defaults to `${SECRET}` when omitted. An empty `methods` or `paths` list removes that filter. Providing `value` creates a new version. The combined serialized size of current credential settings and secret values in the group must remain within 200 KiB (204800 bytes).The response confirms the configuration was saved. It does not confirm that credential injection is active for a particular sandbox.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
-        /// <param name="body">The credential settings to update. Omitted top-level fields keep their currentvalues. Providing `injection` replaces the entire object. Its `template`defaults to `${SECRET}` when omitted. Empty `methods` or `paths` lists removethose filters. Developers can update `injection`, `methods`, `paths`, and`enabled`. Changing `domain` or `value` requires an admin.Changes to routing, injection, or enabled state create a new version. Setting`value` creates a new version even if the secret value is unchanged. Thecredential ID cannot be changed.</param>
+        /// <param name="body">The credential settings to update. Omitted top-level fields keep their current values. Providing `injection` replaces the entire object. Its `template` defaults to `${SECRET}` when omitted. Empty `methods` or `paths` lists remove those filters. Developers can update `injection`, `methods`, `paths`, and `enabled`. Changing `domain` or `value` requires an admin.Changes to routing, injection, or enabled state create a new version. Setting `value` creates a new version even if the secret value is unchanged. The credential ID cannot be changed.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -162,7 +162,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a credential from the sandbox group. Requires an admin. Repeateddelete requests are accepted, including if the credential is already absent.
+        /// Delete a credential from the sandbox group. Requires an admin. Repeated delete requests are accepted, including if the credential is already absent.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +181,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the settings and metadata for a credential in this sandbox group.These endpoints do not return secret values, including to admins.
+        /// Retrieve the settings and metadata for a credential in this sandbox group. These endpoints do not return secret values, including to admins.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -200,10 +200,10 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a credential. Developers can change `injection`, `methods`, `paths`,and `enabled`. Changing `domain` or `value` requires an admin.Omitted top-level fields keep their current values. Providing `injection`replaces the entire object. Its `template` defaults to `${SECRET}` whenomitted. An empty `methods` or `paths` list removes that filter. Providing`value` creates a new version.The combined serialized size of current credential settings and secretvalues in the group must remain within 200 KiB (204800 bytes).The response confirms the configuration was saved. It does not confirm thatcredential injection is active for a particular sandbox.
+        /// Update a credential. Developers can change `injection`, `methods`, `paths`, and `enabled`. Changing `domain` or `value` requires an admin.Omitted top-level fields keep their current values. Providing `injection` replaces the entire object. Its `template` defaults to `${SECRET}` when omitted. An empty `methods` or `paths` list removes that filter. Providing `value` creates a new version. The combined serialized size of current credential settings and secret values in the group must remain within 200 KiB (204800 bytes).The response confirms the configuration was saved. It does not confirm that credential injection is active for a particular sandbox.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The credential settings to update. Omitted top-level fields keep their currentvalues. Providing `injection` replaces the entire object. Its `template`defaults to `${SECRET}` when omitted. Empty `methods` or `paths` lists removethose filters. Developers can update `injection`, `methods`, `paths`, and`enabled`. Changing `domain` or `value` requires an admin.Changes to routing, injection, or enabled state create a new version. Setting`value` creates a new version even if the secret value is unchanged. Thecredential ID cannot be changed.</param>
+        /// <param name="body">The credential settings to update. Omitted top-level fields keep their current values. Providing `injection` replaces the entire object. Its `template` defaults to `${SECRET}` when omitted. Empty `methods` or `paths` lists remove those filters. Developers can update `injection`, `methods`, `paths`, and `enabled`. Changing `domain` or `value` requires an admin.Changes to routing, injection, or enabled state create a new version. Setting `value` creates a new version even if the secret value is unchanged. The credential ID cannot be changed.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

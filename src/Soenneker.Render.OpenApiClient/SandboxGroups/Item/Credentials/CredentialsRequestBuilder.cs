@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials
         {
         }
         /// <summary>
-        /// List credentials in the sandbox group, sorted by credential ID. Returnscredential settings and metadata. These endpoints do not return secret values,including to admins.
+        /// List credentials in the sandbox group, sorted by credential ID. Returns credential settings and metadata. These endpoints do not return secret values, including to admins.
         /// </summary>
         /// <returns>A List&lt;string&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Configure a credential for injection into matching outbound HTTPS requestsfrom sandboxes in this group. Requires an admin. You assign the credential ID.Each group supports up to 25 credentials. Current credential settings andsecret values have a combined serialized size limit of 200 KiB (204800bytes). Render retains the current configuration and three distinct priorconfigurations per credential, with a total storage limit of 1 MiB includingversion metadata.The response confirms the configuration was saved. It does not confirm thatcredential injection is active for a particular sandbox.
+        /// Configure a credential for injection into matching outbound HTTPS requests from sandboxes in this group. Requires an admin. You assign the credential ID.Each group supports up to 25 credentials. Current credential settings and secret values have a combined serialized size limit of 200 KiB (204800 bytes). Render retains the current configuration and three distinct prior configurations per credential, with a total storage limit of 1 MiB including version metadata.The response confirms the configuration was saved. It does not confirm that credential injection is active for a particular sandbox.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandboxGroupCredential201Response"/></returns>
         /// <param name="body">The credential configuration to create, including request matching and injection settings.</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxGroupCredential201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.CreateSandboxGroupCredential201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List credentials in the sandbox group, sorted by credential ID. Returnscredential settings and metadata. These endpoints do not return secret values,including to admins.
+        /// List credentials in the sandbox group, sorted by credential ID. Returns credential settings and metadata. These endpoints do not return secret values, including to admins.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials
             return requestInfo;
         }
         /// <summary>
-        /// Configure a credential for injection into matching outbound HTTPS requestsfrom sandboxes in this group. Requires an admin. You assign the credential ID.Each group supports up to 25 credentials. Current credential settings andsecret values have a combined serialized size limit of 200 KiB (204800bytes). Render retains the current configuration and three distinct priorconfigurations per credential, with a total storage limit of 1 MiB includingversion metadata.The response confirms the configuration was saved. It does not confirm thatcredential injection is active for a particular sandbox.
+        /// Configure a credential for injection into matching outbound HTTPS requests from sandboxes in this group. Requires an admin. You assign the credential ID.Each group supports up to 25 credentials. Current credential settings and secret values have a combined serialized size limit of 200 KiB (204800 bytes). Render retains the current configuration and three distinct prior configurations per credential, with a total storage limit of 1 MiB including version metadata.The response confirms the configuration was saved. It does not confirm that credential injection is active for a particular sandbox.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The credential configuration to create, including request matching and injection settings.</param>

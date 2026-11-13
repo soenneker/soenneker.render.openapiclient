@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.Item
         {
         }
         /// <summary>
-        /// Delete a build of a sandbox image. The build no longer appears in listsand cannot be retrieved or used to create sandboxes, including by imagename. Repeated requests to delete the build return HTTP 204.
+        /// Delete a build of a sandbox image. The build no longer appears in lists and cannot be retrieved or used to create sandboxes, including by image name. Repeated requests to delete the build return HTTP 204.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +109,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Builds.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a build of a sandbox image. The build no longer appears in listsand cannot be retrieved or used to create sandboxes, including by imagename. Repeated requests to delete the build return HTTP 204.
+        /// Delete a build of a sandbox image. The build no longer appears in lists and cannot be retrieved or used to create sandboxes, including by image name. Repeated requests to delete the build return HTTP 204.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

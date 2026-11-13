@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups
         {
         }
         /// <summary>
-        /// List sandbox groups in a workspace, newest first. Returns up to 20 groupsby default, with a maximum of 100. To fetch the next page, pass the lastresult&apos;s cursor as `cursor`. Continue until the response is empty.
+        /// List sandbox groups in a workspace, newest first. Returns up to 20 groups by default, with a maximum of 100. To fetch the next page, pass the last result&apos;s cursor as `cursor`. Continue until the response is empty.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.SandboxGroupWithCursor&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.CreateSandboxGroup201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.CreateSandboxGroup201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List sandbox groups in a workspace, newest first. Returns up to 20 groupsby default, with a maximum of 100. To fetch the next page, pass the lastresult&apos;s cursor as `cursor`. Continue until the response is empty.
+        /// List sandbox groups in a workspace, newest first. Returns up to 20 groups by default, with a maximum of 100. To fetch the next page, pass the last result&apos;s cursor as `cursor`. Continue until the response is empty.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -176,7 +176,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups
             return new global::Soenneker.Render.OpenApiClient.SandboxGroups.SandboxGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List sandbox groups in a workspace, newest first. Returns up to 20 groupsby default, with a maximum of 100. To fetch the next page, pass the lastresult&apos;s cursor as `cursor`. Continue until the response is empty.
+        /// List sandbox groups in a workspace, newest first. Returns up to 20 groups by default, with a maximum of 100. To fetch the next page, pass the last result&apos;s cursor as `cursor`. Continue until the response is empty.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SandboxGroupsRequestBuilderGetQueryParameters 

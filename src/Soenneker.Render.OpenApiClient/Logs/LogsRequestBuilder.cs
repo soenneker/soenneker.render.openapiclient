@@ -40,7 +40,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}{&direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*,resource*}", pathParameters)
+        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}{&build*,direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*,resource*}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}{&direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*,resource*}", rawUrl)
+        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}{&build*,direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*,resource*}", rawUrl)
         {
         }
         /// <summary>
@@ -126,6 +126,16 @@ namespace Soenneker.Render.OpenApiClient.Logs
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LogsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filter logs by build ID, such as a service build or a sandbox image build.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("build")]
+            public string[]? Build { get; set; }
+#nullable restore
+#else
+            [QueryParameter("build")]
+            public string[] Build { get; set; }
+#endif
             /// <summary>The direction to query logs for. Backward will return most recent logs first.Forward will start with the oldest logs in the time range.</summary>
             [QueryParameter("direction")]
             public global::Soenneker.Render.OpenApiClient.Models.ListLogsDirectionParameter? Direction { get; set; }

@@ -61,7 +61,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private string _explicitNullValueError = default!;
 #endif
-        /// <summary>The timestamp after which the snapshot can no longer be retrieved orrestored, in ISO 8601 format. Each time you create a sandbox from thissnapshot, Render resets its expiration to `ttlSeconds` seconds after thatuse. For snapshots with no expiration (`ttlSeconds: 0`), this is`9999-12-31T23:59:59Z`.</summary>
+        /// <summary>The timestamp after which the snapshot can no longer be retrieved or restored, in ISO 8601 format. Each time you create a sandbox from this snapshot, Render resets its expiration to `ttlSeconds` seconds after that use. For snapshots with no expiration (`ttlSeconds: 0`), this is `9999-12-31T23:59:59Z`.</summary>
         public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
         private DateTimeOffset? _explicitNullValueExpiresAt = default!;
         /// <summary>The id property</summary>
@@ -74,7 +74,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The state to capture. A `filesystem` snapshot captures the writablefilesystem and can be restored to any plan. A `runtime` snapshot alsocaptures memory and CPU state and must be restored to the source sandboxplan.</summary>
+        /// <summary>The state to capture. A `filesystem` snapshot captures the writable filesystem and can be restored to any plan. A `runtime` snapshot also captures memory and CPU state and must be restored to the source sandbox plan.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202ResponseKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateSandboxSnapshot202ResponseKind? _explicitNullValueKind = default!;
         /// <summary>The name assigned when the snapshot was created. Cannot be changed. Null if no name was provided.</summary>
@@ -133,7 +133,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
-        /// <summary>The snapshot&apos;s lifetime after its last use, in seconds. A value of 0 meansthe snapshot does not expire. If omitted, Render&apos;s default snapshotlifetime applies.</summary>
+        /// <summary>The snapshot&apos;s lifetime after its last use, in seconds. A value of 0 means the snapshot does not expire. If omitted, Render&apos;s default snapshot lifetime applies.</summary>
         public int? TtlSeconds { get => _explicitNullValueTtlSeconds; set { _explicitNullValueTtlSeconds = value; AdditionalData?.Remove("ttlSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttlSeconds"); else _explicitNullProperties?.Remove("ttlSeconds"); } }
         private int? _explicitNullValueTtlSeconds = default!;
         /// <summary>

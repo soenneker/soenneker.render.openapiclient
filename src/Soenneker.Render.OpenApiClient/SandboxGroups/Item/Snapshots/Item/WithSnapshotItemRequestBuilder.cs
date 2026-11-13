@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.Item
         {
         }
         /// <summary>
-        /// Delete a snapshot. Sandboxes created from it are not affected. ReturnsHTTP 204 if the snapshot is already deleted or expired.
+        /// Delete a snapshot. Sandboxes created from it are not affected. Returns HTTP 204 if the snapshot is already deleted or expired.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +109,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a snapshot. Sandboxes created from it are not affected. ReturnsHTTP 204 if the snapshot is already deleted or expired.
+        /// Delete a snapshot. Sandboxes created from it are not affected. Returns HTTP 204 if the snapshot is already deleted or expired.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

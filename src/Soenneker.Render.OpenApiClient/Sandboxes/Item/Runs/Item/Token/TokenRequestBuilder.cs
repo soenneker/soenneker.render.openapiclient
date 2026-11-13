@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.Token
         {
         }
         /// <summary>
-        /// Create a short-lived connect token for a command run in this sandbox.Send the command to the URL in the response, using the token as the bearertoken. The token authorizes only the requested operation.
+        /// Create a short-lived connect token for a command run in this sandbox. Send the command to the URL in the response, using the token as the bearer token. The token authorizes only the requested operation.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs.Item.Token
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxRun201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a short-lived connect token for a command run in this sandbox.Send the command to the URL in the response, using the token as the bearertoken. The token authorizes only the requested operation.
+        /// Create a short-lived connect token for a command run in this sandbox. Send the command to the URL in the response, using the token as the bearer token. The token authorizes only the requested operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

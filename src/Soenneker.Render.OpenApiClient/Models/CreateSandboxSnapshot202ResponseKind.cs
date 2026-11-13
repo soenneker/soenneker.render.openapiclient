@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Render.OpenApiClient.Models
 {
-    /// <summary>The state to capture. A `filesystem` snapshot captures the writablefilesystem and can be restored to any plan. A `runtime` snapshot alsocaptures memory and CPU state and must be restored to the source sandboxplan.</summary>
+    /// <summary>The state to capture. A `filesystem` snapshot captures the writable filesystem and can be restored to any plan. A `runtime` snapshot also captures memory and CPU state and must be restored to the source sandbox plan.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateSandboxSnapshot202ResponseKind
     {

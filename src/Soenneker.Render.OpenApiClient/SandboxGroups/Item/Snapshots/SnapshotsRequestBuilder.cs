@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
         {
         }
         /// <summary>
-        /// List snapshots in a sandbox group, newest first. Excludes expired anddeleted snapshots.
+        /// List snapshots in a sandbox group, newest first. Excludes expired and deleted snapshots.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.SandboxSnapshotWithCursor&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// List snapshots in a sandbox group, newest first. Excludes expired anddeleted snapshots.
+        /// List snapshots in a sandbox group, newest first. Excludes expired and deleted snapshots.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
             return new global::Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots.SnapshotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List snapshots in a sandbox group, newest first. Excludes expired anddeleted snapshots.
+        /// List snapshots in a sandbox group, newest first. Excludes expired and deleted snapshots.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SnapshotsRequestBuilderGetQueryParameters 
@@ -131,7 +131,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Snapshots
             /// <summary>The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Filter for snapshots with exactly this name. Multiple snapshots can sharea name; results include each version, newest first. When creating a sandboxwith `snapshotName`, Render uses the most recently created snapshotwith that name that is `available` and unexpired.</summary>
+            /// <summary>Filter for snapshots with exactly this name. Multiple snapshots can share a name; results include each version, newest first. When creating a sandbox with `snapshotName`, Render uses the most recently created snapshot with that name that is `available` and unexpired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]

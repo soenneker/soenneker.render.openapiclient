@@ -47,7 +47,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
         {
         }
         /// <summary>
-        /// List sandboxes in a workspace. Each request must specify one workspace.Sandboxes run in the region of their sandbox group.
+        /// List sandboxes in a workspace. Each request must specify one workspace. Sandboxes run in the region of their sandbox group.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.SandboxWithCursor&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a sandbox and return its initial state. The sandbox might still bestarting when the response is returned. To use a saved snapshot or customimage, provide `snapshotId`, `snapshotName`, `buildId`, or `buildName`.
+        /// Create a sandbox and return its initial state. The sandbox might still be starting when the response is returned. To use a saved snapshot or custom image, provide `snapshotId`, `snapshotName`, `buildId`, or `buildName`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201Response"/></returns>
         /// <param name="body">The sandbox to create, including its compute plan, network policy, and optional source build or snapshot.</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.CreateSandbox201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List sandboxes in a workspace. Each request must specify one workspace.Sandboxes run in the region of their sandbox group.
+        /// List sandboxes in a workspace. Each request must specify one workspace. Sandboxes run in the region of their sandbox group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             return requestInfo;
         }
         /// <summary>
-        /// Create a sandbox and return its initial state. The sandbox might still bestarting when the response is returned. To use a saved snapshot or customimage, provide `snapshotId`, `snapshotName`, `buildId`, or `buildName`.
+        /// Create a sandbox and return its initial state. The sandbox might still be starting when the response is returned. To use a saved snapshot or custom image, provide `snapshotId`, `snapshotName`, `buildId`, or `buildName`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The sandbox to create, including its compute plan, network policy, and optional source build or snapshot.</param>
@@ -176,7 +176,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             return new global::Soenneker.Render.OpenApiClient.Sandboxes.SandboxesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List sandboxes in a workspace. Each request must specify one workspace.Sandboxes run in the region of their sandbox group.
+        /// List sandboxes in a workspace. Each request must specify one workspace. Sandboxes run in the region of their sandbox group.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SandboxesRequestBuilderGetQueryParameters 
@@ -224,7 +224,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes
             [QueryParameter("sandboxGroupId")]
             public string SandboxGroupId { get; set; }
 #endif
-            /// <summary>Filter for sandboxes with the specified statuses. By default, returns allstatuses except `terminated`. Include `terminated` explicitly to returnterminated sandboxes.</summary>
+            /// <summary>Filter for sandboxes with the specified statuses. By default, returns all statuses except `terminated`. Include `terminated` explicitly to return terminated sandboxes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

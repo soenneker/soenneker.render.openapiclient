@@ -46,7 +46,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of the build to create the sandbox from instead of the base image.The build must have succeeded and belong to the same sandbox group. Cannotbe combined with `buildName`, `snapshotId`, or `snapshotName`.</summary>
+        /// <summary>The ID of the build to create the sandbox from instead of the base image. The build must have succeeded and belong to the same sandbox group. Cannot be combined with `buildName`, `snapshotId`, or `snapshotName`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; AdditionalData?.Remove("buildId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
@@ -56,7 +56,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; AdditionalData?.Remove("buildId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
         private string _explicitNullValueBuildId = default!;
 #endif
-        /// <summary>The name of the build to create the sandbox from instead of the base image.Uses the newest successful build with this name in the sandbox group. Cannotbe combined with `buildId`, `snapshotId`, or `snapshotName`.</summary>
+        /// <summary>The name of the build to create the sandbox from instead of the base image. Uses the newest successful build with this name in the sandbox group. Cannot be combined with `buildId`, `snapshotId`, or `snapshotName`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BuildName { get => _explicitNullValueBuildName; set { _explicitNullValueBuildName = value; AdditionalData?.Remove("buildName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildName"); else _explicitNullProperties?.Remove("buildName"); } }
@@ -76,10 +76,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestEnv Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; AdditionalData?.Remove("env"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
         private global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestEnv _explicitNullValueEnv = default!;
 #endif
-        /// <summary>The number of seconds of inactivity before Render suspends the sandbox.Use 0 to disable automatic idle suspension. Positive values must be between300 and 86400. Defaults to 900, or to the source sandbox&apos;s idle timeout whencreating a sandbox from a snapshot.</summary>
+        /// <summary>The number of seconds of inactivity before Render suspends the sandbox. Use 0 to disable automatic idle suspension. Positive values must be between 300 and 86400. Defaults to 900, or to the source sandbox&apos;s idle timeout when creating a sandbox from a snapshot.</summary>
         public int? IdleTimeoutSeconds { get => _explicitNullValueIdleTimeoutSeconds; set { _explicitNullValueIdleTimeoutSeconds = value; AdditionalData?.Remove("idleTimeoutSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idleTimeoutSeconds"); else _explicitNullProperties?.Remove("idleTimeoutSeconds"); } }
         private int? _explicitNullValueIdleTimeoutSeconds = default!;
-        /// <summary>A label for the sandbox, such as `my-agent`, up to 64 characters. Names donot have to be unique; use the sandbox ID to identify a specific sandbox.Must not start with `sbx-`.</summary>
+        /// <summary>A label for the sandbox, such as `my-agent`, up to 64 characters. Names do not have to be unique; use the sandbox ID to identify a specific sandbox. Must not start with `sbx-`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -89,7 +89,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The outbound traffic policy to apply to the sandbox. Provide `type` or itsdeprecated alias `default`. If both are provided, they must match.</summary>
+        /// <summary>The outbound traffic policy to apply to the sandbox. Provide `type` or its deprecated alias `default`. If both are provided, they must match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Render.OpenApiClient.Models.CreateSandboxRequestNetworkPolicy? NetworkPolicy { get => _explicitNullValueNetworkPolicy; set { _explicitNullValueNetworkPolicy = value; AdditionalData?.Remove("networkPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkPolicy"); else _explicitNullProperties?.Remove("networkPolicy"); } }
@@ -129,7 +129,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string SandboxGroupId { get => _explicitNullValueSandboxGroupId; set { _explicitNullValueSandboxGroupId = value; AdditionalData?.Remove("sandboxGroupId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxGroupId"); else _explicitNullProperties?.Remove("sandboxGroupId"); } }
         private string _explicitNullValueSandboxGroupId = default!;
 #endif
-        /// <summary>The ID of the snapshot to create the sandbox from instead of the base image.The snapshot must be `available` and belong to the same sandbox group. Fora `runtime` snapshot, `plan` must match the snapshot&apos;s plan. The new sandboxinherits the source sandbox&apos;s network policy, timeout, and idle timeout.Provide `networkPolicy`, `timeoutSeconds`, or `idleTimeoutSeconds` to overridethese settings.</summary>
+        /// <summary>The ID of the snapshot to create the sandbox from instead of the base image. The snapshot must be `available` and belong to the same sandbox group. For a `runtime` snapshot, `plan` must match the snapshot&apos;s plan. The new sandbox inherits the source sandbox&apos;s network policy, timeout, and idle timeout. Provide `networkPolicy`, `timeoutSeconds`, or `idleTimeoutSeconds` to override these settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; AdditionalData?.Remove("snapshotId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotId"); else _explicitNullProperties?.Remove("snapshotId"); } }
@@ -139,7 +139,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; AdditionalData?.Remove("snapshotId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotId"); else _explicitNullProperties?.Remove("snapshotId"); } }
         private string _explicitNullValueSnapshotId = default!;
 #endif
-        /// <summary>The name of the snapshot to create the sandbox from. Uses the most recentlycreated snapshot with this name in the sandbox group that is `available`and unexpired. Cannot be combined with `snapshotId`. The same restorerequirements as `snapshotId` apply.</summary>
+        /// <summary>The name of the snapshot to create the sandbox from. Uses the most recently created snapshot with this name in the sandbox group that is `available` and unexpired. Cannot be combined with `snapshotId`. The same restore requirements as `snapshotId` apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnapshotName { get => _explicitNullValueSnapshotName; set { _explicitNullValueSnapshotName = value; AdditionalData?.Remove("snapshotName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotName"); else _explicitNullProperties?.Remove("snapshotName"); } }
@@ -149,7 +149,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string SnapshotName { get => _explicitNullValueSnapshotName; set { _explicitNullValueSnapshotName = value; AdditionalData?.Remove("snapshotName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotName"); else _explicitNullProperties?.Remove("snapshotName"); } }
         private string _explicitNullValueSnapshotName = default!;
 #endif
-        /// <summary>The maximum time the sandbox can run continuously, in seconds. The sandboxterminates when this time elapses. If the sandbox is suspended and laterresumed, this timeout restarts.Use 0 to disable the runtime timeout. Positive values must be between 60and 2592000 (30 days). Defaults to 86400, or to the source sandbox&apos;s runtimetimeout when creating a sandbox from a snapshot.</summary>
+        /// <summary>The maximum time the sandbox can run continuously, in seconds. The sandbox terminates when this time elapses. If the sandbox is suspended and later resumed, this timeout restarts.Use 0 to disable the runtime timeout. Positive values must be between 60 and 2592000 (30 days). Defaults to 86400, or to the source sandbox&apos;s runtime timeout when creating a sandbox from a snapshot.</summary>
         public int? TimeoutSeconds { get => _explicitNullValueTimeoutSeconds; set { _explicitNullValueTimeoutSeconds = value; AdditionalData?.Remove("timeoutSeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeoutSeconds"); else _explicitNullProperties?.Remove("timeoutSeconds"); } }
         private int? _explicitNullValueTimeoutSeconds = default!;
         /// <summary>

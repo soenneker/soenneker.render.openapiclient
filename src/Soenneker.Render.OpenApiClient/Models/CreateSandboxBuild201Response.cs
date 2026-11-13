@@ -45,7 +45,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>The timestamp when the sandbox build was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
-        /// <summary>A machine-readable reason the build failed. Null unless the status is`failed`. See `sandboxBuildFailureCode` for known codes. Treat unrecognizedcodes as `internal_error`.</summary>
+        /// <summary>A machine-readable reason the build failed. Null unless the status is `failed`. See `sandboxBuildFailureCode` for known codes. Treat unrecognized codes as `internal_error`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failureCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCode"); else _explicitNullProperties?.Remove("failureCode"); } }
@@ -55,7 +55,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failureCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCode"); else _explicitNullProperties?.Remove("failureCode"); } }
         private string _explicitNullValueFailureCode = default!;
 #endif
-        /// <summary>A description of why the build failed. Null unless the status is `failed`.May include error text from the image registry. When displaying errors, use`failureCode` to select the main message and show this value as additionaldetail.</summary>
+        /// <summary>A description of why the build failed. Null unless the status is `failed`. May include error text from the image registry. When displaying errors, use `failureCode` to select the main message and show this value as additional detail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; AdditionalData?.Remove("failureReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureReason"); else _explicitNullProperties?.Remove("failureReason"); } }

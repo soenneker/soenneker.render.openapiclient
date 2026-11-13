@@ -39,7 +39,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
         private string _explicitNullValueDefault = default!;
 #endif
-        /// <summary>Destinations the sandbox may reach, present when `type` is`allow-list` and absent otherwise. Each domain may be listed once.</summary>
+        /// <summary>Destinations the sandbox may reach, present when `type` is `allow-list` and absent otherwise. Each domain may be listed once.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }

@@ -34,7 +34,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item.Ver
         {
         }
         /// <summary>
-        /// List retained credential versions, newest version ID first. Versions withidentical settings and secret values share a fingerprint.Render retains the current configuration and the three distinct priorconfigurations most recently active. When an older configuration is removed,all versions that refer to it are also removed. These endpoints do not returnsecret values.
+        /// List retained credential versions, newest version ID first. Versions with identical settings and secret values share a fingerprint.Render retains the current configuration and the three distinct prior configurations most recently active. When an older configuration is removed, all versions that refer to it are also removed. These endpoints do not return secret values.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Render.OpenApiClient.Models.ListSandboxGroupCredentialVersions200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item.Ver
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// List retained credential versions, newest version ID first. Versions withidentical settings and secret values share a fingerprint.Render retains the current configuration and the three distinct priorconfigurations most recently active. When an older configuration is removed,all versions that refer to it are also removed. These endpoints do not returnsecret values.
+        /// List retained credential versions, newest version ID first. Versions with identical settings and secret values share a fingerprint.Render retains the current configuration and the three distinct prior configurations most recently active. When an older configuration is removed, all versions that refer to it are also removed. These endpoints do not return secret values.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

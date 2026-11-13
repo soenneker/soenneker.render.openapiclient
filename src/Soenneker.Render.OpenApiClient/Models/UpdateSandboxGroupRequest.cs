@@ -24,7 +24,7 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The maximum number of active sandboxes allowed in this group. Must be atleast 1. Render caps this value at the workspace&apos;s limit and returns theeffective limit. Lowering the limit does not stop existing sandboxes.</summary>
+        /// <summary>The maximum number of active sandboxes allowed in this group. Must be at least 1. Render caps this value at the workspace&apos;s limit and returns the effective limit. Lowering the limit does not stop existing sandboxes.</summary>
         public int? ConcurrencyLimit { get => _explicitNullValueConcurrencyLimit; set { _explicitNullValueConcurrencyLimit = value; AdditionalData?.Remove("concurrencyLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrencyLimit"); else _explicitNullProperties?.Remove("concurrencyLimit"); } }
         private int? _explicitNullValueConcurrencyLimit = default!;
         /// <summary>
