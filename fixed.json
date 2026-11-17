@@ -13930,6 +13930,13 @@
             }
           },
           {
+            "name": "includeAttempts",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "flowRunId",
             "in": "path",
             "required": true,
@@ -13984,6 +13991,88 @@
           "schema": {
             "minimum": 0,
             "type": "integer"
+          }
+        }
+      ]
+    },
+    "/flow-runs/{flowRunId}/steps/{stepSeq}/attempts/{attempt}": {
+      "get": {
+        "tags": [
+          "Workflow Flows"
+        ],
+        "summary": "Retrieve recorded failed step attempt",
+        "operationId": "GetFlowRunStepAttempt",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/0"
+          },
+          {
+            "name": "flowRunId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "stepSeq",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Flow run step details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFlowRunStepAttempt200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/401Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404NotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/429RateLimit"
+          },
+          "500": {
+            "$ref": "#/components/responses/500InternalServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/503ServiceUnavailable"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/0"
+        },
+        {
+          "$ref": "#/components/parameters/1"
+        },
+        {
+          "name": "attempt",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int64"
           }
         }
       ]
@@ -19964,9 +20053,7 @@
           "ownerId",
           "createdAt",
           "updatedAt",
-          "serviceLinks",
-          "envVars",
-          "secretFiles"
+          "serviceLinks"
         ],
         "type": "object",
         "properties": {
@@ -20001,13 +20088,15 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/EnvVar"
-            }
+            },
+            "description": "Omitted if the caller doesn\u0027t have the permission to read the environment group\u0027s secret values."
           },
           "secretFiles": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/SecretFile"
-            }
+            },
+            "description": "Omitted if the caller doesn\u0027t have the permission to read the environment group\u0027s secret values."
           }
         }
       },
@@ -22652,34 +22741,27 @@
           }
         }
       },
-      "GetFlowRunStep200Response": {
+      "GetFlowRunStepAttempt200Response": {
         "required": [
-          "seq",
-          "stepKey",
-          "type",
-          "status",
-          "startedAt"
+          "attempt",
+          "flowAttempt",
+          "startedAt",
+          "completedAt",
+          "error"
         ],
         "type": "object",
         "properties": {
-          "seq": {
+          "attempt": {
+            "maximum": 4294967295,
             "minimum": 0,
             "type": "integer",
-            "description": "The step\u0027s position in the flow run. Steps are numbered densely in the order the flow started them."
+            "format": "int64"
           },
-          "stepKey": {
-            "type": "string",
-            "description": "The SDK\u0027s key for the step."
-          },
-          "name": {
-            "type": "string",
-            "description": "For inline steps, the function\u0027s name. For detached steps, the task\u0027s registered name. Omitted for sleep steps."
-          },
-          "type": {
-            "$ref": "#/components/schemas/GetFlowRunStep200ResponseType"
-          },
-          "status": {
-            "$ref": "#/components/schemas/GetFlowRunStep200ResponseStatus"
+          "flowAttempt": {
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int64"
           },
           "startedAt": {
             "type": "string",
@@ -22689,27 +22771,12 @@
             "type": "string",
             "format": "date-time"
           },
-          "wakeAt": {
+          "retryAt": {
             "type": "string",
-            "description": "For sleep steps, when the sleep ends.",
             "format": "date-time"
           },
-          "childTaskRunId": {
-            "type": "string",
-            "description": "For detached steps, the ID of the task run the step started.",
-            "example": "trn-d0hp8fs9c44c73a6f1qg"
-          },
-          "input": {
-            "description": "The step\u0027s input. For detached steps, the input of the child task run."
-          },
-          "result": {
-            "description": "The step\u0027s result. Present only when the step succeeded; null when the step returned no value.",
-            "x-go-type": "json.RawMessage",
-            "nullable": true
-          },
           "error": {
-            "type": "string",
-            "description": "Error message if the step failed."
+            "type": "string"
           }
         }
       },
@@ -24004,6 +24071,73 @@
           "completedAt": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "GetFlowRunStep200Response": {
+        "required": [
+          "seq",
+          "stepKey",
+          "type",
+          "status",
+          "startedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "failedAttempts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "seq": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "The step\u0027s position in the flow run. Steps are numbered densely in the order the flow started them."
+          },
+          "stepKey": {
+            "type": "string",
+            "description": "The SDK\u0027s key for the step."
+          },
+          "name": {
+            "type": "string",
+            "description": "For inline steps, the function\u0027s name. For detached steps, the task\u0027s registered name. Omitted for sleep steps."
+          },
+          "type": {
+            "$ref": "#/components/schemas/GetFlowRunStep200ResponseType"
+          },
+          "status": {
+            "$ref": "#/components/schemas/GetFlowRunStep200ResponseStatus"
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "wakeAt": {
+            "type": "string",
+            "description": "For sleep steps, when the sleep ends.",
+            "format": "date-time"
+          },
+          "childTaskRunId": {
+            "type": "string",
+            "description": "For detached steps, the ID of the task run the step started.",
+            "example": "trn-d0hp8fs9c44c73a6f1qg"
+          },
+          "input": {
+            "description": "The step\u0027s input. For detached steps, the input of the child task run."
+          },
+          "result": {
+            "description": "The step\u0027s result. Present only when the step succeeded; null when the step returned no value.",
+            "x-go-type": "json.RawMessage",
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "description": "Error message if the step failed."
           }
         }
       },
@@ -28272,70 +28406,6 @@
           ]
         }
       },
-      "GetFlowRunStep200ResponseType": {
-        "enum": [
-          "inline",
-          "detached",
-          "sleep"
-        ],
-        "type": "string",
-        "description": "The kind of step. \u0060inline\u0060 runs a function inside the flow\u0027s process and retries in place. \u0060detached\u0060 runs a registered task as its own task run. \u0060sleep\u0060 is a durable sleep.",
-        "x-enum-varnames": [
-          "FlowRunStepTypeInline",
-          "FlowRunStepTypeDetached",
-          "FlowRunStepTypeSleep"
-        ],
-        "x-ms-enum": {
-          "name": "GetFlowRunStep200ResponseType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "inline",
-              "name": "Inline"
-            },
-            {
-              "value": "detached",
-              "name": "Detached"
-            },
-            {
-              "value": "sleep",
-              "name": "Sleep"
-            }
-          ]
-        }
-      },
-      "GetFlowRunStep200ResponseStatus": {
-        "enum": [
-          "running",
-          "succeeded",
-          "failed"
-        ],
-        "type": "string",
-        "description": "\u0060running\u0060 until the step records an outcome, then \u0060succeeded\u0060 or \u0060failed\u0060.",
-        "x-enum-varnames": [
-          "FlowRunStepStatusRunning",
-          "FlowRunStepStatusSucceeded",
-          "FlowRunStepStatusFailed"
-        ],
-        "x-ms-enum": {
-          "name": "GetFlowRunStep200ResponseStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "running",
-              "name": "Running"
-            },
-            {
-              "value": "succeeded",
-              "name": "Succeeded"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            }
-          ]
-        }
-      },
       "RetrieveSandboxExecution200ResponseType": {
         "enum": [
           "runs",
@@ -28464,6 +28534,70 @@
             {
               "value": "sleeping",
               "name": "Sleeping"
+            }
+          ]
+        }
+      },
+      "GetFlowRunStep200ResponseType": {
+        "enum": [
+          "inline",
+          "detached",
+          "sleep"
+        ],
+        "type": "string",
+        "description": "The kind of step. \u0060inline\u0060 runs a function inside the flow\u0027s process and retries in place. \u0060detached\u0060 runs a registered task as its own task run. \u0060sleep\u0060 is a durable sleep.",
+        "x-enum-varnames": [
+          "FlowRunStepTypeInline",
+          "FlowRunStepTypeDetached",
+          "FlowRunStepTypeSleep"
+        ],
+        "x-ms-enum": {
+          "name": "GetFlowRunStep200ResponseType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "inline",
+              "name": "Inline"
+            },
+            {
+              "value": "detached",
+              "name": "Detached"
+            },
+            {
+              "value": "sleep",
+              "name": "Sleep"
+            }
+          ]
+        }
+      },
+      "GetFlowRunStep200ResponseStatus": {
+        "enum": [
+          "running",
+          "succeeded",
+          "failed"
+        ],
+        "type": "string",
+        "description": "\u0060running\u0060 until the step records an outcome, then \u0060succeeded\u0060 or \u0060failed\u0060.",
+        "x-enum-varnames": [
+          "FlowRunStepStatusRunning",
+          "FlowRunStepStatusSucceeded",
+          "FlowRunStepStatusFailed"
+        ],
+        "x-ms-enum": {
+          "name": "GetFlowRunStep200ResponseStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "succeeded",
+              "name": "Succeeded"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
             }
           ]
         }
@@ -31068,23 +31202,21 @@
       }
     },
     "EnvGroupAllOf2": {
-      "required": [
-        "envVars",
-        "secretFiles"
-      ],
       "type": "object",
       "properties": {
         "envVars": {
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/EnvVar"
-          }
+          },
+          "description": "Omitted if the caller doesn\u0027t have the permission to read the environment group\u0027s secret values."
         },
         "secretFiles": {
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/SecretFile"
-          }
+          },
+          "description": "Omitted if the caller doesn\u0027t have the permission to read the environment group\u0027s secret values."
         }
       }
     },

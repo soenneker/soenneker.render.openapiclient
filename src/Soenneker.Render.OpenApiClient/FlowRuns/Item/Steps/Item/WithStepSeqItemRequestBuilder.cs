@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Render.OpenApiClient.FlowRuns.Item.Steps.Item.Attempts;
 using Soenneker.Render.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,12 +18,17 @@ namespace Soenneker.Render.OpenApiClient.FlowRuns.Item.Steps.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithStepSeqItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The attempts property</summary>
+        public global::Soenneker.Render.OpenApiClient.FlowRuns.Item.Steps.Item.Attempts.AttemptsRequestBuilder Attempts
+        {
+            get => new global::Soenneker.Render.OpenApiClient.FlowRuns.Item.Steps.Item.Attempts.AttemptsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.FlowRuns.Item.Steps.Item.WithStepSeqItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithStepSeqItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/flow-runs/{flowRunId}/steps/{stepSeq}{?stepKey*}", pathParameters)
+        public WithStepSeqItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/flow-runs/{flowRunId}/steps/{stepSeq}{?includeAttempts*,stepKey*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +36,7 @@ namespace Soenneker.Render.OpenApiClient.FlowRuns.Item.Steps.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithStepSeqItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/flow-runs/{flowRunId}/steps/{stepSeq}{?stepKey*}", rawUrl)
+        public WithStepSeqItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/flow-runs/{flowRunId}/steps/{stepSeq}{?includeAttempts*,stepKey*}", rawUrl)
         {
         }
         /// <summary>
@@ -104,6 +110,10 @@ namespace Soenneker.Render.OpenApiClient.FlowRuns.Item.Steps.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithStepSeqItemRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
+            [QueryParameter("includeAttempts")]
+            public bool? IncludeAttempts { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The SDK&apos;s key for the step, as `stepKey` reports it in the step listing. Steps that share a sequence number are told apart by it. Omit it for a step the SDK recorded without one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

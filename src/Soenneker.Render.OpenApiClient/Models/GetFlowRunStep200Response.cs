@@ -23,6 +23,8 @@ namespace Soenneker.Render.OpenApiClient.Models
             else if (parseNode.GetChildNode("completedAt") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
             if (parseNode.GetChildNode("error") is null) { _explicitNullValueError = default!; _explicitNullProperties?.Remove("error"); }
             else if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("failedAttempts") is null) { _explicitNullValueFailedAttempts = default!; _explicitNullProperties?.Remove("failedAttempts"); }
+            else if (parseNode.GetChildNode("failedAttempts") is { } nullNodeFailedAttempts && nullNodeFailedAttempts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedAttempts = null;
             if (parseNode.GetChildNode("input") is null) { _explicitNullValueInput = default!; _explicitNullProperties?.Remove("input"); }
             else if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
@@ -67,6 +69,16 @@ namespace Soenneker.Render.OpenApiClient.Models
 #else
         public string Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private string _explicitNullValueError = default!;
+#endif
+        /// <summary>The failedAttempts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? FailedAttempts { get => _explicitNullValueFailedAttempts; set { _explicitNullValueFailedAttempts = value; AdditionalData?.Remove("failedAttempts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedAttempts"); else _explicitNullProperties?.Remove("failedAttempts"); } }
+        private List<string>? _explicitNullValueFailedAttempts = default!;
+#nullable restore
+#else
+        public List<string> FailedAttempts { get => _explicitNullValueFailedAttempts; set { _explicitNullValueFailedAttempts = value; AdditionalData?.Remove("failedAttempts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedAttempts"); else _explicitNullProperties?.Remove("failedAttempts"); } }
+        private List<string> _explicitNullValueFailedAttempts = default!;
 #endif
         /// <summary>The step&apos;s input. For detached steps, the input of the child task run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,6 +163,7 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "childTaskRunId", n => { ChildTaskRunId = n.GetStringValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
+                { "failedAttempts", n => { FailedAttempts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "input", n => { Input = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "result", n => { Result = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -172,6 +185,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("childTaskRunId", ChildTaskRunId);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteStringValue("error", Error);
+            writer.WriteCollectionOfPrimitiveValues<string>("failedAttempts", FailedAttempts);
             writer.WriteObjectValue<UntypedNode>("input", Input);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<UntypedNode>("result", Result);

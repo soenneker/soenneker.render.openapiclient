@@ -52,7 +52,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; AdditionalData?.Remove("environmentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentId"); else _explicitNullProperties?.Remove("environmentId"); } }
         private string _explicitNullValueEnvironmentId = default!;
 #endif
-        /// <summary>The envVars property</summary>
+        /// <summary>Omitted if the caller doesn&apos;t have the permission to read the environment group&apos;s secret values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Render.OpenApiClient.Models.EnvVar>? EnvVars { get => _explicitNullValueEnvVars; set { _explicitNullValueEnvVars = value; AdditionalData?.Remove("envVars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envVars"); else _explicitNullProperties?.Remove("envVars"); } }
@@ -92,7 +92,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         public string OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("ownerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerId"); else _explicitNullProperties?.Remove("ownerId"); } }
         private string _explicitNullValueOwnerId = default!;
 #endif
-        /// <summary>The secretFiles property</summary>
+        /// <summary>Omitted if the caller doesn&apos;t have the permission to read the environment group&apos;s secret values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Render.OpenApiClient.Models.SecretFile>? SecretFiles { get => _explicitNullValueSecretFiles; set { _explicitNullValueSecretFiles = value; AdditionalData?.Remove("secretFiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretFiles"); else _explicitNullProperties?.Remove("secretFiles"); } }
