@@ -10046,8 +10046,8 @@
           "required": true
         },
         "responses": {
-          "200": {
-            "description": "OK",
+          "201": {
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
@@ -10073,6 +10073,17 @@
           },
           "503": {
             "$ref": "#/components/responses/503ServiceUnavailable"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Environment"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -22931,6 +22942,11 @@
             "description": "The Render region where the group\u0027s sandboxes run. Defaults to \u0060oregon\u0060.",
             "default": "oregon",
             "example": "oregon"
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The ID of an environment in the workspace to create the group in. If you omit it, the group isn\u0027t in a project. Creating a group in a protected environment requires an admin.",
+            "example": "evm-cph1rs3idesc73a2b2mg"
           }
         },
         "description": "The sandbox group to create."
@@ -23433,10 +23449,12 @@
         }
       },
       "RetrieveDisk200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "UpdateDisk200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListSnapshots201ResponseSchema": {
         "type": "array",
@@ -23445,7 +23463,8 @@
         }
       },
       "RestoreSnapshot200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListOwners200ResponseSchema": {
         "type": "array",
@@ -23499,7 +23518,8 @@
         }
       },
       "PatchOwnerNotificationSettings200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListNotificationOverrides200ResponseSchema": {
         "type": "array",
@@ -23508,7 +23528,8 @@
         }
       },
       "PatchServiceNotificationOverrides200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListRegistryCredentials200ResponseSchema": {
         "type": "array",
@@ -23635,7 +23656,8 @@
         }
       },
       "AutoscaleService200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListJob200ResponseSchema": {
         "type": "array",
@@ -23644,10 +23666,12 @@
         }
       },
       "RetrieveJob200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "CancelJob200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListInstances200ResponseSchema": {
         "type": "array",
@@ -23696,7 +23720,8 @@
         "description": "Resource log stream overrides"
       },
       "GetOwnerMetricsStream200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "UpsertOwnerMetricsStream200Response": {
         "required": [
@@ -23821,10 +23846,12 @@
         }
       },
       "GetBuildSource200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "UpdateBuildSource200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListBuildsInBuildSource200ResponseSchema": {
         "type": "array",
@@ -23833,7 +23860,8 @@
         }
       },
       "RetrieveBuildSourceBuild200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "GetEnvVarsForBuildSource200ResponseSchema": {
         "type": "array",
@@ -23842,7 +23870,8 @@
         }
       },
       "UpdateEnvVarsForBuildSourceRequest": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "UpdateEnvVarsForBuildSource200ResponseSchema": {
         "type": "array",
@@ -23875,10 +23904,12 @@
         }
       },
       "RetrieveWebhook200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "UpdateWebhook200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListWebhookEvents200ResponseSchema": {
         "type": "array",
@@ -23893,10 +23924,12 @@
         }
       },
       "GetWorkflow200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "UpdateWorkflow200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListWorkflowVersions200ResponseSchema": {
         "type": "array",
@@ -24184,7 +24217,7 @@
           },
           "environmentId": {
             "type": "string",
-            "description": "The ID of the environment this sandbox group belongs to, if any.",
+            "description": "The ID of the environment that contains this group. Null if the group isn\u0027t in a project. To move a group, add it to or remove it from an environment with \u0060/environments/{environmentId}/resources\u0060.",
             "nullable": true
           },
           "concurrencyLimit": {
@@ -24214,7 +24247,8 @@
         }
       },
       "RetrieveSandbox200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListSandboxExecutions200ResponseSchema": {
         "type": "array",
@@ -24223,10 +24257,12 @@
         }
       },
       "RetrieveSandboxGroup200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "UpdateSandboxGroup200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListSandboxGroupCredentials200ResponseSchema": {
         "maxItems": 25,
@@ -24236,10 +24272,12 @@
         }
       },
       "RetrieveSandboxGroupCredential200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "UpdateSandboxGroupCredential200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListSandboxGroupCredentialVersions200ResponseSchema": {
         "type": "array",
@@ -24248,7 +24286,8 @@
         }
       },
       "RestoreSandboxGroupCredential200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListSandboxBuilds200ResponseSchema": {
         "type": "array",
@@ -24257,7 +24296,8 @@
         }
       },
       "RetrieveSandboxBuild200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ListSandboxSnapshots200ResponseSchema": {
         "type": "array",
@@ -24266,10 +24306,12 @@
         }
       },
       "RetrieveSandboxSnapshot200Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "ConnectSandboxFiles201Response": {
-        "type": "string"
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "LogsValues200ResponseResponseContent": {
         "type": "array",

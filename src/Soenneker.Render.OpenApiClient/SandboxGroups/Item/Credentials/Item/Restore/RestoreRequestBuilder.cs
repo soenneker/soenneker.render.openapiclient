@@ -36,7 +36,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item.Res
         /// <summary>
         /// Restore a retained credential version, including its routing settings, injection settings, and secret value, as a new current version. Requires an admin.The new version has a higher ID, records who restored it and when, and identifies the source in `restoredFromVersionId`. Its fingerprint matches the source version. Render retains the current configuration and the three distinct prior configurations most recently active. Removing an older configuration also removes all versions that refer to it.The response confirms the configuration was saved. It does not confirm that credential injection is active for a particular sandbox.These endpoints do not return secret values.
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.RestoreSandboxGroupCredential200Response"/></returns>
         /// <param name="body">The retained credential version to restore.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,11 +50,11 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item.Res
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.RestoreSandboxGroupCredentialRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.RestoreSandboxGroupCredential200Response?> PostAsync(global::Soenneker.Render.OpenApiClient.Models.RestoreSandboxGroupCredentialRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> PostAsync(global::Soenneker.Render.OpenApiClient.Models.RestoreSandboxGroupCredentialRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.RestoreSandboxGroupCredential200Response> PostAsync(global::Soenneker.Render.OpenApiClient.Models.RestoreSandboxGroupCredentialRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -72,7 +72,7 @@ namespace Soenneker.Render.OpenApiClient.SandboxGroups.Item.Credentials.Item.Res
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.RestoreSandboxGroupCredential200Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.RestoreSandboxGroupCredential200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Restore a retained credential version, including its routing settings, injection settings, and secret value, as a new current version. Requires an admin.The new version has a higher ID, records who restored it and when, and identifies the source in `restoredFromVersionId`. Its fingerprint matches the source version. Render retains the current configuration and the three distinct prior configurations most recently active. Removing an older configuration also removes all versions that refer to it.The response confirms the configuration was saved. It does not confirm that credential injection is active for a particular sandbox.These endpoints do not return secret values.

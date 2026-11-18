@@ -36,7 +36,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
         /// <summary>
         /// Create a short-lived connect token for a file upload or download. Transfer the file directly to or from the URL in the response, using the token as the bearer token. The token authorizes only the specified sandbox, operation, and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` for a directory archive. For gzip compression, also set `Content-Encoding: gzip`. Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxFiles201Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
@@ -49,11 +49,11 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> PostAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token.TokenRequestBuilder.TokenRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxFiles201Response?> PostAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token.TokenRequestBuilder.TokenRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> PostAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token.TokenRequestBuilder.TokenRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxFiles201Response> PostAsync(Action<RequestConfiguration<global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token.TokenRequestBuilder.TokenRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -70,7 +70,7 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item.Files.Item.Token
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxFiles201Response>(requestInfo, global::Soenneker.Render.OpenApiClient.Models.ConnectSandboxFiles201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a short-lived connect token for a file upload or download. Transfer the file directly to or from the URL in the response, using the token as the bearer token. The token authorizes only the specified sandbox, operation, and path. Its expiration time is returned in `expiresAt`.Use `application/octet-stream` for a single file or `application/x-tar` for a directory archive. For gzip compression, also set `Content-Encoding: gzip`. Directory downloads return `application/x-tar` with `Content-Encoding: gzip`.
