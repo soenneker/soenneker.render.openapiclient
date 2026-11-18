@@ -95,7 +95,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogActor>(global::Soenneker.Render.OpenApiClient.Models.AuditLogActor.CreateFromDiscriminatorValue); } },
                 { "event", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.AuditLogEvent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEvent = default; _explicitNullProperties?.Remove("event"); AdditionalData["event"] = unknown; } else { Event = parsed; AdditionalData.Remove("event"); } } },

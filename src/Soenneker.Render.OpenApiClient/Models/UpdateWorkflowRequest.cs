@@ -92,7 +92,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "autoDeployTrigger", n => { AutoDeployTrigger = n.GetStringValue(); } },
                 { "buildConfig", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.UpdateWorkflowRequestBuildConfig>(global::Soenneker.Render.OpenApiClient.Models.UpdateWorkflowRequestBuildConfig.CreateFromDiscriminatorValue); } },

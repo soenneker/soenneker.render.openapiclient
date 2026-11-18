@@ -155,7 +155,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "cache", n => { Cache = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.Cache>(global::Soenneker.Render.OpenApiClient.Models.Cache.CreateFromDiscriminatorValue); } },
                 { "envSpecificDetails", n => { EnvSpecificDetails = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch>(global::Soenneker.Render.OpenApiClient.Models.EnvSpecificDetailsPatch.CreateFromDiscriminatorValue); } },

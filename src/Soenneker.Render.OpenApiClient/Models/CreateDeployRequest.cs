@@ -90,7 +90,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "buildId", n => { BuildId = n.GetStringValue(); } },
                 { "clearCache", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CreateDeployRequestClearCache>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueClearCache = default; _explicitNullProperties?.Remove("clearCache"); AdditionalData["clearCache"] = unknown; } else { ClearCache = parsed; AdditionalData.Remove("clearCache"); } } },

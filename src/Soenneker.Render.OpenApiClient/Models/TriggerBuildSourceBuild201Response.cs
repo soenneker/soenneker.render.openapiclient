@@ -107,7 +107,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "assetsDeletedAt", n => { AssetsDeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "buildRun", n => { BuildRun = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun>(global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun.CreateFromDiscriminatorValue); } },

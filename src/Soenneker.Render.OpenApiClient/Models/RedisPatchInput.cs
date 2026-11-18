@@ -84,7 +84,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "ipAllowList", n => { IpAllowList = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription>(global::Soenneker.Render.OpenApiClient.Models.CidrBlockAndDescription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "maxmemoryPolicy", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.MaxmemoryPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMaxmemoryPolicy = default; _explicitNullProperties?.Remove("maxmemoryPolicy"); AdditionalData["maxmemoryPolicy"] = unknown; } else { MaxmemoryPolicy = parsed; AdditionalData.Remove("maxmemoryPolicy"); } } },

@@ -119,7 +119,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "domainType", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.CustomDomainDomainType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDomainType = default; _explicitNullProperties?.Remove("domainType"); AdditionalData["domainType"] = unknown; } else { DomainType = parsed; AdditionalData.Remove("domainType"); } } },
