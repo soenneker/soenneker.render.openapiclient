@@ -40,7 +40,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}{&build*,direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*,resource*}", pathParameters)
+        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}{&build*,direction*,endTime*,environment*,host*,instance*,level*,limit*,method*,path*,project*,region*,resource*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Render.OpenApiClient.Logs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}{&build*,direction*,endTime*,host*,instance*,level*,limit*,method*,path*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*,resource*}", rawUrl)
+        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/logs?ownerId={ownerId}{&build*,direction*,endTime*,environment*,host*,instance*,level*,limit*,method*,path*,project*,region*,resource*,sandbox*,startTime*,statusCode*,task*,taskRun*,text*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -142,6 +142,16 @@ namespace Soenneker.Render.OpenApiClient.Logs
             /// <summary>Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.</summary>
             [QueryParameter("endTime")]
             public DateTimeOffset? EndTime { get; set; }
+            /// <summary>The ID of an environment in the project to return logs for. Requires `project`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("environment")]
+            public string? Environment { get; set; }
+#nullable restore
+#else
+            [QueryParameter("environment")]
+            public string Environment { get; set; }
+#endif
             /// <summary>Filter request logs by their host. [Wildcards and regex](https://render.com/docs/logging#wildcards-and-regular-expressions) are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -205,7 +215,27 @@ namespace Soenneker.Render.OpenApiClient.Logs
             [QueryParameter("path")]
             public string[] Path { get; set; }
 #endif
-            /// <summary>Filter logs by their resource. A resource is the id of a server, cronjob, job, postgres, redis, workflow, or sandbox group.</summary>
+            /// <summary>The ID of a project to return logs for. The query covers the project&apos;s services, cron jobs, Postgres databases, and Key Value instances. Combine with `resource` to narrow the query to specific resources in the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("project")]
+            public string? Project { get; set; }
+#nullable restore
+#else
+            [QueryParameter("project")]
+            public string Project { get; set; }
+#endif
+            /// <summary>The region to return logs for, such as `oregon`. Requires `project`. Required when the project&apos;s or environment&apos;s resources are in more than one region.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("region")]
+            public string? Region { get; set; }
+#nullable restore
+#else
+            [QueryParameter("region")]
+            public string Region { get; set; }
+#endif
+            /// <summary>Filter logs by their resource. A resource is the id of a server, cronjob, job, postgres, redis, workflow, or sandbox group. Required unless `project` is provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource")]

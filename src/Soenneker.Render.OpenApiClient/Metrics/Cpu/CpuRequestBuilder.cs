@@ -22,7 +22,7 @@ namespace Soenneker.Render.OpenApiClient.Metrics.Cpu
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CpuRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/metrics/cpu{?aggregationMethod*,endTime*,instance*,resolutionSeconds*,resource*,service*,startTime*}", pathParameters)
+        public CpuRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/metrics/cpu{?aggregationMethod*,endTime*,environment*,instance*,project*,region*,resolutionSeconds*,resource*,service*,startTime*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Render.OpenApiClient.Metrics.Cpu
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CpuRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/metrics/cpu{?aggregationMethod*,endTime*,instance*,resolutionSeconds*,resource*,service*,startTime*}", rawUrl)
+        public CpuRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/metrics/cpu{?aggregationMethod*,endTime*,environment*,instance*,project*,region*,resolutionSeconds*,resource*,service*,startTime*}", rawUrl)
         {
         }
         /// <summary>
@@ -40,6 +40,7 @@ namespace Soenneker.Render.OpenApiClient.Metrics.Cpu
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Render.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +55,7 @@ namespace Soenneker.Render.OpenApiClient.Metrics.Cpu
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Render.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -101,6 +103,16 @@ namespace Soenneker.Render.OpenApiClient.Metrics.Cpu
             /// <summary>Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.</summary>
             [QueryParameter("endTime")]
             public DateTimeOffset? EndTime { get; set; }
+            /// <summary>The ID of an environment to query. The query covers the resources in the environment that you can view, so `resource` is optional when this is provided. If `resource` is also provided, the query covers only those resources, and each must belong to the environment. Only one environment can be provided. If `project` is also provided, the environment must belong to that project. An environment that doesn&apos;t exist or that you can&apos;t access returns a 404.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("environment")]
+            public string? Environment { get; set; }
+#nullable restore
+#else
+            [QueryParameter("environment")]
+            public string Environment { get; set; }
+#endif
             /// <summary>Instance ID to query. When multiple instance ID query params are provided, they are ORed together</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +122,26 @@ namespace Soenneker.Render.OpenApiClient.Metrics.Cpu
 #else
             [QueryParameter("instance")]
             public string Instance { get; set; }
+#endif
+            /// <summary>The ID of a project to query. The query covers the resources in the project that you can view, so `resource` is optional when this is provided. If `resource` is also provided, the query covers only those resources, and each must belong to the project. Only one project can be provided. A project that doesn&apos;t exist or that you can&apos;t access returns a 404.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("project")]
+            public string? Project { get; set; }
+#nullable restore
+#else
+            [QueryParameter("project")]
+            public string Project { get; set; }
+#endif
+            /// <summary>The region to query when querying by `project` or `environment`. Required when the project&apos;s or environment&apos;s resources are in more than one region</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("region")]
+            public string? Region { get; set; }
+#nullable restore
+#else
+            [QueryParameter("region")]
+            public string Region { get; set; }
 #endif
             /// <summary>The resolution of the returned data</summary>
             [QueryParameter("resolutionSeconds")]

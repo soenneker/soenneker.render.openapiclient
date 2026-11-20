@@ -8,6 +8,7 @@ using Soenneker.Render.OpenApiClient.Sandboxes.Item.Execs;
 using Soenneker.Render.OpenApiClient.Sandboxes.Item.Files;
 using Soenneker.Render.OpenApiClient.Sandboxes.Item.Runs;
 using Soenneker.Render.OpenApiClient.Sandboxes.Item.Snapshots;
+using Soenneker.Render.OpenApiClient.Sandboxes.Item.Suspend;
 using Soenneker.Render.OpenApiClient.Sandboxes.Item.Terminate;
 using System.Collections.Generic;
 using System.IO;
@@ -41,6 +42,11 @@ namespace Soenneker.Render.OpenApiClient.Sandboxes.Item
         public global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Snapshots.SnapshotsRequestBuilder Snapshots
         {
             get => new global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Snapshots.SnapshotsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The suspend property</summary>
+        public global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Suspend.SuspendRequestBuilder Suspend
+        {
+            get => new global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Suspend.SuspendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The terminate property</summary>
         public global::Soenneker.Render.OpenApiClient.Sandboxes.Item.Terminate.TerminateRequestBuilder Terminate
