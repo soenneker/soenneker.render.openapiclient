@@ -11,7 +11,7 @@ namespace Soenneker.Render.OpenApiClient.Models
     /// Present when the build source is currently image-based. Mutually exclusive with `buildRun`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TriggerBuildSourceBuild201ResponseImage : IAdditionalDataHolder, IParsable
+    public partial class RetrieveBuildSourceBuild200ResponseImage : IAdditionalDataHolder, IParsable
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -83,21 +83,21 @@ namespace Soenneker.Render.OpenApiClient.Models
         private string _explicitNullValueSHA = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseImage"/> and sets the default values.
         /// </summary>
-        public TriggerBuildSourceBuild201ResponseImage()
+        public RetrieveBuildSourceBuild200ResponseImage()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseImage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseImage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseImage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

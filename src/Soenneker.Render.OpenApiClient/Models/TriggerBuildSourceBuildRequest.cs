@@ -19,6 +19,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("clearCache") is null) { _explicitNullValueClearCache = default!; _explicitNullProperties?.Remove("clearCache"); }
             else if (parseNode.GetChildNode("clearCache") is { } nullNodeClearCache && nullNodeClearCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClearCache = null;
+            if (parseNode.GetChildNode("deploy") is null) { _explicitNullValueDeploy = default!; _explicitNullProperties?.Remove("deploy"); }
+            else if (parseNode.GetChildNode("deploy") is { } nullNodeDeploy && nullNodeDeploy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deploy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,6 +28,16 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <summary>If `clear`, Render clears the build source&apos;s build cache before building. This can be useful if you&apos;re experiencing issues with your build.</summary>
         public global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestClearCache? ClearCache { get => _explicitNullValueClearCache; set { _explicitNullValueClearCache = value; AdditionalData?.Remove("clearCache"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clearCache"); else _explicitNullProperties?.Remove("clearCache"); } }
         private global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestClearCache? _explicitNullValueClearCache = default!;
+        /// <summary>The deploy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestDeploy? Deploy { get => _explicitNullValueDeploy; set { _explicitNullValueDeploy = value; AdditionalData?.Remove("deploy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy"); else _explicitNullProperties?.Remove("deploy"); } }
+        private global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestDeploy? _explicitNullValueDeploy = default!;
+#nullable restore
+#else
+        public global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestDeploy Deploy { get => _explicitNullValueDeploy; set { _explicitNullValueDeploy = value; AdditionalData?.Remove("deploy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy"); else _explicitNullProperties?.Remove("deploy"); } }
+        private global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestDeploy _explicitNullValueDeploy = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequest"/> and sets the default values.
         /// </summary>
@@ -52,6 +64,7 @@ namespace Soenneker.Render.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "clearCache", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestClearCache>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueClearCache = default; _explicitNullProperties?.Remove("clearCache"); AdditionalData["clearCache"] = unknown; } else { ClearCache = parsed; AdditionalData.Remove("clearCache"); } } },
+                { "deploy", n => { Deploy = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestDeploy>(global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestDeploy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,6 +75,7 @@ namespace Soenneker.Render.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestClearCache>("clearCache", ClearCache);
+            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuildRequestDeploy>("deploy", Deploy);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

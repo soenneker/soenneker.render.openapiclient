@@ -87,7 +87,7 @@ namespace Soenneker.Render.OpenApiClient.BuildSources.Item.Builds
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Start a new build of the build source at the current HEAD of itsbranch, even if an up-to-date build already exists. Services linked tothe build source with autodeploy enabled are deployed with the result.Updating a build source or its build-time environment (env vars,secret files, env groups) with the REST API does not build it. Callthis endpoint after those changes to build them.Only `git` build sources can be built.
+        /// Start a new build of the build source at the current HEAD of itsbranch, even if an up-to-date build already exists.By default, all services linked to the build source with autodeploy enabledwill be deployed. Use `deploy.serviceScope` to override this and choose specificlinked services.Updating a build source or its build-time environment (env vars,secret files, env groups) with the REST API does not build it. Callthis endpoint after those changes to build them.Only `git` build sources can be built.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Render.OpenApiClient.BuildSources.Item.Builds
             return requestInfo;
         }
         /// <summary>
-        /// Start a new build of the build source at the current HEAD of itsbranch, even if an up-to-date build already exists. Services linked tothe build source with autodeploy enabled are deployed with the result.Updating a build source or its build-time environment (env vars,secret files, env groups) with the REST API does not build it. Callthis endpoint after those changes to build them.Only `git` build sources can be built.
+        /// Start a new build of the build source at the current HEAD of itsbranch, even if an up-to-date build already exists.By default, all services linked to the build source with autodeploy enabledwill be deployed. Use `deploy.serviceScope` to override this and choose specificlinked services.Updating a build source or its build-time environment (env vars,secret files, env groups) with the REST API does not build it. Callthis endpoint after those changes to build them.Only `git` build sources can be built.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

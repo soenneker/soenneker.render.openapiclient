@@ -11719,7 +11719,7 @@
           "Build Sources"
         ],
         "summary": "Trigger a build",
-        "description": "Start a new build of the build source at the current HEAD of its\nbranch, even if an up-to-date build already exists. Services linked to\nthe build source with autodeploy enabled are deployed with the result.\n\nUpdating a build source or its build-time environment (env vars,\nsecret files, env groups) with the REST API does not build it. Call\nthis endpoint after those changes to build them.\n\nOnly \u0060git\u0060 build sources can be built.\n",
+        "description": "Start a new build of the build source at the current HEAD of its\nbranch, even if an up-to-date build already exists.\n\nBy default, all services linked to the build source with autodeploy enabled\nwill be deployed. Use \u0060deploy.serviceScope\u0060 to override this and choose specific\nlinked services.\n\nUpdating a build source or its build-time environment (env vars,\nsecret files, env groups) with the REST API does not build it. Call\nthis endpoint after those changes to build them.\n\nOnly \u0060git\u0060 build sources can be built.\n",
         "operationId": "TriggerBuildSourceBuild",
         "parameters": [
           {
@@ -22656,10 +22656,37 @@
         "properties": {
           "clearCache": {
             "$ref": "#/components/schemas/TriggerBuildSourceBuildRequestClearCache"
+          },
+          "deploy": {
+            "$ref": "#/components/schemas/TriggerBuildSourceBuildRequestDeploy"
           }
         }
       },
       "TriggerBuildSourceBuild201Response": {
+        "required": [
+          "deploys",
+          "skippedServices"
+        ],
+        "type": "object",
+        "properties": {
+          "deploys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TriggerBuildSourceBuild201ResponseDeploysItem"
+            },
+            "description": "The deploys that the build started, one for each service."
+          },
+          "skippedServices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TriggerBuildSourceBuild201ResponseSkippedServicesItem"
+            },
+            "description": "Services in \u0060deploy.serviceScope\u0060 that did not get a deploy, with the reason for each. The build still runs for the other services. For \u0060autodeploy_only\u0060, suspended services are not listed.\n"
+          }
+        },
+        "not": {}
+      },
+      "RetrieveBuildSourceBuild200Response": {
         "required": [
           "id",
           "buildSourceId",
@@ -22675,10 +22702,10 @@
             "type": "string"
           },
           "buildRun": {
-            "$ref": "#/components/schemas/TriggerBuildSourceBuild201ResponseBuildRun"
+            "$ref": "#/components/schemas/RetrieveBuildSourceBuild200ResponseBuildRun"
           },
           "image": {
-            "$ref": "#/components/schemas/TriggerBuildSourceBuild201ResponseImage"
+            "$ref": "#/components/schemas/RetrieveBuildSourceBuild200ResponseImage"
           },
           "createdAt": {
             "type": "string",
@@ -24213,10 +24240,6 @@
         "items": {
           "$ref": "#/components/schemas/ListBuildsInBuildSource200ResponseSchemaItem"
         }
-      },
-      "RetrieveBuildSourceBuild200Response": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "GetEnvVarsForBuildSource200ResponseSchema": {
         "type": "array",
@@ -26314,7 +26337,55 @@
         },
         "description": "Patch shape for a build source\u0027s image identity. Unset fields are left unchanged on the underlying image reference. ownerId is intentionally omitted \u2014 a build source\u0027s owner is fixed at creation, and changing the image\u0027s owner would amount to a different identity.\n"
       },
-      "TriggerBuildSourceBuild201ResponseBuildRun": {
+      "TriggerBuildSourceBuildRequestDeploy": {
+        "required": [
+          "serviceScope"
+        ],
+        "type": "object",
+        "properties": {
+          "serviceScope": {
+            "$ref": "#/components/schemas/TriggerBuildSourceBuildRequestDeployServiceScope"
+          },
+          "serviceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "IDs of the linked services to deploy to. Required when \u0060serviceScope\u0060 is \u0060custom\u0060, and not allowed with the other scopes. You must be authorized to trigger a deploy for each service that you include in this list.\n"
+          }
+        }
+      },
+      "TriggerBuildSourceBuild201ResponseDeploysItem": {
+        "required": [
+          "serviceId",
+          "deployId"
+        ],
+        "type": "object",
+        "properties": {
+          "serviceId": {
+            "type": "string"
+          },
+          "deployId": {
+            "type": "string"
+          }
+        }
+      },
+      "TriggerBuildSourceBuild201ResponseSkippedServicesItem": {
+        "required": [
+          "serviceId",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "serviceId": {
+            "type": "string"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/TriggerBuildSourceBuild201ResponseSkippedServicesItemReason"
+          }
+        }
+      },
+      "RetrieveBuildSourceBuild200ResponseBuildRun": {
         "required": [
           "id"
         ],
@@ -26324,7 +26395,7 @@
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/TriggerBuildSourceBuild201ResponseBuildRunStatus"
+            "$ref": "#/components/schemas/RetrieveBuildSourceBuild200ResponseBuildRunStatus"
           },
           "buildStartedAt": {
             "type": "string",
@@ -26335,7 +26406,7 @@
             "format": "date-time"
           },
           "runtime": {
-            "$ref": "#/components/schemas/TriggerBuildSourceBuild201ResponseBuildRunRuntime"
+            "$ref": "#/components/schemas/RetrieveBuildSourceBuild200ResponseBuildRunRuntime"
           },
           "commitId": {
             "type": "string"
@@ -26346,7 +26417,7 @@
         },
         "description": "The Render build run that produced this build. Present when the build source is currently build-based. Mutually exclusive with \u0060image\u0060.\n"
       },
-      "TriggerBuildSourceBuild201ResponseImage": {
+      "RetrieveBuildSourceBuild200ResponseImage": {
         "type": "object",
         "properties": {
           "imageVersionId": {
@@ -29419,7 +29490,56 @@
           ]
         }
       },
-      "TriggerBuildSourceBuild201ResponseBuildRunStatus": {
+      "TriggerBuildSourceBuildRequestDeployServiceScope": {
+        "enum": [
+          "autodeploy_only",
+          "none",
+          "custom"
+        ],
+        "type": "string",
+        "description": "Which linked services the build deploys to:\n\n- \u0060autodeploy_only\u0060: every linked service with autodeploy on, including services set to deploy after CI checks pass. Services with autodeploy off do not get a deploy.\n- \u0060none\u0060: no services. The build runs and deploys nothing.\n- \u0060custom\u0060: the linked services in \u0060serviceIds\u0060, regardless of their autodeploy setting.\n",
+        "x-ms-enum": {
+          "name": "TriggerBuildSourceBuildRequestDeployServiceScope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "autodeploy_only",
+              "name": "AutodeployOnly"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "custom",
+              "name": "Custom"
+            }
+          ]
+        }
+      },
+      "TriggerBuildSourceBuild201ResponseSkippedServicesItemReason": {
+        "enum": [
+          "suspended",
+          "deploys_shut_off"
+        ],
+        "type": "string",
+        "description": "Why the service did not get a deploy:\n\n- \u0060suspended\u0060: the service is suspended.\n- \u0060deploys_shut_off\u0060: Render has temporarily paused deploys for the service\u0027s plan tier.\n",
+        "x-ms-enum": {
+          "name": "TriggerBuildSourceBuild201ResponseSkippedServicesItemReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "suspended",
+              "name": "Suspended"
+            },
+            {
+              "value": "deploys_shut_off",
+              "name": "DeploysShutOff"
+            }
+          ]
+        }
+      },
+      "RetrieveBuildSourceBuild200ResponseBuildRunStatus": {
         "enum": [
           "created",
           "inProgress",
@@ -29430,7 +29550,7 @@
         ],
         "type": "string",
         "x-ms-enum": {
-          "name": "TriggerBuildSourceBuild201ResponseBuildRunStatus",
+          "name": "RetrieveBuildSourceBuild200ResponseBuildRunStatus",
           "modelAsString": false,
           "values": [
             {
@@ -29460,7 +29580,7 @@
           ]
         }
       },
-      "TriggerBuildSourceBuild201ResponseBuildRunRuntime": {
+      "RetrieveBuildSourceBuild200ResponseBuildRunRuntime": {
         "enum": [
           "docker",
           "elixir",
@@ -29472,7 +29592,7 @@
         ],
         "type": "string",
         "x-ms-enum": {
-          "name": "TriggerBuildSourceBuild201ResponseBuildRunRuntime",
+          "name": "RetrieveBuildSourceBuild200ResponseBuildRunRuntime",
           "modelAsString": false,
           "values": [
             {

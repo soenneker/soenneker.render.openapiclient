@@ -17,73 +17,34 @@ namespace Soenneker.Render.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("assetsDeletedAt") is null) { _explicitNullValueAssetsDeletedAt = default!; _explicitNullProperties?.Remove("assetsDeletedAt"); }
-            else if (parseNode.GetChildNode("assetsDeletedAt") is { } nullNodeAssetsDeletedAt && nullNodeAssetsDeletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetsDeletedAt = null;
-            if (parseNode.GetChildNode("buildRun") is null) { _explicitNullValueBuildRun = default!; _explicitNullProperties?.Remove("buildRun"); }
-            else if (parseNode.GetChildNode("buildRun") is { } nullNodeBuildRun && nullNodeBuildRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildRun = null;
-            if (parseNode.GetChildNode("buildSourceId") is null) { _explicitNullValueBuildSourceId = default!; _explicitNullProperties?.Remove("buildSourceId"); }
-            else if (parseNode.GetChildNode("buildSourceId") is { } nullNodeBuildSourceId && nullNodeBuildSourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildSourceId = null;
-            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
-            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
-            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("image") is null) { _explicitNullValueImage = default!; _explicitNullProperties?.Remove("image"); }
-            else if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
-            if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
-            else if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("deploys") is null) { _explicitNullValueDeploys = default!; _explicitNullProperties?.Remove("deploys"); }
+            else if (parseNode.GetChildNode("deploys") is { } nullNodeDeploys && nullNodeDeploys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deploys = null;
+            if (parseNode.GetChildNode("skippedServices") is null) { _explicitNullValueSkippedServices = default!; _explicitNullProperties?.Remove("skippedServices"); }
+            else if (parseNode.GetChildNode("skippedServices") is { } nullNodeSkippedServices && nullNodeSkippedServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedServices = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The assetsDeletedAt property</summary>
-        public DateTimeOffset? AssetsDeletedAt { get => _explicitNullValueAssetsDeletedAt; set { _explicitNullValueAssetsDeletedAt = value; AdditionalData?.Remove("assetsDeletedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assetsDeletedAt"); else _explicitNullProperties?.Remove("assetsDeletedAt"); } }
-        private DateTimeOffset? _explicitNullValueAssetsDeletedAt = default!;
-        /// <summary>The Render build run that produced this build. Present when the build source is currently build-based. Mutually exclusive with `image`.</summary>
+        /// <summary>The deploys that the build started, one for each service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun? BuildRun { get => _explicitNullValueBuildRun; set { _explicitNullValueBuildRun = value; AdditionalData?.Remove("buildRun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildRun"); else _explicitNullProperties?.Remove("buildRun"); } }
-        private global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun? _explicitNullValueBuildRun = default!;
+        public List<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseDeploysItem>? Deploys { get => _explicitNullValueDeploys; set { _explicitNullValueDeploys = value; AdditionalData?.Remove("deploys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploys"); else _explicitNullProperties?.Remove("deploys"); } }
+        private List<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseDeploysItem>? _explicitNullValueDeploys = default!;
 #nullable restore
 #else
-        public global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun BuildRun { get => _explicitNullValueBuildRun; set { _explicitNullValueBuildRun = value; AdditionalData?.Remove("buildRun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildRun"); else _explicitNullProperties?.Remove("buildRun"); } }
-        private global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun _explicitNullValueBuildRun = default!;
+        public List<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseDeploysItem> Deploys { get => _explicitNullValueDeploys; set { _explicitNullValueDeploys = value; AdditionalData?.Remove("deploys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploys"); else _explicitNullProperties?.Remove("deploys"); } }
+        private List<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseDeploysItem> _explicitNullValueDeploys = default!;
 #endif
-        /// <summary>The buildSourceId property</summary>
+        /// <summary>Services in `deploy.serviceScope` that did not get a deploy, with the reason for each. The build still runs for the other services. For `autodeploy_only`, suspended services are not listed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildSourceId { get => _explicitNullValueBuildSourceId; set { _explicitNullValueBuildSourceId = value; AdditionalData?.Remove("buildSourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildSourceId"); else _explicitNullProperties?.Remove("buildSourceId"); } }
-        private string? _explicitNullValueBuildSourceId = default!;
+        public List<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseSkippedServicesItem>? SkippedServices { get => _explicitNullValueSkippedServices; set { _explicitNullValueSkippedServices = value; AdditionalData?.Remove("skippedServices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedServices"); else _explicitNullProperties?.Remove("skippedServices"); } }
+        private List<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseSkippedServicesItem>? _explicitNullValueSkippedServices = default!;
 #nullable restore
 #else
-        public string BuildSourceId { get => _explicitNullValueBuildSourceId; set { _explicitNullValueBuildSourceId = value; AdditionalData?.Remove("buildSourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildSourceId"); else _explicitNullProperties?.Remove("buildSourceId"); } }
-        private string _explicitNullValueBuildSourceId = default!;
+        public List<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseSkippedServicesItem> SkippedServices { get => _explicitNullValueSkippedServices; set { _explicitNullValueSkippedServices = value; AdditionalData?.Remove("skippedServices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedServices"); else _explicitNullProperties?.Remove("skippedServices"); } }
+        private List<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseSkippedServicesItem> _explicitNullValueSkippedServices = default!;
 #endif
-        /// <summary>The createdAt property</summary>
-        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
-        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
-        private string? _explicitNullValueId = default!;
-#nullable restore
-#else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
-        private string _explicitNullValueId = default!;
-#endif
-        /// <summary>Present when the build source is currently image-based. Mutually exclusive with `buildRun`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; AdditionalData?.Remove("image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
-        private global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage? _explicitNullValueImage = default!;
-#nullable restore
-#else
-        public global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; AdditionalData?.Remove("image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
-        private global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage _explicitNullValueImage = default!;
-#endif
-        /// <summary>The updatedAt property</summary>
-        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
-        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201Response"/> and sets the default values.
         /// </summary>
@@ -107,15 +68,10 @@ namespace Soenneker.Render.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(7)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                { "assetsDeletedAt", n => { AssetsDeletedAt = n.GetDateTimeOffsetValue(); } },
-                { "buildRun", n => { BuildRun = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun>(global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun.CreateFromDiscriminatorValue); } },
-                { "buildSourceId", n => { BuildSourceId = n.GetStringValue(); } },
-                { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "image", n => { Image = n.GetObjectValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage>(global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage.CreateFromDiscriminatorValue); } },
-                { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "deploys", n => { Deploys = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseDeploysItem>(global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseDeploysItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "skippedServices", n => { SkippedServices = n.GetCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseSkippedServicesItem>(global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseSkippedServicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -125,13 +81,8 @@ namespace Soenneker.Render.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("assetsDeletedAt", AssetsDeletedAt);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun>("buildRun", BuildRun);
-            writer.WriteStringValue("buildSourceId", BuildSourceId);
-            writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseImage>("image", Image);
-            writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseDeploysItem>("deploys", Deploys);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseSkippedServicesItem>("skippedServices", SkippedServices);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

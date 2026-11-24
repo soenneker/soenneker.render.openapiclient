@@ -11,7 +11,7 @@ namespace Soenneker.Render.OpenApiClient.Models
     /// The Render build run that produced this build. Present when the build source is currently build-based. Mutually exclusive with `image`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TriggerBuildSourceBuild201ResponseBuildRun : IAdditionalDataHolder, IParsable
+    public partial class RetrieveBuildSourceBuild200ResponseBuildRun : IAdditionalDataHolder, IParsable
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -73,27 +73,27 @@ namespace Soenneker.Render.OpenApiClient.Models
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The runtime property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRunRuntime? Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; AdditionalData?.Remove("runtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
-        private global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRunRuntime? _explicitNullValueRuntime = default!;
+        public global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRunRuntime? Runtime { get => _explicitNullValueRuntime; set { _explicitNullValueRuntime = value; AdditionalData?.Remove("runtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime"); else _explicitNullProperties?.Remove("runtime"); } }
+        private global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRunRuntime? _explicitNullValueRuntime = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRunStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRunStatus? _explicitNullValueStatus = default!;
+        public global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRunStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRunStatus? _explicitNullValueStatus = default!;
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRun"/> and sets the default values.
         /// </summary>
-        public TriggerBuildSourceBuild201ResponseBuildRun()
+        public RetrieveBuildSourceBuild200ResponseBuildRun()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRun"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRun CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRun(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRun(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,8 +108,8 @@ namespace Soenneker.Render.OpenApiClient.Models
                 { "commitId", n => { CommitId = n.GetStringValue(); } },
                 { "commitUrl", n => { CommitUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "runtime", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRunRuntime>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRuntime = default; _explicitNullProperties?.Remove("runtime"); AdditionalData["runtime"] = unknown; } else { Runtime = parsed; AdditionalData.Remove("runtime"); } } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRunStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "runtime", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRunRuntime>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRuntime = default; _explicitNullProperties?.Remove("runtime"); AdditionalData["runtime"] = unknown; } else { Runtime = parsed; AdditionalData.Remove("runtime"); } } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRunStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>
@@ -124,8 +124,8 @@ namespace Soenneker.Render.OpenApiClient.Models
             writer.WriteStringValue("commitId", CommitId);
             writer.WriteStringValue("commitUrl", CommitUrl);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRunRuntime>("runtime", Runtime);
-            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.TriggerBuildSourceBuild201ResponseBuildRunStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRunRuntime>("runtime", Runtime);
+            writer.WriteEnumValue<global::Soenneker.Render.OpenApiClient.Models.RetrieveBuildSourceBuild200ResponseBuildRunStatus>("status", Status);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
